@@ -1,14 +1,16 @@
 ﻿# BMRBxTool
 
-The BMRBxTool converts NMR-STAR data into XML format (BMRB/XML). The schema of the BMRB/XML has been translated from the current mmCIF dictionary provided by BMRB (NMR-STAR v3.2.0.15) using “MMCIF Dictionary Suite” provided by RCSB PDB.  BMRBxTool generates qualified XML files by programmed remediation and reports validation errors against the XML schema. By using scripts bundled with the tool, XML files can be updated for both new entries and revised ones.<br />
-BMRBxTool uses a modified NMR-STAR dictionary, derived from the original NMR-STAR v3.2.0.15, to pass XML schema validation; the difference between the dictionaries is minimal.
+The BMRBxTool converts NMR-STAR data into XML format ([**BMRB/XML**](http://bmrbpub.protein.osaka-u.ac.jp/archive/xml)) and JSON format ([**BMRB/JSON**](http://bmrbpub.protein.osaka-u.ac.jp/archive/json-noatom)). The schema of the BMRB/XML has been translated from the current NMR-STAR v3.2.0.15 dictionary using [**mmCIF Dictionary Suite**](http://mmcif.wwpdb.org/docs/software-resources.html).  BMRBxTool generates qualified XML files by programmed remediation and reports validation errors against the XML schema. By using scripts bundled with the tool, XML files can be updated for both new entries and revised ones.<br />
+The BMRBxTool uses a modified NMR-STAR dictionary, derived from the original [**NMR-STAR v3.2.0.15**](http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic), to pass XML schema validation; the difference between the dictionaries is minimal.
 
 ## Usage
 
-Please refer to INSTALL.
+Please refer to [INSTALL](https://github.com/yokochi47/BMRBxTool/blob/master/INSTALL).
 
-## Reference
+## References
 
- Yokochi M, Kobayashi N, Ulrich EL, Kinjo AR, Iwata T, Ioannidis YE, Linvy M, Markley JL, Nakamura H, Kojima C, Fujiwara T,<br />
- "Publication of nuclear magnetic resonance experimental data with semantic web technology and the application thereof to biomedical research of proteins", **J. Biomed. Semantics**, 7, 1-4 (2016)
+- Yokochi M, Kobayashi N, Ulrich EL, Kinjo AR, Iwata T, Ioannidis YE, Linvy M, Markley JL, Nakamura H, Kojima C, Fujiwara T,<br />
+ "Publication of nuclear magnetic resonance experimental data with semantic web technology and the application thereof to biomedical research of proteins", J. Biomed. Semantics, 7, 1-4 (2016)
+- Akira R. Kinjo, Gert-Jan Bekker, Hiroshi Wako, Shigeru Endo, Yuko Tsuchiya, Hiromu Sato, Hafumi Nishi, Kengo Kinoshita, Hirofumi Suzuki, Takeshi Kawabata, Masashi Yokochi, Takeshi Iwata, Naohiro Kobayashi, Toshimichi Fujiwara, Genji Kurisu, Haruki Nakamura,<br />
+ "New tools and functions in data-out activities at Protein Data Bank Japan (PDBj)", Protein Science, 27(1), 95-102 (2018)
 
