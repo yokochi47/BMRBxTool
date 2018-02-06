@@ -1,0 +1,247 @@
+
+    Installation and usage guide
+
+A. Requirements
+
+    OpenJDK 1.8 or later (http://www.oracle.com/)
+    Eclipse (http://www.eclipse.org/)
+    PostgreSQL (http://www.postgresql.org/)
+    XMLBeans (http://xmlbeans.apache.org/)
+    Xerces (http://xerces.apache.org/)
+    PostgreSQL JDBC driver (http://jdbc.postgresql.org/)
+    XML common API (http://xerces.apache.org/xml-commons/)
+    Java mail (http://www.oracle.com/)
+    Jackson JSON Processor (http://wiki.fasterxml.com/)
+    MMCIF Dictionary Suite (http://sw-tools.pdb.org/)
+    XMLStarlet (http://xmlstar.sourceforge.net/)
+
+  * BaseX (http://basex.org/)
+  * eXist-db (http://exist-db.org/)
+
+  * Apache Lucene (http://lucene.apache.org/)
+  * Sphinx (http://sphinxsearch.com/)
+
+    * indicates alternative projects.
+
+B. Retrieve BMRB (NMR-STAR v3.2) and Metabolomics database using public FTP site
+
+   1. Create BMRB and Metabolomics database (first time only)
+
+    % createdb bmrb
+    % createdb metabolomics
+
+   2. Download BMRB database dump files and retrieve BMRB database
+
+    % cd bmrb
+    % update_bmrb.sh
+
+C. Retrieve NCBI Taxonomy database using public FTP site
+
+   1. Create NCBI Taxonomy database (first time only)
+
+    % createdb taxonomy
+
+   2. Download NCBI Taxonomy database dump file and retrieve taxonomy database
+
+    % cd taxonomy
+    % update_taxonomy.sh
+
+D. Retrive RCSB Ligand Expo database using public FTP site
+
+   1. Create RCSB Ligand Expo database (first time only)
+
+    % createdb ligand_expo
+
+   2. Download RCSB Ligand Expo XML files and retrieve Ligand Expo database
+
+    % cd ligand_expo
+    % update_ligand_expo.sh
+
+E. Retrieve mmCIF dictionary (NMR-STAR.dic) and schema compilation using XMLBeans
+
+    Please edit path for MMCIF Dictionary Suite (MMCIF_DS_DIR) in schema/update_schema.sh
+
+    % cd schema
+    % update_schema.sh
+
+    Then, you will find the following files...
+
+    NMR-STAR.dic      : mmCIF dictionary patched by PDBj-BMRB.
+    mmcif_nmr-star.xsd: XML schema derived from NMR-STAR.dic.
+    mmcifNmrStar.jar  : Java class to access XML document.
+
+F. Run BMRxTool
+
+   1. Create Java project on Eclipse (first time only)
+
+    File > New > Java Project
+    Set project name: BMRxTool
+    Next > Libraries > Add External JARs...
+    Add mmcifNmrStar.jar
+        postgresql-jdbc.jar
+        xbean.jar (XMLBeans)
+        xml-common-apis.jar
+
+   2. Import source files under bmr_src directory
+
+    Select BMRxTool/src/
+    Select File > Import...
+    Select General > File System > Next >
+    Select Browse... and select bmr_src directory.
+
+   3. Please edit the next lines in bmr_src/BMRxTool_Main.java file as you like
+
+    public static String your_org = "your.org";
+                                    ^^^^^^^^^^
+    public static String to_mail_addr = "sysadmin@" + your_org;
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+    public static String from_mail_addr = "webmaster@" + your_org;
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+    public static String smtp_host_name = "smtp_host_name." + your_org;
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    String bmrbx_tool_home = user_home + "/Applications/bmrbx-tool-" + version;
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   4. Run BMRxTool
+
+    Select BMRxTool and Run > Run as > Java Application
+    Then, you will find Java source files in bmr_util_src directory.
+
+G. Run bmr_Util (you can skip this step if bmr-util.jar exists)
+
+   1. Create bmr_Util project on Eclipse (first time only)
+
+    File > New > Java Project
+    Set project name: bmr_Util
+    Next > Libraries > Add External JARs...
+    Add mmcifNmrStar.jar
+        postgresql-jdbc.jar
+        xbean.jar
+        xml-common-apis.jar
+        xerces-j2.jar
+        mail.jar
+
+    On "Project Explorer" of Eclipse, right click on bmr_Util and select New > Package
+    And set name: org.pdb.pdbml.schema.mmcifNmrStar
+
+   2. Import source files under bmr_util_src directory
+
+    Select bmr_Util/src/org.pdb.pdbml.schema.mmcifNmrStar
+    Select File > Import...
+    Select General > File System > Next >
+    Select Browse... and select bmr_util_src directory.
+
+   3. Test bmr_Util
+
+    Select bmr_Util and Run > Run as > Java Application
+    bmr_Util will start to generate BMRB XML files and validate them against the XML schema.
+
+    bmr_xml_doc: includes XML files
+    bmr_xml_rel: includes last modified date information
+    bmr_xml_log: includes remediation logs
+    bmr_xml_err: includes validation logs
+
+   4. Run bmr_Util from terminal
+
+    Select File > Export...
+    Select Java > Runnable JAR file >
+    Select bmr_Util and set JAR file destination: bmr-util.jar
+
+    And check that "Copy required libraries into a ..." is selected > Finish
+
+    Now, you can run bmr_Util from terminal.
+
+    % bmr2xml.sh --no-validate   # updates XML files
+    % bmr2xml.sh --validate-only # validates XML files against XML schema.
+
+    NOTE: To print more options of bmr2xml.sh
+
+    % bmr2xml.sh help
+
+H. Metabolomics database
+
+    Perform F and G steps by translating "bmr" -> "bms" and "BMRx" -> "BMSx".
+    Finally, you will have bms-util.jar
+
+    Now, you can generate Metabolomics XML files and validate them against the XML schema.
+
+    % bms2xml.sh --no-validate
+    % bms2xml.sh --validate-only
+
+I. Maintenance
+
+   1. Update all databases and XML schema
+
+    % update_rsrc.sh   # same as to run update_schema.sh, update_bmrb.sh, update_taxonomy.sh, update_lacs.sh, update_pb.sh, update_cs_complete.sh and update_ligand_expo.sh
+
+   2. Update all XML files
+
+    % bmr2xml.sh --validate      # updates XML files and validates them against XML schema.
+    % bms2xml.sh --validate
+
+   3. Update BMRBxTool if you get any error mail
+
+    The latest BMRBxTool is available from:
+
+    http://bmrbdep.pdbj.org/
+
+J. Reprograming with the schema update
+
+     When the mmCIF dictionary (NMR-STAR.dic) is updated, BMRBxTool must be
+    reprogrammed according to the method described in the step F, H, and H.
+     If you want completely reproduce XML files, Please erase all "*_last"
+    files in the both "bmr_xml_rel" and "bms_xml_rel" directories.
+
+K. Generating XML documents for RDFization
+
+    % bmr2xml.sh -a noatom
+    % bms2xml.sh -a noatom
+
+    These sctipts generate XML files excluding Atom_site, *Constraint* and
+   *Peak* categories that helps to reduce RDF documents.
+
+L. OPTION: Loading XML data into BaseX (XML Database)
+
+    % bmr2basex.sh -a noatom
+    % bms2basex.sh -a noatom
+
+M. OPTION: Loading XML data into eXist-db (XML Database)
+
+    Please edit user (WEBDAV_USER) in scripts/_xml2existdb.sh
+
+    % bmr2existdb.sh -a noatom
+    % bms2existdb.sh -a noatom
+
+N. OPTION: Generating clone DB from BMRB/XML
+
+    % createdb bmrb_clone (first time only)
+    % clone_bmrb.sh
+
+O. OPTION: Generating index for full-text search from BMRB/XML
+
+    via Apache Lucene:
+    % lucene_index.sh
+
+    via Sphinx:
+    $ sphinx_index.sh
+
+P. OPTION: Converting XML to JSON
+
+    % bmrxml2json.sh -a noatom
+    % bmsxml2json.sh -a noatom
+
+Q. ### An interactive script executing all processes above ###
+
+    % do_all.sh
+
+R. OPTION: Summarizing remediation reports
+
+    % bmrrep_log.sh
+    % bmsrep_log.sh
+
+S. Questions or comment
+
+    Please contact to system maintainer (Masashi Yokochi) at PDBj-BMRB:
+
+    yokochi@protein.osaka-u.ac.jp
+
+    Copyright 2013-2018 PDBj-BMRB, Institute for Protein Research, Osaka University

@@ -1,0 +1,20 @@
+PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#>
+
+SELECT ?rcsb_id
+FROM <http://rdf.wwpdb.org/pdb>
+WHERE {
+
+  ?pdb_s PDBo:database_2.database_id "BMRB" ;
+         PDBo:database_2.database_code "6699" .
+
+  ?pdb_s PDBo:of_datablock ?pdb_db .
+
+  BIND (IRI(CONCAT(?pdb_db, "/database_2Category")) AS ?pdb_db2c)
+
+  ?pdb_db2c PDBo:has_database_2 ?rcsb_s .
+
+  FILTER (CONTAINS(STR(?rcsb_s), "RCSB"))
+
+  ?rcsb_s PDBo:database_2.database_code ?rcsb_id .
+
+}

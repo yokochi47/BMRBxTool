@@ -1,0 +1,351 @@
+/*
+    BMRBxTool - XML converter for NMR-STAR data
+    Copyright 2013-2018 Masashi Yokochi
+    
+    https://github.com/yokochi47/BMRBxTool
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class XSD_zero_occurs {
+
+	public static List<String> list = null;
+
+	XSD_zero_occurs() {
+
+		list = new ArrayList<String>();
+
+		// bmr
+
+		list.add("atom_site.assembly_atom_id");
+		list.add("atom_chem_shift.assembly_atom_id");
+		list.add("gen_dist_constraint.spectral_peak_id");
+		list.add("gen_dist_constraint.resonance_id_2");
+		list.add("gen_dist_constraint.resonance_id_1");
+		list.add("gen_dist_constraint.assembly_atom_id_2");
+		list.add("gen_dist_constraint.assembly_atom_id_1");
+		list.add("peak_char.detivation_method_id");
+		list.add("assigned_peak_chem_shift.assembly_atom_id");
+		list.add("assigned_peak_chem_shift.atom_chem_shift_id");
+		list.add("assigned_peak_chem_shift.peak_contribution_id");
+		list.add("assigned_peak_chem_shift.entity_id");
+		list.add("assigned_peak_chem_shift.entity_assembly_id");
+		list.add("assigned_peak_chem_shift.comp_index_id");
+		list.add("gen_dist_constraint.spectral_peak_list_id");
+		list.add("torsion_angle_constraint.source_experiment_id");
+		list.add("torsion_angle_constraint.resonance_id_4");
+		list.add("torsion_angle_constraint.resonance_id_3");
+		list.add("torsion_angle_constraint.resonance_id_2");
+		list.add("torsion_angle_constraint.resonance_id_1");
+		list.add("torsion_angle_constraint.assembly_atom_id_4");
+		list.add("torsion_angle_constraint.assembly_atom_id_3");
+		list.add("torsion_angle_constraint.assembly_atom_id_2");
+		list.add("torsion_angle_constraint.assembly_atom_id_1");
+		list.add("experiment.fluorescence_instrument_id");
+		list.add("experiment.emr_instrument_id");
+		list.add("experiment.chromatographic_system_id");
+		list.add("experiment.chromatographic_column_id");
+		list.add("experiment.mass_spectrometer_id");
+		list.add("experiment.nmr_spectrometer_probe_id");
+		list.add("sample_component.entity_id");
+		list.add("t2.assembly_atom_id");
+		list.add("t2.resonance_id");
+		list.add("t1.assembly_atom_id");
+		list.add("t1.resonance_id");
+		list.add("rdc_constraint.source_experiment_id");
+		list.add("rdc_constraint.resonance_id_2");
+		list.add("rdc_constraint.resonance_id_1");
+		list.add("rdc_constraint.assembly_atom_id_2");
+		list.add("rdc_constraint.assembly_atom_id_1");
+		list.add("heteronucl_noe.assembly_atom_id_2");
+		list.add("heteronucl_noe.assembly_atom_id_1");
+		list.add("heteronucl_noe.resonance_id_2");
+		list.add("heteronucl_noe.resonance_id_1");
+		list.add("chem_shift_experiment.sample_id");
+		list.add("coupling_constant.assembly_atom_id_1");
+		list.add("coupling_constant.assembly_atom_id_2");
+		list.add("experiment.nmr_spectrometer_id");
+		list.add("chem_shift_ref.correction_val_cit_id");
+		list.add("chem_shift_ref.indirect_shift_ratio_cit_id");
+		list.add("rdc.resonance_id_1");
+		list.add("sample.crystal_grow_seeding_cit_id");
+		list.add("sample.crystal_grow_method_cit_id");
+		list.add("rdc.assembly_atom_id_1");
+		list.add("rdc.resonance_id_2");
+		list.add("rdc.assembly_atom_id_2");
+		list.add("nmr_spectrometer_view.citation_id");
+		list.add("nmr_spec_expt.nmr_spectrometer_probe_id");
+		list.add("nmr_spec_expt.method_id");
+		list.add("nmr_spec_expt.software_id");
+		list.add("constraint_file.software_id");
+		list.add("order_param.resonance_id");
+		list.add("order_param.assembly_atom_id");
+		list.add("entity_experimental_src.entity_chimera_segment_id");
+		list.add("entity_experimental_src.citation_id");
+		list.add("entity_natural_src.citation_id");
+		list.add("entity_natural_src.entity_chimera_segment_id");
+		list.add("nmr_spec_expt.nmr_spectrometer_id");
+		list.add("entity.parent_entity_id");
+		list.add("experiment.sample_id");
+		list.add("heteronucl_noe.entity_id_2");
+		list.add("heteronucl_noe.entity_id_1");
+		list.add("heteronucl_noe.entity_assembly_id_2");
+		list.add("heteronucl_noe.entity_assembly_id_1");
+		list.add("atom_site.assembly_atom_id");
+		list.add("chem_shift_software.method_id");
+		list.add("assigned_peak_chem_shift.assigned_chem_shift_list_id");
+		list.add("chem_shift_experiment.experiment_id");
+		list.add("struct_anno_software.method_id");
+		list.add("conformer_stat_list.representative_conformer");
+		list.add("conformer_stat_list.conformer_calculated_total_num");
+		list.add("conformer_family_refinement.software_id");
+		list.add("conformer_family_software.method_id");
+		list.add("gen_dist_constraint_software.method_id");
+		list.add("ph_param.ph_titr_result_id");
+		list.add("torsion_angle_constraint_software.method_id");
+		list.add("sample_component.assembly_id");
+		list.add("theoretical_chem_shift.assembly_atom_id");
+		list.add("atom_chem_shift.entity_assembly_id");
+		list.add("homonucl_noe.resonance_id_2");
+		list.add("homonucl_noe.resonance_id_1");
+		list.add("homonucl_noe.assembly_atom_id_2");
+		list.add("homonucl_noe.assembly_atom_id_1");
+		list.add("experiment.sample_condition_list_id");
+		list.add("bond.entity_id_1");
+		list.add("h_exch_rate.resonance_id");
+		list.add("h_exch_rate.assembly_atom_id");
+		list.add("chemical_rate.resonance_id");
+		list.add("chemical_rate.assembly_atom_id");
+		list.add("h_exch_protection_factor.resonance_id");
+		list.add("h_exch_protection_factor.assembly_atom_id");
+		list.add("spectral_density.resonance_id");
+		list.add("spectral_density.assembly_atom_id");
+		list.add("t1_rho.resonance_id");
+		list.add("t1_rho.assembly_atom_id");
+		list.add("coupling_constant.entity_assembly_id_2");
+		list.add("spectral_peak_software.method_id");
+		list.add("coupling_constant.entity_id_2");
+		list.add("coupling_constant.entity_id_1");
+		list.add("coupling_constant.entity_assembly_id_1");
+		list.add("cross_correlation_d_csa.dipole_seq_id_2");
+		list.add("cross_correlation_d_csa.dipole_seq_id_1");
+		list.add("cross_correlation_d_csa.dipole_resonance_id_2");
+		list.add("cross_correlation_d_csa.dipole_resonance_id_1");
+		list.add("cross_correlation_d_csa.dipole_entity_id_2");
+		list.add("cross_correlation_d_csa.dipole_entity_id_1");
+		list.add("cross_correlation_d_csa.dipole_assembly_atom_id_2");
+		list.add("cross_correlation_d_csa.dipole_assembly_atom_id_1");
+		list.add("cross_correlation_d_csa.csa_resonance_id_2");
+		list.add("cross_correlation_d_csa.csa_resonance_id_1");
+		list.add("cross_correlation_d_csa.csa_assembly_atom_id_2");
+		list.add("cross_correlation_d_csa.csa_assembly_atom_id_1");
+		list.add("rdc_constraint_software.method_id");
+		list.add("binding_result.resonance_id");
+		list.add("binding_result.atm_obs_assembly_atom_id");
+		list.add("binding_result.atm_obs_seq_id");
+		list.add("binding_result.atm_obs_comp_index_id");
+		list.add("ph_titr_result.atm_titr_assembly_atom_id");
+		list.add("ph_titr_result.atm_obs_assembly_atom_id");
+		list.add("cross_correlation_d_csa.dipole_entity_assembly_id_2");
+		list.add("cross_correlation_d_csa.dipole_entity_assembly_id_1");
+		list.add("cross_correlation_d_csa.dipole_comp_index_id_2");
+		list.add("cross_correlation_d_csa.dipole_comp_index_id_1");
+		list.add("coupling_constant_experiment.sample_id");
+		list.add("conformer_family_coord_set.sample_condition_list_id");
+		list.add("heteronucl_t2_experiment.sample_id");
+		list.add("heteronucl_t1_experiment.sample_id");
+		list.add("heteronucl_noe_experiment.sample_id");
+		list.add("rdc_experiment.sample_id");
+		list.add("rdc_constraint.assembly_atom_id_2");
+		list.add("rdc_constraint.assembly_atom_id_1");
+		list.add("ph_titr_result.atm_titr_comp_index_id");
+		list.add("ph_titr_result.atm_titr_seq_id");
+		list.add("ph_titr_result.atm_titr_entity_id");
+		list.add("ph_titr_result.atm_titr_entity_assembly_id");
+		list.add("spectral_peak_list.number_of_spectral_dimensions");
+		list.add("ph_titr_result.atm_obs_comp_index_id");
+		list.add("ph_titr_result.atm_obs_seq_id");
+		list.add("ph_titr_result.atm_obs_entity_id");
+		list.add("ph_titr_result.atm_obs_entity_assembly_id");
+		list.add("heteronucl_noe_experiment.experiment_id");
+		list.add("order_parameter_experiment.sample_id");
+		list.add("conformer_family_refinement.software_id");
+		list.add("cross_correlation_dd.dipole_2_seq_id_2");
+		list.add("cross_correlation_dd.dipole_2_seq_id_1");
+		list.add("cross_correlation_dd.dipole_2_resonance_id_2");
+		list.add("cross_correlation_dd.dipole_2_resonance_id_1");
+		list.add("cross_correlation_dd.dipole_2_entity_id_2");
+		list.add("cross_correlation_dd.dipole_2_entity_id_1");
+		list.add("cross_correlation_dd.dipole_2_entity_assembly_id_2");
+		list.add("cross_correlation_dd.dipole_2_entity_assembly_id_1");
+		list.add("cross_correlation_dd.dipole_2_comp_index_id_1");
+		list.add("cross_correlation_dd.dipole_2_chem_comp_index_id_2");
+		list.add("cross_correlation_dd.dipole_2_assembly_atom_id_2");
+		list.add("cross_correlation_dd.dipole_2_assembly_atom_id_1");
+		list.add("cross_correlation_dd.dipole_1_resonance_id_2");
+		list.add("cross_correlation_dd.dipole_1_resonance_id_1");
+		list.add("cross_correlation_dd.dipole_1_assembly_atom_id_2");
+		list.add("cross_correlation_dd.dipole_1_assembly_atom_id_1");
+		list.add("binding_software.method_id");
+		list.add("cross_correlation_d_csa.csa_seq_id_2");
+		list.add("cross_correlation_d_csa.csa_seq_id_1");
+		list.add("cross_correlation_d_csa.csa_entity_id_2");
+		list.add("cross_correlation_d_csa.csa_entity_id_1");
+		list.add("cross_correlation_d_csa.csa_entity_assembly_id_2");
+		list.add("cross_correlation_d_csa.csa_comp_index_id_2");
+		list.add("order_param.seq_id");
+		list.add("order_param.entity_id");
+		list.add("spectral_peak_list.experiment_id");
+		list.add("entity_poly_seq.entity_id");
+		list.add("conformer_family_coord_set_expt.experiment_id");
+		list.add("rdc_software.method_id");
+		list.add("ph_titration_experiment.sample_id");
+		list.add("coupling_constant_experiment.experiment_id");
+		list.add("heteronucl_t1_experiment.experiment_id");
+		list.add("ph_titration_experiment.experiment_id");
+		list.add("spectral_peak_list.sample_id");
+		list.add("heteronucl_noe_software.method_id");
+		list.add("heteronucl_t1_software.method_id");
+		list.add("chemical_rate.seq_id");
+		list.add("chemical_rate.comp_index_id");
+		list.add("chemical_rate_software.method_id");
+		list.add("heteronucl_t2_experiment.experiment_id");
+		list.add("heteronucl_t2_software.method_id");
+		list.add("ambiguous_atom_chem_shift.ambiguous_shift_set_id");
+		list.add("natural_source_db.entity_chimera_segment_id");
+		list.add("rdc.entity_id_2");
+		list.add("rdc.entity_id_1");
+		list.add("rdc.entity_assembly_id_2");
+		list.add("rdc.entity_assembly_id_1");
+		list.add("coupling_constant_software.method_id");
+		list.add("order_parameter_software.method_id");
+		list.add("pdbx_poly_seq_scheme.seq_id");
+		list.add("order_parameter_experiment.experiment_id");
+		list.add("coupling_constant.seq_id_2");
+		list.add("coupling_constant.seq_id_1");
+		list.add("other_data_software.method_id");
+		list.add("chem_shift_ref.atom_isotope_number");
+		list.add("bond.entity_assembly_id_1");
+		list.add("bond.entity_assembly_id_2");
+		list.add("atom.atom_type_id");
+		list.add("bond.entity_id_2");
+		list.add("rdc_experiment.experiment_id");
+		list.add("study_keyword.study_id");
+		list.add("other_data_experiment.sample_id");
+		list.add("ph_titration_software.method_id");
+		list.add("binding_result.experiment_id");
+		list.add("chemical_rate.entity_id");
+		list.add("chem_shift_completeness_char.entity_assembly_id");
+		list.add("assembly_interaction.entity_assembly_id_2");
+		list.add("constraint_file.software_id");
+		list.add("spectral_density_experiment.sample_id");
+		list.add("h_exch_rate_experiment.sample_id");
+		list.add("h_exch_protection_fact_experiment.sample_id");
+		list.add("entity_deleted_atom.entity_assembly_id");
+		list.add("assembly_interaction.entity_assembly_id_1");
+		list.add("homonucl_noe_experiment.sample_id");
+		list.add("h_exch_protection_fact_software.method_id");
+		list.add("entity_assembly.entity_id");
+		list.add("heteronucl_t1_rho_experiment.sample_id");
+		list.add("cross_correlation_d_csa_experiment.sample_id");
+		list.add("study_entry_list.study_id");
+		list.add("h_exch_protection_factor_list.std_values_source_cit_id");
+		list.add("homonucl_noe_software.method_id");
+		list.add("cross_correlation_dd_software.method_id");
+		list.add("entity_purity.sample_id");
+		list.add("cross_correlation_dd_experiment.sample_id");
+		list.add("rdc_list.sample_condition_list_id");
+		list.add("heteronucl_t1_rho_software.method_id");
+		list.add("entity_natural_src.entity_id");
+		list.add("assigned_chem_shift_list.chem_shift_reference_id");
+		list.add("theoretical_chem_shift_list.model_atomic_coordinates_id");
+		list.add("entity_experimental_src.entity_id");
+		list.add("theoretical_chem_shift_list.chem_shifts_calc_type_id");
+		list.add("task.software_id");
+		list.add("conformer_family_coord_set_expt.sample_id");
+		list.add("other_data_type_list.sample_condition_list_id");
+		list.add("coupling_constant_list.sample_condition_list_id");
+		list.add("cs_anisotropy_software.method_id");
+		list.add("conformer_family_software.method_id");
+		list.add("h_exch_rate_experiment.experiment_id");
+		list.add("conformer_family_coord_set_expt.experiment_id");
+		list.add("spectral_dim.atom_isotope_number");
+
+		// bms
+
+		list.add("assigned_peak_chem_shift.peak_contribution_id");
+		list.add("assigned_peak_chem_shift.atom_chem_shift_id");
+		list.add("assigned_peak_chem_shift.assembly_atom_id");
+		list.add("assigned_peak_chem_shift.entity_assembly_id");
+		list.add("atom_chem_shift.seq_id");
+		list.add("atom_chem_shift.entity_assembly_id");
+		list.add("atom_chem_shift.assembly_atom_id");
+		list.add("peak_char.derivation_method_id");
+		list.add("atom_chem_shift.assembly_atom_id");
+		list.add("atom_chem_shift.seq_id");
+		list.add("atom_chem_shift.entity_assembly_id");
+		list.add("experiment.nmr_spectrometer_probe_id");
+		list.add("experiment.mass_spectrometer_id");
+		list.add("experiment.fluorescence_instrument_id");
+		list.add("experiment.emr_instrument_id");
+		list.add("experiment.chromatographic_system_id");
+		list.add("experiment.chromatographic_column_id");
+		list.add("spectral_peak_software.method_id");
+		list.add("atom_site.assembly_atom_id");
+		list.add("chem_shift_ref.indirect_shift_ratio_cit_id");
+		list.add("chem_shift_ref.correction_val_cit_id");
+		list.add("theoretical_chem_shift.seq_id");
+		list.add("theoretical_chem_shift.assembly_atom_id");
+		list.add("sample.crystal_grow_seeding_cit_id");
+		list.add("sample.crystal_grow_method_cit_id");
+		list.add("chem_shift_software.method_id");
+		list.add("sample_component.entity_id");
+		list.add("entity.parent_entity_id");
+		list.add("chem_comp.formal_charge");
+		list.add("entity_natural_src.entity_chimera_segment_id");
+		list.add("entity_experimental_src.entity_chimera_segment_id");
+		list.add("entity_natural_src.citation_id");
+		list.add("entity_experimental_src.citation_id");
+		list.add("atom.atom_type_id");
+		list.add("atom_chem_shift.seq_id");
+		list.add("conformer_family_software.method_id");
+		list.add("chem_shifts_calc_software.method_id");
+		list.add("experiment.nmr_spectrometer_probe_id");
+		list.add("experiment.mass_spectrometer_id");
+		list.add("experiment.fluorescence_instrument_id");
+		list.add("experiment.emr_instrument_id");
+		list.add("experiment.chromatographic_system_id");
+		list.add("experiment.chromatographic_column_id");
+		list.add("spectral_peak_software.method_id");
+		list.add("assigned_peak_chem_shift.spectral_dim_id");
+		list.add("sample_component.entity_id");
+		list.add("peak_char.spectral_dim_id");
+		list.add("chem_shift_ref.indirect_shift_ratio_cit_id");
+		list.add("chem_shift_ref.correction_val_cit_id");
+		list.add("chem_shift_software.method_id");
+		list.add("entity_natural_src.citation_id");
+		list.add("entity_experimental_src.citation_id");
+		list.add("entity.parent_entity_id");
+		list.add("sample.crystal_grow_seeding_cit_id");
+		list.add("sample.crystal_grow_method_cit_id");
+		list.add("atom_chem_shift.assembly_atom_id");
+		list.add("assigned_peak_chem_shift.peak_id");
+
+	}
+
+	public boolean check(String tag) {
+		return list.contains(tag);
+	}
+
+}

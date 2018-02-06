@@ -1,0 +1,22 @@
+PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#>
+
+SELECT ?pdb_id COUNT(?pdb_id) AS ?connt
+FROM <http://rdf.wwpdb.org/pdb>
+WHERE {
+
+  ?pdb_s PDBo:database_2.database_id "BMRB" ;
+         PDBo:database_2.database_code "19712" .
+
+  ?pdb_s PDBo:of_datablock ?pdb_db .
+
+  BIND (STRAFTER(STR(?pdb_db), "http://rdf.wwpdb.org/pdb/") AS ?pdb_id)
+
+  BIND (IRI(CONCAT(?pdb_db, "/citation_authorCategory")) AS ?pdb_citation_author_category)
+
+  ?pdb_citation_author_category PDBo:has_citation_author ?pdb_citation_author .
+
+  ?pdb_citation_author PDBo:citation_author.name ?citation_author_name .
+
+  FILTER (STRSTARTS(?citation_author_name, "Perczel") || STRSTARTS(?citation_author_name, "Rovo"))
+
+} GROUP BY ?pdb_id

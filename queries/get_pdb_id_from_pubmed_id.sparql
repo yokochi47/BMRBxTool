@@ -1,0 +1,14 @@
+PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#>
+
+SELECT ?pdb_id
+FROM <http://rdf.wwpdb.org/pdb>
+WHERE {
+
+  ?pdb_s PDBo:citation.id "primary" ;
+         PDBo:citation.pdbx_database_id_PubMed "17962403" .
+
+  ?pdb_s PDBo:of_datablock ?pdb_db .
+
+  BIND (STRAFTER(STR(?pdb_db), "http://rdf.wwpdb.org/pdb/") AS ?pdb_id)
+
+}

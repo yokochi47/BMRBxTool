@@ -1,0 +1,259 @@
+ Changes in BMRBxTool 1.26.0 (release 2018-02-06)
+
+  Updated dictionary from NMR-STAR v3.2.0.11 to v3.2.0.15.
+  Apache License V2.0 branding.
+
+ Changes in BMRBxTool 1.25.0 (release 2018-01-24)
+
+  Updated dictionary from NMR-STAR v3.2.0.9 to v3.2.0.11.
+  Updated dictionary and translation profiles for processing entries released on 2017-09-28 and 2017-10-26.
+  Preserved item order of original NMR-STAR format.
+  Updated xsd2pgschema from 2.6.3 to 2.7.7.
+  Fixed invalid release date.
+  Removed JSON array whose all objects are either null or empty.
+
+ Changes in BMRBxTool 1.24.0 (release 2017-09-25)
+
+  Updated dictionary from NMR-STAR v3.2.0.7 to v3.2.0.9.
+  Updated xsd2pgschema from 2.4.1 to 2.6.3.
+  Updated dictionary and translation profiles for processing entries released on 2017-04-06, 2017-04-13, 2017-06-01, 2017-06-08 and 2017-08-31.
+  Changed PubMed RESTful service to HTTPS protocol.
+  Updated PDBML Schema from pdbx-v40.xsd to pdbx-v50.xsd.
+
+ Changes in BMRBxTool 1.23.0 (release 2017-04-10)
+
+  Updated dictionary from NMR-STAR v3.1.2.6 to v3.2.0.7.
+  Updated SCOPe data from 2.05 to 2.06.
+  Updated dictionary and translation profiles for processing entries released on 2017-01-26, 2017-02-09, 2017-02-23, 2017-03-10 and 2017-03-30.
+  Updated xsd2pgschema from 1.13.4 to 2.4.1.
+
+ Changes in BMRBxTool 1.22.0 (release 2017-01-11)
+
+  Updated dictionary from NMR-STAR v3.1.1.65 to v3.1.2.6.
+  Updated xsd2pgschema to 1.13.4 and revised sphinx_index.sh script.
+
+ Changes in BMRBxTool 1.21.0 (release 2016-11-29)
+
+  Added BMRB/XML -> BMRB/JSON conversion.
+  Updated xsd2pgschema to 1.13.1.
+  Updated dictionary and translation profiles for processing entries released on 2016-11-10.
+  Changed schemaLocation to public XML Schema (http://bmrbpub.protein.osaka-u.ac.jp/schema/mmcif_nmr-star.xsd).
+  Updated Xerces from 2.7.0 to 2.11.0.
+  Revised parser for PubMed eutils APIs.
+  Revised NCBI Taxonomy ID remediation chasing merged taxnomy ID.
+  Added BMRB/XML Schema -> BMRB/JSON Schema mapping (schema/bmrb_clone.json).
+  Changed BMRB/JSON format from relational- to column-oriented.
+
+ Changes in BMRBxTool 1.20.0 (release 2016-10-21)
+
+  Added bmrb_plus_pdb_ext directory with bmrb_plus_pdb-ext.jar and executable script for integrating BMRB+PDB archive.
+  Updated dictionary and translation profiles for processing entries released on 2015-12-09, 2015-12-25, 2016-02-10, 2016-02-25, 2016-03-18, 2016-04-21, 2016-05-05, 2016-06-09, 2016-07-07, 2016-07-21, 2016-07-28, 2016-09-22, 2016-09-29, 2016-10-06 and 2016-10-20.
+  Updated xsd2pgschema to 1.10.5.
+  Added full-text search feature via Sphinx (sphinx_index.sh and xsd2pgschema-min.jar).
+  Intruduced relaxed schema, in which minOccurs=0 attribute is added to pointer IDs, which reduces substitutions of meaningless zero value.
+  Resolved network latency by caching results obtained through remote web APIs and resolving BMRB Ligand Expo's URL.
+  Added automated remediation about *.id (xsd:integer).
+  Fixed formula weight calculator.
+  Revised automated remediation about entry.assigned_pdb_id based on sharing primary citation.
+  Added automated remediation about entry.original_release_date and entry.last_release_date.
+  Revised data item name 'cross_correlation_list_id' in NMR-STAR Dictionary, they are splitted into 'cross_correlation_dd_list_id' and 'cross_correlation_d_csa_list_id'.
+  Added automated remediation about entry.accession_date and entry.submission_date.
+
+ Changes in BMRBxTool 1.19.0 (release 2015-10-16)
+
+  Added xsd-ann.jar and updated schema/update_schema.sh for appending reference links to NMR-STAR Dictionary from categories and items in BMRB/XML Schema.
+  Updated xsd2pgschema to 1.8.0.
+  Revised source code of BMRxTool and BMSxTool to reduce redundancy and to improve network stability.
+  Updated dictionary and translation profiles for processing entries released on 2015-10-02 and 2015-10-08.
+  Updated automated remediation about journal citation using PubMed RESTful service (splitting title header by semicolon).
+  Added struct_classification.sunid for storing SCOP unique identifier (sunid).
+
+ Changes in BMRBxTool 1.18.0 (release 2015-09-25)
+
+  Extended dictionary to support validation reports about completeness of assigned chemical shifts.
+  Added cs_complete directory with cs-complete.jar and executable script for supporting the validation reports.
+  Updated xsd2pgschema to 1.7.3.
+  Revised dictionary about chem_shift_completeness_list and chem_shift_completeness_char categories.
+  Updated dictionary and translation profiles for processing entries released on 2015-09-25.
+  Dropped run_sparql.sh dependency, curl command instead.
+  Revived bmrchk_xml.sh and bmschk_xml.sh scripts utilizing XMLStarlet for validating well-formed XML documents.
+  Rescued PACSY relational database which have been unintentionally dropped because of change of schema.
+  Eliminated entity_natural_src.organism_name_scientific and citation.journal_abbrev, they are automatically remediated.
+  Added --user-bmrb, --user-tax and --user-le options for authentication.
+  Fixed remediation against enity.formula_weight for older entries.
+  Added indexing script for clone DB (index_metabolomics_clone.sh and index_metabolomics_clone.sql).
+  Revised source code to drop null XML elements but required by schema.
+
+ Changes in BMRBxTool 1.17.0 (release 2015-05-18)
+
+  Revised master source code, which allowed '.' and '?' codes as empty data that solved critical errors against recent Metabolomics update.
+  Updated dictionary and translation profiles for processing entries released on 2015-05-11 and 2015-05-18.
+
+ Changes in BMRBxTool 1.16.0 (release 2015-04-21)
+
+  Added automated remediation about entity.polymer_seq_one_letter_code, entity.polymer_seq_one_letter_code_can and entity.number_of_monomers.
+  Extended dictionary to support Protein Blocks annotation.
+  Added pb_ext directory with pb-ext.jar and executable script for supporting Protein Blocks annotation.
+  Added automated remediation for replacing obsolete PDB IDs.
+  Droped not-informative LACS_output and PB_annotation categories and revised LACS_plot and PB_list categories.
+  Revised management tools for LACS validation report and PB annotation (lacs-ext.jar and pb-ext.jar).
+  Updated xsd2pgschema to 1.5.0.
+  Revised BMRB/XML Schema (xsd:decimal -> xsd:double @ entity_db_link.seq_homology_expectation_val).
+  Revised default timezone (from local to UTC).
+  Added citation_author.pdbx_name, citation_editor.pdbx_name and entry_author.pdbx_name tags for storing pdbx-style author name (e.g. O'Neil, F.K.).
+  Shrinked XML documents by dropping xsd:nil="true" elements.
+  Enforced remediation against enity.formula_weight and chem_comp.formula_weight.
+  Added extlibs directory, which includes external jar libraries.
+  Revised automated remediation about journal citation using PubMed RESTful service (checked vilidity of pubmed_id).
+  Revised DB cloner script (clone_bmrb.sh), which supports metabolomics too.
+  Revised update script for Ligand Expo.
+  Revised automated remediation about citation title using PubMed RESTful service (first author family name).
+  Added automated remediation about DOI using CrossRef RESTful service (http://search.crossref.org/).
+  Updated dictionary and translation profiles for processing entries released on 2015-04-14.
+
+ Changes in BMRBxTool 1.15.0 (release 2014-11-28)
+
+  Added full-text search feature via Apache Lucene (lucene_index.sh and xsd2pgschema.jar).
+  Revised scripts (clone_bmrb.sh and lunece_index.sh) and xsd2pgschema.jar that improve processing speed.
+  Updated dictionary and translation profiles for processing entries released on 2014-11-09, 2014-11-18, 2014-12-03 and 2014-12-16.
+  Added indexing script for clone DB (index_bmrb_clone.sh and index_bmrb_clone.sql).
+
+ Changes in BMRBxTool 1.14.0 (release 2014-10-14)
+
+  Updated dictionary and translation profiles for processing entries released on 2014-09-25, 2014-09-30 and 2014-10-14.
+  Added automated remediation about entity.formula_weight and chem_comp.formula_weight data items using RCSB Ligand Expo database.
+  Revised PDB primary referencing by addtion of citation authors' matching.
+
+ Changes in BMRBxTool 1.13.0 (release 2014-09-18)
+
+  Updated dictionary and translation profiles for processing entries released on 2014-09-11 and 2014-09-18.
+  Revived entry.assigned_pdb_id and entry.assigned_pdb_deposition_id for primary reference to PDB.
+  Added run_sparql.sh for SPARQL query to complement the primary reference to PDB.
+  Revised automated remediation about journal citation using PubMed RESTful service (first author family name).
+
+ Changes in BMRBxTool 1.12.0 (release 2014-09-04)
+
+  Updated dictionary and translation profiles for processing entries released on 2014-08-14 and 2014-09-04.
+  Added RDB cloner tools (xsd2pgschema.jar and clone_bmrb.sh files) for cloning BMRB RDB from BMRB/XML.
+  Revised source code for excluding duplicated contents in XML document.
+  Revised source code and do_all.sh script for more seamless update.
+  Added PostgreSQL DDL based on BMRB/XML Schema.
+
+ Changes in BMRBxTool 1.11.1 (release 2014-07-04)
+
+  Updated dictionary and translation profiles for processing entries released 2014-07-01.
+  Updated remediation report scripts.
+
+ Changes in BMRBxTool 1.11.0 (release 2014-06-17)
+
+  Extended dictionary to support LACS validation reports.
+  Added lacs_ext directory with lacs-ext.jar and executable script for supporting LACS validation reports.
+
+ Changes in BMRBxTool 1.10.0 (release 2014-06-05)
+
+  Updated dictionary from NMR-STAR v3.1.1.53 to v3.1.1.65.
+
+ Changes in BMRBxTool 1.9.4 (release 2014-06-04)
+
+  Disable certificate validation in SSL connection to BMRB Ligand Expo.
+  Updated dictionary and translation profiles for processing entries released 2014-06-01.
+
+ Changes in BMRBxTool 1.9.3 (release 2014-05-15)
+
+  Updated dictionary and translation profiles for processing entries released 2014-05-01.
+  Revised run_xquery.sh and queries directory.
+
+ Changes in BMRBxTool 1.9.2 (release 2014-04-15)
+
+  Updated dictionary and several fixes for processing entries released 2014-03-26.
+  Replacing 'not reported' values to 'na'.
+  Changed maximum heap memory size from 2GB to 4GB for validation of bmr18978 entry.
+  Fixed bmrrep_log.sh and bmsrep_log.sh that report total amount of remediated items.
+  Added bmrstat_log.sh and bmsstat_log.sh that report statistics on non-trivial data remediations.
+
+ Changes in BMRBxTool 1.9.1 (release 2014-02-12)
+
+  Updated dictionary and several fixes for processing entries released 2014-02-10.
+
+ Changes in BMRBxTool 1.9.0 (release 2013-12-20)
+
+  Resolved unlinked relations (structure_annotation, struct_anno_char, struct_anno_software and struct_classification).
+  Revised property file names in the schema directory.
+  Revised scripts and added scripts to upload XML documents into eXist-db (XML Database).
+  Added automated remediation about chem_comp category (chem_comp.bmrb_id and chem_comp.pdb_id).
+  Added run_xquery.sh script and queries directory.
+
+ Changes in BMRBxTool 1.8.0 (release 2013-12-06)
+
+  Added automated remediation about journal citation using PubMed RESTful service (http://eutils.ncbi.nlm.nih.gov/entrez/eutils/).
+  Added automated remediation about enzyme commission number in entity.ec_number and assembly.enzyme_commission_number tags.
+
+ Changes in BMRBxTool 1.7.0 (release 2013-11-12)
+
+  Updated dictionary from NMR-STAR v3.1.1.38 to v3.1.1.53.
+  Revised resource update scripts that allow user to select BMRB mirror sites.
+  Fixed XML conversion scripts.
+  Package now includes Java Archive files (bmr-util.jar and bms-util.jar).
+  Added do_all.sh script.
+
+ Changes in BMRBxTool 1.6.0 (internal version)
+
+  Added a "no-remediate" option that turns off programmed remediation.
+  Added remediation log output function.
+
+ Changes in BMRBxTool 1.5.0 (internal version)
+
+  Updated dictionary from NMR-STAR v3.1.1.29 to v3.1.1.38.
+
+ Changes in BMRBxTool 1.4.0 (release 2013-09-28)
+
+  Revised scripts and document.
+  Fixed invalid DB name matching.
+
+ Changes in BMRBxTool 1.4.0 (release 2013-07-10)
+
+  XML Schema location is changed from pdbml.pdb.org to bmrbpub.protein.osaka-u.ac.jp.
+  Added a "max-thrds" option that allows user to change the number of threads.
+  Added scripts to manage corrupted XML documents.
+  Added scripts to upload XML documents into BaseX (XML Database).
+
+ Changes in BMRBxTool 1.3.0 (release 2013-06-26)
+
+  Updated dictionary for processing entries released 2013-06-18.
+  Fixed null pointer exception issue at processing atom_chem_shift.ambiguity_code.
+  Fixed revision date invalid issue.
+  Added a "well-formed" option to validate XML format, which is turned off by default.
+  Changed to exclude atomic coordinates, restraints and peak lists categories if the "noatom" option was selected.
+
+ Changes in BMRBxTool 1.2.4 (release 2013-06-17)
+
+  Added a "noatom" option to generate reduced XML document (excl. Atom_site category) for RDFization.
+
+ Changes in BMRBxTool 1.2.3 (release 2013-06-11)
+
+  Changed directory name of metabolomics associated with the BMRBoTool.
+
+ Changes in BMRBxTool 1.2.2 (release 2013-06-05)
+
+  Revised scripts to support XML->RDF conversion tool; BMRBoTool.
+
+ Changes in BMRBxTool 1.2.1 (release 2013-05-30)
+
+  Updated dictionary and text conversion tables for processing entries released 2013-05-20.
+  1. Sanitized database accession codes which were related to database names; 'NDB' and 'NCBI'.
+  2. Remediated items of the following categories;
+      Constraint_file, Gen_dist_constraint and Conformer_stat_list.
+
+ Changes in BMRBxTool 1.2.0 (release 2013-05-23)
+
+  Changed QName from nmrstar to BMRBx.
+  Updated dictionary and text conversion tables for processing entries released 2013-05-06.
+
+ Changes in BMRBxTool 1.1.0 (release 2013-04-26)
+
+  Improved efficiency in parallel processing.
+
+ Changes in BMRBxTool 1.0.0 (release 2013-04-12)
+
+  First release.
+
