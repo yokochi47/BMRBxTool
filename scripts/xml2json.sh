@@ -50,7 +50,7 @@ fi
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
 JSON_SCHEMA=schema/bmrb_clone.json
 
-java -cp xsd2pgschema.jar xsd2jsonschema --xsd $XSD_SCHEMA --col-json --discarded-doc-key-name entry_id --json $JSON_SCHEMA
+java -cp extlibs/xsd2pgschema.jar xsd2jsonschema --xsd $XSD_SCHEMA --col-json --discarded-doc-key-name entry_id --json $JSON_SCHEMA
 
 echo
 echo "Do you want to update BMRB/JSON? (y [n]) "

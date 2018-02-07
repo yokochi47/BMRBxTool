@@ -100,7 +100,7 @@ mkdir -p $ERR_DIR
 
 err_file=$ERR_DIR/all_err
 
-java -cp xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST --shard-size $SHARDS 2> $err_file
+java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST --shard-size $SHARDS 2> $err_file
 
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file

@@ -80,7 +80,7 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
  err_file=$ERR_DIR/all_err
 
- java -cp ../xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid 2> $err_file
+ java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid 2> $err_file
 
  if [ $? = 0 ] && [ ! -s $err_file ] ; then
   rm -f $err_file
@@ -109,7 +109,7 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
   mkdir -p $DIC_DIR -m 777
 
-  java -cp ../xsd2pgschema.jar dicmerge4sphinx --ds-dir $WORK_DIR --dic $WORK_DIR/dictionary.txt --freq 1
+  java -cp ../extlibs/xsd2pgschema.jar dicmerge4sphinx --ds-dir $WORK_DIR --dic $WORK_DIR/dictionary.txt --freq 1
 
   if [ $dic_name = "all" ] ; then
    indexer $PREFIX"_dic"

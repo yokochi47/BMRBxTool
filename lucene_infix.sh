@@ -39,5 +39,5 @@ LUCENE_INFIX_DIR=lucene_infix_$PREFIX
 
 rm -rf $LUCENE_INFIX_DIR
 
-java -cp xsd2pgschema.jar luceneidx2infix --idx-dir $LUCENE_IDX_DIR --infix-dir $LUCENE_INFIX_DIR
+java -cp extlibs/xsd2pgschema.jar luceneidx2infix --idx-dir $LUCENE_IDX_DIR --infix-dir $LUCENE_INFIX_DIR
 
