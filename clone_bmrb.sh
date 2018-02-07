@@ -85,7 +85,7 @@ fi
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
 DB_SCHEMA=schema/bmrb_clone.schema
 
-java -cp xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --hash-by SHA-1 --ddl $DB_SCHEMA
+java -cp extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --hash-by SHA-1 --ddl $DB_SCHEMA
 
 echo
 echo "Do you want to update $DB_NAME? (y [n]) "
@@ -117,7 +117,7 @@ rm -f $ERR_DIR/*
 
 err_file=$ERR_DIR/all_err
 
-java -cp xsd2pgschema.jar xml2pgcsv --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --csv-dir $CSV_DIR --no-rel --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+java -cp extlibs/xsd2pgschema.jar xml2pgcsv --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --csv-dir $CSV_DIR --no-rel --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
 
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file
