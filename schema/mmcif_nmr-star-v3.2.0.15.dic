@@ -46888,6 +46888,8 @@ spectral peak.
    sxt    sextet
    t    triplet
    td    'triplet of doublets'
+# BMRB/XML: Add tt
+   tt    'triplet of triplets'
    LR    'long-range coupling'
    1JCH    'one J carbon-proton couplings'
 

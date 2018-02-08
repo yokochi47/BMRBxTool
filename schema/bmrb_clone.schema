@@ -8964,7 +8964,7 @@ CREATE TABLE peak (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_peak_char_coupling_pattern;
-CREATE TYPE ENUM_peak_char_coupling_pattern AS ENUM ( 'd', 'dd', 'ddd', 'dm', 'dt', 'hxt', 'hpt', 'm', 'q', 'qd', 'qn', 's', 'sxt', 't', 'td', 'LR', '1JCH' );
+CREATE TYPE ENUM_peak_char_coupling_pattern AS ENUM ( 'd', 'dd', 'ddd', 'dm', 'dt', 'hxt', 'hpt', 'm', 'q', 'qd', 'qn', 's', 'sxt', 't', 'td', 'tt', 'LR', '1JCH' );
 CREATE TABLE peak_char (
 	bounding_box_lower_val DECIMAL ,
 	bounding_box_range_val DECIMAL ,
