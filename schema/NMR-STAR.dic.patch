@@ -1,5 +1,5 @@
-*** NMR-STAR.dic	2018-02-06 15:26:21.667664741 +0900
---- mmcif_nmr-star-v3.2.0.15.dic	2018-02-06 15:26:17.519639215 +0900
+*** NMR-STAR.dic	2018-02-08 18:49:51.345197657 +0900
+--- mmcif_nmr-star-v3.2.0.15.dic	2018-02-08 18:49:44.958160473 +0900
 ***************
 *** 27,33 ****
          _dictionary_history.version
@@ -12669,6 +12669,17 @@
   ;
   
 ***************
+*** 45308,45313 ****
+--- 46888,46895 ----
+     sxt    sextet
+     t    triplet
+     td    'triplet of doublets'
++ # BMRB/XML: Add tt
++    tt    'triplet of triplets'
+     LR    'long-range coupling'
+     1JCH    'one J carbon-proton couplings'
+  
+***************
 *** 45320,45327 ****
   
      _item_description.description
@@ -12678,7 +12689,7 @@
   peak.
   ;
   
---- 46900,46907 ----
+--- 46902,46909 ----
   
      _item_description.description
   ;
@@ -12697,7 +12708,7 @@
   peak.
   ;
   
---- 46917,46924 ----
+--- 46919,46926 ----
   
      _item_description.description
   ;
@@ -12716,7 +12727,7 @@
   in chemical shift centered on the peak chemical shift.
   ;
   
---- 46934,46941 ----
+--- 46936,46943 ----
   
      _item_description.description
   ;
@@ -12734,7 +12745,7 @@
   or other form of grouping implemented by software or by the user.
   ;
   
---- 47068,47074 ----
+--- 47070,47076 ----
   
      _item_description.description
   ;
@@ -12751,7 +12762,7 @@
   through a magnetization transfer event.
   ;
   
---- 47084,47090 ----
+--- 47086,47092 ----
   
      _item_description.description
   ;
@@ -12768,7 +12779,7 @@
   shift value.
   ;
   
---- 47145,47151 ----
+--- 47147,47153 ----
   
      _item_description.description
   ;
@@ -12786,7 +12797,7 @@
   the value does not need to  to the value for Peak_ID.
   ;
   
---- 47296,47303 ----
+--- 47298,47305 ----
   
      _item_description.description
   ;
@@ -12806,7 +12817,7 @@
   correspond to the value for Entity_ID.
   ;
   
---- 47313,47321 ----
+--- 47315,47323 ----
   
      _item_description.description
   ;
@@ -12827,7 +12838,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 47331,47339 ----
+--- 47333,47341 ----
   
      _item_description.description
   ;
@@ -12846,7 +12857,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 47349,47355 ----
+--- 47351,47357 ----
   
      _item_description.description
   ;
@@ -12863,7 +12874,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 47365,47371 ----
+--- 47367,47373 ----
   
      _item_description.description
   ;
@@ -12880,7 +12891,7 @@
   that the peak listed represents a real piece of data.
   ;
   
---- 47602,47608 ----
+--- 47604,47610 ----
   
      _item_description.description
   ;
@@ -12897,7 +12908,7 @@
   dimensional structure of the molecular system.
   ;
   
---- 47618,47624 ----
+--- 47620,47626 ----
   
      _item_description.description
   ;
@@ -12916,7 +12927,7 @@
   residue ambiguities, etc.
   ;
   
---- 47844,47852 ----
+--- 47846,47854 ----
   
      _item_description.description
   ;
@@ -12935,7 +12946,7 @@
   of 4, 5, or 6 that form a known set of related chemical shift assignments.
   ;
   
---- 47862,47868 ----
+--- 47864,47870 ----
   
      _item_description.description
   ;
@@ -12954,7 +12965,7 @@
   residue ambiguities, etc.
   ;
   
---- 47968,47976 ----
+--- 47970,47978 ----
   
      _item_description.description
   ;
@@ -12973,7 +12984,7 @@
   of 4, 5, or 6 that form a known set of related chemical shift assignments.
   ;
   
---- 47986,47992 ----
+--- 47988,47994 ----
   
      _item_description.description
   ;
@@ -12992,7 +13003,7 @@
   residue ambiguities, etc.
   ;
   
---- 48092,48100 ----
+--- 48094,48102 ----
   
      _item_description.description
   ;
@@ -13011,7 +13022,7 @@
   of 4, 5, or 6 that form a known set of related chemical shift assignments.
   ;
   
---- 48110,48116 ----
+--- 48112,48118 ----
   
      _item_description.description
   ;
@@ -13030,7 +13041,7 @@
   residue ambiguities, etc.
   ;
   
---- 48216,48224 ----
+--- 48218,48226 ----
   
      _item_description.description
   ;
@@ -13049,7 +13060,7 @@
   of 4, 5, or 6 that form a known set of related chemical shift assignments.
   ;
   
---- 48234,48240 ----
+--- 48236,48242 ----
   
      _item_description.description
   ;
@@ -13066,7 +13077,7 @@
   that the peak listed represents a real piece of data.
   ;
   
---- 48370,48376 ----
+--- 48372,48378 ----
   
      _item_description.description
   ;
@@ -13084,7 +13095,7 @@
   spectral transition.
   ;
   
---- 48776,48783 ----
+--- 48778,48785 ----
   
      _item_description.description
   ;
@@ -13103,7 +13114,7 @@
   spectral transition.
   ;
   
---- 48793,48800 ----
+--- 48795,48802 ----
   
      _item_description.description
   ;
@@ -13123,7 +13134,7 @@
   transition.
   ;
   
---- 48810,48818 ----
+--- 48812,48820 ----
   
      _item_description.description
   ;
@@ -13142,7 +13153,7 @@
   to a peak ID.
   ;
   
---- 48897,48903 ----
+--- 48899,48905 ----
   
      _item_description.description
   ;
@@ -13169,7 +13180,7 @@
   
     _item_type.code                             'int'
   
---- 48907,48924 ----
+--- 48909,48926 ----
         _item.mandatory_code
   
     '_spectral_transition_contrib.id'                      'spectral_transition_contrib'             yes
@@ -13197,7 +13208,7 @@
   be by spin-system or other form of grouping implemented by software or by the user.
   ;
   
---- 49061,49067 ----
+--- 49063,49069 ----
   
      _item_description.description
   ;
@@ -13214,7 +13225,7 @@
   through a magnetization transfer event.
   ;
   
---- 49077,49083 ----
+--- 49079,49085 ----
   
      _item_description.description
   ;
@@ -13231,7 +13242,7 @@
   contained in the saveframe.
   ;
   
---- 49343,49349 ----
+--- 49345,49351 ----
   
      _item_description.description
   ;
@@ -13248,7 +13259,7 @@
   information from other saveframes of this category in an entry.
   ;
   
---- 49374,49380 ----
+--- 49376,49382 ----
   
      _item_description.description
   ;
@@ -13265,7 +13276,7 @@
   linker list saveframe.
   ;
   
---- 49413,49419 ----
+--- 49415,49421 ----
   
      _item_description.description
   ;
@@ -13283,7 +13294,7 @@
   then the offset is -1.
   ;
   
---- 50224,50231 ----
+--- 50226,50233 ----
   
      _item_description.description
   ;
@@ -13301,7 +13312,7 @@
   link in an assignment process.
   ;
   
---- 50271,50277 ----
+--- 50273,50279 ----
   
      _item_description.description
   ;
@@ -13318,7 +13329,7 @@
   contained in the saveframe.
   ;
   
---- 50357,50363 ----
+--- 50359,50365 ----
   
      _item_description.description
   ;
@@ -13335,7 +13346,7 @@
   isotope effect values from other saveframes of this category in an entry.
   ;
   
---- 50389,50395 ----
+--- 50391,50397 ----
   
      _item_description.description
   ;
@@ -13352,7 +13363,7 @@
   effect data and its derivation.
   ;
   
---- 50486,50492 ----
+--- 50488,50494 ----
   
      _item_description.description
   ;
@@ -13370,7 +13381,7 @@
   tag.
   ;
   
---- 50502,50509 ----
+--- 50504,50511 ----
   
      _item_description.description
   ;
@@ -13388,7 +13399,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 50938,50944 ----
+--- 50940,50946 ----
   
      _item_description.description
   ;
@@ -13405,7 +13416,7 @@
   or any of its related tags.
   ;
   
---- 50954,50960 ----
+--- 50956,50962 ----
   
      _item_description.description
   ;
@@ -13422,7 +13433,7 @@
   a control isotopically labeled sample.
   ;
   
---- 51008,51014 ----
+--- 51010,51016 ----
   
      _item_description.description
   ;
@@ -13439,7 +13450,7 @@
   molecular assembly in a control isotopically labeled sample.
   ;
   
---- 51024,51030 ----
+--- 51026,51032 ----
   
      _item_description.description
   ;
@@ -13456,7 +13467,7 @@
   the experimental isotopically labeled sample.
   ;
   
---- 51070,51076 ----
+--- 51072,51078 ----
   
      _item_description.description
   ;
@@ -13473,7 +13484,7 @@
   molecular assembly in a experimental isotopically labeled sample.
   ;
   
---- 51086,51092 ----
+--- 51088,51094 ----
   
      _item_description.description
   ;
@@ -13490,7 +13501,7 @@
   in the molecular assembly.
   ;
   
---- 51117,51123 ----
+--- 51119,51125 ----
   
      _item_description.description
   ;
@@ -13509,7 +13520,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 51163,51171 ----
+--- 51165,51173 ----
   
      _item_description.description
   ;
@@ -13530,7 +13541,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 51181,51189 ----
+--- 51183,51191 ----
   
      _item_description.description
   ;
@@ -13549,7 +13560,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 51207,51213 ----
+--- 51209,51215 ----
   
      _item_description.description
   ;
@@ -13566,7 +13577,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 51231,51237 ----
+--- 51233,51239 ----
   
      _item_description.description
   ;
@@ -13583,7 +13594,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 51448,51454 ----
+--- 51450,51456 ----
   
      _item_description.description
   ;
@@ -13600,7 +13611,7 @@
   or any of its related tags.
   ;
   
---- 51464,51470 ----
+--- 51466,51472 ----
   
      _item_description.description
   ;
@@ -13619,7 +13630,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 51480,51488 ----
+--- 51482,51490 ----
   
      _item_description.description
   ;
@@ -13640,7 +13651,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 51498,51506 ----
+--- 51500,51508 ----
   
      _item_description.description
   ;
@@ -13659,7 +13670,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 51524,51530 ----
+--- 51526,51532 ----
   
      _item_description.description
   ;
@@ -13676,7 +13687,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 51548,51554 ----
+--- 51550,51556 ----
   
      _item_description.description
   ;
@@ -13693,7 +13704,7 @@
   contained in the saveframe.
   ;
   
---- 51642,51648 ----
+--- 51644,51650 ----
   
      _item_description.description
   ;
@@ -13710,7 +13721,7 @@
   information from other saveframes of this category in an entry.
   ;
   
---- 51674,51680 ----
+--- 51676,51682 ----
   
      _item_description.description
   ;
@@ -13727,7 +13738,7 @@
   is the saveframe where the chemical shift referencing standards are described.
   ;
   
---- 51784,51790 ----
+--- 51786,51792 ----
   
      _item_description.description
   ;
@@ -13744,7 +13755,7 @@
   data and their derivation.
   ;
   
---- 51800,51806 ----
+--- 51802,51808 ----
   
      _item_description.description
   ;
@@ -13763,7 +13774,7 @@
   ;
   
      _item.name                                  '_chem_shift_perturbation_list.text_data_format'
---- 51816,51824 ----
+--- 51818,51826 ----
   
      _item_description.description
   ;
@@ -13782,7 +13793,7 @@
   as ASCII text.
   ;
   
---- 51833,51839 ----
+--- 51835,51841 ----
   
      _item_description.description
   ;
@@ -13799,7 +13810,7 @@
   caused by the interaction between two members of the molecular assembly.
   ;
   
---- 52133,52139 ----
+--- 52135,52141 ----
   
      _item_description.description
   ;
@@ -13816,7 +13827,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 52254,52260 ----
+--- 52256,52262 ----
   
      _item_description.description
   ;
@@ -13833,7 +13844,7 @@
   or any of its related tags.
   ;
   
---- 52270,52276 ----
+--- 52272,52278 ----
   
      _item_description.description
   ;
@@ -13850,7 +13861,7 @@
   that are interacting with it.
   ;
   
---- 52286,52292 ----
+--- 52288,52294 ----
   
      _item_description.description
   ;
@@ -13868,7 +13879,7 @@
   other molecules.
   ;
   
---- 52317,52324 ----
+--- 52319,52326 ----
   
      _item_description.description
   ;
@@ -13888,7 +13899,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 52364,52372 ----
+--- 52366,52374 ----
   
      _item_description.description
   ;
@@ -13909,7 +13920,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 52382,52390 ----
+--- 52384,52392 ----
   
      _item_description.description
   ;
@@ -13928,7 +13939,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 52408,52414 ----
+--- 52410,52416 ----
   
      _item_description.description
   ;
@@ -13945,7 +13956,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 52432,52438 ----
+--- 52434,52440 ----
   
      _item_description.description
   ;
@@ -13962,7 +13973,7 @@
   contained in the saveframe.
   ;
   
---- 52526,52532 ----
+--- 52528,52534 ----
   
      _item_description.description
   ;
@@ -13979,7 +13990,7 @@
   anisotropy data from other saveframes of this category in an entry.
   ;
   
---- 52558,52564 ----
+--- 52560,52566 ----
   
      _item_description.description
   ;
@@ -13997,7 +14008,7 @@
   tag.
   ;
   
---- 52686,52693 ----
+--- 52688,52695 ----
   
      _item_description.description
   ;
@@ -14015,7 +14026,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 53122,53128 ----
+--- 53124,53130 ----
   
      _item_description.description
   ;
@@ -14032,7 +14043,7 @@
   or any of its related tags.
   ;
   
---- 53138,53144 ----
+--- 53140,53146 ----
   
      _item_description.description
   ;
@@ -14051,7 +14062,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 53304,53312 ----
+--- 53306,53314 ----
   
      _item_description.description
   ;
@@ -14072,7 +14083,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 53322,53330 ----
+--- 53324,53332 ----
   
      _item_description.description
   ;
@@ -14091,7 +14102,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 53348,53354 ----
+--- 53350,53356 ----
   
      _item_description.description
   ;
@@ -14108,7 +14119,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 53372,53378 ----
+--- 53374,53380 ----
   
      _item_description.description
   ;
@@ -14125,7 +14136,7 @@
   contained in the saveframe.
   ;
   
---- 53466,53472 ----
+--- 53468,53474 ----
   
      _item_description.description
   ;
@@ -14142,7 +14153,7 @@
   the data for determination of the residual dipolar coupling values.
   ;
   
---- 53547,53553 ----
+--- 53549,53555 ----
   
      _item_description.description
   ;
@@ -14159,7 +14170,7 @@
   the data.
   ;
   
---- 53563,53569 ----
+--- 53565,53571 ----
   
      _item_description.description
   ;
@@ -14176,7 +14187,7 @@
   calculating the RDC constraints.
   ;
   
---- 53587,53593 ----
+--- 53589,53595 ----
   
      _item_description.description
   ;
@@ -14194,7 +14205,7 @@
   is the axial symmetric component of the alignment tensor (1/3(Azz-(Axx+Ayy)/2).
   ;
   
---- 53626,53633 ----
+--- 53628,53635 ----
   
      _item_description.description
   ;
@@ -14213,7 +14224,7 @@
   is the rhombic component of the alignment tensor (1/3(Axx-Ayy)).
   ;
   
---- 53643,53650 ----
+--- 53645,53652 ----
   
      _item_description.description
   ;
@@ -14232,7 +14243,7 @@
   is S, the local order parameter for internal motions.
   ;
   
---- 53660,53667 ----
+--- 53662,53669 ----
   
      _item_description.description
   ;
@@ -14250,7 +14261,7 @@
   ASCII text in the text block that is the value to the '_RDC_list.Text_data' tag.
   ;
   
---- 53737,53743 ----
+--- 53739,53745 ----
   
      _item_description.description
   ;
@@ -14267,7 +14278,7 @@
   dipolar coupling.
   ;
   
---- 54067,54073 ----
+--- 54069,54075 ----
   
      _item_description.description
   ;
@@ -14284,7 +14295,7 @@
   or any of its related tags.
   ;
   
---- 54203,54209 ----
+--- 54205,54211 ----
   
      _item_description.description
   ;
@@ -14301,7 +14312,7 @@
   to the residual dipolar coupling constant.
   ;
   
---- 54219,54225 ----
+--- 54221,54227 ----
   
      _item_description.description
   ;
@@ -14318,7 +14329,7 @@
   or any of its related tags.
   ;
   
---- 54355,54361 ----
+--- 54357,54363 ----
   
      _item_description.description
   ;
@@ -14335,7 +14346,7 @@
   to the residual dipolar coupling constant.
   ;
   
---- 54371,54377 ----
+--- 54373,54379 ----
   
      _item_description.description
   ;
@@ -14352,7 +14363,7 @@
   the minimum estimated value.
   ;
   
---- 54402,54408 ----
+--- 54404,54410 ----
   
      _item_description.description
   ;
@@ -14369,7 +14380,7 @@
   the maximum estimated value.
   ;
   
---- 54418,54424 ----
+--- 54420,54426 ----
   
      _item_description.description
   ;
@@ -14388,7 +14399,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 54494,54502 ----
+--- 54496,54504 ----
   
      _item_description.description
   ;
@@ -14409,7 +14420,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 54512,54520 ----
+--- 54514,54522 ----
   
      _item_description.description
   ;
@@ -14428,7 +14439,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 54538,54544 ----
+--- 54540,54546 ----
   
      _item_description.description
   ;
@@ -14445,7 +14456,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 54562,54568 ----
+--- 54564,54570 ----
   
      _item_description.description
   ;
@@ -14464,7 +14475,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 54586,54594 ----
+--- 54588,54596 ----
   
      _item_description.description
   ;
@@ -14485,7 +14496,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 54604,54612 ----
+--- 54606,54614 ----
   
      _item_description.description
   ;
@@ -14504,7 +14515,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 54630,54636 ----
+--- 54632,54638 ----
   
      _item_description.description
   ;
@@ -14521,7 +14532,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 54654,54660 ----
+--- 54656,54662 ----
   
      _item_description.description
   ;
@@ -14538,7 +14549,7 @@
   contained in the saveframe.
   ;
   
---- 54748,54754 ----
+--- 54750,54756 ----
   
      _item_description.description
   ;
@@ -14555,7 +14566,7 @@
   the data for determination of the residual dipolar coupling values.
   ;
   
---- 54829,54835 ----
+--- 54831,54837 ----
   
      _item_description.description
   ;
@@ -14572,7 +14583,7 @@
   the data.
   ;
   
---- 54845,54851 ----
+--- 54847,54853 ----
   
      _item_description.description
   ;
@@ -14589,7 +14600,7 @@
   in this field.
   ;
   
---- 54899,54905 ----
+--- 54901,54907 ----
   
      _item_description.description
   ;
@@ -14606,7 +14617,7 @@
   in the text block that is the value to the '_Dipolar_coupling.Text_data' tag.
   ;
   
---- 54915,54921 ----
+--- 54917,54923 ----
   
      _item_description.description
   ;
@@ -14623,7 +14634,7 @@
   dipolar coupling.
   ;
   
---- 55245,55251 ----
+--- 55247,55253 ----
   
      _item_description.description
   ;
@@ -14640,7 +14651,7 @@
   or any of its related tags.
   ;
   
---- 55381,55387 ----
+--- 55383,55389 ----
   
      _item_description.description
   ;
@@ -14657,7 +14668,7 @@
   to the dipolar coupling constant.
   ;
   
---- 55397,55403 ----
+--- 55399,55405 ----
   
      _item_description.description
   ;
@@ -14674,7 +14685,7 @@
   or any of its related tags.
   ;
   
---- 55533,55539 ----
+--- 55535,55541 ----
   
      _item_description.description
   ;
@@ -14691,7 +14702,7 @@
   to the dipolar coupling constant.
   ;
   
---- 55549,55555 ----
+--- 55551,55557 ----
   
      _item_description.description
   ;
@@ -14708,7 +14719,7 @@
   cannot be obtained.
   ;
   
---- 55580,55586 ----
+--- 55582,55588 ----
   
      _item_description.description
   ;
@@ -14725,7 +14736,7 @@
   value cannot be obtained.
   ;
   
---- 55596,55602 ----
+--- 55598,55604 ----
   
      _item_description.description
   ;
@@ -14744,7 +14755,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 55702,55710 ----
+--- 55704,55712 ----
   
      _item_description.description
   ;
@@ -14765,7 +14776,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 55720,55728 ----
+--- 55722,55730 ----
   
      _item_description.description
   ;
@@ -14784,7 +14795,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 55746,55752 ----
+--- 55748,55754 ----
   
      _item_description.description
   ;
@@ -14801,7 +14812,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 55770,55776 ----
+--- 55772,55778 ----
   
      _item_description.description
   ;
@@ -14820,7 +14831,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 55794,55802 ----
+--- 55796,55804 ----
   
      _item_description.description
   ;
@@ -14841,7 +14852,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 55812,55820 ----
+--- 55814,55822 ----
   
      _item_description.description
   ;
@@ -14860,7 +14871,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 55838,55844 ----
+--- 55840,55846 ----
   
      _item_description.description
   ;
@@ -14877,7 +14888,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 55862,55868 ----
+--- 55864,55870 ----
   
      _item_description.description
   ;
@@ -14894,7 +14905,7 @@
   contained in the saveframe.
   ;
   
---- 55956,55962 ----
+--- 55958,55964 ----
   
      _item_description.description
   ;
@@ -14911,7 +14922,7 @@
   data from other saveframes of this category in an entry.
   ;
   
---- 55988,55994 ----
+--- 55990,55996 ----
   
      _item_description.description
   ;
@@ -14928,7 +14939,7 @@
   the data for determination of the spectral density values.
   ;
   
---- 56038,56044 ----
+--- 56040,56046 ----
   
      _item_description.description
   ;
@@ -14945,7 +14956,7 @@
   in the text block that is the value to the '_Spectral_density_list.Text_data' tag.
   ;
   
---- 56069,56075 ----
+--- 56071,56077 ----
   
      _item_description.description
   ;
@@ -14962,7 +14973,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 56504,56510 ----
+--- 56506,56512 ----
   
      _item_description.description
   ;
@@ -14979,7 +14990,7 @@
   or any of its related tags.
   ;
   
---- 56520,56526 ----
+--- 56522,56528 ----
   
      _item_description.description
   ;
@@ -14998,7 +15009,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 56671,56679 ----
+--- 56673,56681 ----
   
      _item_description.description
   ;
@@ -15019,7 +15030,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 56689,56697 ----
+--- 56691,56699 ----
   
      _item_description.description
   ;
@@ -15038,7 +15049,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 56715,56721 ----
+--- 56717,56723 ----
   
      _item_description.description
   ;
@@ -15055,7 +15066,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 56739,56745 ----
+--- 56741,56747 ----
   
      _item_description.description
   ;
@@ -15072,7 +15083,7 @@
   contained in the saveframe.
   ;
   
---- 56833,56839 ----
+--- 56835,56841 ----
   
      _item_description.description
   ;
@@ -15089,7 +15100,7 @@
   ASCII text in the text block that is the value to the '_Other_data_type.Text_data' tag.
   ;
   
---- 56973,56979 ----
+--- 56975,56981 ----
   
      _item_description.description
   ;
@@ -15106,7 +15117,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 57408,57414 ----
+--- 57410,57416 ----
   
      _item_description.description
   ;
@@ -15123,7 +15134,7 @@
   or any of its related tags.
   ;
   
---- 57424,57430 ----
+--- 57426,57432 ----
   
      _item_description.description
   ;
@@ -15142,7 +15153,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 57485,57493 ----
+--- 57487,57495 ----
   
      _item_description.description
   ;
@@ -15163,7 +15174,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 57503,57511 ----
+--- 57505,57513 ----
   
      _item_description.description
   ;
@@ -15182,7 +15193,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 57529,57535 ----
+--- 57531,57537 ----
   
      _item_description.description
   ;
@@ -15199,7 +15210,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 57553,57559 ----
+--- 57555,57561 ----
   
      _item_description.description
   ;
@@ -15216,7 +15227,7 @@
   contained in the saveframe.
   ;
   
---- 57647,57653 ----
+--- 57649,57655 ----
   
      _item_description.description
   ;
@@ -15233,7 +15244,7 @@
   the data for determination of the kinetic rates.
   ;
   
---- 57728,57734 ----
+--- 57730,57736 ----
   
      _item_description.description
   ;
@@ -15250,7 +15261,7 @@
   text block that is the value to the '_Chemical_rate_list.Text_data' tag.
   ;
   
---- 57759,57765 ----
+--- 57761,57767 ----
   
      _item_description.description
   ;
@@ -15267,7 +15278,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 58208,58214 ----
+--- 58210,58216 ----
   
      _item_description.description
   ;
@@ -15284,7 +15295,7 @@
   or any of its related tags.
   ;
   
---- 58224,58230 ----
+--- 58226,58232 ----
   
      _item_description.description
   ;
@@ -15301,7 +15312,7 @@
   be obtained.
   ;
   
---- 58270,58276 ----
+--- 58272,58278 ----
   
      _item_description.description
   ;
@@ -15318,7 +15329,7 @@
   be obtained.
   ;
   
---- 58286,58292 ----
+--- 58288,58294 ----
   
      _item_description.description
   ;
@@ -15337,7 +15348,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 58355,58363 ----
+--- 58357,58365 ----
   
      _item_description.description
   ;
@@ -15358,7 +15369,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 58373,58381 ----
+--- 58375,58383 ----
   
      _item_description.description
   ;
@@ -15377,7 +15388,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 58399,58405 ----
+--- 58401,58407 ----
   
      _item_description.description
   ;
@@ -15394,7 +15405,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 58423,58429 ----
+--- 58425,58431 ----
   
      _item_description.description
   ;
@@ -15411,7 +15422,7 @@
   contained in the saveframe.
   ;
   
---- 58517,58523 ----
+--- 58519,58525 ----
   
      _item_description.description
   ;
@@ -15428,7 +15439,7 @@
   the data for determination of the H-exchange rates.
   ;
   
---- 58598,58604 ----
+--- 58600,58606 ----
   
      _item_description.description
   ;
@@ -15445,7 +15456,7 @@
   in the text block that is the value to the '_H_exch_rate_list.Text_data' tag.
   ;
   
---- 58666,58672 ----
+--- 58668,58674 ----
   
      _item_description.description
   ;
@@ -15462,7 +15473,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 59101,59107 ----
+--- 59103,59109 ----
   
      _item_description.description
   ;
@@ -15479,7 +15490,7 @@
   or any of its related tags.
   ;
   
---- 59117,59123 ----
+--- 59119,59125 ----
   
      _item_description.description
   ;
@@ -15496,7 +15507,7 @@
   value cannot be obtained.
   ;
   
---- 59148,59154 ----
+--- 59150,59156 ----
   
      _item_description.description
   ;
@@ -15513,7 +15524,7 @@
   value cannot be obtained.
   ;
   
---- 59164,59170 ----
+--- 59166,59172 ----
   
      _item_description.description
   ;
@@ -15532,7 +15543,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 59210,59218 ----
+--- 59212,59220 ----
   
      _item_description.description
   ;
@@ -15553,7 +15564,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 59228,59236 ----
+--- 59230,59238 ----
   
      _item_description.description
   ;
@@ -15572,7 +15583,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 59254,59260 ----
+--- 59256,59262 ----
   
      _item_description.description
   ;
@@ -15589,7 +15600,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 59278,59284 ----
+--- 59280,59286 ----
   
      _item_description.description
   ;
@@ -15606,7 +15617,7 @@
   contained in the saveframe.
   ;
   
---- 59372,59378 ----
+--- 59374,59380 ----
   
      _item_description.description
   ;
@@ -15623,7 +15634,7 @@
   protection factor data from other saveframes of this category in an entry.
   ;
   
---- 59404,59410 ----
+--- 59406,59412 ----
   
      _item_description.description
   ;
@@ -15640,7 +15651,7 @@
   the data for determination of the H-exchange protection factors.
   ;
   
---- 59454,59460 ----
+--- 59456,59462 ----
   
      _item_description.description
   ;
@@ -15658,7 +15669,7 @@
   determine the reported protection factors.
   ;
   
---- 59485,59492 ----
+--- 59487,59494 ----
   
      _item_description.description
   ;
@@ -15677,7 +15688,7 @@
   tag.
   ;
   
---- 59517,59524 ----
+--- 59519,59526 ----
   
      _item_description.description
   ;
@@ -15695,7 +15706,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 59953,59959 ----
+--- 59955,59961 ----
   
      _item_description.description
   ;
@@ -15712,7 +15723,7 @@
   or any of its related tags.
   ;
   
---- 59969,59975 ----
+--- 59971,59977 ----
   
      _item_description.description
   ;
@@ -15731,7 +15742,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 60045,60053 ----
+--- 60047,60055 ----
   
      _item_description.description
   ;
@@ -15752,7 +15763,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 60063,60071 ----
+--- 60065,60073 ----
   
      _item_description.description
   ;
@@ -15771,7 +15782,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 60089,60095 ----
+--- 60091,60097 ----
   
      _item_description.description
   ;
@@ -15788,7 +15799,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 60113,60119 ----
+--- 60115,60121 ----
   
      _item_description.description
   ;
@@ -15805,7 +15816,7 @@
   contained in the saveframe.
   ;
   
---- 60207,60213 ----
+--- 60209,60215 ----
   
      _item_description.description
   ;
@@ -15822,7 +15833,7 @@
   NOE data from other saveframes of this category in an entry.
   ;
   
---- 60239,60245 ----
+--- 60241,60247 ----
   
      _item_description.description
   ;
@@ -15839,7 +15850,7 @@
   NOE data reported.
   ;
   
---- 60289,60295 ----
+--- 60291,60297 ----
   
      _item_description.description
   ;
@@ -15856,7 +15867,7 @@
   how the actual value was determined.
   ;
   
---- 60363,60369 ----
+--- 60365,60371 ----
   
      _item_description.description
   ;
@@ -15873,7 +15884,7 @@
   values and their derivation.
   ;
   
---- 60387,60393 ----
+--- 60389,60395 ----
   
      _item_description.description
   ;
@@ -15890,7 +15901,7 @@
   in the text block that is the value to the '_Homonucl_NOE_list.Text_data' tag.
   ;
   
---- 60403,60409 ----
+--- 60405,60411 ----
   
      _item_description.description
   ;
@@ -15907,7 +15918,7 @@
   or any of its related tags.
   ;
   
---- 60842,60848 ----
+--- 60844,60850 ----
   
      _item_description.description
   ;
@@ -15924,7 +15935,7 @@
   or any of its related tags.
   ;
   
---- 60978,60984 ----
+--- 60980,60986 ----
   
      _item_description.description
   ;
@@ -15943,7 +15954,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 61084,61092 ----
+--- 61086,61094 ----
   
      _item_description.description
   ;
@@ -15964,7 +15975,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 61102,61110 ----
+--- 61104,61112 ----
   
      _item_description.description
   ;
@@ -15983,7 +15994,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 61128,61134 ----
+--- 61130,61136 ----
   
      _item_description.description
   ;
@@ -16000,7 +16011,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 61152,61158 ----
+--- 61154,61160 ----
   
      _item_description.description
   ;
@@ -16019,7 +16030,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 61176,61184 ----
+--- 61178,61186 ----
   
      _item_description.description
   ;
@@ -16040,7 +16051,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 61194,61202 ----
+--- 61196,61204 ----
   
      _item_description.description
   ;
@@ -16059,7 +16070,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 61220,61226 ----
+--- 61222,61228 ----
   
      _item_description.description
   ;
@@ -16076,7 +16087,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 61244,61250 ----
+--- 61246,61252 ----
   
      _item_description.description
   ;
@@ -16093,7 +16104,7 @@
   contained in the saveframe.
   ;
   
---- 61338,61344 ----
+--- 61340,61346 ----
   
      _item_description.description
   ;
@@ -16110,7 +16121,7 @@
   NOE data from other saveframes of this category in an entry.
   ;
   
---- 61378,61384 ----
+--- 61380,61386 ----
   
      _item_description.description
   ;
@@ -16127,7 +16138,7 @@
   NOE data reported as the 1H frequency in MHz.
   ;
   
---- 61467,61473 ----
+--- 61469,61475 ----
   
      _item_description.description
   ;
@@ -16144,7 +16155,7 @@
   in the text block that is the value to the '_Heteronucl_NOE_list.Text_data' tag.
   ;
   
---- 61580,61586 ----
+--- 61582,61588 ----
   
      _item_description.description
   ;
@@ -16161,7 +16172,7 @@
   of heteronuclear NOE values.
   ;
   
---- 61983,61989 ----
+--- 61985,61991 ----
   
      _item_description.description
   ;
@@ -16178,7 +16189,7 @@
   or any of its related tags.
   ;
   
---- 62191,62197 ----
+--- 62193,62199 ----
   
      _item_description.description
   ;
@@ -16195,7 +16206,7 @@
   or any of its related tags.
   ;
   
---- 62391,62397 ----
+--- 62393,62399 ----
   
      _item_description.description
   ;
@@ -16214,7 +16225,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 62467,62475 ----
+--- 62469,62477 ----
   
      _item_description.description
   ;
@@ -16235,7 +16246,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 62485,62493 ----
+--- 62487,62495 ----
   
      _item_description.description
   ;
@@ -16254,7 +16265,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 62511,62517 ----
+--- 62513,62519 ----
   
      _item_description.description
   ;
@@ -16271,7 +16282,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 62535,62541 ----
+--- 62537,62543 ----
   
      _item_description.description
   ;
@@ -16290,7 +16301,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 62559,62567 ----
+--- 62561,62569 ----
   
      _item_description.description
   ;
@@ -16311,7 +16322,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 62577,62585 ----
+--- 62579,62587 ----
   
      _item_description.description
   ;
@@ -16330,7 +16341,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 62603,62609 ----
+--- 62605,62611 ----
   
      _item_description.description
   ;
@@ -16347,7 +16358,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 62627,62633 ----
+--- 62629,62635 ----
   
      _item_description.description
   ;
@@ -16364,7 +16375,7 @@
   contained in the saveframe.
   ;
   
---- 62737,62743 ----
+--- 62739,62745 ----
   
      _item_description.description
   ;
@@ -16381,7 +16392,7 @@
   heteronuclear NOE data from other saveframes of this category in an entry.
   ;
   
---- 62777,62783 ----
+--- 62779,62785 ----
   
      _item_description.description
   ;
@@ -16398,7 +16409,7 @@
   heteronuclear NOE data reported as the 1H frequency in MHz.
   ;
   
---- 62866,62872 ----
+--- 62868,62874 ----
   
      _item_description.description
   ;
@@ -16415,7 +16426,7 @@
   NOE.
   ;
   
---- 62890,62896 ----
+--- 62892,62898 ----
   
      _item_description.description
   ;
@@ -16433,7 +16444,7 @@
   tag.
   ;
   
---- 62980,62987 ----
+--- 62982,62989 ----
   
      _item_description.description
   ;
@@ -16451,7 +16462,7 @@
   in this set of theoretical heteronuclear NOE values.
   ;
   
---- 63384,63390 ----
+--- 63386,63392 ----
   
      _item_description.description
   ;
@@ -16468,7 +16479,7 @@
   or any of its related tags.
   ;
   
---- 63592,63598 ----
+--- 63594,63600 ----
   
      _item_description.description
   ;
@@ -16485,7 +16496,7 @@
   or any of its related tags.
   ;
   
---- 63792,63798 ----
+--- 63794,63800 ----
   
      _item_description.description
   ;
@@ -16504,7 +16515,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 63868,63876 ----
+--- 63870,63878 ----
   
      _item_description.description
   ;
@@ -16525,7 +16536,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 63886,63894 ----
+--- 63888,63896 ----
   
      _item_description.description
   ;
@@ -16544,7 +16555,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 63912,63918 ----
+--- 63914,63920 ----
   
      _item_description.description
   ;
@@ -16561,7 +16572,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 63936,63942 ----
+--- 63938,63944 ----
   
      _item_description.description
   ;
@@ -16580,7 +16591,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 63960,63968 ----
+--- 63962,63970 ----
   
      _item_description.description
   ;
@@ -16601,7 +16612,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 63978,63986 ----
+--- 63980,63988 ----
   
      _item_description.description
   ;
@@ -16620,7 +16631,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 64004,64010 ----
+--- 64006,64012 ----
   
      _item_description.description
   ;
@@ -16637,7 +16648,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 64028,64034 ----
+--- 64030,64036 ----
   
      _item_description.description
   ;
@@ -16654,7 +16665,7 @@
   contained in the saveframe.
   ;
   
---- 64138,64144 ----
+--- 64140,64146 ----
   
      _item_description.description
   ;
@@ -16671,7 +16682,7 @@
   T1 data from other saveframes of this category in an entry.
   ;
   
---- 64170,64176 ----
+--- 64172,64178 ----
   
      _item_description.description
   ;
@@ -16688,7 +16699,7 @@
   the data for determination of the heteronuclear T1 relaxation values.
   ;
   
---- 64220,64226 ----
+--- 64222,64228 ----
   
      _item_description.description
   ;
@@ -16705,7 +16716,7 @@
   the data.
   ;
   
---- 64236,64242 ----
+--- 64238,64244 ----
   
      _item_description.description
   ;
@@ -16715,7 +16726,7 @@
   
 ***************
 *** 62694,62699 ****
---- 64275,64282 ----
+--- 64277,64284 ----
   
      Iz    'zero quantum, longitudinal'
      Sz    'zero quantum, longitudinal'
@@ -16733,7 +16744,7 @@
   the form of the reported data as either time or rate.
   ;
   
---- 64295,64301 ----
+--- 64297,64303 ----
   
      _item_description.description
   ;
@@ -16751,7 +16762,7 @@
   tag.
   ;
   
---- 64346,64353 ----
+--- 64348,64355 ----
   
      _item_description.description
   ;
@@ -16769,7 +16780,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 64782,64788 ----
+--- 64784,64790 ----
   
      _item_description.description
   ;
@@ -16786,7 +16797,7 @@
   or any of its related tags.
   ;
   
---- 64798,64804 ----
+--- 64800,64806 ----
   
      _item_description.description
   ;
@@ -16805,7 +16816,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 64859,64867 ----
+--- 64861,64869 ----
   
      _item_description.description
   ;
@@ -16826,7 +16837,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 64877,64885 ----
+--- 64879,64887 ----
   
      _item_description.description
   ;
@@ -16845,7 +16856,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 64903,64909 ----
+--- 64905,64911 ----
   
      _item_description.description
   ;
@@ -16862,7 +16873,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 64927,64933 ----
+--- 64929,64935 ----
   
      _item_description.description
   ;
@@ -16879,7 +16890,7 @@
   contained in the saveframe.
   ;
   
---- 65021,65027 ----
+--- 65023,65029 ----
   
      _item_description.description
   ;
@@ -16896,7 +16907,7 @@
   heteronuclear T1 data from other saveframes of this category in an entry.
   ;
   
---- 65053,65059 ----
+--- 65055,65061 ----
   
      _item_description.description
   ;
@@ -16913,7 +16924,7 @@
   the data for determination of the theoretical heteronuclear T1 relaxation values.
   ;
   
---- 65103,65109 ----
+--- 65105,65111 ----
   
      _item_description.description
   ;
@@ -16930,7 +16941,7 @@
   the data.
   ;
   
---- 65119,65125 ----
+--- 65121,65127 ----
   
      _item_description.description
   ;
@@ -16940,7 +16951,7 @@
   
 ***************
 *** 63575,63580 ****
---- 65158,65165 ----
+--- 65160,65167 ----
   
      Iz    'zero quantum, longitudinal'
      Sz    'zero quantum, longitudinal'
@@ -16958,7 +16969,7 @@
   the form of the reported data as either time or rate.
   ;
   
---- 65178,65184 ----
+--- 65180,65186 ----
   
      _item_description.description
   ;
@@ -16976,7 +16987,7 @@
   tag.
   ;
   
---- 65229,65236 ----
+--- 65231,65238 ----
   
      _item_description.description
   ;
@@ -16994,7 +17005,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 65665,65671 ----
+--- 65667,65673 ----
   
      _item_description.description
   ;
@@ -17011,7 +17022,7 @@
   or any of its related tags.
   ;
   
---- 65681,65687 ----
+--- 65683,65689 ----
   
      _item_description.description
   ;
@@ -17030,7 +17041,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 65742,65750 ----
+--- 65744,65752 ----
   
      _item_description.description
   ;
@@ -17051,7 +17062,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 65760,65768 ----
+--- 65762,65770 ----
   
      _item_description.description
   ;
@@ -17070,7 +17081,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 65786,65792 ----
+--- 65788,65794 ----
   
      _item_description.description
   ;
@@ -17087,7 +17098,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 65810,65816 ----
+--- 65812,65818 ----
   
      _item_description.description
   ;
@@ -17104,7 +17115,7 @@
   contained in the saveframe.
   ;
   
---- 65904,65910 ----
+--- 65906,65912 ----
   
      _item_description.description
   ;
@@ -17121,7 +17132,7 @@
   T1rho data from other saveframes of this category in an entry.
   ;
   
---- 65936,65942 ----
+--- 65938,65944 ----
   
      _item_description.description
   ;
@@ -17138,7 +17149,7 @@
   the data for determination of the heteronuclear T1rho relaxation values.
   ;
   
---- 65986,65992 ----
+--- 65988,65994 ----
   
      _item_description.description
   ;
@@ -17155,7 +17166,7 @@
   the data.
   ;
   
---- 66002,66008 ----
+--- 66004,66010 ----
   
      _item_description.description
   ;
@@ -17172,7 +17183,7 @@
   to collect the experimental data.
   ;
   
---- 66026,66032 ----
+--- 66028,66034 ----
   
      _item_description.description
   ;
@@ -17189,7 +17200,7 @@
   caused by the long spin-lock pulse.
   ;
   
---- 66053,66059 ----
+--- 66055,66061 ----
   
      _item_description.description
   ;
@@ -17199,7 +17210,7 @@
   
 ***************
 *** 64510,64515 ****
---- 66095,66102 ----
+--- 66097,66104 ----
   
      I(+,-)    'single quantum'
      S(+,-)    'single quantum'
@@ -17218,7 +17229,7 @@
   tag.
   ;
   
---- 66183,66190 ----
+--- 66185,66192 ----
   
      _item_description.description
   ;
@@ -17236,7 +17247,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 66619,66625 ----
+--- 66621,66627 ----
   
      _item_description.description
   ;
@@ -17253,7 +17264,7 @@
   or any of its related tags.
   ;
   
---- 66635,66641 ----
+--- 66637,66643 ----
   
      _item_description.description
   ;
@@ -17272,7 +17283,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 66726,66734 ----
+--- 66728,66736 ----
   
      _item_description.description
   ;
@@ -17293,7 +17304,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 66744,66752 ----
+--- 66746,66754 ----
   
      _item_description.description
   ;
@@ -17312,7 +17323,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 66770,66776 ----
+--- 66772,66778 ----
   
      _item_description.description
   ;
@@ -17329,7 +17340,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 66794,66800 ----
+--- 66796,66802 ----
   
      _item_description.description
   ;
@@ -17346,7 +17357,7 @@
   contained in the saveframe.
   ;
   
---- 66888,66894 ----
+--- 66890,66896 ----
   
      _item_description.description
   ;
@@ -17363,7 +17374,7 @@
   T2 data from other saveframes of this category in an entry.
   ;
   
---- 66920,66926 ----
+--- 66922,66928 ----
   
      _item_description.description
   ;
@@ -17380,7 +17391,7 @@
   the data for determination of the heteronuclear T2 relaxation values.
   ;
   
---- 66970,66976 ----
+--- 66972,66978 ----
   
      _item_description.description
   ;
@@ -17397,7 +17408,7 @@
   to collect the experimental data.
   ;
   
---- 66986,66992 ----
+--- 66988,66994 ----
   
      _item_description.description
   ;
@@ -17414,7 +17425,7 @@
   caused by the long spin-lock pulse.
   ;
   
---- 67013,67019 ----
+--- 67015,67021 ----
   
      _item_description.description
   ;
@@ -17431,7 +17442,7 @@
   the data.
   ;
   
---- 67040,67046 ----
+--- 67042,67048 ----
   
      _item_description.description
   ;
@@ -17441,7 +17452,7 @@
   
 ***************
 *** 65492,65497 ****
---- 67079,67086 ----
+--- 67081,67088 ----
   
      I(+,-)    'single quantum'
      S(+,-)    'single quantum'
@@ -17460,7 +17471,7 @@
   tag.
   ;
   
---- 67167,67174 ----
+--- 67169,67176 ----
   
      _item_description.description
   ;
@@ -17478,7 +17489,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 67603,67609 ----
+--- 67605,67611 ----
   
      _item_description.description
   ;
@@ -17495,7 +17506,7 @@
   or any of its related tags.
   ;
   
---- 67619,67625 ----
+--- 67621,67627 ----
   
      _item_description.description
   ;
@@ -17514,7 +17525,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 67710,67718 ----
+--- 67712,67720 ----
   
      _item_description.description
   ;
@@ -17535,7 +17546,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 67728,67736 ----
+--- 67730,67738 ----
   
      _item_description.description
   ;
@@ -17554,7 +17565,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 67754,67760 ----
+--- 67756,67762 ----
   
      _item_description.description
   ;
@@ -17571,7 +17582,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 67778,67784 ----
+--- 67780,67786 ----
   
      _item_description.description
   ;
@@ -17588,7 +17599,7 @@
   contained in the saveframe.
   ;
   
---- 67872,67878 ----
+--- 67874,67880 ----
   
      _item_description.description
   ;
@@ -17605,7 +17616,7 @@
   heteronuclear T2 data from other saveframes of this category in an entry.
   ;
   
---- 67904,67910 ----
+--- 67906,67912 ----
   
      _item_description.description
   ;
@@ -17622,7 +17633,7 @@
   the data for determination of the theoretical heteronuclear T2 relaxation values.
   ;
   
---- 67954,67960 ----
+--- 67956,67962 ----
   
      _item_description.description
   ;
@@ -17639,7 +17650,7 @@
   to collect the experimental data.
   ;
   
---- 67970,67976 ----
+--- 67972,67978 ----
   
      _item_description.description
   ;
@@ -17656,7 +17667,7 @@
   caused by the long spin-lock pulse.
   ;
   
---- 67997,68003 ----
+--- 67999,68005 ----
   
      _item_description.description
   ;
@@ -17673,7 +17684,7 @@
   the data.
   ;
   
---- 68024,68030 ----
+--- 68026,68032 ----
   
      _item_description.description
   ;
@@ -17683,7 +17694,7 @@
   
 ***************
 *** 66474,66479 ****
---- 68063,68070 ----
+--- 68065,68072 ----
   
      I(+,-)    'single quantum'
      S(+,-)    'single quantum'
@@ -17702,7 +17713,7 @@
   tag.
   ;
   
---- 68151,68158 ----
+--- 68153,68160 ----
   
      _item_description.description
   ;
@@ -17720,7 +17731,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 68587,68593 ----
+--- 68589,68595 ----
   
      _item_description.description
   ;
@@ -17737,7 +17748,7 @@
   or any of its related tags.
   ;
   
---- 68603,68609 ----
+--- 68605,68611 ----
   
      _item_description.description
   ;
@@ -17756,7 +17767,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 68694,68702 ----
+--- 68696,68704 ----
   
      _item_description.description
   ;
@@ -17777,7 +17788,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 68712,68720 ----
+--- 68714,68722 ----
   
      _item_description.description
   ;
@@ -17796,7 +17807,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 68738,68744 ----
+--- 68740,68746 ----
   
      _item_description.description
   ;
@@ -17813,7 +17824,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 68762,68768 ----
+--- 68764,68770 ----
   
      _item_description.description
   ;
@@ -17830,7 +17841,7 @@
   contained in the saveframe.
   ;
   
---- 68856,68862 ----
+--- 68858,68864 ----
   
      _item_description.description
   ;
@@ -17847,7 +17858,7 @@
   data from other saveframes of this category in an entry.
   ;
   
---- 68888,68894 ----
+--- 68890,68896 ----
   
      _item_description.description
   ;
@@ -17864,7 +17875,7 @@
   the data for determination of the general relaxation values.
   ;
   
---- 68938,68944 ----
+--- 68940,68946 ----
   
      _item_description.description
   ;
@@ -17881,7 +17892,7 @@
   to collect the experimental data.
   ;
   
---- 68954,68960 ----
+--- 68956,68962 ----
   
      _item_description.description
   ;
@@ -17898,7 +17909,7 @@
   caused by the long spin-lock pulse.
   ;
   
---- 68981,68987 ----
+--- 68983,68989 ----
   
      _item_description.description
   ;
@@ -17915,7 +17926,7 @@
   the data.
   ;
   
---- 69009,69015 ----
+--- 69011,69017 ----
   
      _item_description.description
   ;
@@ -17932,7 +17943,7 @@
   a high level of precision.
   ;
   
---- 69033,69039 ----
+--- 69035,69041 ----
   
      _item_description.description
   ;
@@ -17949,7 +17960,7 @@
   the text block that is the value to the '_Auto_relaxation_list.Text_data' tag.
   ;
   
---- 69247,69253 ----
+--- 69249,69255 ----
   
      _item_description.description
   ;
@@ -17966,7 +17977,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 69697,69703 ----
+--- 69699,69705 ----
   
      _item_description.description
   ;
@@ -17983,7 +17994,7 @@
   or any of its related tags.
   ;
   
---- 69713,69719 ----
+--- 69715,69721 ----
   
      _item_description.description
   ;
@@ -18002,7 +18013,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 69804,69812 ----
+--- 69806,69814 ----
   
      _item_description.description
   ;
@@ -18023,7 +18034,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 69822,69830 ----
+--- 69824,69832 ----
   
      _item_description.description
   ;
@@ -18042,7 +18053,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 69848,69854 ----
+--- 69850,69856 ----
   
      _item_description.description
   ;
@@ -18059,7 +18070,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 69872,69878 ----
+--- 69874,69880 ----
   
      _item_description.description
   ;
@@ -18076,7 +18087,7 @@
   contained in the saveframe.
   ;
   
---- 69966,69972 ----
+--- 69968,69974 ----
   
      _item_description.description
   ;
@@ -18093,7 +18104,7 @@
   data from other saveframes of this category in an entry.
   ;
   
---- 69998,70004 ----
+--- 70000,70006 ----
   
      _item_description.description
   ;
@@ -18110,7 +18121,7 @@
   the data for determination of the general relaxation values.
   ;
   
---- 70048,70054 ----
+--- 70050,70056 ----
   
      _item_description.description
   ;
@@ -18127,7 +18138,7 @@
   to collect the experimental data.
   ;
   
---- 70064,70070 ----
+--- 70066,70072 ----
   
      _item_description.description
   ;
@@ -18144,7 +18155,7 @@
   caused by the long spin-lock pulse.
   ;
   
---- 70091,70097 ----
+--- 70093,70099 ----
   
      _item_description.description
   ;
@@ -18161,7 +18172,7 @@
   the data.
   ;
   
---- 70119,70125 ----
+--- 70121,70127 ----
   
      _item_description.description
   ;
@@ -18178,7 +18189,7 @@
   a high level of precision.
   ;
   
---- 70143,70149 ----
+--- 70145,70151 ----
   
      _item_description.description
   ;
@@ -18196,7 +18207,7 @@
   tag.
   ;
   
---- 70357,70364 ----
+--- 70359,70366 ----
   
      _item_description.description
   ;
@@ -18214,7 +18225,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 70808,70814 ----
+--- 70810,70816 ----
   
      _item_description.description
   ;
@@ -18231,7 +18242,7 @@
   or any of its related tags.
   ;
   
---- 70824,70830 ----
+--- 70826,70832 ----
   
      _item_description.description
   ;
@@ -18250,7 +18261,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 70915,70923 ----
+--- 70917,70925 ----
   
      _item_description.description
   ;
@@ -18271,7 +18282,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 70933,70941 ----
+--- 70935,70943 ----
   
      _item_description.description
   ;
@@ -18290,7 +18301,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 70959,70965 ----
+--- 70961,70967 ----
   
      _item_description.description
   ;
@@ -18307,7 +18318,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 70983,70989 ----
+--- 70985,70991 ----
   
      _item_description.description
   ;
@@ -18324,7 +18335,7 @@
   contained in the saveframe.
   ;
   
---- 71077,71083 ----
+--- 71079,71085 ----
   
      _item_description.description
   ;
@@ -18341,7 +18352,7 @@
   the data for determination of the dipole-dipole relaxation values.
   ;
   
---- 71158,71164 ----
+--- 71160,71166 ----
   
      _item_description.description
   ;
@@ -18358,7 +18369,7 @@
   the data.
   ;
   
---- 71174,71180 ----
+--- 71176,71182 ----
   
      _item_description.description
   ;
@@ -18376,7 +18387,7 @@
   tag.
   ;
   
---- 71239,71246 ----
+--- 71241,71248 ----
   
      _item_description.description
   ;
@@ -18394,7 +18405,7 @@
   or any of its related tags.
   ;
   
---- 71690,71696 ----
+--- 71692,71698 ----
   
      _item_description.description
   ;
@@ -18411,7 +18422,7 @@
   or any of its related tags.
   ;
   
---- 71826,71832 ----
+--- 71828,71834 ----
   
      _item_description.description
   ;
@@ -18430,7 +18441,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 71902,71910 ----
+--- 71904,71912 ----
   
      _item_description.description
   ;
@@ -18451,7 +18462,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 71920,71928 ----
+--- 71922,71930 ----
   
      _item_description.description
   ;
@@ -18470,7 +18481,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 71946,71952 ----
+--- 71948,71954 ----
   
      _item_description.description
   ;
@@ -18487,7 +18498,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 71970,71976 ----
+--- 71972,71978 ----
   
      _item_description.description
   ;
@@ -18506,7 +18517,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 71994,72002 ----
+--- 71996,72004 ----
   
      _item_description.description
   ;
@@ -18527,7 +18538,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 72012,72020 ----
+--- 72014,72022 ----
   
      _item_description.description
   ;
@@ -18546,7 +18557,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 72038,72044 ----
+--- 72040,72046 ----
   
      _item_description.description
   ;
@@ -18563,7 +18574,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 72062,72068 ----
+--- 72064,72070 ----
   
      _item_description.description
   ;
@@ -18580,7 +18591,7 @@
   contained in the saveframe.
   ;
   
---- 72156,72162 ----
+--- 72158,72164 ----
   
      _item_description.description
   ;
@@ -18597,7 +18608,7 @@
   the data for determination of the cross-correlation values.
   ;
   
---- 72237,72243 ----
+--- 72239,72245 ----
   
      _item_description.description
   ;
@@ -18614,7 +18625,7 @@
   the data.
   ;
   
---- 72253,72259 ----
+--- 72255,72261 ----
   
      _item_description.description
   ;
@@ -18632,7 +18643,7 @@
   tag.
   ;
   
---- 72326,72333 ----
+--- 72328,72335 ----
   
      _item_description.description
   ;
@@ -18650,7 +18661,7 @@
   text.
   ;
   
---- 72343,72349 ----
+--- 72345,72351 ----
   
      _item_description.description
   ;
@@ -18667,7 +18678,7 @@
   or any of its related tags.
   ;
   
---- 72778,72784 ----
+--- 72780,72786 ----
   
      _item_description.description
   ;
@@ -18684,7 +18695,7 @@
   or any of its related tags.
   ;
   
---- 72914,72920 ----
+--- 72916,72922 ----
   
      _item_description.description
   ;
@@ -18701,7 +18712,7 @@
   or any of its related tags.
   ;
   
---- 73050,73056 ----
+--- 73052,73058 ----
   
      _item_description.description
   ;
@@ -18718,7 +18729,7 @@
   or any of its related tags.
   ;
   
---- 73186,73192 ----
+--- 73188,73194 ----
   
      _item_description.description
   ;
@@ -18735,7 +18746,7 @@
   value.
   ;
   
---- 73217,73223 ----
+--- 73219,73225 ----
   
      _item_description.description
   ;
@@ -18754,7 +18765,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 73293,73301 ----
+--- 73295,73303 ----
   
      _item_description.description
   ;
@@ -18775,7 +18786,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 73311,73319 ----
+--- 73313,73321 ----
   
      _item_description.description
   ;
@@ -18794,7 +18805,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73337,73343 ----
+--- 73339,73345 ----
   
      _item_description.description
   ;
@@ -18811,7 +18822,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73361,73367 ----
+--- 73363,73369 ----
   
      _item_description.description
   ;
@@ -18830,7 +18841,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 73385,73393 ----
+--- 73387,73395 ----
   
      _item_description.description
   ;
@@ -18851,7 +18862,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 73403,73411 ----
+--- 73405,73413 ----
   
      _item_description.description
   ;
@@ -18870,7 +18881,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73429,73435 ----
+--- 73431,73437 ----
   
      _item_description.description
   ;
@@ -18887,7 +18898,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73453,73459 ----
+--- 73455,73461 ----
   
      _item_description.description
   ;
@@ -18906,7 +18917,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 73477,73485 ----
+--- 73479,73487 ----
   
      _item_description.description
   ;
@@ -18927,7 +18938,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 73495,73503 ----
+--- 73497,73505 ----
   
      _item_description.description
   ;
@@ -18946,7 +18957,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73521,73527 ----
+--- 73523,73529 ----
   
      _item_description.description
   ;
@@ -18963,7 +18974,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73545,73551 ----
+--- 73547,73553 ----
   
      _item_description.description
   ;
@@ -18982,7 +18993,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 73569,73577 ----
+--- 73571,73579 ----
   
      _item_description.description
   ;
@@ -19003,7 +19014,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 73587,73595 ----
+--- 73589,73597 ----
   
      _item_description.description
   ;
@@ -19022,7 +19033,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73613,73619 ----
+--- 73615,73621 ----
   
      _item_description.description
   ;
@@ -19039,7 +19050,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 73637,73643 ----
+--- 73639,73645 ----
   
      _item_description.description
   ;
@@ -19056,7 +19067,7 @@
   contained in the saveframe.
   ;
   
---- 73731,73737 ----
+--- 73733,73739 ----
   
      _item_description.description
   ;
@@ -19073,7 +19084,7 @@
     '_theoretical_cross_correlation_dd_software.theoretical_cross_correlation_dd_list_id'  'theoretical_cross_correlation_dd_software'         yes
     '_theoretical_cross_correlation_dd.theoretical_cross_correlation_dd_list_id'           'theoretical_cross_correlation_dd'                  yes
   
---- 73772,73778 ----
+--- 73774,73780 ----
         _item.mandatory_code
   
     '_theoretical_cross_correlation_dd_list.id'            'theoretical_cross_correlation_dd_list'   yes
@@ -19090,7 +19101,7 @@
     '_theoretical_cross_correlation_dd_software.theoretical_cross_correlation_dd_list_id'  '_theoretical_cross_correlation_dd_list.id'
     '_theoretical_cross_correlation_dd.theoretical_cross_correlation_dd_list_id'           '_theoretical_cross_correlation_dd_list.id'
   
---- 73782,73788 ----
+--- 73784,73790 ----
         _item_linked.child_name
         _item_linked.parent_name
   
@@ -19107,7 +19118,7 @@
   the data for determination of the cross-correlation values.
   ;
   
---- 73812,73818 ----
+--- 73814,73820 ----
   
      _item_description.description
   ;
@@ -19124,7 +19135,7 @@
   the data.
   ;
   
---- 73828,73834 ----
+--- 73830,73836 ----
   
      _item_description.description
   ;
@@ -19142,7 +19153,7 @@
   tag.
   ;
   
---- 73901,73908 ----
+--- 73903,73910 ----
   
      _item_description.description
   ;
@@ -19160,7 +19171,7 @@
   text.
   ;
   
---- 73918,73924 ----
+--- 73920,73926 ----
   
      _item_description.description
   ;
@@ -19177,7 +19188,7 @@
   or any of its related tags.
   ;
   
---- 74353,74359 ----
+--- 74355,74361 ----
   
      _item_description.description
   ;
@@ -19194,7 +19205,7 @@
   or any of its related tags.
   ;
   
---- 74489,74495 ----
+--- 74491,74497 ----
   
      _item_description.description
   ;
@@ -19211,7 +19222,7 @@
   or any of its related tags.
   ;
   
---- 74625,74631 ----
+--- 74627,74633 ----
   
      _item_description.description
   ;
@@ -19228,7 +19239,7 @@
   or any of its related tags.
   ;
   
---- 74761,74767 ----
+--- 74763,74769 ----
   
      _item_description.description
   ;
@@ -19245,7 +19256,7 @@
   value.
   ;
   
---- 74792,74798 ----
+--- 74794,74800 ----
   
      _item_description.description
   ;
@@ -19264,7 +19275,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 74868,74876 ----
+--- 74870,74878 ----
   
      _item_description.description
   ;
@@ -19285,7 +19296,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 74886,74894 ----
+--- 74888,74896 ----
   
      _item_description.description
   ;
@@ -19304,7 +19315,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 74912,74918 ----
+--- 74914,74920 ----
   
      _item_description.description
   ;
@@ -19321,7 +19332,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 74936,74942 ----
+--- 74938,74944 ----
   
      _item_description.description
   ;
@@ -19340,7 +19351,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 74960,74968 ----
+--- 74962,74970 ----
   
      _item_description.description
   ;
@@ -19361,7 +19372,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 74978,74986 ----
+--- 74980,74988 ----
   
      _item_description.description
   ;
@@ -19380,7 +19391,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 75004,75010 ----
+--- 75006,75012 ----
   
      _item_description.description
   ;
@@ -19397,7 +19408,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 75028,75034 ----
+--- 75030,75036 ----
   
      _item_description.description
   ;
@@ -19416,7 +19427,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 75052,75060 ----
+--- 75054,75062 ----
   
      _item_description.description
   ;
@@ -19437,7 +19448,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 75070,75078 ----
+--- 75072,75080 ----
   
      _item_description.description
   ;
@@ -19456,7 +19467,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 75096,75102 ----
+--- 75098,75104 ----
   
      _item_description.description
   ;
@@ -19473,7 +19484,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 75120,75126 ----
+--- 75122,75128 ----
   
      _item_description.description
   ;
@@ -19492,7 +19503,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 75144,75152 ----
+--- 75146,75154 ----
   
      _item_description.description
   ;
@@ -19513,7 +19524,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 75162,75170 ----
+--- 75164,75172 ----
   
      _item_description.description
   ;
@@ -19532,7 +19543,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 75188,75194 ----
+--- 75190,75196 ----
   
      _item_description.description
   ;
@@ -19549,7 +19560,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 75212,75218 ----
+--- 75214,75220 ----
   
      _item_description.description
   ;
@@ -19566,7 +19577,7 @@
   contained in the saveframe.
   ;
   
---- 75306,75312 ----
+--- 75308,75314 ----
   
      _item_description.description
   ;
@@ -19583,7 +19594,7 @@
   the data for determination of the cross-correlation values.
   ;
   
---- 75387,75393 ----
+--- 75389,75395 ----
   
      _item_description.description
   ;
@@ -19600,7 +19611,7 @@
   the data.
   ;
   
---- 75403,75409 ----
+--- 75405,75411 ----
   
      _item_description.description
   ;
@@ -19618,7 +19629,7 @@
   tag.
   ;
   
---- 75476,75483 ----
+--- 75478,75485 ----
   
      _item_description.description
   ;
@@ -19636,7 +19647,7 @@
   or any of its related tags.
   ;
   
---- 75927,75933 ----
+--- 75929,75935 ----
   
      _item_description.description
   ;
@@ -19653,7 +19664,7 @@
   or any of its related tags.
   ;
   
---- 76063,76069 ----
+--- 76065,76071 ----
   
      _item_description.description
   ;
@@ -19670,7 +19681,7 @@
   or any of its related tags.
   ;
   
---- 76199,76205 ----
+--- 76201,76207 ----
   
      _item_description.description
   ;
@@ -19687,7 +19698,7 @@
   or any of its related tags.
   ;
   
---- 76335,76341 ----
+--- 76337,76343 ----
   
      _item_description.description
   ;
@@ -19704,7 +19715,7 @@
   value.
   ;
   
---- 76366,76372 ----
+--- 76368,76374 ----
   
      _item_description.description
   ;
@@ -19723,7 +19734,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 76442,76450 ----
+--- 76444,76452 ----
   
      _item_description.description
   ;
@@ -19744,7 +19755,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 76460,76468 ----
+--- 76462,76470 ----
   
      _item_description.description
   ;
@@ -19763,7 +19774,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76486,76492 ----
+--- 76488,76494 ----
   
      _item_description.description
   ;
@@ -19780,7 +19791,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76510,76516 ----
+--- 76512,76518 ----
   
      _item_description.description
   ;
@@ -19799,7 +19810,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 76534,76542 ----
+--- 76536,76544 ----
   
      _item_description.description
   ;
@@ -19820,7 +19831,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 76552,76560 ----
+--- 76554,76562 ----
   
      _item_description.description
   ;
@@ -19839,7 +19850,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76578,76584 ----
+--- 76580,76586 ----
   
      _item_description.description
   ;
@@ -19856,7 +19867,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76602,76608 ----
+--- 76604,76610 ----
   
      _item_description.description
   ;
@@ -19875,7 +19886,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 76626,76634 ----
+--- 76628,76636 ----
   
      _item_description.description
   ;
@@ -19896,7 +19907,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 76644,76652 ----
+--- 76646,76654 ----
   
      _item_description.description
   ;
@@ -19915,7 +19926,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76670,76676 ----
+--- 76672,76678 ----
   
      _item_description.description
   ;
@@ -19932,7 +19943,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76694,76700 ----
+--- 76696,76702 ----
   
      _item_description.description
   ;
@@ -19951,7 +19962,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 76718,76726 ----
+--- 76720,76728 ----
   
      _item_description.description
   ;
@@ -19972,7 +19983,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 76736,76744 ----
+--- 76738,76746 ----
   
      _item_description.description
   ;
@@ -19991,7 +20002,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76762,76768 ----
+--- 76764,76770 ----
   
      _item_description.description
   ;
@@ -20008,7 +20019,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 76786,76792 ----
+--- 76788,76794 ----
   
      _item_description.description
   ;
@@ -20025,7 +20036,7 @@
   contained in the saveframe.
   ;
   
---- 76880,76886 ----
+--- 76882,76888 ----
   
      _item_description.description
   ;
@@ -20042,7 +20053,7 @@
   the data for determination of the order parameters.
   ;
   
---- 76961,76967 ----
+--- 76963,76969 ----
   
      _item_description.description
   ;
@@ -20059,7 +20070,7 @@
   the molecule.
   ;
   
---- 77013,77019 ----
+--- 77015,77021 ----
   
      _item_description.description
   ;
@@ -20076,7 +20087,7 @@
   the molecule.
   ;
   
---- 77050,77056 ----
+--- 77052,77058 ----
   
      _item_description.description
   ;
@@ -20093,7 +20104,7 @@
   in the text block that is the value to the '_Order_parameter_list.Text_data' tag.
   ;
   
---- 77159,77165 ----
+--- 77161,77167 ----
   
      _item_description.description
   ;
@@ -20110,7 +20121,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 77594,77600 ----
+--- 77596,77602 ----
   
      _item_description.description
   ;
@@ -20127,7 +20138,7 @@
   or any of its related tags.
   ;
   
---- 77610,77616 ----
+--- 77612,77618 ----
   
      _item_description.description
   ;
@@ -20144,7 +20155,7 @@
   motion in the molecule.
   ;
   
---- 77716,77722 ----
+--- 77718,77724 ----
   
      _item_description.description
   ;
@@ -20161,7 +20172,7 @@
   the the 'slow' motion in the molecule.
   ;
   
---- 77732,77738 ----
+--- 77734,77740 ----
   
      _item_description.description
   ;
@@ -20178,7 +20189,7 @@
   software package.
   ;
   
---- 77778,77784 ----
+--- 77780,77786 ----
   
      _item_description.description
   ;
@@ -20195,7 +20206,7 @@
   in the molecule.
   ;
   
---- 77824,77830 ----
+--- 77826,77832 ----
   
      _item_description.description
   ;
@@ -20212,7 +20223,7 @@
   in the molecule.
   ;
   
---- 77855,77861 ----
+--- 77857,77863 ----
   
      _item_description.description
   ;
@@ -20231,7 +20242,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 77946,77954 ----
+--- 77948,77956 ----
   
      _item_description.description
   ;
@@ -20252,7 +20263,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 77964,77972 ----
+--- 77966,77974 ----
   
      _item_description.description
   ;
@@ -20271,7 +20282,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 77990,77996 ----
+--- 77992,77998 ----
   
      _item_description.description
   ;
@@ -20288,7 +20299,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 78014,78020 ----
+--- 78016,78022 ----
   
      _item_description.description
   ;
@@ -20305,7 +20316,7 @@
   contained in the saveframe.
   ;
   
---- 78108,78114 ----
+--- 78110,78116 ----
   
      _item_description.description
   ;
@@ -20322,7 +20333,7 @@
   the pH titration data.
   ;
   
---- 78191,78197 ----
+--- 78193,78199 ----
   
      _item_description.description
   ;
@@ -20339,7 +20350,7 @@
   the effect of pH on the macromolecule.
   ;
   
---- 78207,78213 ----
+--- 78209,78215 ----
   
      _item_description.description
   ;
@@ -20349,7 +20360,7 @@
   
 ***************
 *** 76634,76639 ****
---- 78225,78232 ----
+--- 78227,78234 ----
      'coupling constant'    ?
      'peak height'    ?
      'peak volume'    ?
@@ -20367,7 +20378,7 @@
   text in the text block that is the value to the '_PH_titration_list.Text_data' tag.
   ;
   
---- 78260,78266 ----
+--- 78262,78268 ----
   
      _item_description.description
   ;
@@ -20384,7 +20395,7 @@
   or any of its related tags.
   ;
   
---- 78725,78731 ----
+--- 78727,78733 ----
   
      _item_description.description
   ;
@@ -20403,7 +20414,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 78741,78749 ----
+--- 78743,78751 ----
   
      _item_description.description
   ;
@@ -20424,7 +20435,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 78759,78767 ----
+--- 78761,78769 ----
   
      _item_description.description
   ;
@@ -20443,7 +20454,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 78785,78791 ----
+--- 78787,78793 ----
   
      _item_description.description
   ;
@@ -20460,7 +20471,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 78809,78815 ----
+--- 78811,78817 ----
   
      _item_description.description
   ;
@@ -20477,7 +20488,7 @@
   or any of its related tags.
   ;
   
---- 78953,78959 ----
+--- 78955,78961 ----
   
      _item_description.description
   ;
@@ -20496,7 +20507,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 78969,78977 ----
+--- 78971,78979 ----
   
      _item_description.description
   ;
@@ -20517,7 +20528,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 78987,78995 ----
+--- 78989,78997 ----
   
      _item_description.description
   ;
@@ -20536,7 +20547,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 79013,79019 ----
+--- 79015,79021 ----
   
      _item_description.description
   ;
@@ -20553,7 +20564,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 79037,79043 ----
+--- 79039,79045 ----
   
      _item_description.description
   ;
@@ -20570,7 +20581,7 @@
   pH value.
   ;
   
---- 79091,79097 ----
+--- 79093,79099 ----
   
      _item_description.description
   ;
@@ -20587,7 +20598,7 @@
   pH value.
   ;
   
---- 79122,79128 ----
+--- 79124,79130 ----
   
      _item_description.description
   ;
@@ -20604,7 +20615,7 @@
   contained in the saveframe.
   ;
   
---- 79283,79289 ----
+--- 79285,79291 ----
   
      _item_description.description
   ;
@@ -20621,7 +20632,7 @@
   reported pKa values are provided.
   ;
   
---- 79360,79366 ----
+--- 79362,79368 ----
   
      _item_description.description
   ;
@@ -20638,7 +20649,7 @@
   the effect of pH on the macromolecule.
   ;
   
---- 79376,79382 ----
+--- 79378,79384 ----
   
      _item_description.description
   ;
@@ -20648,7 +20659,7 @@
   
 ***************
 *** 77801,77806 ****
---- 79394,79401 ----
+--- 79396,79403 ----
      'coupling constant'    ?
      'peak height'    ?
      'peak volume'    ?
@@ -20666,7 +20677,7 @@
   the text block that is the value to the '_PH_param_list.Text_data' tag.
   ;
   
---- 79429,79435 ----
+--- 79431,79437 ----
   
      _item_description.description
   ;
@@ -20683,7 +20694,7 @@
   contained in the saveframe.
   ;
   
---- 79646,79652 ----
+--- 79648,79654 ----
   
      _item_description.description
   ;
@@ -20700,7 +20711,7 @@
   factors.
   ;
   
---- 79678,79684 ----
+--- 79680,79686 ----
   
      _item_description.description
   ;
@@ -20717,7 +20728,7 @@
   the data for determination of the D/H fractionation factors.
   ;
   
---- 79728,79734 ----
+--- 79730,79736 ----
   
      _item_description.description
   ;
@@ -20735,7 +20746,7 @@
   tag.
   ;
   
---- 79759,79766 ----
+--- 79761,79768 ----
   
      _item_description.description
   ;
@@ -20753,7 +20764,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 80195,80201 ----
+--- 80197,80203 ----
   
      _item_description.description
   ;
@@ -20772,7 +20783,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 80256,80264 ----
+--- 80258,80266 ----
   
      _item_description.description
   ;
@@ -20793,7 +20804,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 80274,80282 ----
+--- 80276,80284 ----
   
      _item_description.description
   ;
@@ -20812,7 +20823,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 80300,80306 ----
+--- 80302,80308 ----
   
      _item_description.description
   ;
@@ -20829,7 +20840,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 80324,80330 ----
+--- 80326,80332 ----
   
      _item_description.description
   ;
@@ -20846,7 +20857,7 @@
   contained in the saveframe.
   ;
   
---- 80418,80424 ----
+--- 80420,80426 ----
   
      _item_description.description
   ;
@@ -20863,7 +20874,7 @@
   the binding data.
   ;
   
---- 80503,80509 ----
+--- 80505,80511 ----
   
      _item_description.description
   ;
@@ -20880,7 +20891,7 @@
   text block that is the value to the '_Binding_value_list.Text_data' tag.
   ;
   
---- 80534,80540 ----
+--- 80536,80542 ----
   
      _item_description.description
   ;
@@ -20899,7 +20910,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 81075,81083 ----
+--- 81077,81085 ----
   
      _item_description.description
   ;
@@ -20918,7 +20929,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 81101,81107 ----
+--- 81103,81109 ----
   
      _item_description.description
   ;
@@ -20935,7 +20946,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 81125,81131 ----
+--- 81127,81133 ----
   
      _item_description.description
   ;
@@ -20952,7 +20963,7 @@
   contained in the saveframe.
   ;
   
---- 81441,81447 ----
+--- 81443,81449 ----
   
      _item_description.description
   ;
@@ -20969,7 +20980,7 @@
   that were calculated from the measured data values provided in this save frame.
   ;
   
---- 81518,81524 ----
+--- 81520,81526 ----
   
      _item_description.description
   ;
@@ -20986,7 +20997,7 @@
   binding constants.
   ;
   
---- 81549,81555 ----
+--- 81551,81557 ----
   
      _item_description.description
   ;
@@ -21003,7 +21014,7 @@
   in the text block that is the value to the '_Binding_param_list.Text_data' tag.
   ;
   
---- 81580,81586 ----
+--- 81582,81588 ----
   
      _item_description.description
   ;
@@ -21020,7 +21031,7 @@
   contained in the saveframe.
   ;
   
---- 81827,81833 ----
+--- 81829,81835 ----
   
      _item_description.description
   ;
@@ -21037,7 +21048,7 @@
   elements and their derivation.
   ;
   
---- 81895,81901 ----
+--- 81897,81903 ----
   
      _item_description.description
   ;
@@ -21054,7 +21065,7 @@
   residues in the secondary structures.
   ;
   
---- 81941,81947 ----
+--- 81943,81949 ----
   
      _item_description.description
   ;
@@ -21072,7 +21083,7 @@
   tag.
   ;
   
---- 81957,81964 ----
+--- 81959,81966 ----
   
      _item_description.description
   ;
@@ -21092,7 +21103,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 82378,82386 ----
+--- 82380,82388 ----
   
      _item_description.description
   ;
@@ -21113,7 +21124,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 82396,82404 ----
+--- 82398,82406 ----
   
      _item_description.description
   ;
@@ -21132,7 +21143,7 @@
   static field (Bo) for a solid state sample.
   ;
   
---- 82452,82458 ----
+--- 82454,82460 ----
   
      _item_description.description
   ;
@@ -21149,7 +21160,7 @@
   structure feature.
   ;
   
---- 82707,82713 ----
+--- 82709,82715 ----
   
      _item_description.description
   ;
@@ -21166,7 +21177,7 @@
   feature has been determined.
   ;
   
---- 82738,82744 ----
+--- 82740,82746 ----
   
      _item_description.description
   ;
@@ -21185,7 +21196,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 82769,82777 ----
+--- 82771,82779 ----
   
      _item_description.description
   ;
@@ -21206,7 +21217,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 82787,82795 ----
+--- 82789,82797 ----
   
      _item_description.description
   ;
@@ -21225,7 +21236,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 82813,82819 ----
+--- 82815,82821 ----
   
      _item_description.description
   ;
@@ -21242,7 +21253,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 82837,82843 ----
+--- 82839,82845 ----
   
      _item_description.description
   ;
@@ -21259,7 +21270,7 @@
   contained in the saveframe.
   ;
   
---- 82931,82937 ----
+--- 82933,82939 ----
   
      _item_description.description
   ;
@@ -21276,7 +21287,7 @@
   experimental data.
   ;
   
---- 82963,82969 ----
+--- 82965,82971 ----
   
      _item_description.description
   ;
@@ -21293,7 +21304,7 @@
   text in the text block that is the value to the '_Deduced_H_bond_list.Text_data' tag.
   ;
   
---- 83043,83049 ----
+--- 83045,83051 ----
   
      _item_description.description
   ;
@@ -21310,7 +21321,7 @@
   is donating the proton in the hydrogen bond.
   ;
   
---- 83373,83379 ----
+--- 83375,83381 ----
   
      _item_description.description
   ;
@@ -21329,7 +21340,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 83629,83637 ----
+--- 83631,83639 ----
   
      _item_description.description
   ;
@@ -21350,7 +21361,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 83647,83655 ----
+--- 83649,83657 ----
   
      _item_description.description
   ;
@@ -21369,7 +21380,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 83673,83679 ----
+--- 83675,83681 ----
   
      _item_description.description
   ;
@@ -21386,7 +21397,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 83697,83703 ----
+--- 83699,83705 ----
   
      _item_description.description
   ;
@@ -21405,7 +21416,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 83721,83729 ----
+--- 83723,83731 ----
   
      _item_description.description
   ;
@@ -21426,7 +21437,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 83739,83747 ----
+--- 83741,83749 ----
   
      _item_description.description
   ;
@@ -21445,7 +21456,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 83765,83771 ----
+--- 83767,83773 ----
   
      _item_description.description
   ;
@@ -21462,7 +21473,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 83789,83795 ----
+--- 83791,83797 ----
   
      _item_description.description
   ;
@@ -21481,7 +21492,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 83918,83926 ----
+--- 83920,83928 ----
   
      _item_description.description
   ;
@@ -21502,7 +21513,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 83936,83944 ----
+--- 83938,83946 ----
   
      _item_description.description
   ;
@@ -21521,7 +21532,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 83962,83968 ----
+--- 83964,83970 ----
   
      _item_description.description
   ;
@@ -21538,7 +21549,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 83986,83992 ----
+--- 83988,83994 ----
   
      _item_description.description
   ;
@@ -21555,7 +21566,7 @@
   to exist.
   ;
   
---- 84010,84016 ----
+--- 84012,84018 ----
   
      _item_description.description
   ;
@@ -21572,7 +21583,7 @@
   contained in the saveframe.
   ;
   
---- 84096,84102 ----
+--- 84098,84104 ----
   
      _item_description.description
   ;
@@ -21589,7 +21600,7 @@
   from other saveframes of this category in an entry.
   ;
   
---- 84128,84134 ----
+--- 84130,84136 ----
   
      _item_description.description
   ;
@@ -21606,7 +21617,7 @@
   text in the text block that is the value to the '_Conformer_stat_list.Text_data' tag.
   ;
   
---- 84163,84169 ----
+--- 84165,84171 ----
   
      _item_description.description
   ;
@@ -21623,7 +21634,7 @@
   by a depositor.
   ;
   
---- 84194,84200 ----
+--- 84196,84202 ----
   
      _item_description.description
   ;
@@ -21640,7 +21651,7 @@
   from the total number of calculated conformers.
   ;
   
---- 84324,84330 ----
+--- 84326,84332 ----
   
      _item_description.description
   ;
@@ -21650,7 +21661,7 @@
   
 ***************
 *** 82750,82755 ****
---- 84345,84352 ----
+--- 84347,84354 ----
      'structures with acceptable covalent geometry'    ?
      'structures with favorable non-bond energy'    ?
      'target function'    ?
@@ -21668,7 +21679,7 @@
   the conformer in the family that is representative for the family.
   ;
   
---- 84365,84371 ----
+--- 84367,84373 ----
   
      _item_description.description
   ;
@@ -21685,7 +21696,7 @@
   of the conformer family.
   ;
   
---- 84389,84395 ----
+--- 84391,84397 ----
   
      _item_description.description
   ;
@@ -21695,7 +21706,7 @@
   
 ***************
 *** 82810,82815 ****
---- 84407,84414 ----
+--- 84409,84416 ----
      'lowest energy'    ?
      'fewest violations'    ?
      'minimized average structure'    ?
@@ -21713,7 +21724,7 @@
   parameters for the conformer family and representative conformer.
   ;
   
---- 84427,84433 ----
+--- 84429,84435 ----
   
      _item_description.description
   ;
@@ -21734,7 +21745,7 @@
   without providing this information.
   ;
   
---- 84483,84493 ----
+--- 84485,84495 ----
   
      _item_description.description
   ;
@@ -21755,7 +21766,7 @@
   as defined for proteins.
   ;
   
---- 84522,84528 ----
+--- 84524,84530 ----
   
      _item_description.description
   ;
@@ -21772,7 +21783,7 @@
   for proteins.
   ;
   
---- 84546,84552 ----
+--- 84548,84554 ----
   
      _item_description.description
   ;
@@ -21789,7 +21800,7 @@
   plot as defined for proteins.
   ;
   
---- 84570,84576 ----
+--- 84572,84578 ----
   
      _item_description.description
   ;
@@ -21806,7 +21817,7 @@
   defined for proteins.
   ;
   
---- 84594,84600 ----
+--- 84596,84602 ----
   
      _item_description.description
   ;
@@ -21823,7 +21834,7 @@
   conformers.
   ;
   
---- 84633,84639 ----
+--- 84635,84641 ----
   
      _item_description.description
   ;
@@ -21840,7 +21851,7 @@
   conformers.
   ;
   
---- 84672,84678 ----
+--- 84674,84680 ----
   
      _item_description.description
   ;
@@ -21857,7 +21868,7 @@
   conformers.
   ;
   
---- 84719,84725 ----
+--- 84721,84727 ----
   
      _item_description.description
   ;
@@ -21874,7 +21885,7 @@
   of conformers.
   ;
   
---- 84766,84772 ----
+--- 84768,84774 ----
   
      _item_description.description
   ;
@@ -21891,7 +21902,7 @@
   of conformers.
   ;
   
---- 84813,84819 ----
+--- 84815,84821 ----
   
      _item_description.description
   ;
@@ -21908,7 +21919,7 @@
   of conformers.
   ;
   
---- 84852,84858 ----
+--- 84854,84860 ----
   
      _item_description.description
   ;
@@ -21925,7 +21936,7 @@
   of conformers.
   ;
   
---- 84868,84874 ----
+--- 84870,84876 ----
   
      _item_description.description
   ;
@@ -21942,7 +21953,7 @@
   for the ensemble of conformers.
   ;
   
---- 84884,84890 ----
+--- 84886,84892 ----
   
      _item_description.description
   ;
@@ -21959,7 +21970,7 @@
   of conformers.
   ;
   
---- 84915,84921 ----
+--- 84917,84923 ----
   
      _item_description.description
   ;
@@ -21976,7 +21987,7 @@
   atomic coordinates for the ensemble of conformers.
   ;
   
---- 85145,85151 ----
+--- 85147,85153 ----
   
      _item_description.description
   ;
@@ -21993,7 +22004,7 @@
   for the ensemble of conformers.
   ;
   
---- 85161,85167 ----
+--- 85163,85169 ----
   
      _item_description.description
   ;
@@ -22010,7 +22021,7 @@
   for the ensemble of conformers.
   ;
   
---- 85177,85183 ----
+--- 85179,85185 ----
   
      _item_description.description
   ;
@@ -22027,7 +22038,7 @@
   of conformers.
   ;
   
---- 85193,85199 ----
+--- 85195,85201 ----
   
      _item_description.description
   ;
@@ -22044,7 +22055,7 @@
   for the ensemble of conformers.
   ;
   
---- 85209,85215 ----
+--- 85211,85217 ----
   
      _item_description.description
   ;
@@ -22061,7 +22072,7 @@
   statistics.
   ;
   
---- 85248,85254 ----
+--- 85250,85256 ----
   
      _item_description.description
   ;
@@ -22078,7 +22089,7 @@
   for the ensemble of conformers.
   ;
   
---- 85272,85278 ----
+--- 85274,85280 ----
   
      _item_description.description
   ;
@@ -22095,7 +22106,7 @@
   for the ensemble of conformers.
   ;
   
---- 85288,85294 ----
+--- 85290,85296 ----
   
      _item_description.description
   ;
@@ -22112,7 +22123,7 @@
   of conformers.
   ;
   
---- 85304,85310 ----
+--- 85306,85312 ----
   
      _item_description.description
   ;
@@ -22129,7 +22140,7 @@
   coordinates for the ensemble of conformers.
   ;
   
---- 85320,85326 ----
+--- 85322,85328 ----
   
      _item_description.description
   ;
@@ -22146,7 +22157,7 @@
   statistics.
   ;
   
---- 85351,85357 ----
+--- 85353,85359 ----
   
      _item_description.description
   ;
@@ -22163,7 +22174,7 @@
   the ensemble of conformers.
   ;
   
---- 85367,85373 ----
+--- 85369,85375 ----
   
      _item_description.description
   ;
@@ -22180,7 +22191,7 @@
   the ensemble of conformers.
   ;
   
---- 85383,85389 ----
+--- 85385,85391 ----
   
      _item_description.description
   ;
@@ -22197,7 +22208,7 @@
   for the ensemble of conformers.
   ;
   
---- 85414,85420 ----
+--- 85416,85422 ----
   
      _item_description.description
   ;
@@ -22214,7 +22225,7 @@
   statistics over 'all' heavy atoms.
   ;
   
---- 85445,85451 ----
+--- 85447,85453 ----
   
      _item_description.description
   ;
@@ -22234,7 +22245,7 @@
   will be able to complete and submit your deposition.
   ;
   
---- 85516,85525 ----
+--- 85518,85527 ----
   
      _item_description.description
   ;
@@ -22254,7 +22265,7 @@
   as defined for proteins.
   ;
   
---- 85554,85560 ----
+--- 85556,85562 ----
   
      _item_description.description
   ;
@@ -22271,7 +22282,7 @@
   for proteins.
   ;
   
---- 85578,85584 ----
+--- 85580,85586 ----
   
      _item_description.description
   ;
@@ -22288,7 +22299,7 @@
   plot as defined for proteins.
   ;
   
---- 85602,85608 ----
+--- 85604,85610 ----
   
      _item_description.description
   ;
@@ -22305,7 +22316,7 @@
   defined for proteins.
   ;
   
---- 85626,85632 ----
+--- 85628,85634 ----
   
      _item_description.description
   ;
@@ -22322,7 +22333,7 @@
   conformer.
   ;
   
---- 85665,85671 ----
+--- 85667,85673 ----
   
      _item_description.description
   ;
@@ -22339,7 +22350,7 @@
   conformer.
   ;
   
---- 85696,85702 ----
+--- 85698,85704 ----
   
      _item_description.description
   ;
@@ -22356,7 +22367,7 @@
   conformer.
   ;
   
---- 85727,85733 ----
+--- 85729,85735 ----
   
      _item_description.description
   ;
@@ -22373,7 +22384,7 @@
   conformer.
   ;
   
---- 85758,85764 ----
+--- 85760,85766 ----
   
      _item_description.description
   ;
@@ -22390,7 +22401,7 @@
   conformer.
   ;
   
---- 85789,85795 ----
+--- 85791,85797 ----
   
      _item_description.description
   ;
@@ -22407,7 +22418,7 @@
   conformer.
   ;
   
---- 85820,85826 ----
+--- 85822,85828 ----
   
      _item_description.description
   ;
@@ -22424,7 +22435,7 @@
   conformer.
   ;
   
---- 85851,85857 ----
+--- 85853,85859 ----
   
      _item_description.description
   ;
@@ -22441,7 +22452,7 @@
   conformer.
   ;
   
---- 85867,85873 ----
+--- 85869,85875 ----
   
      _item_description.description
   ;
@@ -22458,7 +22469,7 @@
   for the representative conformer.
   ;
   
---- 85883,85889 ----
+--- 85885,85891 ----
   
      _item_description.description
   ;
@@ -22475,7 +22486,7 @@
   conformer.
   ;
   
---- 85914,85920 ----
+--- 85916,85922 ----
   
      _item_description.description
   ;
@@ -22492,7 +22503,7 @@
   structure.
   ;
   
---- 86050,86056 ----
+--- 86052,86058 ----
   
      _item_description.description
   ;
@@ -22509,7 +22520,7 @@
   contained in the saveframe.
   ;
   
---- 86275,86281 ----
+--- 86277,86283 ----
   
      _item_description.description
   ;
@@ -22526,7 +22537,7 @@
   atomic coordinate set from other saveframes of this category in an entry.
   ;
   
---- 86307,86313 ----
+--- 86309,86315 ----
   
      _item_description.description
   ;
@@ -22543,7 +22554,7 @@
   Obsolete tag.
   ;
   
---- 86383,86389 ----
+--- 86385,86391 ----
   
      _item_description.description
   ;
@@ -22560,7 +22571,7 @@
   coordinate set was extracted.
   ;
   
---- 86399,86405 ----
+--- 86401,86407 ----
   
      _item_description.description
   ;
@@ -22578,7 +22589,7 @@
   for selection.
   ;
   
---- 86430,86437 ----
+--- 86432,86439 ----
   
      _item_description.description
   ;
@@ -22596,7 +22607,7 @@
   in the atomic coordinates.
   ;
   
---- 86447,86453 ----
+--- 86449,86455 ----
   
      _item_description.description
   ;
@@ -22613,7 +22624,7 @@
   for the atomic coordinates.
   ;
   
---- 86463,86469 ----
+--- 86465,86471 ----
   
      _item_description.description
   ;
@@ -22630,7 +22641,7 @@
   ensemble and its derivation can be entered in this field.
   ;
   
---- 86479,86485 ----
+--- 86481,86487 ----
   
      _item_description.description
   ;
@@ -22647,7 +22658,7 @@
   '_Conf_family_coord_set_constr_list.Constraint_list_category'.
   ;
   
---- 87052,87058 ----
+--- 87054,87060 ----
   
      _item_description.description
   ;
@@ -22664,7 +22675,7 @@
   value is reported.
   ;
   
---- 87248,87254 ----
+--- 87250,87256 ----
   
      _item_description.description
   ;
@@ -22681,7 +22692,7 @@
   reported for the defined segment of the biopolymer.
   ;
   
---- 87264,87270 ----
+--- 87266,87272 ----
   
      _item_description.description
   ;
@@ -22698,7 +22709,7 @@
   molecular entity for the segment being described.
   ;
   
---- 87393,87399 ----
+--- 87395,87401 ----
   
      _item_description.description
   ;
@@ -22715,7 +22726,7 @@
   molecular entity for the segment being described.
   ;
   
---- 87417,87423 ----
+--- 87419,87425 ----
   
      _item_description.description
   ;
@@ -22733,7 +22744,7 @@
   in the Atom_site category.
   ;
   
---- 87496,87503 ----
+--- 87498,87505 ----
   
      _item_description.description
   ;
@@ -22751,7 +22762,7 @@
   of the set of models reported in the Atom_site category.
   ;
   
---- 87521,87527 ----
+--- 87523,87529 ----
   
      _item_description.description
   ;
@@ -22768,7 +22779,7 @@
   one model for the molecular assembly.
   ;
   
---- 87629,87635 ----
+--- 87631,87637 ----
   
      _item_description.description
   ;
@@ -22786,7 +22797,7 @@
   each set of atomic coordinates reported in the model.
   ;
   
---- 87666,87673 ----
+--- 87668,87675 ----
   
      _item_description.description
   ;
@@ -22804,7 +22815,7 @@
   list.
   ;
   
---- 87683,87689 ----
+--- 87685,87691 ----
   
      _item_description.description
   ;
@@ -22821,7 +22832,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 87804,87810 ----
+--- 87806,87812 ----
   
      _item_description.description
   ;
@@ -22838,7 +22849,7 @@
   orthogonal Cartesian axes.
   ;
   
---- 87820,87826 ----
+--- 87822,87828 ----
   
      _item_description.description
   ;
@@ -22855,7 +22866,7 @@
   orthogonal Cartesian axes.
   ;
   
---- 87836,87842 ----
+--- 87838,87844 ----
   
      _item_description.description
   ;
@@ -22872,7 +22883,7 @@
   orthogonal Cartesian axes.
   ;
   
---- 87852,87858 ----
+--- 87854,87860 ----
   
      _item_description.description
   ;
@@ -22889,7 +22900,7 @@
   coordinates.
   ;
   
---- 87913,87919 ----
+--- 87915,87921 ----
   
      _item_description.description
   ;
@@ -22906,7 +22917,7 @@
   this atom.
   ;
   
---- 87944,87950 ----
+--- 87946,87952 ----
   
      _item_description.description
   ;
@@ -22923,7 +22934,7 @@
   conformation (1) or is in a disordered conformation (0) in the structure.
   ;
   
---- 87968,87974 ----
+--- 87970,87976 ----
   
      _item_description.description
   ;
@@ -22940,7 +22951,7 @@
   PDB entry.
   ;
   
---- 88055,88061 ----
+--- 88057,88063 ----
   
      _item_description.description
   ;
@@ -22957,7 +22968,7 @@
   assignment normally found in chemical diagrams.
   ;
   
---- 88102,88108 ----
+--- 88104,88110 ----
   
      _item_description.description
   ;
@@ -22974,7 +22985,7 @@
   extracted from a pdbx file.
   ;
   
---- 88126,88132 ----
+--- 88128,88134 ----
   
      _item_description.description
   ;
@@ -22991,7 +23002,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 88150,88156 ----
+--- 88152,88158 ----
   
      _item_description.description
   ;
@@ -23010,7 +23021,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 88373,88381 ----
+--- 88375,88383 ----
   
      _item_description.description
   ;
@@ -23029,7 +23040,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 88416,88422 ----
+--- 88418,88424 ----
   
      _item_description.description
   ;
@@ -23046,7 +23057,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 88457,88463 ----
+--- 88459,88465 ----
   
      _item_description.description
   ;
@@ -23063,7 +23074,7 @@
   a group of atom sites in the atom_site list.
   ;
   
---- 88597,88603 ----
+--- 88599,88605 ----
   
      _item_description.description
   ;
@@ -23080,7 +23091,7 @@
   contained in the saveframe.
   ;
   
---- 88683,88689 ----
+--- 88685,88691 ----
   
      _item_description.description
   ;
@@ -23097,7 +23108,7 @@
   conformer.
   ;
   
---- 88756,88762 ----
+--- 88758,88764 ----
   
      _item_description.description
   ;
@@ -23114,7 +23125,7 @@
   the reported uncertainty in the individual atom coordinates.
   ;
   
---- 88813,88819 ----
+--- 88815,88821 ----
   
      _item_description.description
   ;
@@ -23131,7 +23142,7 @@
   conformer.
   ;
   
---- 88829,88835 ----
+--- 88831,88837 ----
   
      _item_description.description
   ;
@@ -23148,7 +23159,7 @@
   representative conformer.
   ;
   
---- 88845,88851 ----
+--- 88847,88853 ----
   
      _item_description.description
   ;
@@ -23165,7 +23176,7 @@
   coordinates were extracted.
   ;
   
---- 88861,88867 ----
+--- 88863,88869 ----
   
      _item_description.description
   ;
@@ -23184,7 +23195,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 89219,89227 ----
+--- 89221,89229 ----
   
      _item_description.description
   ;
@@ -23203,7 +23214,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 89245,89251 ----
+--- 89247,89253 ----
   
      _item_description.description
   ;
@@ -23220,7 +23231,7 @@
   coordinates.
   ;
   
---- 89325,89331 ----
+--- 89327,89333 ----
   
      _item_description.description
   ;
@@ -23237,7 +23248,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 89476,89482 ----
+--- 89478,89484 ----
   
      _item_description.description
   ;
@@ -23254,7 +23265,7 @@
   orthogonal Cartesian axes.
   ;
   
---- 89492,89498 ----
+--- 89494,89500 ----
   
      _item_description.description
   ;
@@ -23271,7 +23282,7 @@
   orthogonal Cartesian axes.
   ;
   
---- 89508,89514 ----
+--- 89510,89516 ----
   
      _item_description.description
   ;
@@ -23288,7 +23299,7 @@
   orthogonal Cartesian axes.
   ;
   
---- 89524,89530 ----
+--- 89526,89532 ----
   
      _item_description.description
   ;
@@ -23307,7 +23318,7 @@
   need to correspond to the value for entity_assembly_ID.
   ;
   
---- 89615,89623 ----
+--- 89617,89625 ----
   
      _item_description.description
   ;
@@ -23328,7 +23339,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 89641,89649 ----
+--- 89643,89651 ----
   
      _item_description.description
   ;
@@ -23347,7 +23358,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 89667,89673 ----
+--- 89669,89675 ----
   
      _item_description.description
   ;
@@ -23364,7 +23375,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 89691,89697 ----
+--- 89693,89699 ----
   
      _item_description.description
   ;
@@ -23381,7 +23392,7 @@
   atom in the representative structure.
   ;
   
---- 89801,89807 ----
+--- 89803,89809 ----
   
      _item_description.description
   ;
@@ -23398,7 +23409,7 @@
   contained in the saveframe.
   ;
   
---- 89887,89893 ----
+--- 89889,89895 ----
   
      _item_description.description
   ;
@@ -23415,7 +23426,7 @@
   statistics.
   ;
   
---- 89954,89960 ----
+--- 89956,89962 ----
   
      _item_description.description
   ;
@@ -23433,7 +23444,7 @@
   tag.
   ;
   
---- 89970,89977 ----
+--- 89972,89979 ----
   
      _item_description.description
   ;
@@ -23455,7 +23466,7 @@
   without providing this information.
   ;
   
---- 90002,90012 ----
+--- 90004,90014 ----
   
      _item_description.description
   ;
@@ -23476,7 +23487,7 @@
   in calculating the NOE restraint statistics.
   ;
   
---- 90066,90072 ----
+--- 90068,90074 ----
   
      _item_description.description
   ;
@@ -23493,7 +23504,7 @@
   distances from NOE data.
   ;
   
---- 90100,90106 ----
+--- 90102,90108 ----
   
      _item_description.description
   ;
@@ -23510,7 +23521,7 @@
   in calculating the ROE restraint statistics.
   ;
   
---- 90161,90167 ----
+--- 90163,90169 ----
   
      _item_description.description
   ;
@@ -23527,7 +23538,7 @@
   distances from ROE data.
   ;
   
---- 90195,90201 ----
+--- 90197,90203 ----
   
      _item_description.description
   ;
@@ -23545,7 +23556,7 @@
   components in the molecular system (proteins, nucleic acids, and ligands).
   ;
   
---- 90277,90284 ----
+--- 90279,90286 ----
   
      _item_description.description
   ;
@@ -23563,7 +23574,7 @@
   to the protein components of the molecular system studied.
   ;
   
---- 90302,90308 ----
+--- 90304,90310 ----
   
      _item_description.description
   ;
@@ -23580,7 +23591,7 @@
   to the nucleic acid components of the molecular system studied.
   ;
   
---- 90326,90332 ----
+--- 90328,90334 ----
   
      _item_description.description
   ;
@@ -23597,7 +23608,7 @@
   atoms within a single residue (amino acid, nucleic acid, or other residue).
   ;
   
---- 90350,90356 ----
+--- 90352,90358 ----
   
      _item_description.description
   ;
@@ -23614,7 +23625,7 @@
   sequential residues in the biopolymer chain (|i-j| = 1).
   ;
   
---- 90374,90380 ----
+--- 90376,90382 ----
   
      _item_description.description
   ;
@@ -23633,7 +23644,7 @@
   secondary structure.
   ;
   
---- 90398,90406 ----
+--- 90400,90408 ----
   
      _item_description.description
   ;
@@ -23653,7 +23664,7 @@
   not included in the other counts.
   ;
   
---- 90424,90431 ----
+--- 90426,90433 ----
   
      _item_description.description
   ;
@@ -23671,7 +23682,7 @@
   nuclei on different molecular components in the molecular assembly studied.
   ;
   
---- 90584,90590 ----
+--- 90586,90592 ----
   
      _item_description.description
   ;
@@ -23689,7 +23700,7 @@
   These might be NOE values from interactions between nuclei within a ligand.
   ;
   
---- 90608,90615 ----
+--- 90610,90617 ----
   
      _item_description.description
   ;
@@ -23707,7 +23718,7 @@
   atoms within a single residue (amino acid, nucleic acid, or other residue).
   ;
   
---- 90648,90654 ----
+--- 90650,90656 ----
   
      _item_description.description
   ;
@@ -23724,7 +23735,7 @@
   sequential residues in the biopolymer chain (|i-j| = 1).
   ;
   
---- 90664,90670 ----
+--- 90666,90672 ----
   
      _item_description.description
   ;
@@ -23743,7 +23754,7 @@
   secondary structure.
   ;
   
---- 90680,90688 ----
+--- 90682,90690 ----
   
      _item_description.description
   ;
@@ -23763,7 +23774,7 @@
   not included in the other counts.
   ;
   
---- 90698,90705 ----
+--- 90700,90707 ----
   
      _item_description.description
   ;
@@ -23781,7 +23792,7 @@
   of previous residue
   ;
   
---- 90805,90811 ----
+--- 90807,90813 ----
   
      _item_description.description
   ;
@@ -23798,7 +23809,7 @@
   of previous residue
   ;
   
---- 90867,90873 ----
+--- 90869,90875 ----
   
      _item_description.description
   ;
@@ -23815,7 +23826,7 @@
   previous residue
   ;
   
---- 90937,90943 ----
+--- 90939,90945 ----
   
      _item_description.description
   ;
@@ -23832,7 +23843,7 @@
   constraints.
   ;
   
---- 91052,91058 ----
+--- 91054,91060 ----
   
      _item_description.description
   ;
@@ -23849,7 +23860,7 @@
   been taken from an X-ray structure.
   ;
   
---- 91573,91579 ----
+--- 91575,91581 ----
   
      _item_description.description
   ;
@@ -23869,7 +23880,7 @@
   to enter the statistical data.
   ;
   
---- 91708,91717 ----
+--- 91710,91719 ----
   
      _item_description.description
   ;
@@ -23889,7 +23900,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 91852,91858 ----
+--- 91854,91860 ----
   
      _item_description.description
   ;
@@ -23906,7 +23917,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 91868,91874 ----
+--- 91870,91876 ----
   
      _item_description.description
   ;
@@ -23923,7 +23934,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 91884,91890 ----
+--- 91886,91892 ----
   
      _item_description.description
   ;
@@ -23940,7 +23951,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 91900,91906 ----
+--- 91902,91908 ----
   
      _item_description.description
   ;
@@ -23957,7 +23968,7 @@
   constraint violations for the ensemble of conformers.
   ;
   
---- 91916,91922 ----
+--- 91918,91924 ----
   
      _item_description.description
   ;
@@ -23974,7 +23985,7 @@
   constraint violations  for the ensemble of conformers.
   ;
   
---- 91932,91938 ----
+--- 91934,91940 ----
   
      _item_description.description
   ;
@@ -23991,7 +24002,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 91948,91954 ----
+--- 91950,91956 ----
   
      _item_description.description
   ;
@@ -24008,7 +24019,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 91964,91970 ----
+--- 91966,91972 ----
   
      _item_description.description
   ;
@@ -24025,7 +24036,7 @@
   distance constraint violations for the ensemble of conformers.
   ;
   
---- 91980,91986 ----
+--- 91982,91988 ----
   
      _item_description.description
   ;
@@ -24042,7 +24053,7 @@
   distance constraint violations for the ensemble of conformers.
   ;
   
---- 91996,92002 ----
+--- 91998,92004 ----
   
      _item_description.description
   ;
@@ -24059,7 +24070,7 @@
   distance constraint violations for the ensemble of conformers.
   ;
   
---- 92012,92018 ----
+--- 92014,92020 ----
   
      _item_description.description
   ;
@@ -24076,7 +24087,7 @@
   distance constraint violations for the ensemble of conformers.
   ;
   
---- 92028,92034 ----
+--- 92030,92036 ----
   
      _item_description.description
   ;
@@ -24093,7 +24104,7 @@
   distance constraint violations for the ensemble of conformers.
   ;
   
---- 92044,92050 ----
+--- 92046,92052 ----
   
      _item_description.description
   ;
@@ -24110,7 +24121,7 @@
   distance constraint violations for the ensemble of conformers.
   ;
   
---- 92060,92066 ----
+--- 92062,92068 ----
   
      _item_description.description
   ;
@@ -24127,7 +24138,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 92076,92082 ----
+--- 92078,92084 ----
   
      _item_description.description
   ;
@@ -24144,7 +24155,7 @@
   violations for the ensemble of conformers.
   ;
   
---- 92092,92098 ----
+--- 92094,92100 ----
   
      _item_description.description
   ;
@@ -24161,7 +24172,7 @@
   of conformers.
   ;
   
---- 92123,92129 ----
+--- 92125,92131 ----
   
      _item_description.description
   ;
@@ -24178,7 +24189,7 @@
   of conformers.
   ;
   
---- 92147,92153 ----
+--- 92149,92155 ----
   
      _item_description.description
   ;
@@ -24195,7 +24206,7 @@
   calculated over the ensemble of conformers.
   ;
   
---- 92163,92169 ----
+--- 92165,92171 ----
   
      _item_description.description
   ;
@@ -24212,7 +24223,7 @@
   over the ensemble of conformers.
   ;
   
---- 92179,92185 ----
+--- 92181,92187 ----
   
      _item_description.description
   ;
@@ -24229,7 +24240,7 @@
   restraints.
   ;
   
---- 92210,92216 ----
+--- 92212,92218 ----
   
      _item_description.description
   ;
@@ -24246,7 +24257,7 @@
   restraints.
   ;
   
---- 92241,92247 ----
+--- 92243,92249 ----
   
      _item_description.description
   ;
@@ -24263,7 +24274,7 @@
   restraints.
   ;
   
---- 92272,92278 ----
+--- 92274,92280 ----
   
      _item_description.description
   ;
@@ -24280,7 +24291,7 @@
   restraints.
   ;
   
---- 92303,92309 ----
+--- 92305,92311 ----
   
      _item_description.description
   ;
@@ -24297,7 +24308,7 @@
   constraints and the coordinates for the deposited representative conformer.
   ;
   
---- 92374,92380 ----
+--- 92376,92382 ----
   
      _item_description.description
   ;
@@ -24314,7 +24325,7 @@
   violations for the representative conformer.
   ;
   
---- 92469,92475 ----
+--- 92471,92477 ----
   
      _item_description.description
   ;
@@ -24331,7 +24342,7 @@
   violations for the representative conformer.
   ;
   
---- 92485,92491 ----
+--- 92487,92493 ----
   
      _item_description.description
   ;
@@ -24348,7 +24359,7 @@
   violations for the representative conformer.
   ;
   
---- 92501,92507 ----
+--- 92503,92509 ----
   
      _item_description.description
   ;
@@ -24365,7 +24376,7 @@
   violations for the representative conformer.
   ;
   
---- 92517,92523 ----
+--- 92519,92525 ----
   
      _item_description.description
   ;
@@ -24382,7 +24393,7 @@
   constraint violations for the representative conformer.
   ;
   
---- 92533,92539 ----
+--- 92535,92541 ----
   
      _item_description.description
   ;
@@ -24399,7 +24410,7 @@
   constraint violations  for the representative conformer.
   ;
   
---- 92549,92555 ----
+--- 92551,92557 ----
   
      _item_description.description
   ;
@@ -24416,7 +24427,7 @@
   violations for the representative conformer.
   ;
   
---- 92565,92571 ----
+--- 92567,92573 ----
   
      _item_description.description
   ;
@@ -24433,7 +24444,7 @@
   violations for the representative conformer.
   ;
   
---- 92581,92587 ----
+--- 92583,92589 ----
   
      _item_description.description
   ;
@@ -24450,7 +24461,7 @@
   distance constraint violations for the representative conformer.
   ;
   
---- 92597,92603 ----
+--- 92599,92605 ----
   
      _item_description.description
   ;
@@ -24467,7 +24478,7 @@
   distance constraint violations for the representative conformer.
   ;
   
---- 92613,92619 ----
+--- 92615,92621 ----
   
      _item_description.description
   ;
@@ -24484,7 +24495,7 @@
   distance constraint violations for the representative conformer.
   ;
   
---- 92629,92635 ----
+--- 92631,92637 ----
   
      _item_description.description
   ;
@@ -24501,7 +24512,7 @@
   distance constraint violations for the representative conformer.
   ;
   
---- 92645,92651 ----
+--- 92647,92653 ----
   
      _item_description.description
   ;
@@ -24518,7 +24529,7 @@
   distance constraint violations for the representative conformer.
   ;
   
---- 92661,92667 ----
+--- 92663,92669 ----
   
      _item_description.description
   ;
@@ -24535,7 +24546,7 @@
   distance constraint violations for the representative conformer.
   ;
   
---- 92677,92683 ----
+--- 92679,92685 ----
   
      _item_description.description
   ;
@@ -24552,7 +24563,7 @@
   violations for the representative conformer.
   ;
   
---- 92693,92699 ----
+--- 92695,92701 ----
   
      _item_description.description
   ;
@@ -24569,7 +24580,7 @@
   violations for the representative conformer.
   ;
   
---- 92709,92715 ----
+--- 92711,92717 ----
   
      _item_description.description
   ;
@@ -24586,7 +24597,7 @@
   calculated over the representative conformer.
   ;
   
---- 92725,92731 ----
+--- 92727,92733 ----
   
      _item_description.description
   ;
@@ -24603,7 +24614,7 @@
   over the representative conformer.
   ;
   
---- 92741,92747 ----
+--- 92743,92749 ----
   
      _item_description.description
   ;
@@ -24620,7 +24631,7 @@
   restraints.
   ;
   
---- 92772,92778 ----
+--- 92774,92780 ----
   
      _item_description.description
   ;
@@ -24637,7 +24648,7 @@
   restraints.
   ;
   
---- 92803,92809 ----
+--- 92805,92811 ----
   
      _item_description.description
   ;
@@ -24654,7 +24665,7 @@
   restraints.
   ;
   
---- 92834,92840 ----
+--- 92836,92842 ----
   
      _item_description.description
   ;
@@ -24671,7 +24682,7 @@
   restraints.
   ;
   
---- 92865,92871 ----
+--- 92867,92873 ----
   
      _item_description.description
   ;
@@ -24688,7 +24699,7 @@
   statistics.
   ;
   
---- 92938,92944 ----
+--- 92940,92946 ----
   
      _item_description.description
   ;
@@ -24705,7 +24716,7 @@
   '_Conf_family_coord_set_constr_list.Constraint_list_category'.
   ;
   
---- 92954,92960 ----
+--- 92956,92962 ----
   
      _item_description.description
   ;
@@ -24722,7 +24733,7 @@
   as input.
   ;
   
---- 93150,93156 ----
+--- 93152,93158 ----
   
      _item_description.description
   ;
@@ -24732,7 +24743,7 @@
   
 ***************
 *** 91650,91655 ****
---- 93249,93256 ----
+--- 93251,93258 ----
      'protein other kinds of constraints'    ?
      'nucleic acid base planarity'    ?
      'nucleic acid other kinds of constraints'    ?
@@ -24743,7 +24754,7 @@
   
 ***************
 *** 91696,91701 ****
---- 93297,93304 ----
+--- 93299,93306 ----
      peptide    ?
      ring    ?
      PRE    ?
@@ -24761,7 +24772,7 @@
   ambiguous, etc.)
   ;
   
---- 93317,93323 ----
+--- 93319,93325 ----
   
      _item_description.description
   ;
@@ -24771,7 +24782,7 @@
   
 ***************
 *** 91730,91735 ****
---- 93333,93340 ----
+--- 93335,93342 ----
   
      ambi    ?
      simple    ?
@@ -24789,7 +24800,7 @@
   contained in the saveframe.
   ;
   
---- 93446,93452 ----
+--- 93448,93454 ----
   
      _item_description.description
   ;
@@ -24806,7 +24817,7 @@
   structures.
   ;
   
---- 93477,93483 ----
+--- 93479,93485 ----
   
      _item_description.description
   ;
@@ -24823,7 +24834,7 @@
   package were used.
   ;
   
---- 93510,93516 ----
+--- 93512,93518 ----
   
      _item_description.description
   ;
@@ -24840,7 +24851,7 @@
   in calculating a structure.
   ;
   
---- 93544,93550 ----
+--- 93546,93552 ----
   
      _item_description.description
   ;
@@ -24857,7 +24868,7 @@
   own name for the parameter that you are entering a value.
   ;
   
---- 93717,93723 ----
+--- 93719,93725 ----
   
      _item_description.description
   ;
@@ -24874,7 +24885,7 @@
   contained in the saveframe.
   ;
   
---- 93871,93877 ----
+--- 93873,93879 ----
   
      _item_description.description
   ;
@@ -24892,7 +24903,7 @@
   tag.
   ;
   
---- 93932,93939 ----
+--- 93934,93941 ----
   
      _item_description.description
   ;
@@ -24911,7 +24922,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 94155,94162 ----
+--- 94157,94164 ----
   
      _item_description.description
   ;
@@ -24931,7 +24942,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 94180,94188 ----
+--- 94182,94190 ----
   
      _item_description.description
   ;
@@ -24950,7 +24961,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 94206,94212 ----
+--- 94208,94214 ----
   
      _item_description.description
   ;
@@ -24967,7 +24978,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 94230,94236 ----
+--- 94232,94238 ----
   
      _item_description.description
   ;
@@ -24984,7 +24995,7 @@
   contained in the saveframe.
   ;
   
---- 94324,94330 ----
+--- 94326,94332 ----
   
      _item_description.description
   ;
@@ -25001,7 +25012,7 @@
   that make up the tertiary structural element.
   ;
   
---- 94444,94450 ----
+--- 94446,94452 ----
   
      _item_description.description
   ;
@@ -25018,7 +25029,7 @@
   of a biopolymer's tertiary structure.
   ;
   
---- 94558,94564 ----
+--- 94560,94566 ----
   
      _item_description.description
   ;
@@ -25035,7 +25046,7 @@
   element (i.e., H, C, P, etc).
   ;
   
---- 94749,94755 ----
+--- 94751,94757 ----
   
      _item_description.description
   ;
@@ -25052,7 +25063,7 @@
   structure element.
   ;
   
---- 94788,94794 ----
+--- 94790,94796 ----
   
      _item_description.description
   ;
@@ -25070,7 +25081,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 94804,94811 ----
+--- 94806,94813 ----
   
      _item_description.description
   ;
@@ -25090,7 +25101,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 94829,94837 ----
+--- 94831,94839 ----
   
      _item_description.description
   ;
@@ -25109,7 +25120,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 94855,94861 ----
+--- 94857,94863 ----
   
      _item_description.description
   ;
@@ -25126,7 +25137,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 94879,94885 ----
+--- 94881,94887 ----
   
      _item_description.description
   ;
@@ -25143,7 +25154,7 @@
   contained in the saveframe.
   ;
   
---- 94981,94987 ----
+--- 94983,94989 ----
   
      _item_description.description
   ;
@@ -25160,7 +25171,7 @@
   last queried for new information.
   ;
   
---- 95061,95067 ----
+--- 95063,95069 ----
   
      _item_description.description
   ;
@@ -25177,7 +25188,7 @@
   extracted.
   ;
   
---- 95077,95083 ----
+--- 95079,95085 ----
   
      _item_description.description
   ;
@@ -25194,7 +25205,7 @@
   structure annotation was extracted.
   ;
   
---- 95093,95099 ----
+--- 95095,95101 ----
   
      _item_description.description
   ;
@@ -25211,7 +25222,7 @@
   their data to the public.
   ;
   
---- 95124,95130 ----
+--- 95126,95132 ----
   
      _item_description.description
   ;
@@ -25228,7 +25239,7 @@
   used as the source of the information.
   ;
   
---- 95387,95393 ----
+--- 95389,95395 ----
   
      _item_description.description
   ;
@@ -25245,7 +25256,7 @@
   that is the source.
   ;
   
---- 95403,95409 ----
+--- 95405,95411 ----
   
      _item_description.description
   ;
@@ -25255,7 +25266,7 @@
   
 ***************
 *** 93840,93845 ****
---- 95445,95465 ----
+--- 95447,95467 ----
   
   save_
   
@@ -25288,7 +25299,7 @@
   structure.
   ;
   
---- 95625,95633 ----
+--- 95627,95635 ----
   
      _item_description.description
   ;
@@ -25307,7 +25318,7 @@
   coordinates.
   ;
   
---- 95688,95694 ----
+--- 95690,95696 ----
   
      _item_description.description
   ;
@@ -25324,7 +25335,7 @@
   contained in the saveframe.
   ;
   
---- 95774,95780 ----
+--- 95776,95782 ----
   
      _item_description.description
   ;
@@ -25341,7 +25352,7 @@
   element data from other saveframes of this category in an entry.
   ;
   
---- 95805,95811 ----
+--- 95807,95813 ----
   
      _item_description.description
   ;
@@ -25358,7 +25369,7 @@
   element.
   ;
   
---- 96004,96010 ----
+--- 96006,96012 ----
   
      _item_description.description
   ;
@@ -25375,7 +25386,7 @@
   Pointer to '_Entity_poly_seq.Num'
   ;
   
---- 96126,96132 ----
+--- 96128,96134 ----
   
      _item_description.description
   ;
@@ -25392,7 +25403,7 @@
    Pointer to '_Entity_poly_seq.Num'
   ;
   
---- 96150,96156 ----
+--- 96152,96158 ----
   
      _item_description.description
   ;
@@ -25411,7 +25422,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 96174,96182 ----
+--- 96176,96184 ----
   
      _item_description.description
   ;
@@ -25432,7 +25443,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 96200,96208 ----
+--- 96202,96210 ----
   
      _item_description.description
   ;
@@ -25451,7 +25462,7 @@
   structure element.
   ;
   
---- 96264,96270 ----
+--- 96266,96272 ----
   
      _item_description.description
   ;
@@ -25468,7 +25479,7 @@
   contained in the saveframe.
   ;
   
---- 96350,96356 ----
+--- 96352,96358 ----
   
      _item_description.description
   ;
@@ -25485,7 +25496,7 @@
   or any of its related tags.
   ;
   
---- 96706,96712 ----
+--- 96708,96714 ----
   
      _item_description.description
   ;
@@ -25502,7 +25513,7 @@
   or any of its related tags.
   ;
   
---- 96842,96848 ----
+--- 96844,96850 ----
   
      _item_description.description
   ;
@@ -25520,7 +25531,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 96873,96880 ----
+--- 96875,96882 ----
   
      _item_description.description
   ;
@@ -25540,7 +25551,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 96898,96906 ----
+--- 96900,96908 ----
   
      _item_description.description
   ;
@@ -25559,7 +25570,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 96924,96930 ----
+--- 96926,96932 ----
   
      _item_description.description
   ;
@@ -25576,7 +25587,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 96948,96954 ----
+--- 96950,96956 ----
   
      _item_description.description
   ;
@@ -25594,7 +25605,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 96972,96979 ----
+--- 96974,96981 ----
   
      _item_description.description
   ;
@@ -25614,7 +25625,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 96997,97005 ----
+--- 96999,97007 ----
   
      _item_description.description
   ;
@@ -25633,7 +25644,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 97023,97029 ----
+--- 97025,97031 ----
   
      _item_description.description
   ;
@@ -25650,7 +25661,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 97047,97053 ----
+--- 97049,97055 ----
   
      _item_description.description
   ;
@@ -25667,7 +25678,7 @@
   contained in the saveframe.
   ;
   
---- 97252,97258 ----
+--- 97254,97260 ----
   
      _item_description.description
   ;
@@ -25684,7 +25695,7 @@
   of structure interactions.
   ;
   
---- 97315,97321 ----
+--- 97317,97323 ----
   
      _item_description.description
   ;
@@ -25701,7 +25712,7 @@
   interaction.
   ;
   
---- 97657,97663 ----
+--- 97659,97665 ----
   
      _item_description.description
   ;
@@ -25719,7 +25730,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 97673,97680 ----
+--- 97675,97682 ----
   
      _item_description.description
   ;
@@ -25739,7 +25750,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 97698,97706 ----
+--- 97700,97708 ----
   
      _item_description.description
   ;
@@ -25758,7 +25769,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 97724,97730 ----
+--- 97726,97732 ----
   
      _item_description.description
   ;
@@ -25775,7 +25786,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 97748,97754 ----
+--- 97750,97756 ----
   
      _item_description.description
   ;
@@ -25793,7 +25804,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 97772,97779 ----
+--- 97774,97781 ----
   
      _item_description.description
   ;
@@ -25813,7 +25824,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 97797,97805 ----
+--- 97799,97807 ----
   
      _item_description.description
   ;
@@ -25832,7 +25843,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 97823,97829 ----
+--- 97825,97831 ----
   
      _item_description.description
   ;
@@ -25849,7 +25860,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 97847,97853 ----
+--- 97849,97855 ----
   
      _item_description.description
   ;
@@ -25866,7 +25877,7 @@
   contained in the saveframe.
   ;
   
---- 98044,98050 ----
+--- 98046,98052 ----
   
      _item_description.description
   ;
@@ -25883,7 +25894,7 @@
   feature.
   ;
   
---- 98135,98141 ----
+--- 98137,98143 ----
   
      _item_description.description
   ;
@@ -25902,7 +25913,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 98252,98260 ----
+--- 98254,98262 ----
   
      _item_description.description
   ;
@@ -25921,7 +25932,7 @@
   contained in the saveframe.
   ;
   
---- 98363,98369 ----
+--- 98365,98371 ----
   
      _item_description.description
   ;
@@ -25938,7 +25949,7 @@
   list and its derivation.
   ;
   
---- 98593,98599 ----
+--- 98595,98601 ----
   
      _item_description.description
   ;
@@ -25955,7 +25966,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 98800,98806 ----
+--- 98802,98808 ----
   
      _item_description.description
   ;
@@ -25972,7 +25983,7 @@
   or any of its related tags.
   ;
   
---- 98816,98822 ----
+--- 98818,98824 ----
   
      _item_description.description
   ;
@@ -25989,7 +26000,7 @@
   component of the chemical shielding tensor.
   ;
   
---- 98952,98958 ----
+--- 98954,98960 ----
   
      _item_description.description
   ;
@@ -26006,7 +26017,7 @@
   component of the chemical shielding tensor.
   ;
   
---- 98968,98974 ----
+--- 98970,98976 ----
   
      _item_description.description
   ;
@@ -26023,7 +26034,7 @@
   component of the chemical shielding tensor.
   ;
   
---- 98984,98990 ----
+--- 98986,98992 ----
   
      _item_description.description
   ;
@@ -26040,7 +26051,7 @@
   shielding tensor.
   ;
   
---- 99000,99006 ----
+--- 99002,99008 ----
   
      _item_description.description
   ;
@@ -26057,7 +26068,7 @@
   shielding tensor.
   ;
   
---- 99016,99022 ----
+--- 99018,99024 ----
   
      _item_description.description
   ;
@@ -26074,7 +26085,7 @@
   shielding tensor.
   ;
   
---- 99032,99038 ----
+--- 99034,99040 ----
   
      _item_description.description
   ;
@@ -26091,7 +26102,7 @@
   chemical shielding tensor.
   ;
   
---- 99048,99054 ----
+--- 99050,99056 ----
   
      _item_description.description
   ;
@@ -26108,7 +26119,7 @@
   chemical shielding tensor.
   ;
   
---- 99064,99070 ----
+--- 99066,99072 ----
   
      _item_description.description
   ;
@@ -26125,7 +26136,7 @@
   chemical shielding tensor.
   ;
   
---- 99080,99086 ----
+--- 99082,99088 ----
   
      _item_description.description
   ;
@@ -26142,7 +26153,7 @@
   chemical shielding tensor.
   ;
   
---- 99096,99102 ----
+--- 99098,99104 ----
   
      _item_description.description
   ;
@@ -26159,7 +26170,7 @@
   chemical shielding tensor.
   ;
   
---- 99112,99118 ----
+--- 99114,99120 ----
   
      _item_description.description
   ;
@@ -26178,7 +26189,7 @@
   need to correspond to the value for Entity_assembly_ID.
   ;
   
---- 99263,99271 ----
+--- 99265,99273 ----
   
      _item_description.description
   ;
@@ -26199,7 +26210,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 99281,99289 ----
+--- 99283,99291 ----
   
      _item_description.description
   ;
@@ -26218,7 +26229,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 99307,99313 ----
+--- 99309,99315 ----
   
      _item_description.description
   ;
@@ -26235,7 +26246,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 99331,99337 ----
+--- 99333,99339 ----
   
      _item_description.description
   ;
@@ -26252,7 +26263,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 99707,99713 ----
+--- 99709,99715 ----
   
      _item_description.description
   ;
@@ -26269,7 +26280,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 99828,99834 ----
+--- 99830,99836 ----
   
      _item_description.description
   ;
@@ -26288,7 +26299,7 @@
   to the value f
   ;
   
---- 99859,99867 ----
+--- 99861,99869 ----
   
      _item_description.description
   ;
@@ -26309,7 +26320,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 99892,99900 ----
+--- 99894,99902 ----
   
      _item_description.description
   ;
@@ -26328,7 +26339,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 99910,99916 ----
+--- 99912,99918 ----
   
      _item_description.description
   ;
@@ -26345,7 +26356,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 99926,99932 ----
+--- 99928,99934 ----
   
      _item_description.description
   ;
@@ -26364,7 +26375,7 @@
   to the value f
   ;
   
---- 99942,99950 ----
+--- 99944,99952 ----
   
      _item_description.description
   ;
@@ -26385,7 +26396,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 99975,99983 ----
+--- 99977,99985 ----
   
      _item_description.description
   ;
@@ -26404,7 +26415,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 99993,99999 ----
+--- 99995,100001 ----
   
      _item_description.description
   ;
@@ -26421,7 +26432,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 100009,100015 ----
+--- 100011,100017 ----
   
      _item_description.description
   ;
@@ -26438,7 +26449,7 @@
   contained in the saveframe.
   ;
   
---- 100110,100116 ----
+--- 100112,100118 ----
   
      _item_description.description
   ;
@@ -26455,7 +26466,7 @@
   constraints.
   ;
   
---- 100287,100293 ----
+--- 100289,100295 ----
   
      _item_description.description
   ;
@@ -26473,7 +26484,7 @@
   tag.
   ;
   
---- 100303,100310 ----
+--- 100305,100312 ----
   
      _item_description.description
   ;
@@ -26493,7 +26504,7 @@
   contributions with different constraint.Combination_id (or none) are OR-ed.
   ;
   
---- 100816,100824 ----
+--- 100818,100826 ----
   
      _item_description.description
   ;
@@ -26514,7 +26525,7 @@
   more members.
   ;
   
---- 100834,100842 ----
+--- 100836,100844 ----
   
      _item_description.description
   ;
@@ -26534,7 +26545,7 @@
   a value.
   ;
   
---- 100852,100859 ----
+--- 100854,100861 ----
   
      _item_description.description
   ;
@@ -26552,7 +26563,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 100984,100990 ----
+--- 100986,100992 ----
   
      _item_description.description
   ;
@@ -26569,7 +26580,7 @@
   by the tag '_Atom_type' or any of its related tags.
   ;
   
---- 101000,101006 ----
+--- 101002,101008 ----
   
      _item_description.description
   ;
@@ -26586,7 +26597,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 101136,101142 ----
+--- 101138,101144 ----
   
      _item_description.description
   ;
@@ -26603,7 +26614,7 @@
   by the tag '_Atom_type' or any of its related tags.
   ;
   
---- 101152,101158 ----
+--- 101154,101160 ----
   
      _item_description.description
   ;
@@ -26620,7 +26631,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 101417,101423 ----
+--- 101419,101425 ----
   
      _item_description.description
   ;
@@ -26637,7 +26648,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 101571,101577 ----
+--- 101573,101579 ----
   
      _item_description.description
   ;
@@ -26655,7 +26666,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 101725,101732 ----
+--- 101727,101734 ----
   
      _item_description.description
   ;
@@ -26677,7 +26688,7 @@
   applications.
   ;
   
---- 101750,101760 ----
+--- 101752,101762 ----
   
      _item_description.description
   ;
@@ -26700,7 +26711,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 101793,101801 ----
+--- 101795,101803 ----
   
      _item_description.description
   ;
@@ -26719,7 +26730,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 101819,101825 ----
+--- 101821,101827 ----
   
      _item_description.description
   ;
@@ -26736,7 +26747,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 101843,101849 ----
+--- 101845,101851 ----
   
      _item_description.description
   ;
@@ -26754,7 +26765,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 101897,101904 ----
+--- 101899,101906 ----
   
      _item_description.description
   ;
@@ -26776,7 +26787,7 @@
   applications.
   ;
   
---- 101922,101932 ----
+--- 101924,101934 ----
   
      _item_description.description
   ;
@@ -26799,7 +26810,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 101965,101973 ----
+--- 101967,101975 ----
   
      _item_description.description
   ;
@@ -26818,7 +26829,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 101991,101997 ----
+--- 101993,101999 ----
   
      _item_description.description
   ;
@@ -26835,7 +26846,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 102015,102021 ----
+--- 102017,102023 ----
   
      _item_description.description
   ;
@@ -26852,7 +26863,7 @@
   distance constraint file.
   ;
   
---- 102125,102131 ----
+--- 102127,102133 ----
   
      _item_description.description
   ;
@@ -26869,7 +26880,7 @@
   the distance constaint file.
   ;
   
---- 102272,102278 ----
+--- 102274,102280 ----
   
      _item_description.description
   ;
@@ -26886,7 +26897,7 @@
   error.
   ;
   
---- 102550,102556 ----
+--- 102552,102558 ----
   
      _item_description.description
   ;
@@ -26903,7 +26914,7 @@
   contained in the saveframe.
   ;
   
---- 102666,102672 ----
+--- 102668,102674 ----
   
      _item_description.description
   ;
@@ -26920,7 +26931,7 @@
   constraints.
   ;
   
---- 102816,102822 ----
+--- 102818,102824 ----
   
      _item_description.description
   ;
@@ -26938,7 +26949,7 @@
   tag.
   ;
   
---- 102832,102839 ----
+--- 102834,102841 ----
   
      _item_description.description
   ;
@@ -26956,7 +26967,7 @@
   in one save frame.
   ;
   
---- 103316,103322 ----
+--- 103318,103324 ----
   
      _item_description.description
   ;
@@ -26973,7 +26984,7 @@
   pseudo atoms (e.g. LEU QG for all 6 protons) is preferred to keep this loop limited.
   ;
   
---- 103349,103355 ----
+--- 103351,103357 ----
   
      _item_description.description
   ;
@@ -26990,7 +27001,7 @@
   node does not have logic information.
   ;
   
---- 103436,103442 ----
+--- 103438,103444 ----
   
      _item_description.description
   ;
@@ -27007,7 +27018,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 103682,103688 ----
+--- 103684,103690 ----
   
      _item_description.description
   ;
@@ -27024,7 +27035,7 @@
   or any of its related tags.
   ;
   
---- 103698,103704 ----
+--- 103700,103706 ----
   
      _item_description.description
   ;
@@ -27045,7 +27056,7 @@
   applications.
   ;
   
---- 103729,103739 ----
+--- 103731,103741 ----
   
      _item_description.description
   ;
@@ -27067,7 +27078,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 103749,103756 ----
+--- 103751,103758 ----
   
      _item_description.description
   ;
@@ -27087,7 +27098,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 103774,103782 ----
+--- 103776,103784 ----
   
      _item_description.description
   ;
@@ -27106,7 +27117,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 103800,103806 ----
+--- 103802,103808 ----
   
      _item_description.description
   ;
@@ -27123,7 +27134,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 103824,103830 ----
+--- 103826,103832 ----
   
      _item_description.description
   ;
@@ -27140,7 +27151,7 @@
   to the experiment used to derive the data used to define the constraint.
   ;
   
---- 103935,103941 ----
+--- 103937,103943 ----
   
      _item_description.description
   ;
@@ -27157,7 +27168,7 @@
   distance constraint file.
   ;
   
---- 104151,104157 ----
+--- 104153,104159 ----
   
      _item_description.description
   ;
@@ -27174,7 +27185,7 @@
   the distance constaint file.
   ;
   
---- 104298,104304 ----
+--- 104300,104306 ----
   
      _item_description.description
   ;
@@ -27191,7 +27202,7 @@
   error.
   ;
   
---- 104576,104582 ----
+--- 104578,104584 ----
   
      _item_description.description
   ;
@@ -27208,7 +27219,7 @@
   contained in the saveframe.
   ;
   
---- 104692,104698 ----
+--- 104694,104700 ----
   
      _item_description.description
   ;
@@ -27225,7 +27236,7 @@
   chirality data.
   ;
   
---- 104755,104761 ----
+--- 104757,104763 ----
   
      _item_description.description
   ;
@@ -27243,7 +27254,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 105258,105265 ----
+--- 105260,105267 ----
   
      _item_description.description
   ;
@@ -27263,7 +27274,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 105283,105291 ----
+--- 105285,105293 ----
   
      _item_description.description
   ;
@@ -27282,7 +27293,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 105309,105315 ----
+--- 105311,105317 ----
   
      _item_description.description
   ;
@@ -27299,7 +27310,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 105333,105339 ----
+--- 105335,105341 ----
   
      _item_description.description
   ;
@@ -27317,7 +27328,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 105372,105379 ----
+--- 105374,105381 ----
   
      _item_description.description
   ;
@@ -27337,7 +27348,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 105397,105405 ----
+--- 105399,105407 ----
   
      _item_description.description
   ;
@@ -27356,7 +27367,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 105423,105429 ----
+--- 105425,105431 ----
   
      _item_description.description
   ;
@@ -27373,7 +27384,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 105447,105453 ----
+--- 105449,105455 ----
   
      _item_description.description
   ;
@@ -27390,7 +27401,7 @@
   contained in the saveframe.
   ;
   
---- 105541,105547 ----
+--- 105543,105549 ----
   
      _item_description.description
   ;
@@ -27407,7 +27418,7 @@
   angle constraints.
   ;
   
---- 105702,105708 ----
+--- 105704,105710 ----
   
      _item_description.description
   ;
@@ -27425,7 +27436,7 @@
   tag.
   ;
   
---- 105718,105725 ----
+--- 105720,105727 ----
   
      _item_description.description
   ;
@@ -27445,7 +27456,7 @@
   contributions with different constraint.Combination_id (or none) are OR-ed.
   ;
   
---- 106203,106211 ----
+--- 106205,106213 ----
   
      _item_description.description
   ;
@@ -27465,7 +27476,7 @@
   residue.
   ;
   
---- 106221,106228 ----
+--- 106223,106230 ----
   
      _item_description.description
   ;
@@ -27483,7 +27494,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 106928,106934 ----
+--- 106930,106936 ----
   
      _item_description.description
   ;
@@ -27500,7 +27511,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 107082,107088 ----
+--- 107084,107090 ----
   
      _item_description.description
   ;
@@ -27517,7 +27528,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 107236,107242 ----
+--- 107238,107244 ----
   
      _item_description.description
   ;
@@ -27534,7 +27545,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 107390,107396 ----
+--- 107392,107398 ----
   
      _item_description.description
   ;
@@ -27552,7 +27563,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 107544,107551 ----
+--- 107546,107553 ----
   
      _item_description.description
   ;
@@ -27572,7 +27583,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 107607,107615 ----
+--- 107609,107617 ----
   
      _item_description.description
   ;
@@ -27591,7 +27602,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 107633,107639 ----
+--- 107635,107641 ----
   
      _item_description.description
   ;
@@ -27608,7 +27619,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 107657,107663 ----
+--- 107659,107665 ----
   
      _item_description.description
   ;
@@ -27626,7 +27637,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 107711,107718 ----
+--- 107713,107720 ----
   
      _item_description.description
   ;
@@ -27646,7 +27657,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 107774,107782 ----
+--- 107776,107784 ----
   
      _item_description.description
   ;
@@ -27665,7 +27676,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 107800,107806 ----
+--- 107802,107808 ----
   
      _item_description.description
   ;
@@ -27682,7 +27693,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 107824,107830 ----
+--- 107826,107832 ----
   
      _item_description.description
   ;
@@ -27700,7 +27711,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 107878,107885 ----
+--- 107880,107887 ----
   
      _item_description.description
   ;
@@ -27720,7 +27731,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 107941,107949 ----
+--- 107943,107951 ----
   
      _item_description.description
   ;
@@ -27739,7 +27750,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 107967,107973 ----
+--- 107969,107975 ----
   
      _item_description.description
   ;
@@ -27756,7 +27767,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 107991,107997 ----
+--- 107993,107999 ----
   
      _item_description.description
   ;
@@ -27774,7 +27785,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 108045,108052 ----
+--- 108047,108054 ----
   
      _item_description.description
   ;
@@ -27794,7 +27805,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 108108,108116 ----
+--- 108110,108118 ----
   
      _item_description.description
   ;
@@ -27813,7 +27824,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 108134,108140 ----
+--- 108136,108142 ----
   
      _item_description.description
   ;
@@ -27830,7 +27841,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 108158,108164 ----
+--- 108160,108166 ----
   
      _item_description.description
   ;
@@ -27847,7 +27858,7 @@
   torsion angle constraint file.
   ;
   
---- 108268,108274 ----
+--- 108270,108276 ----
   
      _item_description.description
   ;
@@ -27864,7 +27875,7 @@
   the torsion angle constaint file.
   ;
   
---- 108415,108421 ----
+--- 108417,108423 ----
   
      _item_description.description
   ;
@@ -27881,7 +27892,7 @@
   error.
   ;
   
---- 108693,108699 ----
+--- 108695,108701 ----
   
      _item_description.description
   ;
@@ -27898,7 +27909,7 @@
   contained in the saveframe.
   ;
   
---- 108809,108815 ----
+--- 108811,108817 ----
   
      _item_description.description
   ;
@@ -27916,7 +27927,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 109002,109009 ----
+--- 109004,109011 ----
   
      _item_description.description
   ;
@@ -27936,7 +27947,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 109034,109042 ----
+--- 109036,109044 ----
   
      _item_description.description
   ;
@@ -27955,7 +27966,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 109052,109058 ----
+--- 109054,109060 ----
   
      _item_description.description
   ;
@@ -27973,7 +27984,7 @@
   is the axial symmetric component of the alignment tensor (1/3(Azz-(Axx+Ayy)/2).
   ;
   
---- 109113,109120 ----
+--- 109115,109122 ----
   
      _item_description.description
   ;
@@ -27992,7 +28003,7 @@
   is the rhombic component of the alignment tensor (1/3(Axx-Ayy)).
   ;
   
---- 109130,109137 ----
+--- 109132,109139 ----
   
      _item_description.description
   ;
@@ -28011,7 +28022,7 @@
   is S, the local order parameter for internal motions.
   ;
   
---- 109147,109154 ----
+--- 109149,109156 ----
   
      _item_description.description
   ;
@@ -28029,7 +28040,7 @@
   calculating the RDC constraints.
   ;
   
---- 109164,109170 ----
+--- 109166,109172 ----
   
      _item_description.description
   ;
@@ -28046,7 +28057,7 @@
   dipolar coupling constraints.
   ;
   
---- 109256,109262 ----
+--- 109258,109264 ----
   
      _item_description.description
   ;
@@ -28064,7 +28075,7 @@
   tag.
   ;
   
---- 109272,109279 ----
+--- 109274,109281 ----
   
      _item_description.description
   ;
@@ -28084,7 +28095,7 @@
   with different constraint.combination_id (or none) are OR-ed.
   ;
   
---- 109648,109656 ----
+--- 109650,109658 ----
   
      _item_description.description
   ;
@@ -28103,7 +28114,7 @@
   or any of its related tags.
   ;
   
---- 109786,109792 ----
+--- 109788,109794 ----
   
      _item_description.description
   ;
@@ -28120,7 +28131,7 @@
   or any of its related tags.
   ;
   
---- 109937,109943 ----
+--- 109939,109945 ----
   
      _item_description.description
   ;
@@ -28137,7 +28148,7 @@
   constraint.
   ;
   
---- 110028,110034 ----
+--- 110030,110036 ----
   
      _item_description.description
   ;
@@ -28154,7 +28165,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 110174,110180 ----
+--- 110176,110182 ----
   
      _item_description.description
   ;
@@ -28171,7 +28182,7 @@
   This is a place holder for the atom record number extracted from a PDB formatted file.
   ;
   
---- 110328,110334 ----
+--- 110330,110336 ----
   
      _item_description.description
   ;
@@ -28189,7 +28200,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 110482,110489 ----
+--- 110484,110491 ----
   
      _item_description.description
   ;
@@ -28209,7 +28220,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 110545,110553 ----
+--- 110547,110555 ----
   
      _item_description.description
   ;
@@ -28228,7 +28239,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 110571,110577 ----
+--- 110573,110579 ----
   
      _item_description.description
   ;
@@ -28245,7 +28256,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 110595,110601 ----
+--- 110597,110603 ----
   
      _item_description.description
   ;
@@ -28263,7 +28274,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 110649,110656 ----
+--- 110651,110658 ----
   
      _item_description.description
   ;
@@ -28283,7 +28294,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 110712,110720 ----
+--- 110714,110722 ----
   
      _item_description.description
   ;
@@ -28302,7 +28313,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 110738,110744 ----
+--- 110740,110746 ----
   
      _item_description.description
   ;
@@ -28319,7 +28330,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 110762,110768 ----
+--- 110764,110770 ----
   
      _item_description.description
   ;
@@ -28336,7 +28347,7 @@
   distance constraint file.
   ;
   
---- 110872,110878 ----
+--- 110874,110880 ----
   
      _item_description.description
   ;
@@ -28353,7 +28364,7 @@
   the RDC constaint file.
   ;
   
---- 111019,111025 ----
+--- 111021,111027 ----
   
      _item_description.description
   ;
@@ -28370,7 +28381,7 @@
   error.
   ;
   
---- 111297,111303 ----
+--- 111299,111305 ----
   
      _item_description.description
   ;
@@ -28387,7 +28398,7 @@
   contained in the saveframe.
   ;
   
---- 111413,111419 ----
+--- 111415,111421 ----
   
      _item_description.description
   ;
@@ -28405,7 +28416,7 @@
   tag.
   ;
   
---- 111531,111538 ----
+--- 111533,111540 ----
   
      _item_description.description
   ;
@@ -28423,7 +28434,7 @@
   three bond constraints.
   ;
   
---- 111563,111569 ----
+--- 111565,111571 ----
   
      _item_description.description
   ;
@@ -28441,7 +28452,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 112538,112545 ----
+--- 112540,112547 ----
   
      _item_description.description
   ;
@@ -28461,7 +28472,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 112563,112571 ----
+--- 112565,112573 ----
   
      _item_description.description
   ;
@@ -28480,7 +28491,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112589,112595 ----
+--- 112591,112597 ----
   
      _item_description.description
   ;
@@ -28497,7 +28508,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112613,112619 ----
+--- 112615,112621 ----
   
      _item_description.description
   ;
@@ -28515,7 +28526,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 112652,112659 ----
+--- 112654,112661 ----
   
      _item_description.description
   ;
@@ -28535,7 +28546,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 112677,112685 ----
+--- 112679,112687 ----
   
      _item_description.description
   ;
@@ -28554,7 +28565,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112703,112709 ----
+--- 112705,112711 ----
   
      _item_description.description
   ;
@@ -28571,7 +28582,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112727,112733 ----
+--- 112729,112735 ----
   
      _item_description.description
   ;
@@ -28589,7 +28600,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 112766,112773 ----
+--- 112768,112775 ----
   
      _item_description.description
   ;
@@ -28609,7 +28620,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 112791,112799 ----
+--- 112793,112801 ----
   
      _item_description.description
   ;
@@ -28628,7 +28639,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112817,112823 ----
+--- 112819,112825 ----
   
      _item_description.description
   ;
@@ -28645,7 +28656,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112841,112847 ----
+--- 112843,112849 ----
   
      _item_description.description
   ;
@@ -28663,7 +28674,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 112880,112887 ----
+--- 112882,112889 ----
   
      _item_description.description
   ;
@@ -28683,7 +28694,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 112905,112913 ----
+--- 112907,112915 ----
   
      _item_description.description
   ;
@@ -28702,7 +28713,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112931,112937 ----
+--- 112933,112939 ----
   
      _item_description.description
   ;
@@ -28719,7 +28730,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 112955,112961 ----
+--- 112957,112963 ----
   
      _item_description.description
   ;
@@ -28736,7 +28747,7 @@
   contained in the saveframe.
   ;
   
---- 113049,113055 ----
+--- 113051,113057 ----
   
      _item_description.description
   ;
@@ -28753,7 +28764,7 @@
   and CB chemical shift constraints.
   ;
   
---- 113182,113188 ----
+--- 113184,113190 ----
   
      _item_description.description
   ;
@@ -28771,7 +28782,7 @@
   tag.
   ;
   
---- 113198,113205 ----
+--- 113200,113207 ----
   
      _item_description.description
   ;
@@ -28789,7 +28800,7 @@
   the list of constraints contained in one save frame.
   ;
   
---- 113544,113550 ----
+--- 113546,113552 ----
   
      _item_description.description
   ;
@@ -28807,7 +28818,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 114325,114332 ----
+--- 114327,114334 ----
   
      _item_description.description
   ;
@@ -28827,7 +28838,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 114350,114358 ----
+--- 114352,114360 ----
   
      _item_description.description
   ;
@@ -28846,7 +28857,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114376,114382 ----
+--- 114378,114384 ----
   
      _item_description.description
   ;
@@ -28863,7 +28874,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114400,114406 ----
+--- 114402,114408 ----
   
      _item_description.description
   ;
@@ -28881,7 +28892,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 114439,114446 ----
+--- 114441,114448 ----
   
      _item_description.description
   ;
@@ -28901,7 +28912,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 114464,114472 ----
+--- 114466,114474 ----
   
      _item_description.description
   ;
@@ -28920,7 +28931,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114490,114496 ----
+--- 114492,114498 ----
   
      _item_description.description
   ;
@@ -28937,7 +28948,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114514,114520 ----
+--- 114516,114522 ----
   
      _item_description.description
   ;
@@ -28955,7 +28966,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 114553,114560 ----
+--- 114555,114562 ----
   
      _item_description.description
   ;
@@ -28975,7 +28986,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 114578,114586 ----
+--- 114580,114588 ----
   
      _item_description.description
   ;
@@ -28994,7 +29005,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114604,114610 ----
+--- 114606,114612 ----
   
      _item_description.description
   ;
@@ -29011,7 +29022,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114628,114634 ----
+--- 114630,114636 ----
   
      _item_description.description
   ;
@@ -29029,7 +29040,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 114667,114674 ----
+--- 114669,114676 ----
   
      _item_description.description
   ;
@@ -29049,7 +29060,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 114692,114700 ----
+--- 114694,114702 ----
   
      _item_description.description
   ;
@@ -29068,7 +29079,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114718,114724 ----
+--- 114720,114726 ----
   
      _item_description.description
   ;
@@ -29085,7 +29096,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114742,114748 ----
+--- 114744,114750 ----
   
      _item_description.description
   ;
@@ -29103,7 +29114,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 114781,114788 ----
+--- 114783,114790 ----
   
      _item_description.description
   ;
@@ -29123,7 +29134,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 114806,114814 ----
+--- 114808,114816 ----
   
      _item_description.description
   ;
@@ -29142,7 +29153,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114832,114838 ----
+--- 114834,114840 ----
   
      _item_description.description
   ;
@@ -29159,7 +29170,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 114856,114862 ----
+--- 114858,114864 ----
   
      _item_description.description
   ;
@@ -29176,7 +29187,7 @@
   contained in the saveframe.
   ;
   
---- 114950,114956 ----
+--- 114952,114958 ----
   
      _item_description.description
   ;
@@ -29193,7 +29204,7 @@
   chemical shift constraints.
   ;
   
---- 115083,115089 ----
+--- 115085,115091 ----
   
      _item_description.description
   ;
@@ -29211,7 +29222,7 @@
   tag.
   ;
   
---- 115099,115106 ----
+--- 115101,115108 ----
   
      _item_description.description
   ;
@@ -29229,7 +29240,7 @@
   list contained within one save frame.
   ;
   
---- 115445,115451 ----
+--- 115447,115453 ----
   
      _item_description.description
   ;
@@ -29246,7 +29257,7 @@
   (i.e., H, C, P, etc).
   ;
   
---- 115566,115572 ----
+--- 115568,115574 ----
   
      _item_description.description
   ;
@@ -29263,7 +29274,7 @@
   or any of its related tags.
   ;
   
---- 115582,115588 ----
+--- 115584,115590 ----
   
      _item_description.description
   ;
@@ -29281,7 +29292,7 @@
   data.  Note that the value is not required to be a number.
   ;
   
---- 115673,115680 ----
+--- 115675,115682 ----
   
      _item_description.description
   ;
@@ -29301,7 +29312,7 @@
   to the value for Seq_ID or Comp_index_ID.
   ;
   
---- 115698,115706 ----
+--- 115700,115708 ----
   
      _item_description.description
   ;
@@ -29320,7 +29331,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 115724,115730 ----
+--- 115726,115732 ----
   
      _item_description.description
   ;
@@ -29337,7 +29348,7 @@
   in order to match that used in the publication that describes the experimental data.
   ;
   
---- 115748,115754 ----
+--- 115750,115756 ----
   
      _item_description.description
   ;
@@ -29354,7 +29365,7 @@
   contained in the saveframe.
   ;
   
---- 115842,115848 ----
+--- 115844,115850 ----
   
      _item_description.description
   ;
@@ -29371,7 +29382,7 @@
   list is found.
   ;
   
---- 115944,115950 ----
+--- 115946,115952 ----
   
      _item_description.description
   ;
@@ -29388,7 +29399,7 @@
   spectral peak list save frames.
   ;
   
---- 115960,115966 ----
+--- 115962,115968 ----
   
      _item_description.description
   ;
@@ -29405,7 +29416,7 @@
   is found.
   ;
   
---- 116014,116020 ----
+--- 116016,116022 ----
   
      _item_description.description
   ;
@@ -29422,7 +29433,7 @@
   constraint.
   ;
   
---- 116056,116062 ----
+--- 116058,116064 ----
   
      _item_description.description
   ;
@@ -29439,7 +29450,7 @@
   contained in the saveframe.
   ;
   
---- 116157,116163 ----
+--- 116159,116165 ----
   
      _item_description.description
   ;
@@ -29456,7 +29467,7 @@
   the data for determination of the SAXS data.
   ;
   
---- 116238,116244 ----
+--- 116240,116246 ----
   
      _item_description.description
   ;
@@ -29473,7 +29484,7 @@
   block that is the value to the '_SAXS_constraint_list.Text_data' tag.
   ;
   
---- 116269,116275 ----
+--- 116271,116277 ----
   
      _item_description.description
   ;
@@ -29490,7 +29501,7 @@
   contained in the saveframe.
   ;
   
---- 116704,116710 ----
+--- 116706,116712 ----
   
      _item_description.description
   ;
@@ -29507,7 +29518,7 @@
   in the text block that is the value to the '_Other_constraint_list.Text_data' tag.
   ;
   
---- 116902,116908 ----
+--- 116904,116910 ----
   
      _item_description.description
   ;
@@ -29524,7 +29535,7 @@
   contained in the saveframe.
   ;
   
---- 117261,117267 ----
+--- 117263,117269 ----
   
      _item_description.description
   ;
@@ -29541,7 +29552,7 @@
   contained in the saveframe.
   ;
   
---- 117407,117413 ----
+--- 117409,117415 ----
   
      _item_description.description
   ;
@@ -29558,7 +29569,7 @@
   the data for determination of the MZ ratio values.
   ;
   
---- 117495,117501 ----
+--- 117497,117503 ----
   
      _item_description.description
   ;
@@ -29575,7 +29586,7 @@
   text block that is the value to the '_MZ_ratio_data_list.Text_data' tag.
   ;
   
---- 117616,117622 ----
+--- 117618,117624 ----
   
      _item_description.description
   ;
@@ -29592,7 +29603,7 @@
   contained in the saveframe.
   ;
   
---- 118681,118687 ----
+--- 118683,118689 ----
   
      _item_description.description
   ;
@@ -29609,7 +29620,7 @@
   a MS chromatogram.
   ;
   
---- 118712,118718 ----
+--- 118714,118720 ----
   
      _item_description.description
   ;
@@ -29626,7 +29637,7 @@
   the data for determination of the MZ ratio values.
   ;
   
---- 118766,118772 ----
+--- 118768,118774 ----
   
      _item_description.description
   ;
@@ -29643,7 +29654,7 @@
   text block that is the value to the '_MS_chromatogram_list.Text_data' tag.
   ;
   
---- 118797,118803 ----
+--- 118799,118805 ----
   
      _item_description.description
   ;
@@ -29660,7 +29671,7 @@
   contained in the saveframe.
   ;
   
---- 119548,119554 ----
+--- 119550,119556 ----
   
      _item_description.description
   ;
@@ -29677,7 +29688,7 @@
   frames.
   ;
   
---- 119579,119585 ----
+--- 119581,119587 ----
   
      _item_description.description
   ;
@@ -29694,7 +29705,7 @@
   information.
   ;
   
---- 119651,119657 ----
+--- 119653,119659 ----
   
      _item_description.description
   ;
@@ -29711,7 +29722,7 @@
   contained in the saveframe.
   ;
   
---- 119737,119743 ----
+--- 119739,119745 ----
   
      _item_description.description
   ;
@@ -29728,7 +29739,7 @@
   derive data.
   ;
   
---- 119768,119774 ----
+--- 119770,119776 ----
   
      _item_description.description
   ;
@@ -29745,7 +29756,7 @@
   contained in the saveframe.
   ;
   
---- 120118,120124 ----
+--- 120120,120126 ----
   
      _item_description.description
   ;
@@ -29762,7 +29773,7 @@
   used to derive data.
   ;
   
---- 120149,120155 ----
+--- 120151,120157 ----
   
      _item_description.description
   ;
@@ -29772,7 +29783,7 @@
   
 ***************
 *** 118850,118852 ****
---- 120470,122765 ----
+--- 120472,122767 ----
   
   save_
   

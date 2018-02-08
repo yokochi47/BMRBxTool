@@ -50494,6 +50494,7 @@ spectral peak.
                                     <xsd:enumeration value="sxt"/>
                                     <xsd:enumeration value="t"/>
                                     <xsd:enumeration value="td"/>
+                                    <xsd:enumeration value="tt"/>
                                     <xsd:enumeration value="LR"/>
                                     <xsd:enumeration value="1JCH"/>
                                 </xsd:restriction>
