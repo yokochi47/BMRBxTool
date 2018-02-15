@@ -14,7 +14,7 @@ source ../scripts/db-user.sh
 BMRB_DB=bmrb
 MTBL_DB=metabolomics
 
-BMRB_MIRROR=("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
+BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
 DUMP_PATH=ftp/pub/bmrb/relational_tables
 
 psql -U $DB_USER -l | grep $BMRB_DB > /dev/null
@@ -40,12 +40,12 @@ fi
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"
 
-BMRB_URL=${BMRB_MIRROR[0]}
+BMRB_MIRROR=${BMRB_MIRRORS[0]}
 
 delay=10000
 i=1
 
-for url in ${BMRB_MIRROR[@]}
+for url in ${BMRB_MIRRORS[@]}
 do
 
  time=`ping -c 1 -w 10 $url | grep 'avg' | cut -d '=' -f 2 | cut -d '/' -f 2`
@@ -57,7 +57,7 @@ do
   cmp=`echo "$time > $delay" | bc`
 
   if [ $cmp = "0" ] ; then
-   BMRB_URL=$url
+   BMRB_MIRROR=$url
    delay=$time
   fi
 
@@ -70,7 +70,7 @@ do
 done
 
 echo
-echo "$BMRB_URL was selected. OK (1/2/3/n [y]) ? "
+echo "$BMRB_MIRROR is selected as the default server. OK (1/2/3/n [y]) ? "
 
 read ans
 
@@ -78,17 +78,17 @@ case $ans in
  n*|N*)
   echo stopped.
   exit 1;;
- 1) BMRB_URL=${BMRB_MIRROR[0]};;
- 2) BMRB_URL=${BMRB_MIRROR[1]};;
- 3) BMRB_URL=${BMRB_MIRROR[2]};;
+ 1) BMRB_MIRROR=${BMRB_MIRRORS[0]};;
+ 2) BMRB_MIRROR=${BMRB_MIRRORS[1]};;
+ 3) BMRB_MIRROR=${BMRB_MIRRORS[2]};;
  *) ;;
 esac
 
-echo $BMRB_URL > ../lacs_ext/url_mirror
+echo $BMRB_MIRROR > ../lacs_ext/url_mirror
 
 if [ -e url_mirror ] ; then
 
- BMRB_URL=`cat url_mirror`
+ BMRB_MIRROR=`cat url_mirror`
 
 fi
 
@@ -96,8 +96,8 @@ rm -rf $DUMP_PATH
 
 NMR_STAR3_1=nmr-star3.1
 
-BMRB_FTP=http://$BMRB_URL/$DUMP_PATH/$NMR_STAR3_1/
-MTBL_FTP=http://$BMRB_URL/$DUMP_PATH/$MTBL_DB/
+BMRB_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$NMR_STAR3_1/
+MTBL_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$MTBL_DB/
 
 wget -c -r -nv -np $BMRB_FTP -nH -R index*
 wget -c -r -nv -np $MTBL_FTP -nH -R index*
