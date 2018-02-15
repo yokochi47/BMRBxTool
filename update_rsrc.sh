@@ -14,44 +14,30 @@ if [ $# = 0 ] || [ $1 = "schema" ] ; then
 fi
 
 if [ $# = 0 ] || [ $1 = "bmrb" ] ; then
- cd bmrb
- ./update_bmrb.sh
- cd ..
+ ( cd bmrb; ./update_bmrb.sh )
 fi
 
 if [ $# = 0 ] || [[ $1 =~ ^tax.* ]] ; then
- cd taxonomy
- ./update_taxonomy.sh
- cd ..
+ ( cd taxonomy; ./update_taxonomy.sh )
 fi
 
 if [ $# = 0 ] || [[ $1 =~ ^lacs.* ]] ; then
- cd lacs_ext
- ./update_lacs.sh
- cd ..
+ ( cd lacs_ext; ./update_lacs.sh )
 fi
 
 if [ $# = 0 ] || [[ $1 =~ ^plus.* ]] || [[ $1 =~ ^pdb.* ]] ; then
- cd bmrb_plus_pdb_ext
- ./update_bmrb_plus_pdb.sh
- cd ..
+ ( cd bmrb_plus_pdb_ext; ./update_bmrb_plus_pdb.sh )
 fi
 
 if [ $# = 0 ] || [[ $1 =~ ^pb.* ]] ; then
- cd pb_ext
- ./update_pb.sh
- cd ..
+ ( cd pb_ext; ./update_pb.sh )
 fi
 
 if [ $# = 0 ] || [[ $1 =~ ^cs_complete.* ]] ; then
- cd cs_complete
- ./update_cs_complete.sh
- cd ..
+ ( cd cs_complete; ./update_cs_complete.sh )
 fi
 
 if [ $# = 0 ] || [[ $1 =~ ^le.* ]] || [[ $1 =~ ^lig.* ]] || [[ $1 =~ ^ex.* ]]; then
- cd ligand_expo
- yes | ./update_ligand_expo.sh
- cd ..
+ ( cd ligand_expo; yes | ./update_ligand_expo.sh )
 fi
 
