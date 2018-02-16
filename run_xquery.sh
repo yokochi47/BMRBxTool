@@ -31,24 +31,25 @@ while true ; do
  case "$1" in
  -p)
   PREFIX=$2
-  shift 2
+  shift
  ;;
  -q)
   QUERY_FILE=$2
-  shift 2
+  shift
  ;;
  -e)
   LOCATION=$2
-  shift 2
+  shift
  ;;
  -s)
   SILENT=$2
-  shift 2
+  shift
  ;;
  *)
   break
  ;;
  esac
+ shift
 done
 
 if [ ! -e $QUERY_FILE ] ; then

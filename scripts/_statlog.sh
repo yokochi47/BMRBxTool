@@ -10,12 +10,13 @@ while true ; do
  case "$1" in
  -a)
   ATOM=$2
-  shift 2
+  shift
  ;;
  *)
   break
  ;;
  esac
+ shift
 done
 
 if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
