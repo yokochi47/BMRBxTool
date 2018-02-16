@@ -13,8 +13,10 @@ if [ $? != 0 ] ; then
  (psql -U $DB_USER -l | grep $BMRB_DB) &>> /dev/null
 
  if [ $? != 0 ] ; then
+
   echo "Not found $BMRB_DB database."
   exit 1
+
  fi
 
 fi

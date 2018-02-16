@@ -17,7 +17,6 @@ psql -U $DB_USER -l | grep $DB_NAME > /dev/null
 if [ $? != 0 ] ; then
 
  echo "database \"$DB_NAME\" does not exist."
-
  exit 1
 
 fi

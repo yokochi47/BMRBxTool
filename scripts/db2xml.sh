@@ -157,13 +157,9 @@ while true
 do
 
  java -classpath $PREFIX-util.jar:schema/mmcifNmrStar.jar:extlibs/* org.pdb.pdbml.schema.mmcifNmrStar.$PREFIX"_Util_Main" $OPTION --$ATOM\
- --user-bmrb $DB_USER --user-tax $DB_USER --user-le $DB_USER --mail-to $MAIL_TO --mail-from $MAIL_FROM --smtp-host $SMTP_HOST --max-thrds $MAXPROCS
+ --user-bmrb $DB_USER --user-tax $DB_USER --user-le $DB_USER --mail-to $MAIL_TO --mail-from $MAIL_FROM --smtp-host $SMTP_HOST --max-thrds $MAXPROCS || exit 1
 
- if [ $? != 0 ] ; then
-
-  exit 1
-
- elif [ -d $XML_LOC_DIR ] || [ $INIT != "true" ] ; then
+ if [ -d $XML_LOC_DIR ] || [ $INIT != "true" ] ; then
 
   if [ $INIT = "true" ] ; then
 

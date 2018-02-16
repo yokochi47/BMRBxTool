@@ -3,7 +3,6 @@
 if [ ! `which DictToSdb` ] || [ ! `which Dict2XMLSchema` ] || [ ! `which Dict2XMLSchema` ]; then
 
  echo "Please install MMCIF Dictionary Suite (http://sw-tools.pdb.org/)."
-
  exit 1
 
 fi
@@ -20,7 +19,6 @@ fi
 if [ ! `which javac` ] ; then
 
  echo "javac: command not found..."
-
  exit 1
 
 fi
