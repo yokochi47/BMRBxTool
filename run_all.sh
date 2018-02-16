@@ -25,12 +25,12 @@ while true ; do
  case "$1" in
  -n)
   update_db=false
-  shift 1
  ;;
  *)
   break
  ;;
  esac
+ shift
 done
 
 echo "# BMRBxTool v1.26.0 (NMR-STAR v3.2.0.15)"

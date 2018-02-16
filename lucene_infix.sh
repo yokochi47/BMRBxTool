@@ -8,12 +8,13 @@ while true ; do
  case "$1" in
  -p)
   PREFIX=$2
-  shift 2
+  shift
  ;;
  *)
   break
  ;;
  esac
+ shift
 done
 
 if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then

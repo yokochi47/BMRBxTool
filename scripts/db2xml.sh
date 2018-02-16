@@ -32,30 +32,30 @@ while true ; do
  case "$1" in
  -p)
   PREFIX=$2
-  shift 2
+  shift
  ;;
  -a)
   ATOM=$2
-  shift 2
+  shift
  ;;
  -h|-u|-s|-x|-d|-t|-f|-m|-x)
-   OPTION=$OPTION" "$2" "$4
-   shift 4
+  OPTION=$OPTION" "$2" "$4
+  shift 3
  ;;
  -w|-n|-v|-e|-l)
-   OPTION=$OPTION" "$2
-   shift 2
+  OPTION=$OPTION" "$2
+  shift
  ;;
  -o)
-   INIT=false
-
-   OPTION=$OPTION" "$2
-   shift 2
+  INIT=false
+  OPTION=$OPTION" "$2
+  shift
  ;;
  *)
   break
  ;;
  esac
+ shift
 done
 
 if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then

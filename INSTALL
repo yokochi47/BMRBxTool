@@ -231,7 +231,7 @@ P. OPTION: Converting XML to JSON
 
 Q. ### An interactive script executing all processes above ###
 
-    % do_all.sh
+    % run_all.sh
 
 R. OPTION: Summarizing remediation reports
 

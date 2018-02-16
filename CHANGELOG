@@ -1,7 +1,8 @@
- Changes in BMRBxTool 1.26.0 (release 2018-02-08)
+ Changes in BMRBxTool 1.26.0 (release 2018-02-16)
 
   Updated dictionary from NMR-STAR v3.2.0.11 to v3.2.0.15.
   Apache License V2.0 branding.
+  Renamed script: do_all.sh -> run_all.sh
 
  Changes in BMRBxTool 1.25.0 (release 2018-01-24)
 

@@ -38,28 +38,29 @@ while true ; do
  case "$1" in
  -q)
   QUERY_FILE=$2
-  shift 2
+  shift
  ;;
  -f)
   OUTPUT_FORMAT=$2
-  shift 2
+  shift
  ;;
  -e)
   LOCATION=$2
-  shift 2
+  shift
  ;;
  -l)
   LIMIT=$2
-  shift 2
+  shift
  ;;
  -s)
   SILENT=$2
-  shift 2
+  shift
  ;;
  *)
   break
  ;;
  esac
+ shift
 done
 
 if [ ! -e $QUERY_FILE ] ; then
