@@ -19,20 +19,18 @@ DUMP_PATH=ftp/pub/bmrb/relational_tables
 
 psql -U $DB_USER -l | grep $BMRB_DB > /dev/null
 
-if [ $? != "0" ] ; then
+if [ $? != 0 ] ; then
 
  echo "database \"$BMRB_DB\" does not exist."
-
  exit 1
 
 fi
 
 psql -U $DB_USER -l | grep $MTBL_DB > /dev/null
 
-if [ $? != "0" ] ; then
+if [ $? != 0 ] ; then
 
  echo "database \"$MTBL_DB\" does not exist."
-
  exit 1
 
 fi
@@ -50,13 +48,13 @@ do
 
  time=`ping -c 1 -w 10 $url | grep 'avg' | cut -d '=' -f 2 | cut -d '/' -f 2`
 
- if [ $? = "0" ] ; then
+ if [ $? = 0 ] ; then
 
   printf "[%d] %s\t\t%6.1f\n" $i $url $time
 
   cmp=`echo "$time > $delay" | bc`
 
-  if [ $cmp = "0" ] ; then
+  if [ $cmp = 0 ] ; then
    BMRB_MIRROR=$url
    delay=$time
   fi
@@ -70,7 +68,7 @@ do
 done
 
 echo
-echo "$BMRB_MIRROR is selected as the default server. OK (1/2/3/n [y]) ? "
+echo "$BMRB_MIRROR is selected by default. OK (1/2/3/n [y]) ? "
 
 read ans
 
@@ -102,13 +100,7 @@ MTBL_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$MTBL_DB/
 wget -c -r -nv -np $BMRB_FTP -nH -R index*
 wget -c -r -nv -np $MTBL_FTP -nH -R index*
 
-cd $DUMP_PATH/$NMR_STAR3_1
-
-if [ $? != "0" ] ; then
-
- exit 1
-
-fi
+cd $DUMP_PATH/$NMR_STAR3_1 || exit 1
 
 psql -d $BMRB_DB -U $DB_USER -f schema.sql
 
@@ -118,15 +110,15 @@ do
  BASENAME=`basename $FILE .csv`
  echo $BASENAME | grep -E "^dict\." > /dev/null
 
- if [ $? != "0" ] ; then
+ if [ $? != 0 ] ; then
 
   echo $BASENAME | grep -E "^web\." > /dev/null
 
-  if [ $? != "0" ] ; then
+  if [ $? != 0 ] ; then
 
    echo $BASENAME | grep -E "^pacsy\." > /dev/null
 
-   if [ $? != "0" ] ; then
+   if [ $? != 0 ] ; then
 
     if [ $BASENAME != "Task" ] && [ $BASENAME != "Software" ] && [  $BASENAME != "Vendor" ] ; then
      psql -U $DB_USER -d $BMRB_DB -c "\COPY \"${BASENAME}\" FROM $FILE CSV HEADER"
@@ -156,13 +148,7 @@ do
 
 done
 
-cd ../$MTBL_DB
-
-if [ $? != "0" ] ; then
-
- exit 1
-
-fi
+cd ../$MTBL_DB || exit 1
 
 psql -d $MTBL_DB -U $DB_USER -f schema.sql
 
@@ -172,11 +158,11 @@ do
  BASENAME=`basename $FILE .csv`
  echo $BASENAME | grep -E "^dict\." > /dev/null
 
- if [ $? != "0" ] ; then
+ if [ $? != 0 ] ; then
 
   echo $BASENAME | grep -E "^meta\." > /dev/null
 
-  if [ $? != "0" ] ; then
+  if [ $? != 0 ] ; then
 
    psql -U $DB_USER -d $MTBL_DB -c "\COPY \"${BASENAME}\" FROM $FILE CSV HEADER"
 

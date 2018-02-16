@@ -65,7 +65,6 @@ done
 if [ ! -e $QUERY_FILE ] ; then
 
  echo "Couldn't find $QUERY_FILE."
-
  exit 1
 
 fi

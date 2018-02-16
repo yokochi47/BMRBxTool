@@ -15,10 +15,9 @@ TAX_DB=taxonomy
 
 psql -U $DB_USER -l | grep $TAX_DB > /dev/null
 
-if [ $? != "0" ] ; then
+if [ $? != 0 ] ; then
 
  echo "database \"$TAX_DB\" does not exist."
-
  exit 1
 
 fi

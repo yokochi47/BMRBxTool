@@ -129,6 +129,7 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
   echo
   echo -e "${red}$errs errors were detected. Please check the log files for more details.${normal}"
+
   exit 1
 
  fi

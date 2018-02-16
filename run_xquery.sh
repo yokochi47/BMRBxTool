@@ -13,7 +13,6 @@ show_usage() {
 if [ $# = 0 ] ; then
 
  echo "Couldn't specify XQuery file."
-
  exit 1
 
 fi
@@ -55,7 +54,6 @@ done
 if [ ! -e $QUERY_FILE ] ; then
 
  echo "Couldn't find $QUERY_FILE."
-
  exit 1
 
 fi

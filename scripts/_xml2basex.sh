@@ -54,13 +54,7 @@ fi
 
 if [ $UPDATE = "yes" ] ; then
 
- ./$PREFIX"unzip_xml.sh" -a $ATOM
-
- if [ $? != 0 ] ; then
-
-  exit 1
-
- fi
+ ./$PREFIX"unzip_xml.sh" -a $ATOM || exit 1
 
 fi
 
@@ -73,21 +67,13 @@ fi
 
 BASEX_COM="DROP DB $PREFIX; CREATE DB $PREFIX $XML_RAW_DIR; OPEN $PREFIX; CREATE INDEX TEXT; CREATE INDEX ATTRIBUTE; CREATE INDEX FULLTEXT; OPTIMIZE"
 
-basex -v -c"$BASEX_COM"
+basex -v -c"$BASEX_COM" || exit 1
 
-if [ $? = 0 ] ; then
-
- if [ $ATOM = "atom" ] ; then
-  echo "XML->BaseX(DB) storage (prefix:"$PREFIX") is completed."
- else
-  echo "XML->BaseX(DB) storage (prefix:"$PREFIX"-"$ATOM") is completed."
- fi
-
- date -u +"%b %d, %Y" > /tmp/$PREFIX-basex-last
-
+if [ $ATOM = "atom" ] ; then
+ echo "XML->BaseX(DB) storage (prefix:"$PREFIX") is completed."
 else
-
- exit 1
-
+ echo "XML->BaseX(DB) storage (prefix:"$PREFIX"-"$ATOM") is completed."
 fi
+
+date -u +"%b %d, %Y" > /tmp/$PREFIX-basex-last
 

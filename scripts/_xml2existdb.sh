@@ -28,6 +28,7 @@ if [ $WEBDAV_USER = "admin:password" ] ; then
 
  echo "Specify the User-Agent string (eXist user account and password) to send to the HTTP server."
  echo "File $0, \$WEBDAV_USER=$WEBDAV_USER."
+
  exit 1
 
 fi
@@ -66,13 +67,7 @@ fi
 
 if [ $UPDATE = "yes" ] ; then
 
- ./$PREFIX"unzip_xml.sh" -a $ATOM
-
- if [ $? != 0 ] ; then
-
-  exit 1
-
- fi
+ ./$PREFIX"unzip_xml.sh" -a $ATOM || exit 1
 
 fi
 
