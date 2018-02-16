@@ -45,7 +45,7 @@ BMRB_DB=bmrb
 
 psql -U $DB_USER -l | grep $BMRB_DB > /dev/null
 
-if [ $? != "0" ] ; then
+if [ $? != 0 ] ; then
 
  echo "database \"$BMRB_DB\" does not exist."
 
