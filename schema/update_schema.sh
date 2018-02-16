@@ -63,7 +63,7 @@ echo $DICT_VERSION
 sed '2,6d' $DICT_PREFIX-v$DICT_VERSION.xsd |\
 grep -v "enumeration value=\"\"" |\
 sed -e 's/<xsd:element name=\"seq_homology_expectation_val\" minOccurs=\"0\" maxOccurs=\"1\" nillable=\"true\" type=\"xsd:decimal\">/<xsd:element name=\"seq_homology_expectation_val\" minOccurs=\"0\" maxOccurs=\"1\" nillable=\"true\" type=\"xsd:double\">/' > $DICT_PREFIX-v$DICT_VERSION.xsd~
-mv $DICT_PREFIX-v$DICT_VERSION.xsd~ $DICT_PREFIX-v$DICT_VERSION.xsd
+mv -f $DICT_PREFIX-v$DICT_VERSION.xsd~ $DICT_PREFIX-v$DICT_VERSION.xsd
 
 source ../scripts/db-user.sh
 
@@ -105,6 +105,14 @@ echo
 echo "$BMRB_URL was selected."
 
 java -classpath ../xsd-ann.jar:../extlibs/* XSD_ann --home .. --user-bmrb $DB_USER --url-mirror $BMRB_URL --dic-ver $DICT_VERSION
+
+SAXON=../extlibs/saxon9he.jar
+
+APPEND_XSD_XSL=append_xsd.xsl
+
+java -jar $SAXON -s:$DICT_PREFIX-v$DICT_VERSION.xsd -xsl:$APPEND_XSD_XSL -o:$DICT_PREFIX-v$DICT_VERSION.xsd~
+
+mv -f $DICT_PREFIX-v$DICT_VERSION.xsd~ $DICT_PREFIX-v$DICT_VERSION.xsd
 
 ln -s $DICT_PREFIX-v$DICT_VERSION.xsd $DICT_PREFIX.xsd
 
