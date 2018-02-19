@@ -4,7 +4,8 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:BMRBx="http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd">
+  xmlns:BMRBx="http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd"
+  exclude-result-prefixes="xsi">
 
   <xsl:output method="xml" indent="yes"/>
   <xsl:strip-space elements="*"/>
