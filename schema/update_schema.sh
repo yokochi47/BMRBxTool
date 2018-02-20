@@ -24,46 +24,46 @@ if [ ! `which javac` ] ; then
 fi
 
 BMRB_URL=svn.bmrb.wisc.edu
-NMRSTAR_DICT_DIR=http://$BMRB_URL/svn/nmr-star-dictionary/bmrb_only_files/adit_input
-NMRSTAR_DICT_FILE=NMR-STAR.dic
+NMRSTAR_DIC_DIR=http://$BMRB_URL/svn/nmr-star-dictionary/bmrb_only_files/adit_input
+NMRSTAR_DIC_FILE=NMR-STAR.dic
 
-DICT_PREFIX=mmcif_nmr-star
+DIC_PREFIX=mmcif_nmr-star
 NAME_SPACE=BMRBx
 
-rm -f $NMRSTAR_DICT_FILE
+rm -f $NMRSTAR_DIC_FILE
 
-wget -c $NMRSTAR_DICT_DIR/$NMRSTAR_DICT_FILE --no-check-certificate
-tr -d '\r' < $NMRSTAR_DICT_FILE > $NMRSTAR_DICT_FILE~
-sed -e 's/^   _pdbx_item_enumeration_details/#  _pdbx_item_enumeration_details/' $NMRSTAR_DICT_FILE~ > $NMRSTAR_DICT_FILE
-rm -f $NMRSTAR_DICT_FILE~
+wget -c $NMRSTAR_DIC_DIR/$NMRSTAR_DIC_FILE --no-check-certificate
+tr -d '\r' < $NMRSTAR_DIC_FILE > $NMRSTAR_DIC_FILE~
+sed -e 's/^   _pdbx_item_enumeration_details/#  _pdbx_item_enumeration_details/' $NMRSTAR_DIC_FILE~ > $NMRSTAR_DIC_FILE
+rm -f $NMRSTAR_DIC_FILE~
 
-patch -N < $NMRSTAR_DICT_FILE.patch
+patch -N < $NMRSTAR_DIC_FILE.patch
 
-rm -f  $NMRSTAR_DICT_FILE.rej
+rm -f  $NMRSTAR_DIC_FILE.rej
 
-DictToSdb -ddlFile mmcif_nmr-star_ddl.dic -dictFile $NMRSTAR_DICT_FILE -dictSdbFile $DICT_PREFIX.sdb -ec
-DictObjFileCreator -dictSdbFile $DICT_PREFIX.sdb -o $DICT_PREFIX.odb
-Dict2XMLSchema -dictName $DICT_PREFIX.dic -df $DICT_PREFIX.odb -ns $NAME_SPACE -prefix $DICT_PREFIX
+DictToSdb -ddlFile mmcif_nmr-star_ddl.dic -dictFile $NMRSTAR_DIC_FILE -dictSdbFile $DIC_PREFIX.sdb -ec
+DictObjFileCreator -dictSdbFile $DIC_PREFIX.sdb -o $DIC_PREFIX.odb
+Dict2XMLSchema -dictName $DIC_PREFIX.dic -df $DIC_PREFIX.odb -ns $NAME_SPACE -prefix $DIC_PREFIX
 
-if [ -e $DICT_PREFIX.xsd ] ; then
+if [ -e $DIC_PREFIX.xsd ] ; then
 
- rm -f $DICT_PREFIX.xsd
-
-fi
-
-if [ -e $NMRSTAR_DICT_FILE ] ; then
-
- arg=(`grep dictionary.version $NMRSTAR_DICT_FILE`)
- DICT_VERSION=${arg[1]}
+ rm -f $DIC_PREFIX.xsd
 
 fi
 
-echo $DICT_VERSION
+if [ -e $NMRSTAR_DIC_FILE ] ; then
 
-sed '2,6d' $DICT_PREFIX-v$DICT_VERSION.xsd |\
+ arg=(`tr -d '\r' < $NMRSTAR_DIC_FILE | grep dictionary.version`)
+ DIC_VERSION=${arg[1]}
+
+fi
+
+echo $DIC_VERSION
+
+sed '2,6d' $DIC_PREFIX-v$DIC_VERSION.xsd |\
 grep -v "enumeration value=\"\"" |\
-sed -e 's/<xsd:element name=\"seq_homology_expectation_val\" minOccurs=\"0\" maxOccurs=\"1\" nillable=\"true\" type=\"xsd:decimal\">/<xsd:element name=\"seq_homology_expectation_val\" minOccurs=\"0\" maxOccurs=\"1\" nillable=\"true\" type=\"xsd:double\">/' > $DICT_PREFIX-v$DICT_VERSION.xsd~
-mv -f $DICT_PREFIX-v$DICT_VERSION.xsd~ $DICT_PREFIX-v$DICT_VERSION.xsd
+sed -e 's/<xsd:element name=\"seq_homology_expectation_val\" minOccurs=\"0\" maxOccurs=\"1\" nillable=\"true\" type=\"xsd:decimal\">/<xsd:element name=\"seq_homology_expectation_val\" minOccurs=\"0\" maxOccurs=\"1\" nillable=\"true\" type=\"xsd:double\">/' > $DIC_PREFIX-v$DIC_VERSION.xsd~
+mv -f $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
 
 source ../scripts/db-user.sh
 
@@ -104,17 +104,17 @@ done
 echo
 echo "$BMRB_URL was selected."
 
-java -classpath ../xsd-ann.jar:../extlibs/* XSD_ann --home .. --user-bmrb $DB_USER --url-mirror $BMRB_URL --dic-ver $DICT_VERSION
+java -classpath ../xsd-ann.jar:../extlibs/* XSD_ann --home .. --user-bmrb $DB_USER --url-mirror $BMRB_URL --dic-ver $DIC_VERSION
 
 SAXON=../extlibs/saxon9he.jar
 
 APPEND_XSD_XSL=append_xsd.xsl
 
-java -jar $SAXON -s:$DICT_PREFIX-v$DICT_VERSION.xsd -xsl:$APPEND_XSD_XSL -o:$DICT_PREFIX-v$DICT_VERSION.xsd~
+java -jar $SAXON -s:$DIC_PREFIX-v$DIC_VERSION.xsd -xsl:$APPEND_XSD_XSL -o:$DIC_PREFIX-v$DIC_VERSION.xsd~
 
-mv -f $DICT_PREFIX-v$DICT_VERSION.xsd~ $DICT_PREFIX-v$DICT_VERSION.xsd
+mv -f $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
 
-ln -s $DICT_PREFIX-v$DICT_VERSION.xsd $DICT_PREFIX.xsd
+ln -s $DIC_PREFIX-v$DIC_VERSION.xsd $DIC_PREFIX.xsd
 
-scomp $DICT_PREFIX.xsd -out mmcifNmrStar.jar -compiler `which javac`
+scomp $DIC_PREFIX.xsd -out mmcifNmrStar.jar -compiler `which javac`
 

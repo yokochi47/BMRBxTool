@@ -16,19 +16,19 @@ if [ ! `which javac` ] ; then
 
 fi
 
-NMRSTAR_DICT_FILE=NMR-STAR.dic
+NMRSTAR_DIC_FILE=NMR-STAR.dic
 
-DICT_PREFIX=mmcif_nmr-star
+DIC_PREFIX=mmcif_nmr-star
 
-if [ -e $NMRSTAR_DICT_FILE ] ; then
+if [ -e $NMRSTAR_DIC_FILE ] ; then
 
- arg=(`grep dictionary.version $NMRSTAR_DICT_FILE`)
- DICT_VERSION=${arg[1]}
+ arg=(`tr -d '\r' < $NMRSTAR_DIC_FILE | grep dictionary.version`)
+ DIC_VERSION=${arg[1]}
 
 fi
 
-grep -v "enumeration value=\"\"" $DICT_PREFIX-v$DICT_VERSION.xsd > $DICT_PREFIX-v$DICT_VERSION.xsd~
-mv $DICT_PREFIX-v$DICT_VERSION.xsd~ $DICT_PREFIX-v$DICT_VERSION.xsd
+grep -v "enumeration value=\"\"" $DIC_PREFIX-v$DIC_VERSION.xsd > $DIC_PREFIX-v$DIC_VERSION.xsd~
+mv $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
 
-scomp $DICT_PREFIX-v$DICT_VERSION.xsd -out mmcifNmrStar.jar -compiler `which javac`
+scomp $DIC_PREFIX-v$DIC_VERSION.xsd -out mmcifNmrStar.jar -compiler `which javac`
 
