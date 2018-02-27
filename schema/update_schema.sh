@@ -41,7 +41,7 @@ patch -N < $NMRSTAR_DIC_FILE.patch
 
 rm -f  $NMRSTAR_DIC_FILE.rej
 
-DictToSdb -ddlFile mmcif_nmr-star_ddl.dic -dictFile $NMRSTAR_DIC_FILE -dictSdbFile $DIC_PREFIX.sdb -ec
+DictToSdb -ddlFile mmcif_nmr-star_ddl.dic -dictFile $NMRSTAR_DIC_FILE -dictSdbFile $DIC_PREFIX.sdb -ec | grep '^Info:' > dict2sdb.info
 DictObjFileCreator -dictSdbFile $DIC_PREFIX.sdb -o $DIC_PREFIX.odb
 Dict2XMLSchema -dictName $DIC_PREFIX.dic -df $DIC_PREFIX.odb -ns $NAME_SPACE -prefix $DIC_PREFIX
 
@@ -57,8 +57,6 @@ if [ -e $NMRSTAR_DIC_FILE ] ; then
  DIC_VERSION=${arg[1]}
 
 fi
-
-echo $DIC_VERSION
 
 sed '2,6d' $DIC_PREFIX-v$DIC_VERSION.xsd |\
 grep -v "enumeration value=\"\"" |\
