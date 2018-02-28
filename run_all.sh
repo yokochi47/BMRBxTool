@@ -418,15 +418,15 @@ if [ $bms_ulist_len -gt 0 ] ; then
  ./sphinx_index.sh -p bms -a atom
 fi
 
-echo "# + XML -> JSON conversion"
+echo "# + BMRB/XML -> BMRB/JSON conversion"
 
- if [ $bmr_ulist_len -gt 0 ] ; then
-  ./bmrxml2json.sh -a noatom
- fi
+if [ $bmr_ulist_len -gt 0 ] ; then
+ ./bmrxml2json.sh -a noatom
+fi
 
- if [ $bms_ulist_len -gt 0 ] ; then
-  ./bmsxml2json.sh -a noatom
- fi
+if [ $bms_ulist_len -gt 0 ] ; then
+ ./bmsxml2json.sh -a noatom
+fi
 
 echo done.
 
