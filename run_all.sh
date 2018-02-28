@@ -346,7 +346,7 @@ echo "# + XML Database (BaseX) loader (optional)"
 
 which basex > /dev/null
 
-if [ $? = 0 ] ; then
+if [ $? = 0 ] && ( [ $bmr_ulist_len -gt 0 ] || [ $bms_ulist_len -gt 0 ] ) ; then
 
  echo
  echo "Do you want to update BaseX DB? (y [n]) "
@@ -374,7 +374,7 @@ if [ $? = 0 ] ; then
 
 fi
 
-echo "# + Cloning BMRB DB from BMRB/XML (optional)"
+echo "# + Cloning BMRB DB from BMRB/XML"
 
 if [ $bmr_ulist_len -gt 0 ] ; then
 
@@ -400,7 +400,7 @@ if [ $bms_ulist_len -gt 0 ] ; then
 
 fi
 
-echo "# + Full text indexing using BMRB/XML (optional)"
+echo "# + Full text indexing using BMRB/XML"
 
 if [ $bmr_ulist_len -gt 0 ] ; then
  ./lucene_index.sh -p bmr -a noatom
@@ -418,24 +418,15 @@ if [ $bms_ulist_len -gt 0 ] ; then
  ./sphinx_index.sh -p bms -a atom
 fi
 
-echo "# + XML -> JSON conversion (optional)"
+echo "# + XML -> JSON conversion"
 
-echo
-echo "Do you want to convert to JSON files? (y [n]) "
+ if [ $bmr_ulist_len -gt 0 ] ; then
+  ./bmrxml2json.sh -a noatom
+ fi
 
-read ans
-
-case $ans in
- y*|Y*)
-  if [ $bmr_ulist_len -gt 0 ] ; then
-   ./bmrxml2json.sh -a noatom
-  fi
-  if [ $bms_ulist_len -gt 0 ] ; then
-   ./bmsxml2json.sh -a noatom
-  fi;;
- *)
-  echo skipped.;;
-esac
+ if [ $bms_ulist_len -gt 0 ] ; then
+  ./bmsxml2json.sh -a noatom
+ fi
 
 echo done.
 
