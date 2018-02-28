@@ -346,7 +346,7 @@ echo "# + XML Database (BaseX) loader (optional)"
 
 which basex > /dev/null
 
-if [ $? = 0 ] ; then
+if [ $? = 0 ] && ( [ $bmr_ulist_len -gt 0 ] || [ $bms_ulist_len -gt 0 ] ) ; then
 
  echo
  echo "Do you want to update BaseX DB? (y [n]) "
@@ -420,22 +420,13 @@ fi
 
 echo "# + XML -> JSON conversion (optional)"
 
-echo
-echo "Do you want to convert to JSON files? (y [n]) "
+ if [ $bmr_ulist_len -gt 0 ] ; then
+  ./bmrxml2json.sh -a noatom
+ fi
 
-read ans
-
-case $ans in
- y*|Y*)
-  if [ $bmr_ulist_len -gt 0 ] ; then
-   ./bmrxml2json.sh -a noatom
-  fi
-  if [ $bms_ulist_len -gt 0 ] ; then
-   ./bmsxml2json.sh -a noatom
-  fi;;
- *)
-  echo skipped.;;
-esac
+ if [ $bms_ulist_len -gt 0 ] ; then
+  ./bmsxml2json.sh -a noatom
+ fi
 
 echo done.
 
