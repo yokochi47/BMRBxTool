@@ -374,7 +374,7 @@ if [ $? = 0 ] && ( [ $bmr_ulist_len -gt 0 ] || [ $bms_ulist_len -gt 0 ] ) ; then
 
 fi
 
-echo "# + Cloning BMRB DB from BMRB/XML (optional)"
+echo "# + Cloning BMRB DB from BMRB/XML"
 
 if [ $bmr_ulist_len -gt 0 ] ; then
 
@@ -400,7 +400,7 @@ if [ $bms_ulist_len -gt 0 ] ; then
 
 fi
 
-echo "# + Full text indexing using BMRB/XML (optional)"
+echo "# + Full text indexing using BMRB/XML"
 
 if [ $bmr_ulist_len -gt 0 ] ; then
  ./lucene_index.sh -p bmr -a noatom
@@ -418,7 +418,7 @@ if [ $bms_ulist_len -gt 0 ] ; then
  ./sphinx_index.sh -p bms -a atom
 fi
 
-echo "# + XML -> JSON conversion (optional)"
+echo "# + XML -> JSON conversion"
 
  if [ $bmr_ulist_len -gt 0 ] ; then
   ./bmrxml2json.sh -a noatom
