@@ -53,7 +53,7 @@ tar xzf $DB_FTP/$DB_TGZ -C .
 XSD_SCHEMA=pdbx-v50.xsd
 DB_SCHEMA=ligand_expo.schema
 
-java -cp ../xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --ddl $DB_SCHEMA
+java -cp ../extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --ddl $DB_SCHEMA
 
 echo
 echo "Do you want to update $DB_NAME? (y [n]) "
@@ -83,7 +83,7 @@ rm -rf $ERR_DIR/*
 
 err_file=$ERR_DIR/all_err
 
-java -cp ../xsd2pgschema.jar xml2pgcsv --xsd $XSD_SCHEMA --xml $XML_DIR --csv-dir $CSV_DIR --no-rel --no-valid --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+java -cp ../extlibs/xsd2pgschema.jar xml2pgcsv --xsd $XSD_SCHEMA --xml $XML_DIR --csv-dir $CSV_DIR --no-rel --no-valid --db-name $DB_NAME --db-user $DB_USER 2> $err_file
 
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file
