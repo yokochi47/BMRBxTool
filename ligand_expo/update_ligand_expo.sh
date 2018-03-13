@@ -70,6 +70,7 @@ psql -d $DB_NAME -U $DB_USER -f $DB_SCHEMA --quiet
 
 WORK_DIR=pg_work
 CSV_DIR=$WORK_DIR/csv
+CHK_DIR=le_chk_sum
 ERR_DIR=$WORK_DIR/err
 
 rm -rf $WORK_DIR
@@ -79,6 +80,7 @@ mkdir -p $CSV_DIR
 mkdir -p $ERR_DIR
 
 rm -rf $CSV_DIR/*
+
 rm -rf $ERR_DIR/*
 
 err_file=$ERR_DIR/all_err
