@@ -112,8 +112,8 @@ mkdir -p $WORK_DIR
 mkdir -p $CSV_DIR
 mkdir -p $ERR_DIR
 
-rm -rf $CSV_DIR
-rm -f $ERR_DIR/*
+rm -rf $CSV_DIR/*
+rm -rf $ERR_DIR/*
 
 err_file=$ERR_DIR/all_err
 
