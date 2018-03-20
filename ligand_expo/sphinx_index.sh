@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sync_update=true
+
 if [ ! `which indexer` ] ; then
 
  echo "indexer: command not found..."
@@ -55,9 +57,6 @@ if [ -d $IDX_DIR ] ; then
 
 fi
 
-WORK_DIR=sphinx_work
-ERR_DIR=$WORK_DIR/err
-
 DIC_NAMES=("all" "lig")
 ATTRS=("--attr chem_comp.name --attr chem_comp.pdbx_initial_date" "")
 FIELDS=("" "--field chem_comp.formula --field chem_comp.name --field chem_comp.pdbx_synonyms --field chem_comp.three_letter_code --field chem_comp.id --field pdbx_chem_comp_descriptor.descriptor --field pdbx_chem_comp_feature.value --field pdbx_chem_comp_identifier.identifier")
@@ -73,14 +72,31 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
  echo $dic_name
 
- rm -rf $WORK_DIR
+ WORK_DIR=sphinx_work_$dic_name
+ DIC_WORK_DIR=sphinx_dic_work_$dic_name
+ ERR_DIR=$WORK_DIR/err
+
+ if [ $sync_update != "true" ] ; then
+  rm -rf $WORK_DIR
+ else
+  MD5_DIR=chk_sum_sphinx_$dic_name
+ fi
 
  mkdir -p $WORK_DIR
+ mkdir -p $DIC_WORK_DIR
  mkdir -p $ERR_DIR
 
  err_file=$ERR_DIR/all_err
 
- java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid 2> $err_file
+ if [ $sync_update != "true" ] ; then
+
+  java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid 2> $err_file
+
+ else
+
+  java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid --sync $MD5_DIR 2> $err_file
+
+ fi
 
  if [ $? = 0 ] && [ ! -s $err_file ] ; then
   rm -f $err_file
@@ -101,15 +117,15 @@ for dic_name in ${DIC_NAMES[@]} ; do
   if [ $dic_name = "all" ] ; then
    mkdir -p $IDX_DIR -m 777
    indexer $PREFIX
-   indexer $PREFIX --buildstops $WORK_DIR/dictionary.txt 100000 --buildfreqs
+   indexer $PREFIX --buildstops $DIC_WORK_DIR/dictionary.txt 100000 --buildfreqs
   else
    indexer $PREFIX"_"$dic_name
-   indexer $PREFIX"_"$dic_name --buildstops $WORK_DIR/dictionary.txt 100000 --buildfreqs
+   indexer $PREFIX"_"$dic_name --buildstops $DIC_WORK_DIR/dictionary.txt 100000 --buildfreqs
   fi
 
   mkdir -p $DIC_DIR -m 777
 
-  java -cp ../extlibs/xsd2pgschema.jar dicmerge4sphinx --ds-dir $WORK_DIR --dic $WORK_DIR/dictionary.txt --freq 1
+  java -cp ../extlibs/xsd2pgschema.jar dicmerge4sphinx --ds-dir $DIC_WORK_DIR --dic $DIC_WORK_DIR/dictionary.txt --freq 1
 
   if [ $dic_name = "all" ] ; then
    indexer $PREFIX"_dic"
@@ -121,7 +137,9 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
    echo "Sphinx index (Ligand Expo:"$dic_name") is update."
 
-   rm -rf $WORK_DIR
+   if [ $sync_update != "true" ] ; then
+    rm -rf $WORK_DIR
+   fi
 
   fi
 
