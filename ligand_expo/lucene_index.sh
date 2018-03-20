@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sync_update=true
+
 DB_FTP=ligand-expo.rcsb.org/dictionaries
 DB_TGZ=components-pub-xml.tar.gz
 XML_DIR=components-pub-xml
@@ -40,7 +42,9 @@ if [ -d $IDX_DIR ] ; then
    exit 1;;
  esac
 
- rm -rf $IDX_DIR
+ if [ $sync_update != "true" ] ; then
+  rm -rf $IDX_DIR
+ fi
 
 fi
 
@@ -50,12 +54,23 @@ ERR_DIR=$WORK_DIR/err
 rm -rf $WORK_DIR
 
 mkdir -p $WORK_DIR
-mkdir -p $IDX_DIR
 mkdir -p $ERR_DIR
+
+if [ $sync_update = "true" ] ; then
+ MD5_DIR=chk_sum_lucene
+fi
 
 err_file=$ERR_DIR/all_err
 
-java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid 2> $err_file
+if [ $sync_update != "true" ] ; then
+
+ java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid 2> $err_file
+
+else
+
+ java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --sync $MD5_DIR 2> $err_file
+
+fi
 
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file

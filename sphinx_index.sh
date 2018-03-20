@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sync_update=true
+
 PREFIX=bmr
 ATOM=atom
 
@@ -85,9 +87,6 @@ fi
 
 ./$PREFIX"unzip_xml.sh" -a $ATOM
 
-WORK_DIR=sphinx_work
-ERR_DIR=$WORK_DIR/err
-
 DIC_NAMES=("all" "aut" "pol" "lig" "org")
 
 attrs_bmr=("--attr entry.id --attr entry.title --attr entry.original_release_date" "" "" "" "")
@@ -117,6 +116,21 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
  echo $dic_name
 
+ WORK_DIR=sphinx_work_$PREFIX"_"$dic_name
+ DIC_WORK_DIR=sphinx_dic_work_$PREFIX"_"$dic_name
+ ERR_DIR=$WORK_DIR/err
+
+ if [ $sync_update != "true" ] ; then
+  rm -rf $WORK_DIR
+ else
+  MD5_DIR=chk_sum_sphinx_$dic_name
+ fi
+
+ mkdir -p $WORK_DIR
+ mkdir -p $DIC_WORK_DIR
+ mkdir -p $ERR_DIR
+
+
  rm -rf $WORK_DIR
 
  mkdir -p $WORK_DIR
@@ -124,7 +138,15 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
  err_file=$ERR_DIR/all_err
 
- java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields 2> $err_file
+ if [ $sync_update != "true" ] ; then
+
+  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields 2> $err_file
+
+ else
+
+  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields --sync $MD5_DIR 2> $err_file
+
+ fi
 
  if [ $? = 0 ] && [ ! -s $err_file ] ; then
   rm -f $err_file
@@ -145,15 +167,15 @@ for dic_name in ${DIC_NAMES[@]} ; do
   if [ $dic_name = "all" ] ; then
    mkdir -p $IDX_DIR -m 777
    indexer $PREFIX
-   indexer $PREFIX --buildstops $WORK_DIR/dictionary.txt 100000 --buildfreqs
+   indexer $PREFIX --buildstops $DIC_WORK_DIR/dictionary.txt 100000 --buildfreqs
   else
    indexer $PREFIX"_"$dic_name
-   indexer $PREFIX"_"$dic_name --buildstops $WORK_DIR/dictionary.txt 100000 --buildfreqs
+   indexer $PREFIX"_"$dic_name --buildstops $DIC_WORK_DIR/dictionary.txt 100000 --buildfreqs
   fi
 
   mkdir -p $DIC_DIR -m 777
 
-  java -cp extlibs/xsd2pgschema.jar dicmerge4sphinx --ds-dir $WORK_DIR --dic $WORK_DIR/dictionary.txt --freq 1
+  java -cp extlibs/xsd2pgschema.jar dicmerge4sphinx --ds-dir $DIC_WORK_DIR --dic $DIC_WORK_DIR/dictionary.txt --freq 1
 
   if [ $dic_name = "all" ] ; then
    indexer $PREFIX"_dic"
@@ -169,7 +191,9 @@ for dic_name in ${DIC_NAMES[@]} ; do
     echo "Sphinx index (prefix:"$PREFIX"-"$ATOM":"$dic_name") is update."
    fi
 
-   rm -rf $WORK_DIR
+   if [ $sync_update != "true" ] ; then
+    rm -rf $WORK_DIR
+   fi
 
   fi
 
