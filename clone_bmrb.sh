@@ -140,7 +140,7 @@ if [ $errs = 0 ] ; then
 
   ./index_bmrb_clone.sh
 
-  createlang -d $DB_NAME plpgsql -U $DB_USER
+  psql -d $DB_NAME -U $DB_USER -c "CREATE LANGUAGE plpgsql"
 
  else
 
