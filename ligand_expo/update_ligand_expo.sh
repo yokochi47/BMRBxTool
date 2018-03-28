@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sync_update=true
+
 if [ ! `which psql` ] ; then
 
  echo "psql: command not found..."
@@ -53,7 +55,7 @@ tar xzf $DB_FTP/$DB_TGZ -C .
 XSD_SCHEMA=pdbx-v50.xsd
 DB_SCHEMA=ligand_expo.schema
 
-java -cp ../extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --ddl $DB_SCHEMA
+java -cp ../extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --doc-key --no-key --ddl $DB_SCHEMA
 
 echo
 echo "Do you want to update $DB_NAME? (y [n]) "
@@ -66,28 +68,53 @@ case $ans in
   exit 1;;
 esac
 
-psql -d $DB_NAME -U $DB_USER -f $DB_SCHEMA --quiet
+if [ $sync_update != "true" ] || [ $relations = "0" ] ; then
+ sync_update=false
+ psql -d $DB_NAME -U $DB_USER -f $DB_SCHEMA --quiet
+fi
 
 WORK_DIR=pg_work
-CSV_DIR=$WORK_DIR/csv
+
+if [ $sync_update != "true" ] ; then
+ CSV_DIR=$WORK_DIR/csv
+fi
+
+MD5_DIR=chk_sum_pgsql
 ERR_DIR=$WORK_DIR/err
 
 rm -rf $WORK_DIR
 
 mkdir -p $WORK_DIR
-mkdir -p $CSV_DIR
+
+if [ $sync_update != "true" ] ; then
+ mkdir -p $CSV_DIR
+fi
+
 mkdir -p $ERR_DIR
 
-rm -rf $CSV_DIR/*
+if [ $sync_update != "true" ] ; then
+ rm -rf $CSV_DIR/*
+fi
+
 rm -rf $ERR_DIR/*
 
 err_file=$ERR_DIR/all_err
 
-java -cp ../extlibs/xsd2pgschema.jar xml2pgcsv --xsd $XSD_SCHEMA --xml $XML_DIR --csv-dir $CSV_DIR --no-rel --no-valid --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+if [ $sync_update != "true" ] ; then
+
+ java -cp ../extlibs/xsd2pgschema.jar xml2pgcsv --xsd $XSD_SCHEMA --xml $XML_DIR --csv-dir $CSV_DIR --sync $MD5_DIR --no-rel --doc-key --no-valid --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+
+else
+
+ java -cp ../extlibs/xsd2pgschema.jar xml2pgsql --xsd $XSD_SCHEMA --xml $XML_DIR --sync $MD5_DIR --no-rel --doc-key --no-valid --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+
+fi
 
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file
- rm -rf $CSV_DIR
+ if [ $sync_update != "true" ] ; then
+  rm -rf $CSV_DIR
+ fi
 else
  echo "$0 aborted."
  exit 1

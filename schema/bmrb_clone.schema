@@ -27,7 +27,7 @@
 --   User keys:
 --    0 document keys, 0 serial keys, 0 xpath keys
 --   Contents:
---    1314 attributes, 4434 elements, 0 simple contents
+--    1314 attributes (454 in-place document keys), 4434 elements (3 in-place document keys), 0 simple contents
 --   Wild cards:
 --    0 any elements, 0 any attributes
 --
@@ -547,7 +547,7 @@ CREATE TABLE entry (
 	type ENUM_entry_type ,
 	uuid TEXT ,
 	version_type ENUM_entry_version_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	id TEXT NOT NULL 
 );
 
@@ -564,7 +564,7 @@ CREATE TABLE ambiguous_atom_chem_shift (
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	atom_chem_shift_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -609,7 +609,7 @@ CREATE TABLE angle (
 	seq_id_3 INTEGER ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -639,7 +639,7 @@ CREATE TABLE angular_order_param (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	angular_order_parameter_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -657,7 +657,7 @@ CREATE TABLE angular_order_parameter_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -701,7 +701,7 @@ CREATE TABLE assembly (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	thiol_state ENUM_assembly_thiol_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -719,7 +719,7 @@ CREATE TABLE assembly_annotation_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	source TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -737,7 +737,7 @@ CREATE TABLE assembly_bio_function (
 	assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	biological_function TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -754,7 +754,7 @@ CREATE TABLE assembly_citation (
 	assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -768,7 +768,7 @@ CREATE TABLE assembly_citation (
 CREATE TABLE assembly_common_name (
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -803,7 +803,7 @@ CREATE TABLE assembly_db_link (
 	assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	database_code ENUM_assembly_db_link_database_code NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -822,7 +822,7 @@ CREATE TABLE assembly_interaction (
 	mol_interaction_type ENUM_assembly_interaction_mol_interaction_type ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -838,7 +838,7 @@ CREATE TABLE assembly_interaction (
 CREATE TABLE assembly_keyword (
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	keyword TEXT NOT NULL 
@@ -863,7 +863,7 @@ CREATE TABLE assembly_segment (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -883,7 +883,7 @@ CREATE TABLE assembly_segment_description (
 	assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	assembly_segment_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -905,7 +905,7 @@ CREATE TABLE assembly_subsystem (
 	name TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -924,7 +924,7 @@ CREATE TABLE assembly_systematic_name (
 	name TEXT ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	naming_system ENUM_assembly_systematic_name_naming_system NOT NULL 
@@ -942,7 +942,7 @@ CREATE TYPE ENUM_assembly_type_type AS ENUM ( 'peptide', 'protein monomer', 'pro
 CREATE TABLE assembly_type (
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	type ENUM_assembly_type_type NOT NULL 
@@ -972,7 +972,7 @@ CREATE TABLE assigned_chem_shift_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1011,7 +1011,7 @@ CREATE TABLE assigned_peak_chem_shift (
 	resonance_id INTEGER ,
 	set_id INTEGER ,
 	val DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	peak_id INTEGER NOT NULL ,
@@ -1045,7 +1045,7 @@ CREATE TABLE assigned_spectral_transition (
 	resonance_id INTEGER ,
 	set_id INTEGER ,
 	val DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	spectral_dim_id INTEGER NOT NULL ,
@@ -1084,7 +1084,7 @@ CREATE TABLE atom (
 	assembly_atom_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -1122,7 +1122,7 @@ CREATE TABLE atom_chem_shift (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1142,7 +1142,7 @@ CREATE TABLE atom_nomenclature (
 	atom_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -1201,7 +1201,7 @@ CREATE TABLE atom_site (
 	uncertainty DECIMAL ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1218,7 +1218,7 @@ CREATE TABLE atom_sites_footnote (
 	text TEXT ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	footnote_id INTEGER NOT NULL 
@@ -1245,7 +1245,7 @@ CREATE TABLE atom_type (
 	van_der_vaals_radii DECIMAL ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1275,7 +1275,7 @@ CREATE TABLE author_annotation (
 	seq_id_start INTEGER ,
 -- ATTRIBUTE
 	assembly_annotation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1310,7 +1310,7 @@ CREATE TABLE auto_relaxation (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	auto_relaxation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1332,7 +1332,7 @@ CREATE TABLE auto_relaxation_experiment (
 	sample_state ENUM_auto_relaxation_experiment_sample_state ,
 -- ATTRIBUTE
 	auto_relaxation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -1374,7 +1374,7 @@ CREATE TABLE auto_relaxation_list (
 	temp_control_method ENUM_auto_relaxation_list_temp_control_method ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1393,7 +1393,7 @@ CREATE TABLE auto_relaxation_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	auto_relaxation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -1413,7 +1413,7 @@ CREATE TABLE auxiliary_files (
 	name TEXT ,
 	path TEXT ,
 	uri TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1435,7 +1435,7 @@ CREATE TABLE binding_experiment (
 	sample_state ENUM_binding_experiment_sample_state ,
 -- ATTRIBUTE
 	binding_value_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -1458,7 +1458,7 @@ CREATE TABLE binding_param (
 	observed_param_val_err DECIMAL ,
 -- ATTRIBUTE
 	binding_param_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1481,7 +1481,7 @@ CREATE TABLE binding_param_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1505,7 +1505,7 @@ CREATE TABLE binding_partners (
 	binding_value_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -1540,7 +1540,7 @@ CREATE TABLE binding_result (
 	val_units TEXT ,
 -- ATTRIBUTE
 	binding_value_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1559,7 +1559,7 @@ CREATE TABLE binding_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	binding_value_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -1580,7 +1580,7 @@ CREATE TABLE binding_value_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1630,7 +1630,7 @@ CREATE TABLE bond (
 	value_order ENUM_bond_value_order ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1680,7 +1680,7 @@ CREATE TABLE bond_annotation (
 	value_order ENUM_bond_annotation_value_order ,
 -- ATTRIBUTE
 	bond_annotation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1697,7 +1697,7 @@ CREATE TABLE bond_annotation_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1719,7 +1719,7 @@ CREATE TABLE bond_observed_conformer (
 	bond_annotation_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -1808,7 +1808,7 @@ CREATE TABLE ca_cb_constraint (
 	source_experiment_id INTEGER ,
 -- ATTRIBUTE
 	ca_cb_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1832,7 +1832,7 @@ CREATE TABLE ca_cb_constraint_expt (
 	sample_state ENUM_ca_cb_constraint_expt_sample_state ,
 -- ATTRIBUTE
 	ca_cb_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -1855,7 +1855,7 @@ CREATE TABLE ca_cb_constraint_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	units TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -1874,7 +1874,7 @@ CREATE TABLE ca_cb_constraint_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	ca_cb_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -1898,7 +1898,7 @@ CREATE TABLE characteristic (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2001,7 +2001,7 @@ CREATE TABLE chem_comp (
 	type ENUM_chem_comp_type ,
 	vendor ENUM_chem_comp_vendor ,
 	vendor_product_code TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id TEXT NOT NULL 
@@ -2021,7 +2021,7 @@ CREATE TABLE chem_comp_angle (
 	details TEXT ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2053,7 +2053,7 @@ CREATE TABLE chem_comp_assembly (
 	comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -2111,7 +2111,7 @@ CREATE TABLE chem_comp_atom (
 	atom_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -2127,7 +2127,7 @@ CREATE TABLE chem_comp_bio_function (
 	biological_function TEXT NOT NULL ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -2157,7 +2157,7 @@ CREATE TABLE chem_comp_bond (
 	value_order ENUM_chem_comp_bond_value_order ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2176,7 +2176,7 @@ CREATE TABLE chem_comp_citation (
 	citation_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -2192,7 +2192,7 @@ CREATE TYPE ENUM_chem_comp_common_name_type AS ENUM ( 'abbreviation', 'name', 'n
 CREATE TABLE chem_comp_common_name (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -2223,7 +2223,7 @@ CREATE TABLE chem_comp_db_link (
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	database_code TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -2243,7 +2243,7 @@ CREATE TABLE chem_comp_descriptor (
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	descriptor TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	program ENUM_chem_comp_descriptor_program NOT NULL ,
@@ -2267,7 +2267,7 @@ CREATE TYPE ENUM_chem_comp_identifier_type AS ENUM ( 'COMMON NAME', 'SYSTEMATIC 
 CREATE TABLE chem_comp_identifier (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	identifier TEXT NOT NULL ,
@@ -2289,7 +2289,7 @@ CREATE TABLE chem_comp_identifier (
 CREATE TABLE chem_comp_keyword (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	keyword TEXT NOT NULL 
@@ -2305,7 +2305,7 @@ CREATE TABLE chem_comp_keyword (
 CREATE TABLE chem_comp_smiles (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	string TEXT NOT NULL ,
@@ -2326,7 +2326,7 @@ CREATE TABLE chem_comp_systematic_name (
 	name TEXT ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	naming_system ENUM_chem_comp_systematic_name_naming_system NOT NULL 
@@ -2347,7 +2347,7 @@ CREATE TABLE chem_comp_tor (
 	details TEXT ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2372,7 +2372,7 @@ CREATE TABLE chem_shift_anisotropy (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	val_units ENUM_chem_shift_anisotropy_val_units ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2413,7 +2413,7 @@ CREATE TABLE chem_shift_completeness_char (
 	sf_id INTEGER ,
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -2455,7 +2455,7 @@ CREATE TABLE chem_shift_completeness_list (
 	sf_id INTEGER ,
 -- ATTRIBUTE
 	assigned_chem_shift_list_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -2475,7 +2475,7 @@ CREATE TABLE chem_shift_experiment (
 	sample_state ENUM_chem_shift_experiment_sample_state ,
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -2498,7 +2498,7 @@ CREATE TABLE chem_shift_isotope_effect_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2531,7 +2531,7 @@ CREATE TABLE chem_shift_perturbation (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	chem_shift_perturbation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2552,7 +2552,7 @@ CREATE TABLE chem_shift_perturbation_experiment (
 	sample_state ENUM_chem_shift_perturbation_experiment_sample_state ,
 -- ATTRIBUTE
 	chem_shift_perturbation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -2577,7 +2577,7 @@ CREATE TABLE chem_shift_perturbation_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	type ENUM_chem_shift_perturbation_list_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2595,7 +2595,7 @@ CREATE TABLE chem_shift_perturbation_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	chem_shift_perturbation_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -2646,7 +2646,7 @@ CREATE TABLE chem_shift_ref (
 	atom_type TEXT NOT NULL ,
 -- ATTRIBUTE
 	chem_shift_reference_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	mol_common_name TEXT NOT NULL 
@@ -2663,7 +2663,7 @@ CREATE TABLE chem_shift_reference (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2682,7 +2682,7 @@ CREATE TABLE chem_shift_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -2701,7 +2701,7 @@ CREATE TABLE chem_shifts_calc_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	chem_shifts_calc_type_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -2735,7 +2735,7 @@ CREATE TABLE chem_shifts_calc_type (
 	quantum_mechanical_theory_level ENUM_chem_shifts_calc_type_quantum_mechanical_theory_level ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2761,7 +2761,7 @@ CREATE TABLE chem_struct_descriptor (
 	type ENUM_chem_struct_descriptor_type ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2798,7 +2798,7 @@ CREATE TABLE chemical_rate (
 	val_units TEXT ,
 -- ATTRIBUTE
 	chemical_rate_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2820,7 +2820,7 @@ CREATE TABLE chemical_rate_experiment (
 	sample_state ENUM_chemical_rate_experiment_sample_state ,
 -- ATTRIBUTE
 	chemical_rate_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -2841,7 +2841,7 @@ CREATE TABLE chemical_rate_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2860,7 +2860,7 @@ CREATE TABLE chemical_rate_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	chemical_rate_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -2882,7 +2882,7 @@ CREATE TABLE chromatographic_column (
 	type TEXT ,
 	vendor TEXT ,
 	width DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2909,7 +2909,7 @@ CREATE TABLE chromatographic_system (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	type TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2969,7 +2969,7 @@ CREATE TABLE citation (
 	type ENUM_citation_type ,
 	www_url TEXT ,
 	year TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -2994,7 +2994,7 @@ CREATE TABLE citation_author (
 	pdbx_name TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL 
@@ -3018,7 +3018,7 @@ CREATE TABLE citation_editor (
 	pdbx_name TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL 
@@ -3034,7 +3034,7 @@ CREATE TABLE citation_editor (
 CREATE TABLE citation_keyword (
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	keyword TEXT NOT NULL 
@@ -3056,7 +3056,7 @@ CREATE TABLE computer (
 	operating_system_version TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3075,7 +3075,7 @@ CREATE TABLE computer_citation (
 	citation_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	computer_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3094,7 +3094,7 @@ CREATE TABLE conf_family_coord_set_constr_list (
 	constraint_list_category TEXT NOT NULL ,
 -- ATTRIBUTE
 	constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3111,7 +3111,7 @@ CREATE TABLE conf_stats_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	conformer_stat_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -3135,7 +3135,7 @@ CREATE TABLE conformer_family_coord_set (
 	sample_condition_list_label TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3157,7 +3157,7 @@ CREATE TABLE conformer_family_coord_set_expt (
 	sample_state ENUM_conformer_family_coord_set_expt_sample_state ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -3178,7 +3178,7 @@ CREATE TABLE conformer_family_refinement (
 	software_label TEXT ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	refine_method ENUM_conformer_family_refinement_refine_method NOT NULL 
@@ -3197,7 +3197,7 @@ CREATE TABLE conformer_family_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -3231,7 +3231,7 @@ CREATE TABLE conformer_stat_list (
 	statistical_struct_param_details TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3299,7 +3299,7 @@ CREATE TABLE conformer_stat_list_ens (
 	van_der_waals_e_value_err DECIMAL ,
 -- ATTRIBUTE
 	conformer_stat_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3348,7 +3348,7 @@ CREATE TABLE conformer_stat_list_rep (
 	van_der_waals_e_val_err DECIMAL ,
 -- ATTRIBUTE
 	conformer_stat_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3381,7 +3381,7 @@ CREATE TABLE constraint_file (
 	constraint_subtype ENUM_constraint_file_constraint_subtype NOT NULL ,
 -- ATTRIBUTE
 	constraint_type ENUM_constraint_file_constraint_type NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3501,7 +3501,7 @@ CREATE TABLE constraint_stat_list (
 	stats_not_available ENUM_constraint_stat_list_stats_not_available ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3555,7 +3555,7 @@ CREATE TABLE constraint_stat_list_ens (
 	upper_dist_constr_violat_max DECIMAL ,
 -- ATTRIBUTE
 	constraint_stat_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3602,7 +3602,7 @@ CREATE TABLE constraint_stat_list_rep (
 	upper_dist_constr_violat_max DECIMAL ,
 -- ATTRIBUTE
 	constraint_stat_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3621,7 +3621,7 @@ CREATE TABLE constraint_stats_constr_list (
 	constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	constraint_stat_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -3673,7 +3673,7 @@ CREATE TABLE coupling_constant (
 	val_min DECIMAL ,
 -- ATTRIBUTE
 	coupling_constant_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3695,7 +3695,7 @@ CREATE TABLE coupling_constant_experiment (
 	sample_state ENUM_coupling_constant_experiment_sample_state ,
 -- ATTRIBUTE
 	coupling_constant_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -3719,7 +3719,7 @@ CREATE TABLE coupling_constant_list (
 	spectrometer_frequency_1h ENUM_coupling_constant_list_spectrometer_frequency_1h ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3738,7 +3738,7 @@ CREATE TABLE coupling_constant_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	coupling_constant_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -3812,7 +3812,7 @@ CREATE TABLE cross_correlation_d_csa (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	cross_correlation_d_csa_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3834,7 +3834,7 @@ CREATE TABLE cross_correlation_d_csa_experiment (
 	sample_state ENUM_cross_correlation_d_csa_experiment_sample_state ,
 -- ATTRIBUTE
 	cross_correlation_d_csa_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -3859,7 +3859,7 @@ CREATE TABLE cross_correlation_d_csa_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	val_units ENUM_cross_correlation_d_csa_list_val_units ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3878,7 +3878,7 @@ CREATE TABLE cross_correlation_d_csa_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	cross_correlation_d_csa_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -3952,7 +3952,7 @@ CREATE TABLE cross_correlation_dd (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	cross_correlation_dd_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -3974,7 +3974,7 @@ CREATE TABLE cross_correlation_dd_experiment (
 	sample_state ENUM_cross_correlation_dd_experiment_sample_state ,
 -- ATTRIBUTE
 	cross_correlation_dd_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -3999,7 +3999,7 @@ CREATE TABLE cross_correlation_dd_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	val_units ENUM_cross_correlation_dd_list_val_units ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4018,7 +4018,7 @@ CREATE TABLE cross_correlation_dd_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	cross_correlation_dd_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4057,7 +4057,7 @@ CREATE TABLE cs_anisotropy (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	chem_shift_anisotropy_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4079,7 +4079,7 @@ CREATE TABLE cs_anisotropy_experiment (
 	sample_state ENUM_cs_anisotropy_experiment_sample_state ,
 -- ATTRIBUTE
 	chem_shift_anisotropy_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -4098,7 +4098,7 @@ CREATE TABLE cs_anisotropy_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	chem_shift_anisotropy_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4120,7 +4120,7 @@ CREATE TABLE d_h_fract_factor_experiment (
 	sample_state ENUM_d_h_fract_factor_experiment_sample_state ,
 -- ATTRIBUTE
 	d_h_fractionation_factor_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -4139,7 +4139,7 @@ CREATE TABLE d_h_fract_factor_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	d_h_fractionation_factor_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4170,7 +4170,7 @@ CREATE TABLE d_h_fractionation_factor (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	d_h_fractionation_factor_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4191,7 +4191,7 @@ CREATE TABLE d_h_fractionation_factor_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4208,7 +4208,7 @@ DROP TYPE IF EXISTS ENUM_data_set_type;
 CREATE TYPE ENUM_data_set_type AS ENUM ( 'assigned_chemical_shifts', 'theoretical_chem_shifts', 'chemical_rates', 'coupling_constants', 'theoretical_coupling_constants', 'spectral_peak_list', 'other_data_list', 'RDCs', 'order_parameters', 'dipolar_couplings', 'spectral_density_values', 'H_exch_rates', 'H_exch_protection_factors', 'pKa_value_data_set', 'pH_NMR_param_list', 'binding_constants', 'D_H_fractionation_factors', 'molecular_axis_determinations', 'deduced_secd_struct_features', 'deduced_hydrogen_bonds', 'representative_conformer', 'conformer_family_coord_set', 'general_relaxation', 'heteronucl_T1_relaxation', 'theoretical_heteronucl_T1_relaxation', 'heteronucl_T1rho_relaxation', 'heteronucl_T2_relaxation', 'theoretical_heteronucl_T2_relaxation', 'heteronucl_NOEs', 'theoretical_heteronucl_NOEs', 'homonucl_NOEs', 'dipole_dipole_relaxation', 'dipole_dipole_cross_correlations', 'theoretical_dipole_dipole_cross_correlations', 'CSA_CSA_cross_correlation_relaxation', 'dipole_CSA_cross_correlation_relaxation', 'pH_titration' );
 CREATE TABLE data_set (
 	count INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	type ENUM_data_set_type NOT NULL 
@@ -4225,7 +4225,7 @@ DROP TYPE IF EXISTS ENUM_datum_type;
 CREATE TYPE ENUM_datum_type AS ENUM ( '1H chemical shifts', '2H chemical shifts', '3H chemical shifts', '13C chemical shifts', '15N chemical shifts', '31P chemical shifts', '111Cd chemical shifts', '113Cd chemical shifts', 'theoretical 1H chemical shifts', 'theoretical 13C chemical shifts', 'theoretical 15N chemical shifts', 'chemical rates', 'coupling constants', 'theoretical coupling constants', 'chemical shift isotope effects', 'molecule interaction chemical shift values', 'T1 relaxation values', 'theoretical T1 relaxation values', 'T1rho relaxation values', 'T2 relaxation values', 'theoretical T2 relaxation values', 'dipole-dipole relaxation values', 'dipole-dipole cross correlation relaxation values', 'theoretical dipole-dipole cross-correlation values', 'chemical shift anisotropy values', 'chemical shift anisotropy tensor values', 'quadrupolar couplings', 'theoretical chemical shifts', 'chemical shift tensors', 'residual dipolar couplings', 'dipolar coupling values', 'dipolar coupling tensor values', 'heteronuclear NOE values', 'theoretical heteronuclear NOE values', 'homonuclear NOE values', 'order parameters', 'spectral density values', 'H exchange rates', 'H exchange protection factors', 'pKa values', 'pH NMR parameter values', 'binding constants', 'D/H fractionation factors', 'bond orientation values', 'deduced secondary structure values', 'deduced hydrogen bonds', 'distance constraints', 'ambiguous distance constraints', 'hydrogen bond distance constraints', 'torsion angle constraints', 'chemical shift constraints', 'symmetry constraints', '19F chemical shifts', '6Li chemical shifts', '10B chemical shifts', '11B chemical shifts', '17O chemical shifts', '23Na chemical shifts', '29Si chemical shifts', '35Cl chemical shifts', '129Xe chemical shifts', '195Pt chemical shifts', 'na' );
 CREATE TABLE datum (
 	count INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	type ENUM_datum_type NOT NULL 
@@ -4239,7 +4239,7 @@ CREATE TABLE datum (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 CREATE TABLE decoupling_pulse_sequence (
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -4296,7 +4296,7 @@ CREATE TABLE deduced_h_bond (
 	heavy_atom_seq_id_2 INTEGER ,
 -- ATTRIBUTE
 	deduced_hydrogen_bond_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4318,7 +4318,7 @@ CREATE TABLE deduced_h_bond_experiment (
 	sample_state ENUM_deduced_h_bond_experiment_sample_state ,
 -- ATTRIBUTE
 	deduced_h_bond_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -4339,7 +4339,7 @@ CREATE TABLE deduced_h_bond_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4358,7 +4358,7 @@ CREATE TABLE deduced_h_bond_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	deduced_h_bond_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4380,7 +4380,7 @@ CREATE TABLE deduced_secd_struct_experiment (
 	sample_state ENUM_deduced_secd_struct_experiment_sample_state ,
 -- ATTRIBUTE
 	deduced_secd_struct_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -4410,7 +4410,7 @@ CREATE TABLE deduced_secd_struct_exptl (
 	static_field_orientation_angle DECIMAL ,
 -- ATTRIBUTE
 	deduced_secd_struct_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4445,7 +4445,7 @@ CREATE TABLE deduced_secd_struct_feature (
 	deduced_secd_struct_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4467,7 +4467,7 @@ CREATE TABLE deduced_secd_struct_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4486,7 +4486,7 @@ CREATE TABLE deduced_secd_struct_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	deduced_secd_struct_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4540,7 +4540,7 @@ CREATE TABLE dipolar_coupling (
 	val_min DECIMAL ,
 -- ATTRIBUTE
 	dipolar_coupling_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4562,7 +4562,7 @@ CREATE TABLE dipolar_coupling_experiment (
 	sample_state ENUM_dipolar_coupling_experiment_sample_state ,
 -- ATTRIBUTE
 	dipolar_coupling_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -4586,7 +4586,7 @@ CREATE TABLE dipolar_coupling_list (
 	spectrometer_frequency_1h DECIMAL ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4605,7 +4605,7 @@ CREATE TABLE dipolar_coupling_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	dipolar_coupling_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4651,7 +4651,7 @@ CREATE TABLE dipole_dipole_relax (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	dipole_dipole_relax_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4673,7 +4673,7 @@ CREATE TABLE dipole_dipole_relax_experiment (
 	sample_state ENUM_dipole_dipole_relax_experiment_sample_state ,
 -- ATTRIBUTE
 	dipole_dipole_relax_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -4698,7 +4698,7 @@ CREATE TABLE dipole_dipole_relax_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	val_units ENUM_dipole_dipole_relax_list_val_units ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4717,7 +4717,7 @@ CREATE TABLE dipole_dipole_relax_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	dipole_dipole_relax_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4737,7 +4737,7 @@ CREATE TABLE dist_constr_software_setting (
 	value TEXT ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -4772,7 +4772,7 @@ CREATE TABLE dist_constraint (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	tree_node_member_constraint_id INTEGER NOT NULL ,
@@ -4795,7 +4795,7 @@ CREATE TABLE dist_constraint_comment_org (
 	comment_text TEXT ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4815,7 +4815,7 @@ CREATE TABLE dist_constraint_conv_err (
 	parse_file_constraint_id INTEGER ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4836,7 +4836,7 @@ CREATE TABLE dist_constraint_parse_err (
 	end_line INTEGER ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4853,7 +4853,7 @@ CREATE TABLE dist_constraint_parse_file (
 	name TEXT ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4874,7 +4874,7 @@ CREATE TABLE dist_constraint_tree (
 	constraint_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	node_id INTEGER NOT NULL 
@@ -4901,7 +4901,7 @@ CREATE TABLE dist_constraint_value (
 	constraint_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	tree_node_id INTEGER NOT NULL 
@@ -4925,7 +4925,7 @@ CREATE TABLE distance_constraint_expt (
 	sample_state ENUM_distance_constraint_expt_sample_state ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -4949,7 +4949,7 @@ CREATE TABLE distance_constraint_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -4968,7 +4968,7 @@ CREATE TABLE distance_constraint_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	distance_constraint_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -4996,7 +4996,7 @@ CREATE TABLE emr_expt (
 	sf_framecode TEXT ,
 	software_id INTEGER ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5017,7 +5017,7 @@ CREATE TABLE emr_instrument (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	type TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5034,7 +5034,7 @@ CREATE TABLE energetic_penalty_function (
 	description TEXT ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	function TEXT NOT NULL 
@@ -5105,7 +5105,7 @@ CREATE TABLE entity (
 	target_identifier TEXT ,
 	thiol_state ENUM_entity_thiol_state ,
 	type ENUM_entity_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5141,7 +5141,7 @@ CREATE TABLE entity_assembly (
 	role TEXT ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5161,7 +5161,7 @@ CREATE TABLE entity_atom_list (
 	sf_id INTEGER ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5179,7 +5179,7 @@ CREATE TABLE entity_biological_function (
 	biological_function TEXT NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -5206,7 +5206,7 @@ CREATE TABLE entity_bond (
 	value_order ENUM_entity_bond_value_order ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5228,7 +5228,7 @@ CREATE TABLE entity_chem_comp_deleted_atom (
 	comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -5247,7 +5247,7 @@ CREATE TABLE entity_chimera_segment (
 	seq_id_end INTEGER ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5266,7 +5266,7 @@ CREATE TABLE entity_citation (
 	citation_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -5280,7 +5280,7 @@ CREATE TABLE entity_citation (
 CREATE TABLE entity_common_name (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -5301,7 +5301,7 @@ CREATE TABLE entity_comp_index (
 	comp_label TEXT ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5323,7 +5323,7 @@ CREATE TABLE entity_comp_index_alt (
 	entity_comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -5365,7 +5365,7 @@ CREATE TABLE entity_db_link (
 	database_code ENUM_entity_db_link_database_code NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -5391,7 +5391,7 @@ CREATE TABLE entity_deleted_atom (
 	sf_id INTEGER ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5444,7 +5444,7 @@ CREATE TABLE entity_experimental_src (
 	vendor_name TEXT ,
 -- ATTRIBUTE
 	entity_experimental_src_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5460,7 +5460,7 @@ CREATE TABLE entity_experimental_src (
 CREATE TABLE entity_experimental_src_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5476,7 +5476,7 @@ CREATE TABLE entity_experimental_src_list (
 CREATE TABLE entity_keyword (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	keyword TEXT NOT NULL 
@@ -5541,7 +5541,7 @@ CREATE TABLE entity_natural_src (
 	variant TEXT ,
 -- ATTRIBUTE
 	entity_natural_src_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5557,7 +5557,7 @@ CREATE TABLE entity_natural_src (
 CREATE TABLE entity_natural_src_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5576,7 +5576,7 @@ CREATE TABLE entity_poly_seq (
 	mon_id TEXT ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	num INTEGER NOT NULL 
@@ -5600,7 +5600,7 @@ CREATE TABLE entity_purity (
 	val_units TEXT ,
 -- ATTRIBUTE
 	entity_purity_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5619,7 +5619,7 @@ CREATE TABLE entity_purity_citation (
 	citation_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_purity_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -5634,7 +5634,7 @@ CREATE TABLE entity_purity_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5653,7 +5653,7 @@ CREATE TABLE entity_systematic_name (
 	name TEXT ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	naming_system ENUM_entity_systematic_name_naming_system NOT NULL 
@@ -5676,7 +5676,7 @@ CREATE TABLE entry_author (
 	middle_initials TEXT ,
 	orcid TEXT ,
 	pdbx_name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL 
@@ -5696,7 +5696,7 @@ CREATE TYPE ENUM_entry_experimental_methods_subtype AS ENUM ( 'solution', 'solid
 CREATE TABLE entry_experimental_methods (
 	method ENUM_entry_experimental_methods_method ,
 	subtype ENUM_entry_experimental_methods_subtype ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5713,7 +5713,7 @@ CREATE TABLE entry_src (
 	organization_full_name TEXT ,
 	organization_initials TEXT ,
 	project_name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5771,7 +5771,7 @@ CREATE TABLE experiment (
 	saxs_expt_label TEXT ,
 	xray_instrument_id INTEGER ,
 	xray_instrument_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_list_id INTEGER NOT NULL ,
@@ -5792,6 +5792,7 @@ CREATE TABLE experiment_file (
 	content ENUM_experiment_file_content ,
 	details TEXT ,
 	directory_path TEXT ,
+-- IN-PLACE DOCUMENT KEY
 	entry_id TEXT ,
 	experiment_list_id INTEGER ,
 	type TEXT ,
@@ -5812,7 +5813,7 @@ CREATE TABLE experiment_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5855,7 +5856,7 @@ CREATE TABLE floating_chirality (
 	seq_id_1 INTEGER ,
 	seq_id_2 INTEGER ,
 	stereospecific_assignment_code TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	floating_chirality_assign_id INTEGER NOT NULL ,
@@ -5876,7 +5877,7 @@ CREATE TABLE floating_chirality_assign (
 	sf_framecode TEXT ,
 	stereo_assigned_count INTEGER ,
 	stereo_count INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5893,7 +5894,7 @@ CREATE TABLE floating_chirality_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	floating_chirality_assign_id INTEGER NOT NULL ,
@@ -5916,7 +5917,7 @@ CREATE TABLE fluorescence_instrument (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	type TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5937,7 +5938,7 @@ CREATE TABLE force_constant (
 	term ENUM_force_constant_term ,
 	units ENUM_force_constant_units ,
 	val DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	force_constant_list_id INTEGER NOT NULL ,
@@ -5959,7 +5960,7 @@ CREATE TABLE force_constant_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -5976,7 +5977,7 @@ CREATE TABLE force_constant_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	force_constant_list_id INTEGER NOT NULL ,
@@ -6004,7 +6005,7 @@ CREATE TABLE fret_expt (
 	sf_framecode TEXT ,
 	software_id INTEGER ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6088,7 +6089,7 @@ CREATE TABLE gen_dist_constraint (
 	target_val_uncertainty DECIMAL ,
 	upper_linear_limit DECIMAL ,
 	weight DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
@@ -6109,7 +6110,7 @@ CREATE TABLE gen_dist_constraint_comment_org (
 	comment_end_column INTEGER ,
 	comment_end_line INTEGER ,
 	comment_text TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
@@ -6129,7 +6130,7 @@ CREATE TABLE gen_dist_constraint_conv_err (
 	conv_error_type TEXT ,
 	gen_dist_constraint_parse_file_id INTEGER ,
 	parse_file_constraint_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
@@ -6153,7 +6154,7 @@ CREATE TABLE gen_dist_constraint_expt (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_gen_dist_constraint_expt_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6182,7 +6183,7 @@ CREATE TABLE gen_dist_constraint_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6201,7 +6202,7 @@ CREATE TABLE gen_dist_constraint_parse_err (
 	content TEXT ,
 	end_column INTEGER ,
 	end_line INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
@@ -6218,7 +6219,7 @@ CREATE TABLE gen_dist_constraint_parse_err (
 --
 CREATE TABLE gen_dist_constraint_parse_file (
 	name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
@@ -6237,7 +6238,7 @@ CREATE TABLE gen_dist_constraint_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
@@ -6257,7 +6258,7 @@ CREATE TYPE ENUM_gen_dist_constraint_software_param_type AS ENUM ( 'averaging me
 CREATE TABLE gen_dist_constraint_software_param (
 	range TEXT ,
 	value TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
@@ -6293,7 +6294,7 @@ CREATE TABLE h_chem_shift_constraint (
 	resonance_id INTEGER ,
 	seq_id INTEGER ,
 	source_experiment_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	h_chem_shift_constraint_list_id INTEGER NOT NULL ,
@@ -6317,7 +6318,7 @@ CREATE TABLE h_chem_shift_constraint_expt (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_h_chem_shift_constraint_expt_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6342,7 +6343,7 @@ CREATE TABLE h_chem_shift_constraint_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	units TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6359,7 +6360,7 @@ CREATE TABLE h_chem_shift_constraint_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	h_chem_shift_constraint_list_id INTEGER NOT NULL ,
@@ -6381,7 +6382,7 @@ CREATE TABLE h_exch_protection_fact_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_h_exch_protection_fact_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6400,7 +6401,7 @@ CREATE TABLE h_exch_protection_fact_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	h_exch_protection_factor_list_id INTEGER NOT NULL ,
@@ -6433,7 +6434,7 @@ CREATE TABLE h_exch_protection_factor (
 	seq_id INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	h_exch_protection_factor_list_id INTEGER NOT NULL ,
@@ -6458,7 +6459,7 @@ CREATE TABLE h_exch_protection_factor_list (
 	std_values_source_cit_label TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6490,7 +6491,7 @@ CREATE TABLE h_exch_rate (
 	val_err DECIMAL ,
 	val_max DECIMAL ,
 	val_min DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	h_exch_rate_list_id INTEGER NOT NULL ,
@@ -6512,7 +6513,7 @@ CREATE TABLE h_exch_rate_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_h_exch_rate_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6538,7 +6539,7 @@ CREATE TABLE h_exch_rate_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	val_units ENUM_h_exch_rate_list_val_units ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6555,7 +6556,7 @@ CREATE TABLE h_exch_rate_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	h_exch_rate_list_id INTEGER NOT NULL ,
@@ -6601,7 +6602,7 @@ CREATE TABLE heteronucl_noe (
 	seq_id_2 INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_noe_list_id INTEGER NOT NULL ,
@@ -6623,7 +6624,7 @@ CREATE TABLE heteronucl_noe_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_heteronucl_noe_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6652,7 +6653,7 @@ CREATE TABLE heteronucl_noe_list (
 	spectrometer_frequency_1h DECIMAL ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6669,7 +6670,7 @@ CREATE TABLE heteronucl_noe_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_noe_list_id INTEGER NOT NULL ,
@@ -6691,7 +6692,7 @@ CREATE TABLE heteronucl_t1_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_heteronucl_t1_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6721,7 +6722,7 @@ CREATE TABLE heteronucl_t1_list (
 	t1_val_units ENUM_heteronucl_t1_list_t1_val_units ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6738,7 +6739,7 @@ CREATE TABLE heteronucl_t1_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_t1_list_id INTEGER NOT NULL ,
@@ -6760,7 +6761,7 @@ CREATE TABLE heteronucl_t1rho_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_heteronucl_t1rho_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6799,7 +6800,7 @@ CREATE TABLE heteronucl_t1rho_list (
 	temp_control_method ENUM_heteronucl_t1rho_list_temp_control_method ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6816,7 +6817,7 @@ CREATE TABLE heteronucl_t1rho_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_t1rho_list_id INTEGER NOT NULL ,
@@ -6838,7 +6839,7 @@ CREATE TABLE heteronucl_t2_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_heteronucl_t2_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -6877,7 +6878,7 @@ CREATE TABLE heteronucl_t2_list (
 	temp_control_method ENUM_heteronucl_t2_list_temp_control_method ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -6894,7 +6895,7 @@ CREATE TABLE heteronucl_t2_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_t2_list_id INTEGER NOT NULL ,
@@ -6919,7 +6920,7 @@ CREATE TABLE history (
 	software_label TEXT ,
 	software_name ENUM_history_software_name ,
 	software_version TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	run_number INTEGER NOT NULL ,
@@ -6969,7 +6970,7 @@ CREATE TABLE homonucl_noe (
 	val_err DECIMAL ,
 	val_max DECIMAL ,
 	val_min DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	homonucl_noe_list_id INTEGER NOT NULL ,
@@ -6989,7 +6990,7 @@ CREATE TABLE homonucl_noe_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -7017,7 +7018,7 @@ CREATE TABLE homonucl_noe_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7034,7 +7035,7 @@ CREATE TABLE homonucl_noe_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	homonucl_noe_list_id INTEGER NOT NULL ,
@@ -7078,7 +7079,7 @@ CREATE TABLE interatomic_dist (
 	seq_id_2 INTEGER ,
 	set_id INTEGER ,
 	val DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7099,7 +7100,7 @@ CREATE TABLE interatomic_distance_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7140,7 +7141,7 @@ CREATE TABLE isotope_effect (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	chem_shift_isotope_effect_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7162,7 +7163,7 @@ CREATE TABLE isotope_effect_experiment (
 	sample_state ENUM_isotope_effect_experiment_sample_state ,
 -- ATTRIBUTE
 	chem_shift_isotope_effect_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL 
@@ -7181,7 +7182,7 @@ CREATE TABLE isotope_effect_software (
 	software_label TEXT ,
 -- ATTRIBUTE
 	chem_shift_isotope_effect_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -7210,7 +7211,7 @@ CREATE TABLE isotope_label_pattern (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	chem_shift_isotope_effect_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7285,7 +7286,7 @@ CREATE TABLE j_three_bond_constraint (
 	seq_id_3 INTEGER ,
 	seq_id_4 INTEGER ,
 	source_experiment_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7309,7 +7310,7 @@ CREATE TABLE j_three_bond_constraint_expt (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_j_three_bond_constraint_expt_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -7333,7 +7334,7 @@ CREATE TABLE j_three_bond_constraint_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7350,7 +7351,7 @@ CREATE TABLE j_three_bond_constraint_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	j_three_bond_constraint_list_id INTEGER NOT NULL ,
@@ -7368,7 +7369,7 @@ CREATE TABLE j_three_bond_constraint_software (
 CREATE TABLE karplus_equation (
 	citation_id INTEGER ,
 	citation_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	torsion_angle_code TEXT NOT NULL ,
@@ -7392,7 +7393,7 @@ CREATE TABLE lacs_char (
 	sf_id INTEGER ,
 	x_coord_val DECIMAL ,
 	y_coord_val DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	lacs_plot_id INTEGER NOT NULL 
@@ -7426,7 +7427,7 @@ CREATE TABLE lacs_plot (
 	x_coord_name TEXT ,
 	y_axis_chem_shift_offset DECIMAL ,
 	y_coord_name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7451,7 +7452,7 @@ CREATE TABLE local_structure_quality (
 	type ENUM_local_structure_quality_type ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7476,7 +7477,7 @@ CREATE TABLE mass_spec (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	type ENUM_mass_spec_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7493,7 +7494,7 @@ CREATE TABLE mass_spec_citation (
 	citation_label TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	mass_spec_id INTEGER NOT NULL 
@@ -7509,7 +7510,7 @@ CREATE TABLE mass_spec_citation (
 CREATE TABLE mass_spec_component_param (
 	name TEXT ,
 	value TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7532,7 +7533,7 @@ CREATE TABLE mass_spec_config (
 	component_name TEXT ,
 	component_type ENUM_mass_spec_config_component_type ,
 	ordinal INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7550,7 +7551,7 @@ CREATE TABLE mass_spec_config (
 CREATE TABLE mass_spec_ref_compd (
 	mono_isotopic_mass DECIMAL ,
 	name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7569,7 +7570,7 @@ CREATE TABLE mass_spec_ref_compd_set (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7584,7 +7585,7 @@ CREATE TABLE mass_spec_ref_compd_set (
 --
 CREATE TABLE mass_spec_software (
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	mass_spec_id INTEGER NOT NULL ,
@@ -7603,7 +7604,7 @@ CREATE TABLE mass_spectrometer_list (
 	id INTEGER ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -7630,7 +7631,7 @@ CREATE TABLE mass_spectrometer_view (
 	serial_number TEXT ,
 	spectrum_type TEXT ,
 	type TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7652,7 +7653,7 @@ CREATE TABLE matched_entries (
 	database_accession_code TEXT NOT NULL ,
 -- ATTRIBUTE
 	database_name ENUM_matched_entries_database_name NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -7670,7 +7671,7 @@ CREATE TABLE method (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7687,7 +7688,7 @@ CREATE TABLE method_citation (
 	citation_label TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	method_id INTEGER NOT NULL 
@@ -7704,7 +7705,7 @@ CREATE TABLE method_file (
 	id INTEGER ,
 	text TEXT ,
 	text_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	method_id INTEGER NOT NULL ,
@@ -7722,7 +7723,7 @@ CREATE TABLE method_file (
 CREATE TABLE method_param (
 	text TEXT ,
 	text_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	file_name TEXT NOT NULL ,
@@ -7741,6 +7742,7 @@ DROP TYPE IF EXISTS ENUM_model_type_type;
 CREATE TYPE ENUM_model_type_type AS ENUM ( 'experimental ensemble member', 'representative lowest energy', 'representative closest to the mean', 'representative average minimized', 'representative lowest overall target function' );
 CREATE TABLE model_type (
 	conformer_family_coord_set_id INTEGER ,
+-- IN-PLACE DOCUMENT KEY
 	entry_id TEXT ,
 -- ATTRIBUTE
 	atom_site_model_id INTEGER NOT NULL ,
@@ -7761,7 +7763,7 @@ CREATE TABLE ms_chrom_ion_annotation (
 	comp_index_id INTEGER ,
 	entity_id INTEGER ,
 	ms_chromatogram_ion_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7780,7 +7782,7 @@ CREATE TABLE ms_chromatogram_experiment (
 	experiment_name TEXT ,
 	sample_id INTEGER ,
 	sample_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -7802,7 +7804,7 @@ CREATE TABLE ms_chromatogram_ion (
 	mz_ratio_err DECIMAL ,
 	mz_relative_intensity DECIMAL ,
 	s_n_ratio DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7827,7 +7829,7 @@ CREATE TABLE ms_chromatogram_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format ENUM_ms_chromatogram_list_text_data_format ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7844,7 +7846,7 @@ CREATE TABLE ms_chromatogram_param (
 	name TEXT ,
 	units TEXT ,
 	value TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7863,7 +7865,7 @@ CREATE TABLE ms_chromatogram_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	ms_chromatogram_list_id INTEGER NOT NULL ,
@@ -7887,7 +7889,7 @@ CREATE TABLE ms_expt (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	spectrum_type ENUM_ms_expt_spectrum_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -7907,7 +7909,7 @@ CREATE TABLE ms_expt_param (
 	type TEXT ,
 	value TEXT ,
 	value_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7927,7 +7929,7 @@ CREATE TABLE ms_expt_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	ms_expt_id INTEGER NOT NULL ,
@@ -7949,7 +7951,7 @@ CREATE TABLE mz_precursor_ion (
 	mz_ratio_err DECIMAL ,
 	relative_intensity DECIMAL ,
 	s_n_ratio DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7969,7 +7971,7 @@ CREATE TABLE mz_precursor_ion_annotation (
 	comp_id TEXT ,
 	comp_index_id INTEGER ,
 	entity_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -7993,7 +7995,7 @@ CREATE TABLE mz_product_ion (
 	mz_ratio_err DECIMAL ,
 	relative_intensity DECIMAL ,
 	s_n_ratio DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8013,7 +8015,7 @@ CREATE TABLE mz_product_ion_annotation (
 	comp_id TEXT ,
 	comp_index_id INTEGER ,
 	entity_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8044,7 +8046,7 @@ CREATE TABLE mz_ratio_data_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8061,7 +8063,7 @@ CREATE TABLE mz_ratio_experiment (
 	experiment_name TEXT ,
 	sample_id INTEGER ,
 	sample_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -8080,7 +8082,7 @@ CREATE TABLE mz_ratio_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	mz_ratio_data_list_id INTEGER NOT NULL ,
@@ -8099,7 +8101,7 @@ CREATE TABLE mz_ratio_spectrum_param (
 	name TEXT ,
 	units TEXT ,
 	value TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8131,7 +8133,7 @@ CREATE TABLE natural_source_db (
 	entity_natural_src_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entry_code TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -8146,7 +8148,7 @@ CREATE TABLE nmr_experiment_citation (
 	citation_label TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	nmr_spec_expt_id INTEGER NOT NULL 
@@ -8171,7 +8173,7 @@ CREATE TABLE nmr_experiment_file (
 	record_header_size INTEGER ,
 	record_trailer_size INTEGER ,
 	type ENUM_nmr_experiment_file_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -8189,7 +8191,7 @@ CREATE TABLE nmr_experiment_file (
 DROP TYPE IF EXISTS ENUM_nmr_expt_systematic_name_naming_system;
 CREATE TYPE ENUM_nmr_expt_systematic_name_naming_system AS ENUM ( 'CCPN convention' );
 CREATE TABLE nmr_expt_systematic_name (
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -8209,7 +8211,7 @@ CREATE TABLE nmr_expt_systematic_name (
 DROP TYPE IF EXISTS ENUM_nmr_probe_type;
 CREATE TYPE ENUM_nmr_probe_type AS ENUM ( 'transmission line', 'home built', 'triple resonance', 'double resonance', 'inverse coil', 'solenoid coil', 'saddle coil', 'room temperature', 'cryogenically cooled', 'na' );
 CREATE TABLE nmr_probe (
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	nmr_spectrometer_probe_id INTEGER NOT NULL ,
@@ -8251,7 +8253,7 @@ CREATE TABLE nmr_spec_expt (
 	software_id INTEGER ,
 	software_label TEXT ,
 	type ENUM_nmr_spec_expt_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8268,7 +8270,7 @@ CREATE TABLE nmr_spectral_proc_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	nmr_spectral_processing_id INTEGER NOT NULL ,
@@ -8286,7 +8288,7 @@ CREATE TABLE nmr_spectral_proc_software (
 CREATE TABLE nmr_spectral_processing (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8311,7 +8313,7 @@ CREATE TABLE nmr_spectrometer (
 	serial_number TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8328,7 +8330,7 @@ CREATE TABLE nmr_spectrometer_citation (
 	citation_label TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	nmr_spectrometer_id INTEGER NOT NULL 
@@ -8344,7 +8346,7 @@ CREATE TABLE nmr_spectrometer_citation (
 CREATE TABLE nmr_spectrometer_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8373,7 +8375,7 @@ CREATE TABLE nmr_spectrometer_probe (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	spacer_present ENUM_nmr_spectrometer_probe_spacer_present ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8390,7 +8392,7 @@ CREATE TABLE nmr_spectrometer_probe_citation (
 	citation_label TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	nmr_spectrometer_probe_id INTEGER NOT NULL 
@@ -8415,7 +8417,7 @@ CREATE TABLE nmr_spectrometer_view (
 	manufacturer ENUM_nmr_spectrometer_view_manufacturer ,
 	model TEXT ,
 	serial_number TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8437,7 +8439,7 @@ CREATE TABLE observed_conformer (
 	atom_site_model_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	structure_interaction_id INTEGER NOT NULL ,
@@ -8487,7 +8489,7 @@ CREATE TABLE order_param (
 	tau_f_val_fit_err DECIMAL ,
 	tau_s_val DECIMAL ,
 	tau_s_val_fit_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8509,7 +8511,7 @@ CREATE TABLE order_parameter_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_order_parameter_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -8545,7 +8547,7 @@ CREATE TABLE order_parameter_list (
 	tau_s_val_units ENUM_order_parameter_list_tau_s_val_units ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8562,7 +8564,7 @@ CREATE TABLE order_parameter_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	order_parameter_list_id INTEGER NOT NULL ,
@@ -8584,7 +8586,7 @@ CREATE TABLE org_constr_file_comment (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8606,7 +8608,7 @@ CREATE TABLE other_constraint_expt (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_other_constraint_expt_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -8635,7 +8637,7 @@ CREATE TABLE other_constraint_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	type TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8652,7 +8654,7 @@ CREATE TABLE other_constraint_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	other_constraint_list_id INTEGER NOT NULL ,
@@ -8684,7 +8686,7 @@ CREATE TABLE other_data (
 	seq_id INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8706,7 +8708,7 @@ CREATE TABLE other_data_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_other_data_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -8725,7 +8727,7 @@ CREATE TABLE other_data_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	other_data_type_list_id INTEGER NOT NULL ,
@@ -8750,7 +8752,7 @@ CREATE TABLE other_data_type_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8769,7 +8771,7 @@ CREATE TABLE other_struct_feature (
 	entity_assembly_id INTEGER ,
 	entity_id INTEGER ,
 	seq_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8791,7 +8793,7 @@ CREATE TABLE other_struct_feature_list (
 	sf_framecode TEXT ,
 	struct_feature_definition TEXT ,
 	struct_feature_name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8819,7 +8821,7 @@ CREATE TABLE pb_char (
 	pdb_residue_no TEXT ,
 	pdb_strand_id TEXT ,
 	sf_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	pb_list_id INTEGER NOT NULL 
@@ -8849,7 +8851,7 @@ CREATE TABLE pb_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	sf_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -8866,7 +8868,7 @@ CREATE TABLE pdbx_chem_comp_feature (
 	support TEXT ,
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	source TEXT NOT NULL ,
@@ -8899,7 +8901,7 @@ CREATE TABLE pdbx_nonpoly_scheme (
 	assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -8932,7 +8934,7 @@ CREATE TABLE pdbx_poly_seq_scheme (
 	comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -8948,7 +8950,7 @@ CREATE TABLE peak (
 	figure_of_merit DECIMAL ,
 	index_id INTEGER ,
 	restraint TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -8980,7 +8982,7 @@ CREATE TABLE peak_char (
 	line_width_val_err DECIMAL ,
 	phase_val TEXT ,
 	phase_val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	peak_id INTEGER NOT NULL ,
@@ -9010,7 +9012,7 @@ CREATE TABLE peak_constraint_link (
 	spectral_peak_list_id INTEGER ,
 	spectral_peak_list_sf_category ENUM_peak_constraint_link_spectral_peak_list_sf_category ,
 	spectral_peak_list_sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9028,7 +9030,7 @@ CREATE TABLE peak_constraint_link (
 CREATE TABLE peak_constraint_link_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9046,7 +9048,7 @@ CREATE TYPE ENUM_peak_general_char_measurement_method AS ENUM ( 'absolute height
 CREATE TABLE peak_general_char (
 	intensity_val_err DECIMAL ,
 	measurement_method ENUM_peak_general_char_measurement_method ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	intensity_val DECIMAL NOT NULL ,
@@ -9111,7 +9113,7 @@ CREATE TABLE peak_row_format (
 	seq_id_4 INTEGER ,
 	volume DECIMAL ,
 	volume_uncertainty DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9132,7 +9134,7 @@ CREATE TABLE ph_param (
 	ph_titr_result_id INTEGER ,
 	ph_val DECIMAL ,
 	ph_val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9158,7 +9160,7 @@ CREATE TABLE ph_param_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9208,7 +9210,7 @@ CREATE TABLE ph_titr_result (
 	phmid_val_fit_err DECIMAL ,
 	pka_val DECIMAL ,
 	pka_val_fit_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9230,7 +9232,7 @@ CREATE TABLE ph_titration_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_ph_titration_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -9256,7 +9258,7 @@ CREATE TABLE ph_titration_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9273,7 +9275,7 @@ CREATE TABLE ph_titration_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	ph_titration_list_id INTEGER NOT NULL ,
@@ -9325,7 +9327,7 @@ CREATE TABLE rdc (
 	val_err DECIMAL ,
 	val_max DECIMAL ,
 	val_min DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9408,7 +9410,7 @@ CREATE TABLE rdc_constraint (
 	target_value DECIMAL ,
 	target_value_uncertainty DECIMAL ,
 	weight DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	index_id INTEGER NOT NULL ,
@@ -9429,7 +9431,7 @@ CREATE TABLE rdc_constraint_comment_org (
 	comment_end_column INTEGER ,
 	comment_end_line INTEGER ,
 	comment_text TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9449,7 +9451,7 @@ CREATE TABLE rdc_constraint_conv_err (
 	conv_error_type TEXT ,
 	parse_file_constraint_id INTEGER ,
 	rdc_constr_parse_file_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9473,7 +9475,7 @@ CREATE TABLE rdc_constraint_expt (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_rdc_constraint_expt_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -9517,7 +9519,7 @@ CREATE TABLE rdc_constraint_list (
 	tensor_seq_id INTEGER ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9536,7 +9538,7 @@ CREATE TABLE rdc_constraint_parse_err (
 	content TEXT ,
 	end_column INTEGER ,
 	end_line INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9553,7 +9555,7 @@ CREATE TABLE rdc_constraint_parse_err (
 --
 CREATE TABLE rdc_constraint_parse_file (
 	name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9572,7 +9574,7 @@ CREATE TABLE rdc_constraint_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	rdc_constraint_list_id INTEGER NOT NULL ,
@@ -9594,7 +9596,7 @@ CREATE TABLE rdc_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_rdc_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -9626,7 +9628,7 @@ CREATE TABLE rdc_list (
 	spectrometer_frequency_1h DECIMAL ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9643,7 +9645,7 @@ CREATE TABLE rdc_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	rdc_list_id INTEGER NOT NULL ,
@@ -9661,7 +9663,7 @@ CREATE TABLE rdc_software (
 CREATE TABLE recoupling_pulse_sequence (
 	nucleus TEXT ,
 	type TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -9686,7 +9688,7 @@ CREATE TABLE related_entries (
 	database_accession_code TEXT NOT NULL ,
 -- ATTRIBUTE
 	database_name ENUM_related_entries_database_name NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -9709,7 +9711,7 @@ CREATE TABLE release (
 	format_version TEXT ,
 	submission_date DATE ,
 	type ENUM_release_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	release_number INTEGER NOT NULL 
@@ -9747,7 +9749,7 @@ CREATE TABLE rep_conf (
 	seq_id INTEGER ,
 -- ATTRIBUTE
 	atom_coordinate_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	representative_conformer_id INTEGER NOT NULL 
@@ -9764,7 +9766,7 @@ DROP TYPE IF EXISTS ENUM_rep_conf_refinement_refine_method;
 CREATE TYPE ENUM_rep_conf_refinement_refine_method AS ENUM ( 'distance geometry', 'DGSA-distance geometry simulated annealing', 'simulated annealing', 'molecular dynamics', 'matrix relaxation', 'torsion angle dynamics', 'na' );
 CREATE TABLE rep_conf_refinement (
 	refine_details TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	refine_method ENUM_rep_conf_refinement_refine_method NOT NULL ,
@@ -9783,7 +9785,7 @@ CREATE TABLE rep_conf_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	representative_conformer_id INTEGER NOT NULL ,
@@ -9800,7 +9802,7 @@ CREATE TABLE rep_conf_software (
 --
 CREATE TABLE rep_coordinate_details (
 	footnote TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	footnote_id INTEGER NOT NULL ,
@@ -9829,7 +9831,7 @@ CREATE TABLE representative_conformer (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	type ENUM_representative_conformer_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9846,7 +9848,7 @@ CREATE TABLE resonance (
 	name TEXT ,
 	resonance_set_id INTEGER ,
 	spin_system_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -9874,7 +9876,7 @@ CREATE TABLE resonance_assignment (
 	comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	resonance_linker_list_id INTEGER NOT NULL ,
@@ -9890,7 +9892,7 @@ CREATE TABLE resonance_assignment (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 CREATE TABLE resonance_covalent_link (
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	resonance_id_1 INTEGER NOT NULL ,
@@ -9911,7 +9913,7 @@ CREATE TABLE resonance_linker_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9956,7 +9958,7 @@ CREATE TABLE sample (
 	storage_protocol TEXT ,
 	sub_type TEXT ,
 	type ENUM_sample_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -9973,7 +9975,7 @@ CREATE TABLE sample_citation (
 	citation_label TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	sample_id INTEGER NOT NULL 
@@ -10005,7 +10007,7 @@ CREATE TABLE sample_component (
 	vendor TEXT ,
 	vendor_product_code TEXT ,
 	vendor_product_name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10042,7 +10044,7 @@ CREATE TABLE sample_component_atom_isotope (
 	comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	sample_component_id INTEGER NOT NULL ,
@@ -10060,7 +10062,7 @@ CREATE TABLE sample_component_atom_isotope (
 CREATE TABLE sample_condition_citation (
 	citation_id INTEGER ,
 	citation_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	sample_condition_list_id INTEGER NOT NULL 
@@ -10077,7 +10079,7 @@ CREATE TABLE sample_condition_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10098,7 +10100,7 @@ CREATE TABLE sample_condition_variable (
 	val TEXT ,
 	val_err TEXT ,
 	val_units ENUM_sample_condition_variable_val_units ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	sample_condition_list_id INTEGER NOT NULL ,
@@ -10118,7 +10120,7 @@ CREATE TABLE saxs_constraint (
 	intensity_val_err DECIMAL ,
 	q_value DECIMAL ,
 	weight_val DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10136,7 +10138,7 @@ CREATE TABLE saxs_constraint (
 CREATE TABLE saxs_constraint_expt (
 	experiment_name TEXT ,
 	sample_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -10161,7 +10163,7 @@ CREATE TABLE saxs_constraint_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10178,7 +10180,7 @@ CREATE TABLE saxs_constraint_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	saxs_constraint_list_id INTEGER NOT NULL ,
@@ -10208,7 +10210,7 @@ CREATE TABLE saxs_expt (
 	software_label TEXT ,
 	xray_instrument_id INTEGER ,
 	xray_instrument_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10235,7 +10237,7 @@ CREATE TABLE secondary_struct (
 	name TEXT ,
 	seq_id_end INTEGER ,
 	seq_id_start INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10255,7 +10257,7 @@ CREATE TABLE secondary_struct_list (
 	representative_conformer_label TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10270,7 +10272,7 @@ CREATE TABLE secondary_struct_list (
 --
 CREATE TABLE secondary_struct_sel (
 	method_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	method_id INTEGER NOT NULL ,
@@ -10293,7 +10295,7 @@ CREATE TABLE sg_project (
 	full_name_of_center TEXT ,
 	initial_of_center ENUM_sg_project_initial_of_center ,
 	project_name ENUM_sg_project_project_name ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	sg_project_id INTEGER NOT NULL 
@@ -10316,7 +10318,7 @@ CREATE TABLE software (
 	sf_framecode TEXT ,
 	type ENUM_software_type ,
 	version TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10333,7 +10335,7 @@ CREATE TABLE software_applied_history (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10350,7 +10352,7 @@ CREATE TABLE software_applied_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10373,7 +10375,7 @@ CREATE TABLE software_applied_methods (
 	software_label TEXT ,
 	software_name ENUM_software_applied_methods_software_name ,
 	software_specific_info TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_applied_list_id INTEGER NOT NULL ,
@@ -10392,7 +10394,7 @@ CREATE TABLE software_citation (
 	citation_label TEXT ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL 
@@ -10407,7 +10409,7 @@ CREATE TABLE software_citation (
 --
 CREATE TABLE software_specific_info (
 	software_saveframe TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_saveframe_id INTEGER NOT NULL ,
@@ -10425,7 +10427,7 @@ CREATE TABLE software_specific_info (
 CREATE TABLE software_specific_info_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10444,7 +10446,7 @@ CREATE TABLE spectral_acq_param (
 	spectral_dim INTEGER ,
 	val TEXT ,
 	val_units TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10482,7 +10484,7 @@ CREATE TABLE spectral_density (
 	w_1h_val_err DECIMAL ,
 	w_zero_val DECIMAL ,
 	w_zero_val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10504,7 +10506,7 @@ CREATE TABLE spectral_density_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_spectral_density_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -10527,7 +10529,7 @@ CREATE TABLE spectral_density_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10544,7 +10546,7 @@ CREATE TABLE spectral_density_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -10583,7 +10585,7 @@ CREATE TABLE spectral_dim (
 	value_first_point DECIMAL ,
 -- ATTRIBUTE
 	atom_type TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10607,7 +10609,7 @@ CREATE TYPE ENUM_spectral_dim_transfer_type AS ENUM ( 'onebond', 'jcoupling', 'j
 CREATE TABLE spectral_dim_transfer (
 	indirect ENUM_spectral_dim_transfer_indirect ,
 	type ENUM_spectral_dim_transfer_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	spectral_dim_id_1 INTEGER NOT NULL ,
@@ -10646,7 +10648,7 @@ CREATE TABLE spectral_peak_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -10663,7 +10665,7 @@ CREATE TABLE spectral_peak_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -10688,7 +10690,7 @@ CREATE TABLE spectral_processing_param (
 	spectral_dim INTEGER ,
 	val TEXT ,
 	val_units TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10707,7 +10709,7 @@ CREATE TABLE spectral_transition (
 	details TEXT ,
 	figure_of_merit DECIMAL ,
 	peak_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10736,7 +10738,7 @@ CREATE TABLE spectral_transition_char (
 	peak_id INTEGER ,
 	phase_val DECIMAL ,
 	phase_val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	spectral_dim_id INTEGER NOT NULL ,
@@ -10755,6 +10757,7 @@ CREATE TABLE spectral_transition_char (
 --
 CREATE TABLE spectral_transition_contrib (
 	contribution_fractional_val DECIMAL ,
+-- IN-PLACE DOCUMENT KEY
 	entry_id TEXT ,
 	spectral_peak_list_id INTEGER ,
 -- ATTRIBUTE
@@ -10774,7 +10777,7 @@ CREATE TABLE spectral_transition_general_char (
 	intensity_val_err DECIMAL ,
 	measurement_method ENUM_spectral_transition_general_char_measurement_method ,
 	peak_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	intensity_val DECIMAL NOT NULL ,
@@ -10796,7 +10799,7 @@ CREATE TABLE spin_system (
 	comp_index_id INTEGER ,
 	entity_assembly_id INTEGER ,
 	entity_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10817,7 +10820,7 @@ CREATE TABLE spin_system_link (
 	"offset" INTEGER ,
 	selected TEXT ,
 	type ENUM_spin_system_link_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	from_spin_system_id INTEGER NOT NULL ,
@@ -10848,7 +10851,7 @@ CREATE TABLE struct_anno_char (
 	psi_angle DECIMAL ,
 	secondary_structure_code TEXT ,
 	solvent_accessible_surface_area DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10867,7 +10870,7 @@ CREATE TABLE struct_anno_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -10893,7 +10896,7 @@ CREATE TABLE struct_asym (
 	pdbx_modified ENUM_struct_asym_pdbx_modified ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id TEXT NOT NULL 
@@ -10915,7 +10918,7 @@ CREATE TABLE struct_classification (
 	fold TEXT ,
 	sunid INTEGER ,
 	superfamily TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -10935,7 +10938,7 @@ CREATE TABLE struct_image (
 	file_format TEXT ,
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	file_name TEXT NOT NULL 
@@ -10950,7 +10953,7 @@ CREATE TABLE struct_image (
 --
 CREATE TABLE struct_keywords (
 	text TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	keywords TEXT NOT NULL 
@@ -10973,7 +10976,7 @@ CREATE TABLE structure_annotation (
 	pdb_id TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11014,7 +11017,7 @@ CREATE TABLE structure_interaction (
 	seq_id_1 INTEGER ,
 	seq_id_2 INTEGER ,
 	type TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11033,7 +11036,7 @@ CREATE TABLE structure_interaction_list (
 	details TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11052,7 +11055,7 @@ CREATE TABLE study (
 	details TEXT ,
 	name TEXT ,
 	type ENUM_study_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11072,7 +11075,7 @@ CREATE TABLE study_entry_list (
 	details TEXT ,
 -- ATTRIBUTE
 	bmrb_accession_code TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	study_id INTEGER NOT NULL ,
@@ -11088,7 +11091,7 @@ CREATE TABLE study_entry_list (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 CREATE TABLE study_keyword (
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	keyword TEXT NOT NULL ,
@@ -11108,7 +11111,7 @@ CREATE TABLE study_keyword (
 CREATE TABLE study_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11126,7 +11129,7 @@ CREATE TABLE subsystem_biological_function (
 	assembly_subsystem_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	biological_function TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -11143,7 +11146,7 @@ CREATE TABLE subsystem_citation (
 	assembly_subsystem_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -11157,7 +11160,7 @@ CREATE TABLE subsystem_citation (
 CREATE TABLE subsystem_common_name (
 -- ATTRIBUTE
 	assembly_subsystem_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL 
@@ -11177,7 +11180,7 @@ CREATE TABLE subsystem_component (
 	assembly_subsystem_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -11203,7 +11206,7 @@ CREATE TABLE subsystem_db_link (
 	assembly_subsystem_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	database_code TEXT NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
 
@@ -11217,7 +11220,7 @@ CREATE TABLE subsystem_db_link (
 CREATE TABLE subsystem_keyword (
 -- ATTRIBUTE
 	assembly_subsystem_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	keyword TEXT NOT NULL 
@@ -11233,7 +11236,7 @@ CREATE TABLE subsystem_keyword (
 CREATE TABLE subsystem_type (
 -- ATTRIBUTE
 	assembly_subsystem_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	type TEXT NOT NULL 
@@ -11257,7 +11260,7 @@ CREATE TABLE systematic_chem_shift_offset (
 	val_err DECIMAL ,
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	type ENUM_systematic_chem_shift_offset_type NOT NULL 
@@ -11287,7 +11290,7 @@ CREATE TABLE t1 (
 	seq_id INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_t1_list_id INTEGER NOT NULL ,
@@ -11321,7 +11324,7 @@ CREATE TABLE t1rho (
 	seq_id INTEGER ,
 	t1rho_val DECIMAL ,
 	t1rho_val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_t1rho_list_id INTEGER NOT NULL ,
@@ -11355,7 +11358,7 @@ CREATE TABLE t2 (
 	seq_id INTEGER ,
 	t2_val DECIMAL ,
 	t2_val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	heteronucl_t2_list_id INTEGER NOT NULL ,
@@ -11376,7 +11379,7 @@ CREATE TABLE ta_constraint_comment_org (
 	comment_end_column INTEGER ,
 	comment_end_line INTEGER ,
 	comment_text TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11396,7 +11399,7 @@ CREATE TABLE ta_constraint_conv_err (
 	conv_error_type TEXT ,
 	parse_file_constraint_id INTEGER ,
 	parse_file_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11417,7 +11420,7 @@ CREATE TABLE ta_constraint_parse_err (
 	content TEXT ,
 	end_column INTEGER ,
 	end_line INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11434,7 +11437,7 @@ CREATE TABLE ta_constraint_parse_err (
 --
 CREATE TABLE ta_constraint_parse_file (
 	name TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11450,7 +11453,7 @@ CREATE TABLE ta_constraint_parse_file (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 CREATE TABLE task (
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -11510,7 +11513,7 @@ CREATE TABLE tensor (
 	sym_traceless_comp_1_3_val DECIMAL ,
 	sym_traceless_comp_2_2_val DECIMAL ,
 	sym_traceless_comp_2_3_val DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11544,7 +11547,7 @@ CREATE TABLE tensor_list (
 	sf_framecode TEXT ,
 	tensor_shape ENUM_tensor_list_tensor_shape ,
 	tensor_type ENUM_tensor_list_tensor_type ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11566,7 +11569,7 @@ CREATE TABLE terminal_residue (
 	comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	representative_conformer_id INTEGER NOT NULL 
@@ -11600,7 +11603,7 @@ CREATE TABLE tertiary_struct (
 	comp_index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11618,7 +11621,7 @@ CREATE TABLE tertiary_struct (
 CREATE TABLE tertiary_struct_element_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11633,7 +11636,7 @@ CREATE TABLE tertiary_struct_element_list (
 --
 CREATE TABLE tertiary_struct_element_sel (
 	method_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	method_id INTEGER NOT NULL ,
@@ -11668,7 +11671,7 @@ CREATE TABLE theoretical_auto_relaxation (
 	rex_val DECIMAL ,
 	rex_val_err DECIMAL ,
 	seq_id INTEGER ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11690,7 +11693,7 @@ CREATE TABLE theoretical_auto_relaxation_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_theoretical_auto_relaxation_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -11734,7 +11737,7 @@ CREATE TABLE theoretical_auto_relaxation_list (
 	temp_control_method ENUM_theoretical_auto_relaxation_list_temp_control_method ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11751,7 +11754,7 @@ CREATE TABLE theoretical_auto_relaxation_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -11784,7 +11787,7 @@ CREATE TABLE theoretical_chem_shift (
 	seq_id INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11818,7 +11821,7 @@ CREATE TABLE theoretical_chem_shift_list (
 	tensor_list_label TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11868,7 +11871,7 @@ CREATE TABLE theoretical_coupling_constant (
 	val_err DECIMAL ,
 	val_max DECIMAL ,
 	val_min DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -11890,7 +11893,7 @@ CREATE TABLE theoretical_coupling_constant_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_theoretical_coupling_constant_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -11916,7 +11919,7 @@ CREATE TABLE theoretical_coupling_constant_list (
 	spectrometer_frequency_1h ENUM_theoretical_coupling_constant_list_spectrometer_frequency_ ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -11933,7 +11936,7 @@ CREATE TABLE theoretical_coupling_constant_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -12007,7 +12010,7 @@ CREATE TABLE theoretical_cross_correlation_dd (
 	dipole_2_seq_id_2 INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -12029,7 +12032,7 @@ CREATE TABLE theoretical_cross_correlation_dd_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_theoretical_cross_correlation_dd_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -12056,7 +12059,7 @@ CREATE TABLE theoretical_cross_correlation_dd_list (
 	text_data TEXT ,
 	text_data_format TEXT ,
 	val_units ENUM_theoretical_cross_correlation_dd_list_val_units ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -12073,7 +12076,7 @@ CREATE TABLE theoretical_cross_correlation_dd_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -12119,7 +12122,7 @@ CREATE TABLE theoretical_heteronucl_noe (
 	seq_id_2 INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -12141,7 +12144,7 @@ CREATE TABLE theoretical_heteronucl_noe_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_theoretical_heteronucl_noe_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -12170,7 +12173,7 @@ CREATE TABLE theoretical_heteronucl_noe_list (
 	spectrometer_frequency_1h DECIMAL ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -12187,7 +12190,7 @@ CREATE TABLE theoretical_heteronucl_noe_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -12209,7 +12212,7 @@ CREATE TABLE theoretical_heteronucl_t1_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_theoretical_heteronucl_t1_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -12239,7 +12242,7 @@ CREATE TABLE theoretical_heteronucl_t1_list (
 	t1_val_units ENUM_theoretical_heteronucl_t1_list_t1_val_units ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -12256,7 +12259,7 @@ CREATE TABLE theoretical_heteronucl_t1_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -12278,7 +12281,7 @@ CREATE TABLE theoretical_heteronucl_t2_experiment (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_theoretical_heteronucl_t2_experiment_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -12317,7 +12320,7 @@ CREATE TABLE theoretical_heteronucl_t2_list (
 	temp_control_method ENUM_theoretical_heteronucl_t2_list_temp_control_method ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -12334,7 +12337,7 @@ CREATE TABLE theoretical_heteronucl_t2_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -12366,7 +12369,7 @@ CREATE TABLE theoretical_t1 (
 	seq_id INTEGER ,
 	val DECIMAL ,
 	val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -12400,7 +12403,7 @@ CREATE TABLE theoretical_t2 (
 	seq_id INTEGER ,
 	t2_val DECIMAL ,
 	t2_val_err DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -12459,7 +12462,7 @@ CREATE TABLE torsion_angle (
 	torsion_angle_name TEXT ,
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -12582,7 +12585,7 @@ CREATE TABLE torsion_angle_constraint (
 	source_experiment_id INTEGER ,
 	torsion_angle_name TEXT ,
 	weight DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
@@ -12611,7 +12614,7 @@ CREATE TABLE torsion_angle_constraint_list (
 	sf_framecode TEXT ,
 	text_data TEXT ,
 	text_data_format TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
@@ -12628,7 +12631,7 @@ CREATE TABLE torsion_angle_constraint_software (
 	method_id INTEGER ,
 	method_label TEXT ,
 	software_label TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
@@ -12652,7 +12655,7 @@ CREATE TABLE torsion_angle_constraints_expt (
 	sample_id INTEGER ,
 	sample_label TEXT ,
 	sample_state ENUM_torsion_angle_constraints_expt_sample_state ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
@@ -12670,7 +12673,7 @@ CREATE TABLE torsion_angle_constraints_expt (
 CREATE TABLE vendor (
 	address TEXT ,
 	electronic_address TEXT ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
@@ -12699,7 +12702,7 @@ CREATE TABLE xray_instrument (
 	type TEXT ,
 	wavelength DECIMAL ,
 	waxs_detector_sample_distance DECIMAL ,
--- ATTRIBUTE
+-- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id INTEGER NOT NULL 
