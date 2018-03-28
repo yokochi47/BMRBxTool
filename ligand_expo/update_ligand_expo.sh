@@ -147,7 +147,9 @@ else
 
 fi
 
-./index_ligand_expo.sh
+if [ $sync_update != "true" ] ; then
+ ./index_ligand_expo.sh
+fi
 
 ./lucene_index.sh
 
