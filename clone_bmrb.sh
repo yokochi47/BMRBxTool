@@ -165,15 +165,19 @@ if [ $errs = 0 ] ; then
 
  rm -rf $WORK_DIR
 
- if [ $PREFIX = "bmr" ] ; then
+ if [ $sync_update != "true" ] ; then
 
-  ./index_bmrb_clone.sh
+  if [ $PREFIX = "bmr" ] ; then
 
-  psql -d $DB_NAME -U $DB_USER -c "CREATE LANGUAGE plpgsql"
+   ./index_bmrb_clone.sh
 
- else
+   psql -d $DB_NAME -U $DB_USER -c "CREATE LANGUAGE plpgsql"
 
-  ./index_metabolomics_clone.sh
+  else
+
+   ./index_metabolomics_clone.sh
+
+ fi
 
  fi
 
