@@ -47163,7 +47163,7 @@ Text information describing the NMR spectrometer probe.
                             </xsd:annotation>
                         </xsd:element>
                         <xsd:element maxOccurs="1" minOccurs="0"
-                            name="diameter" nillable="true" type="xsd:string">
+                            name="diameter" nillable="true" type="xsd:decimal">
                             <xsd:annotation>
                                 <xsd:documentation
                                     source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Diameter" xml:lang="en">
