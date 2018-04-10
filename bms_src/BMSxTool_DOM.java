@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -79,6 +79,7 @@ public class BMSxTool_DOM {
 	public static final String util_entitysystematicname = "Util_EntitySystematicName";
 	public static final String util_entry = "Util_Entry";
 	public static final String util_entryauthor = "Util_EntryAuthor";
+	public static final String util_entryexperimentalmethods = "Util_EntryExperimentalMethods";
 	public static final String util_heteronuclt1list = "Util_HeteronuclT1List";
 	public static final String util_heteronuclt2list = "Util_HeteronuclT2List";
 	public static final String util_heteronuclt1rholist = "Util_HeteronuclT1RhoList";
@@ -378,6 +379,7 @@ public class BMSxTool_DOM {
 		write_util_entitysystematicname(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_entry(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_entryauthor(src_dir_name, xsd_dir_name, file_prefix);
+		write_util_entryexperimentalmethods(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_heteronuclt1list(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_heteronuclt2list(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_heteronuclt1rholist(src_dir_name, xsd_dir_name, file_prefix);
@@ -6194,6 +6196,26 @@ public class BMSxTool_DOM {
 
 			filew.write("\t}\n\n");
 
+			filew.write("\tstatic final Map<String, String> map_atom_type = new HashMap<String, String>() {\n\n");
+
+			filew.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			filew.write("\t\t{\n\n");
+
+			write_util_from_properties(filew, xsd_dir_name + "chem_shift_ref.atom_type.properties");
+
+			filew.write("\n\t\t}\n\t};\n\n");
+
+			filew.write("\tpublic static String getAtomType(String val_name) {\n\n");
+
+			filew.write("\t\tval_name = map_atom_type.get(val_name);\n\n");
+
+			filew.write("\t\tif (val_name != null && val_name.equalsIgnoreCase(\"null\"))\n");
+			filew.write("\t\t\treturn null;\n\n");
+
+			filew.write("\t\treturn val_name;\n");
+			filew.write("\t}\n\n");
+
 			filew.write("\tpublic void setAtomType(String val_name) {\n");
 			filew.write("\t\tatom_type = val_name;\n");
 			filew.write("\t}\n\n");
@@ -8869,6 +8891,52 @@ public class BMSxTool_DOM {
 		}
 	}
 
+	private static void write_util_entryexperimentalmethods(String src_dir_name, String xsd_dir_name, String file_prefix) {
+
+		final String program_name = src_dir_name + file_prefix + "_" + util_entryexperimentalmethods + ".java";
+
+		File java_file = new File(program_name);
+
+		try {
+
+			FileWriter filew = new FileWriter(java_file);
+
+			filew.write(license);
+
+			filew.write("package " + package_name + ";\n\n");
+
+			filew.write("import java.util.HashMap;\n");
+			filew.write("import java.util.Map;\n\n");
+
+			filew.write("public class " + file_prefix + "_" + util_entryexperimentalmethods + " {\n\n");
+
+			filew.write("\tstatic final Map<String, String> map = new HashMap<String, String>() {\n\n");
+
+			filew.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			filew.write("\t\t{\n\n");
+
+			write_util_from_properties(filew, xsd_dir_name + "entry_experimental_methods.method.properties");
+
+			filew.write("\n\t\t}\n\t};\n\n");
+
+			filew.write("\tpublic static String getMethod(String val_name) {\n\n");
+
+			filew.write("\t\tval_name = map.get(val_name);\n\n");
+
+			filew.write("\t\tif (val_name != null && val_name.equalsIgnoreCase(\"null\"))\n");
+			filew.write("\t\t\treturn null;\n\n");
+
+			filew.write("\t\treturn val_name;\n");
+			filew.write("\t}\n}\n");
+
+			filew.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private static void write_util_heteronuclt1list(String src_dir_name, String xsd_dir_name, String file_prefix) {
 
 		final String program_name = src_dir_name + file_prefix + "_" + util_heteronuclt1list + ".java";
@@ -9564,6 +9632,10 @@ public class BMSxTool_DOM {
 			filew.write("import java.util.logging.*;\n\n");
 
 			filew.write("public class " + file_prefix + "_" + util_orderparam + " {\n\n");
+
+			filew.write("\tpublic static String getModelFit(String val_name) {\n");
+			filew.write("\t\treturn val_name != null ? val_name.replaceAll(\",\", \", \").replaceAll(\",\\\\s+\", \", \") : null;\n");
+			filew.write("\t}\n\n");
 
 			filew.write("\tpublic static String getTauEVal(String val_name, Connection conn_bmrb, String entry_id) {\n\n");
 

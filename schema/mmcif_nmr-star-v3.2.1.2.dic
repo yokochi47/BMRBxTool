@@ -16922,15 +16922,15 @@ A code defining the type of the common name provided.
 #  _pdbx_item_enumeration_details.closed_flag   yes
    _item_type.code                             'line'
 
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
-   common    'An often used full name for the entity'
-   abbreviation    'Common abbreviation used in the literature for the entity'
-   synonym    'A synonym used for the entity'
-
-   stop_
+#  loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail
+# BMRB/XML: Eliminated the following enumerations.
+#  common    'An often used full name for the entity'
+#  abbreviation    'Common abbreviation used in the literature for the entity'
+#  synonym    'A synonym used for the entity'
+#
+#  stop_
 
    loop_
      _item_examples.case
@@ -34761,21 +34761,20 @@ The diameter of the probe bore.
    _item.category_id                           'nmr_spectrometer_probe'
    _item.mandatory_code                         no
 #  _pdbx_item_enumeration_details.closed_flag   no
-# BMRB/XML: Changed item type from float to line.
-   _item_type.code                             'line'
+   _item_type.code                             'float'
 
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
-   '1.7 mm'    ?
-   '3 mm'    ?
-   '5 mm'    ?
-   '8 mm'    ?
-   '10 mm'    ?
-   '20 mm'    ?
-
-   stop_
+#  loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail
+# BMRB/XML: Eliminated the following enumerations.
+#  '1.7 mm'    ?
+#  '3 mm'    ?
+#  '5 mm'    ?
+#  '8 mm'    ?
+#  '10 mm'    ?
+#  '20 mm'    ?
+#
+#  stop_
 
 save_
 
@@ -93242,20 +93241,20 @@ as input.
 #  _pdbx_item_enumeration_details.closed_flag   no
    _item_type.code                             'line'
 
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
-   AMBER    ?
-   ARIA    ?
-   CNS    ?
-   CYANA    ?
-   DISCOVER    ?
-   TALOS    ?
-   X-PLOR    ?
-   NMR-STAR    ?
-
-   stop_
+#  loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail
+# BMRB/XML: Eliminated the following enumerations.
+#  AMBER    ?
+#  ARIA    ?
+#  CNS    ?
+#  CYANA    ?
+#  DISCOVER    ?
+#  TALOS    ?
+#  X-PLOR    ?
+#  NMR-STAR    ?
+#
+#  stop_
 
 save_
 

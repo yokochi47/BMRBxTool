@@ -3374,8 +3374,6 @@ CREATE TABLE conformer_stat_list_rep (
 --
 DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subsubtype;
 CREATE TYPE ENUM_constraint_file_constraint_subsubtype AS ENUM ( 'ambi', 'simple', 'na' );
-DROP TYPE IF EXISTS ENUM_constraint_file_software_name;
-CREATE TYPE ENUM_constraint_file_software_name AS ENUM ( 'AMBER', 'ARIA', 'CNS', 'CYANA', 'DISCOVER', 'TALOS', 'X-PLOR', 'NMR-STAR' );
 DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subtype;
 CREATE TYPE ENUM_constraint_file_constraint_subtype AS ENUM ( 'Not applicable', 'NOE', 'NOE buildup', 'NOE not seen', 'general distance', 'alignment tensor', 'chirality', 'prochirality', 'disulfide bond', 'hydrogen bond', 'symmetry', 'ROE', 'peptide', 'ring', 'PRE', 'na' );
 DROP TYPE IF EXISTS ENUM_constraint_file_constraint_type;
@@ -3387,7 +3385,7 @@ CREATE TABLE constraint_file (
 	id INTEGER ,
 	software_id INTEGER ,
 	software_label TEXT ,
-	software_name ENUM_constraint_file_software_name ,
+	software_name TEXT ,
 -- ATTRIBUTE
 	constraint_filename TEXT NOT NULL ,
 -- ATTRIBUTE
@@ -5294,8 +5292,6 @@ CREATE TABLE entity_citation (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_common_name_type;
-CREATE TYPE ENUM_entity_common_name_type AS ENUM ( 'common', 'abbreviation', 'synonym' );
 CREATE TABLE entity_common_name (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
@@ -5304,7 +5300,7 @@ CREATE TABLE entity_common_name (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_entity_common_name_type NOT NULL 
+	type TEXT NOT NULL 
 );
 
 --
@@ -8380,15 +8376,13 @@ CREATE TABLE nmr_spectrometer_list (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_diameter;
-CREATE TYPE ENUM_nmr_spectrometer_probe_diameter AS ENUM ( '1.7 mm', '3 mm', '5 mm', '8 mm', '10 mm', '20 mm' );
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_manufacturer;
 CREATE TYPE ENUM_nmr_spectrometer_probe_manufacturer AS ENUM ( 'Agilent', 'Bruker', 'DOTY', 'GE', 'JEOL', 'Varian', 'na' );
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_spacer_present;
 CREATE TYPE ENUM_nmr_spectrometer_probe_spacer_present AS ENUM ( 'no', 'yes' );
 CREATE TABLE nmr_spectrometer_probe (
 	details TEXT ,
-	diameter ENUM_nmr_spectrometer_probe_diameter ,
+	diameter DECIMAL ,
 	internal_volume DECIMAL ,
 	manufacturer ENUM_nmr_spectrometer_probe_manufacturer ,
 	model TEXT ,
