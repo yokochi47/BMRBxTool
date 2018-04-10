@@ -26,7 +26,7 @@ do
  group_id=`echo $line | cut -d '"' -f 2`
  parent_category_id=`echo $line | cut -d '"' -f 8 | cut -d '.' -f 1 | sed -e 's/^_//'`
 
- echo $child_category_id $group_id $child_category_id:$parent_category_id:$group_id . . >> $linked_group
+ echo "'"$child_category_id"'" $group_id "'"$child_category_id:$parent_category_id:$group_id"'" . . >> $linked_group
 
 done < $dict2sdb_info
 
@@ -47,7 +47,7 @@ do
  child_item_id=`echo $line | cut -d '"' -f 6`
  parent_item_id=`echo $line | cut -d '"' -f 8`
 
- echo $child_category_id $group_id "'"$child_item_id"'" "'"$parent_item_id"'" $parent_category_id >> $linked_group
+ echo "'"$child_category_id"'" $group_id "'"$child_item_id"'" "'"$parent_item_id"'" "'"$parent_category_id"'" >> $linked_group
 
 done < $dict2sdb_info
 

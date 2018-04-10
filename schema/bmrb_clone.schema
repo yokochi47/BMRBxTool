@@ -15,26 +15,26 @@
 --  retrieved field annotation: false
 --
 -- Statistics of schema:
---  Generated 457 tables (5748 fields), 0 attr groups, 0 model groups in total
+--  Generated 456 tables (5744 fields), 0 attr groups, 0 model groups in total
 --   Namespaces:
 --    http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), http://www.w3.org/2001/XMLSchema (xsd)
 --   Schema locations:
 --    schema/mmcif_nmr-star.xsd
 --   Table types:
---    0 root, 0 root children, 0 admin roots, 457 admin children
+--    0 root, 0 root children, 0 admin roots, 456 admin children
 --   System keys:
 --    0 primary keys (0 unique constraints), 0 foreign keys (312 key references), 0 nested keys
 --   User keys:
 --    0 document keys, 0 serial keys, 0 xpath keys
 --   Contents:
---    1314 attributes (454 in-place document keys), 4434 elements (3 in-place document keys), 0 simple contents
+--    1313 attributes (454 in-place document keys), 4431 elements (2 in-place document keys), 0 simple contents
 --   Wild cards:
 --    0 any elements, 0 any attributes
 --
 
 --
--- BMRB/XML Schema v3.2.0.15
--- BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.0.15, which is backward compatible with the original NMR-STAR Dictionary: http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic
+-- BMRB/XML Schema v3.2.1.2
+-- BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.2, which is backward compatible with the original NMR-STAR Dictionary: http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic
 -- URI-reference = http://bmrbpub.protein.osaka-u.ac.jp/schema/mmcif_nmr-star.dic
 --
 
@@ -422,7 +422,6 @@ DROP TABLE IF EXISTS spectral_peak_software CASCADE;
 DROP TABLE IF EXISTS spectral_processing_param CASCADE;
 DROP TABLE IF EXISTS spectral_transition CASCADE;
 DROP TABLE IF EXISTS spectral_transition_char CASCADE;
-DROP TABLE IF EXISTS spectral_transition_contrib CASCADE;
 DROP TABLE IF EXISTS spectral_transition_general_char CASCADE;
 DROP TABLE IF EXISTS spin_system CASCADE;
 DROP TABLE IF EXISTS spin_system_link CASCADE;
@@ -510,9 +509,9 @@ CREATE TYPE ENUM_entry_experimental_method_subtype AS ENUM ( 'SOLUTION', 'SOLID-
 DROP TYPE IF EXISTS ENUM_entry_format_name;
 CREATE TYPE ENUM_entry_format_name AS ENUM ( 'NMR-STAR' );
 DROP TYPE IF EXISTS ENUM_entry_nmr_star_version;
-CREATE TYPE ENUM_entry_nmr_star_version AS ENUM ( '3.1', '3.1.0.29', '3.1.1.7', '3.1.1.21', '3.1.1.31', '3.1.1.61', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.93', '3.1.1.96', '3.1.1.97', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15' );
+CREATE TYPE ENUM_entry_nmr_star_version AS ENUM ( '3.1', '3.1.0.29', '3.1.1.7', '3.1.1.21', '3.1.1.31', '3.1.1.61', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.93', '3.1.1.96', '3.1.1.97', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.1.2' );
 DROP TYPE IF EXISTS ENUM_entry_original_nmr_star_version;
-CREATE TYPE ENUM_entry_original_nmr_star_version AS ENUM ( '2.1', '3.0.2.8', '3.0.8.100', '3.0.8.109', '3.0.8.111', '3.0.8.112', '3.0.8.116', '3.0.8.120', '3.0.8.125', '3.0.8.34', '3.0.8.53', '3.0.8.58', '3.0.8.59', '3.0.8.78', '3.0.8.94', '3.0.8.96', '3.0.9.2', '3.0.9.13', '3.0.9.14', '3.1', '3.1.0.46', '3.1.1.7', '3.1.1.15', '3.1.1.19', '3.1.1.21', '3.1.1.31', '3.1.1.44', '3.1.1.61', '3.1.1.65', '3.1.1.75', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15' );
+CREATE TYPE ENUM_entry_original_nmr_star_version AS ENUM ( '2.1', '3.0.2.8', '3.0.8.100', '3.0.8.109', '3.0.8.111', '3.0.8.112', '3.0.8.116', '3.0.8.120', '3.0.8.125', '3.0.8.34', '3.0.8.53', '3.0.8.58', '3.0.8.59', '3.0.8.78', '3.0.8.94', '3.0.8.96', '3.0.9.2', '3.0.9.13', '3.0.9.14', '3.1', '3.1.0.46', '3.1.1.7', '3.1.1.15', '3.1.1.19', '3.1.1.21', '3.1.1.31', '3.1.1.44', '3.1.1.61', '3.1.1.65', '3.1.1.75', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.1.2' );
 DROP TYPE IF EXISTS ENUM_entry_type;
 CREATE TYPE ENUM_entry_type AS ENUM ( 'macromolecule', 'metabolite/natural product', 'small molecule', 'small molecule structure' );
 DROP TYPE IF EXISTS ENUM_entry_version_type;
@@ -1035,7 +1034,7 @@ CREATE TABLE assigned_spectral_transition (
 	atom_id TEXT ,
 	comp_id TEXT ,
 	comp_index_id INTEGER ,
-	contribution_fractional_val INTEGER ,
+	contribution_fractional_val DECIMAL ,
 	details TEXT ,
 	entity_assembly_id INTEGER ,
 	entity_id INTEGER ,
@@ -1933,6 +1932,8 @@ DROP TYPE IF EXISTS ENUM_chem_comp_processing_site;
 CREATE TYPE ENUM_chem_comp_processing_site AS ENUM ( 'EBI', 'MSD', 'PDBE', 'PDBJ', 'RCSB' );
 DROP TYPE IF EXISTS ENUM_chem_comp_provenance;
 CREATE TYPE ENUM_chem_comp_provenance AS ENUM ( 'BMRB', 'PDB', 'PubChem', 'na' );
+DROP TYPE IF EXISTS ENUM_chem_comp_release_status;
+CREATE TYPE ENUM_chem_comp_release_status AS ENUM ( 'REL', 'HOLD', 'HPUB', 'OBS', 'DEL' );
 DROP TYPE IF EXISTS ENUM_chem_comp_type;
 CREATE TYPE ENUM_chem_comp_type AS ENUM ( 'D-PEPTIDE LINKING', 'L-PEPTIDE LINKING', 'D-PEPTIDE NH3 AMINO TERMINUS', 'L-PEPTIDE NH3 AMINO TERMINUS', 'D-PEPTIDE COOH CARBOXY TERMINUS', 'L-PEPTIDE COOH CARBOXY TERMINUS', 'DNA LINKING', 'RNA LINKING', 'L-RNA LINKING', 'L-DNA LINKING', 'DNA OH 5 PRIME TERMINUS', 'RNA OH 5 PRIME TERMINUS', 'DNA OH 3 PRIME TERMINUS', 'RNA OH 3 PRIME TERMINUS', 'D-SACCHARIDE 1,4 AND 1,4 LINKING', 'L-SACCHARIDE 1,4 AND 1,4 LINKING', 'D-SACCHARIDE 1,4 AND 1,6 LINKING', 'L-SACCHARIDE 1,4 AND 1,6 LINKING', 'L-SACCHARIDE', 'D-SACCHARIDE', 'SACCHARIDE', 'NON-POLYMER', 'PEPTIDE LINKING', 'PEPTIDE-LIKE', 'L-GAMMA-PEPTIDE, C-DELTA LINKING', 'D-GAMMA-PEPTIDE, C-DELTA LINKING', 'L-BETA-PEPTIDE, C-GAMMA LINKING', 'D-BETA-PEPTIDE, C-GAMMA LINKING', 'OTHER' );
 DROP TYPE IF EXISTS ENUM_chem_comp_vendor;
@@ -1979,7 +1980,7 @@ CREATE TABLE chem_comp (
 	processing_site ENUM_chem_comp_processing_site ,
 	provenance ENUM_chem_comp_provenance ,
 	pubchem_code TEXT ,
-	release_status TEXT ,
+	release_status ENUM_chem_comp_release_status ,
 	replaced_by TEXT ,
 	replaces TEXT ,
 	sf_category TEXT ,
@@ -2034,6 +2035,8 @@ CREATE TABLE chem_comp_angle (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_chem_comp_assembly_cis_residue;
+CREATE TYPE ENUM_chem_comp_assembly_cis_residue AS ENUM ( 'yes', 'no' );
 CREATE TABLE chem_comp_assembly (
 	assembly_chem_comp_id TEXT ,
 	auth_asym_id TEXT ,
@@ -2041,7 +2044,7 @@ CREATE TABLE chem_comp_assembly (
 	auth_entity_assembly_id TEXT ,
 	auth_seq_id TEXT ,
 	auth_variant_id TEXT ,
-	cis_residue TEXT ,
+	cis_residue ENUM_chem_comp_assembly_cis_residue ,
 	comp_id TEXT ,
 	entity_id INTEGER ,
 	nef_index INTEGER ,
@@ -2209,6 +2212,8 @@ CREATE TABLE chem_comp_common_name (
 --
 DROP TYPE IF EXISTS ENUM_chem_comp_db_link_author_supplied;
 CREATE TYPE ENUM_chem_comp_db_link_author_supplied AS ENUM ( 'yes', 'no' );
+DROP TYPE IF EXISTS ENUM_chem_comp_db_link_database_code;
+CREATE TYPE ENUM_chem_comp_db_link_database_code AS ENUM ( 'CDDC', 'PDB', 'PubChem SID', 'PubChem CID', 'KEGG' );
 CREATE TABLE chem_comp_db_link (
 	accession_code_type TEXT ,
 	author_supplied ENUM_chem_comp_db_link_author_supplied ,
@@ -2222,7 +2227,7 @@ CREATE TABLE chem_comp_db_link (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	database_code TEXT NOT NULL ,
+	database_code ENUM_chem_comp_db_link_database_code NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
@@ -2454,7 +2459,7 @@ CREATE TABLE chem_shift_completeness_list (
 	sf_framecode TEXT ,
 	sf_id INTEGER ,
 -- ATTRIBUTE
-	assigned_chem_shift_list_id TEXT NOT NULL ,
+	assigned_chem_shift_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
@@ -2507,6 +2512,7 @@ CREATE TABLE chem_shift_isotope_effect_list (
 --
 -- (quoted from chem_shift_perturbationType)
 -- category description not available
+-- URI-reference = http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=Chem_shift_perturbation
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
@@ -2540,6 +2546,7 @@ CREATE TABLE chem_shift_perturbation (
 --
 -- (quoted from chem_shift_perturbation_experimentType)
 -- category description not available
+-- URI-reference = http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=Chem_shift_perturbation_experiment
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
@@ -2561,11 +2568,12 @@ CREATE TABLE chem_shift_perturbation_experiment (
 --
 -- (quoted from chem_shift_perturbation_listType)
 -- category description not available
+-- URI-reference = http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=Chem_shift_perturbation_list
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_chem_shift_perturbation_list_type;
-CREATE TYPE ENUM_chem_shift_perturbation_list_type AS ENUM ( '     ‘macromolecular', '’', '    ‘ligand', '    ‘paramagnetic' );
+CREATE TYPE ENUM_chem_shift_perturbation_list_type AS ENUM ( 'macromolecular binding', 'ligand binding', 'ligand fragment binding', 'paramagnetic ligand binding' );
 CREATE TABLE chem_shift_perturbation_list (
 	chem_shift_ref_set_id INTEGER ,
 	chem_shift_ref_set_label TEXT ,
@@ -2586,6 +2594,7 @@ CREATE TABLE chem_shift_perturbation_list (
 --
 -- (quoted from chem_shift_perturbation_softwareType)
 -- category description not available
+-- URI-reference = http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=Chem_shift_perturbation_software
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
@@ -2620,6 +2629,8 @@ DROP TYPE IF EXISTS ENUM_chem_shift_ref_ref_method;
 CREATE TYPE ENUM_chem_shift_ref_ref_method AS ENUM ( 'internal', 'external', 'na' );
 DROP TYPE IF EXISTS ENUM_chem_shift_ref_ref_type;
 CREATE TYPE ENUM_chem_shift_ref_ref_type AS ENUM ( 'direct', 'indirect', 'na' );
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_atom_type;
+CREATE TYPE ENUM_chem_shift_ref_atom_type AS ENUM ( 'H', 'C', 'N', 'F', 'P', 'Cd' );
 CREATE TABLE chem_shift_ref (
 	atom_group TEXT ,
 	chem_shift_units ENUM_chem_shift_ref_chem_shift_units ,
@@ -2643,7 +2654,7 @@ CREATE TABLE chem_shift_ref (
 -- ATTRIBUTE
 	atom_isotope_number INTEGER NOT NULL ,
 -- ATTRIBUTE
-	atom_type TEXT NOT NULL ,
+	atom_type ENUM_chem_shift_ref_atom_type NOT NULL ,
 -- ATTRIBUTE
 	chem_shift_reference_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
@@ -3047,12 +3058,14 @@ CREATE TABLE citation_keyword (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_computer_operating_system;
+CREATE TYPE ENUM_computer_operating_system AS ENUM ( 'IRIX', 'UNIX', 'Linux', 'DOS', 'NT', 'Windows VISTA', 'Windows 2000', 'Windows XP' );
 CREATE TABLE computer (
 	details TEXT ,
 	hardware_code TEXT ,
 	manufacturer TEXT ,
 	model TEXT ,
-	operating_system TEXT ,
+	operating_system ENUM_computer_operating_system ,
 	operating_system_version TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
@@ -3361,6 +3374,8 @@ CREATE TABLE conformer_stat_list_rep (
 --
 DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subsubtype;
 CREATE TYPE ENUM_constraint_file_constraint_subsubtype AS ENUM ( 'ambi', 'simple', 'na' );
+DROP TYPE IF EXISTS ENUM_constraint_file_software_name;
+CREATE TYPE ENUM_constraint_file_software_name AS ENUM ( 'AMBER', 'ARIA', 'CNS', 'CYANA', 'DISCOVER', 'TALOS', 'X-PLOR', 'NMR-STAR' );
 DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subtype;
 CREATE TYPE ENUM_constraint_file_constraint_subtype AS ENUM ( 'Not applicable', 'NOE', 'NOE buildup', 'NOE not seen', 'general distance', 'alignment tensor', 'chirality', 'prochirality', 'disulfide bond', 'hydrogen bond', 'symmetry', 'ROE', 'peptide', 'ring', 'PRE', 'na' );
 DROP TYPE IF EXISTS ENUM_constraint_file_constraint_type;
@@ -3372,7 +3387,7 @@ CREATE TABLE constraint_file (
 	id INTEGER ,
 	software_id INTEGER ,
 	software_label TEXT ,
-	software_name TEXT ,
+	software_name ENUM_constraint_file_software_name ,
 -- ATTRIBUTE
 	constraint_filename TEXT NOT NULL ,
 -- ATTRIBUTE
@@ -3516,6 +3531,8 @@ CREATE TABLE constraint_stat_list (
 --
 DROP TYPE IF EXISTS ENUM_constraint_stat_list_ens_constraint_stats_not_available;
 CREATE TYPE ENUM_constraint_stat_list_ens_constraint_stats_not_available AS ENUM ( 'yes', 'no' );
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_ens_dihedral_const_stat_calc_meth;
+CREATE TYPE ENUM_constraint_stat_list_ens_dihedral_const_stat_calc_meth AS ENUM ( 'calculated over all dihedral constraints', 'calculated for dihedral violations only' );
 CREATE TABLE constraint_stat_list_ens (
 	all_dist_rmsd DECIMAL ,
 	all_dist_rmsd_err DECIMAL ,
@@ -3526,7 +3543,7 @@ CREATE TABLE constraint_stat_list_ens (
 	constraint_stats_not_available ENUM_constraint_stat_list_ens_constraint_stats_not_available ,
 	dihedral_angle_rmsd DECIMAL ,
 	dihedral_angle_rmsd_err DECIMAL ,
-	dihedral_const_stat_calc_meth TEXT ,
+	dihedral_const_stat_calc_meth ENUM_constraint_stat_list_ens_dihedral_const_stat_calc_meth ,
 	dihedral_const_violat_avg DECIMAL ,
 	dihedral_const_violat_max DECIMAL ,
 	dipolar_13c_13c_rmsd DECIMAL ,
@@ -5277,6 +5294,8 @@ CREATE TABLE entity_citation (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_entity_common_name_type;
+CREATE TYPE ENUM_entity_common_name_type AS ENUM ( 'common', 'abbreviation', 'synonym' );
 CREATE TABLE entity_common_name (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
@@ -5285,7 +5304,7 @@ CREATE TABLE entity_common_name (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type ENUM_entity_common_name_type NOT NULL 
 );
 
 --
@@ -5405,7 +5424,7 @@ CREATE TABLE entity_deleted_atom (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_entity_experimental_src_host_org_scientific_name;
-CREATE TYPE ENUM_entity_experimental_src_host_org_scientific_name AS ENUM ( 'Acholeplasma laidlawii', 'Acidiphilium cryptum', 'Ajellomyces capsulatus', 'Allamanda oenotherifolia', 'Amphitrite ornata', 'Apis mellifera', 'Aspergillus flavus', 'Aspergillus niger', 'Aspergillus oryzae', 'Aspergillus parasiticus', 'Asteropus', 'Bacillus licheniformis', 'Bacillus subtilis', 'Bacillus thuringiensis', 'Blomia tropicalis', 'Bombyx mori', 'Borrelia burgdorferi', 'Borreliella burgdorferi', 'Brevibacillus choshinensis', 'Bungarus candidus', 'Carausius morosus', 'Carnobacterium maltaromaticum', 'Centruroides sculpturatus', 'Centruroides suffusus suffusus', 'Chlorobaculum tepidum', 'Conus araneosus', 'Conus marmoreus', 'Conus radiatus', 'Corynebacterium glutamicum', 'Cricetulus griseus', 'Cupiennius salei', 'Desulfovibrio desulfuricans', 'Dictyostelium discoideum', 'Diploptera punctata', 'Drosophila melanogaster', 'Echinochloa crus-galli', 'Emericellopsis minima', 'Emericellopsis salmosynnemata', 'Enterobacteria phage T7', 'Enterococcus faecalis', 'Enterococcus faecium', 'Escherichia', 'Escherichia coli', 'Escherichia coli B', 'Escherichia coli BL21', 'Escherichia coli BL21(DE3)', 'Escherichia coli ''BL21-Gold(DE3)pLysS AG''', 'Escherichia coli B41', 'Escherichia coli BW25113', 'Escherichia coli DH5[alpha]', 'Escherichia coli K-12', 'Escherichia coli-Pichia pastoris shuttle vector pPpARG4', 'Euplotes nobilii', 'Euplotes petzi', 'Euplotes raikovi', 'Gadus morhua', 'Gallus gallus', 'Geobacillus thermodenitrificans', 'Geobacter metallireducens', 'Hahella chejuensis', 'Helicobacter pylori', 'Hirsutella thompsonii', 'Histoplasma capsulatum', 'Homo sapiens', 'Human immunodeficiency virus 1', 'Hypsiboas albopunctatus', 'in vitro transcription vector pT7-Fluc(deltai)', 'Jasminum sambac', 'Juglans hindsii', 'Komagataella pastoris', 'Lactobacillus acidophilus', 'Lactobacillus plantarum', 'Lactococcus lactis', 'Leishmania major', 'Lentzea kentuckyensis', 'Leuconostoc gelidum', 'Mesobuthus eupeus', 'Microbispora sp. 107891', 'Momordica charantia', 'Momordica cochinchinensis', 'Mus musculus', 'Mycobacterium tuberculosis', 'Naja atra', 'Naja oxiana', 'Nicotiana tabacum', 'Nigella sativa', 'Neurospora', 'Ogataea angusta', 'Oldenlandia affinis', 'Panax ginseng', 'Pelodiscus sinensis', 'Penicillium chrysogenum', 'Petroselinum crispum', 'Pichia', 'Pisum sativum', 'Populus fremontii', 'Pseudomonas aeruginosa', 'Pseudomonas fluorescens', 'Rana cascadae', 'Reptilian orthoreovirus', 'Saccharomyces cerevisiae', 'Shigella flexneri', 'Staphylococcus epidermidis', 'Stellaria media', 'Streptomonospora alba', 'Streptomyces coelicolor', 'Streptomyces leeuwenhoekii', 'Streptomyces lividans', 'Streptomyces sp. I08A-00426', 'Sulfolobus solfataricus', 'Sus scrofa', 'synthetic construct', 'Triticum aestivum', 'Vibrio sp. 60', 'Vitis vinifera', 'Wrightia religiosa', 'unidentified' );
+CREATE TYPE ENUM_entity_experimental_src_host_org_scientific_name AS ENUM ( 'Acholeplasma laidlawii', 'Acidiphilium cryptum', 'Ajellomyces capsulatus', 'Allamanda oenotherifolia', 'Amphitrite ornata', 'Apis mellifera', 'Aspergillus flavus', 'Aspergillus niger', 'Aspergillus oryzae', 'Aspergillus parasiticus', 'Asteropus', 'Bacillus licheniformis', 'Bacillus subtilis', 'Bacillus thuringiensis', 'Blomia tropicalis', 'Bombyx mori', 'Borrelia burgdorferi', 'Borreliella burgdorferi', 'Brevibacillus choshinensis', 'Bungarus candidus', 'Carausius morosus', 'Carnobacterium maltaromaticum', 'Centruroides sculpturatus', 'Centruroides suffusus suffusus', 'Chlorobaculum tepidum', 'Conus araneosus', 'Conus marmoreus', 'Conus radiatus', 'Corynebacterium glutamicum', 'Cricetulus griseus', 'Cupiennius salei', 'Desulfovibrio desulfuricans', 'Dictyostelium discoideum', 'Diploptera punctata', 'Drosophila melanogaster', 'Echinochloa crus-galli', 'Emericellopsis minima', 'Emericellopsis salmosynnemata', 'Enterobacteria phage T7', 'Enterococcus faecalis', 'Enterococcus faecium', 'Escherichia', 'Escherichia coli', 'Escherichia coli B', 'Escherichia coli BL21', 'Escherichia coli BL21(DE3)', 'Escherichia coli ''BL21-Gold(DE3)pLysS AG''', 'Escherichia coli B41', 'Escherichia coli BW25113', 'Escherichia coli DH5[alpha]', 'Escherichia coli K-12', 'Escherichia coli-Pichia pastoris shuttle vector pPpARG4', 'Euplotes nobilii', 'Euplotes petzi', 'Euplotes raikovi', 'Gadus morhua', 'Gallus gallus', 'Geobacillus thermodenitrificans', 'Geobacter metallireducens', 'Hahella chejuensis', 'Helicobacter pylori', 'Hirsutella thompsonii', 'Histoplasma capsulatum', 'Homo sapiens', 'Human immunodeficiency virus 1', 'Hypsiboas albopunctatus', 'in vitro transcription vector pT7-Fluc(deltai)', 'Jasminum sambac', 'Juglans hindsii', 'Komagataella pastoris', 'Lactobacillus acidophilus', 'Lactobacillus plantarum', 'Lactococcus lactis', 'Leishmania major', 'Lentzea kentuckyensis', 'Leuconostoc gelidum', 'Mesobuthus eupeus', 'Microbispora sp. 107891', 'Momordica charantia', 'Momordica cochinchinensis', 'Mus musculus', 'Mycobacterium tuberculosis', 'Naja atra', 'Naja oxiana', 'Nicotiana tabacum', 'Nigella sativa', 'Neurospora', 'Ogataea angusta', 'Oldenlandia affinis', 'Panax ginseng', 'Pelodiscus sinensis', 'Penicillium chrysogenum', 'Petroselinum crispum', 'Pichia', 'Pisum sativum', 'Populus fremontii', 'Pseudomonas aeruginosa', 'Pseudomonas fluorescens', 'Rana cascadae', 'Reptilian orthoreovirus', 'Saccharomyces cerevisiae', 'Shigella flexneri', 'Spodoptera frugiperda', 'Staphylococcus epidermidis', 'Stellaria media', 'Streptomonospora alba', 'Streptomyces coelicolor', 'Streptomyces leeuwenhoekii', 'Streptomyces lividans', 'Streptomyces sp. I08A-00426', 'Sulfolobus solfataricus', 'Sus scrofa', 'synthetic construct', 'Triticum aestivum', 'Vibrio sp. 60', 'Vitis vinifera', 'Wrightia religiosa', 'unidentified' );
 DROP TYPE IF EXISTS ENUM_entity_experimental_src_production_method;
 CREATE TYPE ENUM_entity_experimental_src_production_method AS ENUM ( 'recombinant technology', 'purified from the natural source', 'chemical synthesis', 'cell free synthesis', 'enzymatic semisynthesis', 'reverse transcriptase', 'obtained from a collaborator', 'obtained from a vendor', 'na' );
 CREATE TABLE entity_experimental_src (
@@ -7619,6 +7638,8 @@ DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_fragmentation_method;
 CREATE TYPE ENUM_mass_spectrometer_view_fragmentation_method AS ENUM ( 'CID', 'ETD', 'IRMPD' );
 DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_manufacturer;
 CREATE TYPE ENUM_mass_spectrometer_view_manufacturer AS ENUM ( 'Alpha Omega Technologies Inc.', 'Agilent', 'Analytica of Branford', 'Bear Instruments', 'Bergmann Messgeraete Entwicklung', 'Bruker Daltonics', 'Ciphergen Biosystems', 'Charles Evans & Associates', 'Comstock Inc.', 'In-Situ', 'Micromass', 'Hitachi Instruments', 'JEOL USA', 'Kore Technology Ltd.', 'Kratos Analytical', 'LECO', 'MKS Instruments', 'PE Biosystems', 'Perkin Elmer', 'Prolab Resources', 'Sensar Larson Davis', 'Shimadzu Scientific Instruments Inc.', 'Thermo Scientific' );
+DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_type;
+CREATE TYPE ENUM_mass_spectrometer_view_type AS ENUM ( 'Q-TOF', 'ion TRAP', 'FTMS', 'Quadrupole' );
 CREATE TABLE mass_spectrometer_view (
 	citation_id INTEGER ,
 	citation_label TEXT ,
@@ -7630,7 +7651,7 @@ CREATE TABLE mass_spectrometer_view (
 	name TEXT ,
 	serial_number TEXT ,
 	spectrum_type TEXT ,
-	type TEXT ,
+	type ENUM_mass_spectrometer_view_type ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
@@ -8359,13 +8380,15 @@ CREATE TABLE nmr_spectrometer_list (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_diameter;
+CREATE TYPE ENUM_nmr_spectrometer_probe_diameter AS ENUM ( '1.7 mm', '3 mm', '5 mm', '8 mm', '10 mm', '20 mm' );
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_manufacturer;
 CREATE TYPE ENUM_nmr_spectrometer_probe_manufacturer AS ENUM ( 'Agilent', 'Bruker', 'DOTY', 'GE', 'JEOL', 'Varian', 'na' );
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_spacer_present;
 CREATE TYPE ENUM_nmr_spectrometer_probe_spacer_present AS ENUM ( 'no', 'yes' );
 CREATE TABLE nmr_spectrometer_probe (
 	details TEXT ,
-	diameter DECIMAL ,
+	diameter ENUM_nmr_spectrometer_probe_diameter ,
 	internal_volume DECIMAL ,
 	manufacturer ENUM_nmr_spectrometer_probe_manufacturer ,
 	model TEXT ,
@@ -8454,6 +8477,8 @@ CREATE TABLE observed_conformer (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_order_param_model_fit;
+CREATE TYPE ENUM_order_param_model_fit AS ENUM ( 'Rex', 'S2', 'S2, te', 'S2, Rex', 'S2, te, Rex', 'S2f, S2, ts', 'S2f, S2s, ts', 'S2f, tf, S2, ts', 'S2f, tf, S2s, ts', 'S2f, S2, ts, Rex', 'S2f, S2s, ts, Rex', 'S2f, tf, S2, ts, Rex', 'S2f, tf, S2s, ts, Rex' );
 CREATE TABLE order_param (
 	assembly_atom_id INTEGER ,
 	atom_id TEXT ,
@@ -8467,7 +8492,7 @@ CREATE TABLE order_param (
 	comp_index_id INTEGER ,
 	entity_assembly_id INTEGER ,
 	entity_id INTEGER ,
-	model_fit TEXT ,
+	model_fit ENUM_order_param_model_fit ,
 	model_free_sum_squared_errs DECIMAL ,
 	order_param_val DECIMAL ,
 	order_param_val_fit_err DECIMAL ,
@@ -8945,11 +8970,13 @@ CREATE TABLE pdbx_poly_seq_scheme (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_peak_restraint;
+CREATE TYPE ENUM_peak_restraint AS ENUM ( 'yes', 'no' );
 CREATE TABLE peak (
 	details TEXT ,
 	figure_of_merit DECIMAL ,
 	index_id INTEGER ,
-	restraint TEXT ,
+	restraint ENUM_peak_restraint ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
@@ -9061,9 +9088,12 @@ CREATE TABLE peak_general_char (
 --
 -- (quoted from peak_row_formatType)
 -- Items in the peak_row_format category describe the characteristics and assignments for the spectral peaks in a single row format.
+-- URI-reference = http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=Peak_row_format
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_peak_row_format_restraint;
+CREATE TYPE ENUM_peak_row_format_restraint AS ENUM ( 'yes', 'no' );
 CREATE TABLE peak_row_format (
 	ambiguity_code_1 INTEGER ,
 	ambiguity_code_2 INTEGER ,
@@ -9106,7 +9136,7 @@ CREATE TABLE peak_row_format (
 	position_uncertainty_2 DECIMAL ,
 	position_uncertainty_3 DECIMAL ,
 	position_uncertainty_4 DECIMAL ,
-	restraint TEXT ,
+	restraint ENUM_peak_row_format_restraint ,
 	seq_id_1 INTEGER ,
 	seq_id_2 INTEGER ,
 	seq_id_3 INTEGER ,
@@ -9490,6 +9520,10 @@ CREATE TABLE rdc_constraint_expt (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_rdc_constraint_list_constraint_type;
+CREATE TYPE ENUM_rdc_constraint_list_constraint_type AS ENUM ( 'RDC' );
+DROP TYPE IF EXISTS ENUM_rdc_constraint_list_potential_type;
+CREATE TYPE ENUM_rdc_constraint_list_potential_type AS ENUM ( 'log-harmonic', 'parabolic', 'square-well-parabolic', 'square-well-parabolic-linear', 'upper-bound-parabolic', 'lower-bound-parabolic', 'upper-bound-parabolic-linear', 'lower-bound-parabolic-linear' );
 CREATE TABLE rdc_constraint_list (
 	assumed_c_n_bond_length DECIMAL ,
 	assumed_h_c_bond_length DECIMAL ,
@@ -9497,14 +9531,14 @@ CREATE TABLE rdc_constraint_list (
 	block_id INTEGER ,
 	bond_length_usage_flag TEXT ,
 	constraint_file_id INTEGER ,
-	constraint_type TEXT ,
+	constraint_type ENUM_rdc_constraint_list_constraint_type ,
 	data_file_format TEXT ,
 	details TEXT ,
 	dipolar_constraint_calib_method TEXT ,
 	general_order_param_int_motions DECIMAL ,
 	mol_align_tensor_axial_sym_mol DECIMAL ,
 	mol_align_tensor_rhombic_mol DECIMAL ,
-	potential_type TEXT ,
+	potential_type ENUM_rdc_constraint_list_potential_type ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	tensor_auth_asym_id TEXT ,
@@ -9611,11 +9645,13 @@ CREATE TABLE rdc_experiment (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_rdc_list_bond_length_usage_flag;
+CREATE TYPE ENUM_rdc_list_bond_length_usage_flag AS ENUM ( 'yes', 'no' );
 CREATE TABLE rdc_list (
 	assumed_c_n_bond_length DECIMAL ,
 	assumed_h_c_bond_length DECIMAL ,
 	assumed_h_n_bond_length DECIMAL ,
-	bond_length_usage_flag TEXT ,
+	bond_length_usage_flag ENUM_rdc_list_bond_length_usage_flag ,
 	details TEXT ,
 	dipolar_constraint_calib_method TEXT ,
 	general_order_param_int_motions DECIMAL ,
@@ -10308,15 +10344,13 @@ CREATE TABLE sg_project (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_software_type;
-CREATE TYPE ENUM_software_type AS ENUM ( '     ’NUS', '’', '    ‘structure' );
 CREATE TABLE software (
 	details TEXT ,
 	doi TEXT ,
 	name TEXT ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
-	type ENUM_software_type ,
+	type TEXT ,
 	version TEXT ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
@@ -10440,9 +10474,11 @@ CREATE TABLE software_specific_info_list (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_spectral_acq_param_name;
+CREATE TYPE ENUM_spectral_acq_param_name AS ENUM ( 'spectrometer carrier frequency', 'spectrometer offset frequency', 'acquisition time', 'mixing time', 'spectral width', 'spectral folding', 'data point number', 'data point type', 'data point spacing' );
 CREATE TABLE spectral_acq_param (
 	acquisition_dimension_id INTEGER ,
-	name TEXT ,
+	name ENUM_spectral_acq_param_name ,
 	spectral_dim INTEGER ,
 	val TEXT ,
 	val_units TEXT ,
@@ -10680,8 +10716,10 @@ CREATE TABLE spectral_peak_software (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
+DROP TYPE IF EXISTS ENUM_spectral_processing_param_name;
+CREATE TYPE ENUM_spectral_processing_param_name AS ENUM ( 'Exponential factor', 'Gaussian factor', 'Zero filling', 'Lnear prediction', 'Processed real points', 'Submatrix block size', 'Full spectrum width points', 'Spectrum offset', 'Data type' );
 CREATE TABLE spectral_processing_param (
-	name TEXT ,
+	name ENUM_spectral_processing_param_name ,
 	operation_code TEXT ,
 	operation_id INTEGER ,
 	operation_ordinal INTEGER ,
@@ -10746,22 +10784,6 @@ CREATE TABLE spectral_transition_char (
 	spectral_peak_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	spectral_transition_id INTEGER NOT NULL 
-);
-
---
--- (quoted from spectral_transition_contribType)
--- NOT AVAILABLE
--- URI-reference = http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=Spectral_transition_contrib
--- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
--- type: admin child, content: true, list: false, bridge: false, virtual: false
---
-CREATE TABLE spectral_transition_contrib (
-	contribution_fractional_val DECIMAL ,
--- IN-PLACE DOCUMENT KEY
-	entry_id TEXT ,
-	spectral_peak_list_id INTEGER ,
--- ATTRIBUTE
-	id INTEGER NOT NULL 
 );
 
 --
