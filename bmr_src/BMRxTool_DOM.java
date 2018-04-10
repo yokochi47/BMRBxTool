@@ -10019,6 +10019,10 @@ public class BMRxTool_DOM {
 
 			filew.write("public class " + file_prefix + "_" + util_orderparam + " {\n\n");
 
+			filew.write("\tpublic static String getModelFit(String val_name) {\n");
+			filew.write("\t\treturn val_name != null ? val_name.replaceAll(\",\", \", \").replaceAll(\",\\\\s+\", \", \") : null;\n");
+			filew.write("\t}\n\n");
+
 			filew.write("\tpublic static String getTauEVal(String val_name, Connection conn_bmrb, String entry_id) {\n\n");
 
 			filew.write("\t\tStatement state = null;\n");

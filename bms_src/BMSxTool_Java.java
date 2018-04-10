@@ -4505,6 +4505,14 @@ public class BMSxTool_Java {
 					// category='BMRBx:order_parameter_list'
 					if (class_name.equalsIgnoreCase("OrderParameterList")) {
 
+						// item='model_fit'
+						if (attr_name_lower.equals("model_fit")) {
+
+							filew.write("\t\tif (val_name != null)\n");
+							filew.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_orderparameterlist + ".getModelFit(val_name);\n\n");
+
+						}
+
 						// item='tau_e_val_units'
 						if (attr_name_lower.equals("tau_e_val_units")) {
 

@@ -34761,8 +34761,7 @@ The diameter of the probe bore.
    _item.category_id                           'nmr_spectrometer_probe'
    _item.mandatory_code                         no
 #  _pdbx_item_enumeration_details.closed_flag   no
-# BMRB/XML: Changed item type from float to line.
-   _item_type.code                             'line'
+   _item_type.code                             'float'
 
 #  loop_
 #    _item_enumeration.value
