@@ -39,9 +39,10 @@ rm -f $NMRSTAR_DIC_FILE~
 
 patch -N < $NMRSTAR_DIC_FILE.patch
 
-rm -f  $NMRSTAR_DIC_FILE.rej
+rm -f $NMRSTAR_DIC_FILE.rej $NMRSTAR_DIC_FILE-*.log
 
 DictToSdb -ddlFile mmcif_nmr-star_ddl.dic -dictFile $NMRSTAR_DIC_FILE -dictSdbFile $DIC_PREFIX.sdb -ec | grep '^Info:' > dict2sdb.info
+
 DictObjFileCreator -dictSdbFile $DIC_PREFIX.sdb -o $DIC_PREFIX.odb
 Dict2XMLSchema -dictName $DIC_PREFIX.dic -df $DIC_PREFIX.odb -ns $NAME_SPACE -prefix $DIC_PREFIX
 
@@ -108,9 +109,9 @@ SAXON=../extlibs/saxon9he.jar
 
 APPEND_XSD_XSL=append_xsd.xsl
 
-java -jar $SAXON -s:$DIC_PREFIX-v$DIC_VERSION.xsd -xsl:$APPEND_XSD_XSL -o:$DIC_PREFIX-v$DIC_VERSION.xsd~
+#java -jar $SAXON -s:$DIC_PREFIX-v$DIC_VERSION.xsd -xsl:$APPEND_XSD_XSL -o:$DIC_PREFIX-v$DIC_VERSION.xsd~
 
-mv -f $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
+#mv -f $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
 
 ln -s $DIC_PREFIX-v$DIC_VERSION.xsd $DIC_PREFIX.xsd
 
