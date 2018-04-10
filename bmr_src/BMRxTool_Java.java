@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -2317,51 +2317,51 @@ public class BMRxTool_Java {
 
 				}
 
-//				else {
+				//				else {
 
-					filew.write("\n\tprivate static boolean set_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, FileWriter logw) {\n\n");
+				filew.write("\n\tprivate static boolean set_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, FileWriter logw) {\n\n");
 
-					filew.write("\t\tboolean nil = false;\n\n");
+				filew.write("\t\tboolean nil = false;\n\n");
 
-					filew.write("\t\tif (date == null)\n");
-					filew.write("\t\t\tnil = true;\n\n");
+				filew.write("\t\tif (date == null)\n");
+				filew.write("\t\t\tnil = true;\n\n");
 
-					write_missing_date_log_code(filew);
+				write_missing_date_log_code(filew);
 
-					filew.write("\t\tClass<?> _class = list.getClass();\n\n");
+				filew.write("\t\tClass<?> _class = list.getClass();\n\n");
 
-					filew.write("\t\ttry {\n");
-					filew.write("\t\t\tMethod method = _class.getMethod(method_name, new Class[]{ Calendar.class });\n");
-					filew.write("\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "Method nil_method = null;\n\n");
+				filew.write("\t\ttry {\n");
+				filew.write("\t\t\tMethod method = _class.getMethod(method_name, new Class[]{ Calendar.class });\n");
+				filew.write("\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "Method nil_method = null;\n\n");
 
-					filew.write("\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "if (nil_method_name != null && !nil_method_name.isEmpty())\n");
-					filew.write("\t\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "nil_method = _class.getMethod(nil_method_name);\n\n");
+				filew.write("\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "if (nil_method_name != null && !nil_method_name.isEmpty())\n");
+				filew.write("\t\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "nil_method = _class.getMethod(nil_method_name);\n\n");
 
-					filew.write("\t\t\ttry {\n");
-					filew.write("\t\t\t\tif (nil)\n");
-					filew.write("\t\t\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "nil_method.invoke(list);\n");
-					filew.write("\t\t\t\telse {\n");
-					filew.write("\t\t\t\t\tCalendar cal = " + file_prefix + "_" + BMRxTool_DOM.util_date + ".sqldate2calendar(date);\n");
-					filew.write("\t\t\t\t\tif (cal == null)\n");
-					filew.write("\t\t\t\t\t\treturn false;\n");
-					filew.write("\t\t\t\t\tmethod.invoke(list, cal);\n");
-					filew.write("\t\t\t\t}\n");
-					filew.write("\t\t\t} catch (IllegalAccessException e) {\n");
-					filew.write("\t\t\t\te.printStackTrace();\n");
-					filew.write("\t\t\t} catch (IllegalArgumentException e) {\n");
-					filew.write("\t\t\t\te.printStackTrace();\n");
-					filew.write("\t\t\t} catch (InvocationTargetException e) {\n");
-					filew.write("\t\t\t\te.printStackTrace();\n\t\t\t}\n\n");
+				filew.write("\t\t\ttry {\n");
+				filew.write("\t\t\t\tif (nil)\n");
+				filew.write("\t\t\t\t\t" + (class_name.equalsIgnoreCase("Entry") ? "" : ";//") + "nil_method.invoke(list);\n");
+				filew.write("\t\t\t\telse {\n");
+				filew.write("\t\t\t\t\tCalendar cal = " + file_prefix + "_" + BMRxTool_DOM.util_date + ".sqldate2calendar(date);\n");
+				filew.write("\t\t\t\t\tif (cal == null)\n");
+				filew.write("\t\t\t\t\t\treturn false;\n");
+				filew.write("\t\t\t\t\tmethod.invoke(list, cal);\n");
+				filew.write("\t\t\t\t}\n");
+				filew.write("\t\t\t} catch (IllegalAccessException e) {\n");
+				filew.write("\t\t\t\te.printStackTrace();\n");
+				filew.write("\t\t\t} catch (IllegalArgumentException e) {\n");
+				filew.write("\t\t\t\te.printStackTrace();\n");
+				filew.write("\t\t\t} catch (InvocationTargetException e) {\n");
+				filew.write("\t\t\t\te.printStackTrace();\n\t\t\t}\n\n");
 
-					filew.write("\t\t} catch (NoSuchMethodException e) {\n");
-					filew.write("\t\t\te.printStackTrace();\n");
-					filew.write("\t\t\tSystem.exit(1);\n");
-					filew.write("\t\t} catch (SecurityException e) {\n");
-					filew.write("\t\t\te.printStackTrace();\n\t\t}\n\n");
+				filew.write("\t\t} catch (NoSuchMethodException e) {\n");
+				filew.write("\t\t\te.printStackTrace();\n");
+				filew.write("\t\t\tSystem.exit(1);\n");
+				filew.write("\t\t} catch (SecurityException e) {\n");
+				filew.write("\t\t\te.printStackTrace();\n\t\t}\n\n");
 
-					filew.write("\t\treturn true;\n\t}\n");
+				filew.write("\t\treturn true;\n\t}\n");
 
-//				}
+				//				}
 
 			}
 
@@ -3589,6 +3589,14 @@ public class BMRxTool_Java {
 					// category='BMRBx:chem_shift_ref'
 					if (class_name.equalsIgnoreCase("ChemShiftRef")) {
 
+						// item='atom_type'
+						if (attr_name_lower.equals("atom_type")) {
+
+							filew.write("\t\tif (val_name != null)\n");
+							filew.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_chemshiftref + ".getAtomType(val_name);\n\n");
+
+						}
+
 						// item='mol_common_name'
 						if (attr_name_lower.equals("mol_common_name")) {
 
@@ -4102,6 +4110,14 @@ public class BMRxTool_Java {
 							filew.write("\t\t\tval_name = \"macromolecule\";\n\n");
 
 						}
+
+					}
+
+					// item='method', category='BMRBx:entry_experimental_methods'
+					if (attr_name_lower.equals("method") && class_name.equalsIgnoreCase("EntryExperimentalMethods")) {
+
+						filew.write("\t\tif (val_name != null)\n");
+						filew.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_entryexperimentalmethods + ".getMethod(val_name);\n\n");
 
 					}
 

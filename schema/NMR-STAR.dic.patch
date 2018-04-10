@@ -1,5 +1,5 @@
-*** NMR-STAR.dic	2018-04-10 16:44:48.981252814 +0900
---- mmcif_nmr-star-v3.2.1.2.dic	2018-04-10 16:44:43.771219721 +0900
+*** NMR-STAR.dic	2018-04-10 18:08:34.621382015 +0900
+--- mmcif_nmr-star-v3.2.1.2.dic	2018-04-10 18:01:08.718466641 +0900
 ***************
 *** 27,33 ****
          _dictionary_history.version
@@ -4430,6 +4430,39 @@
   ;
   
 ***************
+*** 16271,16285 ****
+  #  _pdbx_item_enumeration_details.closed_flag   yes
+     _item_type.code                             'line'
+  
+!    loop_
+!      _item_enumeration.value
+!      _item_enumeration.detail
+! 
+!    common    'An often used full name for the entity'
+!    abbreviation    'Common abbreviation used in the literature for the entity'
+!    synonym    'A synonym used for the entity'
+! 
+!    stop_
+  
+     loop_
+       _item_examples.case
+--- 16922,16936 ----
+  #  _pdbx_item_enumeration_details.closed_flag   yes
+     _item_type.code                             'line'
+  
+! #  loop_
+! #    _item_enumeration.value
+! #    _item_enumeration.detail
+! # BMRB/XML: Eliminated the following enumerations.
+! #  common    'An often used full name for the entity'
+! #  abbreviation    'Common abbreviation used in the literature for the entity'
+! #  synonym    'A synonym used for the entity'
+! #
+! #  stop_
+  
+     loop_
+       _item_examples.case
+***************
 *** 16353,16360 ****
   
      _item_description.description
@@ -7763,39 +7796,23 @@
   ;
   
 ***************
-*** 24092,24102 ****
+*** 24092,24097 ****
+--- 25907,25921 ----
      _item_type.code                             'yes_no'
   
      loop_
-!      _item_examples.case
++      _item_enumeration.value
++      _item_enumeration.detail
++ 
++    yes    ?
++    no    ?
++ 
++    stop_
++ 
++    loop_
+       _item_examples.case
   
-! ;
-! yes
-! ;
-  
-     stop_
-  
---- 25907,25926 ----
-     _item_type.code                             'yes_no'
-  
-     loop_
-!      _item_enumeration.value
-!      _item_enumeration.detail
-  
-!    yes    ?
-!    no    ?
-! 
-!    stop_
-! 
-!    loop_
-!      _item_examples.case
-! 
-! ;
-! yes
-! ;
-  
-     stop_
-  
+  ;
 ***************
 *** 24114,24119 ****
 --- 25938,25952 ----
@@ -10449,33 +10466,50 @@
   ;
   
 ***************
-*** 32873,32879 ****
+*** 32873,32893 ****
      _item.category_id                           'nmr_spectrometer_probe'
      _item.mandatory_code                         no
   #  _pdbx_item_enumeration_details.closed_flag   no
 !    _item_type.code                             'float'
+! 
+!    loop_
+!      _item_enumeration.value
+!      _item_enumeration.detail
+! 
+!    '1.7 mm'    ?
+!    '3 mm'    ?
+!    '5 mm'    ?
+!    '8 mm'    ?
+!    '10 mm'    ?
+!    '20 mm'    ?
+! 
+!    stop_
   
-     loop_
-       _item_enumeration.value
---- 34761,34768 ----
+  
+  save_
+  
+--- 34761,34781 ----
      _item.category_id                           'nmr_spectrometer_probe'
      _item.mandatory_code                         no
   #  _pdbx_item_enumeration_details.closed_flag   no
 ! # BMRB/XML: Changed item type from float to line.
 !    _item_type.code                             'line'
   
-     loop_
-       _item_enumeration.value
-***************
-*** 32888,32894 ****
++ #  loop_
++ #    _item_enumeration.value
++ #    _item_enumeration.detail
++ # BMRB/XML: Eliminated the following enumerations.
++ #  '1.7 mm'    ?
++ #  '3 mm'    ?
++ #  '5 mm'    ?
++ #  '8 mm'    ?
++ #  '10 mm'    ?
++ #  '20 mm'    ?
++ #
++ #  stop_
   
-     stop_
-  
-- 
   save_
   
-  save__nmr_spectrometer_probe.rotor_length
---- 34777,34782 ----
 ***************
 *** 32948,32953 ****
 --- 34836,34850 ----
@@ -25783,15 +25817,49 @@
   ;
   
 ***************
-*** 91200,91206 ****
+*** 91185,91205 ****
+  #  _pdbx_item_enumeration_details.closed_flag   no
+     _item_type.code                             'line'
   
-     stop_
+!    loop_
+!      _item_enumeration.value
+!      _item_enumeration.detail
+! 
+!    AMBER    ?
+!    ARIA    ?
+!    CNS    ?
+!    CYANA    ?
+!    DISCOVER    ?
+!    TALOS    ?
+!    X-PLOR    ?
+!    NMR-STAR    ?
+! 
+!    stop_
+! 
   
-- 
   save_
   
-  save__constraint_file.block_id
---- 93257,93262 ----
+--- 93242,93261 ----
+  #  _pdbx_item_enumeration_details.closed_flag   no
+     _item_type.code                             'line'
+  
+! #  loop_
+! #    _item_enumeration.value
+! #    _item_enumeration.detail
+! # BMRB/XML: Eliminated the following enumerations.
+! #  AMBER    ?
+! #  ARIA    ?
+! #  CNS    ?
+! #  CYANA    ?
+! #  DISCOVER    ?
+! #  TALOS    ?
+! #  X-PLOR    ?
+! #  NMR-STAR    ?
+! #
+! #  stop_
+  
+  save_
+  
 ***************
 *** 91290,91295 ****
 --- 93346,93353 ----
