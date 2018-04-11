@@ -1332,6 +1332,29 @@ public class BMSxTool_Java {
 
 			}
 
+			// item='model_fit', category='BMRBx:order_param'
+			if (class_name.equalsIgnoreCase("OrderParam")) {
+
+				filew.write("\n\tprivate static boolean set_model_fit(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
+
+				filew.write("\t\tboolean nil = false;\n\n");
+
+				filew.write("\t\tString _val_name = val_name;\n\n");
+
+				filew.write("\t\tif (" + file_prefix + "_" + BMSxTool_DOM.util_main + ".remediate_xml && (" + empty_check("val_name") + "))\n");
+				filew.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_orderparam + ".getModelFit(val_name);\n\n");
+
+				write_remed_log_code(filew);
+
+				filew.write("\t\tif (" + empty_check("val_name") + ")\n");
+				filew.write("\t\t\tnil = true;\n\n");
+
+				write_missing_log_code(filew);
+
+				write_invoke_string_method(filew);
+
+			}
+
 			if (_integer) {
 
 				if (!( /* class_name.equalsIgnoreCase("Entry") || */ class_name.equalsIgnoreCase("Release") || class_name.equalsIgnoreCase("SgProject"))) {
@@ -3034,6 +3057,9 @@ public class BMSxTool_Java {
 						// item='title', 'journal_name_full', 'journal_abbrev', 'journal_volume', 'journal_issue', 'journal_issn', 'page_first', 'page_last', 'title', 'year', category='BMRBx:citation'
 						else if ((attr_name_lower.equals("journal_name_full") || attr_name_lower.equals("journal_abbrev") || attr_name_lower.equals("journal_volume") || attr_name_lower.equals("journal_issue") || attr_name_lower.equals("journal_issn") || attr_name_lower.equals("page_first") || attr_name_lower.equals("page_last") || attr_name_lower.equals("title") || attr_name_lower.equals("year")) && class_name.equalsIgnoreCase("Citation"))
 							filew.write("\t\t\t\t\tif (!set_string_by_doc_sum(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), doc_sum, logw))\n\t\t\t\t\t\tcontinue;\n");
+						// item='model_fit', category='BMRBx:order_param'
+						else if (attr_name_lower.equals("model_fit") && class_name.equalsIgnoreCase("OrderParam"))
+							filew.write("\t\t\t\t\tif (!set_model_fit(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), logw))\n\t\t\t\t\t\tcontinue;\n");
 						// item='spectral_region', category='BMRBx:spectral_dim'
 						else if (attr_name_lower.equals("spectral_region") && class_name.equalsIgnoreCase("SpectralDim"))
 							filew.write("\t\t\t\t\tif (!set_string_spectral_region(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), rset.getString(\"Atom_type\"), logw))\n\t\t\t\t\t\tcontinue;\n");
