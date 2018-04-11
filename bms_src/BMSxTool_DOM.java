@@ -9653,8 +9653,19 @@ public class BMSxTool_DOM {
 
 			filew.write("public class " + file_prefix + "_" + util_orderparam + " {\n\n");
 
-			filew.write("\tpublic static String getModelFit(String val_name) {\n");
-			filew.write("\t\treturn val_name != null ? val_name.replaceAll(\",\", \", \").replaceAll(\",\\\\s+\", \", \") : null;\n");
+			filew.write("\tpublic static String getModelFit(String val_name) {\n\n");
+
+			filew.write("\t\tif (val_name != null) {\n\n");
+
+			filew.write("\t\t\tval_name = val_name.replaceAll(\",\", \", \").replaceAll(\",\\\\s+\", \", \").trim().replaceFirst(\",$\", \"\");\n\n");
+
+			filew.write("\t\t\tif (val_name.contains(\".\") && val_name.matches(\"^[-+]?([0-9]+(\\\\.[0-9]*)?|\\\\.[0-9]+)?$\"))\n");
+			filew.write("\t\t\t\tval_name = null;\n\n");
+
+			filew.write("\t\t}\n\n");
+
+			filew.write("\treturn val_name;\n");
+
 			filew.write("\t}\n\n");
 
 			filew.write("\tpublic static String getTauEVal(String val_name, Connection conn_bmrb, String entry_id) {\n\n");
