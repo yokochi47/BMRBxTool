@@ -32,7 +32,7 @@ public class BMRxTool_DOM {
 	private static final String util_serv = "Util_Serv";
 	private static final String util_thrd = "Util_Thrd";
 	private static final String util_xml = "Util_XML";
-	private static final String util_dom = "Util_DOM";
+	private static final String util_valid = "Util_Valid";
 
 	public static final String util_date = "Util_Date";
 	public static final String util_tax = "Util_Tax";
@@ -312,7 +312,7 @@ public class BMRxTool_DOM {
 		write_serv(src_dir_name, prefix, file_prefix); // entry_id server
 		write_thrd(src_dir_name, prefix, file_prefix, namespace_uri); // thread (runnable)
 		write_xml(src_dir_name, prefix, file_prefix, attr_list, namespace_uri, xsd_name); // write XML document
-		write_dom(src_dir_name, prefix, file_prefix, xsd_name); // validation
+		write_valid(src_dir_name, prefix, file_prefix, xsd_name); // validation
 
 		write_util_date(src_dir_name, file_prefix); // date conversion
 		write_util_tax(src_dir_name, file_prefix); // NCBI taxonomy utility
@@ -1305,6 +1305,8 @@ public class BMRxTool_DOM {
 			buffw.write("\tprivate Connection conn_tax = null;\n");
 			buffw.write("\tprivate Connection conn_le = null;\n\n");
 
+			buffw.write("\tprivate " + file_prefix + "_" + util_valid + " validator = null;\n\n");
+
 			buffw.write("\tprivate XmlOptions xml_opt = null;\n\n");
 
 			buffw.write("\tprivate static String _file_prefix;\n\n");
@@ -1334,6 +1336,8 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t_err_dir_name = err_dir_name;\n");
 			buffw.write("\t\t_loc_dir_name = loc_dir_name;\n");
 			buffw.write("\t\t_file_prefix = file_prefix;\n\n");
+
+			buffw.write("\t\tvalidator = new " + file_prefix + "_" + util_valid + "(xml_dir_name);\n\n");
 
 			buffw.write("\t\txml_opt = new XmlOptions();\n\n");
 
@@ -1372,7 +1376,7 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\tif (entry_id == null)\n");
 			buffw.write("\t\t\t\t\tbreak;\n\n");
 
-			buffw.write("\t\t\t\t" + file_prefix + "_" + util_xml + ".write(_lock_obj, conn_bmrb, conn_clone, conn_tax, conn_le, ee, en, sc, ent, _xml_dir_name, _rel_dir_name, _log_dir_name, _err_dir_name, _loc_dir_name, _file_prefix, entry_id, xml_opt);\n\n");
+			buffw.write("\t\t\t\t" + file_prefix + "_" + util_xml + ".write(_lock_obj, conn_bmrb, conn_clone, conn_tax, conn_le, ee, en, sc, ent, _xml_dir_name, _rel_dir_name, _log_dir_name, _err_dir_name, _loc_dir_name, _file_prefix, entry_id, validator, xml_opt);\n\n");
 
 			buffw.write("\t\t\t}\n\n");
 
@@ -1438,7 +1442,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("public class " + file_prefix + "_" + util_xml + " {\n\n");
 
-			buffw.write("\tpublic static void write(Object lock_obj, Connection conn_bmrb, Connection conn_clone, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + util_entityexperimentalsrc + " ee, " + file_prefix + "_" + util_entitynaturalsrc + " en, " + file_prefix + "_" + util_structclassification + " sc, " + file_prefix + "_" + util_entry + " ent, String xml_dir_name, String rel_dir_name, String log_dir_name, String err_dir_name, String loc_dir_name, String file_prefix, String entry_id, XmlOptions xml_opt) {\n\n");
+			buffw.write("\tpublic static void write(Object lock_obj, Connection conn_bmrb, Connection conn_clone, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + util_entityexperimentalsrc + " ee, " + file_prefix + "_" + util_entitynaturalsrc + " en, " + file_prefix + "_" + util_structclassification + " sc, " + file_prefix + "_" + util_entry + " ent, String xml_dir_name, String rel_dir_name, String log_dir_name, String err_dir_name, String loc_dir_name, String file_prefix, String entry_id, " + file_prefix + "_" + util_valid + " validator, XmlOptions xml_opt) {\n\n");
 
 			buffw.write("\t\tString xml_base_name = file_prefix + entry_id + " + file_prefix + "_" + util_main + ".noatom_suffix + \".xml\";\n");
 			buffw.write("\t\tString rel_base_name = file_prefix + entry_id + " + file_prefix + "_" + util_main + ".noatom_suffix + \"_last\";\n");
@@ -1575,8 +1579,7 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\tif (errfw != null) {\n\n");
 
 			buffw.write("\t\t\t\t\terrw.close();\n");
-			buffw.write("\t\t\t\t\terrfw.close();\n");
-			buffw.write("\t\t\t\t\terrfw = null;\n\n");
+			buffw.write("\t\t\t\t\terrfw.close();\n\n");
 
 			buffw.write("\t\t\t\t\tif (err_file.length() == 0)\n");
 			buffw.write("\t\t\t\t\t\terr_file.delete();\n\n");
@@ -1594,15 +1597,14 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t}\n\n");
 
 			buffw.write("\t\tif (xml_file.exists())\n");
-			buffw.write("\t\t\t" + file_prefix + "_" + util_dom + ".validation(xml_dir_name, xml_base_name, errw);\n\n");
+			buffw.write("\t\t\tvalidator.validate(xml_base_name, errw);\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
 			buffw.write("\t\t\tif (errfw != null) {\n\n");
 
 			buffw.write("\t\t\t\terrw.close();\n");
-			buffw.write("\t\t\t\terrfw.close();\n");
-			buffw.write("\t\t\t\terrfw = null;\n\n");
+			buffw.write("\t\t\t\terrfw.close();\n\n");
 
 			buffw.write("\t\t\t}\n\n");
 
@@ -1714,9 +1716,9 @@ public class BMRxTool_DOM {
 		}
 	}
 
-	private static void write_dom(String src_dir_name, String prefix, String file_prefix, String xsd_name) {
+	private static void write_valid(String src_dir_name, String prefix, String file_prefix, String xsd_name) {
 
-		final String program_name = src_dir_name + file_prefix + "_" + util_dom + ".java";
+		final String program_name = src_dir_name + file_prefix + "_" + util_valid + ".java";
 
 		File java_file = new File(program_name);
 
@@ -1734,11 +1736,17 @@ public class BMRxTool_DOM {
 			buffw.write("import org.xml.sax.*;\n");
 			buffw.write("import org.apache.xerces.parsers.*;\n\n");
 
-			buffw.write("public class " + file_prefix + "_" + util_dom + " {\n\n");
+			buffw.write("public class " + file_prefix + "_" + util_valid + " {\n\n");
 
-			buffw.write("\tsynchronized public static void validation(String dir_name, String xml_base_name, BufferedWriter errw) {\n\n");
+			buffw.write("\tDOMParser dom_parser = null;\n\n");
 
-			buffw.write("\t\tDOMParser dom_parser = new DOMParser();\n\n");
+			buffw.write("\tString _dir_name = null;\n\n");
+
+			buffw.write("\tpublic " + file_prefix + "_" + util_valid + "(String dir_name) {\n\n");
+
+			buffw.write("\t\tdom_parser = new DOMParser();\n\n");
+
+			buffw.write("\t\t_dir_name = dir_name;\n\n");
 
 			buffw.write("\t\tif (!" + file_prefix + "_" + BMRxTool_DOM.util_main + ".well_formed) {\n\n");
 
@@ -1760,15 +1768,19 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t}\n\n");
 
-			buffw.write("\t\tValidator err_handler = new Validator();\n\n");
+			buffw.write("\t}\n\n");
 
-			buffw.write("\t\terr_handler.init(errw);\n\n");
+			buffw.write("\tsynchronized public void validate(String xml_base_name, BufferedWriter errw) {\n\n");
 
-			buffw.write("\t\tdom_parser.setErrorHandler(err_handler);\n\n");
+			buffw.write("\t\tHandler handler = new Handler();\n\n");
+
+			buffw.write("\t\thandler.init(errw);\n\n");
+
+			buffw.write("\t\tdom_parser.setErrorHandler(handler);\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
-			buffw.write("\t\t\tdom_parser.parse(dir_name + xml_base_name);\n\n");
+			buffw.write("\t\t\tdom_parser.parse(_dir_name + xml_base_name);\n\n");
 
 			buffw.write("\t\t} catch (SAXException e) {\n");
 			buffw.write("\t\t\te.printStackTrace();\n");
@@ -1779,12 +1791,14 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\tSystem.exit(1);\n");
 			buffw.write("\t\t}\n\n");
 
-			buffw.write("\t\tif (err_handler.success)\n");
+			buffw.write("\t\tif (handler.success)\n");
 			buffw.write("\t\t\tSystem.out.println(xml_base_name + \" is valid.\");\n\n");
+
+			buffw.write("\t\tdom_parser.reset();\n\n");
 
 			buffw.write("\t}\n\n");
 
-			buffw.write("\tprivate static class Validator implements ErrorHandler {\n\n");
+			buffw.write("\tprivate class Handler implements ErrorHandler {\n\n");
 
 			buffw.write("\t\tpublic boolean success = true;\n");
 			buffw.write("\t\tpublic BufferedWriter errw = null;\n\n");
