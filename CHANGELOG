@@ -1,7 +1,8 @@
- Changes in BMRBxTool 1.27.0 (release 2018-04-10)
+ Changes in BMRBxTool 1.27.0 (release 2018-04-11)
 
   Updated dictionary NMR-STAR v3.2.0.15 to v3.2.1.2.
   Added to support for refreshed relational tables (since Apr-05-2018).
+  Improved overall performance.
 
  Changes in BMRBxTool 1.26.0 (release 2018-03-30)
 
