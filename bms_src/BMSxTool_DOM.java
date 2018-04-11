@@ -8910,7 +8910,7 @@ public class BMSxTool_DOM {
 
 			filew.write("public class " + file_prefix + "_" + util_entryexperimentalmethods + " {\n\n");
 
-			filew.write("\tstatic final Map<String, String> map = new HashMap<String, String>() {\n\n");
+			filew.write("\tstatic final Map<String, String> map_method = new HashMap<String, String>() {\n\n");
 
 			filew.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
 
@@ -8922,7 +8922,27 @@ public class BMSxTool_DOM {
 
 			filew.write("\tpublic static String getMethod(String val_name) {\n\n");
 
-			filew.write("\t\tval_name = map.get(val_name);\n\n");
+			filew.write("\t\tval_name = map_method.get(val_name);\n\n");
+
+			filew.write("\t\tif (val_name != null && val_name.equalsIgnoreCase(\"null\"))\n");
+			filew.write("\t\t\treturn null;\n\n");
+
+			filew.write("\t\treturn val_name;\n");
+			filew.write("\t}\n\n");
+
+			filew.write("\tstatic final Map<String, String> map_subtype = new HashMap<String, String>() {\n\n");
+
+			filew.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			filew.write("\t\t{\n\n");
+
+			write_util_from_properties(filew, xsd_dir_name + "entry_experimental_methods.subtype.properties");
+
+			filew.write("\n\t\t}\n\t};\n\n");
+
+			filew.write("\tpublic static String getSubtype(String val_name) {\n\n");
+
+			filew.write("\t\tval_name = map_subtype.get(val_name);\n\n");
 
 			filew.write("\t\tif (val_name != null && val_name.equalsIgnoreCase(\"null\"))\n");
 			filew.write("\t\t\treturn null;\n\n");

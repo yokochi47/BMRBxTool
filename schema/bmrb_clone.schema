@@ -2212,8 +2212,6 @@ CREATE TABLE chem_comp_common_name (
 --
 DROP TYPE IF EXISTS ENUM_chem_comp_db_link_author_supplied;
 CREATE TYPE ENUM_chem_comp_db_link_author_supplied AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_db_link_database_code;
-CREATE TYPE ENUM_chem_comp_db_link_database_code AS ENUM ( 'CDDC', 'PDB', 'PubChem SID', 'PubChem CID', 'KEGG' );
 CREATE TABLE chem_comp_db_link (
 	accession_code_type TEXT ,
 	author_supplied ENUM_chem_comp_db_link_author_supplied ,
@@ -2227,7 +2225,7 @@ CREATE TABLE chem_comp_db_link (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	database_code ENUM_chem_comp_db_link_database_code NOT NULL ,
+	database_code TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL 
 );
@@ -3529,8 +3527,6 @@ CREATE TABLE constraint_stat_list (
 --
 DROP TYPE IF EXISTS ENUM_constraint_stat_list_ens_constraint_stats_not_available;
 CREATE TYPE ENUM_constraint_stat_list_ens_constraint_stats_not_available AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_ens_dihedral_const_stat_calc_meth;
-CREATE TYPE ENUM_constraint_stat_list_ens_dihedral_const_stat_calc_meth AS ENUM ( 'calculated over all dihedral constraints', 'calculated for dihedral violations only' );
 CREATE TABLE constraint_stat_list_ens (
 	all_dist_rmsd DECIMAL ,
 	all_dist_rmsd_err DECIMAL ,
@@ -3541,7 +3537,7 @@ CREATE TABLE constraint_stat_list_ens (
 	constraint_stats_not_available ENUM_constraint_stat_list_ens_constraint_stats_not_available ,
 	dihedral_angle_rmsd DECIMAL ,
 	dihedral_angle_rmsd_err DECIMAL ,
-	dihedral_const_stat_calc_meth ENUM_constraint_stat_list_ens_dihedral_const_stat_calc_meth ,
+	dihedral_const_stat_calc_meth TEXT ,
 	dihedral_const_violat_avg DECIMAL ,
 	dihedral_const_violat_max DECIMAL ,
 	dipolar_13c_13c_rmsd DECIMAL ,
@@ -5420,7 +5416,7 @@ CREATE TABLE entity_deleted_atom (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_entity_experimental_src_host_org_scientific_name;
-CREATE TYPE ENUM_entity_experimental_src_host_org_scientific_name AS ENUM ( 'Acholeplasma laidlawii', 'Acidiphilium cryptum', 'Ajellomyces capsulatus', 'Allamanda oenotherifolia', 'Amphitrite ornata', 'Apis mellifera', 'Aspergillus flavus', 'Aspergillus niger', 'Aspergillus oryzae', 'Aspergillus parasiticus', 'Asteropus', 'Bacillus licheniformis', 'Bacillus subtilis', 'Bacillus thuringiensis', 'Blomia tropicalis', 'Bombyx mori', 'Borrelia burgdorferi', 'Borreliella burgdorferi', 'Brevibacillus choshinensis', 'Bungarus candidus', 'Carausius morosus', 'Carnobacterium maltaromaticum', 'Centruroides sculpturatus', 'Centruroides suffusus suffusus', 'Chlorobaculum tepidum', 'Conus araneosus', 'Conus marmoreus', 'Conus radiatus', 'Corynebacterium glutamicum', 'Cricetulus griseus', 'Cupiennius salei', 'Desulfovibrio desulfuricans', 'Dictyostelium discoideum', 'Diploptera punctata', 'Drosophila melanogaster', 'Echinochloa crus-galli', 'Emericellopsis minima', 'Emericellopsis salmosynnemata', 'Enterobacteria phage T7', 'Enterococcus faecalis', 'Enterococcus faecium', 'Escherichia', 'Escherichia coli', 'Escherichia coli B', 'Escherichia coli BL21', 'Escherichia coli BL21(DE3)', 'Escherichia coli ''BL21-Gold(DE3)pLysS AG''', 'Escherichia coli B41', 'Escherichia coli BW25113', 'Escherichia coli DH5[alpha]', 'Escherichia coli K-12', 'Escherichia coli-Pichia pastoris shuttle vector pPpARG4', 'Euplotes nobilii', 'Euplotes petzi', 'Euplotes raikovi', 'Gadus morhua', 'Gallus gallus', 'Geobacillus thermodenitrificans', 'Geobacter metallireducens', 'Hahella chejuensis', 'Helicobacter pylori', 'Hirsutella thompsonii', 'Histoplasma capsulatum', 'Homo sapiens', 'Human immunodeficiency virus 1', 'Hypsiboas albopunctatus', 'in vitro transcription vector pT7-Fluc(deltai)', 'Jasminum sambac', 'Juglans hindsii', 'Komagataella pastoris', 'Lactobacillus acidophilus', 'Lactobacillus plantarum', 'Lactococcus lactis', 'Leishmania major', 'Lentzea kentuckyensis', 'Leuconostoc gelidum', 'Mesobuthus eupeus', 'Microbispora sp. 107891', 'Momordica charantia', 'Momordica cochinchinensis', 'Mus musculus', 'Mycobacterium tuberculosis', 'Naja atra', 'Naja oxiana', 'Nicotiana tabacum', 'Nigella sativa', 'Neurospora', 'Ogataea angusta', 'Oldenlandia affinis', 'Panax ginseng', 'Pelodiscus sinensis', 'Penicillium chrysogenum', 'Petroselinum crispum', 'Pichia', 'Pisum sativum', 'Populus fremontii', 'Pseudomonas aeruginosa', 'Pseudomonas fluorescens', 'Rana cascadae', 'Reptilian orthoreovirus', 'Saccharomyces cerevisiae', 'Shigella flexneri', 'Spodoptera frugiperda', 'Staphylococcus epidermidis', 'Stellaria media', 'Streptomonospora alba', 'Streptomyces coelicolor', 'Streptomyces leeuwenhoekii', 'Streptomyces lividans', 'Streptomyces sp. I08A-00426', 'Sulfolobus solfataricus', 'Sus scrofa', 'synthetic construct', 'Triticum aestivum', 'Vibrio sp. 60', 'Vitis vinifera', 'Wrightia religiosa', 'unidentified' );
+CREATE TYPE ENUM_entity_experimental_src_host_org_scientific_name AS ENUM ( 'Acholeplasma laidlawii', 'Acidiphilium cryptum', 'Ajellomyces capsulatus', 'Allamanda oenotherifolia', 'Amphitrite ornata', 'Apis mellifera', 'Aspergillus flavus', 'Aspergillus niger', 'Aspergillus oryzae', 'Aspergillus parasiticus', 'Asteropus', 'Bacillus licheniformis', 'Bacillus subtilis', 'Bacillus thuringiensis', 'Blomia tropicalis', 'Bombyx mori', 'Borrelia burgdorferi', 'Borreliella burgdorferi', 'Brevibacillus choshinensis', 'Bungarus candidus', 'Carausius morosus', 'Carnobacterium maltaromaticum', 'Centruroides sculpturatus', 'Centruroides suffusus suffusus', 'Chlorobaculum tepidum', 'Conus araneosus', 'Conus marmoreus', 'Conus radiatus', 'Corynebacterium glutamicum', 'Cricetulus griseus', 'Cupiennius salei', 'Desulfovibrio desulfuricans', 'Dictyostelium discoideum', 'Diploptera punctata', 'Drosophila melanogaster', 'Echinochloa crus-galli', 'Emericellopsis minima', 'Emericellopsis salmosynnemata', 'Enterobacteria phage T7', 'Enterococcus faecalis', 'Enterococcus faecium', 'Escherichia', 'Escherichia coli', 'Escherichia coli B', 'Escherichia coli BL21', 'Escherichia coli BL21(DE3)', 'Escherichia coli ''BL21-Gold(DE3)pLysS AG''', 'Escherichia coli B41', 'Escherichia coli BW25113', 'Escherichia coli DH5[alpha]', 'Escherichia coli K-12', 'Escherichia coli-Pichia pastoris shuttle vector pPpARG4', 'Euplotes nobilii', 'Euplotes petzi', 'Euplotes raikovi', 'Gadus morhua', 'Gallus gallus', 'Geobacillus thermodenitrificans', 'Geobacter metallireducens', 'Hahella chejuensis', 'Helicobacter pylori', 'Hirsutella thompsonii', 'Histoplasma capsulatum', 'Homo sapiens', 'Human immunodeficiency virus 1', 'Hypsiboas albopunctatus', 'in vitro transcription vector pT7-Fluc(deltai)', 'Jasminum sambac', 'Juglans hindsii', 'Komagataella pastoris', 'Lactobacillus acidophilus', 'Lactobacillus plantarum', 'Lactococcus lactis', 'Leishmania major', 'Lentzea kentuckyensis', 'Leuconostoc gelidum', 'Mesobuthus eupeus', 'Microbispora sp. 107891', 'Momordica charantia', 'Momordica cochinchinensis', 'Mus musculus', 'Mycobacterium smegmatis', 'Mycobacterium tuberculosis', 'Naja atra', 'Naja oxiana', 'Nicotiana tabacum', 'Nigella sativa', 'Neurospora', 'Ogataea angusta', 'Oldenlandia affinis', 'Panax ginseng', 'Pelodiscus sinensis', 'Penicillium chrysogenum', 'Petroselinum crispum', 'Pichia', 'Pisum sativum', 'Populus fremontii', 'Pseudomonas aeruginosa', 'Pseudomonas fluorescens', 'Rana cascadae', 'Reptilian orthoreovirus', 'Saccharomyces cerevisiae', 'Shigella flexneri', 'Spodoptera frugiperda', 'Staphylococcus epidermidis', 'Stellaria media', 'Streptomonospora alba', 'Streptomyces coelicolor', 'Streptomyces leeuwenhoekii', 'Streptomyces lividans', 'Streptomyces sp. I08A-00426', 'Styela clava', 'Sulfolobus solfataricus', 'Sus scrofa', 'synthetic construct', 'Triticum aestivum', 'Vibrio sp. 60', 'Vitis vinifera', 'Wrightia religiosa', 'unidentified' );
 DROP TYPE IF EXISTS ENUM_entity_experimental_src_production_method;
 CREATE TYPE ENUM_entity_experimental_src_production_method AS ENUM ( 'recombinant technology', 'purified from the natural source', 'chemical synthesis', 'cell free synthesis', 'enzymatic semisynthesis', 'reverse transcriptase', 'obtained from a collaborator', 'obtained from a vendor', 'na' );
 CREATE TABLE entity_experimental_src (
@@ -8471,8 +8467,6 @@ CREATE TABLE observed_conformer (
 -- xmlns: http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_order_param_model_fit;
-CREATE TYPE ENUM_order_param_model_fit AS ENUM ( 'Rex', 'S2', 'S2, te', 'S2, Rex', 'S2, te, Rex', 'S2f, S2, ts', 'S2f, S2s, ts', 'S2f, tf, S2, ts', 'S2f, tf, S2s, ts', 'S2f, S2, ts, Rex', 'S2f, S2s, ts, Rex', 'S2f, tf, S2, ts, Rex', 'S2f, tf, S2s, ts, Rex' );
 CREATE TABLE order_param (
 	assembly_atom_id INTEGER ,
 	atom_id TEXT ,
@@ -8486,7 +8480,7 @@ CREATE TABLE order_param (
 	comp_index_id INTEGER ,
 	entity_assembly_id INTEGER ,
 	entity_id INTEGER ,
-	model_fit ENUM_order_param_model_fit ,
+	model_fit TEXT ,
 	model_free_sum_squared_errs DECIMAL ,
 	order_param_val DECIMAL ,
 	order_param_val_fit_err DECIMAL ,

@@ -4113,11 +4113,24 @@ public class BMRxTool_Java {
 
 					}
 
-					// item='method', category='BMRBx:entry_experimental_methods'
-					if (attr_name_lower.equals("method") && class_name.equalsIgnoreCase("EntryExperimentalMethods")) {
+					// category='BMRBx:entry_experimental_methods'
+					if (class_name.equalsIgnoreCase("EntryExperimentalMethods")) {
 
-						filew.write("\t\tif (val_name != null)\n");
-						filew.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_entryexperimentalmethods + ".getMethod(val_name);\n\n");
+						// item='method'
+						if (attr_name_lower.equals("method")) {
+
+							filew.write("\t\tif (val_name != null)\n");
+							filew.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_entryexperimentalmethods + ".getMethod(val_name);\n\n");
+
+						}
+
+						// item='subtype'
+						if (attr_name_lower.equals("subtype")) {
+
+							filew.write("\t\tif (val_name != null)\n");
+							filew.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_entryexperimentalmethods + ".getSubtype(val_name);\n\n");
+
+						}
 
 					}
 
