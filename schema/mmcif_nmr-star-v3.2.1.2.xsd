@@ -10469,7 +10469,8 @@ Pointer to '_Chem_comp.ID'
                      </xsd:documentation>
                         </xsd:annotation>
                     </xsd:attribute>
-                    <xsd:attribute name="database_code" use="required">
+                    <xsd:attribute name="database_code"
+                        type="xsd:string" use="required">
                         <xsd:annotation>
                             <xsd:documentation
                                 source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Chem_comp_db_link.Database_code" xml:lang="en">
@@ -10480,15 +10481,6 @@ the chemical compound.
 PDB
                      </xsd:documentation>
                         </xsd:annotation>
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string">
-                                <xsd:enumeration value="CDDC"/>
-                                <xsd:enumeration value="PDB"/>
-                                <xsd:enumeration value="PubChem SID"/>
-                                <xsd:enumeration value="PubChem CID"/>
-                                <xsd:enumeration value="KEGG"/>
-                            </xsd:restriction>
-                        </xsd:simpleType>
                     </xsd:attribute>
                     <xsd:attribute name="entry_id" type="xsd:string" use="required">
                         <xsd:annotation>
@@ -18733,7 +18725,8 @@ over the ensemble of conformers.
                             </xsd:annotation>
                         </xsd:element>
                         <xsd:element maxOccurs="1" minOccurs="0"
-                            name="dihedral_const_stat_calc_meth" nillable="true">
+                            name="dihedral_const_stat_calc_meth"
+                            nillable="true" type="xsd:string">
                             <xsd:annotation>
                                 <xsd:documentation
                                     source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Constraint_stat_list_ens.Dihedral_const_stat_calc_meth" xml:lang="en">
@@ -18741,12 +18734,6 @@ over the ensemble of conformers.
 Method used to calculate the dihedral angle constraint violation statistics.
                         </xsd:documentation>
                             </xsd:annotation>
-                            <xsd:simpleType>
-                                <xsd:restriction base="xsd:string">
-                                    <xsd:enumeration value="calculated over all dihedral constraints"/>
-                                    <xsd:enumeration value="calculated for dihedral violations only"/>
-                                </xsd:restriction>
-                            </xsd:simpleType>
                         </xsd:element>
                         <xsd:element maxOccurs="1" minOccurs="0"
                             name="dihedral_const_violat_avg"
@@ -30430,6 +30417,7 @@ Escherichia coli
                                     <xsd:enumeration value="Momordica charantia"/>
                                     <xsd:enumeration value="Momordica cochinchinensis"/>
                                     <xsd:enumeration value="Mus musculus"/>
+                                    <xsd:enumeration value="Mycobacterium smegmatis"/>
                                     <xsd:enumeration value="Mycobacterium tuberculosis"/>
                                     <xsd:enumeration value="Naja atra"/>
                                     <xsd:enumeration value="Naja oxiana"/>
@@ -30459,6 +30447,7 @@ Escherichia coli
                                     <xsd:enumeration value="Streptomyces leeuwenhoekii"/>
                                     <xsd:enumeration value="Streptomyces lividans"/>
                                     <xsd:enumeration value="Streptomyces sp. I08A-00426"/>
+                                    <xsd:enumeration value="Styela clava"/>
                                     <xsd:enumeration value="Sulfolobus solfataricus"/>
                                     <xsd:enumeration value="Sus scrofa"/>
                                     <xsd:enumeration value="synthetic construct"/>
@@ -47756,7 +47745,7 @@ Pointer to '_Entity.ID'
                             </xsd:annotation>
                         </xsd:element>
                         <xsd:element maxOccurs="1" minOccurs="0"
-                            name="model_fit" nillable="true">
+                            name="model_fit" nillable="true" type="xsd:string">
                             <xsd:annotation>
                                 <xsd:documentation
                                     source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Model_fit" xml:lang="en">
@@ -47764,23 +47753,6 @@ Pointer to '_Entity.ID'
 The model used to fit the experimental data.
                         </xsd:documentation>
                             </xsd:annotation>
-                            <xsd:simpleType>
-                                <xsd:restriction base="xsd:string">
-                                    <xsd:enumeration value="Rex"/>
-                                    <xsd:enumeration value="S2"/>
-                                    <xsd:enumeration value="S2, te"/>
-                                    <xsd:enumeration value="S2, Rex"/>
-                                    <xsd:enumeration value="S2, te, Rex"/>
-                                    <xsd:enumeration value="S2f, S2, ts"/>
-                                    <xsd:enumeration value="S2f, S2s, ts"/>
-                                    <xsd:enumeration value="S2f, tf, S2, ts"/>
-                                    <xsd:enumeration value="S2f, tf, S2s, ts"/>
-                                    <xsd:enumeration value="S2f, S2, ts, Rex"/>
-                                    <xsd:enumeration value="S2f, S2s, ts, Rex"/>
-                                    <xsd:enumeration value="S2f, tf, S2, ts, Rex"/>
-                                    <xsd:enumeration value="S2f, tf, S2s, ts, Rex"/>
-                                </xsd:restriction>
-                            </xsd:simpleType>
                         </xsd:element>
                         <xsd:element maxOccurs="1" minOccurs="0"
                             name="model_free_sum_squared_errs"

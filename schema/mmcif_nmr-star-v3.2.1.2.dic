@@ -21676,6 +21676,7 @@ of the entity.
    'Momordica charantia'    ?
    'Momordica cochinchinensis'    ?
    'Mus musculus'    ?
+   'Mycobacterium smegmatis'    ?
    'Mycobacterium tuberculosis'    ?
    'Naja atra'    ?
    'Naja oxiana'    ?
@@ -21705,6 +21706,7 @@ of the entity.
    'Streptomyces leeuwenhoekii'    ?
    'Streptomyces lividans'    ?
    'Streptomyces sp. I08A-00426'    ?
+   'Styela clava'    ?
    'Sulfolobus solfataricus'    ?
    'Sus scrofa'    ?
    'synthetic construct'    ?
@@ -26950,17 +26952,17 @@ the chemical compound.
 #  _pdbx_item_enumeration_details.closed_flag   no
    _item_type.code                             'line'
 
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
-   CDDC    ?
-   PDB    "PDB ligand library"
-   'PubChem SID'    "NCBI PubChem substance ID"
-   'PubChem CID'    "NCBI PubChem chemical ID"
-   KEGG    "Kyoto Encyclopedia of Genes and Genomes"
-
-   stop_
+#  loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail
+# BMRB/XML: Eliminated the following enumerations.
+#  CDDC    ?
+#  PDB    "PDB ligand library"
+#  'PubChem SID'    "NCBI PubChem substance ID"
+#  'PubChem CID'    "NCBI PubChem chemical ID"
+#  KEGG    "Kyoto Encyclopedia of Genes and Genomes"
+#
+#  stop_
 
    loop_
      _item_examples.case
@@ -77860,25 +77862,25 @@ The model used to fit the experimental data.
 #  _pdbx_item_enumeration_details.closed_flag   no
    _item_type.code                             'line'
 
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
-   Rex    ?
-   S2    ?
-   'S2, te'    ?
-   'S2, Rex'    ?
-   'S2, te, Rex'    ?
-   'S2f, S2, ts'    ?
-   'S2f, S2s, ts'    ?
-   'S2f, tf, S2, ts'    ?
-   'S2f, tf, S2s, ts'    ?
-   'S2f, S2, ts, Rex'    ?
-   'S2f, S2s, ts, Rex'    ?
-   'S2f, tf, S2, ts, Rex'    ?
-   'S2f, tf, S2s, ts, Rex'    ?
-
-   stop_
+#  loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail
+# BMRB/XML: Eliminated the following enumerations.
+#  Rex    ?
+#  S2    ?
+#  'S2, te'    ?
+#  'S2, Rex'    ?
+#  'S2, te, Rex'    ?
+#  'S2f, S2, ts'    ?
+#  'S2f, S2s, ts'    ?
+#  'S2f, tf, S2, ts'    ?
+#  'S2f, tf, S2s, ts'    ?
+#  'S2f, S2, ts, Rex'    ?
+#  'S2f, S2s, ts, Rex'    ?
+#  'S2f, tf, S2, ts, Rex'    ?
+#  'S2f, tf, S2s, ts, Rex'    ?
+#
+#  stop_
 
 
 save_
@@ -92189,14 +92191,14 @@ Method used to calculate the dihedral angle constraint violation statistics.
 #  _pdbx_item_enumeration_details.closed_flag   no
    _item_type.code                             'line'
 
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
-   'calculated over all dihedral constraints'    ?
-   'calculated for dihedral violations only'    ?
-
-   stop_
+#  loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail
+# BMRB/XML: Eliminated the following enumerations.
+#  'calculated over all dihedral constraints'    ?
+#  'calculated for dihedral violations only'    ?
+#
+#  stop_
 
 
 save_
