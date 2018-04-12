@@ -1634,7 +1634,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\t}\n\n");
 
 			buffw.write("\t\tif (xml_file.exists())\n");
-			buffw.write("\t\t\tvalidator.validate(xml_base_name, errw);\n\n");
+			buffw.write("\t\t\tvalidator.exec(xml_base_name, errw);\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
@@ -1807,13 +1807,13 @@ public class BMSxTool_DOM {
 
 			buffw.write("\t}\n\n");
 
-			buffw.write("\tsynchronized public void validate(String xml_base_name, BufferedWriter errw) {\n\n");
+			buffw.write("\tsynchronized public void exec(String xml_base_name, BufferedWriter errw) {\n\n");
 
-			buffw.write("\t\tHandler handler = new Handler();\n\n");
+			buffw.write("\t\tErrHandler err_handler = new ErrHandler();\n\n");
 
-			buffw.write("\t\thandler.init(errw);\n\n");
+			buffw.write("\t\terr_handler.init(errw);\n\n");
 
-			buffw.write("\t\tdom_parser.setErrorHandler(handler);\n\n");
+			buffw.write("\t\tdom_parser.setErrorHandler(err_handler);\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
@@ -1828,14 +1828,14 @@ public class BMSxTool_DOM {
 			buffw.write("\t\t\tSystem.exit(1);\n");
 			buffw.write("\t\t}\n\n");
 
-			buffw.write("\t\tif (handler.success)\n");
+			buffw.write("\t\tif (err_handler.success)\n");
 			buffw.write("\t\t\tSystem.out.println(xml_base_name + \" is valid.\");\n\n");
 
 			buffw.write("\t\tdom_parser.reset();\n\n");
 
 			buffw.write("\t}\n\n");
 
-			buffw.write("\tprivate class Handler implements ErrorHandler {\n\n");
+			buffw.write("\tprivate class ErrHandler implements ErrorHandler {\n\n");
 
 			buffw.write("\t\tpublic boolean success = true;\n");
 			buffw.write("\t\tpublic BufferedWriter errw = null;\n\n");
