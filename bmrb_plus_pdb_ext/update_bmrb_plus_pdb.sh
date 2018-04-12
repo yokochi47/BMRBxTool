@@ -79,5 +79,5 @@ psql -d $BMRB_DB -U $DB_USER -f index_bmrb.sql
 
 vacuumdb -d $BMRB_DB -U $DB_USER -f
 
-reindexdb -d $BMRB_DB -U $DB_USER
+#reindexdb -d $BMRB_DB -U $DB_USER
 
