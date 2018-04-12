@@ -175,4 +175,5 @@ done
 cd ../../../../..
 
 psql -U $DB_USER -d $BMRB_DB -f index_bmrb.sql
+psql -U $DB_USER -d $MTBL_DB -f index_metabolomics.sql
 

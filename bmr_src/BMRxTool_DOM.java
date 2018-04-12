@@ -245,65 +245,88 @@ public class BMRxTool_DOM {
 			}
 		}
 
-		for (String table_name : table_list) {
+		try {
 
-			if (table_name.matches("^dict\\..*")) // table names starting with "dict." are irrelevant.
-				continue;
+			File index_sql = new File(src_dir_name + "../index_" + file_prefix + ".sql");
 
-			if (table_name.equals("pacsy.software") || table_name.equals("pacsy.task") || table_name.equals("pacsy.vendor"))
-				continue;
+			FileWriter filew = new FileWriter(index_sql);
+			BufferedWriter  buffw = new BufferedWriter(filew);
 
-			if (!table_name.matches("pacsy\\..*$") && table_name.matches("^[a-z_].*"))
-				continue;
+			buffw.write("\n");
 
-			String _table_name = table_name + "Type";
+			for (String table_name : table_list) {
 
-			boolean match = false;
+				if (table_name.matches("^dict\\..*")) // table names starting with "dict." are irrelevant.
+					continue;
 
-			for (Node child = root.getFirstChild(); child != null; child = child.getNextSibling()) {
+				if (table_name.equals("pacsy.software") || table_name.equals("pacsy.task") || table_name.equals("pacsy.vendor"))
+					continue;
 
-				NamedNodeMap node_map = child.getAttributes();
+				if (!table_name.matches("pacsy\\..*$") && table_name.matches("^[a-z_].*"))
+					continue;
 
-				if (node_map != null) {
+				String _table_name = table_name + "Type";
 
-					Node node = node_map.item(0);
-
-					if (node != null) {
-
-						String attr_name = node.getTextContent();
-
-						if (attr_name.equalsIgnoreCase(_table_name)) {
-							match = true;
-							break;
-						}
-					}
-				}
-			}
-			/*
-			if (!match && _table_name.equals("Xray_instrumentType")) {
+				boolean match = false;
 
 				for (Node child = root.getFirstChild(); child != null; child = child.getNextSibling()) {
 
 					NamedNodeMap node_map = child.getAttributes();
 
 					if (node_map != null) {
-						String attr_name = node_map.item(0).getTextContent();
 
-						if (attr_name.equalsIgnoreCase("x_ray_instrumentType")) {
-							match = true;
-							break;
+						Node node = node_map.item(0);
+
+						if (node != null) {
+
+							String attr_name = node.getTextContent();
+
+							if (attr_name.equalsIgnoreCase(_table_name)) {
+
+								String index_name = table_name.toLowerCase() + "_index";
+
+								buffw.write("drop index if exists " + index_name + ";\n");
+								buffw.write("create index " + index_name + " on \"" + table_name + "\" ( \"" + (table_name.equals("Entry") ? "ID" : "Entry_ID") + "\" );\n\n");
+
+								match = true;
+
+								break;
+							}
 						}
 					}
 				}
+				/*
+				if (!match && _table_name.equals("Xray_instrumentType")) {
 
+					for (Node child = root.getFirstChild(); child != null; child = child.getNextSibling()) {
+
+						NamedNodeMap node_map = child.getAttributes();
+
+						if (node_map != null) {
+							String attr_name = node_map.item(0).getTextContent();
+
+							if (attr_name.equalsIgnoreCase("x_ray_instrumentType")) {
+								match = true;
+								break;
+							}
+						}
+					}
+
+				}
+				 */
+				if (!match) {
+
+					// report unresolved tables.
+					System.err.println("db_table: \"" + table_name + "\" is unresolved.");
+
+				}
 			}
-			 */
-			if (!match) {
 
-				// report unresolved tables.
-				System.err.println("db_table: \"" + table_name + "\" is unresolved.");
+			buffw.close();
+			filew.close();
 
-			}
+		} catch (DOMException | IOException e) {
+			e.printStackTrace();
 		}
 
 		// write utility files.

@@ -1,13 +1,4 @@
 
-drop index if exists atom_chem_shift_index;
-create index atom_chem_shift_index on "Atom_chem_shift" ( "Entry_ID", "Entity_ID" );
-
-drop index if exists entity_assembly_index;
-create index entity_assembly_index on "Entity_assembly" ( "Entry_ID", "Entity_ID" );
-
-drop index if exists entity_comp_index_index;
-create index entity_comp_index_index on "Entity_comp_index" ( "Entry_ID", "Entity_ID", "ID" );
-
 drop index if exists ambiguous_atom_chem_shift_index;
 create index ambiguous_atom_chem_shift_index on "Ambiguous_atom_chem_shift" ( "Entry_ID" );
 
@@ -71,8 +62,8 @@ create index assigned_spectral_transition_index on "Assigned_spectral_transition
 drop index if exists atom_index;
 create index atom_index on "Atom" ( "Entry_ID" );
 
---drop index if exists atom_chem_shift_index;
---create index atom_chem_shift_index on "Atom_chem_shift" ( "Entry_ID" );
+drop index if exists atom_chem_shift_index;
+create index atom_chem_shift_index on "Atom_chem_shift" ( "Entry_ID" );
 
 drop index if exists atom_nomenclature_index;
 create index atom_nomenclature_index on "Atom_nomenclature" ( "Entry_ID" );
@@ -208,12 +199,6 @@ create index chem_comp_tor_index on "Chem_comp_tor" ( "Entry_ID" );
 
 drop index if exists chem_shift_anisotropy_index;
 create index chem_shift_anisotropy_index on "Chem_shift_anisotropy" ( "Entry_ID" );
-
-drop index if exists chem_shift_completeness_char_index;
-create index chem_shift_completeness_char_index on "Chem_shift_completeness_char" ( "Entry_ID" );
-
-drop index if exists chem_shift_completeness_list_index;
-create index chem_shift_completeness_list_index on "Chem_shift_completeness_list" ( "Entry_ID" );
 
 drop index if exists chem_shift_experiment_index;
 create index chem_shift_experiment_index on "Chem_shift_experiment" ( "Entry_ID" );
@@ -482,8 +467,8 @@ create index energetic_penalty_function_index on "Energetic_penalty_function" ( 
 drop index if exists entity_index;
 create index entity_index on "Entity" ( "Entry_ID" );
 
---drop index if exists entity_assembly_index;
---create index entity_assembly_index on "Entity_assembly" ( "Entry_ID" );
+drop index if exists entity_assembly_index;
+create index entity_assembly_index on "Entity_assembly" ( "Entry_ID" );
 
 drop index if exists entity_atom_list_index;
 create index entity_atom_list_index on "Entity_atom_list" ( "Entry_ID" );
@@ -506,8 +491,8 @@ create index entity_citation_index on "Entity_citation" ( "Entry_ID" );
 drop index if exists entity_common_name_index;
 create index entity_common_name_index on "Entity_common_name" ( "Entry_ID" );
 
---drop index if exists entity_comp_index_index;
---create index entity_comp_index_index on "Entity_comp_index" ( "Entry_ID" );
+drop index if exists entity_comp_index_index;
+create index entity_comp_index_index on "Entity_comp_index" ( "Entry_ID" );
 
 drop index if exists entity_comp_index_alt_index;
 create index entity_comp_index_alt_index on "Entity_comp_index_alt" ( "Entry_ID" );
@@ -743,12 +728,6 @@ create index j_three_bond_constraint_software_index on "J_three_bond_constraint_
 drop index if exists karplus_equation_index;
 create index karplus_equation_index on "Karplus_equation" ( "Entry_ID" );
 
-drop index if exists lacs_char_index;
-create index lacs_char_index on "LACS_char" ( "Entry_ID" );
-
-drop index if exists lacs_plot_index;
-create index lacs_plot_index on "LACS_plot" ( "Entry_ID" );
-
 drop index if exists local_structure_quality_index;
 create index local_structure_quality_index on "Local_structure_quality" ( "Entry_ID" );
 
@@ -934,12 +913,6 @@ create index other_struct_feature_index on "Other_struct_feature" ( "Entry_ID" )
 
 drop index if exists other_struct_feature_list_index;
 create index other_struct_feature_list_index on "Other_struct_feature_list" ( "Entry_ID" );
-
-drop index if exists pb_char_index;
-create index pb_char_index on "PB_char" ( "Entry_ID" );
-
-drop index if exists pb_list_index;
-create index pb_list_index on "PB_list" ( "Entry_ID" );
 
 drop index if exists pdbx_chem_comp_feature_index;
 create index pdbx_chem_comp_feature_index on "PDBX_chem_comp_feature" ( "Entry_ID" );

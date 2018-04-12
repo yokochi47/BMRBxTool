@@ -110,4 +110,3 @@ CREATE INDEX noe_index on heteronucl_noe ( entry_id, heteronucl_noe_list_id );
 DROP INDEX IF EXISTS cc_index;
 CREATE INDEX cc_index on chem_comp ( entry_id );
 
-

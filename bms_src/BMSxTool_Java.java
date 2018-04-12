@@ -326,19 +326,18 @@ public class BMSxTool_Java {
 
 			buffw.write("\t\t\t\tbuffw.write(\"  <" + prefix + ":" + category_name + ">\\n\");\n\n");
 
-			buffw.write("\t\t\t\twhile (rset.next()) {\n\n");
+			buffw.write("\t\t\t\tStringBuilder sb = new StringBuilder();\n\n");
 
-			buffw.write("\t\t\t\t\tStringBuilder sb = new StringBuilder();\n\n");
+			buffw.write("\t\t\t\twhile (rset.next()) {\n\n");
 
 			buffw.write("\t\t\t\t\tfor (int j = 1; j <= cols; j++) {\n");
 			buffw.write("\t\t\t\t\t\tString val = rset.getString(j);\n");
-			buffw.write("\t\t\t\t\t\tif (val != null)\n");
-			buffw.write("\t\t\t\t\t\t\tsb.append(val + \",\");\n");
-			buffw.write("\t\t\t\t\t\telse\n");
-			buffw.write("\t\t\t\t\t\t\tsb.append(\",\");\n");
+			buffw.write("\t\t\t\t\t\tsb.append((val != null ? val : \"\") + \",\");\n");
 			buffw.write("\t\t\t\t\t}\n\n");
 
 			buffw.write("\t\t\t\t\trcsv[lines] = sb.toString();\n\n");
+
+			buffw.write("\t\t\t\t\tsb.setLength(0);\n\n");
 
 			buffw.write("\t\t\t\t\tint l;\n\n");
 
