@@ -97,8 +97,8 @@ NMR_STAR3_1=nmr-star3.1
 BMRB_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$NMR_STAR3_1/
 MTBL_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$MTBL_DB/
 
-wget -c -r -nv -np $BMRB_FTP -nH -R index*
-wget -c -r -nv -np $MTBL_FTP -nH -R index*
+wget -c -r -nv -np $BMRB_FTP -nH -R index.html*
+wget -c -r -nv -np $MTBL_FTP -nH -R index.html*
 
 cd $DUMP_PATH/$NMR_STAR3_1 || exit 1
 
