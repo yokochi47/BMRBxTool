@@ -47,7 +47,7 @@ public class BMSxTool_Main {
 
 		final String prefix = "BMRBx";
 		final String xsd_name = "mmcif_nmr-star.xsd";
-		final String namespace_uri = "http://pdbml.pdb.org/schema/" + xsd_name;
+		final String namespace_uri = "http://bmrbpub.protein.osaka-u.ac.jp/schema/" + xsd_name;
 
 		String bmrbx_tool_home = user_home + "/Applications/bmrbx-tool-" + version; // edit this before you run
 

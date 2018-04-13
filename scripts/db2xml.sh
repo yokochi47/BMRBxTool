@@ -156,7 +156,7 @@ finalize () {
 while true
 do
 
- java -classpath $PREFIX-util.jar:schema/mmcifNmrStar.jar:extlibs/* org.pdb.pdbml.schema.mmcifNmrStar.$PREFIX"_Util_Main" $OPTION --$ATOM\
+ java -classpath $PREFIX-util.jar:schema/mmcifNmrStar.jar:extlibs/* jp.ac.proteinOsakaU.bmrbpub.schema.mmcifNmrStar.$PREFIX"_Util_Main" $OPTION --$ATOM\
  --user-bmrb $DB_USER --user-tax $DB_USER --user-le $DB_USER --mail-to $MAIL_TO --mail-from $MAIL_FROM --smtp-host $SMTP_HOST --max-thrds $MAXPROCS || exit 1
 
  if [ -d $XML_LOC_DIR ] || [ $INIT != "true" ] ; then
@@ -186,8 +186,6 @@ do
      errproc $BASENAME 0
 
     else
-
-     sed -i -e "4,6h; s/pdbml.pdb.org/"$SCHEMA_HOST"/g" $XML_DOC_FILE
 
      $ZIP -f $XML_DOC_FILE
      echo $BASENAME.xml.gz done.
