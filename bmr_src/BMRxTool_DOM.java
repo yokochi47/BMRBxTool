@@ -24,7 +24,7 @@ import org.w3c.dom.*;
 
 public class BMRxTool_DOM {
 
-	public static final String package_name = "org.pdb.pdbml.schema.mmcifNmrStar";
+	public static final String package_name = "jp.ac.proteinOsakaU.bmrbpub.schema.mmcifNmrStar";
 	public static final String namespace_xs = "http://www.w3.org/2001/XMLSchema";
 	public static final String namespace_xsi = "http://www.w3.org/2001/XMLSchema-instance";
 
