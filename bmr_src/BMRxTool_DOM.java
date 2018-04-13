@@ -1486,11 +1486,8 @@ public class BMRxTool_DOM {
 			buffw.write("\t\tif (loc_file.exists() || err_file.exists())\n");
 			buffw.write("\t\t\treturn;\n\n");
 
-			buffw.write("\t\tFileWriter logfw = null;\n");
-			buffw.write("\t\tBufferedWriter logw = null;\n\n");
-
-			buffw.write("\t\tFileWriter errfw = null;\n");
-			buffw.write("\t\tBufferedWriter errw = null;\n\n");
+			buffw.write("\t\tFileWriter logw = null;\n");
+			buffw.write("\t\tFileWriter errw = null;\n\n");
 
 			buffw.write("\t\tboolean written = false;\n\n");
 
@@ -1516,13 +1513,11 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\tif (!no_exist)\n");
 			buffw.write("\t\t\t\treturn;\n\n");
 
-			buffw.write("\t\t\terrfw = new FileWriter(err_file);\n");
-			buffw.write("\t\t\terrw = new BufferedWriter(errfw);\n\n");
+			buffw.write("\t\t\terrw = new FileWriter(err_file);\n\n");
 
 			buffw.write("\t\t\tif (" + file_prefix + "_" + util_main + ".write_xml) {\n\n");
 
-			buffw.write("\t\t\t\tlogfw = new FileWriter(log_file);\n");
-			buffw.write("\t\t\t\tlogw = new BufferedWriter(logfw);\n\n");
+			buffw.write("\t\t\t\tlogw = new FileWriter(log_file);\n\n");
 
 			buffw.write("\t\t\t\tFileWriter filew = new FileWriter(xml_file);\n");
 			buffw.write("\t\t\t\tBufferedWriter buffw = new BufferedWriter(filew);\n\n");
@@ -1574,8 +1569,7 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\tbuffw.close();\n");
 			buffw.write("\t\t\t\tfilew.close();\n\n");
 
-			buffw.write("\t\t\t\tlogw.close();\n");
-			buffw.write("\t\t\t\tlogfw.close();\n\n");
+			buffw.write("\t\t\t\tlogw.close();\n\n");
 
 			buffw.write("\t\t\t\tif (log_file.length() == 0)\n");
 			buffw.write("\t\t\t\t\tlog_file.delete();\n\n");
@@ -1599,10 +1593,9 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\ttry {\n\n");
 
-			buffw.write("\t\t\t\tif (errfw != null) {\n\n");
+			buffw.write("\t\t\t\tif (errw != null) {\n\n");
 
-			buffw.write("\t\t\t\t\terrw.close();\n");
-			buffw.write("\t\t\t\t\terrfw.close();\n\n");
+			buffw.write("\t\t\t\t\terrw.close();\n\n");
 
 			buffw.write("\t\t\t\t\tif (err_file.length() == 0)\n");
 			buffw.write("\t\t\t\t\t\terr_file.delete();\n\n");
@@ -1624,12 +1617,8 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\ttry {\n\n");
 
-			buffw.write("\t\t\tif (errfw != null) {\n\n");
-
-			buffw.write("\t\t\t\terrw.close();\n");
-			buffw.write("\t\t\t\terrfw.close();\n\n");
-
-			buffw.write("\t\t\t}\n\n");
+			buffw.write("\t\t\tif (errw != null)\n");
+			buffw.write("\t\t\t\terrw.close();\n\n");
 
 			buffw.write("\t\t} catch (IOException e) {\n");
 			buffw.write("\t\t\te.printStackTrace();\n");
@@ -1793,7 +1782,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t}\n\n");
 
-			buffw.write("\tsynchronized public void exec(String xml_base_name, BufferedWriter errw) {\n\n");
+			buffw.write("\tsynchronized public void exec(String xml_base_name, FileWriter errw) {\n\n");
 
 			buffw.write("\t\tErrHandler err_handler = new ErrHandler();\n\n");
 
@@ -1824,9 +1813,9 @@ public class BMRxTool_DOM {
 			buffw.write("\tprivate class ErrHandler implements ErrorHandler {\n\n");
 
 			buffw.write("\t\tpublic boolean success = true;\n");
-			buffw.write("\t\tpublic BufferedWriter errw = null;\n\n");
+			buffw.write("\t\tpublic FileWriter errw = null;\n\n");
 
-			buffw.write("\t\tpublic void init(BufferedWriter errw) {\n");
+			buffw.write("\t\tpublic void init(FileWriter errw) {\n");
 			buffw.write("\t\t\tthis.errw = errw;\n");
 			buffw.write("\t\t}\n\n");
 

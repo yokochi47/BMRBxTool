@@ -153,13 +153,13 @@ public class BMSxTool_Java {
 			buffw.write("\tprivate static final String table_name = \"" + table_name + "\";\n\n");
 
 			if (class_name.equalsIgnoreCase("EntityExperimentalSrc"))
-				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + BMSxTool_DOM.util_entityexperimentalsrc + " ee, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, BufferedWriter logw, BufferedWriter errw) {\n\n");
+				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + BMSxTool_DOM.util_entityexperimentalsrc + " ee, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, FileWriter logw, FileWriter errw) {\n\n");
 			else if (class_name.equalsIgnoreCase("EntityNaturalSrc"))
-				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + BMSxTool_DOM.util_entitynaturalsrc + " en, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, BufferedWriter logw, BufferedWriter errw) {\n\n");
+				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + BMSxTool_DOM.util_entitynaturalsrc + " en, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, FileWriter logw, FileWriter errw) {\n\n");
 			else if (class_name.equalsIgnoreCase("Citation"))
-				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_clone, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + BMSxTool_DOM.util_entitynaturalsrc + " en, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, BufferedWriter logw, BufferedWriter errw) {\n\n");
+				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_clone, Connection conn_tax, Connection conn_le, " + file_prefix + "_" + BMSxTool_DOM.util_entitynaturalsrc + " en, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, FileWriter logw, FileWriter errw) {\n\n");
 			else
-				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_tax, Connection conn_le, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, BufferedWriter logw, BufferedWriter errw) {\n\n");
+				buffw.write("\tpublic static int write_xml(Connection conn_bmrb, Connection conn_tax, Connection conn_le, String entry_id, XmlOptions xml_opt, BufferedWriter buffw, FileWriter logw, FileWriter errw) {\n\n");
 
 			// category='BMRBx:atom_site', 'BMRBx:*conformer*', 'BMRBx:*constr*', 'BMRBx:*peak*'
 			if (class_name.equalsIgnoreCase("AtomSite") || class_name.contains("Conformer") || class_name.contains("Constr") || class_name.contains("Peak")) {
@@ -662,7 +662,7 @@ public class BMSxTool_Java {
 
 			// sub routines
 
-			buffw.write("\n\tprivate static boolean set_string(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw) {\n\n");
+			buffw.write("\n\tprivate static boolean set_string(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
 
 			buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -770,7 +770,7 @@ public class BMSxTool_Java {
 			// item='atom_id', category='BMRBx:atom_nomenclature'
 			if (class_name.equalsIgnoreCase("AtomNomenclature")) {
 
-				buffw.write("\n\tprivate static boolean set_string_atom_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int atom_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_atom_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int atom_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -788,7 +788,7 @@ public class BMSxTool_Java {
 			// item='atom_id_2', category='BMRBx:bond'
 			if (class_name.equalsIgnoreCase("Bond")) {
 
-				buffw.write("\n\tprivate static boolean set_string_atom_id_2(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String comp_id_1, String atom_id_1, String comp_id_2, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_atom_id_2(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String comp_id_1, String atom_id_1, String comp_id_2, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -811,7 +811,7 @@ public class BMSxTool_Java {
 			// item='id', category='BMRBx:chem_comp'
 			if (class_name.equalsIgnoreCase("ChemComp")) {
 
-				buffw.write("\n\tprivate static boolean set_string_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String name, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String name, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -834,7 +834,7 @@ public class BMSxTool_Java {
 			// item='doi', 'title', 'journal_name_full', 'journal_abbrev', 'journal_volume', 'journal_issue', 'journal_issn', 'page_first', 'page_last', 'title', 'year', category='BMRBx:citation'
 			if (class_name.equalsIgnoreCase("Citation")) {
 
-				buffw.write("\n\tprivate static boolean set_string_by_doc_sum(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Node doc_sum, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_by_doc_sum(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Node doc_sum, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -878,7 +878,7 @@ public class BMSxTool_Java {
 			// item='ec_number', category='BMRBx:entity'
 			if (class_name.equalsIgnoreCase("Assembly") || class_name.equalsIgnoreCase("Entity")) {
 
-				buffw.write("\n\tprivate static boolean set_string_ec_number(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_ec_number(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -907,7 +907,7 @@ public class BMSxTool_Java {
 			// item='accession_code', category='BMRBx:assembly_db_link', 'BMRBx:entity_db_link'
 			if (class_name.equalsIgnoreCase("AssemblyDbLink") || class_name.equalsIgnoreCase("EntityDbLink")) {
 
-				buffw.write("\n\tprivate static boolean set_string_accession_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_accession_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -930,7 +930,7 @@ public class BMSxTool_Java {
 			// item='polymer_seq_one_letter_code', 'polymer_seq_one_letter_code_can', category='BMRBx:entity'
 			if (class_name.equalsIgnoreCase("Entity")) {
 
-				buffw.write("\n\tprivate static boolean set_string_polymer_seq_one_letter_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_polymer_seq_one_letter_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -948,7 +948,7 @@ public class BMSxTool_Java {
 
 				write_invoke_string_method(buffw);
 
-				buffw.write("\n\tprivate static boolean set_string_polymer_seq_one_letter_code_can(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_polymer_seq_one_letter_code_can(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -972,7 +972,7 @@ public class BMSxTool_Java {
 			// item='host_org_ncbi_taxonomy_id', category='BMRBx:entity_experimental_src'
 			if (class_name.equalsIgnoreCase("EntityNaturalSrc") || class_name.equalsIgnoreCase("EntityExperimentalSrc")) {
 
-				buffw.write("\n\tprivate static boolean set_string_ncbi_taxonomy_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, BufferedWriter logw, BufferedWriter errw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_ncbi_taxonomy_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, FileWriter logw, FileWriter errw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1033,7 +1033,7 @@ public class BMSxTool_Java {
 			if (class_name.equalsIgnoreCase("EntityExperimentalSrc")) {
 
 				// item='host_org_genus'
-				buffw.write("\n\tprivate static boolean set_string_host_org_genus(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_host_org_genus(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1052,7 +1052,7 @@ public class BMSxTool_Java {
 				write_invoke_string_method(buffw);
 
 				// item='host_org_species'
-				buffw.write("\n\tprivate static boolean set_string_host_org_species(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_host_org_species(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1071,7 +1071,7 @@ public class BMSxTool_Java {
 				write_invoke_string_method(buffw);
 
 				// item='host_org_name_common'
-				buffw.write("\n\tprivate static boolean set_string_host_org_name_common(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_host_org_name_common(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1098,7 +1098,7 @@ public class BMSxTool_Java {
 			if (class_name.equalsIgnoreCase("EntityNaturalSrc")) {
 
 				// item='genus'
-				buffw.write("\n\tprivate static boolean set_string_genus(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_genus(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1123,7 +1123,7 @@ public class BMSxTool_Java {
 				write_invoke_string_method(buffw);
 
 				// item='species'
-				buffw.write("\n\tprivate static boolean set_string_species(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_species(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1148,7 +1148,7 @@ public class BMSxTool_Java {
 				write_invoke_string_method(buffw);
 
 				// item='organism_name_common'
-				buffw.write("\n\tprivate static boolean set_string_organism_name_common(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_organism_name_common(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1170,7 +1170,7 @@ public class BMSxTool_Java {
 				write_invoke_string_method(buffw);
 
 				// item='organism_name_scientific'
-				buffw.write("\n\tprivate static boolean set_string_organism_name_scientific(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String entry_id, String ncbi_taxonomy_id, BufferedWriter logw, BufferedWriter errw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_organism_name_scientific(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String entry_id, String ncbi_taxonomy_id, FileWriter logw, FileWriter errw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1199,7 +1199,7 @@ public class BMSxTool_Java {
 			// item='database_code', category='BMRBx:natural_source_db'
 			if (class_name.equalsIgnoreCase("NaturalSourceDb")) {
 
-				buffw.write("\n\tprivate static boolean set_string_database_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String accession_code, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_database_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String accession_code, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1225,7 +1225,7 @@ public class BMSxTool_Java {
 			// item='database_accession_code', category='BMRBx:related_entries'
 			if (class_name.equalsIgnoreCase("RelatedEntries")) {
 
-				buffw.write("\n\tprivate static boolean set_string_database_accession_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_database_accession_code(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1248,7 +1248,7 @@ public class BMSxTool_Java {
 			// item='spectral_region', category='BMRBx:spectral_dim'
 			if (class_name.equalsIgnoreCase("SpectralDim")) {
 
-				buffw.write("\n\tprivate static boolean set_string_spectral_region(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String atom_type, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_spectral_region(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String atom_type, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1275,7 +1275,7 @@ public class BMSxTool_Java {
 			if (class_name.equalsIgnoreCase("ChemCompAtom")) {
 
 				// item='host_org_genus'
-				buffw.write("\n\tprivate static boolean set_string_charge(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String val_name_can, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_charge(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String val_name_can, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1302,7 +1302,7 @@ public class BMSxTool_Java {
 			// item='pdbx_name', category='BMRBx:citation_author', 'BMRBx:citation_editor', 'BMRBx:entry_author' 
 			if (class_name.equalsIgnoreCase("CitationAuthor") || class_name.equalsIgnoreCase("CitationEditor") || class_name.equalsIgnoreCase("EntryAuthor")) {
 
-				buffw.write("\n\tprivate static boolean set_string_pdbx_name(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String family_name, String given_name, String middle_initials, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_string_pdbx_name(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String family_name, String given_name, String middle_initials, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1335,7 +1335,7 @@ public class BMSxTool_Java {
 			// item='model_fit', category='BMRBx:order_param'
 			if (class_name.equalsIgnoreCase("OrderParam")) {
 
-				buffw.write("\n\tprivate static boolean set_model_fit(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_model_fit(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1359,7 +1359,7 @@ public class BMSxTool_Java {
 
 				if (!( /* class_name.equalsIgnoreCase("Entry") || */ class_name.equalsIgnoreCase("Release") || class_name.equalsIgnoreCase("SgProject"))) {
 
-					buffw.write("\n\tprivate static boolean set_integer(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1397,7 +1397,7 @@ public class BMSxTool_Java {
 				/*
 				if (class_name.equalsIgnoreCase("EntityExperimentalSrc") || class_name.equalsIgnoreCase("EntityPurity") || class_name.equalsIgnoreCase("NMRSpectrometerView")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1421,7 +1421,7 @@ public class BMSxTool_Java {
 				// item='entity_natural_src_id', category='BMRBx:natural_source_db'
 				if (class_name.equalsIgnoreCase("NaturalSourceDb")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_entity_natural_src_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_entity_natural_src_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1444,7 +1444,7 @@ public class BMSxTool_Java {
 				// item='sg_project_id', category='nmrstr:sg_project'
 				if (class_name.equalsIgnoreCase("SGProject")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_sg_project_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_sg_project_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1467,7 +1467,7 @@ public class BMSxTool_Java {
 				// item='release_number', category='BMRBx:release'
 				if (class_name.equalsIgnoreCase("Release")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_release_number(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_release_number(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1490,7 +1490,7 @@ public class BMSxTool_Java {
 				// item='software_id', category='BMRBx:*software'
 				if (class_name.endsWith("Software") && !class_name.startsWith("Software")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_software_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_software_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, int id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1513,7 +1513,7 @@ public class BMSxTool_Java {
 				// item='experiment_id', 'sample_id', category='BMRBx:coupling_constant_experiment', 'BMRBx:rdc_experiment'
 				if (class_name.equalsIgnoreCase("CouplingConstantExperiment") || class_name.equalsIgnoreCase("RDCExperiment") ) {
 
-					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String sample_id, String list_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String sample_id, String list_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1535,7 +1535,7 @@ public class BMSxTool_Java {
 
 					write_invoke_bigint_method(buffw);
 
-					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String experiment_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String experiment_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1558,7 +1558,7 @@ public class BMSxTool_Java {
 				// item='sample_condition_list_id', category='BMRBx:conformer_family_coord_set', 'BMRBx:coupling_constant_list', 'BMRBx:other_data_type_list', 'BMRBx:rdc_list'
 				if (class_name.equalsIgnoreCase("ConformerFamilyCoordSet") || class_name.equalsIgnoreCase("CouplingConstantList") || class_name.equalsIgnoreCase("OtherDataTypeList") || class_name.equalsIgnoreCase("RDCList")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_sample_condition_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_sample_condition_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1581,7 +1581,7 @@ public class BMSxTool_Java {
 				// item='experiment_id', 'sample_id', category='BMRBx:chem_shift*experiment', 'BMRBx:conformer_family_coord_set*expt', 'BMRBx:crosscorrlation*experiment', 'BMRBx:h_exch*experiment', 'BMRBx:heteronucl*experiment', 'BMRBx:homonucl_noe_experiment', 'BMRBx:order_parameter_experiment', 'BMRBx:ph_titration_experiment', 'BMRBx:spectral_density_experiment'
 				if ((class_name.endsWith("Experiment") || class_name.endsWith("Expt")) && (class_name.startsWith("ChemShift") || class_name.startsWith("ConformerFamilyCoordSet") || class_name.startsWith("CrossCorrelation") || class_name.startsWith("HExch") || class_name.startsWith("Heteronucl") || class_name.startsWith("Homonucl") || class_name.startsWith("OrderParameter") || class_name.startsWith("OtherData") || class_name.startsWith("PHTitration") || class_name.startsWith("SpectralDensity"))) {
 
-					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String sample_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String sample_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1614,7 +1614,7 @@ public class BMSxTool_Java {
 
 					write_invoke_bigint_method(buffw);
 
-					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String experiment_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String experiment_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1637,7 +1637,7 @@ public class BMSxTool_Java {
 				// item='sample_id', category='BMRBx:entity_purity'
 				if (class_name.equalsIgnoreCase("EntityPurity")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1660,7 +1660,7 @@ public class BMSxTool_Java {
 				// item='experiment_id', category='BMRBx:binding_result'
 				if (class_name.equalsIgnoreCase("BindingResult")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1683,7 +1683,7 @@ public class BMSxTool_Java {
 				// item='experiment_id', 'BMRBx:spectral_peak_list'
 				if (class_name.equalsIgnoreCase("SpectralPeakList")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String sample_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_experiment_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String sample_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1706,7 +1706,7 @@ public class BMSxTool_Java {
 				// item='sample_id', 'sample_condition_list_id', category='BMRBx:experiment', 'BMRBx:spectral_peak_list'
 				if (class_name.equalsIgnoreCase("Experiment") || class_name.equalsIgnoreCase("SpectralPeakList")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1724,7 +1724,7 @@ public class BMSxTool_Java {
 
 					write_invoke_bigint_method(buffw);
 
-					buffw.write("\n\tprivate static boolean set_integer_sample_condition_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_sample_condition_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1747,7 +1747,7 @@ public class BMSxTool_Java {
 				// item='assigned_chem_shift_list_id', category='BMRBx:assigned_peak_chem_shift'
 				if (class_name.equalsIgnoreCase("AssignedPeakChemShift")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_assigned_chem_shift_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_assigned_chem_shift_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1770,7 +1770,7 @@ public class BMSxTool_Java {
 				// item='spectral_peak_list_id', category='BMRBx:gen_dist_constraint'
 				if (class_name.equalsIgnoreCase("GenDistConstraint")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_spectral_peak_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_spectral_peak_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1793,7 +1793,7 @@ public class BMSxTool_Java {
 				// item='number_of_monomers', category='BMRBx:entity'
 				if (class_name.equalsIgnoreCase("Entity")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_number_of_monomers(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_number_of_monomers(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1816,7 +1816,7 @@ public class BMSxTool_Java {
 				// item='comp_index_id', 'entity_assembly_id', category='BMRBx:pdbx_poly_seq_scheme'
 				if (class_name.equalsIgnoreCase("PDBXPolySeqScheme")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_comp_index_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, String mon_id, String pdb_seq_num, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_comp_index_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, String mon_id, String pdb_seq_num, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1834,7 +1834,7 @@ public class BMSxTool_Java {
 
 					write_invoke_bigint_method(buffw);
 
-					buffw.write("\n\tprivate static boolean set_integer_entity_assembly_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_entity_assembly_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1857,7 +1857,7 @@ public class BMSxTool_Java {
 				// item='assembly_id', category='BMRBx:sample_component'
 				if (class_name.equalsIgnoreCase("SampleComponent")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_assembly_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_assembly_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1880,7 +1880,7 @@ public class BMSxTool_Java {
 				// item='study_id', category='BMRBx:study_entry_list', 'BMRBx:study_keyword'
 				if (class_name.equalsIgnoreCase("StudyEntryList") || class_name.equalsIgnoreCase("StudyKeyword")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_study_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String study_list_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_study_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String study_list_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1903,7 +1903,7 @@ public class BMSxTool_Java {
 				// item='modeled_sample_cond_list_id', category='BMRBx:chem_shifts_calc_type'
 				if (class_name.equalsIgnoreCase("ChemShiftsCalcType")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_modeled_sample_cond_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_modeled_sample_cond_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1926,7 +1926,7 @@ public class BMSxTool_Java {
 				// item='tensor_list_id', category='BMRBx:theoretical_chem_shift_list'
 				if (class_name.equalsIgnoreCase("TheoreticalChemShiftList")) {
 
-					buffw.write("\n\tprivate static boolean set_integer_tensor_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_integer_tensor_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -1950,7 +1950,7 @@ public class BMSxTool_Java {
 
 			if (has_decimal(node)) {
 
-				buffw.write("\n\tprivate static boolean set_decimal(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_decimal(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2031,7 +2031,7 @@ public class BMSxTool_Java {
 				// item='val', category='BMRBx:atom_chem_shift'
 				if (class_name.equalsIgnoreCase("AtomChemShift")) {
 
-					buffw.write("\n\tprivate static boolean set_decimal_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String ambiguity_code, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_decimal_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String ambiguity_code, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2049,7 +2049,7 @@ public class BMSxTool_Java {
 				// item='formula_weight', category='BMRBx:entity'
 				if (class_name.equalsIgnoreCase("Entity")) {
 
-					buffw.write("\n\tprivate static boolean set_decimal_formula_weight(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, Connection conn_le, String entry_id, String entity_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_decimal_formula_weight(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, Connection conn_le, String entry_id, String entity_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2072,7 +2072,7 @@ public class BMSxTool_Java {
 				// item='formula_weight', category='BMRBx:chem_comp'
 				if (class_name.equalsIgnoreCase("ChemComp")) {
 
-					buffw.write("\n\tprivate static boolean set_decimal_formula_weight(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_le, String pdb_code, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_decimal_formula_weight(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_le, String pdb_code, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2095,7 +2095,7 @@ public class BMSxTool_Java {
 				// item='tau_e_val', 'tau_e_val_fit_err', category='BMRBx:order_param'
 				if (class_name.equalsIgnoreCase("OrderParam")) {
 
-					buffw.write("\n\tprivate static boolean set_decimal_tau_e_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_decimal_tau_e_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2118,7 +2118,7 @@ public class BMSxTool_Java {
 				// item='drawing_2d_coord_x', 'drawing_2d_coord_y', category='BMRBx:chem_comp_atom'
 				if (class_name.equalsIgnoreCase("ChemCompAtom")) {
 
-					buffw.write("\n\tprivate static boolean set_decimal_drawing_2d_coord_xy(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String val_name_can, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_decimal_drawing_2d_coord_xy(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String val_name_can, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2145,7 +2145,7 @@ public class BMSxTool_Java {
 				// item='chem_shift_val', category='BMRBx:peak_char'
 				if (class_name.equalsIgnoreCase("PeakChar")) {
 
-					buffw.write("\n\tprivate static boolean set_decimal_chem_shift_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_decimal_chem_shift_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2163,7 +2163,7 @@ public class BMSxTool_Java {
 				// item='intensity_val', category='BMRBx:peak_general_char'
 				if (class_name.equalsIgnoreCase("PeakGeneralChar")) {
 
-					buffw.write("\n\tprivate static boolean set_decimal_intensity_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_decimal_intensity_val(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2182,7 +2182,7 @@ public class BMSxTool_Java {
 
 			if (has_double(node)) {
 
-				buffw.write("\n\tprivate static boolean set_double(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_double(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2230,7 +2230,7 @@ public class BMSxTool_Java {
 				if (class_name.equalsIgnoreCase("Entry")) {
 
 					// item='original_release_date'
-					buffw.write("\n\tprivate static boolean set_original_release_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, Connection conn_bmrb, String entry_id, java.sql.Date accession_date, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_original_release_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, Connection conn_bmrb, String entry_id, java.sql.Date accession_date, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2285,7 +2285,7 @@ public class BMSxTool_Java {
 					buffw.write("\t\treturn true;\n\t}\n");
 
 					// item='last_release_date'
-					buffw.write("\n\tprivate static boolean set_last_release_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, Connection conn_bmrb, String entry_id, java.sql.Date accession_date, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_last_release_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, Connection conn_bmrb, String entry_id, java.sql.Date accession_date, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2337,7 +2337,7 @@ public class BMSxTool_Java {
 					buffw.write("\t\treturn true;\n\t}\n");
 
 					// item='accession_date', 'submission_date'
-					buffw.write("\n\tprivate static boolean set_date_entry(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, Connection conn_bmrb, String entry_id, BufferedWriter logw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_date_entry(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -2393,7 +2393,7 @@ public class BMSxTool_Java {
 
 				//				else {
 
-				buffw.write("\n\tprivate static boolean set_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, BufferedWriter logw) {\n\n");
+				buffw.write("\n\tprivate static boolean set_date(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, java.sql.Date date, FileWriter logw) {\n\n");
 
 				buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -3311,40 +3311,40 @@ public class BMSxTool_Java {
 
 					// item='database_code', category='BMRBx:entity_db_link', 'BMRBx:assembly_db_link'
 					if (attr_name_lower.equals("database_code") && (class_name.equalsIgnoreCase("EntityDbLink") || class_name.equalsIgnoreCase("AssemblyDbLink")))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String accession_code, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String accession_code, FileWriter logw, FileWriter errw) {\n\n");
 					// item='database_name', category='BMRBx:related_entries'
 					else if (attr_name_lower.equals("database_name") && (class_name.equalsIgnoreCase("RelatedEntries")))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String accession_code, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String accession_code, FileWriter logw, FileWriter errw) {\n\n");
 					// item='type', category='BMRBx:assembly_type'
 					else if (attr_name_lower.equals("type") && class_name.equalsIgnoreCase("AssemblyType"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String assembly_id, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String assembly_id, FileWriter logw, FileWriter errw) {\n\n");
 					// item='type', category='BMRBx:sample'
 					else if (attr_name_lower.equals("type") && class_name.equalsIgnoreCase("Sample"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw, FileWriter errw) {\n\n");
 					// item='value_order', category='BMRBx:bond'
 					// item='experimental_method_subtype', category='BMRBx:entry'
 					// item='t1_coherence_type', category='BMRBx:hetoronucl_t1_list'
 					// item='t2_coherence_type', category='BMRBx:hetoronucl_t2_list'
 					else if ((attr_name_lower.equals("value_order") && class_name.equalsIgnoreCase("Bond")) || (attr_name_lower.equals("experimental_method_subtype") && class_name.equalsIgnoreCase("Entry")) || (attr_name_lower.equals("t1_coherence_type") && class_name.equalsIgnoreCase("HeteronuclT1List")) || (attr_name_lower.equals("t2_coherence_type") && class_name.equalsIgnoreCase("HeteronuclT2List")))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, FileWriter logw, FileWriter errw) {\n\n");
 					// item='constraint_type', category='BMRBx:constraint_file'
 					else if (attr_name_lower.equals("constraint_type") && class_name.equalsIgnoreCase("ConstraintFile"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String constraint_filename, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String constraint_filename, FileWriter logw, FileWriter errw) {\n\n");
 					// item='superkingdom', 'kingdom', category='BMRBx:entity_natural_src'
 					// item='host_org_scientific_name', category='BMRBx:entity_experimental_src'
 					else if (((attr_name_lower.equals("superkingdom") || attr_name_lower.equals("kingdom")) && class_name.equalsIgnoreCase("EntityNaturalSrc")) || (attr_name_lower.equals("host_org_scientific_name") && class_name.equalsIgnoreCase("EntityExperimentalSrc")))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String entry_id, String ncbi_taxonomy_id, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String entry_id, String ncbi_taxonomy_id, FileWriter logw, FileWriter errw) {\n\n");
 					// item='production_method', category='BMRBx:entity_experimental_src'
 					else if (attr_name_lower.equals("production_method") && class_name.equalsIgnoreCase("EntityExperimentalSrc"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, " + file_prefix + "_" + BMSxTool_DOM.util_entityexperimentalsrc + " ee, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, " + file_prefix + "_" + BMSxTool_DOM.util_entityexperimentalsrc + " ee, FileWriter logw, FileWriter errw) {\n\n");
 					// item='common', 'organ', 'organelle', 'secretion', 'type', category='BMRBx:entity_natural_src'
 					else if ((attr_name_lower.equals("common") || attr_name_lower.equals("organ") || attr_name_lower.equals("organelle") || attr_name_lower.equals("secretion") || attr_name_lower.equals("type")) && class_name.equalsIgnoreCase("EntityNaturalSrc"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, " + file_prefix + "_" + BMSxTool_DOM.util_entitynaturalsrc + " en, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, " + file_prefix + "_" + BMSxTool_DOM.util_entitynaturalsrc + " en, FileWriter logw, FileWriter errw) {\n\n");
 					// item='stereo_config', category='BMRBx:chem_comp_atom'
 					else if (attr_name_lower.equals("stereo_config") && class_name.equalsIgnoreCase("ChemCompAtom"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String val_name_can, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, String val_name_can, FileWriter logw, FileWriter errw) {\n\n");
 					else // if (!attr_name_lower.equals("sweep_width_units") || !class_name.equalsIgnoreCase("SpectralDim"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw, FileWriter errw) {\n\n");
 
 					//			if (!attr_name_lower.equals("sweep_width_units") || !class_name.equalsIgnoreCase("SpectralDim")) {
 
@@ -4830,9 +4830,9 @@ public class BMSxTool_Java {
 
 					// item='ambiguity_code', category='BMRBx:atom_chem_shift'
 					if (attr_name_lower.equals("ambiguity_code") && class_name.equalsIgnoreCase("AtomChemShift"))
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, String entry_id, FileWriter logw, FileWriter errw) {\n\n");
 					else
-						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw, BufferedWriter errw) {\n\n");
+						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw, FileWriter errw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
@@ -4872,7 +4872,7 @@ public class BMSxTool_Java {
 
 				try {
 
-					buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, BufferedWriter logw, BufferedWriter errw) {\n\n");
+					buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw, FileWriter errw) {\n\n");
 
 					buffw.write("\t\tboolean nil = false;\n\n");
 
