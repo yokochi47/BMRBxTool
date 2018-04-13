@@ -267,7 +267,7 @@ public class BMSxTool_DOM {
 
 		try {
 
-			File index_sql = new File(src_dir_name + "../index_" + file_prefix + ".sql");
+			File index_sql = new File(src_dir_name + "../index_" + file_prefix + ".schema");
 
 			FileWriter filew = new FileWriter(index_sql);
 			BufferedWriter  buffw = new BufferedWriter(filew);
