@@ -24,7 +24,7 @@ import org.w3c.dom.*;
 
 public class BMSxTool_DOM {
 
-	public static final String package_name = "jp.ac.proteinOsakaU.bmrbpub.schema.mmcifNmrStar";
+	public static final String package_name = "jp.ac.osakaU.protein.bmrbpub.schema.mmcifNmrStar";
 	public static final String namespace_xs = "http://www.w3.org/2001/XMLSchema";
 	public static final String namespace_xsi = "http://www.w3.org/2001/XMLSchema-instance";
 
@@ -1327,6 +1327,8 @@ public class BMSxTool_DOM {
 
 			buffw.write("package " + package_name + ";\n\n");
 
+			buffw.write("import java.net.URI;\n");
+			buffw.write("import java.net.URISyntaxException;\n");
 			buffw.write("import java.sql.*;\n");
 			buffw.write("import java.util.logging.*;\n\n");
 
@@ -1388,6 +1390,12 @@ public class BMSxTool_DOM {
 			buffw.write("\t\txml_opt.setSaveUseOpenFrag();\n");
 			buffw.write("\t\txml_opt.setSavePrettyPrint();\n");
 			buffw.write("\t\txml_opt.setSavePrettyPrintOffset(2);\n\n");
+
+			buffw.write("\t\ttry {\n");
+			buffw.write("\t\t\txml_opt.setBaseURI(new URI(namespace_uri));\n");
+			buffw.write("\t\t} catch (URISyntaxException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
+			buffw.write("\t\t}\n\n");
 
 			buffw.write("\t\txml_opt.setSaveAggressiveNamespaces();\n");
 			buffw.write("\t\txml_opt.setSaveSyntheticDocumentElement(new QName(namespace_uri, \"\", prefix));\n\n");
