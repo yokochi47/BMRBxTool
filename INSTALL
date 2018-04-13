@@ -121,11 +121,11 @@ G. Run bmr_Util (you can skip this step if bmr-util.jar exists)
         mail.jar
 
     On "Project Explorer" of Eclipse, right click on bmr_Util and select New > Package
-    And set name: jp.ac.proteinOsakaU.schema.mmcifNmrStar
+    And set name: jp.ac.osakaU.protein.schema.mmcifNmrStar
 
    2. Import source files under bmr_util_src directory
 
-    Select bmr_Util/src/jp.ac.proteinOsakaU.schema.mmcifNmrStar
+    Select bmr_Util/src/jp.ac.osakaU.protein.schema.mmcifNmrStar
     Select File > Import...
     Select General > File System > Next >
     Select Browse... and select bmr_util_src directory.
