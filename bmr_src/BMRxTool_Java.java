@@ -75,7 +75,7 @@ public class BMRxTool_Java {
 		//		System.out.println("table_name :" + table_name + ", int: " + (_integer ? "true":"false") + ", decimal: " + (_decimal ? "true" : "false") + ", date: " + (_date ? "true" : "false") + " enum:" + (_enum ? "true" : "false"));
 
 		ResultSet rset = null;
-		DatabaseMetaData meta;
+		DatabaseMetaData meta = null;
 		List<String> column_list = new ArrayList<String>();
 
 		// get column names from table
@@ -245,12 +245,65 @@ public class BMRxTool_Java {
 				buffw.write("\t\t\t\tString query2 = new String(\"select * from \\\"\" + table_name + \"\\\" where \\\"" + query_key + "\\\"='\" + entry_id + \"'\");\n\n");
 
 			else {
+
 				StringBuilder sb = new StringBuilder();
 
-				for (String key_attr : list_attrs)
-					sb.append("(0 || \\\"" + key_attr + "\\\")::decimal,");
+				try {
+
+					if (meta == null)
+						meta = conn_bmrb.getMetaData();
+
+					for (String key_attr : list_attrs) {
+
+						rset = meta.getColumns(null, null, table_name, key_attr);
+
+						int data_type = 0;
+
+						while (rset.next()) {
+
+							data_type = rset.getInt("DATA_TYPE");
+
+							break;
+
+						}
+
+						rset.close();
+
+						switch (data_type) {
+						case java.sql.Types.CHAR:
+						case java.sql.Types.VARCHAR:
+							sb.append("(0 || \\\"" + key_attr + "\\\")::decimal,");
+							break;
+						default:
+							sb.append("\\\"" + key_attr + "\\\",");
+						}
+
+						rset.close();
+
+					}
+
+				} catch (SQLException ex) {
+
+					Logger lgr = Logger.getLogger(BMRxTool_Java.class.getName());
+					lgr.log(Level.SEVERE, ex.getMessage(), ex);
+
+				} finally {
+
+					try {
+
+						if (rset != null)
+							rset.close();
+
+					} catch (SQLException ex) {
+
+						Logger lgr = Logger.getLogger(BMRxTool_Java.class.getName());
+						lgr.log(Level.WARNING, ex.getMessage(), ex);
+
+					}
+				}
 
 				buffw.write("\t\t\t\tString query2 = new String(\"select * from \\\"\" + table_name + \"\\\" where \\\"" + query_key + "\\\"='\" + entry_id + \"' order by " + sb.substring(0, sb.length() - 1) + "\");\n\n");
+
 			}
 
 			list_attrs.clear();
