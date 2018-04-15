@@ -2579,7 +2579,7 @@ public class BMSxTool_DOM {
 
 			buffw.write("\t\t\t\tBigDecimal formula_weight = BigDecimal.ZERO;\n\n");
 
-			buffw.write("\t\t\t\tString query = new String(\"select \\\"Comp_ID\\\",count(\\\"Comp_ID\\\") from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"='\" + entity_id + \"' and \\\"Comp_ID\\\" is not null group by \\\"Comp_ID\\\" having count(\\\"Comp_ID\\\") > 0\");\n\n");
+			buffw.write("\t\t\t\tString query = new String(\"select \\\"Comp_ID\\\",count(\\\"Comp_ID\\\") from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"=\" + entity_id + \" and \\\"Comp_ID\\\" is not null group by \\\"Comp_ID\\\" having count(\\\"Comp_ID\\\") > 0\");\n\n");
 
 			buffw.write("\t\t\t\tstate = conn_bmrb.createStatement();\n");
 			buffw.write("\t\t\t\trset = state.executeQuery(query);\n\n");
@@ -3138,7 +3138,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tStatement state = null;\n");
 			buffw.write("\t\tResultSet rset = null;\n\n");
 
-			buffw.write("\t\tString query = new String(\"select \\\"ID\\\" from \\\"Study\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Study_list_ID\\\"='\" + study_list_id + \"'\");\n\n");
+			buffw.write("\t\tString query = new String(\"select \\\"ID\\\" from \\\"Study\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Study_list_ID\\\"=\" + study_list_id);\n\n");
 
 			buffw.write("\t\tint studies = 0;\n");
 			buffw.write("\t\tString id = null;\n\n");
@@ -3194,7 +3194,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tStatement state = null;\n");
 			buffw.write("\t\tResultSet rset = null;\n\n");
 
-			buffw.write("\t\tString query = new String(\"select \\\"Assembly_ID\\\" from \\\"Entity_assembly\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"='\" + entity_id + \"'\");\n\n");
+			buffw.write("\t\tString query = new String(\"select \\\"Assembly_ID\\\" from \\\"Entity_assembly\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"=\" + entity_id);\n\n");
 
 			buffw.write("\t\tint assemblies = 0;\n");
 			buffw.write("\t\tString assembly_id = null;\n\n");
@@ -4646,7 +4646,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tString query;\n\n");
 
 			buffw.write("\t\tif (!(" + empty_check("assembly_id") + "))\n");
-			buffw.write("\t\t\tquery = new String(\"select \\\"Type\\\",\\\"Polymer_type\\\",\\\"Number_of_monomers\\\",\\\"Name\\\",\\\"Polymer_seq_one_letter_code\\\" from \\\"Entity\\\",\\\"Entity_assembly\\\" where \\\"Entity_assembly\\\".\\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_assembly\\\".\\\"Assembly_ID\\\"='\" + assembly_id + \"' and \\\"Entity\\\".\\\"Entry_ID\\\"=\\\"Entity_assembly\\\".\\\"Entry_ID\\\" and \\\"Entity\\\".\\\"ID\\\"=\\\"Entity_assembly\\\".\\\"Entity_ID\\\"\");\n");
+			buffw.write("\t\t\tquery = new String(\"select \\\"Type\\\",\\\"Polymer_type\\\",\\\"Number_of_monomers\\\",\\\"Name\\\",\\\"Polymer_seq_one_letter_code\\\" from \\\"Entity\\\",\\\"Entity_assembly\\\" where \\\"Entity_assembly\\\".\\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_assembly\\\".\\\"Assembly_ID\\\"=\" + assembly_id + \" and \\\"Entity\\\".\\\"Entry_ID\\\"=\\\"Entity_assembly\\\".\\\"Entry_ID\\\" and \\\"Entity\\\".\\\"ID\\\"=\\\"Entity_assembly\\\".\\\"Entity_ID\\\"\");\n");
 			buffw.write("\t\telse\n");
 			buffw.write("\t\t\tquery = new String(\"select \\\"Type\\\",\\\"Polymer_type\\\",\\\"Number_of_monomers\\\",\\\"Name\\\",\\\"Polymer_seq_one_letter_code\\\" from \\\"Entity\\\",\\\"Entity_assembly\\\" where \\\"Entity_assembly\\\".\\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity\\\".\\\"Entry_ID\\\"=\\\"Entity_assembly\\\".\\\"Entry_ID\\\" and \\\"Entity\\\".\\\"ID\\\"=\\\"Entity_assembly\\\".\\\"Entity_ID\\\"\");\n\n");
 
@@ -7572,7 +7572,7 @@ public class BMSxTool_DOM {
 
 			buffw.write("\t\t\t\t\trset.close();\n\n");
 
-			buffw.write("\t\t\t\t\tString query2 = new String(\"select \\\"Code\\\" from \\\"Coupling_constant\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Coupling_constant_list_ID\\\"='\" + coupling_constant_list_id + \"' and \\\"ID\\\"='1'\");\n\n");
+			buffw.write("\t\t\t\t\tString query2 = new String(\"select \\\"Code\\\" from \\\"Coupling_constant\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Coupling_constant_list_ID\\\"=\" + coupling_constant_list_id + \" and \\\"ID\\\"='1'\");\n\n");
 
 			buffw.write("\t\t\t\t\tResultSet rset2 = state.executeQuery(query2);\n\n");
 
@@ -8174,7 +8174,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tStatement state = null;\n");
 			buffw.write("\t\tResultSet rset = null;\n\n");
 
-			buffw.write("\t\tString query = new String(\"select \\\"Comp_ID\\\" from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"='\" + entity_id + \"' order by \\\"ID\\\"::integer\");\n\n");
+			buffw.write("\t\tString query = new String(\"select \\\"Comp_ID\\\" from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"=\" + entity_id + \" order by \\\"ID\\\"::integer\");\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
@@ -8226,7 +8226,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tStatement state = null;\n");
 			buffw.write("\t\tResultSet rset = null;\n\n");
 
-			buffw.write("\t\tString query = new String(\"select \\\"Comp_ID\\\" from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"='\" + entity_id + \"' order by \\\"ID\\\"::integer\");\n\n");
+			buffw.write("\t\tString query = new String(\"select \\\"Comp_ID\\\" from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"=\" + entity_id + \" order by \\\"ID\\\"::integer\");\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
@@ -9977,7 +9977,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tStatement state = null;\n");
 			buffw.write("\t\tResultSet rset = null;\n\n");
 
-			buffw.write("\t\tString query = new String(\"select \\\"ID\\\" from \\\"Entity_assembly\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"='\" + entity_id + \"'\");\n\n");
+			buffw.write("\t\tString query = new String(\"select \\\"ID\\\" from \\\"Entity_assembly\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"=\" + entity_id);\n\n");
 
 			buffw.write("\t\tint ids = 0;\n");
 			buffw.write("\t\tString id = null;\n\n");
@@ -10033,7 +10033,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tStatement state = null;\n");
 			buffw.write("\t\tResultSet rset = null;\n\n");
 
-			buffw.write("\t\tString query = new String(\"select \\\"ID\\\",\\\"Comp_ID\\\" from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"='\" + entity_id + \"'\");\n\n");
+			buffw.write("\t\tString query = new String(\"select \\\"ID\\\",\\\"Comp_ID\\\" from \\\"Entity_comp_index\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"Entity_ID\\\"=\" + entity_id);\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
@@ -10258,7 +10258,7 @@ public class BMSxTool_DOM {
 
 			buffw.write("\t\t\t\t\trset.close();\n\n");
 
-			buffw.write("\t\t\t\t\tString query2 = new String(\"select \\\"RDC_code\\\" from \\\"RDC\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"RDC_list_ID\\\"='\" + rdc_list_id + \"' and \\\"ID\\\"='1'\");\n\n");
+			buffw.write("\t\t\t\t\tString query2 = new String(\"select \\\"RDC_code\\\" from \\\"RDC\\\" where \\\"Entry_ID\\\"='\" + entry_id + \"' and \\\"RDC_list_ID\\\"=\" + rdc_list_id + \" and \\\"ID\\\"='1'\");\n\n");
 
 			buffw.write("\t\t\t\t\tResultSet rset2 = state.executeQuery(query2);\n\n");
 
