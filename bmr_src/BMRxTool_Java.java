@@ -275,7 +275,7 @@ public class BMRxTool_Java {
 							sb.append("(0 || \\\"" + key_attr + "\\\")::decimal,");
 							break;
 						default:
-							sb.append("\\\"" + key_attr + "\\\",");
+							sb.append("case when \\\"" + key_attr + "\\\" is null then 1 else 0 end,\\\"" + key_attr + "\\\",");
 						}
 
 						rset.close();
