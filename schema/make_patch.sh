@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIC_VERSION=3.2.1.2
+DIC_VERSION=3.2.1.5
 
 BMRB_URL=svn.bmrb.wisc.edu
 NMRSTAR_DIC_DIR=http://$BMRB_URL/svn/nmr-star-dictionary/bmrb_only_files/adit_input
