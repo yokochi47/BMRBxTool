@@ -1,6 +1,13 @@
 #!/bin/sh
 
-DIC_VERSION=3.2.1.2
+NMRSTAR_DIC_FILE=../NMR-STAR.dic
+
+if [ -e $NMRSTAR_DIC_FILE ] ; then
+
+ arg=(`tr -d '\r' < $NMRSTAR_DIC_FILE | grep dictionary.version`)
+ DIC_VERSION=${arg[1]}
+
+fi
 
 BMRB_URL=svn.bmrb.wisc.edu
 NMRSTAR_DIC_DIR=http://$BMRB_URL/svn/nmr-star-dictionary/bmrb_only_files/adit_input
