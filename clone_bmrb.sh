@@ -114,7 +114,7 @@ fi
 WORK_DIR=pg_work
 
 if [ $sync_update != "true" ] ; then
- CSV_DIR=$WORK_DIR/csv
+ DATA_DIR=$WORK_DIR/data
 fi
 
 ERR_DIR=$WORK_DIR/err
@@ -124,13 +124,13 @@ rm -rf $WORK_DIR
 mkdir -p $WORK_DIR
 
 if [ $sync_update != "true" ] ; then
- mkdir -p $CSV_DIR
+ mkdir -p $DATA_DIR
 fi
 
 mkdir -p $ERR_DIR
 
 if [ $sync_update != "true" ] ; then
- rm -rf $CSV_DIR/*
+ rm -rf $DATA_DIR/*
 fi
 
 rm -rf $ERR_DIR/*
@@ -139,7 +139,7 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp extlibs/xsd2pgschema.jar xml2pgcsv --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --csv-dir $CSV_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
 
 else
 
@@ -150,7 +150,7 @@ fi
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file
  if [ $sync_update != "true" ] ; then
-  rm -rf $CSV_DIR
+  rm -rf $DATA_DIR
  fi
 else
  echo "$0 aborted."
