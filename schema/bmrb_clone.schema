@@ -548,7 +548,7 @@ CREATE TABLE entry (
 	uuid TEXT ,
 	version_type ENUM_entry_version_type ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -565,7 +565,7 @@ CREATE TABLE ambiguous_atom_chem_shift (
 -- ATTRIBUTE
 	atom_chem_shift_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -612,7 +612,7 @@ CREATE TABLE angle (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -642,7 +642,7 @@ CREATE TABLE angular_order_param (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -660,7 +660,7 @@ CREATE TABLE angular_order_parameter_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -704,7 +704,7 @@ CREATE TABLE assembly (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -722,7 +722,7 @@ CREATE TABLE assembly_annotation_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -738,7 +738,7 @@ CREATE TABLE assembly_bio_function (
 -- ATTRIBUTE
 	biological_function TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -755,7 +755,7 @@ CREATE TABLE assembly_citation (
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -773,7 +773,7 @@ CREATE TABLE assembly_common_name (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -804,7 +804,7 @@ CREATE TABLE assembly_db_link (
 -- ATTRIBUTE
 	database_code ENUM_assembly_db_link_database_code NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -825,7 +825,7 @@ CREATE TABLE assembly_interaction (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -841,7 +841,7 @@ CREATE TABLE assembly_keyword (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	keyword TEXT NOT NULL 
+	keyword TEXT NOT NULL
 );
 
 --
@@ -866,7 +866,7 @@ CREATE TABLE assembly_segment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -884,7 +884,7 @@ CREATE TABLE assembly_segment_description (
 -- ATTRIBUTE
 	assembly_segment_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -908,7 +908,7 @@ CREATE TABLE assembly_subsystem (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -927,7 +927,7 @@ CREATE TABLE assembly_systematic_name (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	naming_system ENUM_assembly_systematic_name_naming_system NOT NULL 
+	naming_system ENUM_assembly_systematic_name_naming_system NOT NULL
 );
 
 --
@@ -945,7 +945,7 @@ CREATE TABLE assembly_type (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_assembly_type_type NOT NULL 
+	type ENUM_assembly_type_type NOT NULL
 );
 
 --
@@ -975,7 +975,7 @@ CREATE TABLE assigned_chem_shift_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1018,7 +1018,7 @@ CREATE TABLE assigned_peak_chem_shift (
 -- ATTRIBUTE
 	spectral_dim_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -1052,7 +1052,7 @@ CREATE TABLE assigned_spectral_transition (
 -- ATTRIBUTE
 	spectral_peak_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_transition_id INTEGER NOT NULL 
+	spectral_transition_id INTEGER NOT NULL
 );
 
 --
@@ -1085,7 +1085,7 @@ CREATE TABLE atom (
 -- ATTRIBUTE
 	assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -1125,7 +1125,7 @@ CREATE TABLE atom_chem_shift (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1143,7 +1143,7 @@ CREATE TABLE atom_nomenclature (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -1204,7 +1204,7 @@ CREATE TABLE atom_site (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1221,7 +1221,7 @@ CREATE TABLE atom_sites_footnote (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	footnote_id INTEGER NOT NULL 
+	footnote_id INTEGER NOT NULL
 );
 
 --
@@ -1248,7 +1248,7 @@ CREATE TABLE atom_type (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1278,7 +1278,7 @@ CREATE TABLE author_annotation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1313,7 +1313,7 @@ CREATE TABLE auto_relaxation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1335,7 +1335,7 @@ CREATE TABLE auto_relaxation_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -1377,7 +1377,7 @@ CREATE TABLE auto_relaxation_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1396,7 +1396,7 @@ CREATE TABLE auto_relaxation_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -1416,7 +1416,7 @@ CREATE TABLE auxiliary_files (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1438,7 +1438,7 @@ CREATE TABLE binding_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -1461,7 +1461,7 @@ CREATE TABLE binding_param (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1484,7 +1484,7 @@ CREATE TABLE binding_param_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1506,7 +1506,7 @@ CREATE TABLE binding_partners (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -1543,7 +1543,7 @@ CREATE TABLE binding_result (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1562,7 +1562,7 @@ CREATE TABLE binding_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -1583,7 +1583,7 @@ CREATE TABLE binding_value_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1633,7 +1633,7 @@ CREATE TABLE bond (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1683,7 +1683,7 @@ CREATE TABLE bond_annotation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1700,7 +1700,7 @@ CREATE TABLE bond_annotation_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1720,7 +1720,7 @@ CREATE TABLE bond_observed_conformer (
 -- ATTRIBUTE
 	conformer_family_coord_set_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -1811,7 +1811,7 @@ CREATE TABLE ca_cb_constraint (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1835,7 +1835,7 @@ CREATE TABLE ca_cb_constraint_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -1858,7 +1858,7 @@ CREATE TABLE ca_cb_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1877,7 +1877,7 @@ CREATE TABLE ca_cb_constraint_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -1901,7 +1901,7 @@ CREATE TABLE characteristic (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2006,7 +2006,7 @@ CREATE TABLE chem_comp (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -2026,7 +2026,7 @@ CREATE TABLE chem_comp_angle (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2058,7 +2058,7 @@ CREATE TABLE chem_comp_assembly (
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2116,7 +2116,7 @@ CREATE TABLE chem_comp_atom (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2132,7 +2132,7 @@ CREATE TABLE chem_comp_bio_function (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2164,7 +2164,7 @@ CREATE TABLE chem_comp_bond (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2181,7 +2181,7 @@ CREATE TABLE chem_comp_citation (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2201,7 +2201,7 @@ CREATE TABLE chem_comp_common_name (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_chem_comp_common_name_type NOT NULL 
+	type ENUM_chem_comp_common_name_type NOT NULL
 );
 
 --
@@ -2228,7 +2228,7 @@ CREATE TABLE chem_comp_db_link (
 -- ATTRIBUTE
 	database_code TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2254,7 +2254,7 @@ CREATE TABLE chem_comp_descriptor (
 -- ATTRIBUTE
 	program_version TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_chem_comp_descriptor_type NOT NULL 
+	type ENUM_chem_comp_descriptor_type NOT NULL
 );
 
 --
@@ -2280,7 +2280,7 @@ CREATE TABLE chem_comp_identifier (
 -- ATTRIBUTE
 	program_version TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_chem_comp_identifier_type NOT NULL 
+	type ENUM_chem_comp_identifier_type NOT NULL
 );
 
 --
@@ -2296,7 +2296,7 @@ CREATE TABLE chem_comp_keyword (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	keyword TEXT NOT NULL 
+	keyword TEXT NOT NULL
 );
 
 --
@@ -2314,7 +2314,7 @@ CREATE TABLE chem_comp_smiles (
 -- ATTRIBUTE
 	string TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -2333,7 +2333,7 @@ CREATE TABLE chem_comp_systematic_name (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	naming_system ENUM_chem_comp_systematic_name_naming_system NOT NULL 
+	naming_system ENUM_chem_comp_systematic_name_naming_system NOT NULL
 );
 
 --
@@ -2354,7 +2354,7 @@ CREATE TABLE chem_comp_tor (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2379,7 +2379,7 @@ CREATE TABLE chem_shift_anisotropy (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2418,7 +2418,7 @@ CREATE TABLE chem_shift_completeness_char (
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2460,7 +2460,7 @@ CREATE TABLE chem_shift_completeness_list (
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2482,7 +2482,7 @@ CREATE TABLE chem_shift_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -2505,7 +2505,7 @@ CREATE TABLE chem_shift_isotope_effect_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2539,7 +2539,7 @@ CREATE TABLE chem_shift_perturbation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2561,7 +2561,7 @@ CREATE TABLE chem_shift_perturbation_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -2587,7 +2587,7 @@ CREATE TABLE chem_shift_perturbation_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2606,7 +2606,7 @@ CREATE TABLE chem_shift_perturbation_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -2659,7 +2659,7 @@ CREATE TABLE chem_shift_ref (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	mol_common_name TEXT NOT NULL 
+	mol_common_name TEXT NOT NULL
 );
 
 --
@@ -2676,7 +2676,7 @@ CREATE TABLE chem_shift_reference (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2695,7 +2695,7 @@ CREATE TABLE chem_shift_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -2714,7 +2714,7 @@ CREATE TABLE chem_shifts_calc_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -2748,7 +2748,7 @@ CREATE TABLE chem_shifts_calc_type (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2774,7 +2774,7 @@ CREATE TABLE chem_struct_descriptor (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2811,7 +2811,7 @@ CREATE TABLE chemical_rate (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2833,7 +2833,7 @@ CREATE TABLE chemical_rate_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -2854,7 +2854,7 @@ CREATE TABLE chemical_rate_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2873,7 +2873,7 @@ CREATE TABLE chemical_rate_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -2895,7 +2895,7 @@ CREATE TABLE chromatographic_column (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2922,7 +2922,7 @@ CREATE TABLE chromatographic_system (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2982,7 +2982,7 @@ CREATE TABLE citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3007,7 +3007,7 @@ CREATE TABLE citation_author (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -3031,7 +3031,7 @@ CREATE TABLE citation_editor (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -3047,7 +3047,7 @@ CREATE TABLE citation_keyword (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	keyword TEXT NOT NULL 
+	keyword TEXT NOT NULL
 );
 
 --
@@ -3071,7 +3071,7 @@ CREATE TABLE computer (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3088,7 +3088,7 @@ CREATE TABLE computer_citation (
 -- ATTRIBUTE
 	computer_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3107,7 +3107,7 @@ CREATE TABLE conf_family_coord_set_constr_list (
 -- ATTRIBUTE
 	constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3126,7 +3126,7 @@ CREATE TABLE conf_stats_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -3150,7 +3150,7 @@ CREATE TABLE conformer_family_coord_set (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3172,7 +3172,7 @@ CREATE TABLE conformer_family_coord_set_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -3193,7 +3193,7 @@ CREATE TABLE conformer_family_refinement (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	refine_method ENUM_conformer_family_refinement_refine_method NOT NULL 
+	refine_method ENUM_conformer_family_refinement_refine_method NOT NULL
 );
 
 --
@@ -3212,7 +3212,7 @@ CREATE TABLE conformer_family_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -3246,7 +3246,7 @@ CREATE TABLE conformer_stat_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3312,7 +3312,7 @@ CREATE TABLE conformer_stat_list_ens (
 -- ATTRIBUTE
 	conformer_stat_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3361,7 +3361,7 @@ CREATE TABLE conformer_stat_list_rep (
 -- ATTRIBUTE
 	conformer_stat_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3394,7 +3394,7 @@ CREATE TABLE constraint_file (
 -- ATTRIBUTE
 	constraint_type ENUM_constraint_file_constraint_type NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3516,7 +3516,7 @@ CREATE TABLE constraint_stat_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3568,7 +3568,7 @@ CREATE TABLE constraint_stat_list_ens (
 -- ATTRIBUTE
 	constraint_stat_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3615,7 +3615,7 @@ CREATE TABLE constraint_stat_list_rep (
 -- ATTRIBUTE
 	constraint_stat_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3634,7 +3634,7 @@ CREATE TABLE constraint_stats_constr_list (
 -- ATTRIBUTE
 	constraint_stat_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3688,7 +3688,7 @@ CREATE TABLE coupling_constant (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3710,7 +3710,7 @@ CREATE TABLE coupling_constant_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -3734,7 +3734,7 @@ CREATE TABLE coupling_constant_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3753,7 +3753,7 @@ CREATE TABLE coupling_constant_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -3827,7 +3827,7 @@ CREATE TABLE cross_correlation_d_csa (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3849,7 +3849,7 @@ CREATE TABLE cross_correlation_d_csa_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -3874,7 +3874,7 @@ CREATE TABLE cross_correlation_d_csa_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3893,7 +3893,7 @@ CREATE TABLE cross_correlation_d_csa_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -3967,7 +3967,7 @@ CREATE TABLE cross_correlation_dd (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3989,7 +3989,7 @@ CREATE TABLE cross_correlation_dd_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4014,7 +4014,7 @@ CREATE TABLE cross_correlation_dd_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4033,7 +4033,7 @@ CREATE TABLE cross_correlation_dd_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -4072,7 +4072,7 @@ CREATE TABLE cs_anisotropy (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4094,7 +4094,7 @@ CREATE TABLE cs_anisotropy_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4113,7 +4113,7 @@ CREATE TABLE cs_anisotropy_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -4135,7 +4135,7 @@ CREATE TABLE d_h_fract_factor_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4154,7 +4154,7 @@ CREATE TABLE d_h_fract_factor_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -4185,7 +4185,7 @@ CREATE TABLE d_h_fractionation_factor (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4206,7 +4206,7 @@ CREATE TABLE d_h_fractionation_factor_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4223,7 +4223,7 @@ CREATE TABLE data_set (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_data_set_type NOT NULL 
+	type ENUM_data_set_type NOT NULL
 );
 
 --
@@ -4240,7 +4240,7 @@ CREATE TABLE datum (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_datum_type NOT NULL 
+	type ENUM_datum_type NOT NULL
 );
 
 --
@@ -4258,7 +4258,7 @@ CREATE TABLE decoupling_pulse_sequence (
 -- ATTRIBUTE
 	nmr_spec_expt_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	time_period TEXT NOT NULL 
+	time_period TEXT NOT NULL
 );
 
 --
@@ -4311,7 +4311,7 @@ CREATE TABLE deduced_h_bond (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4333,7 +4333,7 @@ CREATE TABLE deduced_h_bond_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4354,7 +4354,7 @@ CREATE TABLE deduced_h_bond_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4373,7 +4373,7 @@ CREATE TABLE deduced_h_bond_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -4395,7 +4395,7 @@ CREATE TABLE deduced_secd_struct_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4425,7 +4425,7 @@ CREATE TABLE deduced_secd_struct_exptl (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4460,7 +4460,7 @@ CREATE TABLE deduced_secd_struct_feature (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4482,7 +4482,7 @@ CREATE TABLE deduced_secd_struct_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4501,7 +4501,7 @@ CREATE TABLE deduced_secd_struct_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -4555,7 +4555,7 @@ CREATE TABLE dipolar_coupling (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4577,7 +4577,7 @@ CREATE TABLE dipolar_coupling_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4601,7 +4601,7 @@ CREATE TABLE dipolar_coupling_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4620,7 +4620,7 @@ CREATE TABLE dipolar_coupling_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -4666,7 +4666,7 @@ CREATE TABLE dipole_dipole_relax (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4688,7 +4688,7 @@ CREATE TABLE dipole_dipole_relax_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4713,7 +4713,7 @@ CREATE TABLE dipole_dipole_relax_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4732,7 +4732,7 @@ CREATE TABLE dipole_dipole_relax_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -4754,7 +4754,7 @@ CREATE TABLE dist_constr_software_setting (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_dist_constr_software_setting_type NOT NULL 
+	type ENUM_dist_constr_software_setting_type NOT NULL
 );
 
 --
@@ -4789,7 +4789,7 @@ CREATE TABLE dist_constraint (
 -- ATTRIBUTE
 	tree_node_member_constraint_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	tree_node_member_node_id INTEGER NOT NULL 
+	tree_node_member_node_id INTEGER NOT NULL
 );
 
 --
@@ -4810,7 +4810,7 @@ CREATE TABLE dist_constraint_comment_org (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4830,7 +4830,7 @@ CREATE TABLE dist_constraint_conv_err (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4851,7 +4851,7 @@ CREATE TABLE dist_constraint_parse_err (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4868,7 +4868,7 @@ CREATE TABLE dist_constraint_parse_file (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4889,7 +4889,7 @@ CREATE TABLE dist_constraint_tree (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	node_id INTEGER NOT NULL 
+	node_id INTEGER NOT NULL
 );
 
 --
@@ -4916,7 +4916,7 @@ CREATE TABLE dist_constraint_value (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	tree_node_id INTEGER NOT NULL 
+	tree_node_id INTEGER NOT NULL
 );
 
 --
@@ -4940,7 +4940,7 @@ CREATE TABLE distance_constraint_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -4964,7 +4964,7 @@ CREATE TABLE distance_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -4983,7 +4983,7 @@ CREATE TABLE distance_constraint_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -5011,7 +5011,7 @@ CREATE TABLE emr_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5032,7 +5032,7 @@ CREATE TABLE emr_instrument (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5049,7 +5049,7 @@ CREATE TABLE energetic_penalty_function (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	function TEXT NOT NULL 
+	function TEXT NOT NULL
 );
 
 --
@@ -5120,7 +5120,7 @@ CREATE TABLE entity (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5156,7 +5156,7 @@ CREATE TABLE entity_assembly (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5176,7 +5176,7 @@ CREATE TABLE entity_atom_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5192,7 +5192,7 @@ CREATE TABLE entity_biological_function (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5221,7 +5221,7 @@ CREATE TABLE entity_bond (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5241,7 +5241,7 @@ CREATE TABLE entity_chem_comp_deleted_atom (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5262,7 +5262,7 @@ CREATE TABLE entity_chimera_segment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5279,7 +5279,7 @@ CREATE TABLE entity_citation (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5297,7 +5297,7 @@ CREATE TABLE entity_common_name (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -5316,7 +5316,7 @@ CREATE TABLE entity_comp_index (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5336,7 +5336,7 @@ CREATE TABLE entity_comp_index_alt (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5378,7 +5378,7 @@ CREATE TABLE entity_db_link (
 -- ATTRIBUTE
 	entity_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5406,7 +5406,7 @@ CREATE TABLE entity_deleted_atom (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5459,7 +5459,7 @@ CREATE TABLE entity_experimental_src (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5475,7 +5475,7 @@ CREATE TABLE entity_experimental_src_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5491,7 +5491,7 @@ CREATE TABLE entity_keyword (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	keyword TEXT NOT NULL 
+	keyword TEXT NOT NULL
 );
 
 --
@@ -5556,7 +5556,7 @@ CREATE TABLE entity_natural_src (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5572,7 +5572,7 @@ CREATE TABLE entity_natural_src_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5591,7 +5591,7 @@ CREATE TABLE entity_poly_seq (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	num INTEGER NOT NULL 
+	num INTEGER NOT NULL
 );
 
 --
@@ -5615,7 +5615,7 @@ CREATE TABLE entity_purity (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5632,7 +5632,7 @@ CREATE TABLE entity_purity_citation (
 -- ATTRIBUTE
 	entity_purity_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5649,7 +5649,7 @@ CREATE TABLE entity_purity_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5668,7 +5668,7 @@ CREATE TABLE entity_systematic_name (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	naming_system ENUM_entity_systematic_name_naming_system NOT NULL 
+	naming_system ENUM_entity_systematic_name_naming_system NOT NULL
 );
 
 --
@@ -5691,7 +5691,7 @@ CREATE TABLE entry_author (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -5711,7 +5711,7 @@ CREATE TABLE entry_experimental_methods (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5728,7 +5728,7 @@ CREATE TABLE entry_src (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5788,7 +5788,7 @@ CREATE TABLE experiment (
 -- ATTRIBUTE
 	experiment_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5811,7 +5811,7 @@ CREATE TABLE experiment_file (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -5828,7 +5828,7 @@ CREATE TABLE experiment_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5873,7 +5873,7 @@ CREATE TABLE floating_chirality (
 -- ATTRIBUTE
 	floating_chirality_assign_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5892,7 +5892,7 @@ CREATE TABLE floating_chirality_assign (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5911,7 +5911,7 @@ CREATE TABLE floating_chirality_software (
 -- ATTRIBUTE
 	floating_chirality_assign_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -5932,7 +5932,7 @@ CREATE TABLE fluorescence_instrument (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5955,7 +5955,7 @@ CREATE TABLE force_constant (
 -- ATTRIBUTE
 	force_constant_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5975,7 +5975,7 @@ CREATE TABLE force_constant_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -5994,7 +5994,7 @@ CREATE TABLE force_constant_software (
 -- ATTRIBUTE
 	force_constant_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6020,7 +6020,7 @@ CREATE TABLE fret_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6106,7 +6106,7 @@ CREATE TABLE gen_dist_constraint (
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	index_id INTEGER NOT NULL 
+	index_id INTEGER NOT NULL
 );
 
 --
@@ -6127,7 +6127,7 @@ CREATE TABLE gen_dist_constraint_comment_org (
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6147,7 +6147,7 @@ CREATE TABLE gen_dist_constraint_conv_err (
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6171,7 +6171,7 @@ CREATE TABLE gen_dist_constraint_expt (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	gen_dist_constraint_list_id INTEGER NOT NULL 
+	gen_dist_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -6198,7 +6198,7 @@ CREATE TABLE gen_dist_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6219,7 +6219,7 @@ CREATE TABLE gen_dist_constraint_parse_err (
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6236,7 +6236,7 @@ CREATE TABLE gen_dist_constraint_parse_file (
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6255,7 +6255,7 @@ CREATE TABLE gen_dist_constraint_software (
 -- ATTRIBUTE
 	gen_dist_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6277,7 +6277,7 @@ CREATE TABLE gen_dist_constraint_software_param (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_gen_dist_constraint_software_param_type NOT NULL 
+	type ENUM_gen_dist_constraint_software_param_type NOT NULL
 );
 
 --
@@ -6311,7 +6311,7 @@ CREATE TABLE h_chem_shift_constraint (
 -- ATTRIBUTE
 	h_chem_shift_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6335,7 +6335,7 @@ CREATE TABLE h_chem_shift_constraint_expt (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	h_chem_shift_constraint_list_id INTEGER NOT NULL 
+	h_chem_shift_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -6358,7 +6358,7 @@ CREATE TABLE h_chem_shift_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6377,7 +6377,7 @@ CREATE TABLE h_chem_shift_constraint_software (
 -- ATTRIBUTE
 	h_chem_shift_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6399,7 +6399,7 @@ CREATE TABLE h_exch_protection_fact_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	h_exch_protection_factor_list_id INTEGER NOT NULL 
+	h_exch_protection_factor_list_id INTEGER NOT NULL
 );
 
 --
@@ -6418,7 +6418,7 @@ CREATE TABLE h_exch_protection_fact_software (
 -- ATTRIBUTE
 	h_exch_protection_factor_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6451,7 +6451,7 @@ CREATE TABLE h_exch_protection_factor (
 -- ATTRIBUTE
 	h_exch_protection_factor_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6474,7 +6474,7 @@ CREATE TABLE h_exch_protection_factor_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6508,7 +6508,7 @@ CREATE TABLE h_exch_rate (
 -- ATTRIBUTE
 	h_exch_rate_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6530,7 +6530,7 @@ CREATE TABLE h_exch_rate_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	h_exch_rate_list_id INTEGER NOT NULL 
+	h_exch_rate_list_id INTEGER NOT NULL
 );
 
 --
@@ -6554,7 +6554,7 @@ CREATE TABLE h_exch_rate_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6573,7 +6573,7 @@ CREATE TABLE h_exch_rate_software (
 -- ATTRIBUTE
 	h_exch_rate_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6619,7 +6619,7 @@ CREATE TABLE heteronucl_noe (
 -- ATTRIBUTE
 	heteronucl_noe_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6641,7 +6641,7 @@ CREATE TABLE heteronucl_noe_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	heteronucl_noe_list_id INTEGER NOT NULL 
+	heteronucl_noe_list_id INTEGER NOT NULL
 );
 
 --
@@ -6668,7 +6668,7 @@ CREATE TABLE heteronucl_noe_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6687,7 +6687,7 @@ CREATE TABLE heteronucl_noe_software (
 -- ATTRIBUTE
 	heteronucl_noe_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6709,7 +6709,7 @@ CREATE TABLE heteronucl_t1_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	heteronucl_t1_list_id INTEGER NOT NULL 
+	heteronucl_t1_list_id INTEGER NOT NULL
 );
 
 --
@@ -6737,7 +6737,7 @@ CREATE TABLE heteronucl_t1_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6756,7 +6756,7 @@ CREATE TABLE heteronucl_t1_software (
 -- ATTRIBUTE
 	heteronucl_t1_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6778,7 +6778,7 @@ CREATE TABLE heteronucl_t1rho_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	heteronucl_t1rho_list_id INTEGER NOT NULL 
+	heteronucl_t1rho_list_id INTEGER NOT NULL
 );
 
 --
@@ -6815,7 +6815,7 @@ CREATE TABLE heteronucl_t1rho_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6834,7 +6834,7 @@ CREATE TABLE heteronucl_t1rho_software (
 -- ATTRIBUTE
 	heteronucl_t1rho_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6856,7 +6856,7 @@ CREATE TABLE heteronucl_t2_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	heteronucl_t2_list_id INTEGER NOT NULL 
+	heteronucl_t2_list_id INTEGER NOT NULL
 );
 
 --
@@ -6893,7 +6893,7 @@ CREATE TABLE heteronucl_t2_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6912,7 +6912,7 @@ CREATE TABLE heteronucl_t2_software (
 -- ATTRIBUTE
 	heteronucl_t2_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6939,7 +6939,7 @@ CREATE TABLE history (
 -- ATTRIBUTE
 	software_applied_history_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -6987,7 +6987,7 @@ CREATE TABLE homonucl_noe (
 -- ATTRIBUTE
 	homonucl_noe_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7007,7 +7007,7 @@ CREATE TABLE homonucl_noe_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	homonucl_noe_list_id INTEGER NOT NULL 
+	homonucl_noe_list_id INTEGER NOT NULL
 );
 
 --
@@ -7033,7 +7033,7 @@ CREATE TABLE homonucl_noe_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7052,7 +7052,7 @@ CREATE TABLE homonucl_noe_software (
 -- ATTRIBUTE
 	homonucl_noe_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -7096,7 +7096,7 @@ CREATE TABLE interatomic_dist (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	interatomic_distance_list_id INTEGER NOT NULL 
+	interatomic_distance_list_id INTEGER NOT NULL
 );
 
 --
@@ -7115,7 +7115,7 @@ CREATE TABLE interatomic_distance_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7156,7 +7156,7 @@ CREATE TABLE isotope_effect (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7178,7 +7178,7 @@ CREATE TABLE isotope_effect_experiment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -7197,7 +7197,7 @@ CREATE TABLE isotope_effect_software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -7226,7 +7226,7 @@ CREATE TABLE isotope_label_pattern (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7303,7 +7303,7 @@ CREATE TABLE j_three_bond_constraint (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	j_three_bond_constraint_list_id INTEGER NOT NULL 
+	j_three_bond_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -7327,7 +7327,7 @@ CREATE TABLE j_three_bond_constraint_expt (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	j_three_bond_constraint_list_id INTEGER NOT NULL 
+	j_three_bond_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -7349,7 +7349,7 @@ CREATE TABLE j_three_bond_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7368,7 +7368,7 @@ CREATE TABLE j_three_bond_constraint_software (
 -- ATTRIBUTE
 	j_three_bond_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -7386,7 +7386,7 @@ CREATE TABLE karplus_equation (
 -- ATTRIBUTE
 	torsion_angle_code TEXT NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -7408,7 +7408,7 @@ CREATE TABLE lacs_char (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	lacs_plot_id INTEGER NOT NULL 
+	lacs_plot_id INTEGER NOT NULL
 );
 
 --
@@ -7442,7 +7442,7 @@ CREATE TABLE lacs_plot (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7467,7 +7467,7 @@ CREATE TABLE local_structure_quality (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7492,7 +7492,7 @@ CREATE TABLE mass_spec (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7509,7 +7509,7 @@ CREATE TABLE mass_spec_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	mass_spec_id INTEGER NOT NULL 
+	mass_spec_id INTEGER NOT NULL
 );
 
 --
@@ -7529,7 +7529,7 @@ CREATE TABLE mass_spec_component_param (
 -- ATTRIBUTE
 	mass_spec_config_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mass_spec_id INTEGER NOT NULL 
+	mass_spec_id INTEGER NOT NULL
 );
 
 --
@@ -7550,7 +7550,7 @@ CREATE TABLE mass_spec_config (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mass_spec_id INTEGER NOT NULL 
+	mass_spec_id INTEGER NOT NULL
 );
 
 --
@@ -7568,7 +7568,7 @@ CREATE TABLE mass_spec_ref_compd (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mass_spec_ref_compd_set_id INTEGER NOT NULL 
+	mass_spec_ref_compd_set_id INTEGER NOT NULL
 );
 
 --
@@ -7585,7 +7585,7 @@ CREATE TABLE mass_spec_ref_compd_set (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7602,7 +7602,7 @@ CREATE TABLE mass_spec_software (
 -- ATTRIBUTE
 	mass_spec_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -7617,7 +7617,7 @@ CREATE TABLE mass_spectrometer_list (
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -7650,7 +7650,7 @@ CREATE TABLE mass_spectrometer_view (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mass_spectrometer_list_id INTEGER NOT NULL 
+	mass_spectrometer_list_id INTEGER NOT NULL
 );
 
 --
@@ -7668,7 +7668,7 @@ CREATE TABLE matched_entries (
 -- ATTRIBUTE
 	database_name ENUM_matched_entries_database_name NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -7688,7 +7688,7 @@ CREATE TABLE method (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7705,7 +7705,7 @@ CREATE TABLE method_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	method_id INTEGER NOT NULL 
+	method_id INTEGER NOT NULL
 );
 
 --
@@ -7724,7 +7724,7 @@ CREATE TABLE method_file (
 -- ATTRIBUTE
 	method_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -7742,7 +7742,7 @@ CREATE TABLE method_param (
 -- ATTRIBUTE
 	file_name TEXT NOT NULL ,
 -- ATTRIBUTE
-	method_id INTEGER NOT NULL 
+	method_id INTEGER NOT NULL
 );
 
 --
@@ -7761,7 +7761,7 @@ CREATE TABLE model_type (
 -- ATTRIBUTE
 	atom_site_model_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_model_type_type NOT NULL 
+	type ENUM_model_type_type NOT NULL
 );
 
 --
@@ -7782,7 +7782,7 @@ CREATE TABLE ms_chrom_ion_annotation (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ms_chromatogram_list_id INTEGER NOT NULL 
+	ms_chromatogram_list_id INTEGER NOT NULL
 );
 
 --
@@ -7801,7 +7801,7 @@ CREATE TABLE ms_chromatogram_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ms_chromatogram_list_id INTEGER NOT NULL 
+	ms_chromatogram_list_id INTEGER NOT NULL
 );
 
 --
@@ -7823,7 +7823,7 @@ CREATE TABLE ms_chromatogram_ion (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ms_chromatogram_list_id INTEGER NOT NULL 
+	ms_chromatogram_list_id INTEGER NOT NULL
 );
 
 --
@@ -7846,7 +7846,7 @@ CREATE TABLE ms_chromatogram_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7865,7 +7865,7 @@ CREATE TABLE ms_chromatogram_param (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ms_chromatogram_list_id INTEGER NOT NULL 
+	ms_chromatogram_list_id INTEGER NOT NULL
 );
 
 --
@@ -7884,7 +7884,7 @@ CREATE TABLE ms_chromatogram_software (
 -- ATTRIBUTE
 	ms_chromatogram_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -7906,7 +7906,7 @@ CREATE TABLE ms_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7928,7 +7928,7 @@ CREATE TABLE ms_expt_param (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ms_expt_id INTEGER NOT NULL 
+	ms_expt_id INTEGER NOT NULL
 );
 
 --
@@ -7948,7 +7948,7 @@ CREATE TABLE ms_expt_software (
 -- ATTRIBUTE
 	ms_expt_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -7970,7 +7970,7 @@ CREATE TABLE mz_precursor_ion (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mz_ratio_data_list_id INTEGER NOT NULL 
+	mz_ratio_data_list_id INTEGER NOT NULL
 );
 
 --
@@ -7992,7 +7992,7 @@ CREATE TABLE mz_precursor_ion_annotation (
 -- ATTRIBUTE
 	mz_precursor_ion_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mz_ratio_data_list_id INTEGER NOT NULL 
+	mz_ratio_data_list_id INTEGER NOT NULL
 );
 
 --
@@ -8014,7 +8014,7 @@ CREATE TABLE mz_product_ion (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mz_ratio_data_list_id INTEGER NOT NULL 
+	mz_ratio_data_list_id INTEGER NOT NULL
 );
 
 --
@@ -8036,7 +8036,7 @@ CREATE TABLE mz_product_ion_annotation (
 -- ATTRIBUTE
 	mz_product_ion_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mz_ratio_data_list_id INTEGER NOT NULL 
+	mz_ratio_data_list_id INTEGER NOT NULL
 );
 
 --
@@ -8063,7 +8063,7 @@ CREATE TABLE mz_ratio_data_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8082,7 +8082,7 @@ CREATE TABLE mz_ratio_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mz_ratio_data_list_id INTEGER NOT NULL 
+	mz_ratio_data_list_id INTEGER NOT NULL
 );
 
 --
@@ -8101,7 +8101,7 @@ CREATE TABLE mz_ratio_software (
 -- ATTRIBUTE
 	mz_ratio_data_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -8120,7 +8120,7 @@ CREATE TABLE mz_ratio_spectrum_param (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	mz_ratio_data_list_id INTEGER NOT NULL 
+	mz_ratio_data_list_id INTEGER NOT NULL
 );
 
 --
@@ -8148,7 +8148,7 @@ CREATE TABLE natural_source_db (
 -- ATTRIBUTE
 	entry_code TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -8165,7 +8165,7 @@ CREATE TABLE nmr_experiment_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	nmr_spec_expt_id INTEGER NOT NULL 
+	nmr_spec_expt_id INTEGER NOT NULL
 );
 
 --
@@ -8192,7 +8192,7 @@ CREATE TABLE nmr_experiment_file (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	nmr_spec_expt_id INTEGER NOT NULL 
+	nmr_spec_expt_id INTEGER NOT NULL
 );
 
 --
@@ -8212,7 +8212,7 @@ CREATE TABLE nmr_expt_systematic_name (
 -- ATTRIBUTE
 	naming_system ENUM_nmr_expt_systematic_name_naming_system NOT NULL ,
 -- ATTRIBUTE
-	nmr_spec_expt_id INTEGER NOT NULL 
+	nmr_spec_expt_id INTEGER NOT NULL
 );
 
 --
@@ -8230,7 +8230,7 @@ CREATE TABLE nmr_probe (
 -- ATTRIBUTE
 	nmr_spectrometer_probe_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_nmr_probe_type NOT NULL 
+	type ENUM_nmr_probe_type NOT NULL
 );
 
 --
@@ -8270,7 +8270,7 @@ CREATE TABLE nmr_spec_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8289,7 +8289,7 @@ CREATE TABLE nmr_spectral_proc_software (
 -- ATTRIBUTE
 	nmr_spectral_processing_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -8305,7 +8305,7 @@ CREATE TABLE nmr_spectral_processing (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8330,7 +8330,7 @@ CREATE TABLE nmr_spectrometer (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8347,7 +8347,7 @@ CREATE TABLE nmr_spectrometer_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	nmr_spectrometer_id INTEGER NOT NULL 
+	nmr_spectrometer_id INTEGER NOT NULL
 );
 
 --
@@ -8363,7 +8363,7 @@ CREATE TABLE nmr_spectrometer_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8392,7 +8392,7 @@ CREATE TABLE nmr_spectrometer_probe (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8409,7 +8409,7 @@ CREATE TABLE nmr_spectrometer_probe_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	nmr_spectrometer_probe_id INTEGER NOT NULL 
+	nmr_spectrometer_probe_id INTEGER NOT NULL
 );
 
 --
@@ -8438,7 +8438,7 @@ CREATE TABLE nmr_spectrometer_view (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	nmr_spectrometer_list_id INTEGER NOT NULL 
+	nmr_spectrometer_list_id INTEGER NOT NULL
 );
 
 --
@@ -8458,7 +8458,7 @@ CREATE TABLE observed_conformer (
 -- ATTRIBUTE
 	structure_interaction_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	structure_interaction_list_id INTEGER NOT NULL 
+	structure_interaction_list_id INTEGER NOT NULL
 );
 
 --
@@ -8508,7 +8508,7 @@ CREATE TABLE order_param (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	order_parameter_list_id INTEGER NOT NULL 
+	order_parameter_list_id INTEGER NOT NULL
 );
 
 --
@@ -8530,7 +8530,7 @@ CREATE TABLE order_parameter_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	order_parameter_list_id INTEGER NOT NULL 
+	order_parameter_list_id INTEGER NOT NULL
 );
 
 --
@@ -8564,7 +8564,7 @@ CREATE TABLE order_parameter_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8583,7 +8583,7 @@ CREATE TABLE order_parameter_software (
 -- ATTRIBUTE
 	order_parameter_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -8603,7 +8603,7 @@ CREATE TABLE org_constr_file_comment (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8627,7 +8627,7 @@ CREATE TABLE other_constraint_expt (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	other_constraint_list_id INTEGER NOT NULL 
+	other_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -8654,7 +8654,7 @@ CREATE TABLE other_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8673,7 +8673,7 @@ CREATE TABLE other_constraint_software (
 -- ATTRIBUTE
 	other_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -8705,7 +8705,7 @@ CREATE TABLE other_data (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	other_data_type_list_id INTEGER NOT NULL 
+	other_data_type_list_id INTEGER NOT NULL
 );
 
 --
@@ -8727,7 +8727,7 @@ CREATE TABLE other_data_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	other_data_type_list_id INTEGER NOT NULL 
+	other_data_type_list_id INTEGER NOT NULL
 );
 
 --
@@ -8746,7 +8746,7 @@ CREATE TABLE other_data_software (
 -- ATTRIBUTE
 	other_data_type_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -8769,7 +8769,7 @@ CREATE TABLE other_data_type_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8790,7 +8790,7 @@ CREATE TABLE other_struct_feature (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	other_struct_feature_list_id INTEGER NOT NULL 
+	other_struct_feature_list_id INTEGER NOT NULL
 );
 
 --
@@ -8810,7 +8810,7 @@ CREATE TABLE other_struct_feature_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8838,7 +8838,7 @@ CREATE TABLE pb_char (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pb_list_id INTEGER NOT NULL 
+	pb_list_id INTEGER NOT NULL
 );
 
 --
@@ -8868,7 +8868,7 @@ CREATE TABLE pb_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8889,7 +8889,7 @@ CREATE TABLE pdbx_chem_comp_feature (
 -- ATTRIBUTE
 	type TEXT NOT NULL ,
 -- ATTRIBUTE
-	value TEXT NOT NULL 
+	value TEXT NOT NULL
 );
 
 --
@@ -8916,7 +8916,7 @@ CREATE TABLE pdbx_nonpoly_scheme (
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -8949,7 +8949,7 @@ CREATE TABLE pdbx_poly_seq_scheme (
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -8971,7 +8971,7 @@ CREATE TABLE peak (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -9005,7 +9005,7 @@ CREATE TABLE peak_char (
 -- ATTRIBUTE
 	spectral_dim_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -9033,7 +9033,7 @@ CREATE TABLE peak_constraint_link (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	peak_constraint_link_list_id INTEGER NOT NULL 
+	peak_constraint_link_list_id INTEGER NOT NULL
 );
 
 --
@@ -9049,7 +9049,7 @@ CREATE TABLE peak_constraint_link_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9071,7 +9071,7 @@ CREATE TABLE peak_general_char (
 -- ATTRIBUTE
 	peak_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -9137,7 +9137,7 @@ CREATE TABLE peak_row_format (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -9158,7 +9158,7 @@ CREATE TABLE ph_param (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ph_param_list_id INTEGER NOT NULL 
+	ph_param_list_id INTEGER NOT NULL
 );
 
 --
@@ -9182,7 +9182,7 @@ CREATE TABLE ph_param_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9234,7 +9234,7 @@ CREATE TABLE ph_titr_result (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ph_titration_list_id INTEGER NOT NULL 
+	ph_titration_list_id INTEGER NOT NULL
 );
 
 --
@@ -9256,7 +9256,7 @@ CREATE TABLE ph_titration_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	ph_titration_list_id INTEGER NOT NULL 
+	ph_titration_list_id INTEGER NOT NULL
 );
 
 --
@@ -9280,7 +9280,7 @@ CREATE TABLE ph_titration_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9299,7 +9299,7 @@ CREATE TABLE ph_titration_software (
 -- ATTRIBUTE
 	ph_titration_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -9351,7 +9351,7 @@ CREATE TABLE rdc (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_list_id INTEGER NOT NULL 
+	rdc_list_id INTEGER NOT NULL
 );
 
 --
@@ -9434,7 +9434,7 @@ CREATE TABLE rdc_constraint (
 -- ATTRIBUTE
 	index_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_constraint_list_id INTEGER NOT NULL 
+	rdc_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -9455,7 +9455,7 @@ CREATE TABLE rdc_constraint_comment_org (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_constraint_list_id INTEGER NOT NULL 
+	rdc_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -9475,7 +9475,7 @@ CREATE TABLE rdc_constraint_conv_err (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_constraint_list_id INTEGER NOT NULL 
+	rdc_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -9499,7 +9499,7 @@ CREATE TABLE rdc_constraint_expt (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_constraint_list_id INTEGER NOT NULL 
+	rdc_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -9545,7 +9545,7 @@ CREATE TABLE rdc_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9566,7 +9566,7 @@ CREATE TABLE rdc_constraint_parse_err (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_constraint_list_id INTEGER NOT NULL 
+	rdc_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -9583,7 +9583,7 @@ CREATE TABLE rdc_constraint_parse_file (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_constraint_list_id INTEGER NOT NULL 
+	rdc_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -9602,7 +9602,7 @@ CREATE TABLE rdc_constraint_software (
 -- ATTRIBUTE
 	rdc_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -9624,7 +9624,7 @@ CREATE TABLE rdc_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	rdc_list_id INTEGER NOT NULL 
+	rdc_list_id INTEGER NOT NULL
 );
 
 --
@@ -9656,7 +9656,7 @@ CREATE TABLE rdc_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9675,7 +9675,7 @@ CREATE TABLE rdc_software (
 -- ATTRIBUTE
 	rdc_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -9695,7 +9695,7 @@ CREATE TABLE recoupling_pulse_sequence (
 -- ATTRIBUTE
 	nmr_spec_expt_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	time_period TEXT NOT NULL 
+	time_period TEXT NOT NULL
 );
 
 --
@@ -9714,7 +9714,7 @@ CREATE TABLE related_entries (
 -- ATTRIBUTE
 	database_name ENUM_related_entries_database_name NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9739,7 +9739,7 @@ CREATE TABLE release (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	release_number INTEGER NOT NULL 
+	release_number INTEGER NOT NULL
 );
 
 --
@@ -9777,7 +9777,7 @@ CREATE TABLE rep_conf (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	representative_conformer_id INTEGER NOT NULL 
+	representative_conformer_id INTEGER NOT NULL
 );
 
 --
@@ -9796,7 +9796,7 @@ CREATE TABLE rep_conf_refinement (
 -- ATTRIBUTE
 	refine_method ENUM_rep_conf_refinement_refine_method NOT NULL ,
 -- ATTRIBUTE
-	representative_conformer_id INTEGER NOT NULL 
+	representative_conformer_id INTEGER NOT NULL
 );
 
 --
@@ -9815,7 +9815,7 @@ CREATE TABLE rep_conf_software (
 -- ATTRIBUTE
 	representative_conformer_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -9832,7 +9832,7 @@ CREATE TABLE rep_coordinate_details (
 -- ATTRIBUTE
 	footnote_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	representative_conformer_id INTEGER NOT NULL 
+	representative_conformer_id INTEGER NOT NULL
 );
 
 --
@@ -9859,7 +9859,7 @@ CREATE TABLE representative_conformer (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9878,7 +9878,7 @@ CREATE TABLE resonance (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	resonance_linker_list_id INTEGER NOT NULL 
+	resonance_linker_list_id INTEGER NOT NULL
 );
 
 --
@@ -9906,7 +9906,7 @@ CREATE TABLE resonance_assignment (
 -- ATTRIBUTE
 	resonance_linker_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	resonance_set_id INTEGER NOT NULL 
+	resonance_set_id INTEGER NOT NULL
 );
 
 --
@@ -9924,7 +9924,7 @@ CREATE TABLE resonance_covalent_link (
 -- ATTRIBUTE
 	resonance_id_2 INTEGER NOT NULL ,
 -- ATTRIBUTE
-	resonance_linker_list_id INTEGER NOT NULL 
+	resonance_linker_list_id INTEGER NOT NULL
 );
 
 --
@@ -9941,7 +9941,7 @@ CREATE TABLE resonance_linker_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9986,7 +9986,7 @@ CREATE TABLE sample (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10003,7 +10003,7 @@ CREATE TABLE sample_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	sample_id INTEGER NOT NULL 
+	sample_id INTEGER NOT NULL
 );
 
 --
@@ -10037,7 +10037,7 @@ CREATE TABLE sample_component (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	sample_id INTEGER NOT NULL 
+	sample_id INTEGER NOT NULL
 );
 
 --
@@ -10074,7 +10074,7 @@ CREATE TABLE sample_component_atom_isotope (
 -- ATTRIBUTE
 	sample_component_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	sample_id INTEGER NOT NULL 
+	sample_id INTEGER NOT NULL
 );
 
 --
@@ -10090,7 +10090,7 @@ CREATE TABLE sample_condition_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	sample_condition_list_id INTEGER NOT NULL 
+	sample_condition_list_id INTEGER NOT NULL
 );
 
 --
@@ -10107,7 +10107,7 @@ CREATE TABLE sample_condition_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10130,7 +10130,7 @@ CREATE TABLE sample_condition_variable (
 -- ATTRIBUTE
 	sample_condition_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_sample_condition_variable_type NOT NULL 
+	type ENUM_sample_condition_variable_type NOT NULL
 );
 
 --
@@ -10150,7 +10150,7 @@ CREATE TABLE saxs_constraint (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	saxs_constraint_list_id INTEGER NOT NULL 
+	saxs_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -10170,7 +10170,7 @@ CREATE TABLE saxs_constraint_expt (
 -- ATTRIBUTE
 	sample_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	saxs_constraint_list_id INTEGER NOT NULL 
+	saxs_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -10191,7 +10191,7 @@ CREATE TABLE saxs_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10210,7 +10210,7 @@ CREATE TABLE saxs_constraint_software (
 -- ATTRIBUTE
 	saxs_constraint_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -10238,7 +10238,7 @@ CREATE TABLE saxs_expt (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10267,7 +10267,7 @@ CREATE TABLE secondary_struct (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	secondary_struct_list_id INTEGER NOT NULL 
+	secondary_struct_list_id INTEGER NOT NULL
 );
 
 --
@@ -10285,7 +10285,7 @@ CREATE TABLE secondary_struct_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10302,7 +10302,7 @@ CREATE TABLE secondary_struct_sel (
 -- ATTRIBUTE
 	method_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	secondary_struct_list_id INTEGER NOT NULL 
+	secondary_struct_list_id INTEGER NOT NULL
 );
 
 --
@@ -10323,7 +10323,7 @@ CREATE TABLE sg_project (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	sg_project_id INTEGER NOT NULL 
+	sg_project_id INTEGER NOT NULL
 );
 
 --
@@ -10344,7 +10344,7 @@ CREATE TABLE software (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10361,7 +10361,7 @@ CREATE TABLE software_applied_history (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10378,7 +10378,7 @@ CREATE TABLE software_applied_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10403,7 +10403,7 @@ CREATE TABLE software_applied_methods (
 -- ATTRIBUTE
 	software_applied_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -10420,7 +10420,7 @@ CREATE TABLE software_citation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -10437,7 +10437,7 @@ CREATE TABLE software_specific_info (
 -- ATTRIBUTE
 	software_saveframe_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	software_specific_info_list_id INTEGER NOT NULL 
+	software_specific_info_list_id INTEGER NOT NULL
 );
 
 --
@@ -10453,7 +10453,7 @@ CREATE TABLE software_specific_info_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10476,7 +10476,7 @@ CREATE TABLE spectral_acq_param (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	nmr_spec_expt_id INTEGER NOT NULL 
+	nmr_spec_expt_id INTEGER NOT NULL
 );
 
 --
@@ -10514,7 +10514,7 @@ CREATE TABLE spectral_density (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_density_list_id INTEGER NOT NULL 
+	spectral_density_list_id INTEGER NOT NULL
 );
 
 --
@@ -10536,7 +10536,7 @@ CREATE TABLE spectral_density_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_density_list_id INTEGER NOT NULL 
+	spectral_density_list_id INTEGER NOT NULL
 );
 
 --
@@ -10557,7 +10557,7 @@ CREATE TABLE spectral_density_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10576,7 +10576,7 @@ CREATE TABLE spectral_density_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_density_list_id INTEGER NOT NULL 
+	spectral_density_list_id INTEGER NOT NULL
 );
 
 --
@@ -10617,7 +10617,7 @@ CREATE TABLE spectral_dim (
 -- ATTRIBUTE
 	spectral_peak_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_region TEXT NOT NULL 
+	spectral_region TEXT NOT NULL
 );
 
 --
@@ -10641,7 +10641,7 @@ CREATE TABLE spectral_dim_transfer (
 -- ATTRIBUTE
 	spectral_dim_id_2 INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -10676,7 +10676,7 @@ CREATE TABLE spectral_peak_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10695,7 +10695,7 @@ CREATE TABLE spectral_peak_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -10722,7 +10722,7 @@ CREATE TABLE spectral_processing_param (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	nmr_spectral_processing_id INTEGER NOT NULL 
+	nmr_spectral_processing_id INTEGER NOT NULL
 );
 
 --
@@ -10741,7 +10741,7 @@ CREATE TABLE spectral_transition (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -10772,7 +10772,7 @@ CREATE TABLE spectral_transition_char (
 -- ATTRIBUTE
 	spectral_peak_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_transition_id INTEGER NOT NULL 
+	spectral_transition_id INTEGER NOT NULL
 );
 
 --
@@ -10795,7 +10795,7 @@ CREATE TABLE spectral_transition_general_char (
 -- ATTRIBUTE
 	spectral_peak_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_transition_id INTEGER NOT NULL 
+	spectral_transition_id INTEGER NOT NULL
 );
 
 --
@@ -10815,7 +10815,7 @@ CREATE TABLE spin_system (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	resonance_linker_list_id INTEGER NOT NULL 
+	resonance_linker_list_id INTEGER NOT NULL
 );
 
 --
@@ -10838,7 +10838,7 @@ CREATE TABLE spin_system_link (
 -- ATTRIBUTE
 	resonance_linker_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	to_spin_system_id INTEGER NOT NULL 
+	to_spin_system_id INTEGER NOT NULL
 );
 
 --
@@ -10867,7 +10867,7 @@ CREATE TABLE struct_anno_char (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	structure_annotation_id INTEGER NOT NULL 
+	structure_annotation_id INTEGER NOT NULL
 );
 
 --
@@ -10886,7 +10886,7 @@ CREATE TABLE struct_anno_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	structure_annotation_id INTEGER NOT NULL 
+	structure_annotation_id INTEGER NOT NULL
 );
 
 --
@@ -10910,7 +10910,7 @@ CREATE TABLE struct_asym (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -10934,7 +10934,7 @@ CREATE TABLE struct_classification (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	structure_annotation_id INTEGER NOT NULL 
+	structure_annotation_id INTEGER NOT NULL
 );
 
 --
@@ -10952,7 +10952,7 @@ CREATE TABLE struct_image (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	file_name TEXT NOT NULL 
+	file_name TEXT NOT NULL
 );
 
 --
@@ -10967,7 +10967,7 @@ CREATE TABLE struct_keywords (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	keywords TEXT NOT NULL 
+	keywords TEXT NOT NULL
 );
 
 --
@@ -10990,7 +10990,7 @@ CREATE TABLE structure_annotation (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11033,7 +11033,7 @@ CREATE TABLE structure_interaction (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	structure_interaction_list_id INTEGER NOT NULL 
+	structure_interaction_list_id INTEGER NOT NULL
 );
 
 --
@@ -11050,7 +11050,7 @@ CREATE TABLE structure_interaction_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11071,7 +11071,7 @@ CREATE TABLE study (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	study_list_id INTEGER NOT NULL 
+	study_list_id INTEGER NOT NULL
 );
 
 --
@@ -11091,7 +11091,7 @@ CREATE TABLE study_entry_list (
 -- ATTRIBUTE
 	study_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	study_list_id INTEGER NOT NULL 
+	study_list_id INTEGER NOT NULL
 );
 
 --
@@ -11109,7 +11109,7 @@ CREATE TABLE study_keyword (
 -- ATTRIBUTE
 	study_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	study_list_id INTEGER NOT NULL 
+	study_list_id INTEGER NOT NULL
 );
 
 --
@@ -11125,7 +11125,7 @@ CREATE TABLE study_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11141,7 +11141,7 @@ CREATE TABLE subsystem_biological_function (
 -- ATTRIBUTE
 	biological_function TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -11158,7 +11158,7 @@ CREATE TABLE subsystem_citation (
 -- ATTRIBUTE
 	citation_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -11174,7 +11174,7 @@ CREATE TABLE subsystem_common_name (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -11192,7 +11192,7 @@ CREATE TABLE subsystem_component (
 -- ATTRIBUTE
 	entity_assembly_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -11218,7 +11218,7 @@ CREATE TABLE subsystem_db_link (
 -- ATTRIBUTE
 	database_code TEXT NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -11234,7 +11234,7 @@ CREATE TABLE subsystem_keyword (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	keyword TEXT NOT NULL 
+	keyword TEXT NOT NULL
 );
 
 --
@@ -11250,7 +11250,7 @@ CREATE TABLE subsystem_type (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -11274,7 +11274,7 @@ CREATE TABLE systematic_chem_shift_offset (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_systematic_chem_shift_offset_type NOT NULL 
+	type ENUM_systematic_chem_shift_offset_type NOT NULL
 );
 
 --
@@ -11306,7 +11306,7 @@ CREATE TABLE t1 (
 -- ATTRIBUTE
 	heteronucl_t1_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11340,7 +11340,7 @@ CREATE TABLE t1rho (
 -- ATTRIBUTE
 	heteronucl_t1rho_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11374,7 +11374,7 @@ CREATE TABLE t2 (
 -- ATTRIBUTE
 	heteronucl_t2_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11395,7 +11395,7 @@ CREATE TABLE ta_constraint_comment_org (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -11415,7 +11415,7 @@ CREATE TABLE ta_constraint_conv_err (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -11436,7 +11436,7 @@ CREATE TABLE ta_constraint_parse_err (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -11453,7 +11453,7 @@ CREATE TABLE ta_constraint_parse_file (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -11469,7 +11469,7 @@ CREATE TABLE task (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	task TEXT NOT NULL 
+	task TEXT NOT NULL
 );
 
 --
@@ -11529,7 +11529,7 @@ CREATE TABLE tensor (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	tensor_list_id INTEGER NOT NULL 
+	tensor_list_id INTEGER NOT NULL
 );
 
 --
@@ -11561,7 +11561,7 @@ CREATE TABLE tensor_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11583,7 +11583,7 @@ CREATE TABLE terminal_residue (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	representative_conformer_id INTEGER NOT NULL 
+	representative_conformer_id INTEGER NOT NULL
 );
 
 --
@@ -11619,7 +11619,7 @@ CREATE TABLE tertiary_struct (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	tertiary_struct_element_list_id INTEGER NOT NULL 
+	tertiary_struct_element_list_id INTEGER NOT NULL
 );
 
 --
@@ -11635,7 +11635,7 @@ CREATE TABLE tertiary_struct_element_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11652,7 +11652,7 @@ CREATE TABLE tertiary_struct_element_sel (
 -- ATTRIBUTE
 	method_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	tertiary_struct_element_list_id INTEGER NOT NULL 
+	tertiary_struct_element_list_id INTEGER NOT NULL
 );
 
 --
@@ -11687,7 +11687,7 @@ CREATE TABLE theoretical_auto_relaxation (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_auto_relaxation_list_id INTEGER NOT NULL 
+	theoretical_auto_relaxation_list_id INTEGER NOT NULL
 );
 
 --
@@ -11709,7 +11709,7 @@ CREATE TABLE theoretical_auto_relaxation_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_auto_relaxation_list_id INTEGER NOT NULL 
+	theoretical_auto_relaxation_list_id INTEGER NOT NULL
 );
 
 --
@@ -11751,7 +11751,7 @@ CREATE TABLE theoretical_auto_relaxation_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11770,7 +11770,7 @@ CREATE TABLE theoretical_auto_relaxation_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_auto_relaxation_list_id INTEGER NOT NULL 
+	theoretical_auto_relaxation_list_id INTEGER NOT NULL
 );
 
 --
@@ -11803,7 +11803,7 @@ CREATE TABLE theoretical_chem_shift (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_chem_shift_list_id INTEGER NOT NULL 
+	theoretical_chem_shift_list_id INTEGER NOT NULL
 );
 
 --
@@ -11835,7 +11835,7 @@ CREATE TABLE theoretical_chem_shift_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11887,7 +11887,7 @@ CREATE TABLE theoretical_coupling_constant (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_coupling_constant_list_id INTEGER NOT NULL 
+	theoretical_coupling_constant_list_id INTEGER NOT NULL
 );
 
 --
@@ -11909,7 +11909,7 @@ CREATE TABLE theoretical_coupling_constant_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_coupling_constant_list_id INTEGER NOT NULL 
+	theoretical_coupling_constant_list_id INTEGER NOT NULL
 );
 
 --
@@ -11933,7 +11933,7 @@ CREATE TABLE theoretical_coupling_constant_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11952,7 +11952,7 @@ CREATE TABLE theoretical_coupling_constant_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_coupling_constant_list_id INTEGER NOT NULL 
+	theoretical_coupling_constant_list_id INTEGER NOT NULL
 );
 
 --
@@ -12026,7 +12026,7 @@ CREATE TABLE theoretical_cross_correlation_dd (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_cross_correlation_dd_list_id INTEGER NOT NULL 
+	theoretical_cross_correlation_dd_list_id INTEGER NOT NULL
 );
 
 --
@@ -12048,7 +12048,7 @@ CREATE TABLE theoretical_cross_correlation_dd_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_cross_correlation_dd_list_id INTEGER NOT NULL 
+	theoretical_cross_correlation_dd_list_id INTEGER NOT NULL
 );
 
 --
@@ -12073,7 +12073,7 @@ CREATE TABLE theoretical_cross_correlation_dd_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12092,7 +12092,7 @@ CREATE TABLE theoretical_cross_correlation_dd_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_cross_correlation_dd_list_id INTEGER NOT NULL 
+	theoretical_cross_correlation_dd_list_id INTEGER NOT NULL
 );
 
 --
@@ -12138,7 +12138,7 @@ CREATE TABLE theoretical_heteronucl_noe (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_noe_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_noe_list_id INTEGER NOT NULL
 );
 
 --
@@ -12160,7 +12160,7 @@ CREATE TABLE theoretical_heteronucl_noe_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_noe_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_noe_list_id INTEGER NOT NULL
 );
 
 --
@@ -12187,7 +12187,7 @@ CREATE TABLE theoretical_heteronucl_noe_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12206,7 +12206,7 @@ CREATE TABLE theoretical_heteronucl_noe_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_noe_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_noe_list_id INTEGER NOT NULL
 );
 
 --
@@ -12228,7 +12228,7 @@ CREATE TABLE theoretical_heteronucl_t1_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_t1_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_t1_list_id INTEGER NOT NULL
 );
 
 --
@@ -12256,7 +12256,7 @@ CREATE TABLE theoretical_heteronucl_t1_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12275,7 +12275,7 @@ CREATE TABLE theoretical_heteronucl_t1_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_t1_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_t1_list_id INTEGER NOT NULL
 );
 
 --
@@ -12297,7 +12297,7 @@ CREATE TABLE theoretical_heteronucl_t2_experiment (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_t2_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_t2_list_id INTEGER NOT NULL
 );
 
 --
@@ -12334,7 +12334,7 @@ CREATE TABLE theoretical_heteronucl_t2_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12353,7 +12353,7 @@ CREATE TABLE theoretical_heteronucl_t2_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_t2_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_t2_list_id INTEGER NOT NULL
 );
 
 --
@@ -12385,7 +12385,7 @@ CREATE TABLE theoretical_t1 (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_t1_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_t1_list_id INTEGER NOT NULL
 );
 
 --
@@ -12419,7 +12419,7 @@ CREATE TABLE theoretical_t2 (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	theoretical_heteronucl_t2_list_id INTEGER NOT NULL 
+	theoretical_heteronucl_t2_list_id INTEGER NOT NULL
 );
 
 --
@@ -12476,7 +12476,7 @@ CREATE TABLE torsion_angle (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12601,7 +12601,7 @@ CREATE TABLE torsion_angle_constraint (
 -- ATTRIBUTE
 	id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -12628,7 +12628,7 @@ CREATE TABLE torsion_angle_constraint_list (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12647,7 +12647,7 @@ CREATE TABLE torsion_angle_constraint_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -12671,7 +12671,7 @@ CREATE TABLE torsion_angle_constraints_expt (
 -- ATTRIBUTE
 	experiment_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	torsion_angle_constraint_list_id INTEGER NOT NULL 
+	torsion_angle_constraint_list_id INTEGER NOT NULL
 );
 
 --
@@ -12689,7 +12689,7 @@ CREATE TABLE vendor (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -12716,7 +12716,7 @@ CREATE TABLE xray_instrument (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --ALTER TABLE entry ADD CONSTRAINT UNQ_entry UNIQUE ( id );
