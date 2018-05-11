@@ -53,6 +53,8 @@ JSON_SCHEMA=schema/bmrb_clone.json
 
 java -cp extlibs/xsd2pgschema.jar xsd2jsonschema --xsd $XSD_SCHEMA --col-json --discarded-doc-key-name entry_id --json $JSON_SCHEMA
 
+sed -i -e "4,5 s/BMRB\/XML/BMRB\/JSON/g" $JSON_SCHEMA
+
 echo
 echo "Do you want to update BMRB/JSON? (y [n]) "
 
