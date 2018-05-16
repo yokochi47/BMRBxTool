@@ -9,11 +9,11 @@
 --  wild card extension: true
 --  case sensitive name: true
 --  no name collision: true
---  appended document key: true
---  appended serial key: false
---  appended xpath key: false
---  retained constraint of primary/foreign key: false
---  retrieved field annotation: false
+--  append document key: true
+--  append serial key: false
+--  append xpath key: false
+--  retain constraint of primary/foreign key: false
+--  retrieve field annotation: false
 --
 -- Statistics of schema:
 --  Generated 549 tables (6666 fields), 0 attr groups, 0 model groups in total
@@ -594,7 +594,7 @@ CREATE TABLE entry (
 	document_id TEXT ,
 	"pdbx_DOI" TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -628,7 +628,7 @@ CREATE TABLE entity (
 	src_method ENUM_entity_src_method ,
 	type ENUM_entity_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -699,7 +699,7 @@ CREATE TABLE chem_comp (
 	three_letter_code TEXT ,
 	type ENUM_chem_comp_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -757,7 +757,7 @@ CREATE TABLE exptl_crystal (
 	size_min DECIMAL CHECK ( size_min >= 0.0 ) ,
 	size_rad DECIMAL CHECK ( size_rad >= 0.0 ) ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -784,7 +784,7 @@ CREATE TABLE diffrn (
 	crystal_treatment TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -799,7 +799,7 @@ CREATE TABLE pdbx_buffer (
 	details TEXT ,
 	name TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -813,7 +813,7 @@ CREATE TABLE chem_link (
 	document_id TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -840,7 +840,7 @@ CREATE TABLE phasing_set (
 	radiation_wavelength DECIMAL CHECK ( radiation_wavelength >= 0.0 ) ,
 	temp DECIMAL CHECK ( temp >= 0.0 ) ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -882,7 +882,7 @@ CREATE TABLE em_entity_assembly (
 	synonym TEXT ,
 	type TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -903,7 +903,7 @@ CREATE TABLE struct_biol (
 	pdbx_formula_weight_method TEXT ,
 	pdbx_parent_biol_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -939,7 +939,7 @@ CREATE TABLE atom_type (
 	scat_source TEXT ,
 	scat_versus_stol_list TEXT ,
 -- ATTRIBUTE
-	symbol TEXT NOT NULL 
+	symbol TEXT NOT NULL
 );
 
 --
@@ -992,7 +992,7 @@ CREATE TABLE chem_comp_atom (
 -- ATTRIBUTE
 	atom_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	comp_id TEXT NOT NULL 
+	comp_id TEXT NOT NULL
 );
 
 --
@@ -1019,7 +1019,7 @@ CREATE TABLE pdbx_construct (
 	seq TEXT ,
 	type ENUM_pdbx_construct_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1048,7 +1048,7 @@ CREATE TABLE struct_asym (
 	pdbx_order INTEGER ,
 	pdbx_type ENUM_struct_asym_pdbx_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1064,7 +1064,7 @@ CREATE TABLE struct_sheet (
 	number_strands INTEGER ,
 	type TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1089,7 +1089,7 @@ CREATE TABLE em_tomography_specimen (
 	sectioning ENUM_em_tomography_specimen_sectioning ,
 	specimen_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1111,7 +1111,7 @@ CREATE TABLE pdbx_audit_revision_history (
 -- ATTRIBUTE
 	data_content_type ENUM_pdbx_audit_revision_history_data_content_type NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -1125,7 +1125,7 @@ CREATE TABLE pdbx_chem_comp_model (
 	document_id TEXT ,
 	comp_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1161,7 +1161,7 @@ CREATE TABLE pdbx_reference_molecule (
 	type ENUM_pdbx_reference_molecule_type ,
 	type_evidence_code TEXT ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -1180,7 +1180,7 @@ CREATE TABLE pdbx_reference_molecule_family (
 	replaced_by TEXT ,
 	replaces TEXT ,
 -- ATTRIBUTE
-	family_prd_id TEXT NOT NULL 
+	family_prd_id TEXT NOT NULL
 );
 
 --
@@ -1230,7 +1230,7 @@ CREATE TABLE entity_poly (
 	type ENUM_entity_poly_type ,
 	type_details TEXT ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -1248,7 +1248,7 @@ CREATE TABLE pdbx_linked_entity (
 	prd_id TEXT ,
 	type TEXT ,
 -- ATTRIBUTE
-	linked_entity_id TEXT NOT NULL 
+	linked_entity_id TEXT NOT NULL
 );
 
 --
@@ -1272,7 +1272,7 @@ CREATE TABLE pdbx_reference_linked_entity (
 	taxonomy_class TEXT ,
 	taxonomy_id TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -1289,7 +1289,7 @@ CREATE TABLE pdbx_struct_assembly (
 	oligomeric_count INTEGER ,
 	oligomeric_details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1309,7 +1309,7 @@ CREATE TABLE "phasing_MAD_expt" (
 	mean_fom DECIMAL ,
 	number_clust INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1349,7 +1349,7 @@ CREATE TABLE "phasing_MIR_der" (
 	reflns_centric INTEGER CHECK ( reflns_centric >= 0 ) ,
 	reflns_criteria TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1364,7 +1364,7 @@ CREATE TABLE struct_ncs_ens (
 	details TEXT ,
 	point_group TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1384,7 +1384,7 @@ CREATE TABLE struct_site (
 	pdbx_evidence_code TEXT ,
 	pdbx_num_residues INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1398,7 +1398,7 @@ CREATE TABLE atom_sites_alt (
 	document_id TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1417,7 +1417,7 @@ CREATE TABLE chemical_conn_atom (
 	display_y DECIMAL CHECK ( display_y >= 0.0 AND display_y <= 1.0 ) ,
 	type_symbol TEXT ,
 -- ATTRIBUTE
-	number INTEGER CHECK ( number >= 1 ) NOT NULL 
+	number INTEGER CHECK ( number >= 1 ) NOT NULL
 );
 
 --
@@ -1460,7 +1460,7 @@ CREATE TABLE citation (
 	unpublished_flag ENUM_citation_unpublished_flag ,
 	year INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1480,7 +1480,7 @@ CREATE TABLE entity_poly_seq (
 -- ATTRIBUTE
 	mon_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	num INTEGER CHECK ( num >= 1 ) NOT NULL 
+	num INTEGER CHECK ( num >= 1 ) NOT NULL
 );
 
 --
@@ -1493,7 +1493,7 @@ CREATE TABLE pdbx_chem_comp_import (
 -- DOCUMENT KEY is pointer to data source (aka. Entry ID)
 	document_id TEXT ,
 -- ATTRIBUTE
-	comp_id TEXT NOT NULL 
+	comp_id TEXT NOT NULL
 );
 
 --
@@ -1507,7 +1507,7 @@ CREATE TABLE pdbx_domain (
 	document_id TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1544,7 +1544,7 @@ CREATE TABLE pdbx_entity_src_gen_clone (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -1564,7 +1564,7 @@ CREATE TABLE pdbx_reference_entity_poly (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ref_entity_id TEXT NOT NULL 
+	ref_entity_id TEXT NOT NULL
 );
 
 --
@@ -1581,7 +1581,7 @@ CREATE TABLE pdbx_reference_linked_entity_comp_list (
 -- ATTRIBUTE
 	linked_entity_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	list_id INTEGER NOT NULL 
+	list_id INTEGER NOT NULL
 );
 
 --
@@ -1596,7 +1596,7 @@ CREATE TABLE pdbx_reference_molecule_list (
 -- ATTRIBUTE
 	family_prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -1659,7 +1659,7 @@ CREATE TABLE pdbx_refine_tls (
 	origin_z DECIMAL ,
 	pdbx_refine_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1680,7 +1680,7 @@ CREATE TABLE pdbx_struct_assembly_depositor_info (
 	oligomeric_details TEXT ,
 	upload_file_name TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1695,7 +1695,7 @@ CREATE TABLE pdbx_struct_entity_inst (
 	details TEXT ,
 	entity_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1718,7 +1718,7 @@ CREATE TABLE pdbx_struct_group_list (
 	selection_details TEXT ,
 	type ENUM_pdbx_struct_group_list_type ,
 -- ATTRIBUTE
-	struct_group_id TEXT NOT NULL 
+	struct_group_id TEXT NOT NULL
 );
 
 --
@@ -1732,7 +1732,7 @@ CREATE TABLE pdbx_view_category_group (
 	document_id TEXT ,
 	description TEXT ,
 -- ATTRIBUTE
-	view_group_id TEXT NOT NULL 
+	view_group_id TEXT NOT NULL
 );
 
 --
@@ -1761,7 +1761,7 @@ CREATE TABLE struct_ncs_oper (
 	vector2 DECIMAL ,
 	vector3 DECIMAL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1790,7 +1790,7 @@ CREATE TABLE struct_ref (
 	seq_align ENUM_struct_ref_seq_align ,
 	seq_dif ENUM_struct_ref_seq_dif ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1804,7 +1804,7 @@ CREATE TABLE atom_sites_alt_ens (
 	document_id TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -1820,7 +1820,7 @@ CREATE TABLE audit (
 	creation_method TEXT ,
 	update_record TEXT ,
 -- ATTRIBUTE
-	revision_id TEXT NOT NULL 
+	revision_id TEXT NOT NULL
 );
 
 --
@@ -1848,7 +1848,7 @@ CREATE TABLE "database_PDB_rev" (
 	replaces TEXT ,
 	status ENUM_database_PDB_rev_status ,
 -- ATTRIBUTE
-	num INTEGER NOT NULL 
+	num INTEGER NOT NULL
 );
 
 --
@@ -1862,7 +1862,7 @@ CREATE TABLE diffrn_scale_group (
 	document_id TEXT ,
 	"I_net" DECIMAL CHECK ( "I_net" >= 0.0 ) ,
 -- ATTRIBUTE
-	code TEXT NOT NULL 
+	code TEXT NOT NULL
 );
 
 --
@@ -1878,7 +1878,7 @@ CREATE TABLE pdbx_deposit_group (
 	group_title TEXT ,
 	group_type TEXT ,
 -- ATTRIBUTE
-	group_id TEXT NOT NULL 
+	group_id TEXT NOT NULL
 );
 
 --
@@ -1927,7 +1927,7 @@ CREATE TABLE pdbx_entity_src_gen_express (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -1950,7 +1950,7 @@ CREATE TABLE pdbx_entity_src_gen_prod_other (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -1968,7 +1968,7 @@ CREATE TABLE pdbx_linked_entity_list (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	linked_entity_id TEXT NOT NULL 
+	linked_entity_id TEXT NOT NULL
 );
 
 --
@@ -1987,7 +1987,7 @@ CREATE TABLE pdbx_reference_entity_list (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ref_entity_id TEXT NOT NULL 
+	ref_entity_id TEXT NOT NULL
 );
 
 --
@@ -2015,7 +2015,7 @@ CREATE TABLE pdbx_struct_ref_seq_feature (
 	pdb_strand_id TEXT ,
 	type ENUM_pdbx_struct_ref_seq_feature_type ,
 -- ATTRIBUTE
-	feature_id INTEGER NOT NULL 
+	feature_id INTEGER NOT NULL
 );
 
 --
@@ -2038,7 +2038,7 @@ CREATE TABLE pdbx_validate_planes (
 	rmsd DECIMAL ,
 	type ENUM_pdbx_validate_planes_type ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -2053,7 +2053,7 @@ CREATE TABLE pdbx_view_category (
 	category_view_name TEXT ,
 	view_group_id TEXT ,
 -- ATTRIBUTE
-	category_id TEXT NOT NULL 
+	category_id TEXT NOT NULL
 );
 
 --
@@ -2070,7 +2070,7 @@ CREATE TABLE struct_conf_type (
 	criteria TEXT ,
 	reference TEXT ,
 -- ATTRIBUTE
-	id ENUM_struct_conf_type_id NOT NULL 
+	id ENUM_struct_conf_type_id NOT NULL
 );
 
 --
@@ -2087,7 +2087,7 @@ CREATE TABLE struct_conn_type (
 	criteria TEXT ,
 	reference TEXT ,
 -- ATTRIBUTE
-	id ENUM_struct_conn_type_id NOT NULL 
+	id ENUM_struct_conn_type_id NOT NULL
 );
 
 --
@@ -2103,7 +2103,7 @@ CREATE TABLE struct_ncs_dom (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_ens_id TEXT NOT NULL 
+	pdbx_ens_id TEXT NOT NULL
 );
 
 --
@@ -2131,7 +2131,7 @@ CREATE TABLE struct_ref_seq (
 	seq_align_beg INTEGER ,
 	seq_align_end INTEGER ,
 -- ATTRIBUTE
-	align_id TEXT NOT NULL 
+	align_id TEXT NOT NULL
 );
 
 --
@@ -2256,7 +2256,7 @@ CREATE TABLE atom_site (
 	thermal_displace_type ENUM_atom_site_thermal_displace_type ,
 	type_symbol TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -2314,7 +2314,7 @@ CREATE TABLE atom_site_anisotrop (
 	ratio DECIMAL CHECK ( ratio >= 1.0 ) ,
 	type_symbol TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -2362,7 +2362,7 @@ CREATE TABLE atom_sites (
 	solution_secondary ENUM_atom_sites_solution_secondary ,
 	special_details TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2377,7 +2377,7 @@ CREATE TABLE atom_sites_alt_gen (
 -- ATTRIBUTE
 	alt_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ens_id TEXT NOT NULL 
+	ens_id TEXT NOT NULL
 );
 
 --
@@ -2391,7 +2391,7 @@ CREATE TABLE atom_sites_footnote (
 	document_id TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -2407,7 +2407,7 @@ CREATE TABLE audit_author (
 	"identifier_ORCID" TEXT ,
 	name TEXT ,
 -- ATTRIBUTE
-	pdbx_ordinal INTEGER NOT NULL 
+	pdbx_ordinal INTEGER NOT NULL
 );
 
 --
@@ -2423,7 +2423,7 @@ CREATE TABLE audit_conform (
 -- ATTRIBUTE
 	dict_name TEXT NOT NULL ,
 -- ATTRIBUTE
-	dict_version TEXT NOT NULL 
+	dict_version TEXT NOT NULL
 );
 
 --
@@ -2440,7 +2440,7 @@ CREATE TABLE audit_contact_author (
 	fax TEXT ,
 	phone TEXT ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -2455,7 +2455,7 @@ CREATE TABLE audit_link (
 -- ATTRIBUTE
 	block_code TEXT NOT NULL ,
 -- ATTRIBUTE
-	block_description TEXT NOT NULL 
+	block_description TEXT NOT NULL
 );
 
 --
@@ -2498,7 +2498,7 @@ CREATE TABLE cell (
 	volume DECIMAL CHECK ( volume >= 0.0 ) ,
 	volume_esd DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2520,7 +2520,7 @@ CREATE TABLE cell_measurement (
 	theta_min DECIMAL CHECK ( theta_min >= 0.0 AND theta_min <= 90.0 ) ,
 	wavelength DECIMAL CHECK ( wavelength >= 0.0 ) ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2538,7 +2538,7 @@ CREATE TABLE cell_measurement_refln (
 -- ATTRIBUTE
 	index_k INTEGER NOT NULL ,
 -- ATTRIBUTE
-	index_l INTEGER NOT NULL 
+	index_l INTEGER NOT NULL
 );
 
 --
@@ -2561,7 +2561,7 @@ CREATE TABLE chem_comp_angle (
 -- ATTRIBUTE
 	atom_id_3 TEXT NOT NULL ,
 -- ATTRIBUTE
-	comp_id TEXT NOT NULL 
+	comp_id TEXT NOT NULL
 );
 
 --
@@ -2590,7 +2590,7 @@ CREATE TABLE chem_comp_bond (
 -- ATTRIBUTE
 	atom_id_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	comp_id TEXT NOT NULL 
+	comp_id TEXT NOT NULL
 );
 
 --
@@ -2616,7 +2616,7 @@ CREATE TABLE chem_comp_chir (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -2634,7 +2634,7 @@ CREATE TABLE chem_comp_chir_atom (
 -- ATTRIBUTE
 	chir_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	comp_id TEXT NOT NULL 
+	comp_id TEXT NOT NULL
 );
 
 --
@@ -2650,7 +2650,7 @@ CREATE TABLE chem_comp_link (
 	type_comp_1 TEXT ,
 	type_comp_2 TEXT ,
 -- ATTRIBUTE
-	link_id TEXT NOT NULL 
+	link_id TEXT NOT NULL
 );
 
 --
@@ -2667,7 +2667,7 @@ CREATE TABLE chem_comp_plane (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -2685,7 +2685,7 @@ CREATE TABLE chem_comp_plane_atom (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	plane_id TEXT NOT NULL 
+	plane_id TEXT NOT NULL
 );
 
 --
@@ -2704,7 +2704,7 @@ CREATE TABLE chem_comp_tor (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -2723,7 +2723,7 @@ CREATE TABLE chem_comp_tor_value (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	tor_id TEXT NOT NULL 
+	tor_id TEXT NOT NULL
 );
 
 --
@@ -2755,7 +2755,7 @@ CREATE TABLE chem_link_angle (
 -- ATTRIBUTE
 	atom_id_3 TEXT NOT NULL ,
 -- ATTRIBUTE
-	link_id TEXT NOT NULL 
+	link_id TEXT NOT NULL
 );
 
 --
@@ -2783,7 +2783,7 @@ CREATE TABLE chem_link_bond (
 -- ATTRIBUTE
 	atom_id_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	link_id TEXT NOT NULL 
+	link_id TEXT NOT NULL
 );
 
 --
@@ -2812,7 +2812,7 @@ CREATE TABLE chem_link_chir (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	link_id TEXT NOT NULL 
+	link_id TEXT NOT NULL
 );
 
 --
@@ -2831,7 +2831,7 @@ CREATE TABLE chem_link_chir_atom (
 -- ATTRIBUTE
 	atom_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	chir_id TEXT NOT NULL 
+	chir_id TEXT NOT NULL
 );
 
 --
@@ -2848,7 +2848,7 @@ CREATE TABLE chem_link_plane (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	link_id TEXT NOT NULL 
+	link_id TEXT NOT NULL
 );
 
 --
@@ -2866,7 +2866,7 @@ CREATE TABLE chem_link_plane_atom (
 -- ATTRIBUTE
 	atom_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	plane_id TEXT NOT NULL 
+	plane_id TEXT NOT NULL
 );
 
 --
@@ -2897,7 +2897,7 @@ CREATE TABLE chem_link_tor (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	link_id TEXT NOT NULL 
+	link_id TEXT NOT NULL
 );
 
 --
@@ -2914,7 +2914,7 @@ CREATE TABLE chem_link_tor_value (
 	dist DECIMAL CHECK ( dist >= 0.0 ) ,
 	dist_esd DECIMAL CHECK ( dist_esd >= 0.0 ) ,
 -- ATTRIBUTE
-	tor_id TEXT NOT NULL 
+	tor_id TEXT NOT NULL
 );
 
 --
@@ -2949,7 +2949,7 @@ CREATE TABLE chemical (
 	temperature_sublimation_gt DECIMAL CHECK ( temperature_sublimation_gt >= 0.0 ) ,
 	temperature_sublimation_lt DECIMAL CHECK ( temperature_sublimation_lt >= 0.0 ) ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -2967,7 +2967,7 @@ CREATE TABLE chemical_conn_bond (
 -- ATTRIBUTE
 	atom_1 INTEGER NOT NULL ,
 -- ATTRIBUTE
-	atom_2 INTEGER NOT NULL 
+	atom_2 INTEGER NOT NULL
 );
 
 --
@@ -2987,7 +2987,7 @@ CREATE TABLE chemical_formula (
 	weight DECIMAL CHECK ( weight >= 1.0 ) ,
 	weight_meas DECIMAL CHECK ( weight_meas >= 1.0 ) ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3004,7 +3004,7 @@ CREATE TABLE citation_author (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -3020,7 +3020,7 @@ CREATE TABLE citation_editor (
 -- ATTRIBUTE
 	citation_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -3043,7 +3043,7 @@ CREATE TABLE computing (
 	structure_refinement TEXT ,
 	structure_solution TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3072,7 +3072,7 @@ CREATE TABLE database (
 	"pdbx_code_PDB" TEXT ,
 	"pdbx_related_codes_PDB" TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3089,7 +3089,7 @@ CREATE TABLE database_2 (
 -- ATTRIBUTE
 	database_code TEXT NOT NULL ,
 -- ATTRIBUTE
-	database_id ENUM_database_2_database_id NOT NULL 
+	database_id ENUM_database_2_database_id NOT NULL
 );
 
 --
@@ -3103,7 +3103,7 @@ CREATE TABLE "database_PDB_caveat" (
 	document_id TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3140,7 +3140,7 @@ CREATE TABLE "database_PDB_matrix" (
 	scale_vector2 DECIMAL ,
 	scale_vector3 DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3154,7 +3154,7 @@ CREATE TABLE "database_PDB_remark" (
 	document_id TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -3170,7 +3170,7 @@ CREATE TABLE "database_PDB_rev_record" (
 -- ATTRIBUTE
 	rev_num INTEGER NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -3187,7 +3187,7 @@ CREATE TABLE "database_PDB_tvect" (
 	vector2 DECIMAL ,
 	vector3 DECIMAL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3202,7 +3202,7 @@ CREATE TABLE diffrn_attenuator (
 	material TEXT ,
 	scale DECIMAL CHECK ( scale >= 1.0 ) ,
 -- ATTRIBUTE
-	code TEXT NOT NULL 
+	code TEXT NOT NULL
 );
 
 --
@@ -3223,7 +3223,7 @@ CREATE TABLE diffrn_detector (
 	pdbx_frames_total INTEGER ,
 	type TEXT ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3243,7 +3243,7 @@ CREATE TABLE diffrn_measurement (
 	pdbx_date DATE ,
 	specimen_support TEXT ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3266,7 +3266,7 @@ CREATE TABLE diffrn_orient_matrix (
 	"UB33" DECIMAL ,
 	type TEXT ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3291,7 +3291,7 @@ CREATE TABLE diffrn_orient_refln (
 -- ATTRIBUTE
 	index_k INTEGER NOT NULL ,
 -- ATTRIBUTE
-	index_l INTEGER NOT NULL 
+	index_l INTEGER NOT NULL
 );
 
 --
@@ -3328,7 +3328,7 @@ CREATE TABLE diffrn_radiation (
 	wavelength_id TEXT ,
 	xray_symbol ENUM_diffrn_radiation_xray_symbol ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3343,7 +3343,7 @@ CREATE TABLE diffrn_radiation_wavelength (
 	wavelength DECIMAL CHECK ( wavelength >= 0.0 ) ,
 	wt DECIMAL CHECK ( wt >= 0.0 AND wt <= 1.0 ) ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3394,7 +3394,7 @@ CREATE TABLE diffrn_refln (
 -- ATTRIBUTE
 	diffrn_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3439,7 +3439,7 @@ CREATE TABLE diffrn_reflns (
 	transf_matrix32 DECIMAL ,
 	transf_matrix33 DECIMAL ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3459,7 +3459,7 @@ CREATE TABLE diffrn_reflns_class (
 	description TEXT ,
 	number INTEGER CHECK ( number >= 0 ) ,
 -- ATTRIBUTE
-	code TEXT NOT NULL 
+	code TEXT NOT NULL
 );
 
 --
@@ -3489,7 +3489,7 @@ CREATE TABLE diffrn_source (
 	type TEXT ,
 	voltage DECIMAL ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3507,7 +3507,7 @@ CREATE TABLE diffrn_standard_refln (
 -- ATTRIBUTE
 	code TEXT NOT NULL ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3526,7 +3526,7 @@ CREATE TABLE diffrn_standards (
 	scale_sigma DECIMAL CHECK ( scale_sigma >= 0.0 ) ,
 	scale_u DECIMAL CHECK ( scale_u >= 0.0 ) ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -3550,7 +3550,7 @@ CREATE TABLE em_2d_crystal_entity (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -3569,7 +3569,7 @@ CREATE TABLE em_2d_projection_selection (
 	num_particles INTEGER ,
 	software_name TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3592,7 +3592,7 @@ CREATE TABLE em_3d_crystal_entity (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -3618,7 +3618,7 @@ CREATE TABLE em_3d_fitting (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3637,7 +3637,7 @@ CREATE TABLE em_3d_fitting_list (
 -- ATTRIBUTE
 	_3d_fitting_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3676,7 +3676,7 @@ CREATE TABLE em_3d_reconstruction (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -3706,7 +3706,7 @@ CREATE TABLE em_admin (
 	replace_existing_entry_flag ENUM_em_admin_replace_existing_entry_flag ,
 	title TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3731,7 +3731,7 @@ CREATE TABLE em_assembly (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3745,7 +3745,7 @@ CREATE TABLE em_author_list (
 	document_id TEXT ,
 	author TEXT ,
 -- ATTRIBUTE
-	ordinal TEXT NOT NULL 
+	ordinal TEXT NOT NULL
 );
 
 --
@@ -3763,7 +3763,7 @@ CREATE TABLE em_buffer (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	specimen_id TEXT NOT NULL 
+	specimen_id TEXT NOT NULL
 );
 
 --
@@ -3782,7 +3782,7 @@ CREATE TABLE em_buffer_component (
 -- ATTRIBUTE
 	buffer_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3806,7 +3806,7 @@ CREATE TABLE em_crystal_formation (
 	time TEXT ,
 	time_unit ENUM_em_crystal_formation_time_unit ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3841,7 +3841,7 @@ CREATE TABLE em_ctf_correction (
 	phase_reversal_correction_space ENUM_em_ctf_correction_phase_reversal_correction_space ,
 	type TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3862,7 +3862,7 @@ CREATE TABLE em_db_reference (
 	details TEXT ,
 	relationship ENUM_em_db_reference_relationship ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3879,7 +3879,7 @@ CREATE TABLE em_db_reference_auxiliary (
 	link TEXT ,
 	link_type ENUM_em_db_reference_auxiliary_link_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3898,7 +3898,7 @@ CREATE TABLE em_depositor_info (
 	em_method_selection ENUM_em_depositor_info_em_method_selection ,
 	molecular_description_flag ENUM_em_depositor_info_molecular_description_flag ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3924,7 +3924,7 @@ CREATE TABLE em_depui (
 	same_authors_as_pdb ENUM_em_depui_same_authors_as_pdb ,
 	same_title_as_pdb ENUM_em_depui_same_title_as_pdb ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -3945,7 +3945,7 @@ CREATE TABLE em_detector (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3961,7 +3961,7 @@ CREATE TABLE em_diffraction (
 	imaging_id TEXT ,
 	tilt_angle_list TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -3981,7 +3981,7 @@ CREATE TABLE em_diffraction_shell (
 	num_structure_factors TEXT ,
 	phase_residual DECIMAL CHECK ( phase_residual >= 0.0 AND phase_residual <= 180.0 ) ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4005,7 +4005,7 @@ CREATE TABLE em_diffraction_stats (
 	r_merge DECIMAL CHECK ( r_merge >= 0.0 AND r_merge <= 100.0 ) ,
 	r_sym DECIMAL CHECK ( r_sym >= 0.0 AND r_sym <= 100.0 ) ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4021,7 +4021,7 @@ CREATE TABLE em_embedding (
 	material TEXT ,
 	specimen_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4044,7 +4044,7 @@ CREATE TABLE em_entity_assembly_molwt (
 -- ATTRIBUTE
 	entity_assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4067,7 +4067,7 @@ CREATE TABLE em_entity_assembly_naturalsource (
 -- ATTRIBUTE
 	entity_assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4087,7 +4087,7 @@ CREATE TABLE em_entity_assembly_recombinant (
 -- ATTRIBUTE
 	entity_assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4111,7 +4111,7 @@ CREATE TABLE em_euler_angle_assignment (
 	proj_matching_num_projections TEXT ,
 	type ENUM_em_euler_angle_assignment_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4133,7 +4133,7 @@ CREATE TABLE em_experiment (
 	reconstruction_method ENUM_em_experiment_reconstruction_method ,
 	specimen_type TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -4149,7 +4149,7 @@ CREATE TABLE em_fiducial_markers (
 	em_tomography_specimen_id TEXT ,
 	manufacturer TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4165,7 +4165,7 @@ CREATE TABLE em_figure_depositor_info (
 	experiment_id TEXT ,
 	upload_file_name TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4185,7 +4185,7 @@ CREATE TABLE em_final_classification (
 	num_classes TEXT ,
 	type ENUM_em_final_classification_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4209,7 +4209,7 @@ CREATE TABLE em_focused_ion_beam (
 	temperature TEXT ,
 	voltage TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4224,7 +4224,7 @@ CREATE TABLE em_fsc_curve (
 	details TEXT ,
 	file TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4244,7 +4244,7 @@ CREATE TABLE em_grid_pretreatment (
 	time TEXT ,
 	type ENUM_em_grid_pretreatment_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4268,7 +4268,7 @@ CREATE TABLE em_helical_entity (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -4284,7 +4284,7 @@ CREATE TABLE em_high_pressure_freezing (
 	em_tomography_specimen_id TEXT ,
 	instrument TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4300,7 +4300,7 @@ CREATE TABLE em_image_processing (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_recording_id TEXT NOT NULL 
+	image_recording_id TEXT NOT NULL
 );
 
 --
@@ -4325,7 +4325,7 @@ CREATE TABLE em_image_recording (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	imaging_id TEXT NOT NULL 
+	imaging_id TEXT NOT NULL
 );
 
 --
@@ -4354,7 +4354,7 @@ CREATE TABLE em_image_scans (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_recording_id TEXT NOT NULL 
+	image_recording_id TEXT NOT NULL
 );
 
 --
@@ -4418,7 +4418,7 @@ CREATE TABLE em_imaging (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4439,7 +4439,7 @@ CREATE TABLE em_imaging_optics (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	imaging_id TEXT NOT NULL 
+	imaging_id TEXT NOT NULL
 );
 
 --
@@ -4454,7 +4454,7 @@ CREATE TABLE em_interpret_figure (
 	details TEXT ,
 	file TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4471,7 +4471,7 @@ CREATE TABLE em_layer_lines (
 -- ATTRIBUTE
 	experiment_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4487,7 +4487,7 @@ CREATE TABLE em_layer_lines_depositor_info (
 	experiment_id TEXT ,
 	upload_file_name TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4558,7 +4558,7 @@ CREATE TABLE em_map (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4586,7 +4586,7 @@ CREATE TABLE em_map_depositor_info (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4608,7 +4608,7 @@ CREATE TABLE em_mask_depositor_info (
 	upload_file_name TEXT ,
 	upload_format ENUM_em_mask_depositor_info_upload_format ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4624,7 +4624,7 @@ CREATE TABLE em_obsolete (
 	details TEXT ,
 	entry TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4643,7 +4643,7 @@ CREATE TABLE em_particle_selection (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -4665,7 +4665,7 @@ CREATE TABLE em_sample_preparation (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4692,7 +4692,7 @@ CREATE TABLE em_sample_support (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	specimen_id TEXT NOT NULL 
+	specimen_id TEXT NOT NULL
 );
 
 --
@@ -4711,7 +4711,7 @@ CREATE TABLE em_shadowing (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	specimen_id TEXT NOT NULL 
+	specimen_id TEXT NOT NULL
 );
 
 --
@@ -4731,7 +4731,7 @@ CREATE TABLE em_single_particle_entity (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -4753,7 +4753,7 @@ CREATE TABLE em_software (
 	name TEXT ,
 	version TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4782,7 +4782,7 @@ CREATE TABLE em_specimen (
 -- ATTRIBUTE
 	experiment_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4801,7 +4801,7 @@ CREATE TABLE em_staining (
 	specimen_id TEXT ,
 	type ENUM_em_staining_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4829,7 +4829,7 @@ CREATE TABLE em_start_model (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -4846,7 +4846,7 @@ CREATE TABLE em_structure_factors (
 -- ATTRIBUTE
 	experiment_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4862,7 +4862,7 @@ CREATE TABLE em_structure_factors_depositor_info (
 	experiment_id TEXT ,
 	upload_file_name TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4878,7 +4878,7 @@ CREATE TABLE em_supersede (
 	details TEXT ,
 	entry TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4899,7 +4899,7 @@ CREATE TABLE em_support_film (
 	thickness DECIMAL CHECK ( thickness >= 0.0 ) ,
 	topology ENUM_em_support_film_topology ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4921,7 +4921,7 @@ CREATE TABLE em_tomography (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	imaging_id TEXT NOT NULL 
+	imaging_id TEXT NOT NULL
 );
 
 --
@@ -4939,7 +4939,7 @@ CREATE TABLE em_ultramicrotomy (
 	instrument TEXT ,
 	temperature TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4971,7 +4971,7 @@ CREATE TABLE em_virus_entity (
 -- ATTRIBUTE
 	entity_assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -4989,7 +4989,7 @@ CREATE TABLE em_virus_natural_host (
 -- ATTRIBUTE
 	entity_assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -5007,7 +5007,7 @@ CREATE TABLE em_virus_shell (
 -- ATTRIBUTE
 	entity_assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -5037,7 +5037,7 @@ CREATE TABLE em_vitrification (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	specimen_id TEXT NOT NULL 
+	specimen_id TEXT NOT NULL
 );
 
 --
@@ -5057,7 +5057,7 @@ CREATE TABLE em_volume_selection (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	image_processing_id TEXT NOT NULL 
+	image_processing_id TEXT NOT NULL
 );
 
 --
@@ -5075,7 +5075,7 @@ CREATE TABLE entity_keywords (
 	pdbx_mutation TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -5093,7 +5093,7 @@ CREATE TABLE entity_link (
 	entity_seq_num_1 INTEGER ,
 	entity_seq_num_2 INTEGER ,
 -- ATTRIBUTE
-	link_id TEXT NOT NULL 
+	link_id TEXT NOT NULL
 );
 
 --
@@ -5107,7 +5107,7 @@ CREATE TABLE entity_name_com (
 	document_id TEXT ,
 	name TEXT ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -5122,7 +5122,7 @@ CREATE TABLE entity_name_sys (
 	name TEXT ,
 	system TEXT ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -5193,7 +5193,7 @@ CREATE TABLE entity_src_gen (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_src_id INTEGER NOT NULL 
+	pdbx_src_id INTEGER NOT NULL
 );
 
 --
@@ -5234,7 +5234,7 @@ CREATE TABLE entity_src_nat (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_src_id INTEGER NOT NULL 
+	pdbx_src_id INTEGER NOT NULL
 );
 
 --
@@ -5250,7 +5250,7 @@ CREATE TABLE entry_link (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -5277,7 +5277,7 @@ CREATE TABLE exptl (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	method ENUM_exptl_method NOT NULL 
+	method ENUM_exptl_method NOT NULL
 );
 
 --
@@ -5301,7 +5301,7 @@ CREATE TABLE exptl_crystal_face (
 -- ATTRIBUTE
 	index_k INTEGER NOT NULL ,
 -- ATTRIBUTE
-	index_l INTEGER NOT NULL 
+	index_l INTEGER NOT NULL
 );
 
 --
@@ -5330,7 +5330,7 @@ CREATE TABLE exptl_crystal_grow (
 	temp_esd DECIMAL ,
 	time TEXT ,
 -- ATTRIBUTE
-	crystal_id TEXT NOT NULL 
+	crystal_id TEXT NOT NULL
 );
 
 --
@@ -5356,7 +5356,7 @@ CREATE TABLE exptl_crystal_grow_comp (
 -- ATTRIBUTE
 	crystal_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -5370,7 +5370,7 @@ CREATE TABLE geom (
 	document_id TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5429,7 +5429,7 @@ CREATE TABLE geom_angle (
 -- ATTRIBUTE
 	site_symmetry_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_symmetry_3 TEXT NOT NULL 
+	site_symmetry_3 TEXT NOT NULL
 );
 
 --
@@ -5475,7 +5475,7 @@ CREATE TABLE geom_bond (
 -- ATTRIBUTE
 	site_symmetry_1 TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_symmetry_2 TEXT NOT NULL 
+	site_symmetry_2 TEXT NOT NULL
 );
 
 --
@@ -5520,7 +5520,7 @@ CREATE TABLE geom_contact (
 -- ATTRIBUTE
 	site_symmetry_1 TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_symmetry_2 TEXT NOT NULL 
+	site_symmetry_2 TEXT NOT NULL
 );
 
 --
@@ -5581,7 +5581,7 @@ CREATE TABLE geom_hbond (
 -- ATTRIBUTE
 	"site_symmetry_D" TEXT NOT NULL ,
 -- ATTRIBUTE
-	"site_symmetry_H" TEXT NOT NULL 
+	"site_symmetry_H" TEXT NOT NULL
 );
 
 --
@@ -5654,7 +5654,7 @@ CREATE TABLE geom_torsion (
 -- ATTRIBUTE
 	site_symmetry_3 TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_symmetry_4 TEXT NOT NULL 
+	site_symmetry_4 TEXT NOT NULL
 );
 
 --
@@ -5704,7 +5704,7 @@ CREATE TABLE journal (
 	volume TEXT ,
 	year TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5720,7 +5720,7 @@ CREATE TABLE journal_index (
 -- ATTRIBUTE
 	term TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -5733,7 +5733,7 @@ CREATE TABLE ndb_original_ndb_coordinates (
 -- DOCUMENT KEY is pointer to data source (aka. Entry ID)
 	document_id TEXT ,
 -- ATTRIBUTE
-	coord_section TEXT NOT NULL 
+	coord_section TEXT NOT NULL
 );
 
 --
@@ -5751,7 +5751,7 @@ CREATE TABLE ndb_struct_conf_na (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	feature ENUM_ndb_struct_conf_na_feature NOT NULL 
+	feature ENUM_ndb_struct_conf_na_feature NOT NULL
 );
 
 --
@@ -5769,7 +5769,7 @@ CREATE TABLE ndb_struct_feature_na (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	feature ENUM_ndb_struct_feature_na_feature NOT NULL 
+	feature ENUM_ndb_struct_feature_na_feature NOT NULL
 );
 
 --
@@ -5814,7 +5814,7 @@ CREATE TABLE ndb_struct_na_base_pair (
 -- ATTRIBUTE
 	j_symmetry TEXT NOT NULL ,
 -- ATTRIBUTE
-	model_number INTEGER NOT NULL 
+	model_number INTEGER NOT NULL
 );
 
 --
@@ -5885,7 +5885,7 @@ CREATE TABLE ndb_struct_na_base_pair_step (
 -- ATTRIBUTE
 	j_symmetry_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	model_number INTEGER NOT NULL 
+	model_number INTEGER NOT NULL
 );
 
 --
@@ -5909,7 +5909,7 @@ CREATE TABLE "pdbx_SG_project" (
 	initial_of_center ENUM_pdbx_SG_project_initial_of_center ,
 	project_name ENUM_pdbx_SG_project_project_name ,
 -- ATTRIBUTE
-	id ENUM_pdbx_SG_project_id NOT NULL 
+	id ENUM_pdbx_SG_project_id NOT NULL
 );
 
 --
@@ -5925,7 +5925,7 @@ CREATE TABLE pdbx_atlas (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	page_id INTEGER NOT NULL 
+	page_id INTEGER NOT NULL
 );
 
 --
@@ -5957,7 +5957,7 @@ CREATE TABLE pdbx_atom_site_aniso_tls (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	tls_group_id TEXT NOT NULL 
+	tls_group_id TEXT NOT NULL
 );
 
 --
@@ -5971,7 +5971,7 @@ CREATE TABLE pdbx_audit (
 	document_id TEXT ,
 	current_version TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -5986,7 +5986,7 @@ CREATE TABLE pdbx_audit_author (
 	address TEXT ,
 	name TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -6004,7 +6004,7 @@ CREATE TABLE pdbx_audit_conform_extension (
 -- ATTRIBUTE
 	extension_dict_name ENUM_pdbx_audit_conform_extension_extension_dict_name NOT NULL ,
 -- ATTRIBUTE
-	extension_dict_version TEXT NOT NULL 
+	extension_dict_version TEXT NOT NULL
 );
 
 --
@@ -6024,7 +6024,7 @@ CREATE TABLE pdbx_audit_revision_category (
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL ,
 -- ATTRIBUTE
-	revision_ordinal INTEGER NOT NULL 
+	revision_ordinal INTEGER NOT NULL
 );
 
 --
@@ -6050,7 +6050,7 @@ CREATE TABLE pdbx_audit_revision_details (
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL ,
 -- ATTRIBUTE
-	revision_ordinal INTEGER NOT NULL 
+	revision_ordinal INTEGER NOT NULL
 );
 
 --
@@ -6072,7 +6072,7 @@ CREATE TABLE pdbx_audit_revision_group (
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL ,
 -- ATTRIBUTE
-	revision_ordinal INTEGER NOT NULL 
+	revision_ordinal INTEGER NOT NULL
 );
 
 --
@@ -6092,7 +6092,7 @@ CREATE TABLE pdbx_audit_revision_item (
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL ,
 -- ATTRIBUTE
-	revision_ordinal INTEGER NOT NULL 
+	revision_ordinal INTEGER NOT NULL
 );
 
 --
@@ -6108,7 +6108,7 @@ CREATE TABLE pdbx_audit_support (
 	funding_organization TEXT ,
 	grant_number TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -6125,7 +6125,7 @@ CREATE TABLE pdbx_bond_distance_limits (
 -- ATTRIBUTE
 	atom_type_1 TEXT NOT NULL ,
 -- ATTRIBUTE
-	atom_type_2 TEXT NOT NULL 
+	atom_type_2 TEXT NOT NULL
 );
 
 --
@@ -6148,7 +6148,7 @@ CREATE TABLE pdbx_buffer_components (
 -- ATTRIBUTE
 	buffer_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -6168,7 +6168,7 @@ CREATE TABLE pdbx_chem_comp_atom_edit (
 	edit_atom_value TEXT ,
 	edit_op ENUM_pdbx_chem_comp_atom_edit_edit_op ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -6187,7 +6187,7 @@ CREATE TABLE pdbx_chem_comp_atom_feature (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	feature_type ENUM_pdbx_chem_comp_atom_feature_feature_type NOT NULL 
+	feature_type ENUM_pdbx_chem_comp_atom_feature_feature_type NOT NULL
 );
 
 --
@@ -6209,7 +6209,7 @@ CREATE TABLE pdbx_chem_comp_audit (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	date DATE NOT NULL 
+	date DATE NOT NULL
 );
 
 --
@@ -6232,7 +6232,7 @@ CREATE TABLE pdbx_chem_comp_bond_edit (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	edit_op ENUM_pdbx_chem_comp_bond_edit_edit_op NOT NULL 
+	edit_op ENUM_pdbx_chem_comp_bond_edit_edit_op NOT NULL
 );
 
 --
@@ -6260,7 +6260,7 @@ CREATE TABLE pdbx_chem_comp_depositor_info (
 	name TEXT ,
 	type ENUM_pdbx_chem_comp_depositor_info_type ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -6283,7 +6283,7 @@ CREATE TABLE pdbx_chem_comp_descriptor (
 -- ATTRIBUTE
 	program_version TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_chem_comp_descriptor_type NOT NULL 
+	type ENUM_pdbx_chem_comp_descriptor_type NOT NULL
 );
 
 --
@@ -6303,7 +6303,7 @@ CREATE TABLE pdbx_chem_comp_feature (
 -- ATTRIBUTE
 	type TEXT NOT NULL ,
 -- ATTRIBUTE
-	value TEXT NOT NULL 
+	value TEXT NOT NULL
 );
 
 --
@@ -6326,7 +6326,7 @@ CREATE TABLE pdbx_chem_comp_identifier (
 -- ATTRIBUTE
 	program_version TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_chem_comp_identifier_type NOT NULL 
+	type ENUM_pdbx_chem_comp_identifier_type NOT NULL
 );
 
 --
@@ -6351,7 +6351,7 @@ CREATE TABLE pdbx_chem_comp_instance_depositor_info (
 	in_polymer_flag ENUM_pdbx_chem_comp_instance_depositor_info_in_polymer_flag ,
 	label_alt_id TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -6372,7 +6372,7 @@ CREATE TABLE pdbx_chem_comp_model_atom (
 -- ATTRIBUTE
 	atom_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	model_id TEXT NOT NULL 
+	model_id TEXT NOT NULL
 );
 
 --
@@ -6394,7 +6394,7 @@ CREATE TABLE pdbx_chem_comp_model_audit (
 -- ATTRIBUTE
 	date DATE NOT NULL ,
 -- ATTRIBUTE
-	model_id TEXT NOT NULL 
+	model_id TEXT NOT NULL
 );
 
 --
@@ -6415,7 +6415,7 @@ CREATE TABLE pdbx_chem_comp_model_bond (
 -- ATTRIBUTE
 	atom_id_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	model_id TEXT NOT NULL 
+	model_id TEXT NOT NULL
 );
 
 --
@@ -6433,7 +6433,7 @@ CREATE TABLE pdbx_chem_comp_model_descriptor (
 -- ATTRIBUTE
 	model_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_chem_comp_model_descriptor_type NOT NULL 
+	type ENUM_pdbx_chem_comp_model_descriptor_type NOT NULL
 );
 
 --
@@ -6449,7 +6449,7 @@ CREATE TABLE pdbx_chem_comp_model_feature (
 -- ATTRIBUTE
 	feature_name TEXT NOT NULL ,
 -- ATTRIBUTE
-	model_id TEXT NOT NULL 
+	model_id TEXT NOT NULL
 );
 
 --
@@ -6466,7 +6466,7 @@ CREATE TABLE pdbx_chem_comp_model_reference (
 -- ATTRIBUTE
 	db_name TEXT NOT NULL ,
 -- ATTRIBUTE
-	model_id TEXT NOT NULL 
+	model_id TEXT NOT NULL
 );
 
 --
@@ -6483,7 +6483,7 @@ CREATE TABLE pdbx_chem_comp_nonstandard (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_chem_comp_nonstandard_type NOT NULL 
+	type ENUM_pdbx_chem_comp_nonstandard_type NOT NULL
 );
 
 --
@@ -6503,7 +6503,7 @@ CREATE TABLE pdbx_chem_comp_subcomponent_entity_list (
 	parent_comp_id TEXT ,
 	type ENUM_pdbx_chem_comp_subcomponent_entity_list_type ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6527,7 +6527,7 @@ CREATE TABLE pdbx_chem_comp_subcomponent_struct_conn (
 	seq_id_2 INTEGER ,
 	type ENUM_pdbx_chem_comp_subcomponent_struct_conn_type ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -6542,7 +6542,7 @@ CREATE TABLE pdbx_chem_comp_synonyms (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	synonym TEXT NOT NULL 
+	synonym TEXT NOT NULL
 );
 
 --
@@ -6560,7 +6560,7 @@ CREATE TABLE pdbx_chem_comp_upload_depositor_info (
 	upload_file_name TEXT ,
 	upload_file_type ENUM_pdbx_chem_comp_upload_depositor_info_upload_file_type ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -6582,7 +6582,7 @@ CREATE TABLE pdbx_columninfo (
 -- ATTRIBUTE
 	columnname TEXT NOT NULL ,
 -- ATTRIBUTE
-	tablename TEXT NOT NULL 
+	tablename TEXT NOT NULL
 );
 
 --
@@ -6606,7 +6606,7 @@ CREATE TABLE pdbx_connect (
 	status TEXT ,
 	type TEXT ,
 -- ATTRIBUTE
-	res_name TEXT NOT NULL 
+	res_name TEXT NOT NULL
 );
 
 --
@@ -6627,7 +6627,7 @@ CREATE TABLE pdbx_connect_atom (
 -- ATTRIBUTE
 	connect_to TEXT NOT NULL ,
 -- ATTRIBUTE
-	res_name TEXT NOT NULL 
+	res_name TEXT NOT NULL
 );
 
 --
@@ -6641,7 +6641,7 @@ CREATE TABLE pdbx_connect_modification (
 	document_id TEXT ,
 	modification TEXT ,
 -- ATTRIBUTE
-	res_name TEXT NOT NULL 
+	res_name TEXT NOT NULL
 );
 
 --
@@ -6656,7 +6656,7 @@ CREATE TABLE pdbx_connect_type (
 	modified TEXT ,
 	"ndbTokenType" TEXT ,
 -- ATTRIBUTE
-	res_name TEXT NOT NULL 
+	res_name TEXT NOT NULL
 );
 
 --
@@ -6676,7 +6676,7 @@ CREATE TABLE pdbx_construct_feature (
 -- ATTRIBUTE
 	construct_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -6718,7 +6718,7 @@ CREATE TABLE pdbx_contact_author (
 	role ENUM_pdbx_contact_author_role ,
 	state_province TEXT ,
 -- ATTRIBUTE
-	id ENUM_pdbx_contact_author_id NOT NULL 
+	id ENUM_pdbx_contact_author_id NOT NULL
 );
 
 --
@@ -6743,7 +6743,7 @@ CREATE TABLE pdbx_coord (
 	"solvent_atoms_Y_N" ENUM_pdbx_coord_solvent_atoms_Y_N ,
 	"structure_factors_Y_N" ENUM_pdbx_coord_structure_factors_Y_N ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -6759,7 +6759,7 @@ CREATE TABLE pdbx_coordinate_model (
 	document_id TEXT ,
 	type ENUM_pdbx_coordinate_model_type ,
 -- ATTRIBUTE
-	asym_id TEXT NOT NULL 
+	asym_id TEXT NOT NULL
 );
 
 --
@@ -6793,7 +6793,7 @@ CREATE TABLE pdbx_crystal_alignment (
 	ybeam DECIMAL ,
 	ybeam_esd DECIMAL ,
 -- ATTRIBUTE
-	crystal_id TEXT NOT NULL 
+	crystal_id TEXT NOT NULL
 );
 
 --
@@ -6822,7 +6822,7 @@ CREATE TABLE pdbx_data_processing_cell (
 	space_group TEXT ,
 	volume DECIMAL CHECK ( volume >= 0.0 ) ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -6853,7 +6853,7 @@ CREATE TABLE pdbx_data_processing_detector (
 	skew DECIMAL ,
 	wavelength DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -6871,7 +6871,7 @@ CREATE TABLE pdbx_data_processing_reflns (
 	percent_marked_reject DECIMAL ,
 	percent_rejected DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -6886,7 +6886,7 @@ CREATE TABLE pdbx_data_processing_status (
 -- ATTRIBUTE
 	status TEXT NOT NULL ,
 -- ATTRIBUTE
-	task_name TEXT NOT NULL 
+	task_name TEXT NOT NULL
 );
 
 --
@@ -6911,7 +6911,7 @@ CREATE TABLE "pdbx_database_PDB_master" (
 	num_trans INTEGER ,
 	num_turn INTEGER ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -6931,7 +6931,7 @@ CREATE TABLE "pdbx_database_PDB_obs_spr" (
 -- ATTRIBUTE
 	pdb_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	replace_pdb_id TEXT NOT NULL 
+	replace_pdb_id TEXT NOT NULL
 );
 
 --
@@ -6964,7 +6964,7 @@ CREATE TABLE pdbx_database_message (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	message_id TEXT NOT NULL 
+	message_id TEXT NOT NULL
 );
 
 --
@@ -6979,7 +6979,7 @@ CREATE TABLE pdbx_database_pdb_omit (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	record_name TEXT NOT NULL 
+	record_name TEXT NOT NULL
 );
 
 --
@@ -6997,7 +6997,7 @@ CREATE TABLE pdbx_database_proc (
 -- ATTRIBUTE
 	cycle_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -7017,7 +7017,7 @@ CREATE TABLE pdbx_database_related (
 -- ATTRIBUTE
 	db_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	db_name TEXT NOT NULL 
+	db_name TEXT NOT NULL
 );
 
 --
@@ -7031,7 +7031,7 @@ CREATE TABLE pdbx_database_remark (
 	document_id TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7159,7 +7159,7 @@ CREATE TABLE pdbx_database_status (
 	"status_coordinates_in_NDB" ENUM_pdbx_database_status_status_coordinates_in_NDB ,
 	title_suppression ENUM_pdbx_database_status_title_suppression ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -7180,7 +7180,7 @@ CREATE TABLE pdbx_database_status_history (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal TEXT NOT NULL 
+	ordinal TEXT NOT NULL
 );
 
 --
@@ -7209,7 +7209,7 @@ CREATE TABLE pdbx_dbref (
 -- ATTRIBUTE
 	end_res_number TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdb_id_code TEXT NOT NULL 
+	pdb_id_code TEXT NOT NULL
 );
 
 --
@@ -7291,7 +7291,7 @@ CREATE TABLE pdbx_dcc_density (
 	wavelength DECIMAL ,
 	working_set_count INTEGER ,
 -- ATTRIBUTE
-	pdbid TEXT NOT NULL 
+	pdbid TEXT NOT NULL
 );
 
 --
@@ -7317,7 +7317,7 @@ CREATE TABLE pdbx_dcc_density_corr (
 	program TEXT ,
 	"real_space_R" DECIMAL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -7356,7 +7356,7 @@ CREATE TABLE pdbx_dcc_geometry (
 	rotamer_outliers_number INTEGER ,
 	rotamer_outliers_percent DECIMAL ,
 -- ATTRIBUTE
-	pdbid TEXT NOT NULL 
+	pdbid TEXT NOT NULL
 );
 
 --
@@ -7421,7 +7421,7 @@ CREATE TABLE pdbx_dcc_map (
 	"weighted_RSR" DECIMAL ,
 	"weighted_RSRZ" DECIMAL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7435,7 +7435,7 @@ CREATE TABLE pdbx_dcc_mapman (
 	document_id TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	pdbid TEXT NOT NULL 
+	pdbid TEXT NOT NULL
 );
 
 --
@@ -7462,7 +7462,7 @@ CREATE TABLE pdbx_dcc_rscc_mapman (
 	"real_space_Zscore" DECIMAL ,
 	"weighted_real_space_R" DECIMAL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7479,7 +7479,7 @@ CREATE TABLE pdbx_dcc_rscc_mapman_overall (
 	"real_space_R" DECIMAL ,
 	"real_space_R_sigma" DECIMAL ,
 -- ATTRIBUTE
-	pdbid TEXT NOT NULL 
+	pdbid TEXT NOT NULL
 );
 
 --
@@ -7507,7 +7507,7 @@ CREATE TABLE pdbx_deposit_group_index (
 -- ATTRIBUTE
 	group_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal_id INTEGER NOT NULL 
+	ordinal_id INTEGER NOT NULL
 );
 
 --
@@ -7527,7 +7527,7 @@ CREATE TABLE pdbx_deposition_message_file_reference (
 	storage_type TEXT ,
 	version_id TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -7551,7 +7551,7 @@ CREATE TABLE pdbx_deposition_message_info (
 	sender TEXT ,
 	timestamp TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -7570,7 +7570,7 @@ CREATE TABLE pdbx_depui_entity_features (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_depui_entity_features_type NOT NULL 
+	type ENUM_pdbx_depui_entity_features_type NOT NULL
 );
 
 --
@@ -7589,7 +7589,7 @@ CREATE TABLE pdbx_depui_entity_status_flags (
 -- ATTRIBUTE
 	dep_dataset_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -7611,7 +7611,7 @@ CREATE TABLE pdbx_depui_entry_details (
 	validated_contact_email TEXT ,
 	wwpdb_site_id TEXT ,
 -- ATTRIBUTE
-	dep_dataset_id TEXT NOT NULL 
+	dep_dataset_id TEXT NOT NULL
 );
 
 --
@@ -7672,7 +7672,7 @@ CREATE TABLE pdbx_depui_status_flags (
 	use_sas_refine ENUM_pdbx_depui_status_flags_use_sas_refine ,
 	validated_model_file_name TEXT ,
 -- ATTRIBUTE
-	dep_dataset_id TEXT NOT NULL 
+	dep_dataset_id TEXT NOT NULL
 );
 
 --
@@ -7694,7 +7694,7 @@ CREATE TABLE pdbx_depui_upload (
 	sequence_align TEXT ,
 	valid_flag ENUM_pdbx_depui_upload_valid_flag ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -7714,7 +7714,7 @@ CREATE TABLE pdbx_depui_validation_status_flags (
 	"residual_B_factors_flag" ENUM_pdbx_depui_validation_status_flags_residual_B_factors_flag ,
 	solvent_outliers INTEGER CHECK ( solvent_outliers >= 0 ) ,
 -- ATTRIBUTE
-	dep_dataset_id TEXT NOT NULL 
+	dep_dataset_id TEXT NOT NULL
 );
 
 --
@@ -7738,7 +7738,7 @@ CREATE TABLE pdbx_diffrn_reflns_shell (
 -- ATTRIBUTE
 	d_res_low DECIMAL NOT NULL ,
 -- ATTRIBUTE
-	diffrn_id TEXT NOT NULL 
+	diffrn_id TEXT NOT NULL
 );
 
 --
@@ -7764,7 +7764,7 @@ CREATE TABLE pdbx_distant_solvent_atoms (
 	neighbor_ligand_distance DECIMAL ,
 	neighbor_macromolecule_distance DECIMAL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -7799,7 +7799,7 @@ CREATE TABLE pdbx_domain_range (
 -- ATTRIBUTE
 	end_label_comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	end_label_seq_id INTEGER NOT NULL 
+	end_label_seq_id INTEGER NOT NULL
 );
 
 --
@@ -7817,7 +7817,7 @@ CREATE TABLE pdbx_drug_info (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -7834,7 +7834,7 @@ CREATE TABLE pdbx_entity_assembly (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -7854,7 +7854,7 @@ CREATE TABLE pdbx_entity_descriptor (
 	program_version TEXT ,
 	type ENUM_pdbx_entity_descriptor_type ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -7877,7 +7877,7 @@ CREATE TABLE pdbx_entity_func_bind_mode (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -7893,7 +7893,7 @@ CREATE TABLE pdbx_entity_func_enzyme (
 	document_id TEXT ,
 	type ENUM_pdbx_entity_func_enzyme_type ,
 -- ATTRIBUTE
-	bind_mode_id TEXT NOT NULL 
+	bind_mode_id TEXT NOT NULL
 );
 
 --
@@ -7909,7 +7909,7 @@ CREATE TABLE pdbx_entity_func_other (
 	document_id TEXT ,
 	type ENUM_pdbx_entity_func_other_type ,
 -- ATTRIBUTE
-	bind_mode_id TEXT NOT NULL 
+	bind_mode_id TEXT NOT NULL
 );
 
 --
@@ -7925,7 +7925,7 @@ CREATE TABLE pdbx_entity_func_regulatory (
 	document_id TEXT ,
 	type ENUM_pdbx_entity_func_regulatory_type ,
 -- ATTRIBUTE
-	bind_mode_id TEXT NOT NULL 
+	bind_mode_id TEXT NOT NULL
 );
 
 --
@@ -7941,7 +7941,7 @@ CREATE TABLE pdbx_entity_func_structural (
 	document_id TEXT ,
 	type ENUM_pdbx_entity_func_structural_type ,
 -- ATTRIBUTE
-	bind_mode_id TEXT NOT NULL 
+	bind_mode_id TEXT NOT NULL
 );
 
 --
@@ -7964,7 +7964,7 @@ CREATE TABLE pdbx_entity_instance_feature (
 	feature_type ENUM_pdbx_entity_instance_feature_feature_type ,
 	seq_num INTEGER ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -7983,7 +7983,7 @@ CREATE TABLE pdbx_entity_name (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	name_type ENUM_pdbx_entity_name_name_type NOT NULL 
+	name_type ENUM_pdbx_entity_name_name_type NOT NULL
 );
 
 --
@@ -8003,7 +8003,7 @@ CREATE TABLE pdbx_entity_name_instance (
 -- ATTRIBUTE
 	name TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdb_id TEXT NOT NULL 
+	pdb_id TEXT NOT NULL
 );
 
 --
@@ -8021,7 +8021,7 @@ CREATE TABLE pdbx_entity_name_taxonomy (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -8036,7 +8036,7 @@ CREATE TABLE pdbx_entity_name_taxonomy_tree (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	parent_id TEXT NOT NULL 
+	parent_id TEXT NOT NULL
 );
 
 --
@@ -8051,7 +8051,7 @@ CREATE TABLE pdbx_entity_nonpoly (
 	comp_id TEXT ,
 	name TEXT ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -8083,7 +8083,7 @@ CREATE TABLE pdbx_entity_poly_comp_link_list (
 	leaving_atom_id_2 TEXT ,
 	value_order ENUM_pdbx_entity_poly_comp_link_list_value_order ,
 -- ATTRIBUTE
-	link_id INTEGER NOT NULL 
+	link_id INTEGER NOT NULL
 );
 
 --
@@ -8102,7 +8102,7 @@ CREATE TABLE pdbx_entity_poly_domain (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8119,7 +8119,7 @@ CREATE TABLE pdbx_entity_poly_na_nonstandard (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	feature ENUM_pdbx_entity_poly_na_nonstandard_feature NOT NULL 
+	feature ENUM_pdbx_entity_poly_na_nonstandard_feature NOT NULL
 );
 
 --
@@ -8136,7 +8136,7 @@ CREATE TABLE pdbx_entity_poly_na_type (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_entity_poly_na_type_type NOT NULL 
+	type ENUM_pdbx_entity_poly_na_type_type NOT NULL
 );
 
 --
@@ -8153,7 +8153,7 @@ CREATE TABLE pdbx_entity_poly_protein_class (
 -- ATTRIBUTE
 	class ENUM_pdbx_entity_poly_protein_class_class NOT NULL ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -8173,7 +8173,7 @@ CREATE TABLE pdbx_entity_prod_protocol (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	protocol_type ENUM_pdbx_entity_prod_protocol_protocol_type NOT NULL 
+	protocol_type ENUM_pdbx_entity_prod_protocol_protocol_type NOT NULL
 );
 
 --
@@ -8195,7 +8195,7 @@ CREATE TABLE pdbx_entity_src_gen_character (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8231,7 +8231,7 @@ CREATE TABLE pdbx_entity_src_gen_chrom (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8253,7 +8253,7 @@ CREATE TABLE pdbx_entity_src_gen_clone_ligation (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8277,7 +8277,7 @@ CREATE TABLE pdbx_entity_src_gen_clone_recombination (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8305,7 +8305,7 @@ CREATE TABLE pdbx_entity_src_gen_depositor_info (
 	plasmid_name TEXT ,
 	seq_type ENUM_pdbx_entity_src_gen_depositor_info_seq_type ,
 -- ATTRIBUTE
-	src_id INTEGER NOT NULL 
+	src_id INTEGER NOT NULL
 );
 
 --
@@ -8326,7 +8326,7 @@ CREATE TABLE pdbx_entity_src_gen_express_timepoint (
 -- ATTRIBUTE
 	serial INTEGER NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8358,7 +8358,7 @@ CREATE TABLE pdbx_entity_src_gen_fract (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8387,7 +8387,7 @@ CREATE TABLE pdbx_entity_src_gen_lysis (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8412,7 +8412,7 @@ CREATE TABLE pdbx_entity_src_gen_prod_digest (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8433,7 +8433,7 @@ CREATE TABLE pdbx_entity_src_gen_prod_other_parameter (
 -- ATTRIBUTE
 	parameter TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8459,7 +8459,7 @@ CREATE TABLE pdbx_entity_src_gen_prod_pcr (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8486,7 +8486,7 @@ CREATE TABLE pdbx_entity_src_gen_proteolysis (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8515,7 +8515,7 @@ CREATE TABLE pdbx_entity_src_gen_pure (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8542,7 +8542,7 @@ CREATE TABLE pdbx_entity_src_gen_refold (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	step_id INTEGER NOT NULL 
+	step_id INTEGER NOT NULL
 );
 
 --
@@ -8567,7 +8567,7 @@ CREATE TABLE pdbx_entity_src_syn (
 -- ATTRIBUTE
 	entity_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_src_id INTEGER NOT NULL 
+	pdbx_src_id INTEGER NOT NULL
 );
 
 --
@@ -8584,7 +8584,7 @@ CREATE TABLE pdbx_entry_details (
 	sequence_details TEXT ,
 	source_details TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -8601,7 +8601,7 @@ CREATE TABLE pdbx_exptl_crystal_cryo_treatment (
 	final_solution_details TEXT ,
 	soaking_details TEXT ,
 -- ATTRIBUTE
-	crystal_id TEXT NOT NULL 
+	crystal_id TEXT NOT NULL
 );
 
 --
@@ -8621,7 +8621,7 @@ CREATE TABLE pdbx_exptl_crystal_grow_comp (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	crystal_id TEXT NOT NULL 
+	crystal_id TEXT NOT NULL
 );
 
 --
@@ -8641,7 +8641,7 @@ CREATE TABLE pdbx_exptl_crystal_grow_sol (
 -- ATTRIBUTE
 	crystal_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	sol_id ENUM_pdbx_exptl_crystal_grow_sol_sol_id NOT NULL 
+	sol_id ENUM_pdbx_exptl_crystal_grow_sol_sol_id NOT NULL
 );
 
 --
@@ -8657,7 +8657,7 @@ CREATE TABLE pdbx_exptl_pd (
 	"spec_preparation_pH" DECIMAL CHECK ( "spec_preparation_pH" >= 0.0 ) ,
 	"spec_preparation_pH_range" TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -8672,7 +8672,7 @@ CREATE TABLE pdbx_family_group_index (
 -- ATTRIBUTE
 	family_prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8694,7 +8694,7 @@ CREATE TABLE pdbx_family_prd_audit (
 -- ATTRIBUTE
 	date DATE NOT NULL ,
 -- ATTRIBUTE
-	family_prd_id TEXT NOT NULL 
+	family_prd_id TEXT NOT NULL
 );
 
 --
@@ -8717,7 +8717,7 @@ CREATE TABLE pdbx_feature_assembly (
 	feature_software_id TEXT ,
 	feature_type ENUM_pdbx_feature_assembly_feature_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8740,7 +8740,7 @@ CREATE TABLE pdbx_feature_domain (
 	feature_software_id TEXT ,
 	feature_type ENUM_pdbx_feature_domain_feature_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8762,7 +8762,7 @@ CREATE TABLE pdbx_feature_entry (
 	feature_software_id TEXT ,
 	feature_type ENUM_pdbx_feature_entry_feature_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8791,7 +8791,7 @@ CREATE TABLE pdbx_feature_monomer (
 	label_comp_id TEXT ,
 	label_seq_id INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8814,7 +8814,7 @@ CREATE TABLE pdbx_feature_sequence_range (
 	feature_type ENUM_pdbx_feature_sequence_range_feature_type ,
 	seq_range_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8835,7 +8835,7 @@ CREATE TABLE pdbx_helical_symmetry (
 	rise_per_n_subunits DECIMAL ,
 	rotation_per_n_subunits DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -8859,7 +8859,7 @@ CREATE TABLE pdbx_helical_symmetry_depositor_info (
 	rotation_per_n_subunits DECIMAL ,
 	status_flag ENUM_pdbx_helical_symmetry_depositor_info_status_flag ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -8875,7 +8875,7 @@ CREATE TABLE pdbx_hybrid (
 	strand_id TEXT ,
 	sugar_name TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8890,7 +8890,7 @@ CREATE TABLE pdbx_inhibitor_info (
 	name TEXT ,
 	num_per_asym_unit INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8905,7 +8905,7 @@ CREATE TABLE pdbx_ion_info (
 	name TEXT ,
 	numb_per_asym_unit INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -8922,7 +8922,7 @@ CREATE TABLE pdbx_linked_entity_instance_list (
 -- ATTRIBUTE
 	instance_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	linked_entity_id TEXT NOT NULL 
+	linked_entity_id TEXT NOT NULL
 );
 
 --
@@ -8954,7 +8954,7 @@ CREATE TABLE pdbx_linked_entity_link_list (
 -- ATTRIBUTE
 	link_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	linked_entity_id TEXT NOT NULL 
+	linked_entity_id TEXT NOT NULL
 );
 
 --
@@ -8975,7 +8975,7 @@ CREATE TABLE pdbx_missing_atom_nonpoly (
 	label_comp_id TEXT ,
 	model_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -8997,7 +8997,7 @@ CREATE TABLE pdbx_missing_atom_poly (
 	label_seq_id INTEGER ,
 	model_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9017,7 +9017,7 @@ CREATE TABLE pdbx_missing_residue_list (
 -- ATTRIBUTE
 	pdb_residue_name TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdb_residue_number TEXT NOT NULL 
+	pdb_residue_number TEXT NOT NULL
 );
 
 --
@@ -9035,7 +9035,7 @@ CREATE TABLE pdbx_molecule (
 -- ATTRIBUTE
 	instance_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -9056,7 +9056,7 @@ CREATE TABLE pdbx_molecule_features (
 	name TEXT ,
 	type ENUM_pdbx_molecule_features_type ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -9077,7 +9077,7 @@ CREATE TABLE pdbx_molecule_features_depositor_info (
 	name TEXT ,
 	type ENUM_pdbx_molecule_features_depositor_info_type ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -9093,7 +9093,7 @@ CREATE TABLE pdbx_na_strand_info (
 	"num_of_NA_strands_per_asym_unit" INTEGER ,
 	"num_of_NA_strands_per_biol_unit" INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -9113,7 +9113,7 @@ CREATE TABLE pdbx_na_struct_keywds (
 	special_feature TEXT ,
 	strand_description ENUM_pdbx_na_struct_keywds_strand_description ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9141,7 +9141,7 @@ CREATE TABLE pdbx_nmr_assigned_chem_shift_list (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9163,7 +9163,7 @@ CREATE TABLE pdbx_nmr_chem_shift_experiment (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	experiment_id INTEGER NOT NULL 
+	experiment_id INTEGER NOT NULL
 );
 
 --
@@ -9213,7 +9213,7 @@ CREATE TABLE pdbx_nmr_chem_shift_ref (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	mol_common_name ENUM_pdbx_nmr_chem_shift_ref_mol_common_name NOT NULL 
+	mol_common_name ENUM_pdbx_nmr_chem_shift_ref_mol_common_name NOT NULL
 );
 
 --
@@ -9245,7 +9245,7 @@ CREATE TABLE pdbx_nmr_chem_shift_reference (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9263,7 +9263,7 @@ CREATE TABLE pdbx_nmr_chem_shift_software (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_id INTEGER NOT NULL 
+	software_id INTEGER NOT NULL
 );
 
 --
@@ -9300,7 +9300,7 @@ CREATE TABLE pdbx_nmr_computing (
 	structure_solution ENUM_pdbx_nmr_computing_structure_solution ,
 	structure_solution_version TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9327,7 +9327,7 @@ CREATE TABLE pdbx_nmr_constraint_file (
 -- ATTRIBUTE
 	constraint_type ENUM_pdbx_nmr_constraint_file_constraint_type NOT NULL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9363,7 +9363,7 @@ CREATE TABLE pdbx_nmr_constraints (
 	protein_phi_angle_constraints_total_count INTEGER ,
 	protein_psi_angle_constraints_total_count INTEGER ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9377,7 +9377,7 @@ CREATE TABLE pdbx_nmr_details (
 	document_id TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9404,7 +9404,7 @@ CREATE TABLE pdbx_nmr_ensemble (
 	representative_conformer INTEGER CHECK ( representative_conformer >= 0 ) ,
 	torsion_angle_constraint_violation_method TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9437,7 +9437,7 @@ CREATE TABLE pdbx_nmr_ensemble_rms (
 	residue_range_begin INTEGER ,
 	residue_range_end INTEGER ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9459,7 +9459,7 @@ CREATE TABLE pdbx_nmr_exptl (
 -- ATTRIBUTE
 	experiment_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	solution_id TEXT NOT NULL 
+	solution_id TEXT NOT NULL
 );
 
 --
@@ -9481,7 +9481,7 @@ CREATE TABLE pdbx_nmr_exptl_sample (
 -- ATTRIBUTE
 	component TEXT NOT NULL ,
 -- ATTRIBUTE
-	solution_id TEXT NOT NULL 
+	solution_id TEXT NOT NULL
 );
 
 --
@@ -9514,7 +9514,7 @@ CREATE TABLE pdbx_nmr_exptl_sample_conditions (
 	temperature_err DECIMAL ,
 	temperature_units ENUM_pdbx_nmr_exptl_sample_conditions_temperature_units ,
 -- ATTRIBUTE
-	conditions_id TEXT NOT NULL 
+	conditions_id TEXT NOT NULL
 );
 
 --
@@ -9579,7 +9579,7 @@ CREATE TABLE pdbx_nmr_force_constants (
 	"non-bonded_inter_van_der_Waals_term_type" ENUM_pdbx_nmr_force_constants_non_bonded_inter_van_der_Waals_te ,
 	"non-bonded_inter_van_der_Waals_term_units" ENUM_pdbx_nmr_force_constants_non_bonded_inter_van_der_Waals_te ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9596,7 +9596,7 @@ CREATE TABLE pdbx_nmr_refine (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	software_ordinal INTEGER NOT NULL 
+	software_ordinal INTEGER NOT NULL
 );
 
 --
@@ -9611,7 +9611,7 @@ CREATE TABLE pdbx_nmr_representative (
 	conformer_id TEXT ,
 	selection_criteria TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9631,7 +9631,7 @@ CREATE TABLE pdbx_nmr_sample_details (
 	solvent_system TEXT ,
 	type ENUM_pdbx_nmr_sample_details_type ,
 -- ATTRIBUTE
-	solution_id TEXT NOT NULL 
+	solution_id TEXT NOT NULL
 );
 
 --
@@ -9649,7 +9649,7 @@ CREATE TABLE pdbx_nmr_software (
 	name TEXT ,
 	version TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -9668,7 +9668,7 @@ CREATE TABLE pdbx_nmr_software_task (
 -- ATTRIBUTE
 	software_ordinal INTEGER NOT NULL ,
 -- ATTRIBUTE
-	task ENUM_pdbx_nmr_software_task_task NOT NULL 
+	task ENUM_pdbx_nmr_software_task_task NOT NULL
 );
 
 --
@@ -9701,7 +9701,7 @@ CREATE TABLE pdbx_nmr_spectral_dim (
 -- ATTRIBUTE
 	spectral_peak_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_region TEXT NOT NULL 
+	spectral_region TEXT NOT NULL
 );
 
 --
@@ -9725,7 +9725,7 @@ CREATE TABLE pdbx_nmr_spectral_peak_list (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -9742,7 +9742,7 @@ CREATE TABLE pdbx_nmr_spectral_peak_software (
 -- ATTRIBUTE
 	software_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	spectral_peak_list_id INTEGER NOT NULL 
+	spectral_peak_list_id INTEGER NOT NULL
 );
 
 --
@@ -9761,7 +9761,7 @@ CREATE TABLE pdbx_nmr_spectrometer (
 	name TEXT ,
 	type TEXT ,
 -- ATTRIBUTE
-	spectrometer_id TEXT NOT NULL 
+	spectrometer_id TEXT NOT NULL
 );
 
 --
@@ -9785,7 +9785,7 @@ CREATE TABLE pdbx_nmr_systematic_chem_shift_offset (
 	val DECIMAL ,
 	val_err DECIMAL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -9807,7 +9807,7 @@ CREATE TABLE pdbx_nmr_upload (
 -- ATTRIBUTE
 	data_file_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -9830,7 +9830,7 @@ CREATE TABLE pdbx_nonpoly_scheme (
 -- ATTRIBUTE
 	asym_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ndb_seq_num TEXT NOT NULL 
+	ndb_seq_num TEXT NOT NULL
 );
 
 --
@@ -9852,7 +9852,7 @@ CREATE TABLE pdbx_nonstandard_list (
 -- ATTRIBUTE
 	label_asym_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	label_seq_id INTEGER NOT NULL 
+	label_seq_id INTEGER NOT NULL
 );
 
 --
@@ -9866,7 +9866,7 @@ CREATE TABLE pdbx_pdb_compnd (
 	document_id TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -9880,7 +9880,7 @@ CREATE TABLE pdbx_pdb_source (
 	document_id TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -9914,7 +9914,7 @@ CREATE TABLE "pdbx_phasing_MAD_set" (
 	reflns_acentric INTEGER ,
 	reflns_centric INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -9949,7 +9949,7 @@ CREATE TABLE "pdbx_phasing_MAD_set_shell" (
 -- ATTRIBUTE
 	d_res_low DECIMAL NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -9981,7 +9981,7 @@ CREATE TABLE "pdbx_phasing_MAD_set_site" (
 	occupancy_iso DECIMAL ,
 	set_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -10014,7 +10014,7 @@ CREATE TABLE "pdbx_phasing_MAD_shell" (
 -- ATTRIBUTE
 	d_res_high DECIMAL NOT NULL ,
 -- ATTRIBUTE
-	d_res_low DECIMAL NOT NULL 
+	d_res_low DECIMAL NOT NULL
 );
 
 --
@@ -10052,7 +10052,7 @@ CREATE TABLE "pdbx_phasing_MR" (
 	zscore_rotation DECIMAL ,
 	zscore_translation DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10075,7 +10075,7 @@ CREATE TABLE pdbx_phasing_dm (
 	reflns_acentric INTEGER ,
 	reflns_centric INTEGER ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10098,7 +10098,7 @@ CREATE TABLE pdbx_phasing_dm_shell (
 -- ATTRIBUTE
 	d_res_high DECIMAL NOT NULL ,
 -- ATTRIBUTE
-	d_res_low DECIMAL NOT NULL 
+	d_res_low DECIMAL NOT NULL
 );
 
 --
@@ -10116,7 +10116,7 @@ CREATE TABLE pdbx_point_symmetry (
 	"Schoenflies_symbol" ENUM_pdbx_point_symmetry_Schoenflies_symbol ,
 	circular_symmetry INTEGER CHECK ( circular_symmetry >= 1 ) ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10137,7 +10137,7 @@ CREATE TABLE pdbx_point_symmetry_depositor_info (
 	circular_symmetry INTEGER CHECK ( circular_symmetry >= 1 ) ,
 	status_flag ENUM_pdbx_point_symmetry_depositor_info_status_flag ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10166,7 +10166,7 @@ CREATE TABLE pdbx_poly_seq_scheme (
 -- ATTRIBUTE
 	mon_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	seq_id INTEGER NOT NULL 
+	seq_id INTEGER NOT NULL
 );
 
 --
@@ -10181,7 +10181,7 @@ CREATE TABLE pdbx_post_process_details (
 	seq_details TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10202,7 +10202,7 @@ CREATE TABLE pdbx_post_process_status (
 -- ATTRIBUTE
 	cycle_id ENUM_pdbx_post_process_status_cycle_id NOT NULL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10224,7 +10224,7 @@ CREATE TABLE pdbx_prd_audit (
 -- ATTRIBUTE
 	date DATE NOT NULL ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -10238,7 +10238,7 @@ CREATE TABLE pdbx_prerelease_seq (
 	document_id TEXT ,
 	seq_one_letter_code TEXT ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -10253,7 +10253,7 @@ CREATE TABLE pdbx_protein_info (
 	name TEXT ,
 	num_per_asym_unit INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -10268,7 +10268,7 @@ CREATE TABLE pdbx_re_refinement (
 	citation_id TEXT ,
 	details TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10302,7 +10302,7 @@ CREATE TABLE pdbx_reference_entity_link (
 -- ATTRIBUTE
 	link_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -10320,7 +10320,7 @@ CREATE TABLE pdbx_reference_entity_nonpoly (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ref_entity_id TEXT NOT NULL 
+	ref_entity_id TEXT NOT NULL
 );
 
 --
@@ -10351,7 +10351,7 @@ CREATE TABLE pdbx_reference_entity_poly_link (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ref_entity_id TEXT NOT NULL 
+	ref_entity_id TEXT NOT NULL
 );
 
 --
@@ -10378,7 +10378,7 @@ CREATE TABLE pdbx_reference_entity_poly_seq (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ref_entity_id TEXT NOT NULL 
+	ref_entity_id TEXT NOT NULL
 );
 
 --
@@ -10398,7 +10398,7 @@ CREATE TABLE pdbx_reference_entity_sequence (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ref_entity_id TEXT NOT NULL 
+	ref_entity_id TEXT NOT NULL
 );
 
 --
@@ -10423,7 +10423,7 @@ CREATE TABLE pdbx_reference_entity_src_nat (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ref_entity_id TEXT NOT NULL 
+	ref_entity_id TEXT NOT NULL
 );
 
 --
@@ -10439,7 +10439,7 @@ CREATE TABLE pdbx_reference_entity_subcomponents (
 -- ATTRIBUTE
 	prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	seq TEXT NOT NULL 
+	seq TEXT NOT NULL
 );
 
 --
@@ -10472,7 +10472,7 @@ CREATE TABLE pdbx_reference_linked_entity_comp_link (
 -- ATTRIBUTE
 	link_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	linked_entity_id INTEGER NOT NULL 
+	linked_entity_id INTEGER NOT NULL
 );
 
 --
@@ -10500,7 +10500,7 @@ CREATE TABLE pdbx_reference_linked_entity_link (
 -- ATTRIBUTE
 	link_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	linked_entity_id INTEGER NOT NULL 
+	linked_entity_id INTEGER NOT NULL
 );
 
 --
@@ -10521,7 +10521,7 @@ CREATE TABLE pdbx_reference_molecule_annotation (
 -- ATTRIBUTE
 	family_prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -10540,7 +10540,7 @@ CREATE TABLE pdbx_reference_molecule_details (
 -- ATTRIBUTE
 	family_prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -10562,7 +10562,7 @@ CREATE TABLE pdbx_reference_molecule_features (
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -10583,7 +10583,7 @@ CREATE TABLE pdbx_reference_molecule_related_structures (
 -- ATTRIBUTE
 	family_prd_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -10603,7 +10603,7 @@ CREATE TABLE pdbx_reference_molecule_synonyms (
 -- ATTRIBUTE
 	ordinal INTEGER NOT NULL ,
 -- ATTRIBUTE
-	prd_id TEXT NOT NULL 
+	prd_id TEXT NOT NULL
 );
 
 --
@@ -10623,7 +10623,7 @@ CREATE TABLE pdbx_reference_publication_list (
 	end_year TEXT ,
 	start_year TEXT ,
 -- ATTRIBUTE
-	publication_abbrev TEXT NOT NULL 
+	publication_abbrev TEXT NOT NULL
 );
 
 --
@@ -10653,7 +10653,7 @@ CREATE TABLE pdbx_refine (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_refine_id TEXT NOT NULL 
+	pdbx_refine_id TEXT NOT NULL
 );
 
 --
@@ -10672,7 +10672,7 @@ CREATE TABLE pdbx_refine_aux_file (
 -- ATTRIBUTE
 	pdbx_refine_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	serial_no TEXT NOT NULL 
+	serial_no TEXT NOT NULL
 );
 
 --
@@ -10714,7 +10714,7 @@ CREATE TABLE pdbx_refine_component (
 -- ATTRIBUTE
 	label_comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	label_seq_id INTEGER NOT NULL 
+	label_seq_id INTEGER NOT NULL
 );
 
 --
@@ -10731,7 +10731,7 @@ CREATE TABLE pdbx_refine_ls_restr_ncs (
 	type TEXT ,
 	weight DECIMAL ,
 -- ATTRIBUTE
-	dom_id TEXT NOT NULL 
+	dom_id TEXT NOT NULL
 );
 
 --
@@ -10756,7 +10756,7 @@ CREATE TABLE pdbx_refine_tls_group (
 	selection TEXT ,
 	selection_details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -10780,7 +10780,7 @@ CREATE TABLE pdbx_reflns_twin (
 -- ATTRIBUTE
 	diffrn_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	operator TEXT NOT NULL 
+	operator TEXT NOT NULL
 );
 
 --
@@ -10797,7 +10797,7 @@ CREATE TABLE pdbx_related_exp_data_set (
 	details TEXT ,
 	metadata_reference TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -10837,7 +10837,7 @@ CREATE TABLE pdbx_remediation_atom_site_mapping (
 	pre_occupancy DECIMAL ,
 	pre_pdbx_align INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -10860,7 +10860,7 @@ CREATE TABLE pdbx_rmch_outlier (
 	phi DECIMAL CHECK ( phi >= -180.0 AND phi <= 180.0 ) ,
 	psi DECIMAL CHECK ( psi >= -180.0 AND psi <= 180.0 ) ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10883,7 +10883,7 @@ CREATE TABLE pdbx_rms_devs_cov_by_monomer (
 	rms_angles DECIMAL ,
 	rms_bonds DECIMAL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -10912,7 +10912,7 @@ CREATE TABLE pdbx_rms_devs_covalent (
 	rms_bonds_phosphate DECIMAL ,
 	rms_bonds_sugar DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -10928,7 +10928,7 @@ CREATE TABLE pdbx_robot_system (
 	model TEXT ,
 	type TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -10945,7 +10945,7 @@ CREATE TABLE pdbx_seq_map_depositor_info (
 -- ATTRIBUTE
 	auth_asym_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	entity_id TEXT NOT NULL 
+	entity_id TEXT NOT NULL
 );
 
 --
@@ -10959,7 +10959,7 @@ CREATE TABLE pdbx_sequence_annotation (
 	document_id TEXT ,
 	ncbi_taxid TEXT ,
 -- ATTRIBUTE
-	pdb_chain_id TEXT NOT NULL 
+	pdb_chain_id TEXT NOT NULL
 );
 
 --
@@ -10976,7 +10976,7 @@ CREATE TABLE pdbx_sequence_pattern (
 -- ATTRIBUTE
 	label_asym_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	sequence_pattern TEXT NOT NULL 
+	sequence_pattern TEXT NOT NULL
 );
 
 --
@@ -11011,7 +11011,7 @@ CREATE TABLE pdbx_sequence_range (
 -- ATTRIBUTE
 	end_label_seq_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	seq_range_id TEXT NOT NULL 
+	seq_range_id TEXT NOT NULL
 );
 
 --
@@ -11049,7 +11049,7 @@ CREATE TABLE pdbx_soln_scatter (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11073,7 +11073,7 @@ CREATE TABLE pdbx_soln_scatter_model (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	scatter_id TEXT NOT NULL 
+	scatter_id TEXT NOT NULL
 );
 
 --
@@ -11112,7 +11112,7 @@ CREATE TABLE pdbx_solvent_atom_site_mapping (
 	symmetry TEXT ,
 	symmetry_as_xyz TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11127,7 +11127,7 @@ CREATE TABLE pdbx_solvent_info (
 	name TEXT ,
 	numb_per_asym_unit INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11140,7 +11140,7 @@ CREATE TABLE pdbx_source (
 -- DOCUMENT KEY is pointer to data source (aka. Entry ID)
 	document_id TEXT ,
 -- ATTRIBUTE
-	src_method TEXT NOT NULL 
+	src_method TEXT NOT NULL
 );
 
 --
@@ -11169,7 +11169,7 @@ CREATE TABLE pdbx_stereochemistry (
 	model_id INTEGER ,
 	volume3 DECIMAL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11185,7 +11185,7 @@ CREATE TABLE pdbx_struct_assembly_auth_classification (
 	document_id TEXT ,
 	reason_for_interest ENUM_pdbx_struct_assembly_auth_classification_reason_for_intere ,
 -- ATTRIBUTE
-	assembly_id TEXT NOT NULL 
+	assembly_id TEXT NOT NULL
 );
 
 --
@@ -11204,7 +11204,7 @@ CREATE TABLE pdbx_struct_assembly_auth_evidence (
 -- ATTRIBUTE
 	assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11223,7 +11223,7 @@ CREATE TABLE pdbx_struct_assembly_auth_evidence_depositor_info (
 -- ATTRIBUTE
 	assembly_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11242,7 +11242,7 @@ CREATE TABLE pdbx_struct_assembly_gen (
 -- ATTRIBUTE
 	asym_id_list TEXT NOT NULL ,
 -- ATTRIBUTE
-	oper_expression TEXT NOT NULL 
+	oper_expression TEXT NOT NULL
 );
 
 --
@@ -11269,7 +11269,7 @@ CREATE TABLE pdbx_struct_assembly_gen_depositor_info (
 	oper_expression TEXT ,
 	symmetry_operation TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11288,7 +11288,7 @@ CREATE TABLE pdbx_struct_assembly_prop (
 -- ATTRIBUTE
 	biol_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_struct_assembly_prop_type NOT NULL 
+	type ENUM_pdbx_struct_assembly_prop_type NOT NULL
 );
 
 --
@@ -11307,7 +11307,7 @@ CREATE TABLE pdbx_struct_assembly_prop_depositor_info (
 -- ATTRIBUTE
 	biol_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type ENUM_pdbx_struct_assembly_prop_depositor_info_type NOT NULL 
+	type ENUM_pdbx_struct_assembly_prop_depositor_info_type NOT NULL
 );
 
 --
@@ -11323,7 +11323,7 @@ CREATE TABLE pdbx_struct_asym_gen (
 -- ATTRIBUTE
 	entity_inst_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	oper_expression TEXT NOT NULL 
+	oper_expression TEXT NOT NULL
 );
 
 --
@@ -11339,7 +11339,7 @@ CREATE TABLE pdbx_struct_biol_func (
 -- ATTRIBUTE
 	biol_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11362,7 +11362,7 @@ CREATE TABLE pdbx_struct_chem_comp_diagnostics (
 	seq_num INTEGER ,
 	type ENUM_pdbx_struct_chem_comp_diagnostics_type ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -11385,7 +11385,7 @@ CREATE TABLE pdbx_struct_chem_comp_feature (
 	seq_num INTEGER ,
 	type ENUM_pdbx_struct_chem_comp_feature_type ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -11436,7 +11436,7 @@ CREATE TABLE pdbx_struct_conn_angle (
 	value DECIMAL ,
 	value_esd DECIMAL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11467,7 +11467,7 @@ CREATE TABLE pdbx_struct_group_component_range (
 	end_label_seq_id INTEGER ,
 	struct_group_id TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -11490,7 +11490,7 @@ CREATE TABLE pdbx_struct_group_components (
 	label_seq_id INTEGER ,
 	struct_group_id TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -11508,7 +11508,7 @@ CREATE TABLE pdbx_struct_info (
 -- ATTRIBUTE
 	type ENUM_pdbx_struct_info_type NOT NULL ,
 -- ATTRIBUTE
-	value TEXT NOT NULL 
+	value TEXT NOT NULL
 );
 
 --
@@ -11534,7 +11534,7 @@ CREATE TABLE pdbx_struct_legacy_oper_list (
 	vector2 DECIMAL ,
 	vector3 DECIMAL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11566,7 +11566,7 @@ CREATE TABLE pdbx_struct_link (
 	ptnr2_symmetry TEXT ,
 	type ENUM_pdbx_struct_link_type ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11589,7 +11589,7 @@ CREATE TABLE pdbx_struct_mod_residue (
 	label_seq_id INTEGER ,
 	parent_comp_id TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11606,7 +11606,7 @@ CREATE TABLE pdbx_struct_msym_gen (
 -- ATTRIBUTE
 	msym_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	oper_expression TEXT NOT NULL 
+	oper_expression TEXT NOT NULL
 );
 
 --
@@ -11622,7 +11622,7 @@ CREATE TABLE pdbx_struct_ncs_virus_gen (
 	oper_id TEXT ,
 	pdb_chain_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11652,7 +11652,7 @@ CREATE TABLE pdbx_struct_oper_list (
 	vector2 DECIMAL ,
 	vector3 DECIMAL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11682,7 +11682,7 @@ CREATE TABLE pdbx_struct_oper_list_depositor_info (
 	vector2 DECIMAL ,
 	vector3 DECIMAL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11704,7 +11704,7 @@ CREATE TABLE pdbx_struct_pack_gen (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	symmetry TEXT NOT NULL 
+	symmetry TEXT NOT NULL
 );
 
 --
@@ -11723,7 +11723,7 @@ CREATE TABLE pdbx_struct_ref_seq_deletion (
 	db_seq_id INTEGER ,
 	details TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11746,7 +11746,7 @@ CREATE TABLE pdbx_struct_ref_seq_depositor_info (
 	seq_align_begin TEXT ,
 	seq_align_end TEXT ,
 -- ATTRIBUTE
-	ref_id TEXT NOT NULL 
+	ref_id TEXT NOT NULL
 );
 
 --
@@ -11772,7 +11772,7 @@ CREATE TABLE pdbx_struct_ref_seq_dif_depositor_info (
 	entity_id TEXT ,
 	ref_id TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -11794,7 +11794,7 @@ CREATE TABLE pdbx_struct_ref_seq_feature_prop (
 -- ATTRIBUTE
 	feature_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	property_id INTEGER NOT NULL 
+	property_id INTEGER NOT NULL
 );
 
 --
@@ -11816,7 +11816,7 @@ CREATE TABLE pdbx_struct_ref_seq_insertion (
 	details TEXT ,
 	seq_id INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -11851,7 +11851,7 @@ CREATE TABLE pdbx_struct_sheet_hbond (
 -- ATTRIBUTE
 	range_id_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	sheet_id TEXT NOT NULL 
+	sheet_id TEXT NOT NULL
 );
 
 --
@@ -11873,7 +11873,7 @@ CREATE TABLE pdbx_struct_special_symmetry (
 	label_comp_id TEXT ,
 	label_seq_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11959,7 +11959,7 @@ CREATE TABLE pdbx_sugar_phosphate_geometry (
 	p_o5_c5_c4 DECIMAL ,
 	pseudorot DECIMAL ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -11979,7 +11979,7 @@ CREATE TABLE pdbx_summary_flags (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	flag_id ENUM_pdbx_summary_flags_flag_id NOT NULL 
+	flag_id ENUM_pdbx_summary_flags_flag_id NOT NULL
 );
 
 --
@@ -11996,7 +11996,7 @@ CREATE TABLE pdbx_supporting_exp_data_set (
 	data_version_minor INTEGER ,
 	details TEXT ,
 -- ATTRIBUTE
-	ordinal INTEGER NOT NULL 
+	ordinal INTEGER NOT NULL
 );
 
 --
@@ -12015,7 +12015,7 @@ CREATE TABLE pdbx_tableinfo (
 	table_serial_no INTEGER ,
 	type INTEGER ,
 -- ATTRIBUTE
-	tablename TEXT NOT NULL 
+	tablename TEXT NOT NULL
 );
 
 --
@@ -12030,7 +12030,7 @@ CREATE TABLE pdbx_trna_info (
 	name TEXT ,
 	num_per_asym_unit INTEGER ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -12060,7 +12060,7 @@ CREATE TABLE pdbx_unobs_or_zero_occ_atoms (
 	occupancy_flag ENUM_pdbx_unobs_or_zero_occ_atoms_occupancy_flag ,
 	polymer_flag ENUM_pdbx_unobs_or_zero_occ_atoms_polymer_flag ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12087,7 +12087,7 @@ CREATE TABLE pdbx_unobs_or_zero_occ_residues (
 	occupancy_flag ENUM_pdbx_unobs_or_zero_occ_residues_occupancy_flag ,
 	polymer_flag ENUM_pdbx_unobs_or_zero_occ_residues_polymer_flag ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12102,7 +12102,7 @@ CREATE TABLE pdbx_unpair (
 	residue_name TEXT ,
 	residue_number TEXT ,
 -- ATTRIBUTE
-	chain_id TEXT NOT NULL 
+	chain_id TEXT NOT NULL
 );
 
 --
@@ -12148,7 +12148,7 @@ CREATE TABLE pdbx_val_angle (
 	label_seq_id_3 INTEGER ,
 	model_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12184,7 +12184,7 @@ CREATE TABLE pdbx_val_bond (
 	label_seq_id_2 INTEGER ,
 	model_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12209,7 +12209,7 @@ CREATE TABLE pdbx_val_chiral (
 	label_seq_id INTEGER ,
 	model_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12244,7 +12244,7 @@ CREATE TABLE pdbx_val_contact (
 	label_seq_id_2 INTEGER ,
 	model_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12281,7 +12281,7 @@ CREATE TABLE pdbx_val_sym_contact (
 	site_symmetry_1 TEXT ,
 	site_symmetry_2 TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12303,7 +12303,7 @@ CREATE TABLE pdbx_validate_chiral (
 	label_alt_id TEXT ,
 	omega DECIMAL CHECK ( omega >= -180.0 AND omega <= 180.0 ) ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12332,7 +12332,7 @@ CREATE TABLE pdbx_validate_close_contact (
 	symm_as_xyz_1 TEXT ,
 	symm_as_xyz_2 TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12352,7 +12352,7 @@ CREATE TABLE pdbx_validate_main_chain_plane (
 	improper_torsion_angle DECIMAL ,
 	label_alt_id TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12377,7 +12377,7 @@ CREATE TABLE pdbx_validate_peptide_omega (
 	label_alt_id_2 TEXT ,
 	omega DECIMAL CHECK ( omega >= -180.0 AND omega <= 180.0 ) ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12398,7 +12398,7 @@ CREATE TABLE pdbx_validate_planes_atom (
 	auth_seq_id TEXT ,
 	plane_id INTEGER ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12425,7 +12425,7 @@ CREATE TABLE pdbx_validate_polymer_linkage (
 	label_alt_id_1 TEXT ,
 	label_alt_id_2 TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12462,7 +12462,7 @@ CREATE TABLE pdbx_validate_rmsd_angle (
 	label_alt_id_3 TEXT ,
 	linker_flag TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12493,7 +12493,7 @@ CREATE TABLE pdbx_validate_rmsd_bond (
 	label_alt_id_2 TEXT ,
 	linker_flag TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12522,7 +12522,7 @@ CREATE TABLE pdbx_validate_symm_contact (
 	site_symmetry_1 TEXT ,
 	site_symmetry_2 TEXT ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12543,7 +12543,7 @@ CREATE TABLE pdbx_validate_torsion (
 	phi DECIMAL CHECK ( phi >= -180.0 AND phi <= 180.0 ) ,
 	psi DECIMAL CHECK ( psi >= -180.0 AND psi <= 180.0 ) ,
 -- ATTRIBUTE
-	id INTEGER NOT NULL 
+	id INTEGER NOT NULL
 );
 
 --
@@ -12566,7 +12566,7 @@ CREATE TABLE pdbx_version (
 -- ATTRIBUTE
 	minor_version TEXT NOT NULL ,
 -- ATTRIBUTE
-	revision_type ENUM_pdbx_version_revision_type NOT NULL 
+	revision_type ENUM_pdbx_version_revision_type NOT NULL
 );
 
 --
@@ -12587,7 +12587,7 @@ CREATE TABLE pdbx_view_item (
 	item_view_mandatory_code ENUM_pdbx_view_item_item_view_mandatory_code ,
 	item_view_name TEXT ,
 -- ATTRIBUTE
-	item_name TEXT NOT NULL 
+	item_name TEXT NOT NULL
 );
 
 --
@@ -12641,7 +12641,7 @@ CREATE TABLE pdbx_virtual_angle (
 -- ATTRIBUTE
 	site_symmetry_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_symmetry_3 TEXT NOT NULL 
+	site_symmetry_3 TEXT NOT NULL
 );
 
 --
@@ -12682,7 +12682,7 @@ CREATE TABLE pdbx_virtual_bond (
 -- ATTRIBUTE
 	site_symmetry_1 TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_symmetry_2 TEXT NOT NULL 
+	site_symmetry_2 TEXT NOT NULL
 );
 
 --
@@ -12749,7 +12749,7 @@ CREATE TABLE pdbx_virtual_torsion (
 -- ATTRIBUTE
 	site_symmetry_3 TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_symmetry_4 TEXT NOT NULL 
+	site_symmetry_4 TEXT NOT NULL
 );
 
 --
@@ -12766,7 +12766,7 @@ CREATE TABLE pdbx_xplor_file (
 -- ATTRIBUTE
 	pdbx_refine_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	serial_no TEXT NOT NULL 
+	serial_no TEXT NOT NULL
 );
 
 --
@@ -12779,7 +12779,7 @@ CREATE TABLE phasing (
 -- DOCUMENT KEY is pointer to data source (aka. Entry ID)
 	document_id TEXT ,
 -- ATTRIBUTE
-	method TEXT NOT NULL 
+	method TEXT NOT NULL
 );
 
 --
@@ -12816,7 +12816,7 @@ CREATE TABLE "phasing_MAD" (
 	pdbx_reflns_acentric INTEGER ,
 	pdbx_reflns_centric INTEGER ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -12832,7 +12832,7 @@ CREATE TABLE "phasing_MAD_clust" (
 -- ATTRIBUTE
 	expt_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -12856,7 +12856,7 @@ CREATE TABLE "phasing_MAD_ratio" (
 -- ATTRIBUTE
 	wavelength_1 DECIMAL NOT NULL ,
 -- ATTRIBUTE
-	wavelength_2 DECIMAL NOT NULL 
+	wavelength_2 DECIMAL NOT NULL
 );
 
 --
@@ -12883,7 +12883,7 @@ CREATE TABLE "phasing_MAD_set" (
 -- ATTRIBUTE
 	set_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	wavelength DECIMAL NOT NULL 
+	wavelength DECIMAL NOT NULL
 );
 
 --
@@ -12908,7 +12908,7 @@ CREATE TABLE "phasing_MIR" (
 	reflns_centric INTEGER CHECK ( reflns_centric >= 0 ) ,
 	reflns_criterion TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -12940,7 +12940,7 @@ CREATE TABLE "phasing_MIR_der_refln" (
 -- ATTRIBUTE
 	index_l INTEGER NOT NULL ,
 -- ATTRIBUTE
-	set_id TEXT NOT NULL 
+	set_id TEXT NOT NULL
 );
 
 --
@@ -12977,7 +12977,7 @@ CREATE TABLE "phasing_MIR_der_shell" (
 -- ATTRIBUTE
 	d_res_low DECIMAL CHECK ( d_res_low >= 0.0 ) NOT NULL ,
 -- ATTRIBUTE
-	der_id TEXT NOT NULL 
+	der_id TEXT NOT NULL
 );
 
 --
@@ -13013,7 +13013,7 @@ CREATE TABLE "phasing_MIR_der_site" (
 -- ATTRIBUTE
 	der_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -13048,7 +13048,7 @@ CREATE TABLE "phasing_MIR_shell" (
 -- ATTRIBUTE
 	d_res_high DECIMAL CHECK ( d_res_high >= 0.0 ) NOT NULL ,
 -- ATTRIBUTE
-	d_res_low DECIMAL CHECK ( d_res_low >= 0.0 ) NOT NULL 
+	d_res_low DECIMAL CHECK ( d_res_low >= 0.0 ) NOT NULL
 );
 
 --
@@ -13063,7 +13063,7 @@ CREATE TABLE phasing_averaging (
 	details TEXT ,
 	method TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -13079,7 +13079,7 @@ CREATE TABLE phasing_isomorphous (
 	method TEXT ,
 	parent TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -13102,7 +13102,7 @@ CREATE TABLE phasing_set_refln (
 -- ATTRIBUTE
 	index_l INTEGER NOT NULL ,
 -- ATTRIBUTE
-	set_id TEXT NOT NULL 
+	set_id TEXT NOT NULL
 );
 
 --
@@ -13145,7 +13145,7 @@ CREATE TABLE publ (
 	section_title TEXT ,
 	section_title_footnote TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -13162,7 +13162,7 @@ CREATE TABLE publ_author (
 	footnote TEXT ,
 	id_iucr TEXT ,
 -- ATTRIBUTE
-	name TEXT NOT NULL 
+	name TEXT NOT NULL
 );
 
 --
@@ -13184,7 +13184,7 @@ CREATE TABLE publ_body (
 -- ATTRIBUTE
 	element ENUM_publ_body_element NOT NULL ,
 -- ATTRIBUTE
-	label TEXT NOT NULL 
+	label TEXT NOT NULL
 );
 
 --
@@ -13202,7 +13202,7 @@ CREATE TABLE publ_manuscript_incl (
 	extra_info TEXT ,
 	extra_item TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -13349,7 +13349,7 @@ CREATE TABLE refine (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_refine_id TEXT NOT NULL 
+	pdbx_refine_id TEXT NOT NULL
 );
 
 --
@@ -13372,7 +13372,7 @@ CREATE TABLE "refine_B_iso" (
 -- ATTRIBUTE
 	class TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_refine_id TEXT NOT NULL 
+	pdbx_refine_id TEXT NOT NULL
 );
 
 --
@@ -13404,7 +13404,7 @@ CREATE TABLE refine_analyze (
 -- ATTRIBUTE
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_refine_id TEXT NOT NULL 
+	pdbx_refine_id TEXT NOT NULL
 );
 
 --
@@ -13422,7 +13422,7 @@ CREATE TABLE refine_funct_minimized (
 -- ATTRIBUTE
 	pdbx_refine_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -13461,7 +13461,7 @@ CREATE TABLE refine_hist (
 -- ATTRIBUTE
 	cycle_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_refine_id TEXT NOT NULL 
+	pdbx_refine_id TEXT NOT NULL
 );
 
 --
@@ -13481,7 +13481,7 @@ CREATE TABLE refine_ls_class (
 	d_res_low DECIMAL CHECK ( d_res_low >= 0.0 ) ,
 	"wR_factor_all" DECIMAL CHECK ( "wR_factor_all" >= 0.0 ) ,
 -- ATTRIBUTE
-	code TEXT NOT NULL 
+	code TEXT NOT NULL
 );
 
 --
@@ -13503,7 +13503,7 @@ CREATE TABLE refine_ls_restr (
 -- ATTRIBUTE
 	pdbx_refine_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -13530,7 +13530,7 @@ CREATE TABLE refine_ls_restr_ncs (
 	"weight_B_iso" DECIMAL ,
 	weight_position DECIMAL ,
 -- ATTRIBUTE
-	pdbx_ordinal INTEGER NOT NULL 
+	pdbx_ordinal INTEGER NOT NULL
 );
 
 --
@@ -13545,7 +13545,7 @@ CREATE TABLE refine_ls_restr_type (
 	distance_cutoff_high DECIMAL CHECK ( distance_cutoff_high >= 0.0 ) ,
 	distance_cutoff_low DECIMAL CHECK ( distance_cutoff_low >= 0.0 ) ,
 -- ATTRIBUTE
-	type TEXT NOT NULL 
+	type TEXT NOT NULL
 );
 
 --
@@ -13582,7 +13582,7 @@ CREATE TABLE refine_ls_shell (
 -- ATTRIBUTE
 	d_res_high DECIMAL CHECK ( d_res_high >= 0.0 ) NOT NULL ,
 -- ATTRIBUTE
-	pdbx_refine_id TEXT NOT NULL 
+	pdbx_refine_id TEXT NOT NULL
 );
 
 --
@@ -13602,7 +13602,7 @@ CREATE TABLE refine_occupancy (
 -- ATTRIBUTE
 	class TEXT NOT NULL ,
 -- ATTRIBUTE
-	pdbx_refine_id TEXT NOT NULL 
+	pdbx_refine_id TEXT NOT NULL
 );
 
 --
@@ -13693,7 +13693,7 @@ CREATE TABLE refln (
 -- ATTRIBUTE
 	index_k INTEGER NOT NULL ,
 -- ATTRIBUTE
-	index_l INTEGER NOT NULL 
+	index_l INTEGER NOT NULL
 );
 
 --
@@ -13713,7 +13713,7 @@ CREATE TABLE refln_sys_abs (
 -- ATTRIBUTE
 	index_k INTEGER NOT NULL ,
 -- ATTRIBUTE
-	index_l INTEGER NOT NULL 
+	index_l INTEGER NOT NULL
 );
 
 --
@@ -13781,7 +13781,7 @@ CREATE TABLE reflns (
 	phase_calculation_details TEXT ,
 	threshold_expression TEXT ,
 -- ATTRIBUTE
-	pdbx_ordinal INTEGER NOT NULL 
+	pdbx_ordinal INTEGER NOT NULL
 );
 
 --
@@ -13804,7 +13804,7 @@ CREATE TABLE reflns_class (
 	number_total INTEGER CHECK ( number_total >= 0 ) ,
 	"wR_factor_all" DECIMAL CHECK ( "wR_factor_all" >= 0.0 ) ,
 -- ATTRIBUTE
-	code TEXT NOT NULL 
+	code TEXT NOT NULL
 );
 
 --
@@ -13820,7 +13820,7 @@ CREATE TABLE reflns_scale (
 	"meas_F_squared" DECIMAL CHECK ( "meas_F_squared" >= 0.0 ) ,
 	meas_intensity DECIMAL CHECK ( meas_intensity >= 0.0 ) ,
 -- ATTRIBUTE
-	group_code TEXT NOT NULL 
+	group_code TEXT NOT NULL
 );
 
 --
@@ -13872,7 +13872,7 @@ CREATE TABLE reflns_shell (
 	percent_possible_gt DECIMAL CHECK ( percent_possible_gt >= 0.0 AND percent_possible_gt <= 100.0 ) ,
 	percent_possible_obs DECIMAL CHECK ( percent_possible_obs >= 0.0 ) ,
 -- ATTRIBUTE
-	pdbx_ordinal INTEGER NOT NULL 
+	pdbx_ordinal INTEGER NOT NULL
 );
 
 --
@@ -13907,7 +13907,7 @@ CREATE TABLE software (
 	type ENUM_software_type ,
 	version TEXT ,
 -- ATTRIBUTE
-	pdbx_ordinal INTEGER NOT NULL 
+	pdbx_ordinal INTEGER NOT NULL
 );
 
 --
@@ -13926,7 +13926,7 @@ CREATE TABLE space_group (
 	"name_H-M_alt" TEXT ,
 	"name_Hall" TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -13941,7 +13941,7 @@ CREATE TABLE space_group_symop (
 	operation_xyz TEXT ,
 	sg_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -13965,7 +13965,7 @@ CREATE TABLE struct (
 	pdbx_title_text TEXT ,
 	title TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -13994,7 +13994,7 @@ CREATE TABLE struct_biol_gen (
 -- ATTRIBUTE
 	biol_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	symmetry TEXT NOT NULL 
+	symmetry TEXT NOT NULL
 );
 
 --
@@ -14009,7 +14009,7 @@ CREATE TABLE struct_biol_keywords (
 -- ATTRIBUTE
 	biol_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	text TEXT NOT NULL 
+	text TEXT NOT NULL
 );
 
 --
@@ -14037,7 +14037,7 @@ CREATE TABLE struct_biol_view (
 -- ATTRIBUTE
 	biol_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -14069,7 +14069,7 @@ CREATE TABLE struct_conf (
 	"pdbx_beg_PDB_ins_code" TEXT ,
 	"pdbx_end_PDB_ins_code" TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -14136,7 +14136,7 @@ CREATE TABLE struct_conn (
 	ptnr2_role TEXT ,
 	ptnr2_symmetry TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -14152,7 +14152,7 @@ CREATE TABLE struct_keywords (
 	pdbx_keywords TEXT ,
 	text TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -14168,7 +14168,7 @@ CREATE TABLE struct_mon_details (
 	"RSR" TEXT ,
 	prot_cis DECIMAL ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -14223,7 +14223,7 @@ CREATE TABLE struct_mon_nucl (
 -- ATTRIBUTE
 	label_comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	label_seq_id INTEGER NOT NULL 
+	label_seq_id INTEGER NOT NULL
 );
 
 --
@@ -14263,7 +14263,7 @@ CREATE TABLE struct_mon_prot (
 -- ATTRIBUTE
 	label_comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	label_seq_id INTEGER NOT NULL 
+	label_seq_id INTEGER NOT NULL
 );
 
 --
@@ -14295,7 +14295,7 @@ CREATE TABLE struct_mon_prot_cis (
 	pdbx_label_seq_id_2 INTEGER ,
 	pdbx_omega_angle TEXT ,
 -- ATTRIBUTE
-	pdbx_id TEXT NOT NULL 
+	pdbx_id TEXT NOT NULL
 );
 
 --
@@ -14328,7 +14328,7 @@ CREATE TABLE struct_ncs_dom_lim (
 -- ATTRIBUTE
 	pdbx_component_id INTEGER NOT NULL ,
 -- ATTRIBUTE
-	pdbx_ens_id TEXT NOT NULL 
+	pdbx_ens_id TEXT NOT NULL
 );
 
 --
@@ -14347,7 +14347,7 @@ CREATE TABLE struct_ncs_ens_gen (
 -- ATTRIBUTE
 	ens_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	oper_id TEXT NOT NULL 
+	oper_id TEXT NOT NULL
 );
 
 --
@@ -14372,7 +14372,7 @@ CREATE TABLE struct_ref_seq_dif (
 	pdbx_seq_db_seq_num TEXT ,
 	seq_num INTEGER ,
 -- ATTRIBUTE
-	pdbx_ordinal INTEGER NOT NULL 
+	pdbx_ordinal INTEGER NOT NULL
 );
 
 --
@@ -14421,7 +14421,7 @@ CREATE TABLE struct_sheet_hbond (
 -- ATTRIBUTE
 	range_id_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	sheet_id TEXT NOT NULL 
+	sheet_id TEXT NOT NULL
 );
 
 --
@@ -14442,7 +14442,7 @@ CREATE TABLE struct_sheet_order (
 -- ATTRIBUTE
 	range_id_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	sheet_id TEXT NOT NULL 
+	sheet_id TEXT NOT NULL
 );
 
 --
@@ -14472,7 +14472,7 @@ CREATE TABLE struct_sheet_range (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	sheet_id TEXT NOT NULL 
+	sheet_id TEXT NOT NULL
 );
 
 --
@@ -14493,7 +14493,7 @@ CREATE TABLE struct_sheet_topology (
 -- ATTRIBUTE
 	range_id_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	sheet_id TEXT NOT NULL 
+	sheet_id TEXT NOT NULL
 );
 
 --
@@ -14521,7 +14521,7 @@ CREATE TABLE struct_site_gen (
 -- ATTRIBUTE
 	id TEXT NOT NULL ,
 -- ATTRIBUTE
-	site_id TEXT NOT NULL 
+	site_id TEXT NOT NULL
 );
 
 --
@@ -14536,7 +14536,7 @@ CREATE TABLE struct_site_keywords (
 -- ATTRIBUTE
 	site_id TEXT NOT NULL ,
 -- ATTRIBUTE
-	text TEXT NOT NULL 
+	text TEXT NOT NULL
 );
 
 --
@@ -14560,7 +14560,7 @@ CREATE TABLE struct_site_view (
 	rot_matrix33 DECIMAL ,
 	site_id TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -14580,7 +14580,7 @@ CREATE TABLE symmetry (
 	"space_group_name_H-M" TEXT ,
 	"space_group_name_Hall" TEXT ,
 -- ATTRIBUTE
-	entry_id TEXT NOT NULL 
+	entry_id TEXT NOT NULL
 );
 
 --
@@ -14594,7 +14594,7 @@ CREATE TABLE symmetry_equiv (
 	document_id TEXT ,
 	pos_as_xyz TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --
@@ -14618,7 +14618,7 @@ CREATE TABLE valence_param (
 -- ATTRIBUTE
 	atom_2 TEXT NOT NULL ,
 -- ATTRIBUTE
-	atom_2_valence INTEGER NOT NULL 
+	atom_2_valence INTEGER NOT NULL
 );
 
 --
@@ -14632,7 +14632,7 @@ CREATE TABLE valence_ref (
 	document_id TEXT ,
 	reference TEXT ,
 -- ATTRIBUTE
-	id TEXT NOT NULL 
+	id TEXT NOT NULL
 );
 
 --ALTER TABLE atom_sites_alt ADD CONSTRAINT UNQ_atom_sites_alt UNIQUE ( id );
@@ -14644,8 +14644,6 @@ CREATE TABLE valence_ref (
 --ALTER TABLE audit ADD CONSTRAINT UNQ_audit UNIQUE ( revision_id );
 
 --ALTER TABLE chem_comp ADD CONSTRAINT UNQ_chem_comp UNIQUE ( id );
-
---ALTER TABLE chem_comp_atom ADD CONSTRAINT UNQ_chem_comp_atom UNIQUE ( atom_id, comp_id );
 
 --ALTER TABLE chem_link ADD CONSTRAINT UNQ_chem_link UNIQUE ( id );
 
@@ -14667,13 +14665,9 @@ CREATE TABLE valence_ref (
 
 --ALTER TABLE entity_poly ADD CONSTRAINT UNQ_entity_poly UNIQUE ( entity_id );
 
---ALTER TABLE entity_poly_seq ADD CONSTRAINT UNQ_entity_poly_seq UNIQUE ( entity_id, mon_id, num );
-
 --ALTER TABLE entry ADD CONSTRAINT UNQ_entry UNIQUE ( id );
 
 --ALTER TABLE exptl_crystal ADD CONSTRAINT UNQ_exptl_crystal UNIQUE ( id );
-
---ALTER TABLE pdbx_audit_revision_history ADD CONSTRAINT UNQ_pdbx_audit_revision_history UNIQUE ( data_content_type, ordinal );
 
 --ALTER TABLE pdbx_buffer ADD CONSTRAINT UNQ_pdbx_buffer UNIQUE ( id );
 
@@ -14687,29 +14681,13 @@ CREATE TABLE valence_ref (
 
 --ALTER TABLE pdbx_domain ADD CONSTRAINT UNQ_pdbx_domain UNIQUE ( id );
 
---ALTER TABLE pdbx_entity_src_gen_clone ADD CONSTRAINT UNQ_pdbx_entity_src_gen_clone UNIQUE ( entity_id, entry_id, step_id );
-
---ALTER TABLE pdbx_entity_src_gen_express ADD CONSTRAINT UNQ_pdbx_entity_src_gen_express UNIQUE ( entity_id, entry_id, step_id );
-
---ALTER TABLE pdbx_entity_src_gen_prod_other ADD CONSTRAINT UNQ_pdbx_entity_src_gen_prod_other UNIQUE ( entity_id, entry_id, step_id );
-
 --ALTER TABLE pdbx_linked_entity ADD CONSTRAINT UNQ_pdbx_linked_entity UNIQUE ( linked_entity_id );
 
---ALTER TABLE pdbx_linked_entity_list ADD CONSTRAINT UNQ_pdbx_linked_entity_list UNIQUE ( component_id, entity_id, linked_entity_id );
-
---ALTER TABLE pdbx_reference_entity_list ADD CONSTRAINT UNQ_pdbx_reference_entity_list UNIQUE ( component_id, prd_id, ref_entity_id );
-
---ALTER TABLE pdbx_reference_entity_poly ADD CONSTRAINT UNQ_pdbx_reference_entity_poly UNIQUE ( prd_id, ref_entity_id );
-
 --ALTER TABLE pdbx_reference_linked_entity ADD CONSTRAINT UNQ_pdbx_reference_linked_entity UNIQUE ( id );
-
---ALTER TABLE pdbx_reference_linked_entity_comp_list ADD CONSTRAINT UNQ_pdbx_reference_linked_entity_comp_list UNIQUE ( linked_entity_id, list_id );
 
 --ALTER TABLE pdbx_reference_molecule ADD CONSTRAINT UNQ_pdbx_reference_molecule UNIQUE ( prd_id );
 
 --ALTER TABLE pdbx_reference_molecule_family ADD CONSTRAINT UNQ_pdbx_reference_molecule_family UNIQUE ( family_prd_id );
-
---ALTER TABLE pdbx_reference_molecule_list ADD CONSTRAINT UNQ_pdbx_reference_molecule_list UNIQUE ( family_prd_id, prd_id );
 
 --ALTER TABLE pdbx_refine_tls ADD CONSTRAINT UNQ_pdbx_refine_tls UNIQUE ( id );
 
@@ -14742,8 +14720,6 @@ CREATE TABLE valence_ref (
 --ALTER TABLE struct_conf_type ADD CONSTRAINT UNQ_struct_conf_type UNIQUE ( id );
 
 --ALTER TABLE struct_conn_type ADD CONSTRAINT UNQ_struct_conn_type UNIQUE ( id );
-
---ALTER TABLE struct_ncs_dom ADD CONSTRAINT UNQ_struct_ncs_dom UNIQUE ( id, pdbx_ens_id );
 
 --ALTER TABLE struct_ncs_ens ADD CONSTRAINT UNQ_struct_ncs_ens UNIQUE ( id );
 
