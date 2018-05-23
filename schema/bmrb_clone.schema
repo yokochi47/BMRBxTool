@@ -24,11 +24,11 @@
 --   Table types:
 --    0 root, 0 root children, 0 admin roots, 456 admin children
 --   System keys:
---    0 primary keys (0 unique constraints), 0 foreign keys (312 key references), 0 nested keys
+--    0 primary keys (0 unique constraints), 0 foreign keys (312 key references), 0 nested keys (0 as attribute)
 --   User keys:
 --    0 document keys, 0 serial keys, 0 xpath keys
 --   Contents:
---    1313 attributes (454 in-place document keys), 4431 elements (2 in-place document keys), 0 simple contents
+--    1313 attributes (454 in-place document keys), 4431 elements (2 in-place document keys), 0 simple contents (0 as attribute, 0 as conditional attribute)
 --   Wild cards:
 --    0 any elements, 0 any attributes
 --
