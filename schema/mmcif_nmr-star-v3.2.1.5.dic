@@ -120686,15 +120686,6 @@ time the data are loaded into a database system.
       _item.mandatory_code
 
   '_lacs_plot.sf_id'                           'lacs_plot'                               no
-  '_lacs_char.sf_id'                           'lacs_char'                               no
-
-  stop_
-
-  loop_
-      _item_linked.child_name
-      _item_linked.parent_name
-
-  '_lacs_char.sf_id'                           '_lacs_plot.sf_id'
 
   stop_
 
@@ -121034,6 +121025,7 @@ NOT AVAILABLE
 
      '_lacs_char.entry_id'
      '_lacs_char.lacs_plot_id'
+     '_lacs_char.id'
 
    stop_
 
@@ -121044,6 +121036,21 @@ NOT AVAILABLE
      'lacs_plot'
 
    stop_
+
+save_
+
+save__lacs_char.id
+
+   _item_description.description
+;
+Unique identifier for each reported LACS (Linear Analysis of Chemical Shifts) plot.
+;
+
+   _item.name                                  '_lacs_char.id'
+   _item.category_id                           'lacs_char'
+   _item.mandatory_code                         yes
+   _item_type.code                             'int'
+
 
 save_
 
@@ -121303,15 +121310,6 @@ time the data are loaded into a database system.
       _item.mandatory_code
 
   '_pb_list.sf_id'                             'pb_list'                                 no
-  '_pb_char.sf_id'                             'pb_char'                                 no
-
-  stop_
-
-  loop_
-      _item_linked.child_name
-      _item_linked.parent_name
-
-  '_pb_char.sf_id'                           '_pb_list.sf_id'
 
   stop_
 
@@ -121324,7 +121322,7 @@ save__pb_list.id
 
    _item_description.description
 ;
-Unique identifier for the list of reported PB (Linear Analysis of Chemical Shifts) plots.
+Unique identifier for the list of reported Protain Block annotation.
 ;
 
   loop_
@@ -121632,6 +121630,7 @@ NOT AVAILABLE
 
      '_pb_char.entry_id'
      '_pb_char.pb_list_id'
+     '_pb_char.id'
 
    stop_
 
@@ -121642,6 +121641,21 @@ NOT AVAILABLE
      'pb_list'
 
    stop_
+
+save_
+
+save__pb_char.id
+
+   _item_description.description
+;
+Unique identifier for each calculated Protein Blocks code.
+;
+
+   _item.name                                  '_pb_char.id'
+   _item.category_id                           'pb_char'
+   _item.mandatory_code                         yes
+   _item_type.code                             'int'
+
 
 save_
 
@@ -121831,7 +121845,7 @@ save__pb_char.pb_code
 
    _item_description.description
 ;
-Code defining the protetype of Protein Blocks [a- derived from adjacent five residues.
+Code defining the protetype of Protein Blocks derived from adjacent five residues.
 ;
 
    _item.name                                  '_pb_char.pb_code'
@@ -122023,15 +122037,6 @@ time the data are loaded into a database system.
       _item.mandatory_code
 
   '_chem_shift_completeness_list.sf_id'                             'chem_shift_completeness_list'            no
-  '_chem_shift_completeness_char.sf_id'                             'chem_shift_completeness_char'            no
-
-  stop_
-
-  loop_
-      _item_linked.child_name
-      _item_linked.parent_name
-
-  '_chem_shift_completeness_char.sf_id'                           '_chem_shift_completeness_list.sf_id'
 
   stop_
 
@@ -122459,6 +122464,7 @@ NOT AVAILABLE
 
      '_chem_shift_completeness_char.entry_id'
      '_chem_shift_completeness_char.assigned_chem_shift_list_id'
+     '_chem_shift_completeness_char.id'
 
    stop_
 
@@ -122469,6 +122475,21 @@ NOT AVAILABLE
      'chem_shift_completeness_list'
 
    stop_
+
+save_
+
+save__chem_shift_completeness_char.id
+
+   _item_description.description
+;
+Unique identifier for completeness of assigned chemical shifts of a residue.
+;
+
+   _item.name                                  '_chem_shift_completeness_char.id'
+   _item.category_id                           'chem_shift_completeness_char'
+   _item.mandatory_code                         yes
+   _item_type.code                             'int'
+
 
 save_
 
@@ -123226,7 +123247,6 @@ _pdbx_item_linked_group.condition_id
 'chem_shift_completeness_char' 4 'chem_shift_completeness_char:entity_comp_index:4' . .
 'chem_shift_completeness_char' 5 'chem_shift_completeness_char:chem_comp:5' . .
 'chem_shift_completeness_char' 6 'chem_shift_completeness_char:assigned_chem_shift_list:6' . .
-'chem_shift_completeness_char' 7 'chem_shift_completeness_char:chem_shift_completeness_list:7' . .
 'chem_shift_completeness_list' 1 'chem_shift_completeness_list:entry:1' . .
 'chem_shift_completeness_list' 2 'chem_shift_completeness_list:entity:2' . .
 'chem_shift_completeness_list' 3 'chem_shift_completeness_list:assigned_chem_shift_list:3' . .
@@ -124104,7 +124124,6 @@ _pdbx_item_linked_group.condition_id
 'lacs_char' 5 'lacs_char:entity_comp_index:5' . .
 'lacs_char' 6 'lacs_char:chem_comp:6' . .
 'lacs_char' 7 'lacs_char:lacs_plot:7' . .
-'lacs_char' 8 'lacs_char:lacs_plot:8' . .
 'lacs_plot' 1 'lacs_plot:entry:1' . .
 'local_structure_quality' 1 'local_structure_quality:entry:1' . .
 'local_structure_quality' 2 'local_structure_quality:entity_assembly:2' . .
@@ -124301,7 +124320,6 @@ _pdbx_item_linked_group.condition_id
 'pb_char' 5 'pb_char:entity_comp_index:5' . .
 'pb_char' 6 'pb_char:chem_comp:6' . .
 'pb_char' 7 'pb_char:pb_list:7' . .
-'pb_char' 8 'pb_char:pb_list:8' . .
 'pb_list' 1 'pb_list:entry:1' . .
 'pdbx_chem_comp_feature' 1 'pdbx_chem_comp_feature:chem_comp:1' . .
 'pdbx_nonpoly_scheme' 1 'pdbx_nonpoly_scheme:assembly:1' . .
@@ -125328,7 +125346,6 @@ _pdbx_item_linked_group_list.parent_category_id
 'chem_shift_completeness_char' 4 '_chem_shift_completeness_char.comp_index_id' '_entity_comp_index.id' 'entity_comp_index'
 'chem_shift_completeness_char' 5 '_chem_shift_completeness_char.comp_id' '_chem_comp.id' 'chem_comp'
 'chem_shift_completeness_char' 6 '_chem_shift_completeness_char.assigned_chem_shift_list_id' '_assigned_chem_shift_list.id' 'assigned_chem_shift_list'
-'chem_shift_completeness_char' 7 '_chem_shift_completeness_char.sf_id' '_chem_shift_completeness_list.sf_id' 'chem_shift_completeness_list'
 'chem_shift_completeness_list' 1 '_chem_shift_completeness_list.entry_id' '_entry.id' 'entry'
 'chem_shift_completeness_list' 2 '_chem_shift_completeness_list.entity_polymer_type' '_entity.polymer_type' 'entity'
 'chem_shift_completeness_list' 3 '_chem_shift_completeness_list.assigned_chem_shift_list_id' '_assigned_chem_shift_list.id' 'assigned_chem_shift_list'
@@ -126205,8 +126222,7 @@ _pdbx_item_linked_group_list.parent_category_id
 'lacs_char' 4 '_lacs_char.entity_id' '_entity.id' 'entity'
 'lacs_char' 5 '_lacs_char.comp_index_id' '_entity_comp_index.id' 'entity_comp_index'
 'lacs_char' 6 '_lacs_char.comp_id' '_chem_comp.id' 'chem_comp'
-'lacs_char' 7 '_lacs_char.sf_id' '_lacs_plot.sf_id' 'lacs_plot'
-'lacs_char' 8 '_lacs_char.lacs_plot_id' '_lacs_plot.id' 'lacs_plot'
+'lacs_char' 7 '_lacs_char.lacs_plot_id' '_lacs_plot.id' 'lacs_plot'
 'lacs_plot' 1 '_lacs_plot.entry_id' '_entry.id' 'entry'
 'local_structure_quality' 1 '_local_structure_quality.entry_id' '_entry.id' 'entry'
 'local_structure_quality' 2 '_local_structure_quality.entity_assembly_id' '_entity_assembly.id' 'entity_assembly'
@@ -126402,8 +126418,7 @@ _pdbx_item_linked_group_list.parent_category_id
 'pb_char' 4 '_pb_char.entity_id' '_entity.id' 'entity'
 'pb_char' 5 '_pb_char.comp_index_id' '_entity_comp_index.id' 'entity_comp_index'
 'pb_char' 6 '_pb_char.comp_id' '_chem_comp.id' 'chem_comp'
-'pb_char' 7 '_pb_char.sf_id' '_pb_list.sf_id' 'pb_list'
-'pb_char' 8 '_pb_char.pb_list_id' '_pb_list.id' 'pb_list'
+'pb_char' 7 '_pb_char.pb_list_id' '_pb_list.id' 'pb_list'
 'pb_list' 1 '_pb_list.entry_id' '_entry.id' 'entry'
 'pdbx_chem_comp_feature' 1 '_pdbx_chem_comp_feature.comp_id' '_chem_comp.id' 'chem_comp'
 'pdbx_nonpoly_scheme' 1 '_pdbx_nonpoly_scheme.assembly_id' '_assembly.id' 'assembly'

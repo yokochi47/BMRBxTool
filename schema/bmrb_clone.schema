@@ -16,7 +16,7 @@
 --  retrieve field annotation: false
 --
 -- Statistics of schema:
---  Generated 456 tables (5744 fields), 0 attr groups, 0 model groups in total
+--  Generated 456 tables (5747 fields), 0 attr groups, 0 model groups in total
 --   Namespaces:
 --    http://www.w3.org/2001/XMLSchema (xsd), http://bmrbpub.protein.osaka-u.ac.jp/schema/mmcif_nmr-star.xsd (BMRBx)
 --   Schema locations:
@@ -28,7 +28,7 @@
 --   User keys:
 --    0 document keys, 0 serial keys, 0 xpath keys
 --   Contents:
---    1313 attributes (454 in-place document keys), 4431 elements (2 in-place document keys), 0 simple contents (0 as attribute, 0 as conditional attribute)
+--    1316 attributes (454 in-place document keys), 4431 elements (2 in-place document keys), 0 simple contents (0 as attribute, 0 as conditional attribute)
 --   Wild cards:
 --    0 any elements, 0 any attributes
 --
@@ -2418,7 +2418,9 @@ CREATE TABLE chem_shift_completeness_char (
 -- ATTRIBUTE
 	assigned_chem_shift_list_id INTEGER NOT NULL ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
-	entry_id TEXT NOT NULL
+	entry_id TEXT NOT NULL ,
+-- ATTRIBUTE
+	id INTEGER NOT NULL
 );
 
 --
@@ -7408,6 +7410,8 @@ CREATE TABLE lacs_char (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
 -- ATTRIBUTE
+	id INTEGER NOT NULL ,
+-- ATTRIBUTE
 	lacs_plot_id INTEGER NOT NULL
 );
 
@@ -8837,6 +8841,8 @@ CREATE TABLE pb_char (
 	sf_id INTEGER ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
 	entry_id TEXT NOT NULL ,
+-- ATTRIBUTE
+	id INTEGER NOT NULL ,
 -- ATTRIBUTE
 	pb_list_id INTEGER NOT NULL
 );
