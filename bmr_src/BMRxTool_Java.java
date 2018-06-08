@@ -3195,12 +3195,19 @@ public class BMRxTool_Java {
 
 		//			BMRxTool_DOM.getNodeInfo(child);
 		if (!attr_name.equalsIgnoreCase("pdbx_name") || !attr_name.equalsIgnoreCase("sunid")) {
-			if (required) {
+			if (required && !((class_name.equalsIgnoreCase("ChemShiftCompletenessChar") || class_name.equalsIgnoreCase("LacsChar") || class_name.equalsIgnoreCase("PbChar")) && attr_name.equalsIgnoreCase("id"))) {
 				System.err.println("class: " + class_name + ", xsd_attr: " + attr_name + " is unresolved. [Fatal Error]");
 				System.exit(1);
 			}
-			else
+			else {
+				if (required && ((class_name.equalsIgnoreCase("ChemShiftCompletenessChar") || class_name.equalsIgnoreCase("LacsChar") || class_name.equalsIgnoreCase("PbChar")) && attr_name.equalsIgnoreCase("id")))
+					try {
+						buffw.write("\t\t\t\t\tif (!set_integer(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rid[lines - 1], logw))\n\t\t\t\t\t\tcontinue;\n");
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				System.out.println("class: " + class_name + ", xsd_attr: " + attr_name + " is unresolved.");
+			}
 		}
 	}
 
