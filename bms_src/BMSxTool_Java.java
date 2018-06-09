@@ -2834,7 +2834,7 @@ public class BMSxTool_Java {
 							if (column_name_lower.endsWith("_list_id"))
 								list_attrs.add(column_name);
 
-							else if (column_name_lower.equals("id") || column_name_lower.equals("index_id") || column_name_lower.equals("orginal"))
+							else if ((column_name_lower.equals("id") && !(class_name.equalsIgnoreCase("ChemShiftCompletenessChar") || class_name.equalsIgnoreCase("LacsChar") || class_name.equalsIgnoreCase("PbChar")) || column_name_lower.equals("index_id") || column_name_lower.equals("orginal")))
 								key_attrs.add(column_name);
 
 							else {
