@@ -396,7 +396,10 @@ public class BMSxTool_Java {
 
 			if (_integer_id) {
 
-				buffw.write("\t\t\t\t\tString id = rset.getString(\"ID\");\n");
+				if (class_name.equalsIgnoreCase("ChemShiftCompletenessChar") || class_name.equalsIgnoreCase("LacsChar") || class_name.equalsIgnoreCase("PbChar"))
+					buffw.write("\t\t\t\t\tString id = null;\n");
+				else
+					buffw.write("\t\t\t\t\tString id = rset.getString(\"ID\");\n");
 				buffw.write("\t\t\t\t\trid[lines] = id;\n\n");
 
 				buffw.write("\t\t\t\t\tif (" + empty_check("id") + ") {\n");
