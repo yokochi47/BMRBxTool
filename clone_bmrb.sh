@@ -3,6 +3,7 @@
 sync_update=true
 
 source ./scripts/db-user.sh
+source ./scripts/otool-home.sh
 
 PREFIX=bmr
 ATOM=atom
@@ -85,6 +86,11 @@ if [ $? != 0 ] ; then
 fi
 
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+
+if [ -e $BMRBO_TOOL_HOME/$XSD_SCHEMA ] ; then
+ XSD_SCHEMA=$BMRBO_TOOL_HOME/$XSD_SCHEMA
+fi
+
 DB_SCHEMA=schema/bmrb_clone.schema
 
 java -cp extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --hash-by SHA-1 --ddl $DB_SCHEMA --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id

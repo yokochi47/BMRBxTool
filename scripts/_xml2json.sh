@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./scripts/otool-home.sh
+
 PREFIX=
 UPDATE=yes
 ATOM=atom
@@ -131,6 +133,10 @@ rm -f $xml_file_list
 cd ..
 
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+
+if [ -e $BMRBO_TOOL_HOME/$XSD_SCHEMA ] ; then
+ XSD_SCHEMA=$BMRBO_TOOL_HOME/$XSD_SCHEMA
+fi
 
 ERR_DIR=$JSON_DOC_DIR/err
 
