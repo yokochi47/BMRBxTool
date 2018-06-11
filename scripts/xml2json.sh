@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./scripts/otool-home.sh
+
 #PREFIX=bmr
 UPDATE=yes
 ATOM=atom
@@ -49,6 +51,11 @@ if [ ! -d $JSON_DOC_DIR ] ; then
 fi
 
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+
+if [ -e $BMRBO_TOOL_HOME/$XSD_SCHEMA ] ; then
+ XSD_SCHEMA=$BMRBO_TOOL_HOME/$XSD_SCHEMA
+fi
+
 JSON_SCHEMA=schema/bmrb_clone.json
 
 java -cp extlibs/xsd2pgschema.jar xsd2jsonschema --xsd $XSD_SCHEMA --col-json --discarded-doc-key-name entry_id --json $JSON_SCHEMA
