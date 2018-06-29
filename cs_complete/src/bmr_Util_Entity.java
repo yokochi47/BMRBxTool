@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,10 +35,10 @@ public class bmr_Util_Entity {
 			strw.write("        # Completeness of Assigned Chemical Shifts #\n");
 			strw.write("        ############################################\n\n");
 
-			strw.write(" ###############################################################################\n");
-			strw.write(" # Excluded atoms in calculation of completeness are listed below.             #\n");
-			strw.write(" # http://bmrbpub.protein.osaka-u.ac.jp/archive/cs_complete/excluded_atoms.str #\n");
-			strw.write(" ###############################################################################\n");
+			strw.write(" ###################################################################\n");
+			strw.write(" # Excluded atoms in calculation of completeness are listed below. #\n");
+			strw.write(" # https://bmrbpub.pdbj.org/archive/cs_complete/excluded_atoms.str #\n");
+			strw.write(" ###################################################################\n");
 
 			PreparedStatement pstate_datum = conn_bmrb.prepareStatement("select \"Type\",\"Count\" from \"Datum\" where \"Entry_ID\"=? and \"Count\"::integer > 0");
 			pstate_datum.setString(1, entry_id);

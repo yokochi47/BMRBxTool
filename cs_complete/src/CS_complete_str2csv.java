@@ -71,7 +71,7 @@ public class CS_complete_str2csv {
 		}
 	}
 
-	private static boolean file_exist(String cs_complete_annotation_file) {
+	private static boolean file_exist(String output_url) {
 
 		try {
 
@@ -102,7 +102,7 @@ public class CS_complete_str2csv {
 				}
 			});
 
-			URL url = new URL(cs_complete_annotation_file);
+			URL url = new URL(output_url);
 			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 			conn.setSSLSocketFactory(sc.getSocketFactory());
 
@@ -316,10 +316,10 @@ public class CS_complete_str2csv {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} catch (NoSuchAlgorithmException e1) {
-			e1.printStackTrace();
-		} catch (KeyManagementException e1) {
-			e1.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
+			e.printStackTrace();
 		}
 
 
