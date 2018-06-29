@@ -3,22 +3,22 @@
 
 A. Requirements
 
-    OpenJDK 1.8 or later (http://www.oracle.com/)
-    Eclipse (http://www.eclipse.org/)
-    PostgreSQL (http://www.postgresql.org/)
-    XMLBeans (http://xmlbeans.apache.org/)
-    Xerces (http://xerces.apache.org/)
-    PostgreSQL JDBC driver (http://jdbc.postgresql.org/)
-    XML common API (http://xerces.apache.org/xml-commons/)
-    Java mail (http://www.oracle.com/)
+    OpenJDK 1.8 or later (https://www.oracle.com/)
+    Eclipse (https://www.eclipse.org/)
+    PostgreSQL (https://www.postgresql.org/)
+    XMLBeans (https://xmlbeans.apache.org/)
+    Xerces (https://xerces.apache.org/)
+    PostgreSQL JDBC driver (https://jdbc.postgresql.org/)
+    XML common API (https://xerces.apache.org/xml-commons/)
+    Java mail (https://www.oracle.com/)
     Jackson JSON Processor (http://wiki.fasterxml.com/)
-    MMCIF Dictionary Suite (http://sw-tools.pdb.org/)
+    MMCIF Dictionary Suite (http://mmcif.wwpdb.org/)
     XMLStarlet (http://xmlstar.sourceforge.net/)
 
   * BaseX (http://basex.org/)
-  * eXist-db (http://exist-db.org/)
+  * eXist-db (https://exist-db.org/)
 
-  * Apache Lucene (http://lucene.apache.org/)
+  * Apache Lucene (https://lucene.apache.org/)
   * Sphinx (http://sphinxsearch.com/)
 
     * indicates alternative projects.
