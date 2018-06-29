@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,8 +19,18 @@ import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.*;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
 import java.sql.*;
 import java.util.*;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 public class CS_complete_str2csv {
 
@@ -44,7 +54,7 @@ public class CS_complete_str2csv {
 					break;
 
 				String output_file_name = "bmr" + entry_id + "_chem_shift_completeness.str";
-				String output_url  = "http://bmrbpub.protein.osaka-u.ac.jp/archive/cs_complete/" + output_file_name;
+				String output_url  = "https://bmrbpub.pdbj.org/archive/cs_complete/" + output_file_name;
 
 				if (file_exist(output_url))
 					str2csv(conn_bmrb, cs_complete_list_csv, cs_complete_char_csv, entry_id, output_file_name, output_url);
@@ -63,11 +73,39 @@ public class CS_complete_str2csv {
 
 	private static boolean file_exist(String cs_complete_annotation_file) {
 
-		HttpURLConnection.setFollowRedirects(false);
-
 		try {
 
-			HttpURLConnection conn = (HttpURLConnection) new URL(cs_complete_annotation_file).openConnection();
+			TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
+
+				public X509Certificate[] getAcceptedIssuers() {
+					return null;
+				}
+				@Override
+				public void checkClientTrusted(X509Certificate[] certs, String authType) {
+				}
+				@Override
+				public void checkServerTrusted(X509Certificate[] certs, String authType) {
+				}
+			}
+
+			};
+
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, tm, new java.security.SecureRandom());
+
+			HttpsURLConnection.setFollowRedirects(false);
+
+			HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+				@Override
+				public boolean verify(String hostname, SSLSession session) {
+					return true;
+				}
+			});
+
+			URL url = new URL(cs_complete_annotation_file);
+			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+			conn.setSSLSocketFactory(sc.getSocketFactory());
+
 			conn.setRequestMethod("HEAD");
 
 			return (conn.getResponseCode() == HttpURLConnection.HTTP_OK);
@@ -76,6 +114,10 @@ public class CS_complete_str2csv {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
+			e.printStackTrace();
 		}
 
 		return false;
@@ -83,11 +125,39 @@ public class CS_complete_str2csv {
 
 	private static void str2csv(Connection conn_bmrb, FileWriter cs_complete_list_csv, FileWriter cs_complete_char_csv, String entry_id, String output_file_name, String output_url) {
 
-		HttpURLConnection.setFollowRedirects(false);
-
 		try {
 
-			HttpURLConnection conn = (HttpURLConnection) new URL(output_url).openConnection();
+			TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
+
+				public X509Certificate[] getAcceptedIssuers() {
+					return null;
+				}
+				@Override
+				public void checkClientTrusted(X509Certificate[] certs, String authType) {
+				}
+				@Override
+				public void checkServerTrusted(X509Certificate[] certs, String authType) {
+				}
+			}
+
+			};
+
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, tm, new java.security.SecureRandom());
+
+			HttpsURLConnection.setFollowRedirects(false);
+
+			HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+				@Override
+				public boolean verify(String hostname, SSLSession session) {
+					return true;
+				}
+			});
+
+			URL url = new URL(output_url);
+			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+			conn.setSSLSocketFactory(sc.getSocketFactory());
+
 			conn.setRequestMethod("GET");
 
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK)
@@ -167,7 +237,7 @@ public class CS_complete_str2csv {
 								for (int l = 1; l < array.length; l++) {
 									sbuff.append(array[l].replaceFirst("^\"", "").replaceFirst("\"$", ""));
 									if (array.length > 1 && l < array.length - 1)
-									sbuff.append(" ");
+										sbuff.append(" ");
 								}
 
 								method.invoke(list, sbuff.toString());
@@ -246,7 +316,12 @@ public class CS_complete_str2csv {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e1) {
+			e1.printStackTrace();
+		} catch (KeyManagementException e1) {
+			e1.printStackTrace();
 		}
+
 
 	}
 
