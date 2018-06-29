@@ -26,7 +26,7 @@ public class LACS_ext {
 	public static String url_bmrb = "jdbc:postgresql://localhost/bmrb";
 	public static String user_bmrb = "";
 	public static String pass_bmrb = "";
-	public static String url_mirror = "bmrb.protein.osaka-u.ac.jp";
+	public static String url_mirror = "bmrb.pdbj.org";
 
 	private static String bmrbx_tool_home = ".";
 

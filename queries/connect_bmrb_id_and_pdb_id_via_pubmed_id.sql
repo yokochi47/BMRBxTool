@@ -1,9 +1,9 @@
-PREFIX BMRBo: <http://bmrbpub.protein.osaka-u.ac.jp/schema/mmcif_nmr-star.owl#>
-PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#>
+PREFIX BMRBo: <https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.owl#>
+PREFIX PDBo: <https://rdf.wwpdb.org/schema/pdbx-v50.owl#>
 
 SELECT DISTINCT ?bmrb_id ?pubmed_id ?pdb_id ?method
-FROM <http://bmrbpub.protein.osaka-u.ac.jp/rdf/bmr>
-FROM <http://rdf.wwpdb.org/pdb>
+FROM <https://bmrbpub.pdbj.org/rdf/bmr>
+FROM <https://rdf.wwpdb.org/pdb>
 WHERE {
 
   ?bmrb_c BMRBo:citation.id "1" ;
@@ -33,7 +33,7 @@ WHERE {
          PDBo:citation.pdbx_database_id_PubMed ?pubmed_id ;
          PDBo:of_datablock ?pdb_db .
 
-  BIND (STRAFTER(STR(?pdb_db), "http://rdf.wwpdb.org/pdb/") AS ?pdb_id)
+  BIND (STRAFTER(STR(?pdb_db), "https://rdf.wwpdb.org/pdb/") AS ?pdb_id)
 
   ?pdb_e PDBo:exptl.entry_id ?pdb_id ;
          PDBo:exptl.method ?method .

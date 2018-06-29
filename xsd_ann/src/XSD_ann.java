@@ -44,7 +44,7 @@ import org.w3c.dom.ls.LSSerializer;
 public class XSD_ann {
 
 	public final static String dictionary_url = "http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic";
-	public final static String alt_dictionary_url = "http://bmrbpub.protein.osaka-u.ac.jp/schema/mmcif_nmr-star.dic";
+	public final static String alt_dictionary_url = "https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic";
 
 	public final static String category_api = "http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=";
 	public final static String alt_category_api = "http://%s/dictionary/tag.php?tagcat="; 
@@ -65,7 +65,7 @@ public class XSD_ann {
 
 		String xsd_name = "mmcif_nmr-star-v" + dic_version + ".xsd";
 
-		String bmrbx_tool_home = "/home/yokochi/Applications/bmrbx-tool-1.28.0"; // ".";
+		String bmrbx_tool_home = "/home/yokochi/Applications/bmrbx-tool-1.29.0"; // ".";
 
 		String url_bmrb = "jdbc:postgresql://localhost/bmrb";
 		String user_bmrb = "bmrb"; // user;

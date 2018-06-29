@@ -1,7 +1,7 @@
-PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#>
+PREFIX PDBo: <https://rdf.wwpdb.org/schema/pdbx-v50.owl#>
 
 SELECT ?rcsb_id
-FROM <http://rdf.wwpdb.org/pdb>
+FROM <https://rdf.wwpdb.org/pdb>
 WHERE {
 
   ?pdb_s PDBo:database_2.database_id "BMRB" ;
