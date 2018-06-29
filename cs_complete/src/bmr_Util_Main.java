@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,9 @@ limitations under the License.
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,6 +28,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 public class bmr_Util_Main {
 
@@ -79,7 +88,7 @@ public class bmr_Util_Main {
 	public static List<alternative_atom> dna_alt_atom = null;
 	public static List<alternative_atom> rna_alt_atom = null;
 
-	public static final String url_src = "http://bmrb.pdbj.org/ftp/pub/bmrb/statistics/chem_shifts/";
+	public static final String url_src = "https://bmrb.pdbj.org/ftp/pub/bmrb/statistics/chem_shifts/";
 	public static final String aa_filt_csv = "aa_filt.csv";
 	public static final String dna_filt_csv = "dna_filt.csv";
 	public static final String rna_filt_csv = "rna_filt.csv";
@@ -195,11 +204,38 @@ public class bmr_Util_Main {
 
 		try {
 
+			TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
+
+				public X509Certificate[] getAcceptedIssuers() {
+					return null;
+				}
+				@Override
+				public void checkClientTrusted(X509Certificate[] certs, String authType) {
+				}
+				@Override
+				public void checkServerTrusted(X509Certificate[] certs, String authType) {
+				}
+			}
+
+			};
+
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, tm, new java.security.SecureRandom());
+
+			HttpsURLConnection.setFollowRedirects(false);
+
+			HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+				@Override
+				public boolean verify(String hostname, SSLSession session) {
+					return true;
+				}
+			});
+
 			URL url_aa = new URL(url_src + aa_filt_csv);
+			HttpsURLConnection conn = (HttpsURLConnection) url_aa.openConnection();
+			conn.setSSLSocketFactory(sc.getSocketFactory());
 
-			URLConnection url_conn = url_aa.openConnection();
-
-			String last_modified = url_conn.getHeaderField("Last-Modified");
+			String last_modified = conn.getHeaderField("Last-Modified");
 			Date last_date = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH).parse(last_modified);
 			DateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + date_format.format(last_date) + "\n");
@@ -266,6 +302,10 @@ public class bmr_Util_Main {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
+			e.printStackTrace();
 		}
 
 		popular_aa_atom_by_comp_id = new assignable_atom[max_thrds][aa_seq_codes.values().length][];
@@ -285,11 +325,38 @@ public class bmr_Util_Main {
 
 		try {
 
+			TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
+
+				public X509Certificate[] getAcceptedIssuers() {
+					return null;
+				}
+				@Override
+				public void checkClientTrusted(X509Certificate[] certs, String authType) {
+				}
+				@Override
+				public void checkServerTrusted(X509Certificate[] certs, String authType) {
+				}
+			}
+
+			};
+
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, tm, new java.security.SecureRandom());
+
+			HttpsURLConnection.setFollowRedirects(false);
+
+			HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+				@Override
+				public boolean verify(String hostname, SSLSession session) {
+					return true;
+				}
+			});
+
 			URL url_dna = new URL(url_src + dna_filt_csv);
+			HttpsURLConnection conn = (HttpsURLConnection) url_dna.openConnection();
+			conn.setSSLSocketFactory(sc.getSocketFactory());
 
-			URLConnection url_conn = url_dna.openConnection();
-
-			String last_modified = url_conn.getHeaderField("Last-Modified");
+			String last_modified = conn.getHeaderField("Last-Modified");
 			Date last_date = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH).parse(last_modified);
 			DateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + date_format.format(last_date) + "\n");
@@ -356,6 +423,10 @@ public class bmr_Util_Main {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
+			e.printStackTrace();
 		}
 
 		popular_dna_atom_by_comp_id = new assignable_atom[max_thrds][dna_seq_codes.values().length][];
@@ -375,11 +446,38 @@ public class bmr_Util_Main {
 
 		try {
 
+			TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
+
+				public X509Certificate[] getAcceptedIssuers() {
+					return null;
+				}
+				@Override
+				public void checkClientTrusted(X509Certificate[] certs, String authType) {
+				}
+				@Override
+				public void checkServerTrusted(X509Certificate[] certs, String authType) {
+				}
+			}
+
+			};
+
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, tm, new java.security.SecureRandom());
+
+			HttpsURLConnection.setFollowRedirects(false);
+
+			HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+				@Override
+				public boolean verify(String hostname, SSLSession session) {
+					return true;
+				}
+			});
+
 			URL url_rna = new URL(url_src + rna_filt_csv);
+			HttpsURLConnection conn = (HttpsURLConnection) url_rna.openConnection();
+			conn.setSSLSocketFactory(sc.getSocketFactory());
 
-			URLConnection url_conn = url_rna.openConnection();
-
-			String last_modified = url_conn.getHeaderField("Last-Modified");
+			String last_modified = conn.getHeaderField("Last-Modified");
 			Date last_date = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH).parse(last_modified);
 			DateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + date_format.format(last_date) + "\n");
@@ -445,6 +543,10 @@ public class bmr_Util_Main {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
 			e.printStackTrace();
 		}
 

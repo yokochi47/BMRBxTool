@@ -116,7 +116,7 @@ public class STR_file {
 				pb_list.Queried_date = simple_date.format(last_modified);
 				pb_list.Input_file_name = pdb.getName();
 				pb_list.Output_file_name = str.getName();
-				pb_list.Electronic_address = "http://bmrbpub.protein.osaka-u.ac.jp/archive/pb/" + pb_list.Output_file_name;
+				pb_list.Electronic_address = "https://bmrbpub.pdbj.org/archive/pb/" + pb_list.Output_file_name;
 				pb_list.AA_seq_one_letter_code = elem.AA;
 				pb_list.PB_seq_code = elem.PB;
 				pb_list.PDB_ID = pdb_id;

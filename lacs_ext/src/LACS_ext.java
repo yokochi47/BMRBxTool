@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +26,7 @@ public class LACS_ext {
 	public static String url_bmrb = "jdbc:postgresql://localhost/bmrb";
 	public static String user_bmrb = "";
 	public static String pass_bmrb = "";
-	public static String url_mirror = "bmrb.protein.osaka-u.ac.jp";
+	public static String url_mirror = "bmrb.pdbj.org";
 
 	private static String bmrbx_tool_home = ".";
 

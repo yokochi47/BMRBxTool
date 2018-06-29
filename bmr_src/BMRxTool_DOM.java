@@ -24,7 +24,7 @@ import org.w3c.dom.*;
 
 public class BMRxTool_DOM {
 
-	public static final String package_name = "jp.ac.osakaU.protein.bmrbpub.schema.mmcifNmrStar";
+	public static final String package_name = "org.pdbj.bmrbpub.schema.mmcifNmrStar";
 	public static final String namespace_xs = "http://www.w3.org/2001/XMLSchema";
 	public static final String namespace_xsi = "http://www.w3.org/2001/XMLSchema-instance";
 
@@ -113,10 +113,13 @@ public class BMRxTool_DOM {
 
 	public static final String pubmed_esummary_api = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=";
 	public static final String pubmed_esearch_api = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?database=pubmed&term=";
-	public static final String crossref_doi_api = "http://search.crossref.org/dois?q=";
-	public static final String rdf_pdb_ccd_api = "http://rdf.wwpdb.org/cc/";
-	public static final String rdf_pdb_api = "http://rdf.wwpdb.org/pdb/";
+	public static final String crossref_doi_api = "https://search.crossref.org/dois?q=";
 	public static final String bmrb_ligand_expo_api = "http://octopus.bmrb.wisc.edu/ligand-expo?what=find&exact_id=on&compid=";
+	public static final String pdb_graph_uri = "https://rdf.wwpdb.org/pdb";
+	public static final String pdb_cc_graph_uri = "https://rdf.wwpdb.org/cc";
+	public static final String rdf_pdb_api = pdb_graph_uri + "/";
+	public static final String rdf_pdb_cc_api = pdb_cc_graph_uri + "/";
+	public static final String pdbo_uri = "https://rdf.wwpdb.org/schema/pdbx-v50.owl#";
 
 	public static final int service_trials = 3;
 	public static final int service_wait = 10000; // wait for 10 sec
@@ -3483,247 +3486,247 @@ public class BMRxTool_DOM {
 
 			buffw.write("\tpublic static String guessDbName(String val_name, String accession_code) {\n\n");
 
-			// Swiss-Prot accession number format http://web.expasy.org/docs/userman.html
+			// Swiss-Prot accession number format https://web.expasy.org/docs/userman.html
 			buffw.write("\t\tif (accession_code.matches(\"^[A-NR-Z][0-9][A-Z][A-Z0-9][A-Z0-9][0-9]$\") || accession_code.matches(\"^[OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"SP\";\n\n");
 
-			// GenBank accession number format (nucleotide EST) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide EST) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^[HNTRW][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^A[AIW]|^B[EFGIMQU]|^C[ABDFKNOVX]|^D[NRTVWY]|^E[BCEGHLSVWXY]|^F[CDEFGKL]|^G[DEHORTW]|^H[OS]|^J[GKZ][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^U[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^A[FY]|^DQ|^E[FU]|^FJ|^G[QU]|^H[MQ]|^J[FNQX]|^KC[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Genome project data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Genome project data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AE|^C[PY][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide GSS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide GSS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^B[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^A[QZ]|^B[HZ]|^C[CEGLWZ]|^D[UX]|^E[DIJKRT]|^F[HI]|^GS|^H[NR]|^J[JMSY][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide HTGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide HTGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AC|^DP[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Patents) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Patents) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^I[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^AR|^DZ|^EA|^G[CPVXYZ]|^H[JKL][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide STS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide STS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^G[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^BV|^GF[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BK[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TPA CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TPA CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BL|^G[JK][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TSA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TSA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^EZ|^HP|^J[ILOPRTUVW]|^KA[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide From journal scanning) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide From journal scanning) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^S[0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide From GSDB) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide From GSDB) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AD[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Segmented set header) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Segmented set header) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AH[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Other - not currently being used) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Other - not currently being used) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AS[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide MGC project) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide MGC project) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BC[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide FLI-cDNA projects) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide FLI-cDNA projects) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BT[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide from GSDB direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide from GSDB direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^[JKLM][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide WGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide WGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide WGS TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide WGS TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^D[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TSA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TSA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^G[A-Z][A-Z][A-Z][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from TPA Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from TPA Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^D[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^E[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from TPA WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from TPA WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^H[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from TSA Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from TSA Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^J[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// DDBJ accession number format (nucleotide CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BA|^DF|^DG[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide EST) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide EST) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^A[TUV]|^B[BJPWY]|^C[IJ]|^D[ABCK]|^F[SY]|^H[XY][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^D[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^AB[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Genome project data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Genome project data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AP[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Chimpanzee genome data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Chimpanzee genome data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BS[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide GSS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide GSS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AG|^D[EH]|^FT|^GA[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide cDNA projects) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide cDNA projects) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AK[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Patents) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Patents) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^E[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^BD|^D[DIJLM]|^F[UVWZ]|^GB|^H[VWZ][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BR[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide TPA CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide TPA CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^H[TU][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide TSA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide TSA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^FX[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide WGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide WGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^B[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide WGS TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide WGS TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^E[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide MGA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide MGA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^B[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from TPA Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from TPA Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^F[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^G[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from TPA WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from TPA WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^I[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// EMBL accession number format (nucleotide CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AN[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide EST) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide EST) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^F[0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide Direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide Direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^[VXYZ][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^A[JM]|^F[MNO]|^H[EFG][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide Genome project data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide Genome project data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AL|^BX|^C[RTU]|^F[PQR][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide Patents (nucleotide only)) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide Patents (nucleotide only)) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^AX|^C[QS]|^FB|^G[MN]|^H[ABCDHI]|^J[ABCDE][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BN[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide WGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide WGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (protein from Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (protein from Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// NCBI accession number format (nucleotide CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// NCBI accession number format (nucleotide CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[HM]|^DS|^E[MNPQ]|^FA|^G[GL]|^JH|^KB[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"NCBI\";\n\n");
 
-			// RefSeq accession number format (Genomic Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Genomic Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^AC_[0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^N[CG]_[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (Genomic Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Genomic Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^N[STW]_[0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^NW_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^NZ_[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (Protein Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Protein Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^[ANY]P_[0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^[NY]P_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (Protein Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Protein Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^XP_[0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^ZP_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^XP_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (mRNA Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (mRNA Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^NM_[0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^NM_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (mRNA Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (mRNA Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^XM_[0-9][0-9][0-9][0-9][0-9][0-9]$\") || accession_code.matches(\"^XM_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (RNA Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (RNA Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^NR_[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (RNA Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (RNA Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^XR_[0-9][0-9][0-9][0-9][0-9][0-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
@@ -3733,243 +3736,243 @@ public class BMRxTool_DOM {
 
 			// gene name tolerance
 
-			// GenBank accession number format (nucleotide EST) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide EST) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^[HNTRW][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^A[AIW]|^B[EFGIMQU]|^C[ABDFKNOVX]|^D[NRTVWY]|^E[BCEGHLSVWXY]|^F[CDEFGKL]|^G[DEHORTW]|^H[OS]|^J[GKZ][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^U[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^A[FY]|^DQ|^E[FU]|^FJ|^G[QU]|^H[MQ]|^J[FNQX]|^KC[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Genome project data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Genome project data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AE|^C[PY][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide GSS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide GSS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^B[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^A[QZ]|^B[HZ]|^C[CEGLWZ]|^D[UX]|^E[DIJKRT]|^F[HI]|^GS|^H[NR]|^J[JMSY][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide HTGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide HTGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AC|^DP[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Patents) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Patents) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^I[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^AR|^DZ|^EA|^G[CPVXYZ]|^H[JKL][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide STS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide STS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^G[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^BV|^GF[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BK[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TPA CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TPA CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BL|^G[JK][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TSA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TSA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^EZ|^HP|^J[ILOPRTUVW]|^KA[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide From journal scanning) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide From journal scanning) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^S[0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide From GSDB) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide From GSDB) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AD[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Segmented set header) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Segmented set header) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AH[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide Other - not currently being used) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide Other - not currently being used) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AS[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide MGC project) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide MGC project) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BC[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide FLI-cDNA projects) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide FLI-cDNA projects) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BT[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide from GSDB direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide from GSDB direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^[JKLM][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide WGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide WGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+.[1-9]\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide WGS TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide WGS TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^D[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+.[1-9]\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (nucleotide TSA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (nucleotide TSA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^G[A-Z][A-Z][A-Z][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from TPA Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from TPA Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^D[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^E[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from TPA WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from TPA WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^H[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// GenBank accession number format (protein from TSA Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// GenBank accession number format (protein from TSA Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^J[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"GB\";\n\n");
 
-			// DDBJ accession number format (nucleotide CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BA|^DF|^DG[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide EST) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide EST) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^A[TUV]|^B[BJPWY]|^C[IJ]|^D[ABCK]|^F[SY]|^H[XY][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^D[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^AB[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Genome project data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Genome project data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AP[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Chimpanzee genome data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Chimpanzee genome data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BS[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide GSS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide GSS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AG|^D[EH]|^FT|^GA[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide cDNA projects) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide cDNA projects) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AK[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide Patents) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide Patents) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^E[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^BD|^D[DIJLM]|^F[UVWZ]|^GB|^H[VWZ][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BR[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide TPA CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide TPA CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^H[TU][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide TSA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide TSA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^FX[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide WGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide WGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^B[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+.[1-9]\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide WGS TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide WGS TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^E[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+.[1-9]\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (nucleotide MGA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (nucleotide MGA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^B[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from TPA Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from TPA Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^F[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^G[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// DDBJ accession number format (protein from TPA WGS Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// DDBJ accession number format (protein from TPA WGS Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^I[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"DBJ\";\n\n");
 
-			// EMBL accession number format (nucleotide CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AN[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide EST) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide EST) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^F[0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide Direct submissions) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide Direct submissions) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^[VXYZ][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^A[JM]|^F[MNO]|^H[EFG][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide Genome project data) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide Genome project data) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^AL|^BX|^C[RTU]|^F[PQR][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide Patents (nucleotide only)) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide Patents (nucleotide only)) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^A[0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^AX|^C[QS]|^FB|^G[MN]|^H[ABCDHI]|^J[ABCDE][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide TPA) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide TPA) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^BN[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (nucleotide WGS) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (nucleotide WGS) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+.[1-9]\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// EMBL accession number format (protein from Protein ID) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// EMBL accession number format (protein from Protein ID) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"EMBL\";\n\n");
 
-			// NCBI accession number format (nucleotide CON division) http://www.ncbi.nlm.nih.gov/Sequin/acc.html
+			// NCBI accession number format (nucleotide CON division) https://www.ncbi.nlm.nih.gov/Sequin/acc.html
 			buffw.write("\t\tif (accession_code.matches(\"^C[HM]|^DS|^E[MNPQ]|^FA|^G[GL]|^JH|^KB[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"NCBI\";\n\n");
 
-			// RefSeq accession number format (Genomic Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Genomic Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^AC_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^N[CG]_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (Genomic Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Genomic Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^N[STW]_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^NW_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^NZ_[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (Protein Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Protein Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^[ANY]P_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^[NY]P_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (Protein Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (Protein Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^XP_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^ZP_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^XP_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (mRNA Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (mRNA Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^NM_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^NM_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (mRNA Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (mRNA Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^XM_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\") || accession_code.matches(\"^XM_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (RNA Mixed) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (RNA Mixed) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^NR_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
-			// RefSeq accession number format (RNA Automated) http://ncbi.nlm.nih.gov/books/NBK21091/
+			// RefSeq accession number format (RNA Automated) https://ncbi.nlm.nih.gov/books/NBK21091/
 			buffw.write("\t\tif (accession_code.matches(\"^XR_[0-9][0-9][0-9][0-9][0-9][0-9].[1-9]$\"))\n");
 			buffw.write("\t\t\tval_name = \"REF\";\n\n");
 
@@ -5076,12 +5079,12 @@ public class BMRxTool_DOM {
 			buffw.write("import java.io.*;\n");
 			buffw.write("import java.net.*;\n\n");
 
-			buffw.write("//import java.security.cert.*;\n");
-			buffw.write("//import java.security.*;\n");
+			buffw.write("import java.security.cert.*;\n");
+			buffw.write("import java.security.*;\n");
 			buffw.write("import java.util.HashMap;\n");
 			buffw.write("import java.util.Map;\n\n");
 
-			buffw.write("//import javax.net.ssl.*;\n");
+			buffw.write("import javax.net.ssl.*;\n");
 			buffw.write("import javax.xml.parsers.*;\n\n");
 
 			buffw.write("//import org.apache.xml.serialize.*;\n");
@@ -5146,10 +5149,36 @@ public class BMRxTool_DOM {
 			buffw.write("\t\ttry {\n\n");
 
 			buffw.write("\t\t\tString _pdb_code = URLEncoder.encode(pdb_code, \"UTF-8\");\n");
-			buffw.write("\t\t\tString rdf_pdb_ccd_api = \"" + rdf_pdb_ccd_api + "\" + _pdb_code;\n\n");
+			buffw.write("\t\t\tString rdf_pdb_ccd_api = \"" + rdf_pdb_cc_api + "\" + _pdb_code;\n\n");
+
+			buffw.write("\t\t\tTrustManager[] tm = new TrustManager[] { new X509TrustManager() {\n\n");
+
+			buffw.write("\t\t\t\t\tpublic X509Certificate[] getAcceptedIssuers() {\n");
+			buffw.write("\t\t\t\t\t\treturn null;\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkClientTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkServerTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t}\n\n");
+
+			buffw.write("\t\t\t};\n\n");
+
+			buffw.write("\t\t\tSSLContext sc = SSLContext.getInstance(\"SSL\");\n");
+			buffw.write("\t\t\tsc.init(null, tm, new java.security.SecureRandom());\n\n");
+
+			buffw.write("\t\t\tHttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {\n");
+			buffw.write("\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\tpublic boolean verify(String hostname, SSLSession session) {\n");
+			buffw.write("\t\t\t\t\treturn true;\n");
+			buffw.write("\t\t\t\t}\n");
+			buffw.write("\t\t\t});\n\n");
 
 			buffw.write("\t\t\tURL url = new URL(rdf_pdb_ccd_api);\n");
-			buffw.write("\t\t\tURLConnection conn = url.openConnection();\n\n");
+			buffw.write("\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
 
 			buffw.write("\t\t\tDocumentBuilderFactory doc_builder_fac = DocumentBuilderFactory.newInstance();\n\n");
 
@@ -5205,6 +5234,10 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t} catch (SAXException e) {\n");
 			buffw.write("\t\t\t//e.printStackTrace();\n");
+			buffw.write("\t\t} catch (NoSuchAlgorithmException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
+			buffw.write("\t\t} catch (KeyManagementException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t}\n\n");
 
 			buffw.write("\t\treturn pdb_code;\n");
@@ -5317,8 +5350,34 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\tString _pdb_code = URLEncoder.encode(pdb_code, \"UTF-8\");\n");
 			buffw.write("\t\t\tString rdf_pdb_api = \"" + rdf_pdb_api + "\" + pdb_id + \"/chem_comp/\" + _pdb_code;\n\n");
 
+			buffw.write("\t\t\tTrustManager[] tm = new TrustManager[] { new X509TrustManager() {\n\n");
+
+			buffw.write("\t\t\t\t\tpublic X509Certificate[] getAcceptedIssuers() {\n");
+			buffw.write("\t\t\t\t\t\treturn null;\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkClientTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkServerTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t}\n\n");
+
+			buffw.write("\t\t\t};\n\n");
+
+			buffw.write("\t\t\tSSLContext sc = SSLContext.getInstance(\"SSL\");\n");
+			buffw.write("\t\t\tsc.init(null, tm, new java.security.SecureRandom());\n\n");
+
+			buffw.write("\t\t\tHttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {\n");
+			buffw.write("\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\tpublic boolean verify(String hostname, SSLSession session) {\n");
+			buffw.write("\t\t\t\t\treturn true;\n");
+			buffw.write("\t\t\t\t}\n");
+			buffw.write("\t\t\t});\n\n");
+
 			buffw.write("\t\t\tURL url = new URL(rdf_pdb_api);\n");
-			buffw.write("\t\t\tURLConnection conn = url.openConnection();\n\n");
+			buffw.write("\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
 
 			buffw.write("\t\t\tDocumentBuilderFactory doc_builder_fac = DocumentBuilderFactory.newInstance();\n\n");
 
@@ -5394,6 +5453,10 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t} catch (SAXException e) {\n");
 			buffw.write("\t\t\t//e.printStackTrace();\n");
+			buffw.write("\t\t} catch (NoSuchAlgorithmException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
+			buffw.write("\t\t} catch (KeyManagementException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t}\n\n");
 
 			buffw.write("\t\treturn \"pdb/\" + pdb_id + \"/chem_comp/\" + pdb_code;\n");
@@ -6502,9 +6565,38 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\ttitle = title.replaceAll(\"\\n\", \"\");\n");
 			buffw.write("\t\t\tString crossref_doi_api = \"" + crossref_doi_api + "\" + URLEncoder.encode(title, \"UTF-8\") + \"&year=\" + year + \"&rows=1\";\n");
 
+			buffw.write("\t\t\tTrustManager[] tm = new TrustManager[] { new X509TrustManager() {\n\n");
+
+			buffw.write("\t\t\t\t\tpublic X509Certificate[] getAcceptedIssuers() {\n");
+			buffw.write("\t\t\t\t\t\treturn null;\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkClientTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkServerTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t}\n\n");
+
+			buffw.write("\t\t\t};\n\n");
+
+			buffw.write("\t\t\tSSLContext sc = SSLContext.getInstance(\"SSL\");\n");
+			buffw.write("\t\t\tsc.init(null, tm, new java.security.SecureRandom());\n\n");
+
+			buffw.write("\t\t\tHttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {\n");
+			buffw.write("\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\tpublic boolean verify(String hostname, SSLSession session) {\n");
+			buffw.write("\t\t\t\t\treturn true;\n");
+			buffw.write("\t\t\t\t}\n");
+			buffw.write("\t\t\t});\n\n");
+
+			buffw.write("\t\t\tURL url = new URL(crossref_doi_api);\n");
+			buffw.write("\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+
 			buffw.write("\t\t\tObjectMapper mapper = new ObjectMapper();\n\n");
 
-			buffw.write("\t\t\tcrossrefs = mapper.readValue(new URL(crossref_doi_api), " + file_prefix + "_" + util_crossref + "[].class);\n\n");
+			buffw.write("\t\t\tcrossrefs = mapper.readValue(conn.getInputStream(), " + file_prefix + "_" + util_crossref + "[].class);\n\n");
 
 			buffw.write("\t\t\tif (crossrefs == null || crossrefs.length != 1)\n");
 			buffw.write("\t\t\t\treturn null;\n\n");
@@ -6547,11 +6639,15 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\treturn null;\n\n");
 
 			buffw.write("\t\t\tif (checkAuthorFamilyName(first_author_family_name, last_author_family_name, conn_bmrb, entry_id) || (second_author_family_name != null && checkAuthorFamilyName(second_author_family_name, last_author_family_name, conn_bmrb, entry_id)))\n");
-			buffw.write("\t\t\t\treturn crossref.getDoi().replaceFirst(\"http://dx.doi.org/\", \"\");\n\n");
+			buffw.write("\t\t\t\treturn crossref.getDoi().replaceFirst(\"https?//dx.doi.org/\", \"\");\n\n");
 
 			buffw.write("\t\t} catch (UnsupportedEncodingException e) {\n");
 			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t} catch (MalformedURLException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
+			buffw.write("\t\t} catch (NoSuchAlgorithmException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
+			buffw.write("\t\t} catch (KeyManagementException e) {\n");
 			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t} catch (IOException e) {\n");
 			buffw.write("\n\t\t\ttry {\n\t\t\t\tThread.sleep(" + service_wait + ");\n\t\t\t} catch (InterruptedException e1) {\n\t\t\t\te1.printStackTrace();\n\t\t\t}\n\n");
@@ -8652,17 +8748,13 @@ public class BMRxTool_DOM {
 
 			buffw.write("package " + package_name + ";\n\n");
 
-			buffw.write("import java.io.BufferedReader;\n");
-			buffw.write("import java.io.File;\n");
-			buffw.write("import java.io.FileNotFoundException;\n");
-			buffw.write("import java.io.FileReader;\n");
-			buffw.write("import java.io.FileWriter;\n");
-			buffw.write("import java.io.IOException;\n");
-			buffw.write("import java.io.InputStream;\n");
-			buffw.write("import java.io.InputStreamReader;\n");
-			buffw.write("import java.net.HttpURLConnection;\n");
-			buffw.write("import java.net.MalformedURLException;\n");
-			buffw.write("import java.net.URL;\n");
+			buffw.write("import java.io.*;\n");
+			buffw.write("import java.net.*;\n\n");
+
+			buffw.write("import java.security.cert.*;\n");
+			buffw.write("import java.security.*;\n");
+
+			buffw.write("import javax.net.ssl.*;\n");
 			buffw.write("import java.sql.*;\n");
 			buffw.write("import java.util.HashMap;\n");
 			buffw.write("import java.util.Map;\n");
@@ -8679,8 +8771,8 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\tHttpURLConnection.setFollowRedirects(false);\n\n");
 
-			buffw.write("\t\tString bmrb_pdb_coor_match_csv_file = \"http://bmrb.protein.osaka-u.ac.jp/ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts/BMRB_PDB_match.csv\";\n");
-			buffw.write("\t\tString bmrb_pdb_adit_match_csv_file = \"http://bmrb.protein.osaka-u.ac.jp/ftp/pub/bmrb/nmr_pdb_integrated_data/adit_nmr_matched_pdb_bmrb_entry_ids.csv\";\n\n");
+			buffw.write("\t\tString bmrb_pdb_coor_match_csv_file = \"https://bmrb.pdbj.org/ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts/BMRB_PDB_match.csv\";\n");
+			buffw.write("\t\tString bmrb_pdb_adit_match_csv_file = \"https://bmrb.pdbj.org/ftp/pub/bmrb/nmr_pdb_integrated_data/adit_nmr_matched_pdb_bmrb_entry_ids.csv\";\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
@@ -8752,9 +8844,35 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\tbufferr.close();\n");
 			buffw.write("\t\t\tfiler.close();\n\n");
 
-			buffw.write("\t\t\tHttpURLConnection conn = null;\n\n");
+			buffw.write("\t\t\tTrustManager[] tm = new TrustManager[] { new X509TrustManager() {\n\n");
 
-			buffw.write("\t\t\tconn = (HttpURLConnection) new URL(bmrb_pdb_coor_match_csv_file).openConnection();\n");
+			buffw.write("\t\t\t\t\tpublic X509Certificate[] getAcceptedIssuers() {\n");
+			buffw.write("\t\t\t\t\t\treturn null;\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkClientTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\t\tpublic void checkServerTrusted(X509Certificate[] certs, String authType) {\n");
+			buffw.write("\t\t\t\t\t}\n");
+			buffw.write("\t\t\t\t}\n\n");
+
+			buffw.write("\t\t\t};\n\n");
+
+			buffw.write("\t\t\tSSLContext sc = SSLContext.getInstance(\"SSL\");\n");
+			buffw.write("\t\t\tsc.init(null, tm, new java.security.SecureRandom());\n\n");
+
+			buffw.write("\t\t\tHttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {\n");
+			buffw.write("\t\t\t\t@Override\n");
+			buffw.write("\t\t\t\tpublic boolean verify(String hostname, SSLSession session) {\n");
+			buffw.write("\t\t\t\t\treturn true;\n");
+			buffw.write("\t\t\t\t}\n");
+			buffw.write("\t\t\t});\n\n");
+
+			buffw.write("\t\t\tURL url = new URL(bmrb_pdb_coor_match_csv_file);\n");
+			buffw.write("\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+
 			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
 			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
@@ -8785,7 +8903,10 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\tbufferr.close();\n\n");
 
-			buffw.write("\t\t\tconn = (HttpURLConnection) new URL(bmrb_pdb_coor_match_csv_file).openConnection();\n");
+			buffw.write("\t\t\turl = new URL(bmrb_pdb_coor_match_csv_file);\n");
+			buffw.write("\t\t\tconn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+
 			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
 			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
@@ -8817,7 +8938,10 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\tbufferr.close();\n\n");
 
-			buffw.write("\t\t\tconn = (HttpURLConnection) new URL(bmrb_pdb_adit_match_csv_file).openConnection();\n");
+			buffw.write("\t\t\turl = new URL(bmrb_pdb_adit_match_csv_file);\n");
+			buffw.write("\t\t\tconn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+
 			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
 			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
@@ -8838,7 +8962,10 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\tbufferr.close();\n\n");
 
-			buffw.write("\t\t\tconn = (HttpURLConnection) new URL(bmrb_pdb_adit_match_csv_file).openConnection();\n");
+			buffw.write("\t\t\turl = new URL(bmrb_pdb_adit_match_csv_file);\n");
+			buffw.write("\t\t\tconn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+
 			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
 			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
@@ -8868,6 +8995,10 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t} catch (MalformedURLException e) {\n");
 			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t} catch (IOException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
+			buffw.write("\t\t} catch (NoSuchAlgorithmException e) {\n");
+			buffw.write("\t\t\te.printStackTrace();\n");
+			buffw.write("\t\t} catch (KeyManagementException e) {\n");
 			buffw.write("\t\t\te.printStackTrace();\n");
 			buffw.write("\t\t}\n\n");
 
@@ -9014,14 +9145,14 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\tif (state != null)\n");
 			buffw.write("\t\t\t\tstate.close();\n\n");
 
-			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#> SELECT ?pdb_id COUNT(?pdb_id) AS ?count FROM <http://rdf.wwpdb.org/pdb> WHERE { ?pdb_s PDBo:database_2.database_id \\\"BMRB\\\" ; PDBo:database_2.database_code \\\"\" + entry_id + \"\\\" . ?pdb_s PDBo:of_datablock ?pdb_db . BIND (STRAFTER(STR(?pdb_db), \\\"http://rdf.wwpdb.org/pdb/\\\") AS ?pdb_id) BIND (IRI(CONCAT(?pdb_db, \\\"/citation_authorCategory\\\")) AS ?pdb_citation_author_category) ?pdb_citation_author_category PDBo:has_citation_author ?pdb_citation_author . ?pdb_citation_author PDBo:citation_author.name ?citation_author_name . FILTER (STRSTARTS(?citation_author_name, \\\"\" + first_author_family_name + \"\\\") || STRSTARTS(?citation_author_name, \\\"\" + last_author_family_name + \"\\\")) } GROUP BY ?pdb_id\";\n");
+			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <" + pdbo_uri + "> SELECT ?pdb_id COUNT(?pdb_id) AS ?count FROM <" + pdb_graph_uri + "> WHERE { ?pdb_s PDBo:database_2.database_id \\\"BMRB\\\" ; PDBo:database_2.database_code \\\"\" + entry_id + \"\\\" . ?pdb_s PDBo:of_datablock ?pdb_db . BIND (STRAFTER(STR(?pdb_db), \\\"" + rdf_pdb_api + "\\\") AS ?pdb_id) BIND (IRI(CONCAT(?pdb_db, \\\"/citation_authorCategory\\\")) AS ?pdb_citation_author_category) ?pdb_citation_author_category PDBo:has_citation_author ?pdb_citation_author . ?pdb_citation_author PDBo:citation_author.name ?citation_author_name . FILTER (STRSTARTS(?citation_author_name, \\\"\" + first_author_family_name + \"\\\") || STRSTARTS(?citation_author_name, \\\"\" + last_author_family_name + \"\\\")) } GROUP BY ?pdb_id\";\n");
 
 			buffw.write("\t\t\tFile query_file = new File(\"queries\", \"get_pdb_id_from_bmrb_id_\" + entry_id + \".sparql\");\n");
 			buffw.write("\t\t\tFileWriter queryw = new FileWriter(query_file);\n");
 			buffw.write("\t\t\tqueryw.write(sparql);\n");
 			buffw.write("\t\t\tqueryw.close();\n\n");
 
-			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"http://bmrbpub.protein.osaka-u.ac.jp/search/rdf\");\n");
+			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"https://bmrbpub.pdbj.org/search/rdf\");\n");
 			buffw.write("\t\t\tProcess proc = builder.start();\n\n");
 
 			buffw.write("\t\t\tif (proc.waitFor() != 0)\n");
@@ -9069,14 +9200,14 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\ttry {\n\n");
 
-			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#> SELECT ?rcsb_id FROM <http://rdf.wwpdb.org/pdb> WHERE { ?pdb_s PDBo:database_2.database_id \\\"BMRB\\\" ; PDBo:database_2.database_code \\\"\" + entry_id + \"\\\" . ?pdb_s PDBo:of_datablock ?pdb_db . BIND (IRI(CONCAT(?pdb_db, \\\"/database_2Category\\\")) AS ?pdb_db2c) ?pdb_db2c PDBo:has_database_2 ?rcsb_s . FILTER (CONTAINS(STR(?rcsb_s), \\\"RCSB\\\")) ?rcsb_s PDBo:database_2.database_code ?rcsb_id . }\";\n");
+			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <" + pdbo_uri + "> SELECT ?rcsb_id FROM <" + pdb_graph_uri + "> WHERE { ?pdb_s PDBo:database_2.database_id \\\"BMRB\\\" ; PDBo:database_2.database_code \\\"\" + entry_id + \"\\\" . ?pdb_s PDBo:of_datablock ?pdb_db . BIND (IRI(CONCAT(?pdb_db, \\\"/database_2Category\\\")) AS ?pdb_db2c) ?pdb_db2c PDBo:has_database_2 ?rcsb_s . FILTER (CONTAINS(STR(?rcsb_s), \\\"RCSB\\\")) ?rcsb_s PDBo:database_2.database_code ?rcsb_id . }\";\n");
 
 			buffw.write("\t\t\tFile query_file = new File(\"queries\", \"get_rcsb_id_from_bmrb_id_\" + entry_id + \".sparql\");\n");
 			buffw.write("\t\t\tFileWriter queryw = new FileWriter(query_file);\n");
 			buffw.write("\t\t\tqueryw.write(sparql);\n");
 			buffw.write("\t\t\tqueryw.close();\n\n");
 
-			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"http://bmrbpub.protein.osaka-u.ac.jp/search/rdf\");\n");
+			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"https://bmrbpub.pdbj.org/search/rdf\");\n");
 			buffw.write("\t\t\tProcess proc = builder.start();\n\n");
 
 			buffw.write("\t\t\tif (proc.waitFor() != 0)\n");
@@ -9108,14 +9239,14 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\ttry {\n\n");
 
-			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#> SELECT ?rcsb_id FROM <http://rdf.wwpdb.org/pdb> WHERE {  BIND (IRI(CONCAT(\\\"http://rdf.wwpdb.org/pdb/\\\", \\\"\" + pdb_id + \"\\\", \\\"/database_2Category\\\")) AS ?pdb_db2c) ?pdb_db2c PDBo:has_database_2 ?rcsb_s . FILTER (CONTAINS(STR(?rcsb_s), \\\"RCSB\\\")) ?rcsb_s PDBo:database_2.database_code ?rcsb_id . }\";\n");
+			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <" + pdbo_uri + "> SELECT ?rcsb_id FROM <" + pdb_graph_uri + "> WHERE {  BIND (IRI(CONCAT(\\\"" + rdf_pdb_api + "\\\", \\\"\" + pdb_id + \"\\\", \\\"/database_2Category\\\")) AS ?pdb_db2c) ?pdb_db2c PDBo:has_database_2 ?rcsb_s . FILTER (CONTAINS(STR(?rcsb_s), \\\"RCSB\\\")) ?rcsb_s PDBo:database_2.database_code ?rcsb_id . }\";\n");
 
 			buffw.write("\t\t\tFile query_file = new File(\"queries\", \"get_rcsb_id_from_pdb_id_\" + pdb_id + \".sparql\");\n");
 			buffw.write("\t\t\tFileWriter queryw = new FileWriter(query_file);\n");
 			buffw.write("\t\t\tqueryw.write(sparql);\n");
 			buffw.write("\t\t\tqueryw.close();\n\n");
 
-			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"http://bmrbpub.protein.osaka-u.ac.jp/search/rdf\");\n");
+			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"https://bmrbpub.pdbj.org/search/rdf\");\n");
 			buffw.write("\t\t\tProcess proc = builder.start();\n\n");
 
 			buffw.write("\t\t\tif (proc.waitFor() != 0)\n");
@@ -9152,14 +9283,14 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\ttry {\n\n");
 
-			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v40.owl#> SELECT ?pubmed_id FROM <http://rdf.wwpdb.org/pdb> WHERE {  BIND (IRI(CONCAT(\\\"http://rdf.wwpdb.org/pdb/\\\", \\\"\" + pdb_id + \"\\\", \\\"/citation/primary\\\")) AS ?pdb_cp) ?pdb_cp PDBo:citation.pdbx_database_id_PubMed ?pubmed_id }\";\n");
+			buffw.write("\t\t\tString sparql = \"PREFIX PDBo: <" + pdbo_uri + "> SELECT ?pubmed_id FROM <" + pdb_graph_uri + "> WHERE {  BIND (IRI(CONCAT(\\\"" + rdf_pdb_api + "\\\", \\\"\" + pdb_id + \"\\\", \\\"/citation/primary\\\")) AS ?pdb_cp) ?pdb_cp PDBo:citation.pdbx_database_id_PubMed ?pubmed_id }\";\n");
 
 			buffw.write("\t\t\tFile query_file = new File(\"queries\", \"get_primary_pubmed_id_from_pdb_id_\" + pdb_id + \".sparql\");\n");
 			buffw.write("\t\t\tFileWriter queryw = new FileWriter(query_file);\n");
 			buffw.write("\t\t\tqueryw.write(sparql);\n");
 			buffw.write("\t\t\tqueryw.close();\n\n");
 
-			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"http://bmrbpub.protein.osaka-u.ac.jp/search/rdf\");\n");
+			buffw.write("\t\t\tProcessBuilder builder = new ProcessBuilder(\"curl\", \"-F\", \"query=@\" + query_file.getAbsolutePath(), \"-F\", \"format=text/csv\", \"https://bmrbpub.pdbj.org/search/rdf\");\n");
 			buffw.write("\t\t\tProcess proc = builder.start();\n\n");
 
 			buffw.write("\t\t\tif (proc.waitFor() != 0)\n");

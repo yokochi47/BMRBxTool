@@ -1,4 +1,4 @@
-declare namespace BMRBx='http://bmrbpub.protein.osaka-u.ac.jp/schema/mmcif_nmr-star.xsd';
+declare namespace BMRBx='https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd';
 
 for $elem in //*
 where $elem/*[text() contains text {'tyrosine', 'phospho'} any]

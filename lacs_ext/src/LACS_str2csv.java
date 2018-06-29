@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,9 +19,20 @@ import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.*;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
 import java.sql.*;
 import java.util.*;
 import java.util.Date;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
 import java.text.SimpleDateFormat;
 
 public class LACS_str2csv {
@@ -46,7 +57,13 @@ public class LACS_str2csv {
 					break;
 
 				String output_file_name = "bmr" + entry_id + "_LACS.str";
-				String output_url  = "http://" + url_mirror + "/ftp/pub/bmrb/validation_reports/LACS/" + output_file_name;
+
+				String output_url;
+
+				if (url_mirror.equals("bmrb.pdbj.org"))
+					output_url  = "https://" + url_mirror + "/ftp/pub/bmrb/validation_reports/LACS/" + output_file_name;
+				else
+					output_url  = "http://" + url_mirror + "/ftp/pub/bmrb/validation_reports/LACS/" + output_file_name;
 
 				if (file_exist(output_url))
 					str2csv(conn_bmrb, lacs_plot_csv, lacs_char_csv, entry_id, output_file_name, output_url);
@@ -65,18 +82,64 @@ public class LACS_str2csv {
 
 	private static boolean file_exist(String output_url) {
 
-		HttpURLConnection.setFollowRedirects(false);
-
 		try {
 
-			HttpURLConnection conn = (HttpURLConnection) new URL(output_url).openConnection();
-			conn.setRequestMethod("HEAD");
+			if (output_url.startsWith("https")) {
 
-			return (conn.getResponseCode() == HttpURLConnection.HTTP_OK);
+				TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
+
+					public X509Certificate[] getAcceptedIssuers() {
+						return null;
+					}
+					@Override
+					public void checkClientTrusted(X509Certificate[] certs, String authType) {
+					}
+					@Override
+					public void checkServerTrusted(X509Certificate[] certs, String authType) {
+					}
+				}
+
+				};
+
+				SSLContext sc = SSLContext.getInstance("SSL");
+				sc.init(null, tm, new java.security.SecureRandom());
+
+				HttpsURLConnection.setFollowRedirects(false);
+
+				HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+					@Override
+					public boolean verify(String hostname, SSLSession session) {
+						return true;
+					}
+				});
+
+				URL url = new URL(output_url);
+				HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+				conn.setSSLSocketFactory(sc.getSocketFactory());
+
+				conn.setRequestMethod("HEAD");
+
+				return (conn.getResponseCode() == HttpURLConnection.HTTP_OK);
+			}
+
+			else {
+
+				HttpURLConnection.setFollowRedirects(false);
+
+				HttpURLConnection conn = (HttpURLConnection) new URL(output_url).openConnection();
+				conn.setRequestMethod("HEAD");
+
+				return (conn.getResponseCode() == HttpURLConnection.HTTP_OK);
+
+			}
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
 			e.printStackTrace();
 		}
 
@@ -89,17 +152,72 @@ public class LACS_str2csv {
 
 		try {
 
-			HttpURLConnection conn = (HttpURLConnection) new URL(output_url).openConnection();
-			conn.setRequestMethod("GET");
+			InputStream in = null;
+			Date release_date = null;
 
-			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK)
-				return;
+			if (output_url.startsWith("https")) {
+
+				TrustManager[] tm = new TrustManager[] { new X509TrustManager() {
+
+					public X509Certificate[] getAcceptedIssuers() {
+						return null;
+					}
+					@Override
+					public void checkClientTrusted(X509Certificate[] certs, String authType) {
+					}
+					@Override
+					public void checkServerTrusted(X509Certificate[] certs, String authType) {
+					}
+				}
+
+				};
+
+				SSLContext sc = SSLContext.getInstance("SSL");
+				sc.init(null, tm, new java.security.SecureRandom());
+
+				HttpsURLConnection.setFollowRedirects(false);
+
+				HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+					@Override
+					public boolean verify(String hostname, SSLSession session) {
+						return true;
+					}
+				});
+
+				URL url = new URL(output_url);
+				HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+				conn.setSSLSocketFactory(sc.getSocketFactory());
+
+				conn.setRequestMethod("GET");
+
+				if (conn.getResponseCode() != HttpURLConnection.HTTP_OK)
+					return;
+
+				in = conn.getInputStream();
+				release_date = new Date(conn.getLastModified());
+
+			}
+
+			else {
+
+				HttpURLConnection.setFollowRedirects(false);
+
+				HttpURLConnection conn = (HttpURLConnection) new URL(output_url).openConnection();
+				conn.setRequestMethod("GET");
+
+				if (conn.getResponseCode() != HttpURLConnection.HTTP_OK)
+					return;
+
+				in = conn.getInputStream();
+				release_date = new Date(conn.getLastModified());
+
+			}
 
 			SimpleDateFormat simple_date = new SimpleDateFormat("yyyy-MM-dd");
 
 			int lacs_plot_id = 1;
 
-			BufferedReader bufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			BufferedReader bufferr = new BufferedReader(new InputStreamReader(in));
 
 			String line = bufferr.readLine();
 
@@ -116,7 +234,7 @@ public class LACS_str2csv {
 			plot.Electronic_address = output_url;
 			plot.Output_file_name = output_file_name;
 			plot.Source_release_designation = "";
-			plot.Source_release_date = simple_date.format(new Date(conn.getLastModified()));
+			plot.Source_release_date = simple_date.format(release_date);
 			plot.Details = "";
 
 			PreparedStatement pstate = conn_bmrb.prepareStatement("select * from \"Entity_assembly\" where \"Entry_ID\" = ?");
@@ -269,6 +387,10 @@ public class LACS_str2csv {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
 			e.printStackTrace();
 		}
 

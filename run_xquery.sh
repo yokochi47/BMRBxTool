@@ -5,7 +5,7 @@ show_usage() {
  echo "Usage: $0 -p PREFIX -q QUERY_FILE -e LOCATION -s SILENT"
  echo " -p PREFIX     : either 'bmr' (BMRB:default) or 'bms' (Metabolomics)."
  echo " -q QUERY_FILE : XQuery file."
- echo " -e (loc|pub)  : localhost (loc) or bmrbpub.protein.osaka-u.ac.jp (loc)."
+ echo " -e (loc|pub)  : localhost (loc) or bmrbpub.pdbj.org (pub)."
  echo " -s (yes|no)   : Silent mode of curl command (default:no)."
 
 }
@@ -18,7 +18,7 @@ if [ $# = 0 ] ; then
 fi
 
 URL_LOC=http://localhost:8984/rest/
-URL_PUB=http://bmrbpub.protein.osaka-u.ac.jp/xml/
+URL_PUB=https://bmrbpub.pdbj.org/xml/
 
 PREFIX=bmr
 QUERY_FILE=$1
