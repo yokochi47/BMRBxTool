@@ -15,7 +15,6 @@ INIT=true
 # Please edit the following mail settings for your organization.
 source ./scripts/db-user.sh
 
-SCHEMA_HOST=bmrbpub.protein.osaka-u.ac.jp
 MAIL_TO=bmrbsys@protein.osaka-u.ac.jp
 MAIL_FROM=webmaster@bmrbpub.protein.osaka-u.ac.jp
 SMTP_HOST=postman.protein.osaka-u.ac.jp
@@ -156,7 +155,7 @@ finalize () {
 while true
 do
 
- java -classpath $PREFIX-util.jar:schema/mmcifNmrStar.jar:extlibs/* jp.ac.osakaU.protein.bmrbpub.schema.mmcifNmrStar.$PREFIX"_Util_Main" $OPTION --$ATOM\
+ java -classpath $PREFIX-util.jar:schema/mmcifNmrStar.jar:extlibs/* org.pdbj.bmrbpub.schema.mmcifNmrStar.$PREFIX"_Util_Main" $OPTION --$ATOM\
  --user-bmrb $DB_USER --user-tax $DB_USER --user-le $DB_USER --mail-to $MAIL_TO --mail-from $MAIL_FROM --smtp-host $SMTP_HOST --max-thrds $MAXPROCS || exit 1
 
  if [ -d $XML_LOC_DIR ] || [ $INIT != "true" ] ; then
