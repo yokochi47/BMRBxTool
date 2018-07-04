@@ -503,19 +503,19 @@ DROP TABLE IF EXISTS entry CASCADE;
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entry_experimental_method;
+DROP TYPE IF EXISTS ENUM_entry_experimental_method CASCADE;
 CREATE TYPE ENUM_entry_experimental_method AS ENUM ( 'NMR', 'Theoretical' );
-DROP TYPE IF EXISTS ENUM_entry_experimental_method_subtype;
+DROP TYPE IF EXISTS ENUM_entry_experimental_method_subtype CASCADE;
 CREATE TYPE ENUM_entry_experimental_method_subtype AS ENUM ( 'SOLUTION', 'SOLID-STATE', 'THEORETICAL' );
-DROP TYPE IF EXISTS ENUM_entry_format_name;
+DROP TYPE IF EXISTS ENUM_entry_format_name CASCADE;
 CREATE TYPE ENUM_entry_format_name AS ENUM ( 'NMR-STAR' );
-DROP TYPE IF EXISTS ENUM_entry_nmr_star_version;
+DROP TYPE IF EXISTS ENUM_entry_nmr_star_version CASCADE;
 CREATE TYPE ENUM_entry_nmr_star_version AS ENUM ( '3.1', '3.1.0.29', '3.1.1.7', '3.1.1.21', '3.1.1.31', '3.1.1.61', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.93', '3.1.1.96', '3.1.1.97', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.0.16', '3.2.1.2', '3.2.1.5' );
-DROP TYPE IF EXISTS ENUM_entry_original_nmr_star_version;
+DROP TYPE IF EXISTS ENUM_entry_original_nmr_star_version CASCADE;
 CREATE TYPE ENUM_entry_original_nmr_star_version AS ENUM ( '2.1', '3.0.2.8', '3.0.8.100', '3.0.8.109', '3.0.8.111', '3.0.8.112', '3.0.8.116', '3.0.8.120', '3.0.8.125', '3.0.8.34', '3.0.8.53', '3.0.8.58', '3.0.8.59', '3.0.8.78', '3.0.8.94', '3.0.8.96', '3.0.9.2', '3.0.9.13', '3.0.9.14', '3.1', '3.1.0.46', '3.1.1.7', '3.1.1.15', '3.1.1.19', '3.1.1.21', '3.1.1.31', '3.1.1.44', '3.1.1.61', '3.1.1.65', '3.1.1.75', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.0.16', '3.2.1.2', '3.2.1.5' );
-DROP TYPE IF EXISTS ENUM_entry_type;
+DROP TYPE IF EXISTS ENUM_entry_type CASCADE;
 CREATE TYPE ENUM_entry_type AS ENUM ( 'macromolecule', 'metabolite/natural product', 'small molecule', 'small molecule structure' );
-DROP TYPE IF EXISTS ENUM_entry_version_type;
+DROP TYPE IF EXISTS ENUM_entry_version_type CASCADE;
 CREATE TYPE ENUM_entry_version_type AS ENUM ( 'original', 'update', 'obsolete' );
 CREATE TABLE entry (
 	accession_date DATE ,
@@ -670,17 +670,17 @@ CREATE TABLE angular_order_parameter_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_assembly_ambiguous_chem_comp_sites;
+DROP TYPE IF EXISTS ENUM_assembly_ambiguous_chem_comp_sites CASCADE;
 CREATE TYPE ENUM_assembly_ambiguous_chem_comp_sites AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_assembly_ambiguous_conformational_states;
+DROP TYPE IF EXISTS ENUM_assembly_ambiguous_conformational_states CASCADE;
 CREATE TYPE ENUM_assembly_ambiguous_conformational_states AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_assembly_molecules_in_chemical_exchange;
+DROP TYPE IF EXISTS ENUM_assembly_molecules_in_chemical_exchange CASCADE;
 CREATE TYPE ENUM_assembly_molecules_in_chemical_exchange AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_assembly_non_standard_bonds;
+DROP TYPE IF EXISTS ENUM_assembly_non_standard_bonds CASCADE;
 CREATE TYPE ENUM_assembly_non_standard_bonds AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_assembly_paramagnetic;
+DROP TYPE IF EXISTS ENUM_assembly_paramagnetic CASCADE;
 CREATE TYPE ENUM_assembly_paramagnetic AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_assembly_thiol_state;
+DROP TYPE IF EXISTS ENUM_assembly_thiol_state CASCADE;
 CREATE TYPE ENUM_assembly_thiol_state AS ENUM ( 'all disulfide bound', 'all other bound', 'all free', 'not present', 'not available', 'unknown', 'not reported', 'free and disulfide bound', 'free and other bound', 'free disulfide and other bound', 'disulfide and other bound' );
 CREATE TABLE assembly (
 	ambiguous_chem_comp_sites ENUM_assembly_ambiguous_chem_comp_sites ,
@@ -783,11 +783,11 @@ CREATE TABLE assembly_common_name (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_assembly_db_link_author_supplied;
+DROP TYPE IF EXISTS ENUM_assembly_db_link_author_supplied CASCADE;
 CREATE TYPE ENUM_assembly_db_link_author_supplied AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_assembly_db_link_entry_experimental_method;
+DROP TYPE IF EXISTS ENUM_assembly_db_link_entry_experimental_method CASCADE;
 CREATE TYPE ENUM_assembly_db_link_entry_experimental_method AS ENUM ( 'X-ray', 'solution NMR', 'solid-state NMR', 'FTIR', 'mass spectrometry', 'XAFS', 'NMR', 'X-ray crystallography', 'X-ray fiber diffraction', 'solid-state NMR and X-ray fiber diffraction', 'na' );
-DROP TYPE IF EXISTS ENUM_assembly_db_link_database_code;
+DROP TYPE IF EXISTS ENUM_assembly_db_link_database_code CASCADE;
 CREATE TYPE ENUM_assembly_db_link_database_code AS ENUM ( 'PDB', 'BMRB', 'DBJ', 'EMBL', 'GB', 'PIR', 'PRF', 'REF', 'SP', 'UNP', 'NCBI', 'PubMed', 'SGD', 'SMART', 'TargetDB', 'BMRB(withdrawn)' );
 CREATE TABLE assembly_db_link (
 	author_supplied ENUM_assembly_db_link_author_supplied ,
@@ -814,7 +814,7 @@ CREATE TABLE assembly_db_link (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_assembly_interaction_mol_interaction_type;
+DROP TYPE IF EXISTS ENUM_assembly_interaction_mol_interaction_type CASCADE;
 CREATE TYPE ENUM_assembly_interaction_mol_interaction_type AS ENUM ( 'Extremely slow exchange', 'Slow exchange', 'Intermediate exchange', 'Fast exchange', 'No interaction', 'na' );
 CREATE TABLE assembly_interaction (
 	entity_assembly_id_1 INTEGER ,
@@ -918,7 +918,7 @@ CREATE TABLE assembly_subsystem (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_assembly_systematic_name_naming_system;
+DROP TYPE IF EXISTS ENUM_assembly_systematic_name_naming_system CASCADE;
 CREATE TYPE ENUM_assembly_systematic_name_naming_system AS ENUM ( 'IUPAC', 'CAS name', 'CAS registry number', 'BMRB', 'Pfam', 'Swiss-Prot', 'MEROPS' );
 CREATE TABLE assembly_systematic_name (
 	name TEXT ,
@@ -937,7 +937,7 @@ CREATE TABLE assembly_systematic_name (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_assembly_type_type;
+DROP TYPE IF EXISTS ENUM_assembly_type_type CASCADE;
 CREATE TYPE ENUM_assembly_type_type AS ENUM ( 'peptide', 'protein monomer', 'protein homo-multimer', 'protein hetero-multimer', 'RNA single strand', 'RNA double strand', 'DNA single strand', 'DNA double strand', 'DNA-RNA hybrid', 'polysaccharide', 'protein-nucleic acid complex', 'protein-inhibitor complex', 'protein-drug complex', 'protein-ligand complex', 'protein-protein complex', 'protein-DNA complex', 'protein-DNA-ligand complex', 'protein-DNA-inhibitor complex', 'protein-RNA complex', 'protein-RNA-ligand complex', 'protein-RNA-inhibitor complex', 'protein-carbohydrate complex', 'DNA-drug complex', 'DNA-RNA complex', 'RNA-drug complex', 'non-polymer' );
 CREATE TABLE assembly_type (
 -- ATTRIBUTE
@@ -1095,7 +1095,7 @@ CREATE TABLE atom (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_atom_chem_shift_ambiguity_code;
+DROP TYPE IF EXISTS ENUM_atom_chem_shift_ambiguity_code CASCADE;
 CREATE TYPE ENUM_atom_chem_shift_ambiguity_code AS ENUM ( '1', '2', '3', '4', '5', '6', '9' );
 CREATE TABLE atom_chem_shift (
 	ambiguity_code ENUM_atom_chem_shift_ambiguity_code ,
@@ -1153,7 +1153,7 @@ CREATE TABLE atom_nomenclature (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_atom_site_ordered_flag;
+DROP TYPE IF EXISTS ENUM_atom_site_ordered_flag CASCADE;
 CREATE TYPE ENUM_atom_site_ordered_flag AS ENUM ( '1', '0' );
 CREATE TABLE atom_site (
 	assembly_atom_id INTEGER ,
@@ -1231,7 +1231,7 @@ CREATE TABLE atom_sites_footnote (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_atom_type_paramagnetic;
+DROP TYPE IF EXISTS ENUM_atom_type_paramagnetic CASCADE;
 CREATE TYPE ENUM_atom_type_paramagnetic AS ENUM ( 'yes', 'no' );
 CREATE TABLE atom_type (
 	atomic_mass DECIMAL ,
@@ -1323,7 +1323,7 @@ CREATE TABLE auto_relaxation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_auto_relaxation_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_auto_relaxation_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_auto_relaxation_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE auto_relaxation_experiment (
 	experiment_name TEXT ,
@@ -1345,17 +1345,17 @@ CREATE TABLE auto_relaxation_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_auto_relaxation_list_common_relaxation_type_name;
+DROP TYPE IF EXISTS ENUM_auto_relaxation_list_common_relaxation_type_name CASCADE;
 CREATE TYPE ENUM_auto_relaxation_list_common_relaxation_type_name AS ENUM ( 'R1', 'R2', 'R1rho', 'ZQ relaxation', 'longitudinal spin order', 'single quantum antiphase', 'DQ relaxation' );
-DROP TYPE IF EXISTS ENUM_auto_relaxation_list_relaxation_coherence_type;
+DROP TYPE IF EXISTS ENUM_auto_relaxation_list_relaxation_coherence_type CASCADE;
 CREATE TYPE ENUM_auto_relaxation_list_relaxation_coherence_type AS ENUM ( 'Iz', 'Sz', '(I+)+(I-)', '(S+)+(S-)', 'I+', 'I-', 'S+', 'S-', '(I+S-)+(I-S+)', 'I-S+', 'I+S-', 'IzSz', '((I+)+(I-))Sz', 'Iz((S+)+(S-))', 'I+Sz', 'I-Sz', 'IzS+', 'IzS-', '(I+S+)+(I-S-)', 'I+S+', 'I-S-' );
-DROP TYPE IF EXISTS ENUM_auto_relaxation_list_relaxation_val_units;
+DROP TYPE IF EXISTS ENUM_auto_relaxation_list_relaxation_val_units CASCADE;
 CREATE TYPE ENUM_auto_relaxation_list_relaxation_val_units AS ENUM ( 's-1', 'ms-1', 'us-1', 'ns-1', 'ps-1' );
-DROP TYPE IF EXISTS ENUM_auto_relaxation_list_rex_units;
+DROP TYPE IF EXISTS ENUM_auto_relaxation_list_rex_units CASCADE;
 CREATE TYPE ENUM_auto_relaxation_list_rex_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
-DROP TYPE IF EXISTS ENUM_auto_relaxation_list_temp_calibration_method;
+DROP TYPE IF EXISTS ENUM_auto_relaxation_list_temp_calibration_method CASCADE;
 CREATE TYPE ENUM_auto_relaxation_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied' );
-DROP TYPE IF EXISTS ENUM_auto_relaxation_list_temp_control_method;
+DROP TYPE IF EXISTS ENUM_auto_relaxation_list_temp_control_method CASCADE;
 CREATE TYPE ENUM_auto_relaxation_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'single scan interleaving and temperature compensation block', 'no temperature control applied' );
 CREATE TABLE auto_relaxation_list (
 	common_relaxation_type_name ENUM_auto_relaxation_list_common_relaxation_type_name ,
@@ -1426,7 +1426,7 @@ CREATE TABLE auxiliary_files (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_binding_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_binding_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_binding_experiment_sample_state AS ENUM ( 'anisotropic', 'isotropic' );
 CREATE TABLE binding_experiment (
 	experiment_name TEXT ,
@@ -1593,9 +1593,9 @@ CREATE TABLE binding_value_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_bond_type;
+DROP TYPE IF EXISTS ENUM_bond_type CASCADE;
 CREATE TYPE ENUM_bond_type AS ENUM ( 'amide', 'covalent', 'directed', 'disulfide', 'ester', 'ether', 'hydrogen', 'metal coordination', 'peptide', 'thioether', 'oxime', 'thioester', 'phosphoester', 'phosphodiester', 'diselenide', 'na' );
-DROP TYPE IF EXISTS ENUM_bond_value_order;
+DROP TYPE IF EXISTS ENUM_bond_value_order CASCADE;
 CREATE TYPE ENUM_bond_value_order AS ENUM ( 'sing', 'doub', 'trip', 'quad', 'arom', 'poly', 'delo', 'pi', 'directed' );
 CREATE TABLE bond (
 	assembly_atom_id_1 INTEGER ,
@@ -1643,9 +1643,9 @@ CREATE TABLE bond (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_bond_annotation_type;
+DROP TYPE IF EXISTS ENUM_bond_annotation_type CASCADE;
 CREATE TYPE ENUM_bond_annotation_type AS ENUM ( 'amide', 'covalent', 'directed', 'disulfide', 'ester', 'ether', 'hydrogen', 'metal coordination', 'peptide', 'thioether', 'oxime', 'thioester', 'phosphoester', 'phosphodiester', 'diselenide', 'na' );
-DROP TYPE IF EXISTS ENUM_bond_annotation_value_order;
+DROP TYPE IF EXISTS ENUM_bond_annotation_value_order CASCADE;
 CREATE TYPE ENUM_bond_annotation_value_order AS ENUM ( 'sing', 'doub', 'trip', 'quad', 'arom', 'poly', 'delo', 'pi', 'directed' );
 CREATE TABLE bond_annotation (
 	assembly_atom_id_1 INTEGER ,
@@ -1821,7 +1821,7 @@ CREATE TABLE ca_cb_constraint (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_ca_cb_constraint_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_ca_cb_constraint_expt_sample_state CASCADE;
 CREATE TYPE ENUM_ca_cb_constraint_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE ca_cb_constraint_expt (
 	experiment_name TEXT ,
@@ -1911,33 +1911,33 @@ CREATE TABLE characteristic (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_ambiguous_flag;
+DROP TYPE IF EXISTS ENUM_chem_comp_ambiguous_flag CASCADE;
 CREATE TYPE ENUM_chem_comp_ambiguous_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_aromatic;
+DROP TYPE IF EXISTS ENUM_chem_comp_aromatic CASCADE;
 CREATE TYPE ENUM_chem_comp_aromatic AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_atom_nomenclature_source;
+DROP TYPE IF EXISTS ENUM_chem_comp_atom_nomenclature_source CASCADE;
 CREATE TYPE ENUM_chem_comp_atom_nomenclature_source AS ENUM ( 'ALATIS', 'BMRB' );
-DROP TYPE IF EXISTS ENUM_chem_comp_formal_charge;
+DROP TYPE IF EXISTS ENUM_chem_comp_formal_charge CASCADE;
 CREATE TYPE ENUM_chem_comp_formal_charge AS ENUM ( '5+', '4+', '3+', '2+', '1+', '0', '1-', '2-', '3-', '4-', '5-' );
-DROP TYPE IF EXISTS ENUM_chem_comp_ideal_coordinates_missing_flag;
+DROP TYPE IF EXISTS ENUM_chem_comp_ideal_coordinates_missing_flag CASCADE;
 CREATE TYPE ENUM_chem_comp_ideal_coordinates_missing_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_image_file_format;
+DROP TYPE IF EXISTS ENUM_chem_comp_image_file_format CASCADE;
 CREATE TYPE ENUM_chem_comp_image_file_format AS ENUM ( 'gif', 'jpeg', 'pdf', 'png', 'ps', 'tiff', 'not applicable' );
-DROP TYPE IF EXISTS ENUM_chem_comp_model_coordinates_missing_flag;
+DROP TYPE IF EXISTS ENUM_chem_comp_model_coordinates_missing_flag CASCADE;
 CREATE TYPE ENUM_chem_comp_model_coordinates_missing_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_mon_nstd_flag;
+DROP TYPE IF EXISTS ENUM_chem_comp_mon_nstd_flag CASCADE;
 CREATE TYPE ENUM_chem_comp_mon_nstd_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_paramagnetic;
+DROP TYPE IF EXISTS ENUM_chem_comp_paramagnetic CASCADE;
 CREATE TYPE ENUM_chem_comp_paramagnetic AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_processing_site;
+DROP TYPE IF EXISTS ENUM_chem_comp_processing_site CASCADE;
 CREATE TYPE ENUM_chem_comp_processing_site AS ENUM ( 'EBI', 'MSD', 'PDBE', 'PDBJ', 'RCSB' );
-DROP TYPE IF EXISTS ENUM_chem_comp_provenance;
+DROP TYPE IF EXISTS ENUM_chem_comp_provenance CASCADE;
 CREATE TYPE ENUM_chem_comp_provenance AS ENUM ( 'BMRB', 'PDB', 'PubChem', 'na' );
-DROP TYPE IF EXISTS ENUM_chem_comp_release_status;
+DROP TYPE IF EXISTS ENUM_chem_comp_release_status CASCADE;
 CREATE TYPE ENUM_chem_comp_release_status AS ENUM ( 'REL', 'HOLD', 'HPUB', 'OBS', 'DEL' );
-DROP TYPE IF EXISTS ENUM_chem_comp_type;
+DROP TYPE IF EXISTS ENUM_chem_comp_type CASCADE;
 CREATE TYPE ENUM_chem_comp_type AS ENUM ( 'D-PEPTIDE LINKING', 'L-PEPTIDE LINKING', 'D-PEPTIDE NH3 AMINO TERMINUS', 'L-PEPTIDE NH3 AMINO TERMINUS', 'D-PEPTIDE COOH CARBOXY TERMINUS', 'L-PEPTIDE COOH CARBOXY TERMINUS', 'DNA LINKING', 'RNA LINKING', 'L-RNA LINKING', 'L-DNA LINKING', 'DNA OH 5 PRIME TERMINUS', 'RNA OH 5 PRIME TERMINUS', 'DNA OH 3 PRIME TERMINUS', 'RNA OH 3 PRIME TERMINUS', 'D-SACCHARIDE 1,4 AND 1,4 LINKING', 'L-SACCHARIDE 1,4 AND 1,4 LINKING', 'D-SACCHARIDE 1,4 AND 1,6 LINKING', 'L-SACCHARIDE 1,4 AND 1,6 LINKING', 'L-SACCHARIDE', 'D-SACCHARIDE', 'SACCHARIDE', 'NON-POLYMER', 'PEPTIDE LINKING', 'PEPTIDE-LIKE', 'L-GAMMA-PEPTIDE, C-DELTA LINKING', 'D-GAMMA-PEPTIDE, C-DELTA LINKING', 'L-BETA-PEPTIDE, C-GAMMA LINKING', 'D-BETA-PEPTIDE, C-GAMMA LINKING', 'OTHER' );
-DROP TYPE IF EXISTS ENUM_chem_comp_vendor;
+DROP TYPE IF EXISTS ENUM_chem_comp_vendor CASCADE;
 CREATE TYPE ENUM_chem_comp_vendor AS ENUM ( 'Sigma', 'Aldrich', 'Sigma/Aldrich' );
 CREATE TABLE chem_comp (
 	ambiguous_flag ENUM_chem_comp_ambiguous_flag ,
@@ -2036,7 +2036,7 @@ CREATE TABLE chem_comp_angle (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_assembly_cis_residue;
+DROP TYPE IF EXISTS ENUM_chem_comp_assembly_cis_residue CASCADE;
 CREATE TYPE ENUM_chem_comp_assembly_cis_residue AS ENUM ( 'yes', 'no' );
 CREATE TABLE chem_comp_assembly (
 	assembly_chem_comp_id TEXT ,
@@ -2068,17 +2068,17 @@ CREATE TABLE chem_comp_assembly (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_atom_aromatic_flag;
+DROP TYPE IF EXISTS ENUM_chem_comp_atom_aromatic_flag CASCADE;
 CREATE TYPE ENUM_chem_comp_atom_aromatic_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_atom_chirality;
+DROP TYPE IF EXISTS ENUM_chem_comp_atom_chirality CASCADE;
 CREATE TYPE ENUM_chem_comp_atom_chirality AS ENUM ( 'N', 'E', 'Z', 'R', 'S', 'pro-R', 'pro-S' );
-DROP TYPE IF EXISTS ENUM_chem_comp_atom_ionizable;
+DROP TYPE IF EXISTS ENUM_chem_comp_atom_ionizable CASCADE;
 CREATE TYPE ENUM_chem_comp_atom_ionizable AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_atom_leaving_atom_flag;
+DROP TYPE IF EXISTS ENUM_chem_comp_atom_leaving_atom_flag CASCADE;
 CREATE TYPE ENUM_chem_comp_atom_leaving_atom_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_atom_stereo_config;
+DROP TYPE IF EXISTS ENUM_chem_comp_atom_stereo_config CASCADE;
 CREATE TYPE ENUM_chem_comp_atom_stereo_config AS ENUM ( 'N', 'E', 'Z', 'R', 'S' );
-DROP TYPE IF EXISTS ENUM_chem_comp_atom_substruct_code;
+DROP TYPE IF EXISTS ENUM_chem_comp_atom_substruct_code CASCADE;
 CREATE TYPE ENUM_chem_comp_atom_substruct_code AS ENUM ( 'main', 'side', 'base', 'phos', 'sugar', 'none' );
 CREATE TABLE chem_comp_atom (
 	align INTEGER ,
@@ -2142,13 +2142,13 @@ CREATE TABLE chem_comp_bio_function (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_bond_aromatic_flag;
+DROP TYPE IF EXISTS ENUM_chem_comp_bond_aromatic_flag CASCADE;
 CREATE TYPE ENUM_chem_comp_bond_aromatic_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_chem_comp_bond_stereo_config;
+DROP TYPE IF EXISTS ENUM_chem_comp_bond_stereo_config CASCADE;
 CREATE TYPE ENUM_chem_comp_bond_stereo_config AS ENUM ( 'E', 'Z', 'N' );
-DROP TYPE IF EXISTS ENUM_chem_comp_bond_type;
+DROP TYPE IF EXISTS ENUM_chem_comp_bond_type CASCADE;
 CREATE TYPE ENUM_chem_comp_bond_type AS ENUM ( 'amide', 'covalent', 'directed', 'disulfide', 'ester', 'ether', 'hydrogen', 'metal coordination', 'peptide', 'thioether' );
-DROP TYPE IF EXISTS ENUM_chem_comp_bond_value_order;
+DROP TYPE IF EXISTS ENUM_chem_comp_bond_value_order CASCADE;
 CREATE TYPE ENUM_chem_comp_bond_value_order AS ENUM ( 'SING', 'DOUB', 'TRIP', 'QUAD', 'AROM', 'POLY', 'DELO', 'PI', 'DIRECTED' );
 CREATE TABLE chem_comp_bond (
 	aromatic_flag ENUM_chem_comp_bond_aromatic_flag ,
@@ -2191,7 +2191,7 @@ CREATE TABLE chem_comp_citation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_common_name_type;
+DROP TYPE IF EXISTS ENUM_chem_comp_common_name_type CASCADE;
 CREATE TYPE ENUM_chem_comp_common_name_type AS ENUM ( 'abbreviation', 'name', 'na' );
 CREATE TABLE chem_comp_common_name (
 -- ATTRIBUTE
@@ -2211,7 +2211,7 @@ CREATE TABLE chem_comp_common_name (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_db_link_author_supplied;
+DROP TYPE IF EXISTS ENUM_chem_comp_db_link_author_supplied CASCADE;
 CREATE TYPE ENUM_chem_comp_db_link_author_supplied AS ENUM ( 'yes', 'no' );
 CREATE TABLE chem_comp_db_link (
 	accession_code_type TEXT ,
@@ -2238,9 +2238,9 @@ CREATE TABLE chem_comp_db_link (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_descriptor_program;
+DROP TYPE IF EXISTS ENUM_chem_comp_descriptor_program CASCADE;
 CREATE TYPE ENUM_chem_comp_descriptor_program AS ENUM ( 'ACD', 'OECHEM', 'CACTVS', 'DAYLIGHT', 'OTHER', 'na' );
-DROP TYPE IF EXISTS ENUM_chem_comp_descriptor_type;
+DROP TYPE IF EXISTS ENUM_chem_comp_descriptor_type CASCADE;
 CREATE TYPE ENUM_chem_comp_descriptor_type AS ENUM ( 'SMILES_CANONICAL', 'SMILES_ISOMERIC', 'SMILES', 'INCHI', 'INCHI_MAIN', 'INCHI_MAIN_FORMULA', 'INCHI_MAIN_CONNECT', 'INCHI_MAIN_HATOM', 'INCHI_CHARGE', 'INCHI_STEREO', 'INCHI_ISOTOPE', 'INCHI_FIXEDH', 'INCHI_RECONNECT', 'na' );
 CREATE TABLE chem_comp_descriptor (
 -- ATTRIBUTE
@@ -2264,9 +2264,9 @@ CREATE TABLE chem_comp_descriptor (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_identifier_program;
+DROP TYPE IF EXISTS ENUM_chem_comp_identifier_program CASCADE;
 CREATE TYPE ENUM_chem_comp_identifier_program AS ENUM ( 'OECHEM', 'DAYLIGHT', 'ACD', 'AUTONOM', 'OTHER' );
-DROP TYPE IF EXISTS ENUM_chem_comp_identifier_type;
+DROP TYPE IF EXISTS ENUM_chem_comp_identifier_type CASCADE;
 CREATE TYPE ENUM_chem_comp_identifier_type AS ENUM ( 'COMMON NAME', 'SYSTEMATIC NAME', 'CAS REGISTRY NUMBER', 'PUBCHEM Identifier', 'PUBCHEM CID', 'PUBCHEM SID', 'MDL Identifier', 'PUBCHEM_IUPAC_NAME', 'PUBCHEM_IUPAC_CAS_NAME', 'PUBCHEM_IUPAC_OPENEYE_NAME', 'PUBCHEM_IUPAC_SYSTEMATIC_NAME', 'PUBCHEM_IUPAC_TRADITIONAL_NAME' );
 CREATE TABLE chem_comp_identifier (
 -- ATTRIBUTE
@@ -2324,7 +2324,7 @@ CREATE TABLE chem_comp_smiles (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_comp_systematic_name_naming_system;
+DROP TYPE IF EXISTS ENUM_chem_comp_systematic_name_naming_system CASCADE;
 CREATE TYPE ENUM_chem_comp_systematic_name_naming_system AS ENUM ( 'IUPAC', 'CAS name', 'CAS registry number', 'BMRB', 'One letter code', 'Three letter code', 'Beilstein', 'Lignin abbreviation' );
 CREATE TABLE chem_comp_systematic_name (
 	name TEXT ,
@@ -2364,7 +2364,7 @@ CREATE TABLE chem_comp_tor (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_shift_anisotropy_val_units;
+DROP TYPE IF EXISTS ENUM_chem_shift_anisotropy_val_units CASCADE;
 CREATE TYPE ENUM_chem_shift_anisotropy_val_units AS ENUM ( 'ppm', 'ppb' );
 CREATE TABLE chem_shift_anisotropy (
 	details TEXT ,
@@ -2472,7 +2472,7 @@ CREATE TABLE chem_shift_completeness_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_shift_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_chem_shift_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_chem_shift_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic' );
 CREATE TABLE chem_shift_experiment (
 	experiment_name TEXT ,
@@ -2551,7 +2551,7 @@ CREATE TABLE chem_shift_perturbation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_shift_perturbation_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_chem_shift_perturbation_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_chem_shift_perturbation_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE chem_shift_perturbation_experiment (
 	experiment_name TEXT ,
@@ -2573,7 +2573,7 @@ CREATE TABLE chem_shift_perturbation_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_shift_perturbation_list_type;
+DROP TYPE IF EXISTS ENUM_chem_shift_perturbation_list_type CASCADE;
 CREATE TYPE ENUM_chem_shift_perturbation_list_type AS ENUM ( 'macromolecular binding', 'ligand binding', 'ligand fragment binding', 'paramagnetic ligand binding' );
 CREATE TABLE chem_shift_perturbation_list (
 	chem_shift_ref_set_id INTEGER ,
@@ -2618,19 +2618,19 @@ CREATE TABLE chem_shift_perturbation_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_shift_ref_chem_shift_units;
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_chem_shift_units CASCADE;
 CREATE TYPE ENUM_chem_shift_ref_chem_shift_units AS ENUM ( 'ppm', 'Hz', 'MHz', 'na' );
-DROP TYPE IF EXISTS ENUM_chem_shift_ref_external_ref_axis;
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_external_ref_axis CASCADE;
 CREATE TYPE ENUM_chem_shift_ref_external_ref_axis AS ENUM ( 'parallel', 'perpendicular', 'magic angle', 'na' );
-DROP TYPE IF EXISTS ENUM_chem_shift_ref_external_ref_loc;
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_external_ref_loc CASCADE;
 CREATE TYPE ENUM_chem_shift_ref_external_ref_loc AS ENUM ( 'insert at center of experimental sample tube', 'insert at outer edge of experimental sample tube', 'insert at center of a separate sample tube', 'insert at outer edge of a separate sample tube', 'separate tube (no insert) similar to the experimental sample tu', 'separate tube (no insert) not similar to the experimental sampl', 'other' );
-DROP TYPE IF EXISTS ENUM_chem_shift_ref_external_ref_sample_geometry;
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_external_ref_sample_geometry CASCADE;
 CREATE TYPE ENUM_chem_shift_ref_external_ref_sample_geometry AS ENUM ( 'cylindrical', 'spherical', 'other' );
-DROP TYPE IF EXISTS ENUM_chem_shift_ref_ref_method;
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_ref_method CASCADE;
 CREATE TYPE ENUM_chem_shift_ref_ref_method AS ENUM ( 'internal', 'external', 'na' );
-DROP TYPE IF EXISTS ENUM_chem_shift_ref_ref_type;
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_ref_type CASCADE;
 CREATE TYPE ENUM_chem_shift_ref_ref_type AS ENUM ( 'direct', 'indirect', 'na' );
-DROP TYPE IF EXISTS ENUM_chem_shift_ref_atom_type;
+DROP TYPE IF EXISTS ENUM_chem_shift_ref_atom_type CASCADE;
 CREATE TYPE ENUM_chem_shift_ref_atom_type AS ENUM ( 'H', 'C', 'N', 'F', 'P', 'Cd' );
 CREATE TABLE chem_shift_ref (
 	atom_group TEXT ,
@@ -2726,13 +2726,13 @@ CREATE TABLE chem_shifts_calc_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_calculation_level;
+DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_calculation_level CASCADE;
 CREATE TYPE ENUM_chem_shifts_calc_type_calculation_level AS ENUM ( 'empirical', 'ab initio', 'semi-empirical' );
-DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_chem_shift_nucleus;
+DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_chem_shift_nucleus CASCADE;
 CREATE TYPE ENUM_chem_shifts_calc_type_chem_shift_nucleus AS ENUM ( '1H', '13C', '15N', '31P' );
-DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_quantum_mechanical_method;
+DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_quantum_mechanical_method CASCADE;
 CREATE TYPE ENUM_chem_shifts_calc_type_quantum_mechanical_method AS ENUM ( 'GIAO', 'IGLO', 'CSGT' );
-DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_quantum_mechanical_theory_level;
+DROP TYPE IF EXISTS ENUM_chem_shifts_calc_type_quantum_mechanical_theory_level CASCADE;
 CREATE TYPE ENUM_chem_shifts_calc_type_quantum_mechanical_theory_level AS ENUM ( 'B3LYP', 'MP2' );
 CREATE TABLE chem_shifts_calc_type (
 	calculation_level ENUM_chem_shifts_calc_type_calculation_level ,
@@ -2760,9 +2760,9 @@ CREATE TABLE chem_shifts_calc_type (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chem_struct_descriptor_descriptor;
+DROP TYPE IF EXISTS ENUM_chem_struct_descriptor_descriptor CASCADE;
 CREATE TYPE ENUM_chem_struct_descriptor_descriptor AS ENUM ( 'alcohol', 'aldehyde', 'alkyne', 'alkene', 'alkane', 'amide', 'carboxylic acid', 'ester', 'ether', 'ketone', 'amine', 'nitrile', 'primary amine', 'secondary amine', 'teritary amine', 'thiol', 'three carbon ring', 'four carbon ring', 'five carbon ring', 'six carbon ring', 'seven carbon ring', 'eight carbon ring', 'three member heterocycle', 'four member heterocycle', 'five member heterocycle', 'six member heterocycle', 'seven member heterocycle', 'eight member heterocycle', 'benzyl group', 'phenyl group', 'phenol', 'imidazole', 'beta lactam', 'methyl', 'methylene' );
-DROP TYPE IF EXISTS ENUM_chem_struct_descriptor_type;
+DROP TYPE IF EXISTS ENUM_chem_struct_descriptor_type CASCADE;
 CREATE TYPE ENUM_chem_struct_descriptor_type AS ENUM ( 'linkage', 'chemical fragment', 'functional group' );
 CREATE TABLE chem_struct_descriptor (
 	count INTEGER ,
@@ -2823,7 +2823,7 @@ CREATE TABLE chemical_rate (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_chemical_rate_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_chemical_rate_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_chemical_rate_experiment_sample_state AS ENUM ( 'anisotropic', 'isotropic' );
 CREATE TABLE chemical_rate_experiment (
 	experiment_name TEXT ,
@@ -2934,11 +2934,11 @@ CREATE TABLE chromatographic_system (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_citation_class;
+DROP TYPE IF EXISTS ENUM_citation_class CASCADE;
 CREATE TYPE ENUM_citation_class AS ENUM ( 'entry citation', 'reference citation' );
-DROP TYPE IF EXISTS ENUM_citation_status;
+DROP TYPE IF EXISTS ENUM_citation_status CASCADE;
 CREATE TYPE ENUM_citation_status AS ENUM ( 'in preparation', 'submitted', 'in press', 'published', 'retracted', 'na' );
-DROP TYPE IF EXISTS ENUM_citation_type;
+DROP TYPE IF EXISTS ENUM_citation_type CASCADE;
 CREATE TYPE ENUM_citation_type AS ENUM ( 'journal', 'book', 'book chapter', 'thesis', 'abstract', 'personal communication', 'internet', 'BMRB only', 'other publication' );
 CREATE TABLE citation (
 	book_chapter_title TEXT ,
@@ -2994,7 +2994,7 @@ CREATE TABLE citation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_citation_author_family_title;
+DROP TYPE IF EXISTS ENUM_citation_author_family_title CASCADE;
 CREATE TYPE ENUM_citation_author_family_title AS ENUM ( 'Sr.', 'Jr.', 'I', 'II', 'III', 'IV', 'V' );
 CREATE TABLE citation_author (
 	family_name TEXT ,
@@ -3019,7 +3019,7 @@ CREATE TABLE citation_author (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_citation_editor_family_title;
+DROP TYPE IF EXISTS ENUM_citation_editor_family_title CASCADE;
 CREATE TYPE ENUM_citation_editor_family_title AS ENUM ( 'Sr.', 'Jr.', 'I', 'II', 'III', 'IV', 'V' );
 CREATE TABLE citation_editor (
 	family_name TEXT ,
@@ -3059,7 +3059,7 @@ CREATE TABLE citation_keyword (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_computer_operating_system;
+DROP TYPE IF EXISTS ENUM_computer_operating_system CASCADE;
 CREATE TYPE ENUM_computer_operating_system AS ENUM ( 'IRIX', 'UNIX', 'Linux', 'DOS', 'NT', 'Windows VISTA', 'Windows 2000', 'Windows XP' );
 CREATE TABLE computer (
 	details TEXT ,
@@ -3162,7 +3162,7 @@ CREATE TABLE conformer_family_coord_set (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_conformer_family_coord_set_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_conformer_family_coord_set_expt_sample_state CASCADE;
 CREATE TYPE ENUM_conformer_family_coord_set_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE conformer_family_coord_set_expt (
 	experiment_name TEXT ,
@@ -3184,7 +3184,7 @@ CREATE TABLE conformer_family_coord_set_expt (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_conformer_family_refinement_refine_method;
+DROP TYPE IF EXISTS ENUM_conformer_family_refinement_refine_method CASCADE;
 CREATE TYPE ENUM_conformer_family_refinement_refine_method AS ENUM ( 'DGSA-distance geometry simulated annealing', 'distance geometry', 'simulated annealing', 'molecular dynamics', 'matrix relaxation', 'torsion angle dynamics', 'na' );
 CREATE TABLE conformer_family_refinement (
 	refine_details TEXT ,
@@ -3224,9 +3224,9 @@ CREATE TABLE conformer_family_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_conformer_stat_list_conformer_selection_criteria;
+DROP TYPE IF EXISTS ENUM_conformer_stat_list_conformer_selection_criteria CASCADE;
 CREATE TYPE ENUM_conformer_stat_list_conformer_selection_criteria AS ENUM ( 'all calculated structures submitted', 'back calculated data agree with experimental NOESY spectrum', 'structures with the lowest energy', 'structures with the least restraint violations', 'structures with acceptable covalent geometry', 'structures with favorable non-bond energy', 'target function', 'na' );
-DROP TYPE IF EXISTS ENUM_conformer_stat_list_rep_conformer_selection_criteria;
+DROP TYPE IF EXISTS ENUM_conformer_stat_list_rep_conformer_selection_criteria CASCADE;
 CREATE TYPE ENUM_conformer_stat_list_rep_conformer_selection_criteria AS ENUM ( 'closest to the average', 'lowest energy', 'fewest violations', 'minimized average structure', 'na' );
 CREATE TABLE conformer_stat_list (
 	conf_family_coord_set_id INTEGER ,
@@ -3258,7 +3258,7 @@ CREATE TABLE conformer_stat_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_conformer_stat_list_ens_stats_not_available;
+DROP TYPE IF EXISTS ENUM_conformer_stat_list_ens_stats_not_available CASCADE;
 CREATE TYPE ENUM_conformer_stat_list_ens_stats_not_available AS ENUM ( 'yes', 'no' );
 CREATE TABLE conformer_stat_list_ens (
 	all_hvy_atm_coord_avg_rmsd DECIMAL ,
@@ -3324,7 +3324,7 @@ CREATE TABLE conformer_stat_list_ens (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_conformer_stat_list_rep_stats_not_available;
+DROP TYPE IF EXISTS ENUM_conformer_stat_list_rep_stats_not_available CASCADE;
 CREATE TYPE ENUM_conformer_stat_list_rep_stats_not_available AS ENUM ( 'yes', 'no' );
 CREATE TABLE conformer_stat_list_rep (
 	angle_e_value DECIMAL ,
@@ -3373,11 +3373,11 @@ CREATE TABLE conformer_stat_list_rep (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subsubtype;
+DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subsubtype CASCADE;
 CREATE TYPE ENUM_constraint_file_constraint_subsubtype AS ENUM ( 'ambi', 'simple', 'na' );
-DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subtype;
+DROP TYPE IF EXISTS ENUM_constraint_file_constraint_subtype CASCADE;
 CREATE TYPE ENUM_constraint_file_constraint_subtype AS ENUM ( 'Not applicable', 'NOE', 'NOE buildup', 'NOE not seen', 'general distance', 'alignment tensor', 'chirality', 'prochirality', 'disulfide bond', 'hydrogen bond', 'symmetry', 'ROE', 'peptide', 'ring', 'PRE', 'na' );
-DROP TYPE IF EXISTS ENUM_constraint_file_constraint_type;
+DROP TYPE IF EXISTS ENUM_constraint_file_constraint_type CASCADE;
 CREATE TYPE ENUM_constraint_file_constraint_type AS ENUM ( 'distance', 'dipolar coupling', 'protein dihedral angle', 'nucleic acid dihedral angle', 'coupling constant', 'chemical shift', 'other angle', 'chemical shift anisotropy', 'hydrogen exchange', 'line broadening', 'pseudocontact shift', 'intervector projection angle', 'protein peptide planarity', 'protein other kinds of constraints', 'nucleic acid base planarity', 'nucleic acid other kinds of constraints', 'na' );
 CREATE TABLE constraint_file (
 	block_id INTEGER ,
@@ -3406,21 +3406,21 @@ CREATE TABLE constraint_file (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_dist_constr_violat_stat_calc_method;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_dist_constr_violat_stat_calc_method CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_dist_constr_violat_stat_calc_method AS ENUM ( 'calculated over all distance constraints', 'calculated for distance violations only' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_noe_dist_averaging_method;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_noe_dist_averaging_method CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_noe_dist_averaging_method AS ENUM ( 'r-6', 'r-3', 'sum', 'center' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_noe_interproton_dist_evaluation;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_noe_interproton_dist_evaluation CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_noe_interproton_dist_evaluation AS ENUM ( 'Tryptophan ring proton NOE intensities', 'Glycine alpha proton NOE intensities' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_noe_pseudoatom_corrections;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_noe_pseudoatom_corrections CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_noe_pseudoatom_corrections AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_roe_dist_averaging_method;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_roe_dist_averaging_method CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_roe_dist_averaging_method AS ENUM ( 'r-6', 'r-3', 'sum', 'center' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_roe_interproton_dist_evaluation;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_roe_interproton_dist_evaluation CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_roe_interproton_dist_evaluation AS ENUM ( 'Tryptophan ring proton NOE intensities', 'Glycine alpha proton NOE intensities' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_roe_pseudoatom_corrections;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_roe_pseudoatom_corrections CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_roe_pseudoatom_corrections AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_stats_not_available;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_stats_not_available CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_stats_not_available AS ENUM ( 'yes', 'no' );
 CREATE TABLE constraint_stat_list (
 	assumed_angles_tot_num INTEGER ,
@@ -3528,7 +3528,7 @@ CREATE TABLE constraint_stat_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_ens_constraint_stats_not_available;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_ens_constraint_stats_not_available CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_ens_constraint_stats_not_available AS ENUM ( 'yes', 'no' );
 CREATE TABLE constraint_stat_list_ens (
 	all_dist_rmsd DECIMAL ,
@@ -3580,7 +3580,7 @@ CREATE TABLE constraint_stat_list_ens (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_constraint_stat_list_rep_constraint_stats_not_available;
+DROP TYPE IF EXISTS ENUM_constraint_stat_list_rep_constraint_stats_not_available CASCADE;
 CREATE TYPE ENUM_constraint_stat_list_rep_constraint_stats_not_available AS ENUM ( 'yes', 'no' );
 CREATE TABLE constraint_stat_list_rep (
 	amb_intermol_dist_rmsd DECIMAL ,
@@ -3700,7 +3700,7 @@ CREATE TABLE coupling_constant (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_coupling_constant_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_coupling_constant_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_coupling_constant_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE coupling_constant_experiment (
 	experiment_name TEXT ,
@@ -3722,7 +3722,7 @@ CREATE TABLE coupling_constant_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_coupling_constant_list_spectrometer_frequency_1h;
+DROP TYPE IF EXISTS ENUM_coupling_constant_list_spectrometer_frequency_1h CASCADE;
 CREATE TYPE ENUM_coupling_constant_list_spectrometer_frequency_1h AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000' );
 CREATE TABLE coupling_constant_list (
 	details TEXT ,
@@ -3839,7 +3839,7 @@ CREATE TABLE cross_correlation_d_csa (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_cross_correlation_d_csa_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_cross_correlation_d_csa_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_cross_correlation_d_csa_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE cross_correlation_d_csa_experiment (
 	experiment_name TEXT ,
@@ -3861,7 +3861,7 @@ CREATE TABLE cross_correlation_d_csa_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_cross_correlation_d_csa_list_val_units;
+DROP TYPE IF EXISTS ENUM_cross_correlation_d_csa_list_val_units CASCADE;
 CREATE TYPE ENUM_cross_correlation_d_csa_list_val_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
 CREATE TABLE cross_correlation_d_csa_list (
 	details TEXT ,
@@ -3979,7 +3979,7 @@ CREATE TABLE cross_correlation_dd (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_cross_correlation_dd_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_cross_correlation_dd_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_cross_correlation_dd_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE cross_correlation_dd_experiment (
 	experiment_name TEXT ,
@@ -4001,7 +4001,7 @@ CREATE TABLE cross_correlation_dd_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_cross_correlation_dd_list_val_units;
+DROP TYPE IF EXISTS ENUM_cross_correlation_dd_list_val_units CASCADE;
 CREATE TYPE ENUM_cross_correlation_dd_list_val_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
 CREATE TABLE cross_correlation_dd_list (
 	details TEXT ,
@@ -4084,7 +4084,7 @@ CREATE TABLE cs_anisotropy (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_cs_anisotropy_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_cs_anisotropy_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_cs_anisotropy_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE cs_anisotropy_experiment (
 	experiment_name TEXT ,
@@ -4125,7 +4125,7 @@ CREATE TABLE cs_anisotropy_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_d_h_fract_factor_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_d_h_fract_factor_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_d_h_fract_factor_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE d_h_fract_factor_experiment (
 	experiment_name TEXT ,
@@ -4218,7 +4218,7 @@ CREATE TABLE d_h_fractionation_factor_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_data_set_type;
+DROP TYPE IF EXISTS ENUM_data_set_type CASCADE;
 CREATE TYPE ENUM_data_set_type AS ENUM ( 'assigned_chemical_shifts', 'theoretical_chem_shifts', 'chemical_rates', 'coupling_constants', 'theoretical_coupling_constants', 'spectral_peak_list', 'other_data_list', 'RDCs', 'order_parameters', 'dipolar_couplings', 'spectral_density_values', 'H_exch_rates', 'H_exch_protection_factors', 'pKa_value_data_set', 'pH_NMR_param_list', 'binding_constants', 'D_H_fractionation_factors', 'molecular_axis_determinations', 'deduced_secd_struct_features', 'deduced_hydrogen_bonds', 'representative_conformer', 'conformer_family_coord_set', 'general_relaxation', 'heteronucl_T1_relaxation', 'theoretical_heteronucl_T1_relaxation', 'heteronucl_T1rho_relaxation', 'heteronucl_T2_relaxation', 'theoretical_heteronucl_T2_relaxation', 'heteronucl_NOEs', 'theoretical_heteronucl_NOEs', 'homonucl_NOEs', 'dipole_dipole_relaxation', 'dipole_dipole_cross_correlations', 'theoretical_dipole_dipole_cross_correlations', 'CSA_CSA_cross_correlation_relaxation', 'dipole_CSA_cross_correlation_relaxation', 'pH_titration' );
 CREATE TABLE data_set (
 	count INTEGER ,
@@ -4235,7 +4235,7 @@ CREATE TABLE data_set (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_datum_type;
+DROP TYPE IF EXISTS ENUM_datum_type CASCADE;
 CREATE TYPE ENUM_datum_type AS ENUM ( '1H chemical shifts', '2H chemical shifts', '3H chemical shifts', '13C chemical shifts', '15N chemical shifts', '31P chemical shifts', '111Cd chemical shifts', '113Cd chemical shifts', 'theoretical 1H chemical shifts', 'theoretical 13C chemical shifts', 'theoretical 15N chemical shifts', 'chemical rates', 'coupling constants', 'theoretical coupling constants', 'chemical shift isotope effects', 'molecule interaction chemical shift values', 'T1 relaxation values', 'theoretical T1 relaxation values', 'T1rho relaxation values', 'T2 relaxation values', 'theoretical T2 relaxation values', 'dipole-dipole relaxation values', 'dipole-dipole cross correlation relaxation values', 'theoretical dipole-dipole cross-correlation values', 'chemical shift anisotropy values', 'chemical shift anisotropy tensor values', 'quadrupolar couplings', 'theoretical chemical shifts', 'chemical shift tensors', 'residual dipolar couplings', 'dipolar coupling values', 'dipolar coupling tensor values', 'heteronuclear NOE values', 'theoretical heteronuclear NOE values', 'homonuclear NOE values', 'order parameters', 'spectral density values', 'H exchange rates', 'H exchange protection factors', 'pKa values', 'pH NMR parameter values', 'binding constants', 'D/H fractionation factors', 'bond orientation values', 'deduced secondary structure values', 'deduced hydrogen bonds', 'distance constraints', 'ambiguous distance constraints', 'hydrogen bond distance constraints', 'torsion angle constraints', 'chemical shift constraints', 'symmetry constraints', '19F chemical shifts', '6Li chemical shifts', '10B chemical shifts', '11B chemical shifts', '17O chemical shifts', '23Na chemical shifts', '29Si chemical shifts', '35Cl chemical shifts', '129Xe chemical shifts', '195Pt chemical shifts', 'na' );
 CREATE TABLE datum (
 	count INTEGER ,
@@ -4323,7 +4323,7 @@ CREATE TABLE deduced_h_bond (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_deduced_h_bond_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_deduced_h_bond_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_deduced_h_bond_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE deduced_h_bond_experiment (
 	experiment_name TEXT ,
@@ -4385,7 +4385,7 @@ CREATE TABLE deduced_h_bond_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_deduced_secd_struct_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_deduced_secd_struct_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_deduced_secd_struct_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE deduced_secd_struct_experiment (
 	experiment_name TEXT ,
@@ -4567,7 +4567,7 @@ CREATE TABLE dipolar_coupling (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_dipolar_coupling_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_dipolar_coupling_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_dipolar_coupling_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE dipolar_coupling_experiment (
 	experiment_name TEXT ,
@@ -4678,7 +4678,7 @@ CREATE TABLE dipole_dipole_relax (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_dipole_dipole_relax_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_dipole_dipole_relax_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_dipole_dipole_relax_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE dipole_dipole_relax_experiment (
 	experiment_name TEXT ,
@@ -4700,7 +4700,7 @@ CREATE TABLE dipole_dipole_relax_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_dipole_dipole_relax_list_val_units;
+DROP TYPE IF EXISTS ENUM_dipole_dipole_relax_list_val_units CASCADE;
 CREATE TYPE ENUM_dipole_dipole_relax_list_val_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
 CREATE TABLE dipole_dipole_relax_list (
 	details TEXT ,
@@ -4744,7 +4744,7 @@ CREATE TABLE dipole_dipole_relax_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_dist_constr_software_setting_type;
+DROP TYPE IF EXISTS ENUM_dist_constr_software_setting_type CASCADE;
 CREATE TYPE ENUM_dist_constr_software_setting_type AS ENUM ( 'averaging method', 'number monomers', 'pseudoatom corrections', 'potential function', 'temperature', 'exponent', 'switch distance', 'asymptote slope', 'B_high', 'ceiling', 'negative offset', 'scaling constant' );
 CREATE TABLE dist_constr_software_setting (
 	range TEXT ,
@@ -4928,7 +4928,7 @@ CREATE TABLE dist_constraint_value (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_distance_constraint_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_distance_constraint_expt_sample_state CASCADE;
 CREATE TYPE ENUM_distance_constraint_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE distance_constraint_expt (
 	experiment_name TEXT ,
@@ -4952,7 +4952,7 @@ CREATE TABLE distance_constraint_expt (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_distance_constraint_list_constraint_type;
+DROP TYPE IF EXISTS ENUM_distance_constraint_list_constraint_type CASCADE;
 CREATE TYPE ENUM_distance_constraint_list_constraint_type AS ENUM ( 'NOE', 'NOE build-up', 'NOE not seen', 'ROE', 'ROE build-up', 'hydrogen bond', 'disulfide bond', 'paramagnetic relaxation', 'symmetry', 'general distance' );
 CREATE TABLE distance_constraint_list (
 	block_id INTEGER ,
@@ -4995,7 +4995,7 @@ CREATE TABLE distance_constraint_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_emr_expt_sample_volume_units;
+DROP TYPE IF EXISTS ENUM_emr_expt_sample_volume_units CASCADE;
 CREATE TYPE ENUM_emr_expt_sample_volume_units AS ENUM ( 'ml' );
 CREATE TABLE emr_expt (
 	details TEXT ,
@@ -5061,25 +5061,25 @@ CREATE TABLE energetic_penalty_function (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_ambiguous_chem_comp_sites;
+DROP TYPE IF EXISTS ENUM_entity_ambiguous_chem_comp_sites CASCADE;
 CREATE TYPE ENUM_entity_ambiguous_chem_comp_sites AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_ambiguous_conformational_states;
+DROP TYPE IF EXISTS ENUM_entity_ambiguous_conformational_states CASCADE;
 CREATE TYPE ENUM_entity_ambiguous_conformational_states AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_nstd_chirality;
+DROP TYPE IF EXISTS ENUM_entity_nstd_chirality CASCADE;
 CREATE TYPE ENUM_entity_nstd_chirality AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_nstd_linkage;
+DROP TYPE IF EXISTS ENUM_entity_nstd_linkage CASCADE;
 CREATE TYPE ENUM_entity_nstd_linkage AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_nstd_monomer;
+DROP TYPE IF EXISTS ENUM_entity_nstd_monomer CASCADE;
 CREATE TYPE ENUM_entity_nstd_monomer AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_paramagnetic;
+DROP TYPE IF EXISTS ENUM_entity_paramagnetic CASCADE;
 CREATE TYPE ENUM_entity_paramagnetic AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_polymer_common_type;
+DROP TYPE IF EXISTS ENUM_entity_polymer_common_type CASCADE;
 CREATE TYPE ENUM_entity_polymer_common_type AS ENUM ( 'protein', 'DNA', 'RNA', 'DNA/RNA hybrid', 'polysaccharide' );
-DROP TYPE IF EXISTS ENUM_entity_polymer_type;
+DROP TYPE IF EXISTS ENUM_entity_polymer_type CASCADE;
 CREATE TYPE ENUM_entity_polymer_type AS ENUM ( 'cyclic-pseudo-peptide', 'polypeptide(L)', 'polydeoxyribonucleotide', 'polyribonucleotide', 'polydeoxyribonucleotide/polyribonucleotide hybrid', 'polypeptide(D)', 'polysaccharide(D)', 'polysaccharide(L)', 'other' );
-DROP TYPE IF EXISTS ENUM_entity_thiol_state;
+DROP TYPE IF EXISTS ENUM_entity_thiol_state CASCADE;
 CREATE TYPE ENUM_entity_thiol_state AS ENUM ( 'all disulfide bound', 'all other bound', 'all free', 'not present', 'not available', 'unknown', 'not reported', 'free and disulfide bound', 'free and other bound', 'free disulfide and other bound', 'disulfide and other bound' );
-DROP TYPE IF EXISTS ENUM_entity_type;
+DROP TYPE IF EXISTS ENUM_entity_type CASCADE;
 CREATE TYPE ENUM_entity_type AS ENUM ( 'polymer', 'non-polymer', 'water', 'aggregate', 'solvent' );
 CREATE TABLE entity (
 	ambiguous_chem_comp_sites ENUM_entity_ambiguous_chem_comp_sites ,
@@ -5132,13 +5132,13 @@ CREATE TABLE entity (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_assembly_chemical_exchange_state;
+DROP TYPE IF EXISTS ENUM_entity_assembly_chemical_exchange_state CASCADE;
 CREATE TYPE ENUM_entity_assembly_chemical_exchange_state AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_assembly_conformational_isomer;
+DROP TYPE IF EXISTS ENUM_entity_assembly_conformational_isomer CASCADE;
 CREATE TYPE ENUM_entity_assembly_conformational_isomer AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_assembly_experimental_data_reported;
+DROP TYPE IF EXISTS ENUM_entity_assembly_experimental_data_reported CASCADE;
 CREATE TYPE ENUM_entity_assembly_experimental_data_reported AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_assembly_physical_state;
+DROP TYPE IF EXISTS ENUM_entity_assembly_physical_state CASCADE;
 CREATE TYPE ENUM_entity_assembly_physical_state AS ENUM ( 'native', 'denatured', 'molten globule', 'unfolded', 'intrinsically disordered', 'partially disordered', 'na' );
 CREATE TABLE entity_assembly (
 	asym_id TEXT ,
@@ -5204,9 +5204,9 @@ CREATE TABLE entity_biological_function (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_bond_type;
+DROP TYPE IF EXISTS ENUM_entity_bond_type CASCADE;
 CREATE TYPE ENUM_entity_bond_type AS ENUM ( 'amide', 'covalent', 'directed', 'disulfide', 'ester', 'ether', 'hydrogen', 'metal coordination', 'peptide', 'thioether', 'oxime', 'thioester', 'phosphoester', 'phosphodiester', 'diselenide', 'na' );
-DROP TYPE IF EXISTS ENUM_entity_bond_value_order;
+DROP TYPE IF EXISTS ENUM_entity_bond_value_order CASCADE;
 CREATE TYPE ENUM_entity_bond_value_order AS ENUM ( 'sing', 'doub', 'trip', 'quad', 'arom', 'poly', 'delo', 'pi', 'directed' );
 CREATE TABLE entity_bond (
 	atom_id_1 TEXT ,
@@ -5348,11 +5348,11 @@ CREATE TABLE entity_comp_index_alt (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_db_link_author_supplied;
+DROP TYPE IF EXISTS ENUM_entity_db_link_author_supplied CASCADE;
 CREATE TYPE ENUM_entity_db_link_author_supplied AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_db_link_entry_experimental_method;
+DROP TYPE IF EXISTS ENUM_entity_db_link_entry_experimental_method CASCADE;
 CREATE TYPE ENUM_entity_db_link_entry_experimental_method AS ENUM ( 'solution NMR', 'solid-state NMR', 'X-ray crystallography', 'na' );
-DROP TYPE IF EXISTS ENUM_entity_db_link_database_code;
+DROP TYPE IF EXISTS ENUM_entity_db_link_database_code CASCADE;
 CREATE TYPE ENUM_entity_db_link_database_code AS ENUM ( 'BMRB', 'DBJ', 'EMBL', 'GB', 'PDB', 'PIR', 'PRF', 'REF', 'SP', 'UNP', 'NCBI', 'HUGO', 'tRNADB', 'BMRB(withdrawn)' );
 CREATE TABLE entity_db_link (
 	author_supplied ENUM_entity_db_link_author_supplied ,
@@ -5418,7 +5418,7 @@ CREATE TABLE entity_deleted_atom (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_experimental_src_production_method;
+DROP TYPE IF EXISTS ENUM_entity_experimental_src_production_method CASCADE;
 CREATE TYPE ENUM_entity_experimental_src_production_method AS ENUM ( 'recombinant technology', 'purified from the natural source', 'chemical synthesis', 'cell free synthesis', 'enzymatic semisynthesis', 'reverse transcriptase', 'obtained from a collaborator', 'obtained from a vendor', 'na' );
 CREATE TABLE entity_experimental_src (
 	citation_id INTEGER ,
@@ -5501,19 +5501,19 @@ CREATE TABLE entity_keyword (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_natural_src_common;
+DROP TYPE IF EXISTS ENUM_entity_natural_src_common CASCADE;
 CREATE TYPE ENUM_entity_natural_src_common AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_entity_natural_src_kingdom;
+DROP TYPE IF EXISTS ENUM_entity_natural_src_kingdom CASCADE;
 CREATE TYPE ENUM_entity_natural_src_kingdom AS ENUM ( 'Metazoa', 'Fungi', 'Viridiplantae', 'Protista', 'Not applicable' );
-DROP TYPE IF EXISTS ENUM_entity_natural_src_organ;
+DROP TYPE IF EXISTS ENUM_entity_natural_src_organ CASCADE;
 CREATE TYPE ENUM_entity_natural_src_organ AS ENUM ( 'brain', 'heart', 'intestine', 'kidney', 'liver', 'lung', 'pancreas', 'skin', 'testicle', 'leaf', 'venom gland', 'oral mucosa submandibular-sublingual glands', 'salivary glands', 'oocyte', 'breast', 'stomach', 'electric organ', 'eye', 'ileum', 'small intestine', 'seed', 'blood', 'duodendum', 'jejunum', 'vulva', 'hepatopancreas', 'placenta', 'skeletal muscle', 'aorta', 'telson', 'ubiquitous', 'aciniform gland', 'endoskeleton', 'heamolymph', 'mucous epithelium', 'cardiac skeletal muscle', 'seminal vesicles', 'antennae', 'fruit', 'thymus', 'egg white', 'na' );
-DROP TYPE IF EXISTS ENUM_entity_natural_src_organelle;
+DROP TYPE IF EXISTS ENUM_entity_natural_src_organelle CASCADE;
 CREATE TYPE ENUM_entity_natural_src_organelle AS ENUM ( 'chloroplast', 'endoplasmic reticulum', 'golgi apparatus', 'mitochondria', 'nucleus', 'vacuole', 'acrosome', 'autophagosome', 'centriole', 'cilium', 'eyespot apparatus', 'glycosome', 'glyoxysome', 'hydrogenosome', 'lysosome', 'melanosome', 'mitosome', 'myofibril', 'nucleolus', 'parenthesome', 'peroxisome', 'proteasome', 'ribosome', 'vesicle', 'cytosol', 'cytoskeleton', 'endomembrane system', 'nucleosome', 'microtubule', 'cell membrane', 'na' );
-DROP TYPE IF EXISTS ENUM_entity_natural_src_secretion;
+DROP TYPE IF EXISTS ENUM_entity_natural_src_secretion CASCADE;
 CREATE TYPE ENUM_entity_natural_src_secretion AS ENUM ( 'saliva', 'semen', 'vaginal fluid', 'venom', 'hen egg white', 'sensillum lymph', 'milk', 'blood', 'dermal', 'urine', 'extracellular', 'cement', 'na' );
-DROP TYPE IF EXISTS ENUM_entity_natural_src_superkingdom;
+DROP TYPE IF EXISTS ENUM_entity_natural_src_superkingdom CASCADE;
 CREATE TYPE ENUM_entity_natural_src_superkingdom AS ENUM ( 'Archaea', 'Bacteria', 'Eukaryota', 'Viroid', 'Viruses', 'Other', 'Unclassified' );
-DROP TYPE IF EXISTS ENUM_entity_natural_src_type;
+DROP TYPE IF EXISTS ENUM_entity_natural_src_type CASCADE;
 CREATE TYPE ENUM_entity_natural_src_type AS ENUM ( 'organism', 'virus', 'plasmid', 'cosmid', 'multiple natural sources', 'no natural source', 'not applicable' );
 CREATE TABLE entity_natural_src (
 	atcc_number TEXT ,
@@ -5659,7 +5659,7 @@ CREATE TABLE entity_purity_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entity_systematic_name_naming_system;
+DROP TYPE IF EXISTS ENUM_entity_systematic_name_naming_system CASCADE;
 CREATE TYPE ENUM_entity_systematic_name_naming_system AS ENUM ( 'IUPAC', 'CAS name', 'CAS registry number', 'BMRB', 'Three letter code', 'Pfam', 'Swiss-Prot', 'EC', 'NCBI' );
 CREATE TABLE entity_systematic_name (
 	name TEXT ,
@@ -5678,7 +5678,7 @@ CREATE TABLE entity_systematic_name (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entry_author_family_title;
+DROP TYPE IF EXISTS ENUM_entry_author_family_title CASCADE;
 CREATE TYPE ENUM_entry_author_family_title AS ENUM ( 'Sr.', 'Jr.', 'I', 'II', 'III', 'IV', 'V' );
 CREATE TABLE entry_author (
 	family_name TEXT ,
@@ -5701,9 +5701,9 @@ CREATE TABLE entry_author (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_entry_experimental_methods_method;
+DROP TYPE IF EXISTS ENUM_entry_experimental_methods_method CASCADE;
 CREATE TYPE ENUM_entry_experimental_methods_method AS ENUM ( 'NMR', 'X-ray', 'SAXS', 'WAXS', 'EMR', 'FRET', 'MS', 'Theoretical', 'MD' );
-DROP TYPE IF EXISTS ENUM_entry_experimental_methods_subtype;
+DROP TYPE IF EXISTS ENUM_entry_experimental_methods_subtype CASCADE;
 CREATE TYPE ENUM_entry_experimental_methods_subtype AS ENUM ( 'solution', 'solid-state' );
 CREATE TABLE entry_experimental_methods (
 	method ENUM_entry_experimental_methods_method ,
@@ -5738,9 +5738,9 @@ CREATE TABLE entry_src (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_experiment_raw_data_flag;
+DROP TYPE IF EXISTS ENUM_experiment_raw_data_flag CASCADE;
 CREATE TYPE ENUM_experiment_raw_data_flag AS ENUM ( 'no', 'yes' );
-DROP TYPE IF EXISTS ENUM_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE experiment (
 	chromatographic_column_id INTEGER ,
@@ -5798,7 +5798,7 @@ CREATE TABLE experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_experiment_file_content;
+DROP TYPE IF EXISTS ENUM_experiment_file_content CASCADE;
 CREATE TYPE ENUM_experiment_file_content AS ENUM ( 'NMR experiment directory', 'Time-domain (raw spectral data)', 'Pulse sequence image file', 'Pulse sequence', 'Pulse field gradient', 'Peak list', 'Spectral image', 'Acquisition parameters', 'Processing parameters', 'na' );
 CREATE TABLE experiment_file (
 	content ENUM_experiment_file_content ,
@@ -5942,9 +5942,9 @@ CREATE TABLE fluorescence_instrument (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_force_constant_term;
+DROP TYPE IF EXISTS ENUM_force_constant_term CASCADE;
 CREATE TYPE ENUM_force_constant_term AS ENUM ( 'distance term', 'torsion angle term', '1J coupling term', '3J coupling term', '13C shift term', '1H shift term', 'dipolar couplings term', '2H isotope shift term', 'T1 term', 'T2 term', 'CSA term', 'Pseudocontact shift term', 'covalent geometry bond term', 'covalent geometry angles term', 'covalent geometry impropers term', 'non-bonded van der Waals interaction term', 'non-bonded radius of gyration interaction term' );
-DROP TYPE IF EXISTS ENUM_force_constant_units;
+DROP TYPE IF EXISTS ENUM_force_constant_units CASCADE;
 CREATE TYPE ENUM_force_constant_units AS ENUM ( 'kcal/mol*A2', 'kcal/mol*rad2', 'kcal/mol*A4', 'kcal/mol*Hz2', 'kcal/mol*ppm2' );
 CREATE TABLE force_constant (
 	term ENUM_force_constant_term ,
@@ -5965,7 +5965,7 @@ CREATE TABLE force_constant (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_force_constant_list_default_software_values_used;
+DROP TYPE IF EXISTS ENUM_force_constant_list_default_software_values_used CASCADE;
 CREATE TYPE ENUM_force_constant_list_default_software_values_used AS ENUM ( 'yes', 'no' );
 CREATE TABLE force_constant_list (
 	default_software_values_used ENUM_force_constant_list_default_software_values_used ,
@@ -6030,7 +6030,7 @@ CREATE TABLE fret_expt (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_gen_dist_constraint_member_logic_code;
+DROP TYPE IF EXISTS ENUM_gen_dist_constraint_member_logic_code CASCADE;
 CREATE TYPE ENUM_gen_dist_constraint_member_logic_code AS ENUM ( 'OR', 'AND' );
 CREATE TABLE gen_dist_constraint (
 	assembly_atom_id_1 INTEGER ,
@@ -6157,7 +6157,7 @@ CREATE TABLE gen_dist_constraint_conv_err (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_gen_dist_constraint_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_gen_dist_constraint_expt_sample_state CASCADE;
 CREATE TYPE ENUM_gen_dist_constraint_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE gen_dist_constraint_expt (
 	experiment_name TEXT ,
@@ -6181,9 +6181,9 @@ CREATE TABLE gen_dist_constraint_expt (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_gen_dist_constraint_list_constraint_type;
+DROP TYPE IF EXISTS ENUM_gen_dist_constraint_list_constraint_type CASCADE;
 CREATE TYPE ENUM_gen_dist_constraint_list_constraint_type AS ENUM ( 'NOE', 'NOE build-up', 'NOE not seen', 'ROE', 'ROE build-up', 'hydrogen bond', 'disulfide bond', 'paramagnetic relaxation', 'symmetry', 'general distance' );
-DROP TYPE IF EXISTS ENUM_gen_dist_constraint_list_potential_type;
+DROP TYPE IF EXISTS ENUM_gen_dist_constraint_list_potential_type CASCADE;
 CREATE TYPE ENUM_gen_dist_constraint_list_potential_type AS ENUM ( 'log-harmonic', 'parabolic', 'square-well-parabolic', 'square-well-parabolic-linear', 'upper-bound-parabolic', 'lower-bound-parabolic', 'upper-bound-parabolic-linear', 'lower-bound-parabolic-linear' );
 CREATE TABLE gen_dist_constraint_list (
 	block_id INTEGER ,
@@ -6265,7 +6265,7 @@ CREATE TABLE gen_dist_constraint_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_gen_dist_constraint_software_param_type;
+DROP TYPE IF EXISTS ENUM_gen_dist_constraint_software_param_type CASCADE;
 CREATE TYPE ENUM_gen_dist_constraint_software_param_type AS ENUM ( 'averaging method', 'number monomers', 'pseudoatom corrections', 'potential function', 'temperature', 'exponent', 'switch distance', 'asymptote slope', 'B_high', 'ceiling', 'negative offset', 'scaling constant' );
 CREATE TABLE gen_dist_constraint_software_param (
 	range TEXT ,
@@ -6321,7 +6321,7 @@ CREATE TABLE h_chem_shift_constraint (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_h_chem_shift_constraint_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_h_chem_shift_constraint_expt_sample_state CASCADE;
 CREATE TYPE ENUM_h_chem_shift_constraint_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE h_chem_shift_constraint_expt (
 	experiment_name TEXT ,
@@ -6387,7 +6387,7 @@ CREATE TABLE h_chem_shift_constraint_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_h_exch_protection_fact_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_h_exch_protection_fact_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_h_exch_protection_fact_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE h_exch_protection_fact_experiment (
 	experiment_name TEXT ,
@@ -6518,7 +6518,7 @@ CREATE TABLE h_exch_rate (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_h_exch_rate_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_h_exch_rate_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_h_exch_rate_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE h_exch_rate_experiment (
 	experiment_name TEXT ,
@@ -6540,7 +6540,7 @@ CREATE TABLE h_exch_rate_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_h_exch_rate_list_val_units;
+DROP TYPE IF EXISTS ENUM_h_exch_rate_list_val_units CASCADE;
 CREATE TYPE ENUM_h_exch_rate_list_val_units AS ENUM ( 's', 's-1', 'min', 'min-1', 'hr', 'hr-1' );
 CREATE TABLE h_exch_rate_list (
 	details TEXT ,
@@ -6629,7 +6629,7 @@ CREATE TABLE heteronucl_noe (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_noe_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_heteronucl_noe_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_heteronucl_noe_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE heteronucl_noe_experiment (
 	experiment_name TEXT ,
@@ -6651,7 +6651,7 @@ CREATE TABLE heteronucl_noe_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_noe_list_heteronuclear_noe_val_type;
+DROP TYPE IF EXISTS ENUM_heteronucl_noe_list_heteronuclear_noe_val_type CASCADE;
 CREATE TYPE ENUM_heteronucl_noe_list_heteronuclear_noe_val_type AS ENUM ( 'peak height', 'peak integral', 'contour count', 'relative intensities', 'na' );
 CREATE TABLE heteronucl_noe_list (
 	details TEXT ,
@@ -6697,7 +6697,7 @@ CREATE TABLE heteronucl_noe_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_t1_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_heteronucl_t1_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE heteronucl_t1_experiment (
 	experiment_name TEXT ,
@@ -6719,9 +6719,9 @@ CREATE TABLE heteronucl_t1_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_t1_list_t1_coherence_type;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1_list_t1_coherence_type CASCADE;
 CREATE TYPE ENUM_heteronucl_t1_list_t1_coherence_type AS ENUM ( 'Iz', 'Sz', 'na' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t1_list_t1_val_units;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1_list_t1_val_units CASCADE;
 CREATE TYPE ENUM_heteronucl_t1_list_t1_val_units AS ENUM ( 's', 's-1', 'ms', 'ms-1' );
 CREATE TABLE heteronucl_t1_list (
 	details TEXT ,
@@ -6766,7 +6766,7 @@ CREATE TABLE heteronucl_t1_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_heteronucl_t1rho_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE heteronucl_t1rho_experiment (
 	experiment_name TEXT ,
@@ -6788,15 +6788,15 @@ CREATE TABLE heteronucl_t1rho_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_rex_units;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_rex_units CASCADE;
 CREATE TYPE ENUM_heteronucl_t1rho_list_rex_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_t1rho_coherence_type;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_t1rho_coherence_type CASCADE;
 CREATE TYPE ENUM_heteronucl_t1rho_list_t1rho_coherence_type AS ENUM ( 'I(+,-)', 'S(+,-)', 'na' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_t1rho_val_units;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_t1rho_val_units CASCADE;
 CREATE TYPE ENUM_heteronucl_t1rho_list_t1rho_val_units AS ENUM ( 's-1', 'ms-1', 's', 'ms' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_temp_calibration_method;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_temp_calibration_method CASCADE;
 CREATE TYPE ENUM_heteronucl_t1rho_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_temp_control_method;
+DROP TYPE IF EXISTS ENUM_heteronucl_t1rho_list_temp_control_method CASCADE;
 CREATE TYPE ENUM_heteronucl_t1rho_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'no temperature control applied' );
 CREATE TABLE heteronucl_t1rho_list (
 	details TEXT ,
@@ -6844,7 +6844,7 @@ CREATE TABLE heteronucl_t1rho_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_t2_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_heteronucl_t2_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_heteronucl_t2_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE heteronucl_t2_experiment (
 	experiment_name TEXT ,
@@ -6866,15 +6866,15 @@ CREATE TABLE heteronucl_t2_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_rex_units;
+DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_rex_units CASCADE;
 CREATE TYPE ENUM_heteronucl_t2_list_rex_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_t2_coherence_type;
+DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_t2_coherence_type CASCADE;
 CREATE TYPE ENUM_heteronucl_t2_list_t2_coherence_type AS ENUM ( 'I(+,-)', 'S(+,-)', 'na' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_t2_val_units;
+DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_t2_val_units CASCADE;
 CREATE TYPE ENUM_heteronucl_t2_list_t2_val_units AS ENUM ( 's-1', 'ms-1', 's', 'ms' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_temp_calibration_method;
+DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_temp_calibration_method CASCADE;
 CREATE TYPE ENUM_heteronucl_t2_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied' );
-DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_temp_control_method;
+DROP TYPE IF EXISTS ENUM_heteronucl_t2_list_temp_control_method CASCADE;
 CREATE TYPE ENUM_heteronucl_t2_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'no temperature control applied' );
 CREATE TABLE heteronucl_t2_list (
 	details TEXT ,
@@ -6922,7 +6922,7 @@ CREATE TABLE heteronucl_t2_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_history_software_name;
+DROP TYPE IF EXISTS ENUM_history_software_name CASCADE;
 CREATE TYPE ENUM_history_software_name AS ENUM ( 'AMBER', 'AngleSearch', 'ANSIG', 'Analysis', 'AQUA', 'ARIA', 'AURELIA', 'AUREMOL', 'AutoAssign', 'AutoStructure', 'AVS', 'AZARA', 'BIRDER', 'CARA', 'CAPP', 'CING', 'CcpNMR', 'CNS', 'CNSSOLVE', 'CORMA', 'CSI', 'CS-Rosetta', 'CURVES', 'CYANA', 'DGII', 'DIAMOD', 'DISCOVER', 'DYANA', 'DYNAMO', 'EMBOSS', 'FANTOM', 'Felix', 'GARANT', 'Gaussian', 'GIFA', 'HADDOCK', 'HYPER', 'InsightII', 'MARDIGRAS', 'ModelFree', 'Molmol', 'MORASS', 'NDEE', 'NMRDraw', 'NMRPipe', 'NMRView', 'NOAH', 'NOEID', 'NUCFIT', 'NUTS', 'OPAL', 'PECAN', 'PINE', 'PIPP', 'PISTACHIO', 'Procheck', 'ProcheckNMR', 'P-ROI', 'PRONTO', 'PROSA', 'PSVS', 'QUEEN', 'Relax', 'RESCUE', 'SANE', 'SPARKY', 'SPARTA', 'SPARTA+', 'SPSCAN', 'SYBYL', 'TALOS', 'TOPSPIN', 'UXNMR', 'VNMR', 'WhatIF', 'Wattos', 'XEASY', 'X-PLOR', 'X-PLOR NIH', 'xwinnmr' );
 CREATE TABLE history (
 	method_id INTEGER ,
@@ -7017,7 +7017,7 @@ CREATE TABLE homonucl_noe_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_homonucl_noe_list_homonuclear_noe_val_type;
+DROP TYPE IF EXISTS ENUM_homonucl_noe_list_homonuclear_noe_val_type CASCADE;
 CREATE TYPE ENUM_homonucl_noe_list_homonuclear_noe_val_type AS ENUM ( 'peak volume', 'peak height', 'contour count', 'na' );
 CREATE TABLE homonucl_noe_list (
 	details TEXT ,
@@ -7166,7 +7166,7 @@ CREATE TABLE isotope_effect (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_isotope_effect_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_isotope_effect_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_isotope_effect_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE isotope_effect_experiment (
 	experiment_name TEXT ,
@@ -7313,7 +7313,7 @@ CREATE TABLE j_three_bond_constraint (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_j_three_bond_constraint_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_j_three_bond_constraint_expt_sample_state CASCADE;
 CREATE TYPE ENUM_j_three_bond_constraint_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE j_three_bond_constraint_expt (
 	experiment_name TEXT ,
@@ -7454,7 +7454,7 @@ CREATE TABLE lacs_plot (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_local_structure_quality_type;
+DROP TYPE IF EXISTS ENUM_local_structure_quality_type CASCADE;
 CREATE TYPE ENUM_local_structure_quality_type AS ENUM ( 'not observed', 'not well defined', 'low restraint density', 'well defined', 'high restraint density' );
 CREATE TABLE local_structure_quality (
 	asym_id TEXT ,
@@ -7479,9 +7479,9 @@ CREATE TABLE local_structure_quality (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_mass_spec_manufacturer;
+DROP TYPE IF EXISTS ENUM_mass_spec_manufacturer CASCADE;
 CREATE TYPE ENUM_mass_spec_manufacturer AS ENUM ( 'Alpha Omega Technologies Inc.', 'Agilent', 'Analytica of Branford', 'Bear Instruments', 'Bergmann Messgeraete Entwicklung', 'Bruker Daltonics', 'Ciphergen Biosystems', 'Charles Evans & Associates', 'Comstock Inc.', 'In-Situ', 'Micromass', 'Hitachi Instruments', 'JEOL USA', 'Kore Technology Ltd.', 'Kratos Analytical', 'LECO', 'MKS Instruments', 'PE Biosystems', 'Perkin Elmer', 'Prolab Resources', 'Sensar Larson Davis', 'Shimadzu Scientific Instruments Inc.', 'Thermo Scientific' );
-DROP TYPE IF EXISTS ENUM_mass_spec_type;
+DROP TYPE IF EXISTS ENUM_mass_spec_type CASCADE;
 CREATE TYPE ENUM_mass_spec_type AS ENUM ( 'Q-TOF', 'ion TRAP', 'FTMS', 'Quadrupole' );
 CREATE TABLE mass_spec (
 	details TEXT ,
@@ -7541,7 +7541,7 @@ CREATE TABLE mass_spec_component_param (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_mass_spec_config_component_type;
+DROP TYPE IF EXISTS ENUM_mass_spec_config_component_type CASCADE;
 CREATE TYPE ENUM_mass_spec_config_component_type AS ENUM ( 'source', 'analyzer', 'detector' );
 CREATE TABLE mass_spec_config (
 	component_name TEXT ,
@@ -7629,11 +7629,11 @@ CREATE TABLE mass_spectrometer_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_fragmentation_method;
+DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_fragmentation_method CASCADE;
 CREATE TYPE ENUM_mass_spectrometer_view_fragmentation_method AS ENUM ( 'CID', 'ETD', 'IRMPD' );
-DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_manufacturer;
+DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_manufacturer CASCADE;
 CREATE TYPE ENUM_mass_spectrometer_view_manufacturer AS ENUM ( 'Alpha Omega Technologies Inc.', 'Agilent', 'Analytica of Branford', 'Bear Instruments', 'Bergmann Messgeraete Entwicklung', 'Bruker Daltonics', 'Ciphergen Biosystems', 'Charles Evans & Associates', 'Comstock Inc.', 'In-Situ', 'Micromass', 'Hitachi Instruments', 'JEOL USA', 'Kore Technology Ltd.', 'Kratos Analytical', 'LECO', 'MKS Instruments', 'PE Biosystems', 'Perkin Elmer', 'Prolab Resources', 'Sensar Larson Davis', 'Shimadzu Scientific Instruments Inc.', 'Thermo Scientific' );
-DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_type;
+DROP TYPE IF EXISTS ENUM_mass_spectrometer_view_type CASCADE;
 CREATE TYPE ENUM_mass_spectrometer_view_type AS ENUM ( 'Q-TOF', 'ion TRAP', 'FTMS', 'Quadrupole' );
 CREATE TABLE mass_spectrometer_view (
 	citation_id INTEGER ,
@@ -7662,7 +7662,7 @@ CREATE TABLE mass_spectrometer_view (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_matched_entries_database_name;
+DROP TYPE IF EXISTS ENUM_matched_entries_database_name CASCADE;
 CREATE TYPE ENUM_matched_entries_database_name AS ENUM ( 'PDB' );
 CREATE TABLE matched_entries (
 -- ATTRIBUTE
@@ -7754,7 +7754,7 @@ CREATE TABLE method_param (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_model_type_type;
+DROP TYPE IF EXISTS ENUM_model_type_type CASCADE;
 CREATE TYPE ENUM_model_type_type AS ENUM ( 'experimental ensemble member', 'representative lowest energy', 'representative closest to the mean', 'representative average minimized', 'representative lowest overall target function' );
 CREATE TABLE model_type (
 	conformer_family_coord_set_id INTEGER ,
@@ -7835,7 +7835,7 @@ CREATE TABLE ms_chromatogram_ion (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_ms_chromatogram_list_text_data_format;
+DROP TYPE IF EXISTS ENUM_ms_chromatogram_list_text_data_format CASCADE;
 CREATE TYPE ENUM_ms_chromatogram_list_text_data_format AS ENUM ( 'mzML', 'mzDAta' );
 CREATE TABLE ms_chromatogram_list (
 	details TEXT ,
@@ -7896,7 +7896,7 @@ CREATE TABLE ms_chromatogram_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_ms_expt_spectrum_type;
+DROP TYPE IF EXISTS ENUM_ms_expt_spectrum_type CASCADE;
 CREATE TYPE ENUM_ms_expt_spectrum_type AS ENUM ( 'single scan', 'composite', 'ramp' );
 CREATE TABLE ms_expt (
 	mass_spec_id INTEGER ,
@@ -7918,7 +7918,7 @@ CREATE TABLE ms_expt (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_ms_expt_param_name;
+DROP TYPE IF EXISTS ENUM_ms_expt_param_name CASCADE;
 CREATE TYPE ENUM_ms_expt_param_name AS ENUM ( 'ion mode', 'flow rate', 'flow rate units', 'collision energy', 'collision energy units', 'fragmentation method', 'ionization method', 'detection method', 'mass range minimum', 'mass range maximum', 'mass reference introduction method' );
 CREATE TABLE ms_expt_param (
 	name ENUM_ms_expt_param_name ,
@@ -8177,7 +8177,7 @@ CREATE TABLE nmr_experiment_citation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_experiment_file_type;
+DROP TYPE IF EXISTS ENUM_nmr_experiment_file_type CASCADE;
 CREATE TYPE ENUM_nmr_experiment_file_type AS ENUM ( 'NMR experiment directory', 'Time-domain (raw spectral data)', 'Pulse sequence image file', 'Pulse sequence', 'Pulse field gradient', 'Peak list', 'Spectral image', 'Acquisition parameters', 'Processing parameters', 'na' );
 CREATE TABLE nmr_experiment_file (
 	byte_order TEXT ,
@@ -8204,7 +8204,7 @@ CREATE TABLE nmr_experiment_file (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_expt_systematic_name_naming_system;
+DROP TYPE IF EXISTS ENUM_nmr_expt_systematic_name_naming_system CASCADE;
 CREATE TYPE ENUM_nmr_expt_systematic_name_naming_system AS ENUM ( 'CCPN convention' );
 CREATE TABLE nmr_expt_systematic_name (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
@@ -8224,7 +8224,7 @@ CREATE TABLE nmr_expt_systematic_name (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_probe_type;
+DROP TYPE IF EXISTS ENUM_nmr_probe_type CASCADE;
 CREATE TYPE ENUM_nmr_probe_type AS ENUM ( 'transmission line', 'home built', 'triple resonance', 'double resonance', 'inverse coil', 'solenoid coil', 'saddle coil', 'room temperature', 'cryogenically cooled', 'na' );
 CREATE TABLE nmr_probe (
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
@@ -8242,11 +8242,11 @@ CREATE TABLE nmr_probe (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_spec_expt_nmr_tube_type;
+DROP TYPE IF EXISTS ENUM_nmr_spec_expt_nmr_tube_type CASCADE;
 CREATE TYPE ENUM_nmr_spec_expt_nmr_tube_type AS ENUM ( 'cylindrical microcell', 'Shigemi', 'spherical microcell', 'standard cylindrical' );
-DROP TYPE IF EXISTS ENUM_nmr_spec_expt_sample_volume_units;
+DROP TYPE IF EXISTS ENUM_nmr_spec_expt_sample_volume_units CASCADE;
 CREATE TYPE ENUM_nmr_spec_expt_sample_volume_units AS ENUM ( 'uL', 'mL' );
-DROP TYPE IF EXISTS ENUM_nmr_spec_expt_type;
+DROP TYPE IF EXISTS ENUM_nmr_spec_expt_type CASCADE;
 CREATE TYPE ENUM_nmr_spec_expt_type AS ENUM ( 'NOE', 'COSY' );
 CREATE TABLE nmr_spec_expt (
 	carrier_freq_switch_time DECIMAL ,
@@ -8317,9 +8317,9 @@ CREATE TABLE nmr_spectral_processing (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_spectrometer_field_strength;
+DROP TYPE IF EXISTS ENUM_nmr_spectrometer_field_strength CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_field_strength AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000', '1200', '200', '250', '300', '350', '450', '550', '720', '590', '470', '360', '270', '140', '120', '90', 'na' );
-DROP TYPE IF EXISTS ENUM_nmr_spectrometer_manufacturer;
+DROP TYPE IF EXISTS ENUM_nmr_spectrometer_manufacturer CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_manufacturer AS ENUM ( 'Bruker', 'GE', 'JEOL', 'Varian', 'Agilent', 'Cambridge', 'Oxford', 'FBML', 'Nicolet', 'Home-built', 'na' );
 CREATE TABLE nmr_spectrometer (
 	details TEXT ,
@@ -8375,9 +8375,9 @@ CREATE TABLE nmr_spectrometer_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_manufacturer;
+DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_manufacturer CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_probe_manufacturer AS ENUM ( 'Agilent', 'Bruker', 'DOTY', 'GE', 'JEOL', 'Varian', 'na' );
-DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_spacer_present;
+DROP TYPE IF EXISTS ENUM_nmr_spectrometer_probe_spacer_present CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_probe_spacer_present AS ENUM ( 'no', 'yes' );
 CREATE TABLE nmr_spectrometer_probe (
 	details TEXT ,
@@ -8421,9 +8421,9 @@ CREATE TABLE nmr_spectrometer_probe_citation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_nmr_spectrometer_view_field_strength;
+DROP TYPE IF EXISTS ENUM_nmr_spectrometer_view_field_strength CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_view_field_strength AS ENUM ( '400', '500', '600', '700', '800', '900', '90', '120', '140', '200', '250', '270', '300', '350', '360', '450', '470', '550', '590', '720', '750', '850', '920', '950', '1000', 'na' );
-DROP TYPE IF EXISTS ENUM_nmr_spectrometer_view_manufacturer;
+DROP TYPE IF EXISTS ENUM_nmr_spectrometer_view_manufacturer CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_view_manufacturer AS ENUM ( 'Bruker', 'GE', 'JEOL', 'Varian', 'Agilent', 'Cambridge', 'Oxford', 'FBML', 'Nicolet', 'Home-built', 'na' );
 CREATE TABLE nmr_spectrometer_view (
 	citation_id INTEGER ,
@@ -8520,7 +8520,7 @@ CREATE TABLE order_param (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_order_parameter_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_order_parameter_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_order_parameter_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE order_parameter_experiment (
 	experiment_name TEXT ,
@@ -8542,13 +8542,13 @@ CREATE TABLE order_parameter_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_order_parameter_list_rex_val_units;
+DROP TYPE IF EXISTS ENUM_order_parameter_list_rex_val_units CASCADE;
 CREATE TYPE ENUM_order_parameter_list_rex_val_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
-DROP TYPE IF EXISTS ENUM_order_parameter_list_tau_e_val_units;
+DROP TYPE IF EXISTS ENUM_order_parameter_list_tau_e_val_units CASCADE;
 CREATE TYPE ENUM_order_parameter_list_tau_e_val_units AS ENUM ( 's', 'ms', 'us', 'ns', 'ps' );
-DROP TYPE IF EXISTS ENUM_order_parameter_list_tau_f_val_units;
+DROP TYPE IF EXISTS ENUM_order_parameter_list_tau_f_val_units CASCADE;
 CREATE TYPE ENUM_order_parameter_list_tau_f_val_units AS ENUM ( 's', 'ms', 'us', 'ns', 'ps' );
-DROP TYPE IF EXISTS ENUM_order_parameter_list_tau_s_val_units;
+DROP TYPE IF EXISTS ENUM_order_parameter_list_tau_s_val_units CASCADE;
 CREATE TYPE ENUM_order_parameter_list_tau_s_val_units AS ENUM ( 's', 'ms', 'us', 'ns', 'ps' );
 CREATE TABLE order_parameter_list (
 	details TEXT ,
@@ -8615,7 +8615,7 @@ CREATE TABLE org_constr_file_comment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_other_constraint_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_other_constraint_expt_sample_state CASCADE;
 CREATE TYPE ENUM_other_constraint_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE other_constraint_expt (
 	experiment_name TEXT ,
@@ -8717,7 +8717,7 @@ CREATE TABLE other_data (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_other_data_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_other_data_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_other_data_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE other_data_experiment (
 	experiment_name TEXT ,
@@ -8821,7 +8821,7 @@ CREATE TABLE other_struct_feature_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_pb_char_pb_code;
+DROP TYPE IF EXISTS ENUM_pb_char_pb_code CASCADE;
 CREATE TYPE ENUM_pb_char_pb_code AS ENUM ( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p' );
 CREATE TABLE pb_char (
 	align TEXT ,
@@ -8930,7 +8930,7 @@ CREATE TABLE pdbx_nonpoly_scheme (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_pdbx_poly_seq_scheme_hetero;
+DROP TYPE IF EXISTS ENUM_pdbx_poly_seq_scheme_hetero CASCADE;
 CREATE TYPE ENUM_pdbx_poly_seq_scheme_hetero AS ENUM ( 'no', 'yes' );
 CREATE TABLE pdbx_poly_seq_scheme (
 	asym_id TEXT ,
@@ -8963,7 +8963,7 @@ CREATE TABLE pdbx_poly_seq_scheme (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_peak_restraint;
+DROP TYPE IF EXISTS ENUM_peak_restraint CASCADE;
 CREATE TYPE ENUM_peak_restraint AS ENUM ( 'yes', 'no' );
 CREATE TABLE peak (
 	details TEXT ,
@@ -8985,7 +8985,7 @@ CREATE TABLE peak (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_peak_char_coupling_pattern;
+DROP TYPE IF EXISTS ENUM_peak_char_coupling_pattern CASCADE;
 CREATE TYPE ENUM_peak_char_coupling_pattern AS ENUM ( 'd', 'dd', 'ddd', 'dm', 'dt', 'hxt', 'hpt', 'm', 'q', 'qd', 'qn', 's', 'sxt', 't', 'td', 'tt', 'LR', '1JCH' );
 CREATE TABLE peak_char (
 	bounding_box_lower_val DECIMAL ,
@@ -9019,9 +9019,9 @@ CREATE TABLE peak_char (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_peak_constraint_link_constraint_sf_category;
+DROP TYPE IF EXISTS ENUM_peak_constraint_link_constraint_sf_category CASCADE;
 CREATE TYPE ENUM_peak_constraint_link_constraint_sf_category AS ENUM ( 'RDC_constraints', 'general_distance_constraints', 'distance_constraints', 'torsion_angle_constraints' );
-DROP TYPE IF EXISTS ENUM_peak_constraint_link_spectral_peak_list_sf_category;
+DROP TYPE IF EXISTS ENUM_peak_constraint_link_spectral_peak_list_sf_category CASCADE;
 CREATE TYPE ENUM_peak_constraint_link_spectral_peak_list_sf_category AS ENUM ( 'spectral_peak_list' );
 CREATE TABLE peak_constraint_link (
 	constraint_id INTEGER ,
@@ -9063,7 +9063,7 @@ CREATE TABLE peak_constraint_link_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_peak_general_char_measurement_method;
+DROP TYPE IF EXISTS ENUM_peak_general_char_measurement_method CASCADE;
 CREATE TYPE ENUM_peak_general_char_measurement_method AS ENUM ( 'absolute height', 'height', 'relative height', 'volume', 'number of contours', 'integration' );
 CREATE TABLE peak_general_char (
 	intensity_val_err DECIMAL ,
@@ -9085,7 +9085,7 @@ CREATE TABLE peak_general_char (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_peak_row_format_restraint;
+DROP TYPE IF EXISTS ENUM_peak_row_format_restraint CASCADE;
 CREATE TYPE ENUM_peak_row_format_restraint AS ENUM ( 'yes', 'no' );
 CREATE TABLE peak_row_format (
 	ambiguity_code_1 INTEGER ,
@@ -9172,7 +9172,7 @@ CREATE TABLE ph_param (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_ph_param_list_observed_nmr_param;
+DROP TYPE IF EXISTS ENUM_ph_param_list_observed_nmr_param CASCADE;
 CREATE TYPE ENUM_ph_param_list_observed_nmr_param AS ENUM ( 'chemical shift', 'coupling constant', 'peak height', 'peak volume', 'na' );
 CREATE TABLE ph_param_list (
 	details TEXT ,
@@ -9248,7 +9248,7 @@ CREATE TABLE ph_titr_result (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_ph_titration_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_ph_titration_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_ph_titration_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE ph_titration_experiment (
 	experiment_name TEXT ,
@@ -9270,7 +9270,7 @@ CREATE TABLE ph_titration_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_ph_titration_list_expt_observed_param;
+DROP TYPE IF EXISTS ENUM_ph_titration_list_expt_observed_param CASCADE;
 CREATE TYPE ENUM_ph_titration_list_expt_observed_param AS ENUM ( 'chemical shift', 'coupling constant', 'peak height', 'peak volume', 'na' );
 CREATE TABLE ph_titration_list (
 	details TEXT ,
@@ -9365,7 +9365,7 @@ CREATE TABLE rdc (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_rdc_constraint_rdc_distant_dependent;
+DROP TYPE IF EXISTS ENUM_rdc_constraint_rdc_distant_dependent CASCADE;
 CREATE TYPE ENUM_rdc_constraint_rdc_distant_dependent AS ENUM ( 'yes', 'no' );
 CREATE TABLE rdc_constraint (
 	assembly_atom_id_1 INTEGER ,
@@ -9489,7 +9489,7 @@ CREATE TABLE rdc_constraint_conv_err (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_rdc_constraint_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_rdc_constraint_expt_sample_state CASCADE;
 CREATE TYPE ENUM_rdc_constraint_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE rdc_constraint_expt (
 	experiment_name TEXT ,
@@ -9513,9 +9513,9 @@ CREATE TABLE rdc_constraint_expt (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_rdc_constraint_list_constraint_type;
+DROP TYPE IF EXISTS ENUM_rdc_constraint_list_constraint_type CASCADE;
 CREATE TYPE ENUM_rdc_constraint_list_constraint_type AS ENUM ( 'RDC' );
-DROP TYPE IF EXISTS ENUM_rdc_constraint_list_potential_type;
+DROP TYPE IF EXISTS ENUM_rdc_constraint_list_potential_type CASCADE;
 CREATE TYPE ENUM_rdc_constraint_list_potential_type AS ENUM ( 'log-harmonic', 'parabolic', 'square-well-parabolic', 'square-well-parabolic-linear', 'upper-bound-parabolic', 'lower-bound-parabolic', 'upper-bound-parabolic-linear', 'lower-bound-parabolic-linear' );
 CREATE TABLE rdc_constraint_list (
 	assumed_c_n_bond_length DECIMAL ,
@@ -9616,7 +9616,7 @@ CREATE TABLE rdc_constraint_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_rdc_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_rdc_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_rdc_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE rdc_experiment (
 	experiment_name TEXT ,
@@ -9638,7 +9638,7 @@ CREATE TABLE rdc_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_rdc_list_bond_length_usage_flag;
+DROP TYPE IF EXISTS ENUM_rdc_list_bond_length_usage_flag CASCADE;
 CREATE TYPE ENUM_rdc_list_bond_length_usage_flag AS ENUM ( 'yes', 'no' );
 CREATE TABLE rdc_list (
 	assumed_c_n_bond_length DECIMAL ,
@@ -9709,7 +9709,7 @@ CREATE TABLE recoupling_pulse_sequence (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_related_entries_database_name;
+DROP TYPE IF EXISTS ENUM_related_entries_database_name CASCADE;
 CREATE TYPE ENUM_related_entries_database_name AS ENUM ( 'BMRB', 'BMRB(withdrawn)', 'PDB', 'TargetDB', 'EMDB', 'BMCD', 'GB', 'DBJ', 'EMBL', 'NCBI', 'PIR', 'REF', 'SGD', 'SP', 'Pfam', 'InterPro', 'Taxonomy' );
 CREATE TABLE related_entries (
 	relationship TEXT ,
@@ -9728,9 +9728,9 @@ CREATE TABLE related_entries (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_release_format_type;
+DROP TYPE IF EXISTS ENUM_release_format_type CASCADE;
 CREATE TYPE ENUM_release_format_type AS ENUM ( 'NMR-STAR', 'XML' );
-DROP TYPE IF EXISTS ENUM_release_type;
+DROP TYPE IF EXISTS ENUM_release_type CASCADE;
 CREATE TYPE ENUM_release_type AS ENUM ( 'original', 'na', 'update', 'revision', 'reformat' );
 CREATE TABLE release (
 	author TEXT ,
@@ -9791,7 +9791,7 @@ CREATE TABLE rep_conf (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_rep_conf_refinement_refine_method;
+DROP TYPE IF EXISTS ENUM_rep_conf_refinement_refine_method CASCADE;
 CREATE TYPE ENUM_rep_conf_refinement_refine_method AS ENUM ( 'distance geometry', 'DGSA-distance geometry simulated annealing', 'simulated annealing', 'molecular dynamics', 'matrix relaxation', 'torsion angle dynamics', 'na' );
 CREATE TABLE rep_conf_refinement (
 	refine_details TEXT ,
@@ -9846,7 +9846,7 @@ CREATE TABLE rep_coordinate_details (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_representative_conformer_type;
+DROP TYPE IF EXISTS ENUM_representative_conformer_type CASCADE;
 CREATE TYPE ENUM_representative_conformer_type AS ENUM ( 'experimental', 'derived experimentally', 'theoretical' );
 CREATE TABLE representative_conformer (
 	atom_pos_uncertainty_derivation TEXT ,
@@ -9955,7 +9955,7 @@ CREATE TABLE resonance_linker_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_sample_type;
+DROP TYPE IF EXISTS ENUM_sample_type CASCADE;
 CREATE TYPE ENUM_sample_type AS ENUM ( 'solution', 'solid', 'bicelle', 'emulsion', 'fiber', 'filamentous virus', 'gel solution', 'gel solid', 'liposome', 'membrane', 'micelle', 'lyophilized powder', 'oriented membrane film', 'fibrous protein', 'polycrystalline powder', 'reverse micelle', 'single crystal', 'microcrystalline', 'liquid crystal', 'in-cell' );
 CREATE TABLE sample (
 	aggregate_sample_number INTEGER ,
@@ -10017,7 +10017,7 @@ CREATE TABLE sample_citation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_sample_component_concentration_val_units;
+DROP TYPE IF EXISTS ENUM_sample_component_concentration_val_units CASCADE;
 CREATE TYPE ENUM_sample_component_concentration_val_units AS ENUM ( 'M', 'mM', 'uM', 'nM', '%', 'v/v', 'w/v', 'mg', 'ug', 'mg/mL', 'g/L', 'pM', 'w/w', '% v/v', '% w/v', '% w/w', 'mg/L', 'mg/uL', 'ug/mL', 'ug/uL', 'mL', 'uL', 'A260', 'eq', 'ratio', 'saturated', 'tablet/100mL', 'na' );
 CREATE TABLE sample_component (
 	assembly_id INTEGER ,
@@ -10121,9 +10121,9 @@ CREATE TABLE sample_condition_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_sample_condition_variable_val_units;
+DROP TYPE IF EXISTS ENUM_sample_condition_variable_val_units CASCADE;
 CREATE TYPE ENUM_sample_condition_variable_val_units AS ENUM ( 'Pa', 'bar', 'atm', 'mmHg', 'Torr', 'mbar', 'K', 'C', 'pH', 'M', 'mM', 'P', 'cP', 'm^2/s', 'Pa.s', 'Not defined', 'hPa', 'pD', 'pH*', '%', 's' );
-DROP TYPE IF EXISTS ENUM_sample_condition_variable_type;
+DROP TYPE IF EXISTS ENUM_sample_condition_variable_type CASCADE;
 CREATE TYPE ENUM_sample_condition_variable_type AS ENUM ( 'pH', 'pH*', 'pD', 'temperature', 'pressure', 'ionic strength', 'viscosity', 'dielectric constant', 'temperature controller setting', 'na' );
 CREATE TABLE sample_condition_variable (
 	val TEXT ,
@@ -10224,7 +10224,7 @@ CREATE TABLE saxs_constraint_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_saxs_expt_sample_volume_units;
+DROP TYPE IF EXISTS ENUM_saxs_expt_sample_volume_units CASCADE;
 CREATE TYPE ENUM_saxs_expt_sample_volume_units AS ENUM ( 'ml' );
 CREATE TABLE saxs_expt (
 	details TEXT ,
@@ -10316,9 +10316,9 @@ CREATE TABLE secondary_struct_sel (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_sg_project_initial_of_center;
+DROP TYPE IF EXISTS ENUM_sg_project_initial_of_center CASCADE;
 CREATE TYPE ENUM_sg_project_initial_of_center AS ENUM ( 'BIGS', 'BSGC', 'CESG', 'ISPC', 'JCSG', 'MSGP', 'MCSG', 'BSGI', 'XMTB', 'NYSGRC', 'NESG', 'OPPF', 'YSG', 'PSF', 'RSGI', 'SECSG', 'SGC', 'SGPP', 'SPINE', 'S2F', 'TBSGC', 'RIKEN GSC', 'CU' );
-DROP TYPE IF EXISTS ENUM_sg_project_project_name;
+DROP TYPE IF EXISTS ENUM_sg_project_project_name CASCADE;
 CREATE TYPE ENUM_sg_project_project_name AS ENUM ( 'not applicable', 'Enzyme Function Initiative', 'PSI:Biology', 'PSI, Protein Structure Initiative', 'NPPSFA, National Project on Protein Structural and Functional A', 'SPINE', 'SPINE2', 'Protein 3000', 'SSGCID', 'NIAID', 'SMolBNet', 'Other' );
 CREATE TABLE sg_project (
 	full_name_of_center TEXT ,
@@ -10392,7 +10392,7 @@ CREATE TABLE software_applied_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_software_applied_methods_software_name;
+DROP TYPE IF EXISTS ENUM_software_applied_methods_software_name CASCADE;
 CREATE TYPE ENUM_software_applied_methods_software_name AS ENUM ( 'AMBER', 'AngleSearch', 'ANSIG', 'Analysis', 'AQUA', 'ARIA', 'AURELIA', 'AUREMOL', 'AutoAssign', 'AutoStructure', 'AVS', 'AZARA', 'BIRDER', 'CARA', 'CAPP', 'CING', 'CcpNMR', 'CNS', 'CNSSOLVE', 'CORMA', 'CSI', 'CS-Rosetta', 'CURVES', 'CYANA', 'DGII', 'DIAMOD', 'DISCOVER', 'DYANA', 'DYNAMO', 'EMBOSS', 'FANTOM', 'Felix', 'GARANT', 'Gaussian', 'GIFA', 'HADDOCK', 'HYPER', 'InsightII', 'MARDIGRAS', 'ModelFree', 'Molmol', 'MORASS', 'NDEE', 'NMRDraw', 'NMRPipe', 'NMRView', 'NOAH', 'NOEID', 'NUCFIT', 'NUTS', 'OPAL', 'PECAN', 'PINE', 'PIPP', 'PISTACHIO', 'Procheck', 'ProcheckNMR', 'P-ROI', 'PRONTO', 'PROSA', 'PSVS', 'QUEEN', 'Relax', 'RESCUE', 'SANE', 'SPARKY', 'SPARTA', 'SPARTA+', 'SPSCAN', 'SYBYL', 'TALOS', 'TOPSPIN', 'UXNMR', 'VNMR', 'WhatIF', 'Wattos', 'XEASY', 'X-PLOR', 'X-PLOR NIH', 'xwinnmr' );
 CREATE TABLE software_applied_methods (
 	methods_id INTEGER ,
@@ -10467,7 +10467,7 @@ CREATE TABLE software_specific_info_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_acq_param_name;
+DROP TYPE IF EXISTS ENUM_spectral_acq_param_name CASCADE;
 CREATE TYPE ENUM_spectral_acq_param_name AS ENUM ( 'spectrometer carrier frequency', 'spectrometer offset frequency', 'acquisition time', 'mixing time', 'spectral width', 'spectral folding', 'data point number', 'data point type', 'data point spacing' );
 CREATE TABLE spectral_acq_param (
 	acquisition_dimension_id INTEGER ,
@@ -10528,7 +10528,7 @@ CREATE TABLE spectral_density (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_density_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_spectral_density_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_spectral_density_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE spectral_density_experiment (
 	experiment_name TEXT ,
@@ -10590,13 +10590,13 @@ CREATE TABLE spectral_density_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_dim_absolute_peak_positions;
+DROP TYPE IF EXISTS ENUM_spectral_dim_absolute_peak_positions CASCADE;
 CREATE TYPE ENUM_spectral_dim_absolute_peak_positions AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_spectral_dim_acquisition;
+DROP TYPE IF EXISTS ENUM_spectral_dim_acquisition CASCADE;
 CREATE TYPE ENUM_spectral_dim_acquisition AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_spectral_dim_sweep_width_units;
+DROP TYPE IF EXISTS ENUM_spectral_dim_sweep_width_units CASCADE;
 CREATE TYPE ENUM_spectral_dim_sweep_width_units AS ENUM ( 'Hz', 'ppm' );
-DROP TYPE IF EXISTS ENUM_spectral_dim_under_sampling_type;
+DROP TYPE IF EXISTS ENUM_spectral_dim_under_sampling_type CASCADE;
 CREATE TYPE ENUM_spectral_dim_under_sampling_type AS ENUM ( 'aliased', 'folded', 'not observed' );
 CREATE TABLE spectral_dim (
 	absolute_peak_positions ENUM_spectral_dim_absolute_peak_positions ,
@@ -10631,9 +10631,9 @@ CREATE TABLE spectral_dim (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_dim_transfer_indirect;
+DROP TYPE IF EXISTS ENUM_spectral_dim_transfer_indirect CASCADE;
 CREATE TYPE ENUM_spectral_dim_transfer_indirect AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_spectral_dim_transfer_type;
+DROP TYPE IF EXISTS ENUM_spectral_dim_transfer_type CASCADE;
 CREATE TYPE ENUM_spectral_dim_transfer_type AS ENUM ( 'onebond', 'jcoupling', 'jmultibond', 'relayed', 'relayed-alternate', 'through-space' );
 CREATE TABLE spectral_dim_transfer (
 	indirect ENUM_spectral_dim_transfer_indirect ,
@@ -10655,9 +10655,9 @@ CREATE TABLE spectral_dim_transfer (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_peak_list_experiment_class;
+DROP TYPE IF EXISTS ENUM_spectral_peak_list_experiment_class CASCADE;
 CREATE TYPE ENUM_spectral_peak_list_experiment_class AS ENUM ( 'H_H[C].through-space' );
-DROP TYPE IF EXISTS ENUM_spectral_peak_list_experiment_type;
+DROP TYPE IF EXISTS ENUM_spectral_peak_list_experiment_type CASCADE;
 CREATE TYPE ENUM_spectral_peak_list_experiment_type AS ENUM ( '13C-NOESY-HSQC' );
 CREATE TABLE spectral_peak_list (
 	assigned_chem_shift_list_id INTEGER ,
@@ -10709,7 +10709,7 @@ CREATE TABLE spectral_peak_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_processing_param_name;
+DROP TYPE IF EXISTS ENUM_spectral_processing_param_name CASCADE;
 CREATE TYPE ENUM_spectral_processing_param_name AS ENUM ( 'Exponential factor', 'Gaussian factor', 'Zero filling', 'Lnear prediction', 'Processed real points', 'Submatrix block size', 'Full spectrum width points', 'Spectrum offset', 'Data type' );
 CREATE TABLE spectral_processing_param (
 	name ENUM_spectral_processing_param_name ,
@@ -10786,7 +10786,7 @@ CREATE TABLE spectral_transition_char (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_transition_general_char_measurement_method;
+DROP TYPE IF EXISTS ENUM_spectral_transition_general_char_measurement_method CASCADE;
 CREATE TYPE ENUM_spectral_transition_general_char_measurement_method AS ENUM ( 'absolute height', 'height', 'relative height', 'volume', 'number of contours' );
 CREATE TABLE spectral_transition_general_char (
 	intensity_val_err DECIMAL ,
@@ -10829,7 +10829,7 @@ CREATE TABLE spin_system (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spin_system_link_type;
+DROP TYPE IF EXISTS ENUM_spin_system_link_type CASCADE;
 CREATE TYPE ENUM_spin_system_link_type AS ENUM ( 'identity', 'sequential', 'basepair', 'covalent', 'hbond', 'saltbridge', 'dative' );
 CREATE TABLE spin_system_link (
 	"offset" INTEGER ,
@@ -10900,9 +10900,9 @@ CREATE TABLE struct_anno_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_struct_asym_pdbx_blank_pdb_chainid_flag;
+DROP TYPE IF EXISTS ENUM_struct_asym_pdbx_blank_pdb_chainid_flag CASCADE;
 CREATE TYPE ENUM_struct_asym_pdbx_blank_pdb_chainid_flag AS ENUM ( 'yes', 'no' );
-DROP TYPE IF EXISTS ENUM_struct_asym_pdbx_modified;
+DROP TYPE IF EXISTS ENUM_struct_asym_pdbx_modified CASCADE;
 CREATE TYPE ENUM_struct_asym_pdbx_modified AS ENUM ( 'yes', 'no' );
 CREATE TABLE struct_asym (
 	details TEXT ,
@@ -11064,7 +11064,7 @@ CREATE TABLE structure_interaction_list (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_study_type;
+DROP TYPE IF EXISTS ENUM_study_type CASCADE;
 CREATE TYPE ENUM_study_type AS ENUM ( 'Structure analysis', 'Mutant comparison', 'Interactions with different ligands', 'Chemical shift mapping', 'NMR signal assignment', 'Protein-protein interaction', 'Protein-ligand interaction', 'Structural and dynamics analysis', 'Stoichiometry problems', 'Dynamics analysis', 'pH titration' );
 CREATE TABLE study (
 	details TEXT ,
@@ -11206,7 +11206,7 @@ CREATE TABLE subsystem_component (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_subsystem_db_link_author_supplied;
+DROP TYPE IF EXISTS ENUM_subsystem_db_link_author_supplied CASCADE;
 CREATE TYPE ENUM_subsystem_db_link_author_supplied AS ENUM ( 'yes', 'no' );
 CREATE TABLE subsystem_db_link (
 	author_supplied ENUM_subsystem_db_link_author_supplied ,
@@ -11264,9 +11264,9 @@ CREATE TABLE subsystem_type (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_systematic_chem_shift_offset_atom_type;
+DROP TYPE IF EXISTS ENUM_systematic_chem_shift_offset_atom_type CASCADE;
 CREATE TYPE ENUM_systematic_chem_shift_offset_atom_type AS ENUM ( 'amide protons', 'amide nitrogens', 'all nitrogen bonded protons', 'all nitrogens', 'all 1H', 'all 13C', 'all 15N', 'all 19F', 'all 31P', 'backbone CA', 'backbone CB', 'na' );
-DROP TYPE IF EXISTS ENUM_systematic_chem_shift_offset_type;
+DROP TYPE IF EXISTS ENUM_systematic_chem_shift_offset_type CASCADE;
 CREATE TYPE ENUM_systematic_chem_shift_offset_type AS ENUM ( 'TROSY offset', '2H isotope effect', '13C isotope effect', '15N isotope effect', 'SAIL isotope labeling', 'spectrometer error', 'na' );
 CREATE TABLE systematic_chem_shift_offset (
 	atom_isotope_number INTEGER ,
@@ -11543,11 +11543,11 @@ CREATE TABLE tensor (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_tensor_list_matrix_val_units;
+DROP TYPE IF EXISTS ENUM_tensor_list_matrix_val_units CASCADE;
 CREATE TYPE ENUM_tensor_list_matrix_val_units AS ENUM ( 's-1' );
-DROP TYPE IF EXISTS ENUM_tensor_list_tensor_shape;
+DROP TYPE IF EXISTS ENUM_tensor_list_tensor_shape CASCADE;
 CREATE TYPE ENUM_tensor_list_tensor_shape AS ENUM ( 'sphere', 'spheroid', 'oblate spheroid', 'prolate spheroid', 'ellipsoid' );
-DROP TYPE IF EXISTS ENUM_tensor_list_tensor_type;
+DROP TYPE IF EXISTS ENUM_tensor_list_tensor_type CASCADE;
 CREATE TYPE ENUM_tensor_list_tensor_type AS ENUM ( 'diffusion', 'CS', 'shielding', 'alignment' );
 CREATE TABLE tensor_list (
 	angle_units TEXT ,
@@ -11701,7 +11701,7 @@ CREATE TABLE theoretical_auto_relaxation (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE theoretical_auto_relaxation_experiment (
 	experiment_name TEXT ,
@@ -11723,17 +11723,17 @@ CREATE TABLE theoretical_auto_relaxation_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_common_relaxation_type_na;
+DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_common_relaxation_type_na CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_common_relaxation_type_na AS ENUM ( 'R1', 'R2', 'R1rho', 'ZQ relaxation', 'longitudinal spin order', 'single quantum antiphase', 'DQ relaxation' );
-DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_relaxation_coherence_type;
+DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_relaxation_coherence_type CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_relaxation_coherence_type AS ENUM ( 'Iz', 'Sz', '(I+)+(I-)', '(S+)+(S-)', 'I+', 'I-', 'S+', 'S-', '(I+S-)+(I-S+)', 'I-S+', 'I+S-', 'IzSz', '((I+)+(I-))Sz', 'Iz((S+)+(S-))', 'I+Sz', 'I-Sz', 'IzS+', 'IzS-', '(I+S+)+(I-S-)', 'I+S+', 'I-S-' );
-DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_relaxation_val_units;
+DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_relaxation_val_units CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_relaxation_val_units AS ENUM ( 's-1', 'ms-1', 'us-1', 'ns-1', 'ps-1' );
-DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_rex_units;
+DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_rex_units CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_rex_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
-DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_calibration_method;
+DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_calibration_method CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied' );
-DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_control_method;
+DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_control_method CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'single scan interleaving and temperature compensation block', 'no temperature control applied' );
 CREATE TABLE theoretical_auto_relaxation_list (
 	common_relaxation_type_name ENUM_theoretical_auto_relaxation_list_common_relaxation_type_na ,
@@ -11901,7 +11901,7 @@ CREATE TABLE theoretical_coupling_constant (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_coupling_constant_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_theoretical_coupling_constant_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_theoretical_coupling_constant_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE theoretical_coupling_constant_experiment (
 	experiment_name TEXT ,
@@ -11923,7 +11923,7 @@ CREATE TABLE theoretical_coupling_constant_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_coupling_constant_list_spectrometer_frequency_;
+DROP TYPE IF EXISTS ENUM_theoretical_coupling_constant_list_spectrometer_frequency_ CASCADE;
 CREATE TYPE ENUM_theoretical_coupling_constant_list_spectrometer_frequency_ AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000' );
 CREATE TABLE theoretical_coupling_constant_list (
 	details TEXT ,
@@ -12040,7 +12040,7 @@ CREATE TABLE theoretical_cross_correlation_dd (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_cross_correlation_dd_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_theoretical_cross_correlation_dd_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_theoretical_cross_correlation_dd_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE theoretical_cross_correlation_dd_experiment (
 	experiment_name TEXT ,
@@ -12062,7 +12062,7 @@ CREATE TABLE theoretical_cross_correlation_dd_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_cross_correlation_dd_list_val_units;
+DROP TYPE IF EXISTS ENUM_theoretical_cross_correlation_dd_list_val_units CASCADE;
 CREATE TYPE ENUM_theoretical_cross_correlation_dd_list_val_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
 CREATE TABLE theoretical_cross_correlation_dd_list (
 	details TEXT ,
@@ -12152,7 +12152,7 @@ CREATE TABLE theoretical_heteronucl_noe (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_noe_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_noe_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_noe_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE theoretical_heteronucl_noe_experiment (
 	experiment_name TEXT ,
@@ -12174,7 +12174,7 @@ CREATE TABLE theoretical_heteronucl_noe_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_noe_list_heteronuclear_noe_val_type;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_noe_list_heteronuclear_noe_val_type CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_noe_list_heteronuclear_noe_val_type AS ENUM ( 'peak height', 'peak integral', 'contour count', 'relative intensities', 'na' );
 CREATE TABLE theoretical_heteronucl_noe_list (
 	details TEXT ,
@@ -12220,7 +12220,7 @@ CREATE TABLE theoretical_heteronucl_noe_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t1_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t1_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t1_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE theoretical_heteronucl_t1_experiment (
 	experiment_name TEXT ,
@@ -12242,9 +12242,9 @@ CREATE TABLE theoretical_heteronucl_t1_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t1_list_t1_coherence_type;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t1_list_t1_coherence_type CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t1_list_t1_coherence_type AS ENUM ( 'Iz', 'Sz', 'na' );
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t1_list_t1_val_units;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t1_list_t1_val_units CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t1_list_t1_val_units AS ENUM ( 's', 's-1', 'ms', 'ms-1' );
 CREATE TABLE theoretical_heteronucl_t1_list (
 	details TEXT ,
@@ -12289,7 +12289,7 @@ CREATE TABLE theoretical_heteronucl_t1_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_experiment_sample_state;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_experiment_sample_state CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_experiment_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE theoretical_heteronucl_t2_experiment (
 	experiment_name TEXT ,
@@ -12311,15 +12311,15 @@ CREATE TABLE theoretical_heteronucl_t2_experiment (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_rex_units;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_rex_units CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_rex_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_t2_coherence_type;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_t2_coherence_type CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_t2_coherence_type AS ENUM ( 'I(+,-)', 'S(+,-)', 'na' );
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_t2_val_units;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_t2_val_units CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_t2_val_units AS ENUM ( 's-1', 'ms-1', 's', 'ms' );
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_calibration_method;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_calibration_method CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied' );
-DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_control_method;
+DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_control_method CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'no temperature control applied' );
 CREATE TABLE theoretical_heteronucl_t2_list (
 	details TEXT ,
@@ -12615,9 +12615,9 @@ CREATE TABLE torsion_angle_constraint (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_torsion_angle_constraint_list_constraint_type;
+DROP TYPE IF EXISTS ENUM_torsion_angle_constraint_list_constraint_type CASCADE;
 CREATE TYPE ENUM_torsion_angle_constraint_list_constraint_type AS ENUM ( 'J-couplings', 'backbone chemical shifts' );
-DROP TYPE IF EXISTS ENUM_torsion_angle_constraint_list_potential_type;
+DROP TYPE IF EXISTS ENUM_torsion_angle_constraint_list_potential_type CASCADE;
 CREATE TYPE ENUM_torsion_angle_constraint_list_potential_type AS ENUM ( 'log-harmonic', 'parabolic', 'square-well-parabolic', 'square-well-parabolic-linear', 'upper-bound-parabolic', 'lower-bound-parabolic', 'upper-bound-parabolic-linear', 'lower-bound-parabolic-linear' );
 CREATE TABLE torsion_angle_constraint_list (
 	block_id INTEGER ,
@@ -12661,7 +12661,7 @@ CREATE TABLE torsion_angle_constraint_software (
 -- xmlns: https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: ../BMRBoTool/schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_torsion_angle_constraints_expt_sample_state;
+DROP TYPE IF EXISTS ENUM_torsion_angle_constraints_expt_sample_state CASCADE;
 CREATE TYPE ENUM_torsion_angle_constraints_expt_sample_state AS ENUM ( 'isotropic', 'anisotropic', 'solid' );
 CREATE TABLE torsion_angle_constraints_expt (
 	experiment_name TEXT ,
