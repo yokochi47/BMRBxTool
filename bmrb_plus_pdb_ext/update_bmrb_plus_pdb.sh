@@ -5,7 +5,7 @@ MAXPROCS=`cat /proc/cpuinfo | grep 'cpu cores' | uniq | sed 's/\s//g' | cut -d '
 
 source ../scripts/db-user.sh
 
-url_mirror=bmrb.protein.osaka-u.ac.jp
+url_mirror=bmrb.pdbj.org
 
 if [ -e url_mirror ] ; then
 
