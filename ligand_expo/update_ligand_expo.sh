@@ -23,7 +23,7 @@ if [ $? != 0 ] ; then
  exit 1
 
 fi
-
+<<REMARK
 DB_FTP=ligand-expo.rcsb.org/dictionaries
 DB_TGZ=components-pub-xml.tar.gz
 XML_DIR=components-pub-xml
@@ -51,7 +51,7 @@ fi
 rm -rf $XML_DIR
 
 tar xzf $DB_FTP/$DB_TGZ -C .
-
+REMARK
 XSD_SCHEMA=pdbx-v50.xsd
 DB_SCHEMA=ligand_expo.schema
 
