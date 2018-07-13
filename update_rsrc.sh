@@ -9,7 +9,10 @@ if [ $# = 0 ] || [ $1 = "schema" ] ; then
  fi
  cd ..
  if [ -e queries/connect_bmrb_id_and_pdb_id_via_pubmed_id.sql ] ; then
-  ./run_sparql.sh -s yes -e pub -q queries/connect_bmrb_id_and_pdb_id_via_pubmed_id.sql | sed -e 1d | sed -e 's/"//g' > schema/BMRB_PDB_PUBMED_match.csv
+  ./run_sparql.sh -s yes -e pub -q queries/connect_bmrb_id_and_pdb_id_via_pubmed_id.sql | sed -e 1d | sed -e 's/"//g' >> schema/BMRB_PDB_PUBMED_match.csv
+  cp -f schema/BMRB_PDB_PUBMED_match.csv schema/BMRB_PDB_PUBMED_match.csv~
+  sort -n schema/BMRB_PDB_PUBMED_match.csv~ | uniq > schema/BMRB_PDB_PUBMED_match.csv
+  rm -f schema/BMRB_PDB_PUBMED_match.csv~
  fi
 fi
 
