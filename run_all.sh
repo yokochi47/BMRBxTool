@@ -247,14 +247,9 @@ for prefix in bmr bms ; do
 
  rm -rf $ebk_dir
 
- ./$prefix"2xml.sh" $WRITE_OPT
+ ./$prefix"2xml.sh" $WRITE_OPT || ( echo "$0 aborted."; exit 1 )
 
- if [ $? != 0 ] ; then
-  echo "$0 aborted."
-  exit 1
- else
-  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
- fi
+ chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
  for proc_id in `seq 1 $MAXPROCS` ; do
   sleep $proc_id
@@ -266,22 +261,19 @@ for prefix in bmr bms ; do
  done
 
  if [ $? != 0 ] ; then
+
   echo "$0 aborted."
   exit 1
+
  fi
 
  wait
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
- ./$prefix"2xml.sh" $VALIDATE_OPT
+ ./$prefix"2xml.sh" $VALIDATE_OPT || ( echo "$0 aborted."; exit 1 )
 
- if [ $? != 0 ] ; then
-  echo "$0 aborted."
-  exit 1
- else
-  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
- fi
+ chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
  rm -f $prefix_"xml_doc"/mmcif_nmr-star.xsd
 
@@ -294,14 +286,9 @@ for prefix in bmr bms ; do
 
  rm -rf $ebk_dir
 
- ./$prefix"2xml.sh" $WRITE_NOATOM_OPT
+ ./$prefix"2xml.sh" $WRITE_NOATOM_OPT || ( echo "$0 aborted."; exit 1 )
 
- if [ $? != 0 ] ; then
-  echo "$0 aborted."
-  exit 1
- else
-  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
- fi
+ chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
  for proc_id in `seq 1 $MAXPROCS` ; do
   sleep $proc_id
@@ -313,30 +300,29 @@ for prefix in bmr bms ; do
  done
 
  if [ $? != 0 ] ; then
+
   echo "$0 aborted."
   exit 1
+
  fi
 
  wait
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
- ./$prefix"2xml.sh" $VALIDATE_NOATOM_OPT
+ ./$prefix"2xml.sh" $VALIDATE_NOATOM_OPT || ( echo "$0 aborted."; exit 1 )
 
- if [ $? != 0 ] ; then
-  echo "$0 aborted."
-  exit 1
- else
-  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
- fi
+ chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
  rm -f $prefix_"xml_noatom_doc"/mmcif_nmr-star.xsd
 
 done
 
 if [ -d bmr_xml_ebk ] || [ -d bmr_xml_noatom_ebk ] || [ -d bms_xml_ebk ] || [ -d bms_xml_noatom_ebk ] ; then
+
  echo "$0 aborted."
  exit 1
+
 fi
 
 bmr_ulist_len=0

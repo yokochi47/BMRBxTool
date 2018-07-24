@@ -6,6 +6,9 @@ UPDATE=yes
 
 WEBDAV_USER=admin:password
 
+red='\e[0;31m'
+normal='\e[0m'
+
 ARGV=`getopt --long -o "a:u:" "$@"`
 eval set -- "$ARGV"
 while true ; do
@@ -29,7 +32,6 @@ if [ $WEBDAV_USER = "admin:password" ] ; then
 
  echo "Specify the User-Agent string (eXist user account and password) to send to the HTTP server."
  echo "File $0, \$WEBDAV_USER=$WEBDAV_USER."
-
  exit 1
 
 fi
@@ -38,7 +40,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
@@ -61,7 +62,6 @@ if [ $? != 0 ] ; then
 
  echo "eXist-db: server is not running..."
  echo "Please install eXist-db (http://exist-db.org/)."
-
  exit 1
 
 fi
@@ -114,6 +114,8 @@ if [ $errs = 0 ] ; then
 
 else
 
+ echo
+ echo -e "${red}$errs errors were detected. Please check the log files for more details.${normal}"
  exit 1
 
 fi

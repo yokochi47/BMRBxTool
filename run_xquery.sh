@@ -63,7 +63,6 @@ if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then
 
  echo "Usage: $0 -p PREFIX"
  echo PREFIX should be either \"bmr\" or \"bms\".
-
  exit 1
 
 fi

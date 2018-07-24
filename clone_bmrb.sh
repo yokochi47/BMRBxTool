@@ -31,7 +31,6 @@ if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then
 
  echo "Usage: $0 -p PREFIX"
  echo PREFIX should be either \"bmr\" or \"bms\".
-
  exit 1
 
 fi
@@ -40,7 +39,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
@@ -49,7 +47,6 @@ if [ ! `which psql` ] ; then
 
  echo "psql: command not found..."
  echo "Please install PostgreSQL (https://www.postgresql.org/)."
-
  exit 1
 
 fi
@@ -76,14 +73,7 @@ else
 
 fi
 
-psql -U $DB_USER -l | grep $DB_NAME > /dev/null
-
-if [ $? != 0 ] ; then
-
- echo "database \"$DB_NAME\" does not exist."
- exit 1
-
-fi
+psql -U $DB_USER -l | grep $DB_NAME > /dev/null || ( echo "database \"$DB_NAME\" does not exist."; exit 1 )
 
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
 
@@ -194,7 +184,6 @@ else
 
  echo
  echo -e "${red}$errs errors were detected. Please check the log files for more details.${normal}"
-
  exit 1
 
 fi

@@ -36,7 +36,6 @@ if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then
 
  echo "Usage: $0 -p PREFIX"
  echo PREFIX should be either \"bmr\" or \"bms\".
-
  exit 1
 
 fi
@@ -45,7 +44,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
@@ -153,9 +151,6 @@ else
  exit 1
 fi
 
-red='\e[0;31m'
-normal='\e[0m'
-
 errs=`ls $ERR_DIR/*_err 2> /dev/null | wc -l`
 
 if [ $errs = 0 ] ; then
@@ -197,7 +192,6 @@ else
 
  echo
  echo -e "${red}$errs errors were detected. Please check the log files for more details.${normal}"
-
  exit 1
 
 fi

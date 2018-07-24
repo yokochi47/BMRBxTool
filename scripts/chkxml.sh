@@ -32,7 +32,6 @@ if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then
 
  echo "Usage: $0 -p PREFIX"
  echo PREFIX should be either \"bmr\" or \"bms\".
-
  exit 1
 
 fi
@@ -41,7 +40,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi

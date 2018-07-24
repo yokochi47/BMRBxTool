@@ -22,7 +22,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
@@ -33,7 +32,6 @@ if [ $? != 0 ] ; then
 
  echo "xmlstarlet: command not found..."
  echo "Please install XMLStarlet (http://xmlstar.sourceforge.net/)."
-
  exit 1
 
 fi

@@ -28,7 +28,6 @@ if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then
 
  echo "Usage: $0 -p PREFIX"
  echo PREFIX should be either \"bmr\" or \"bms\".
-
  exit 1
 
 fi
@@ -37,7 +36,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
@@ -46,7 +44,6 @@ if [ ! `which indexer` ] ; then
 
  echo "indexer: command not found..."
  echo "Please install Sphinx (http://sphinxsearch.com/)."
-
  exit 1
 
 fi
@@ -205,7 +202,6 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
   echo
   echo -e "${red}$errs errors were detected. Please check the log files for more details.${normal}"
-
   exit 1
 
  fi
