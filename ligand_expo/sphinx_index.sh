@@ -6,7 +6,6 @@ if [ ! `which indexer` ] ; then
 
  echo "indexer: command not found..."
  echo "Please install Sphinx (http://sphinxsearch.com/)."
-
  exit 1
 
 fi
@@ -19,14 +18,7 @@ WGET_LOG=wget.log
 
 if [ ! -e $DB_FTP/$DB_TGZ ] ; then
 
- wget -c -m http://$DB_FTP/$DB_TGZ -o $WGET_LOG
-
- if [ $? != 0 ] ; then
-
-  cat $WGET_LOG
-  exit 1
-
- fi
+ wget -c -m http://$DB_FTP/$DB_TGZ -o $WGET_LOG || ( cat $WGET_LOG; exit 1 )
 
 fi
 
@@ -151,7 +143,6 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
   echo
   echo -e "${red}$errs errors were detected. Please check the log files for more details.${normal}"
-
   exit 1
 
  fi

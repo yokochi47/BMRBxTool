@@ -23,7 +23,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi

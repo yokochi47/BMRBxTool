@@ -11,7 +11,6 @@ if [ ! `which scomp` ] ; then
 
  echo "scomp: command not found..."
  echo "Please install XMLBeans (http://xmlbeans.apache.org/)."
-
  exit 1
 
 fi

@@ -27,7 +27,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
@@ -48,7 +47,6 @@ if [ $? != 0 ] ; then
 
  echo "basex: command not found..."
  echo "Please install BaseX (http://basex.org/)."
-
  exit 1
 
 fi

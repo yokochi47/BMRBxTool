@@ -6,7 +6,6 @@ ATOM=atom
 UNZIP=gunzip
 
 red='\e[0;31m'
-green='\e[0;32m'
 normal='\e[0m'
 
 ARGV=`getopt --long -o "a:" "$@"`
@@ -28,7 +27,6 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
@@ -112,7 +110,6 @@ else
 
  echo
  echo -e "${red}"$errs errors were detected."${normal}"
-
  exit 1
 
 fi
