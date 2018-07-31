@@ -133,7 +133,7 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER --drop-doc-key-index 2> $err_file
 
 else
 
