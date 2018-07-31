@@ -50,12 +50,12 @@ fi
 
 if [ $ATOM = "atom" ] ; then
 
- XML_RAW_DIR=$PREFIX"_xml_raw"
+ XML_DOC_DIR=$PREFIX"_xml_doc"
  FILE_EXT_DIGEST=.
 
 else
 
- XML_RAW_DIR=$PREFIX"_xml_noatom_raw"
+ XML_DOC_DIR=$PREFIX"_xml_noatom_doc"
  FILE_EXT_DIGEST=-noatom
 
 fi
@@ -83,8 +83,6 @@ if [ -d $IDX_DIR ] ; then
  fi
 
 fi
-
-./$PREFIX"unzip_xml.sh" -a $ATOM
 
 DIC_NAMES=("all" "aut" "pol" "lig" "org")
 
@@ -129,21 +127,15 @@ for dic_name in ${DIC_NAMES[@]} ; do
  mkdir -p $DIC_WORK_DIR
  mkdir -p $ERR_DIR
 
-
- rm -rf $WORK_DIR
-
- mkdir -p $WORK_DIR
- mkdir -p $ERR_DIR
-
  err_file=$ERR_DIR/all_err
 
  if [ $sync_update != "true" ] ; then
 
-  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields 2> $err_file
+  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields 2> $err_file
 
  else
 
-  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields --sync $MD5_DIR 2> $err_file
+  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields --sync $MD5_DIR 2> $err_file
 
  fi
 
