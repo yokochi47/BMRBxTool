@@ -63,12 +63,12 @@ fi
 
 if [ $ATOM = "atom" ] ; then
 
- XML_RAW_DIR=$PREFIX"_xml_raw"
+ XML_DOC_DIR=$PREFIX"_xml_doc"
  FILE_EXT_DIGEST=.
 
 else
 
- XML_RAW_DIR=$PREFIX"_xml_noatom_raw"
+ XML_DOC_DIR=$PREFIX"_xml_noatom_doc"
  FILE_EXT_DIGEST=-noatom
 
 fi
@@ -95,8 +95,6 @@ case $ans in
  *) echo stopped.
   exit 1;;
 esac
-
-./$PREFIX"unzip_xml.sh" -a $ATOM
 
 MD5_DIR=chk_sum_pgsql_$PREFIX
 
@@ -135,11 +133,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
 
 else
 
- java -cp extlibs/xsd2pgschema.jar xml2pgsql --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2pgsql --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
 
 fi
 

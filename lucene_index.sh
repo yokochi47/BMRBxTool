@@ -28,7 +28,6 @@ if [ $PREFIX != "bmr" ] && [ $PREFIX != "bms" ] ; then
 
  echo "Usage: $0 -p PREFIX"
  echo PREFIX should be either \"bmr\" or \"bms\".
-
  exit 1
 
 fi
@@ -37,19 +36,18 @@ if [ $ATOM != "noatom" ] && [ $ATOM != "atom" ] ; then
 
  echo "Usage: $0 -a ATOM"
  echo ATOM should be either \"noatom\" or \"atom\".
-
  exit 1
 
 fi
 
 if [ $ATOM = "atom" ] ; then
 
- XML_RAW_DIR=$PREFIX"_xml_raw"
+ XML_DOC_DIR=$PREFIX"_xml_doc"
  FILE_EXT_DIGEST=.
 
 else
 
- XML_RAW_DIR=$PREFIX"_xml_noatom_raw"
+ XML_DOC_DIR=$PREFIX"_xml_noatom_doc"
  FILE_EXT_DIGEST=-noatom
 
 fi
@@ -77,8 +75,6 @@ if [ -d $IDX_DIR ] ; then
 
 fi
 
-./$PREFIX"unzip_xml.sh" -a $ATOM
-
 WORK_DIR=lucene_work
 ERR_DIR=$WORK_DIR/err
 
@@ -95,11 +91,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST 2> $err_file
 
 else
 
- java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_RAW_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext-digest $FILE_EXT_DIGEST --sync $MD5_DIR 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST --sync $MD5_DIR 2> $err_file
 
 fi
 
@@ -133,7 +129,6 @@ else
 
  echo
  echo -e "${red}$errs errors were detected. Please check the log files for more details.${normal}"
-
  exit 1
 
 fi
