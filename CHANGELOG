@@ -1,8 +1,8 @@
- Changes in BMRBxTool 1.29.0 (release 2018-07-20)
+ Changes in BMRBxTool 1.29.0 (release 2018-08-01)
 
   Changed namespace URI from http://bmrbpub.protein.osaka-u.ac.jp/schema/mmcif_nmr-star.xsd to https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd.
   Changed package name from jp.ac.osakaU.protein.schema.mmcifNmrStar to org.pdbj.bmrbpub.schema.mmcifNmrStar.
-  Updated xsd2pgschema to 2.12.5.
+  Updated xsd2pgschema to 2.12.6.
 
  Changes in BMRBxTool 1.28.0 (release 2018-06-22)
 
