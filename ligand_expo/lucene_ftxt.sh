@@ -13,8 +13,8 @@ LUCENE_FTXT_DIR=lucene_ftxt
 
 rm -rf $LUCENE_FTXT_DIR
 
-java -cp ../extlibs/xsd2pgschema.jar luceneidx2ftxt --idx-dir $LUCENE_IDX_DIR --ftxt-dir $LUCENE_FTXT_DIR --dic dictionary
+java -cp ../extlibs/xsd2pgschema.jar luceneidx2ftxt --idx-dir $LUCENE_IDX_DIR --ftxt-dir $LUCENE_FTXT_DIR --dic dictionary --freq 1
 
-java -cp ../extlibs/xsd2pgschema.jar luceneidx2ftxt --idx-dir $LUCENE_IDX_DIR --ftxt-dir $LUCENE_FTXT_DIR --dic dictionary.lig\
+java -cp ../extlibs/xsd2pgschema.jar luceneidx2ftxt --idx-dir $LUCENE_IDX_DIR --ftxt-dir $LUCENE_FTXT_DIR --dic dictionary.lig --freq 1\
  --field chem_comp.formula --field chem_comp.name --field chem_comp.pdbx_synonyms --field chem_comp.three_letter_code --field chem_comp.id --field pdbx_chem_comp_descriptor.descriptor --field pdbx_chem_comp_feature.value --field pdbx_chem_comp_identifier.identifier
 
