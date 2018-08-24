@@ -351,25 +351,25 @@ if [ $? = 0 ] && ( [ $bmr_ulist_len -gt 0 ] || [ $bms_ulist_len -gt 0 ] ) ; then
  read ans
 
  case $ans in
-  y*|Y*) ;;
+  y*|Y*)
+   rm -f /tmp/bmr-basex-last
+
+   if [ $bmr_ulist_len -gt 0 ] ; then
+    ./bmr2basex.sh -a noatom
+   fi
+
+   rm -f /tmp/bms-basex-last
+
+   if [ $bms_ulist_len -gt 0 ] ; then
+    ./bms2basex.sh -a noatom
+   fi;;
   *)
-   echo skipped.
-   exit 0;;
+   echo skipped.;;
  esac
 
- rm -f /tmp/bmr-basex-last
-
- if [ $bmr_ulist_len -gt 0 ] ; then
-  ./bmr2basex.sh -a noatom
- fi
-
- rm -f /tmp/bms-basex-last
-
- if [ $bms_ulist_len -gt 0 ] ; then
-  ./bms2basex.sh -a noatom
- fi
-
 fi
+
+./start_pgschema_serv.sh
 
 echo "# + Cloning BMRB DB from BMRB/XML"
 
