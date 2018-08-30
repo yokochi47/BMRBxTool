@@ -813,7 +813,7 @@ CREATE TABLE chem_comp (
 -- DOCUMENT KEY is pointer to data source (aka. Entry ID)
 	document_id TEXT ,
 	formula TEXT ,
-	formula_weight DECIMAL CHECK ( formula_weight >= 1.0 ) ,
+	formula_weight DECIMAL CHECK ( formula_weight >= 0.0 ) ,
 	model_details TEXT ,
 	model_erf TEXT ,
 	model_source TEXT ,
