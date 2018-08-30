@@ -26,7 +26,7 @@ if [ ! -d $XML_DIR ] ; then
  tar xzf $DB_FTP/$DB_TGZ -C .
 fi
 
-XSD_SCHEMA=pdbx-v50.xsd
+XSD_SCHEMA=pdbx-v40.xsd
 PREFIX=le
 
 IDX_DIR=sphinx_index

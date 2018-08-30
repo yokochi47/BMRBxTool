@@ -30,7 +30,7 @@ rm -rf $XML_DIR
 
 tar xzf $DB_FTP/$DB_TGZ -C .
 
-XSD_SCHEMA=pdbx-v50.xsd
+XSD_SCHEMA=pdbx-v40.xsd
 DB_SCHEMA=ligand_expo.schema
 
 java -cp ../extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --doc-key --no-key --ddl $DB_SCHEMA
