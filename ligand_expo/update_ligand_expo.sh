@@ -24,7 +24,14 @@ WGET_LOG=wget.log
 
 wget -c -m http://$DB_FTP/$DB_TGZ -o $WGET_LOG || ( cat $WGET_LOG && exit 1 )
 
-grep 'nothing to do' $WGET_LOG > /dev/null && ( echo $DB_NAME is update. && exit 0 )
+grep 'nothing to do' $WGET_LOG > /dev/null
+
+if [ $? = 0 ] ; then
+
+ echo $DB_NAME is update.
+ exit 0
+
+fi
 
 rm -rf $XML_DIR
 
