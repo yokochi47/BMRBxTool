@@ -12,7 +12,7 @@ source ../scripts/db-user.sh
 
 TAX_DB=taxonomy
 
-psql -U $DB_USER -l | grep $TAX_DB > /dev/null || ( echo "database \"$TAX_DB\" does not exist."; exit 1 )
+psql -U $DB_USER -l | grep $TAX_DB > /dev/null || echo "database \"$TAX_DB\" does not exist." && exit 1
 
 TAX_FTP=ftp.ncbi.nlm.nih.gov/pub/taxonomy
 TAX_DUMP=taxdump.tar

@@ -247,7 +247,7 @@ for prefix in bmr bms ; do
 
  rm -rf $ebk_dir
 
- ./$prefix"2xml.sh" $WRITE_OPT || ( echo "$0 aborted."; exit 1 )
+ ./$prefix"2xml.sh" $WRITE_OPT || echo "$0 aborted." && exit 1
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
@@ -271,7 +271,7 @@ for prefix in bmr bms ; do
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
- ./$prefix"2xml.sh" $VALIDATE_OPT || ( echo "$0 aborted."; exit 1 )
+ ./$prefix"2xml.sh" $VALIDATE_OPT || echo "$0 aborted." && exit 1
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
@@ -286,7 +286,7 @@ for prefix in bmr bms ; do
 
  rm -rf $ebk_dir
 
- ./$prefix"2xml.sh" $WRITE_NOATOM_OPT || ( echo "$0 aborted."; exit 1 )
+ ./$prefix"2xml.sh" $WRITE_NOATOM_OPT || echo "$0 aborted." &&  exit 1
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
@@ -310,7 +310,7 @@ for prefix in bmr bms ; do
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 
- ./$prefix"2xml.sh" $VALIDATE_NOATOM_OPT || ( echo "$0 aborted."; exit 1 )
+ ./$prefix"2xml.sh" $VALIDATE_NOATOM_OPT || echo "$0 aborted." && exit 1
 
  chk_err_dir $err_dir $ebk_dir $doc_dir $log_dir
 

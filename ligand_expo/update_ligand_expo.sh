@@ -14,7 +14,7 @@ source ../scripts/db-user.sh
 
 DB_NAME=ligand_expo
 
-psql -U $DB_USER -l | grep $DB_NAME > /dev/null || ( echo "database \"$DB_NAME\" does not exist."; exit 1 )
+psql -U $DB_USER -l | grep $DB_NAME > /dev/null || echo "database \"$DB_NAME\" does not exist." && exit 1
 
 DB_FTP=ligand-expo.rcsb.org/dictionaries
 DB_TGZ=components-pub-xml.tar.gz
@@ -22,9 +22,16 @@ XML_DIR=components-pub-xml
 
 WGET_LOG=wget.log
 
-wget -c -m http://$DB_FTP/$DB_TGZ -o $WGET_LOG || ( cat $WGET_LOG; exit 1 )
+wget -c -m http://$DB_FTP/$DB_TGZ -o $WGET_LOG || cat $WGET_LOG && exit 1
 
-grep 'nothing to do' $WGET_LOG > /dev/null && ( echo $DB_NAME is update.; exit 0 )
+grep 'nothing to do' $WGET_LOG > /dev/null;
+
+if [ $? = 0 ] ; then
+
+ echo $DB_NAME is update.
+ exit 0
+
+fi
 
 rm -rf $XML_DIR
 
