@@ -16,9 +16,9 @@ MTBL_DB=metabolomics
 BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
 DUMP_PATH=ftp/pub/bmrb/relational_tables
 
-psql -U $DB_USER -l | grep $BMRB_DB > /dev/null || ( echo "database \"$BMRB_DB\" does not exist."; exit 1 )
+psql -U $DB_USER -l | grep $BMRB_DB > /dev/null || echo "database \"$BMRB_DB\" does not exist." && exit 1
 
-psql -U $DB_USER -l | grep $MTBL_DB > /dev/null || ( echo "database \"$MTBL_DB\" does not exist."; exit 1 )
+psql -U $DB_USER -l | grep $MTBL_DB > /dev/null || echo "database \"$MTBL_DB\" does not exist." && exit 1
 
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"

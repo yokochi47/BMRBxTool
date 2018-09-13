@@ -73,7 +73,7 @@ else
 
 fi
 
-psql -U $DB_USER -l | grep $DB_NAME > /dev/null || ( echo "database \"$DB_NAME\" does not exist."; exit 1 )
+psql -U $DB_USER -l | grep $DB_NAME > /dev/null || echo "database \"$DB_NAME\" does not exist." && exit 1
 
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
 
