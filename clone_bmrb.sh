@@ -73,7 +73,7 @@ else
 
 fi
 
-psql -U $DB_USER -l | grep $DB_NAME > /dev/null || echo "database \"$DB_NAME\" does not exist." && exit 1
+psql -U $DB_USER -l | grep $DB_NAME > /dev/null || ( echo "database \"$DB_NAME\" does not exist." && exit 1 )
 
 XSD_SCHEMA=schema/mmcif_nmr-star.xsd
 
@@ -147,7 +147,7 @@ if [ $? = 0 ] && [ ! -s $err_file ] ; then
   rm -rf $DATA_DIR
  fi
 else
- echo "$0 aborted."
+ echo $0 aborted.
  exit 1
 fi
 

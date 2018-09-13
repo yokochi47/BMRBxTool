@@ -142,7 +142,7 @@ for dic_name in ${DIC_NAMES[@]} ; do
  if [ $? = 0 ] && [ ! -s $err_file ] ; then
   rm -f $err_file
  else
-  echo "$0 aborted."
+  echo $0 aborted.
   exit 1
  fi
 

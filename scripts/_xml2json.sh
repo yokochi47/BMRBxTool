@@ -147,7 +147,7 @@ java -cp extlibs/xsd2pgschema.jar xml2json --xsd $XSD_SCHEMA --xml $XML_UPDATE_D
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file
 else
- echo "$0 aborted."
+ echo $0 aborted.
  exit 1
 fi
 
