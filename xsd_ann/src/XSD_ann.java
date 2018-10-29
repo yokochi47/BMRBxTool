@@ -65,7 +65,7 @@ public class XSD_ann {
 
 		String xsd_name = "mmcif_nmr-star-v" + dic_version + ".xsd";
 
-		String bmrbx_tool_home = "/home/yokochi/Applications/bmrbx-tool-1.30.0"; // ".";
+		String bmrbx_tool_home = "/home/yokochi/Applications/bmrbx-tool-1.31.0"; // ".";
 
 		String url_bmrb = "jdbc:postgresql://localhost/bmrb";
 		String user_bmrb = "bmrb"; // user;
