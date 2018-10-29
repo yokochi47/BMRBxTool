@@ -66,8 +66,8 @@ public class BMSxTool_Java {
 
 		String query_key = (table_name.equals("Entry") ? "ID" : "Entry_ID");
 
-		boolean _integer = has_integer(node) || has_enum_integer(node); // has xsd:integer
-		boolean _integer_id = has_integer_id(node); // has xsd:integer with name "id"
+		boolean _integer = has_integer(node) || has_enum_integer(node); // has xsd:int
+		boolean _integer_id = has_integer_id(node); // has xsd:int with name "id"
 		boolean _decimal = has_decimal(node) || has_enum_decimal(node); // has xsd:decimal
 		boolean _date = has_date(node); // has xsd:date
 		boolean _enum = has_enum(node); // has xsd:restriction
@@ -2525,7 +2525,7 @@ public class BMSxTool_Java {
 
 					Node attr_name = node_map.getNamedItem("type");
 
-					if (attr_name != null && attr_name.getTextContent().equals("xsd:integer"))
+					if (attr_name != null && attr_name.getTextContent().equals("xsd:int"))
 						return true;
 				}
 			}
@@ -2554,7 +2554,7 @@ public class BMSxTool_Java {
 
 						attr_name = node_map.getNamedItem("type");
 
-						if (attr_name != null && attr_name.getTextContent().equals("xsd:integer"))
+						if (attr_name != null && attr_name.getTextContent().equals("xsd:int"))
 							return true;
 					}
 				}
@@ -2697,7 +2697,7 @@ public class BMSxTool_Java {
 
 					Node attr_name = node_map.getNamedItem("base");
 
-					if (attr_name != null && attr_name.getTextContent().equals("xsd:integer"))
+					if (attr_name != null && attr_name.getTextContent().equals("xsd:int"))
 						return true;
 				}
 			}
@@ -2823,7 +2823,7 @@ public class BMSxTool_Java {
 					Node attr_type = node_map.getNamedItem("type");
 					Node attr_use = node_map.getNamedItem("use");
 
-					if (attr_name != null && attr_type != null && attr_type.getTextContent().equals("xsd:integer") && attr_use != null && attr_use.getTextContent().equals("required")) {
+					if (attr_name != null && attr_type != null && attr_type.getTextContent().equals("xsd:int") && attr_use != null && attr_use.getTextContent().equals("required")) {
 
 						String column_name = convert_attr_name(attr_name.getTextContent(), column_list);
 
@@ -3128,7 +3128,7 @@ public class BMSxTool_Java {
 
 					}
 
-					else if (attr_type.equals("xsd:integer")) {
+					else if (attr_type.equals("xsd:int")) {
 
 						// item='id'
 						if (attr_name_lower.equals("id"))
