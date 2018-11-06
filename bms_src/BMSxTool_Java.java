@@ -126,8 +126,8 @@ public class BMSxTool_Java {
 			buffw.write("import java.io.*;\n");
 			buffw.write("import java.lang.reflect.*;\n");
 
-			if (_integer /* && !class_name.equalsIgnoreCase("Entry") */ )
-				buffw.write("import java.math.BigInteger;\n");
+//			if (_integer /* && !class_name.equalsIgnoreCase("Entry") */ )
+//				buffw.write("import java.math.BigInteger;\n");
 			if (_decimal)
 				buffw.write("import java.math.BigDecimal;\n");
 			if (has_decimal(node))
@@ -1445,7 +1445,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1469,7 +1469,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 				 */
@@ -1493,7 +1493,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1516,7 +1516,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1539,7 +1539,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1562,7 +1562,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1589,7 +1589,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String experiment_id, FileWriter logw) {\n\n");
 
@@ -1607,7 +1607,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1630,7 +1630,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1668,7 +1668,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 					buffw.write("\n\tprivate static boolean set_integer_sample_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String experiment_id, FileWriter logw) {\n\n");
 
@@ -1686,7 +1686,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1709,7 +1709,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1732,7 +1732,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1755,7 +1755,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1778,7 +1778,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 					buffw.write("\n\tprivate static boolean set_integer_sample_condition_list_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, FileWriter logw) {\n\n");
 
@@ -1796,7 +1796,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1819,7 +1819,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1842,7 +1842,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1865,7 +1865,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1888,7 +1888,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 					buffw.write("\n\tprivate static boolean set_integer_entity_assembly_id(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_bmrb, String entry_id, String entity_id, FileWriter logw) {\n\n");
 
@@ -1906,7 +1906,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1929,7 +1929,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1952,7 +1952,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1975,7 +1975,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -1998,7 +1998,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				}
 
@@ -4916,7 +4916,7 @@ public class BMSxTool_Java {
 
 					write_missing_log_code(buffw);
 
-					write_invoke_bigint_method(buffw);
+					write_invoke_int_method(buffw);
 
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -5151,12 +5151,12 @@ public class BMSxTool_Java {
 
 	}
 
-	private static void write_invoke_bigint_method(BufferedWriter buffw) throws IOException {
+	private static void write_invoke_int_method(BufferedWriter buffw) throws IOException {
 
 		buffw.write("\t\tClass<?> _class = list.getClass();\n\n");
 
 		buffw.write("\t\ttry {\n");
-		buffw.write("\t\t\tMethod method = _class.getMethod(method_name, new Class[]{ BigInteger.class });\n");
+		buffw.write("\t\t\tMethod method = _class.getMethod(method_name, new Class[]{ int.class });\n");
 		buffw.write("\t\t\tMethod nil_method = null;\n\n");
 
 		buffw.write("\t\t\tif (nil_method_name != null && !nil_method_name.isEmpty())\n");
@@ -5166,7 +5166,7 @@ public class BMSxTool_Java {
 		buffw.write("\t\t\t\tif (nil)\n");
 		buffw.write("\t\t\t\t\tnil_method.invoke(list);\n");
 		buffw.write("\t\t\t\telse\n");
-		buffw.write("\t\t\t\t\tmethod.invoke(list, new BigInteger(val_name));\n");
+		buffw.write("\t\t\t\t\tmethod.invoke(list, Integer.parseInt(val_name));\n");
 		buffw.write("\t\t\t} catch (IllegalAccessException e) {\n");
 		buffw.write("\t\t\t\te.printStackTrace();\n");
 		buffw.write("\t\t\t} catch (IllegalArgumentException e) {\n");
