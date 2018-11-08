@@ -126,8 +126,8 @@ public class BMSxTool_Java {
 			buffw.write("import java.io.*;\n");
 			buffw.write("import java.lang.reflect.*;\n");
 
-//			if (_integer /* && !class_name.equalsIgnoreCase("Entry") */ )
-//				buffw.write("import java.math.BigInteger;\n");
+			//			if (_integer /* && !class_name.equalsIgnoreCase("Entry") */ )
+			//				buffw.write("import java.math.BigInteger;\n");
 			if (_decimal)
 				buffw.write("import java.math.BigDecimal;\n");
 			if (has_decimal(node))
@@ -3654,6 +3654,14 @@ public class BMSxTool_Java {
 
 							buffw.write("\t\tif (val_name != null)\n");
 							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_chemcomp + ".getAromatic(val_name);\n\n");
+
+						}
+
+						// item='image_file_format'
+						if (attr_name_lower.equals("image_file_format")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_chemcomp + ".getImageFileFormat(val_name);\n\n");
 
 						}
 

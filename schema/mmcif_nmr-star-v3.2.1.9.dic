@@ -24670,6 +24670,7 @@ This data item contains the identifier type.
    PUBCHEM_IUPAC_OPENEYE_NAME    ?
    PUBCHEM_IUPAC_SYSTEMATIC_NAME    ?
    PUBCHEM_IUPAC_TRADITIONAL_NAME    ?
+   'NSC NUMBER'    'National Safety Code Certificate Number'
 
    stop_
 
