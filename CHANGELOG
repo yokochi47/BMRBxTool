@@ -1,8 +1,10 @@
- Changes in BMRBxTool 1.31.0 (release 2018-10-29)
+ Changes in BMRBxTool 1.31.0 (release 2018-11-08)
 
   Updated xsd2pgschema to 3.0.6.
   Changed all item with xsd:integer to xsd:int.
   Updated dictionary and translation profiles for processing entries released on 2018-10-24.
+  Added 'NSC NUMBER' of enumeration of '_chem_comp_identifer.type'.
+  Added remediation for '_chem_comp.image_file_format', '_chem_comp_identifier.type'.
 
  Changes in BMRBxTool 1.30.0 (release 2018-10-22)
 

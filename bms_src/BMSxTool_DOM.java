@@ -5186,9 +5186,23 @@ public class BMSxTool_DOM {
 			write_util_from_properties(buffw, xsd_dir_name + "chem_comp.aromatic.properties");
 
 			buffw.write("\n\t\t}\n\t};\n\n");
-
+			
 			buffw.write("\tpublic static String getAromatic(String val_name) {\n");
 			buffw.write("\t\treturn (String) map_aromatic.get(val_name);\n");
+			buffw.write("\t}\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_image_file_format = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "chem_comp.image_file_format.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getImageFileFormat(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_image_file_format.get(val_name);\n");
 			buffw.write("\t}\n\n");
 
 			buffw.write("\t/* synchronized */ public static String checkChemCompIDwithChemComp(String pdb_code, String pdb_id, int trials) {\n\n");

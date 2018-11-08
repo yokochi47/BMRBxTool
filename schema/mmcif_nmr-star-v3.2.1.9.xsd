@@ -11063,6 +11063,7 @@ This data item contains the identifier type.
                         <xsd:enumeration value="PUBCHEM_IUPAC_OPENEYE_NAME"/>
                         <xsd:enumeration value="PUBCHEM_IUPAC_SYSTEMATIC_NAME"/>
                         <xsd:enumeration value="PUBCHEM_IUPAC_TRADITIONAL_NAME"/>
+                        <xsd:enumeration value="NSC NUMBER"/>
                      </xsd:restriction>
                   </xsd:simpleType>
                </xsd:attribute>
