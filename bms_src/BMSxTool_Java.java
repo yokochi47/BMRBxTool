@@ -3665,6 +3665,14 @@ public class BMSxTool_Java {
 
 						}
 
+						// item='vendor'
+						if (attr_name_lower.equals("vendor")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_chemcomp + ".getVendor(val_name);\n\n");
+
+						}
+
 						// item='provenance'
 						if (attr_name_lower.equals("provenance")) {
 

@@ -5205,6 +5205,20 @@ public class BMSxTool_DOM {
 			buffw.write("\t\treturn (String) map_image_file_format.get(val_name);\n");
 			buffw.write("\t}\n\n");
 
+			buffw.write("\tstatic final Map<String, String> map_vendor = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "chem_comp.vendor.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getVendor(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_vendor.get(val_name);\n");
+			buffw.write("\t}\n\n");
+
 			buffw.write("\t/* synchronized */ public static String checkChemCompIDwithChemComp(String pdb_code, String pdb_id, int trials) {\n\n");
 
 			buffw.write("\t\tif (trials < 0 || trials >= " + service_trials + " || " + empty_check("pdb_code") + ")\n");
