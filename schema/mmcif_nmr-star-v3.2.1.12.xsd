@@ -5,11 +5,11 @@
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
    <xsd:annotation>
-      <xsd:appinfo>BMRB/XML Schema v3.2.1.9</xsd:appinfo>
+      <xsd:appinfo>BMRB/XML Schema v3.2.1.12</xsd:appinfo>
       <xsd:documentation source="https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic"
                          xml:lang="en">
 
-BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.9, which is backward compatible with the original NMR-STAR Dictionary:
+BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.12, which is backward compatible with the original NMR-STAR Dictionary:
  http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic
 
     </xsd:documentation>
@@ -33518,6 +33518,7 @@ Version of NMR-STAR in which the current entry is formatted.
                            <xsd:enumeration value="3.2.1.2"/>
                            <xsd:enumeration value="3.2.1.5"/>
                            <xsd:enumeration value="3.2.1.9"/>
+                           <xsd:enumeration value="3.2.1.12"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -33579,6 +33580,7 @@ Version of NMR-STAR in which the original entry was generated.
                            <xsd:enumeration value="3.2.1.2"/>
                            <xsd:enumeration value="3.2.1.5"/>
                            <xsd:enumeration value="3.2.1.9"/>
+                           <xsd:enumeration value="3.2.1.12"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -59659,6 +59661,19 @@ The high salinity of the sample may have contributed to overheating of the sampl
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A descriptive name that uniquely identifies this set of sample conditions
+within the entry.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -59676,7 +59691,8 @@ Category assigned to the information in the saveframe.
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
 
-A descriptive label that uniquely identifies this set of sample conditions.
+A descriptive label that uniquely identifies this set of sample conditions
+within an entry.
 
 conditions_1
                         </xsd:documentation>

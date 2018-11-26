@@ -1,6 +1,6 @@
 data_mmcif_nmr-star.dic
 
-#  version date -  2018-08-17
+#  version date -  2018-11-19
 
 
 # The majority of the following item type definitions and descriptions for units
@@ -21,7 +21,7 @@ data_mmcif_nmr-star.dic
 
     _dictionary.title           mmcif_nmr-star.dic
     _dictionary.datablock_id    mmcif_nmr-star.dic
-    _dictionary.version         3.2.1.9
+    _dictionary.version         3.2.1.12
 
      loop_
        _dictionary_history.version
@@ -61,7 +61,7 @@ Many corrections and suggestions provided by PDBj-BMRB implemented.
      Added tags for FID sampling
 ;
 
-     3.2.1.9          2018-08-17
+     3.2.1.12         2018-11-19
 ;
      ?
 ;
@@ -2767,7 +2767,7 @@ Version of NMR-STAR in which the current entry is formatted.
    _item.mandatory_code                         yes
 #  _pdbx_item_enumeration_details.closed_flag   no
    _item_type.code                             'line'
-   _item_default.value            '3.2.1.9'
+   _item_default.value            '3.2.1.12'
 
    loop_
      _item_enumeration.value
@@ -2798,6 +2798,7 @@ Version of NMR-STAR in which the current entry is formatted.
    3.2.1.2    ?
    3.2.1.5    ?
    3.2.1.9    ?
+   3.2.1.12    ?
 
    stop_
 
@@ -2874,6 +2875,7 @@ Version of NMR-STAR in which the original entry was generated.
    3.2.1.2    ?
    3.2.1.5    ?
    3.2.1.9    ?
+   3.2.1.12    ?
 
    stop_
 
@@ -29012,7 +29014,8 @@ save__sample_condition_list.sf_framecode
 
    _item_description.description
 ;
-A descriptive label that uniquely identifies this set of sample conditions.
+A descriptive label that uniquely identifies this set of sample conditions
+within an entry.
 ;
 
    _item.name                                  '_sample_condition_list.sf_framecode'
@@ -29155,6 +29158,22 @@ A value that uniquely identifies the set of sample conditions from other sample
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__sample_condition_list.name
+
+   _item_description.description
+;
+A descriptive name that uniquely identifies this set of sample conditions
+within the entry.
+;
+
+   _item.name                                  '_sample_condition_list.name'
+   _item.category_id                           'sample_condition_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -29936,6 +29955,7 @@ in the entry.
 #  AMBER    ?
 #  AngleSearch    ?
 #  ANSIG    ?
+#  Analysis    ?
 #  AQUA    ?
 #  ARIA    ?
 #  AURELIA    ?
@@ -29946,6 +29966,8 @@ in the entry.
 #  AZARA    ?
 #  BIRDER    ?
 #  CAPP    ?
+#  CARA    ?
+#  CppNMR    ?
 #  CING    ?
 #  CNS    ?
 #  CNSSOLVE    ?
@@ -29957,16 +29979,18 @@ in the entry.
 #  DELTA    ?
 #  DGII    ?
 #  DIAMOD    ?
-#  DIANA    ?
 #  DISCOVER    ?
 #  DSPACE    ?
 #  DYANA    ?
+#  DYNAMO    ?
 #  EMBOSS    ?
 #  FANTOM    ?
 #  Felix    ?
 #  GARANT    ?
+#  Gaussian    ?
 #  GIFA    ?
 #  GROMOS    ?
+#  HADDOCK    ?
 #  HYPER    ?
 #  InsightII    ?
 #  MARDIGRAS    ?
@@ -29974,18 +29998,16 @@ in the entry.
 #  Molmol    ?
 #  MORASS    ?
 #  NDEE    ?
-#  NMRbox   ?
+#  NMRbox    ?
 #  NMRCOMPASS    ?
 #  NMRDraw    ?
 #  NMRPipe    ?
-#  NMR-STAR    ?
 #  NMRView    ?
 #  NOAH    ?
 #  NOEID    ?
 #  NUCFIT    ?
 #  NUTS    ?
 #  OPAL    ?
-#  PDB    ?
 #  PECAN    ?
 #  PINE    ?
 #  PIPP    ?
@@ -30018,6 +30040,7 @@ in the entry.
 #  X-PLOR    ?
 #  'X-PLOR NIH'    ?
 #  xwinnmr    ?
+#
 #
 #  stop_
 
@@ -30284,9 +30307,11 @@ The name of the software defined by the author or provider of the software.
 #  CS-Rosetta    ?
 #  CURVES    ?
 #  CYANA    ?
+#  DELTA    ?
 #  DGII    ?
 #  DIAMOD    ?
 #  DISCOVER    ?
+#  DSPACE    ?
 #  DYANA    ?
 #  DYNAMO    ?
 #  EMBOSS    ?
@@ -30295,6 +30320,7 @@ The name of the software defined by the author or provider of the software.
 #  GARANT    ?
 #  Gaussian    ?
 #  GIFA    ?
+#  GROMOS    ?
 #  HADDOCK    ?
 #  HYPER    ?
 #  InsightII    ?
@@ -30304,6 +30330,7 @@ The name of the software defined by the author or provider of the software.
 #  MORASS    ?
 #  NDEE    ?
 #  NMRbox    ?
+#  NMRCOMPASS    ?
 #  NMRDraw    ?
 #  NMRPipe    ?
 #  NMRView    ?
@@ -30332,9 +30359,12 @@ The name of the software defined by the author or provider of the software.
 #  SPSCAN    ?
 #  SYBYL    ?
 #  TALOS    ?
+#  TINKER    ?
 #  TOPSPIN    ?
+#  TRIPOS    ?
 #  UXNMR    ?
 #  VNMR    ?
+#  VNMRj    ?
 #  WhatIF    ?
 #  Wattos    ?
 #  XEASY    ?
