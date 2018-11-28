@@ -7218,7 +7218,7 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\t\t\tint len_last = array[1].length();\n\n");
 
 			buffw.write("\t\t\t\t\t\tif (len_first < len_last)\n");
-			buffw.write("\t\t\t\t\t\t\treturn array[1];\n\n");
+			buffw.write("\t\t\t\t\t\t\treturn array[1].split(\"\\\\.\")[0];\n\n");
 
 			buffw.write("\t\t\t\t\t\tfor (int l = 1; l <= len_last; l++)\n");
 			buffw.write("\t\t\t\t\t\t\tpage_first[len_first - l] = page_last[len_last - l];\n\n");
