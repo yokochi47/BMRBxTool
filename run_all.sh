@@ -33,7 +33,7 @@ while true ; do
  shift
 done
 
-VERSION=`grep BMRBxTool NOTICE | grep -v github | cut -d ' ' -f 2`
+VERSION=`cat VERSION`
 
 NMRSTAR_DIC_FILE=NMR-STAR.dic
 
