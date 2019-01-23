@@ -1,6 +1,6 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2018 Masashi Yokochi
+    Copyright 2013-2019 Masashi Yokochi
     
     https://github.com/yokochi47/BMRBxTool
 
@@ -25,8 +25,8 @@ import org.w3c.dom.Document;
 
 public class BMSxTool_Main {
 
-	public final static String version = "1.32.0";
-	public final static String bmrb_version = "3.2.1.12";
+	public final static String version = "1.33.0";
+	public final static String bmrb_version = "3.2.1.15";
 	public final static String dev_mail_addr = "yokochi@protein.osaka-u.ac.jp";
 
 	public static String your_org = "your.org"; // edit this before you run

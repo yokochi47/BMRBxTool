@@ -1,6 +1,6 @@
 data_mmcif_nmr-star.dic
 
-#  version date -  2018-11-19
+#  version date -  2019-01-18
 
 
 # The majority of the following item type definitions and descriptions for units
@@ -21,7 +21,7 @@ data_mmcif_nmr-star.dic
 
     _dictionary.title           mmcif_nmr-star.dic
     _dictionary.datablock_id    mmcif_nmr-star.dic
-    _dictionary.version         3.2.1.12
+    _dictionary.version         3.2.1.15
 
      loop_
        _dictionary_history.version
@@ -61,7 +61,7 @@ Many corrections and suggestions provided by PDBj-BMRB implemented.
      Added tags for FID sampling
 ;
 
-     3.2.1.12         ?
+     3.2.1.15         ?
 ;
      ?
 ;
@@ -2693,7 +2693,7 @@ Version of NMR-STAR in which the current entry is formatted.
    _item.mandatory_code                         yes
    _pdbx_item_enumeration_details.closed_flag   no
    _item_type.code                             'line'
-   _item_default.value            '3.2.1.12'
+   _item_default.value            '3.2.1.15'
 
    loop_
      _item_enumeration.value
@@ -5040,6 +5040,29 @@ provided in the entry.
 
 save_
 
+save__citation.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_citation.name'
+   _item.category_id                           'citation'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+   loop_
+     _item_examples.case
+
+;
+citation 1
+;
+
+   stop_
+
+save_
+
 save__citation.class
 
    _item_description.description
@@ -7190,6 +7213,7 @@ Unique identifier for each component in the entity assembly.
   '_peak_row_format.entity_assembly_id_2'                'peak_row_format'               yes
   '_peak_row_format.entity_assembly_id_3'                'peak_row_format'               yes
   '_peak_row_format.entity_assembly_id_4'                'peak_row_format'               yes
+  '_peak_row_format.entity_assembly_id_5'                'peak_row_format'               yes
   '_assigned_spectral_transition.entity_assembly_id'                                     'assigned_spectral_transition'                      yes
   '_resonance_assignment.entity_assembly_id'             'resonance_assignment'          yes
   '_spin_system.entity_assembly_id'                      'spin_system'                   yes
@@ -7319,6 +7343,7 @@ Unique identifier for each component in the entity assembly.
   '_peak_row_format.entity_assembly_id_2'                '_entity_assembly.id'
   '_peak_row_format.entity_assembly_id_3'                '_entity_assembly.id'
   '_peak_row_format.entity_assembly_id_4'                '_entity_assembly.id'
+  '_peak_row_format.entity_assembly_id_5'                '_entity_assembly.id'
   '_assigned_spectral_transition.entity_assembly_id'                                     '_entity_assembly.id'
   '_resonance_assignment.entity_assembly_id'             '_entity_assembly.id'
   '_spin_system.entity_assembly_id'                      '_entity_assembly.id'
@@ -9681,8 +9706,8 @@ save__assembly_interaction.mol_interaction_type
 
    _item_description.description
 ;
-covalent- noncovalent/coordination- confromational/configurational exchange- 
-chemical exchange
+The kind of interaction two components of the molecular assembly are undergoing 
+in the sample.
 ;
 
    _item.name                                  '_assembly_interaction.mol_interaction_type'
@@ -14654,6 +14679,7 @@ An integer value that is the unique identifier for the entity within the entry.
   '_peak_row_format.entity_id_2'                         'peak_row_format'               yes
   '_peak_row_format.entity_id_3'                         'peak_row_format'               yes
   '_peak_row_format.entity_id_4'                         'peak_row_format'               yes
+  '_peak_row_format.entity_id_5'                         'peak_row_format'               yes
   '_assigned_spectral_transition.entity_id'              'assigned_spectral_transition'                      yes
   '_resonance_assignment.entity_id'                      'resonance_assignment'          yes
   '_spin_system.entity_id'                               'spin_system'                   yes
@@ -14806,6 +14832,7 @@ An integer value that is the unique identifier for the entity within the entry.
   '_peak_row_format.entity_id_2'                         '_entity.id'
   '_peak_row_format.entity_id_3'                         '_entity.id'
   '_peak_row_format.entity_id_4'                         '_entity.id'
+  '_peak_row_format.entity_id_5'                         '_entity.id'
   '_assigned_spectral_transition.entity_id'              '_entity.id'
   '_resonance_assignment.entity_id'                      '_entity.id'
   '_spin_system.entity_id'                               '_entity.id'
@@ -15180,7 +15207,7 @@ numbering and the use of alphabetic characters.
      _item_examples.case
 
 ;
-3,K<BR>3a,S<BR>5,A
+<BR>3,K<BR>3a,S<BR>5,A
 ;
 
    stop_
@@ -15203,7 +15230,7 @@ A text description of the sequence for this entity.
      _item_examples.case
 
 ;
-Residues 1-8 represent a non-native affinity tag<BR>This is the cytoplasmic globular domain of a membrane protein
+Residues 1-8 represent a non-native affinity tag. This is the cytoplasmic globular domain of a membrane protein
 ;
 
    stop_
@@ -16589,6 +16616,7 @@ Unique ID for the compound in the entity
   '_peak_row_format.comp_index_id_2'                     'peak_row_format'               yes
   '_peak_row_format.comp_index_id_3'                     'peak_row_format'               yes
   '_peak_row_format.comp_index_id_4'                     'peak_row_format'               yes
+  '_peak_row_format.comp_index_id_5'                     'peak_row_format'               yes
   '_assigned_spectral_transition.comp_index_id'          'assigned_spectral_transition'                      yes
   '_resonance_assignment.comp_index_id'                  'resonance_assignment'          yes
   '_spin_system.comp_index_id'                           'spin_system'                   yes
@@ -16730,6 +16758,7 @@ Unique ID for the compound in the entity
   '_peak_row_format.comp_index_id_2'                     '_entity_comp_index.id'
   '_peak_row_format.comp_index_id_3'                     '_entity_comp_index.id'
   '_peak_row_format.comp_index_id_4'                     '_entity_comp_index.id'
+  '_peak_row_format.comp_index_id_5'                     '_entity_comp_index.id'
   '_assigned_spectral_transition.comp_index_id'          '_entity_comp_index.id'
   '_resonance_assignment.comp_index_id'                  '_entity_comp_index.id'
   '_spin_system.comp_index_id'                           '_entity_comp_index.id'
@@ -17029,6 +17058,7 @@ that the sequence numbers must progress in increasing numerical order.
   '_peak_row_format.seq_id_2'                            'peak_row_format'               yes
   '_peak_row_format.seq_id_3'                            'peak_row_format'               yes
   '_peak_row_format.seq_id_4'                            'peak_row_format'               yes
+  '_peak_row_format.seq_id_5'                            'peak_row_format'               yes
   '_isotope_effect.seq_id'                               'isotope_effect'                yes
   '_isotope_label_pattern.seq_id'                        'isotope_label_pattern'         yes
   '_chem_shift_perturbation.seq_id'                      'chem_shift_perturbation'       yes
@@ -17154,6 +17184,7 @@ that the sequence numbers must progress in increasing numerical order.
   '_peak_row_format.seq_id_2'                            '_entity_poly_seq.num'
   '_peak_row_format.seq_id_3'                            '_entity_poly_seq.num'
   '_peak_row_format.seq_id_4'                            '_entity_poly_seq.num'
+  '_peak_row_format.seq_id_5'                            '_entity_poly_seq.num'
   '_isotope_effect.seq_id'                               '_entity_poly_seq.num'
   '_isotope_label_pattern.seq_id'                        '_entity_poly_seq.num'
   '_chem_shift_perturbation.seq_id'                      '_entity_poly_seq.num'
@@ -20733,6 +20764,7 @@ components in the entry.
   '_peak_row_format.comp_id_2'                           'peak_row_format'               yes
   '_peak_row_format.comp_id_3'                           'peak_row_format'               yes
   '_peak_row_format.comp_id_4'                           'peak_row_format'               yes
+  '_peak_row_format.comp_id_5'                           'peak_row_format'               yes
   '_assigned_spectral_transition.comp_id'                'assigned_spectral_transition'                      yes
   '_resonance_assignment.comp_id'                        'resonance_assignment'          yes
   '_spin_system.comp_id'                                 'spin_system'                   yes
@@ -20884,6 +20916,7 @@ components in the entry.
   '_peak_row_format.comp_id_2'                           '_chem_comp.id'
   '_peak_row_format.comp_id_3'                           '_chem_comp.id'
   '_peak_row_format.comp_id_4'                           '_chem_comp.id'
+  '_peak_row_format.comp_id_5'                           '_chem_comp.id'
   '_assigned_spectral_transition.comp_id'                '_chem_comp.id'
   '_resonance_assignment.comp_id'                        '_chem_comp.id'
   '_spin_system.comp_id'                                 '_chem_comp.id'
@@ -23613,6 +23646,7 @@ each monomer in the CHEM_COMP_ATOM list.
   '_peak_row_format.atom_id_2'                           'peak_row_format'               yes
   '_peak_row_format.atom_id_3'                           'peak_row_format'               yes
   '_peak_row_format.atom_id_4'                           'peak_row_format'               yes
+  '_peak_row_format.atom_id_5'                           'peak_row_format'               yes
   '_assigned_spectral_transition.atom_id'                'assigned_spectral_transition'                      yes
   '_resonance_assignment.atom_id'                        'resonance_assignment'          yes
   '_isotope_effect.atom_id'                              'isotope_effect'                yes
@@ -23742,6 +23776,7 @@ each monomer in the CHEM_COMP_ATOM list.
   '_peak_row_format.atom_id_2'                           '_chem_comp_atom.atom_id'
   '_peak_row_format.atom_id_3'                           '_chem_comp_atom.atom_id'
   '_peak_row_format.atom_id_4'                           '_chem_comp_atom.atom_id'
+  '_peak_row_format.atom_id_5'                           '_chem_comp_atom.atom_id'
   '_assigned_spectral_transition.atom_id'                '_chem_comp_atom.atom_id'
   '_resonance_assignment.atom_id'                        '_chem_comp_atom.atom_id'
   '_isotope_effect.atom_id'                              '_chem_comp_atom.atom_id'
@@ -25589,6 +25624,29 @@ listed in the entry.
 
   _item_type.code                             'int'
 
+
+save_
+
+save__sample.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_sample.name'
+   _item.category_id                           'sample'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+   loop_
+     _item_examples.case
+
+;
+13C 15N sample
+;
+
+   stop_
 
 save_
 
@@ -29184,6 +29242,21 @@ given in the entry.
 
 save_
 
+save__method.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_method.name'
+   _item.category_id                           'method'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__method.derivation_type
 
    _item_description.description
@@ -29660,6 +29733,29 @@ listed in the entry.
 
   _item_type.code                             'int'
 
+
+save_
+
+save__mass_spec.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_mass_spec.name'
+   _item.category_id                           'mass_spec'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+   loop_
+     _item_examples.case
+
+;
+Mass spectrometer 1
+;
+
+   stop_
 
 save_
 
@@ -30315,6 +30411,29 @@ listed in the entry.
 
 save_
 
+save__mass_spectrometer_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_mass_spectrometer_list.name'
+   _item.category_id                           'mass_spectrometer_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+   loop_
+     _item_examples.case
+
+;
+Mass spectrometer list
+;
+
+   stop_
+
+save_
+
 save_mass_spectrometer_view
    _category.description
 ;
@@ -30709,6 +30828,21 @@ mass reference compounds listed in the entry.
 
 save_
 
+save__mass_spec_ref_compd_set.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_mass_spec_ref_compd_set.name'
+   _item.category_id                           'mass_spec_ref_compd_set'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__mass_spec_ref_compd_set.details
 
    _item_description.description
@@ -30939,6 +31073,21 @@ listed in the entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__chromatographic_system.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chromatographic_system.name'
+   _item.category_id                           'chromatographic_system'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -31211,6 +31360,21 @@ listed in the entry.
 
 save_
 
+save__chromatographic_column.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chromatographic_column.name'
+   _item.category_id                           'chromatographic_column'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__chromatographic_column.vendor
 
    _item_description.description
@@ -31405,6 +31569,21 @@ Fluorescence instruments listed in the entry.
 
 save_
 
+save__fluorescence_instrument.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_fluorescence_instrument.name'
+   _item.category_id                           'fluorescence_instrument'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__fluorescence_instrument.details
 
    _item_description.description
@@ -31580,6 +31759,21 @@ listed in the entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__emr_instrument.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_emr_instrument.name'
+   _item.category_id                           'emr_instrument'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -32034,6 +32228,21 @@ listed in the entry.
 
 save_
 
+save__nmr_spectrometer.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_nmr_spectrometer.name'
+   _item.category_id                           'nmr_spectrometer'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__nmr_spectrometer.details
 
    _item_description.description
@@ -32394,6 +32603,21 @@ listed in the entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__nmr_spectrometer_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_nmr_spectrometer_list.name'
+   _item.category_id                           'nmr_spectrometer_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -32819,6 +33043,21 @@ in the entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__nmr_spectrometer_probe.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_nmr_spectrometer_probe.name'
+   _item.category_id                           'nmr_spectrometer_probe'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -37491,6 +37730,21 @@ in the entry.
 
 save_
 
+save__computer.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_computer.name'
+   _item.category_id                           'computer'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__computer.details
 
    _item_description.description
@@ -37822,6 +38076,21 @@ reference values from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__chem_shift_reference.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chem_shift_reference.name'
+   _item.category_id                           'chem_shift_reference'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -38657,6 +38926,21 @@ shifts from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__assigned_chem_shift_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_assigned_chem_shift_list.name'
+   _item.category_id                           'assigned_chem_shift_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -40095,6 +40379,21 @@ that was carried out.
 
 save_
 
+save__chem_shifts_calc_type.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chem_shifts_calc_type.name'
+   _item.category_id                           'chem_shifts_calc_type'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__chem_shifts_calc_type.calculation_level
 
    _item_description.description
@@ -40559,6 +40858,21 @@ chemical shift data from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__theoretical_chem_shift_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_theoretical_chem_shift_list.name'
+   _item.category_id                           'theoretical_chem_shift_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -41270,6 +41584,21 @@ constant values from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__coupling_constant_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_coupling_constant_list.name'
+   _item.category_id                           'coupling_constant_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -42477,6 +42806,21 @@ constant values from other saveframes of this category in an entry.
 
 save_
 
+save__theoretical_coupling_constant_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_theoretical_coupling_constant_list.name'
+   _item.category_id                           'theoretical_coupling_constant_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__theoretical_coupling_constant_list.sample_condition_list_id
 
    _item_description.description
@@ -43663,6 +44007,21 @@ Spectral peak list ID
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__spectral_peak_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_spectral_peak_list.name'
+   _item.category_id                           'spectral_peak_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -46466,6 +46825,130 @@ of 4, 5, or 6 that form a known set of related chemical shift assignments.
 
 save_
 
+save__peak_row_format.entity_assembly_id_5
+
+   _item_description.description
+;
+Pointer to '_Entity_assembly.ID'
+;
+
+   _item.name                                  '_peak_row_format.entity_assembly_id_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'int'
+
+
+save_
+
+save__peak_row_format.entity_id_5
+
+   _item_description.description
+;
+Pointer to '_Entity.ID'
+;
+
+   _item.name                                  '_peak_row_format.entity_id_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'int'
+
+
+save_
+
+save__peak_row_format.comp_index_id_5
+
+   _item_description.description
+;
+Pointer to '_Entity_comp_index.ID'
+;
+
+   _item.name                                  '_peak_row_format.comp_index_id_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'int'
+
+
+save_
+
+save__peak_row_format.seq_id_5
+
+   _item_description.description
+;
+Pointer to '_Entity_poly_seq.Num'
+;
+
+   _item.name                                  '_peak_row_format.seq_id_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'int'
+
+
+save_
+
+save__peak_row_format.comp_id_5
+
+   _item_description.description
+;
+Pointer to '_Chem_comp.ID'
+;
+
+   _item.name                                  '_peak_row_format.comp_id_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'code'
+
+
+save_
+
+save__peak_row_format.atom_id_5
+
+   _item_description.description
+;
+Pointer to '_Chem_comp_atom.Atom_ID'
+;
+
+   _item.name                                  '_peak_row_format.atom_id_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'atcode'
+
+
+save_
+
+save__peak_row_format.ambiguity_code_5
+
+   _item_description.description
+;
+Ambiguity codes are used to define chemical shifts that have not been assigned 
+to specific atoms in the molecule studied.  Ambiguity in chemical shifts 
+may exist at several different levels, stereospecific ambiguity, intra and inter 
+residue ambiguities, etc.
+;
+
+   _item.name                                  '_peak_row_format.ambiguity_code_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'int'
+
+
+save_
+
+save__peak_row_format.ambiguity_set_id_5
+
+   _item_description.description
+;
+The ambiguity_set_ID defines those chemical shifts with ambiguity codes 
+of 4, 5, or 6 that form a known set of related chemical shift assignments.
+;
+
+   _item.name                                  '_peak_row_format.ambiguity_set_id_5'
+   _item.category_id                           'peak_row_format'
+   _item.mandatory_code                         no
+   _item_type.code                             'int'
+
+
+save_
+
 save__peak_row_format.details
 
    _item_description.description
@@ -47529,6 +48012,21 @@ information from other saveframes of this category in an entry.
 
 save_
 
+save__resonance_linker_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_resonance_linker_list.name'
+   _item.category_id                           'resonance_linker_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__resonance_linker_list.details
 
    _item_description.description
@@ -48538,6 +49036,21 @@ isotope effect values from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__chem_shift_isotope_effect_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chem_shift_isotope_effect_list.name'
+   _item.category_id                           'chem_shift_isotope_effect_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -49825,6 +50338,21 @@ information from other saveframes of this category in an entry.
 
 save_
 
+save__chem_shift_perturbation_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chem_shift_perturbation_list.name'
+   _item.category_id                           'chem_shift_perturbation_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__chem_shift_perturbation_list.type
 
    _item_description.description
@@ -50705,6 +51233,21 @@ anisotropy data from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__chem_shift_anisotropy.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chem_shift_anisotropy.name'
+   _item.category_id                           'chem_shift_anisotropy'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -51644,6 +52187,21 @@ Unique identifier for the list of observed residual dipolar couplings.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__rdc_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_rdc_list.name'
+   _item.category_id                           'rdc_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -52930,6 +53488,21 @@ Unique identifier for the list of observed residual dipolar couplings.
 
 save_
 
+save__dipolar_coupling_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_dipolar_coupling_list.name'
+   _item.category_id                           'dipolar_coupling_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__dipolar_coupling_list.sample_condition_list_id
 
    _item_description.description
@@ -54135,6 +54708,21 @@ data from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__spectral_density_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_spectral_density_list.name'
+   _item.category_id                           'spectral_density_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -55829,6 +56417,21 @@ A unique identifier for the list of Kinetic rate data.
 
 save_
 
+save__chemical_rate_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_chemical_rate_list.name'
+   _item.category_id                           'chemical_rate_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__chemical_rate_list.sample_condition_list_id
 
    _item_description.description
@@ -56699,6 +57302,21 @@ A unique identifier for the list of hydrogen exchange rate data.
 
 save_
 
+save__h_exch_rate_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_h_exch_rate_list.name'
+   _item.category_id                           'h_exch_rate_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__h_exch_rate_list.sample_condition_list_id
 
    _item_description.description
@@ -57555,6 +58173,21 @@ protection factor data from other saveframes of this category in an entry.
 
 save_
 
+save__h_exch_protection_factor_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_h_exch_protection_factor_list.name'
+   _item.category_id                           'h_exch_protection_factor_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__h_exch_protection_factor_list.sample_condition_list_id
 
    _item_description.description
@@ -58386,6 +59019,21 @@ NOE data from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__homonucl_noe_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_homonucl_noe_list.name'
+   _item.category_id                           'homonucl_noe_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -59534,6 +60182,21 @@ NOE data from other saveframes of this category in an entry.
 ;
 
    stop_
+
+save_
+
+save__heteronucl_noe_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_heteronucl_noe_list.name'
+   _item.category_id                           'heteronucl_noe_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
 
 save_
 
@@ -60936,6 +61599,21 @@ heteronuclear NOE data from other saveframes of this category in an entry.
 
 save_
 
+save__theoretical_heteronucl_noe_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_theoretical_heteronucl_noe_list.name'
+   _item.category_id                           'theoretical_heteronucl_noe_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__theoretical_heteronucl_noe_list.sample_condition_list_id
 
    _item_description.description
@@ -62321,6 +62999,21 @@ T1 data from other saveframes of this category in an entry.
 
 save_
 
+save__heteronucl_t1_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_heteronucl_t1_list.name'
+   _item.category_id                           'heteronucl_t1_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__heteronucl_t1_list.sample_condition_list_id
 
    _item_description.description
@@ -63202,6 +63895,21 @@ heteronuclear T1 data from other saveframes of this category in an entry.
 
 save_
 
+save__theoretical_heteronucl_t1_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_theoretical_heteronucl_t1_list.name'
+   _item.category_id                           'theoretical_heteronucl_t1_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__theoretical_heteronucl_t1_list.sample_condition_list_id
 
    _item_description.description
@@ -64079,6 +64787,21 @@ T1rho data from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__heteronucl_t1rho_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_heteronucl_t1rho_list.name'
+   _item.category_id                           'heteronucl_t1rho_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -65065,6 +65788,21 @@ T2 data from other saveframes of this category in an entry.
 
 save_
 
+save__heteronucl_t2_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_heteronucl_t2_list.name'
+   _item.category_id                           'heteronucl_t2_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__heteronucl_t2_list.sample_condition_list_id
 
    _item_description.description
@@ -66047,6 +66785,21 @@ heteronuclear T2 data from other saveframes of this category in an entry.
 
 save_
 
+save__theoretical_heteronucl_t2_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_theoretical_heteronucl_t2_list.name'
+   _item.category_id                           'theoretical_heteronucl_t2_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__theoretical_heteronucl_t2_list.sample_condition_list_id
 
    _item_description.description
@@ -67025,6 +67778,21 @@ data from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__auto_relaxation_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_auto_relaxation_list.name'
+   _item.category_id                           'auto_relaxation_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -68139,6 +68907,21 @@ data from other saveframes of this category in an entry.
 
 save_
 
+save__theoretical_auto_relaxation_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_theoretical_auto_relaxation_list.name'
+   _item.category_id                           'theoretical_auto_relaxation_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__theoretical_auto_relaxation_list.sample_condition_list_id
 
    _item_description.description
@@ -69249,6 +70032,21 @@ Unique identifier for the list of Dipole-dipole relaxation values.
 
 save_
 
+save__dipole_dipole_relax_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_dipole_dipole_relax_list.name'
+   _item.category_id                           'dipole_dipole_relax_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__dipole_dipole_relax_list.sample_condition_list_id
 
    _item_description.description
@@ -70324,6 +71122,21 @@ Unique identifier for the list of cross-correlation values.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__cross_correlation_dd_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_cross_correlation_dd_list.name'
+   _item.category_id                           'cross_correlation_dd_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -71903,6 +72716,21 @@ Unique identifier for the list of cross-correlation values.
 
 save_
 
+save__theoretical_cross_correlation_dd_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_theoretical_cross_correlation_dd_list.name'
+   _item.category_id                           'theoretical_cross_correlation_dd_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__theoretical_cross_correlation_dd_list.sample_condition_list_id
 
    _item_description.description
@@ -73474,6 +74302,21 @@ Unique identifier for the list of cross-correlation values.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__cross_correlation_d_csa_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_cross_correlation_d_csa_list.name'
+   _item.category_id                           'cross_correlation_d_csa_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -75052,6 +75895,21 @@ Unique identifier for the list of reported order parameter values.
 
 save_
 
+save__order_parameter_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_order_parameter_list.name'
+   _item.category_id                           'order_parameter_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__order_parameter_list.sample_condition_list_id
 
    _item_description.description
@@ -76304,6 +77162,21 @@ Unique identifier for the list of pKa values.
 
 save_
 
+save__ph_titration_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_ph_titration_list.name'
+   _item.category_id                           'ph_titration_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__ph_titration_list.sample_condition_list_id
 
    _item_description.description
@@ -77471,6 +78344,21 @@ Unique identifier for the list of data values used to calculate a pKa value.
 
 save_
 
+save__ph_param_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_ph_param_list.name'
+   _item.category_id                           'ph_param_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__ph_param_list.ph_titration_list_id
 
    _item_description.description
@@ -77833,6 +78721,21 @@ factors.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__d_h_fractionation_factor_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_d_h_fractionation_factor_list.name'
+   _item.category_id                           'd_h_fractionation_factor_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -78608,6 +79511,21 @@ save__binding_value_list.id
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__binding_value_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_binding_value_list.name'
+   _item.category_id                           'binding_value_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -79627,6 +80545,21 @@ Unique identifier for the list of data values used to calculate a pKa value.
 
 save_
 
+save__binding_param_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_binding_param_list.name'
+   _item.category_id                           'binding_param_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__binding_param_list.binding_value_list_id
 
    _item_description.description
@@ -80015,6 +80948,21 @@ Unique identifier for the list of reported secondary structure features.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__deduced_secd_struct_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_deduced_secd_struct_list.name'
+   _item.category_id                           'deduced_secd_struct_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -81118,6 +82066,21 @@ experimental data.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__deduced_h_bond_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_deduced_h_bond_list.name'
+   _item.category_id                           'deduced_h_bond_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -82283,6 +83246,21 @@ from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__conformer_stat_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_conformer_stat_list.name'
+   _item.category_id                           'conformer_stat_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -84464,6 +85442,21 @@ atomic coordinate set from other saveframes of this category in an entry.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__conformer_family_coord_set.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_conformer_family_coord_set.name'
+   _item.category_id                           'conformer_family_coord_set'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -86856,6 +87849,21 @@ Unique identifier for the reported representative conformer.
 
 save_
 
+save__representative_conformer.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_representative_conformer.name'
+   _item.category_id                           'representative_conformer'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__representative_conformer.details
 
    _item_description.description
@@ -88050,6 +89058,21 @@ Unique identifier for the reported list of contraint statistics.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__constraint_stat_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_constraint_stat_list.name'
+   _item.category_id                           'constraint_stat_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -91580,6 +92603,21 @@ structures.
 
 save_
 
+save__force_constant_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_force_constant_list.name'
+   _item.category_id                           'force_constant_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__force_constant_list.default_software_values_used
 
    _item_description.description
@@ -91988,6 +93026,21 @@ Unique identifier for the list of reported angular order parameters.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__angular_order_parameter_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_angular_order_parameter_list.name'
+   _item.category_id                           'angular_order_parameter_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -92452,6 +93505,21 @@ Unique identifier for the list of reported tertiary structure elements.
 ;
 
    stop_
+
+save_
+
+save__tertiary_struct_element_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_tertiary_struct_element_list.name'
+   _item.category_id                           'tertiary_struct_element_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
 
 save_
 
@@ -93102,6 +94170,21 @@ Unique identifier for the list of reported structure annotation information.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__structure_annotation.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_structure_annotation.name'
+   _item.category_id                           'structure_annotation'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -93891,6 +94974,21 @@ element data from other saveframes of this category in an entry.
 
 save_
 
+save__secondary_struct_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_secondary_struct_list.name'
+   _item.category_id                           'secondary_struct_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__secondary_struct_list.representative_conformer_id
 
    _item_description.description
@@ -94454,6 +95552,21 @@ Unique identifier for the list of bond annotations.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__bond_annotation_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_bond_annotation_list.name'
+   _item.category_id                           'bond_annotation_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -95360,6 +96473,21 @@ Unique identifier for the list of reported structure interactions.
 
 save_
 
+save__structure_interaction_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_structure_interaction_list.name'
+   _item.category_id                           'structure_interaction_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__structure_interaction_list.details
 
    _item_description.description
@@ -96150,6 +97278,21 @@ Unique identifier for the reported list of structure features.
 
 save_
 
+save__other_struct_feature_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_other_struct_feature_list.name'
+   _item.category_id                           'other_struct_feature_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__other_struct_feature_list.struct_feature_name
 
    _item_description.description
@@ -96468,6 +97611,21 @@ Unique identifier for the list of chemical shift tensors.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__tensor_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_tensor_list.name'
+   _item.category_id                           'tensor_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -97542,6 +98700,21 @@ save__interatomic_distance_list.id
 
 save_
 
+save__interatomic_distance_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_interatomic_distance_list.name'
+   _item.category_id                           'interatomic_distance_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__interatomic_distance_list.details
 
    _item_description.description
@@ -98237,6 +99410,21 @@ Unique identifier for the list of reported distance constraints.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__gen_dist_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_gen_dist_constraint_list.name'
+   _item.category_id                           'gen_dist_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -100801,6 +101989,21 @@ Unique identifier for the list of reported distance constraints.
 
 save_
 
+save__distance_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_distance_constraint_list.name'
+   _item.category_id                           'distance_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__distance_constraint_list.constraint_type
 
    _item_description.description
@@ -102811,6 +104014,21 @@ Unique identifier for the reported list of floating chirality stereoassignments.
 
 save_
 
+save__floating_chirality_assign.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_floating_chirality_assign.name'
+   _item.category_id                           'floating_chirality_assign'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__floating_chirality_assign.details
 
    _item_description.description
@@ -103668,6 +104886,21 @@ Unique identifier for the list of torsion angle constraints.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__torsion_angle_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_torsion_angle_constraint_list.name'
+   _item.category_id                           'torsion_angle_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -106938,6 +108171,21 @@ Unique identifier for the list of reported residual dipolar coupling constraints
 
 save_
 
+save__rdc_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_rdc_constraint_list.name'
+   _item.category_id                           'rdc_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__rdc_constraint_list.constraint_file_id
 
    _item_description.description
@@ -109565,6 +110813,21 @@ Unique identifier for the list of reported three bond scalar coupling constraint
 
 save_
 
+save__j_three_bond_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_j_three_bond_constraint_list.name'
+   _item.category_id                           'j_three_bond_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__j_three_bond_constraint_list.data_file_format
 
    _item_description.description
@@ -111197,6 +112460,21 @@ Unique identifier for the list of reported CA/CB chemical shift constraints..
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__ca_cb_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_ca_cb_constraint_list.name'
+   _item.category_id                           'ca_cb_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -113102,6 +114380,21 @@ Unique identifier for the reported list of proton chemical shift constraints.
 
 save_
 
+save__h_chem_shift_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_h_chem_shift_constraint_list.name'
+   _item.category_id                           'h_chem_shift_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__h_chem_shift_constraint_list.units
 
    _item_description.description
@@ -113990,6 +115283,21 @@ Unique identifier for the reported list of linked spectral peaks and constraints
 
 save_
 
+save__peak_constraint_link_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_peak_constraint_link_list.name'
+   _item.category_id                           'peak_constraint_link_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save_peak_constraint_link
    _category.description
 ;
@@ -114308,6 +115616,21 @@ A unique identifier for the list of SAXS data.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__saxs_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_saxs_constraint_list.name'
+   _item.category_id                           'saxs_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -114852,6 +116175,21 @@ Unique identifier for the list of constraints classified as 'other.'
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__other_constraint_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_other_constraint_list.name'
+   _item.category_id                           'other_constraint_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -115565,6 +116903,21 @@ Unique identifier for the list of reported mass spectral MZ values.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__mz_ratio_data_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_mz_ratio_data_list.name'
+   _item.category_id                           'mz_ratio_data_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -116848,6 +118201,21 @@ a MS chromatogram.
 
 save_
 
+save__ms_chromatogram_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_ms_chromatogram_list.name'
+   _item.category_id                           'ms_chromatogram_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save__ms_chromatogram_list.sample_condition_list_id
 
    _item_description.description
@@ -117707,6 +119075,21 @@ frames.
 
 save_
 
+save__software_specific_info_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_software_specific_info_list.name'
+   _item.category_id                           'software_specific_info_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
+
+
+save_
+
 save_software_specific_info
    _category.description
 ;
@@ -117892,6 +119275,21 @@ derive data.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__software_applied_list.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_software_applied_list.name'
+   _item.category_id                           'software_applied_list'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
@@ -118274,6 +119672,21 @@ used to derive data.
   stop_
 
   _item_type.code                             'int'
+
+
+save_
+
+save__software_applied_history.name
+
+   _item_description.description
+;
+A name assigned to the save frame.
+;
+
+   _item.name                                  '_software_applied_history.name'
+   _item.category_id                           'software_applied_history'
+   _item.mandatory_code                         no
+   _item_type.code                             'line'
 
 
 save_
