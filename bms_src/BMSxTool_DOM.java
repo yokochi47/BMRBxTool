@@ -1,6 +1,6 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2018 Masashi Yokochi
+    Copyright 2013-2019 Masashi Yokochi
 
     https://github.com/yokochi47/BMRBxTool
 
@@ -126,7 +126,7 @@ public class BMSxTool_DOM {
 	public static final int service_trials = 3;
 	public static final int service_wait = 10000; // wait for 10 sec
 
-	public static final String license = "/*\n   BMRBxTool - XML converter for NMR-STAR data\n    Copyright 2013-2018 Masashi Yokochi\n\n    https://github.com/yokochi47/BMRBxTool\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\n You may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n */\n\n";
+	public static final String license = "/*\n   BMRBxTool - XML converter for NMR-STAR data\n    Copyright 2013-2019 Masashi Yokochi\n\n    https://github.com/yokochi47/BMRBxTool\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\n You may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n */\n\n";
 
 	private static int serial_version_uid = 0;
 

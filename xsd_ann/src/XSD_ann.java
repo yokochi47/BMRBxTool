@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,7 +51,7 @@ public class XSD_ann {
 	public final static String tag_api = "http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_";
 	public final static String alt_tag_api = "http://%s/dictionary/tagdetail.php?tag=_";
 
-	public static String dic_version = "3.2.1.12";
+	public static String dic_version = "";
 	public static String url_mirror = "bmrb.pdbj.org";
 	public static List<String> table_list;
 
@@ -65,7 +65,7 @@ public class XSD_ann {
 
 		String xsd_name = "mmcif_nmr-star-v" + dic_version + ".xsd";
 
-		String bmrbx_tool_home = "/home/yokochi/Applications/bmrbx-tool-1.32.0"; // ".";
+		String bmrbx_tool_home = ".";
 
 		String url_bmrb = "jdbc:postgresql://localhost/bmrb";
 		String user_bmrb = "bmrb"; // user;

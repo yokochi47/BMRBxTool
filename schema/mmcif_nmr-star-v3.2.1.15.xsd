@@ -5,11 +5,11 @@
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
    <xsd:annotation>
-      <xsd:appinfo>BMRB/XML Schema v3.2.1.12</xsd:appinfo>
+      <xsd:appinfo>BMRB/XML Schema v3.2.1.15</xsd:appinfo>
       <xsd:documentation source="https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic"
                          xml:lang="en">
 
-BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.12, which is backward compatible with the original NMR-STAR Dictionary:
+BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.15, which is backward compatible with the original NMR-STAR Dictionary:
  http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic
 
     </xsd:documentation>
@@ -656,6 +656,18 @@ Items in the angular_order_parameter_list category provide information about a l
                       name="angular_order_parameter_list">
             <xsd:complexType>
                <xsd:all>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
@@ -1491,8 +1503,8 @@ Pointer to '_Entity_assembly.ID'
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
 
-covalent- noncovalent/coordination- confromational/configurational exchange-
-chemical exchange
+The kind of interaction two components of the molecular assembly are undergoing
+in the sample.
 
 protein-protein
                         </xsd:documentation>
@@ -2243,6 +2255,18 @@ Text describing the reported assigned chemical shifts.
                         <xsd:documentation xml:lang="en">
 
 Method used to derive the estimated error in the reported chemical shifts.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -4955,6 +4979,18 @@ a high level of precision.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="relaxation_coherence_type">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
@@ -5627,6 +5663,18 @@ Text describing the reported binding parameter values.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="observed_param"
                                nillable="true"
                                type="xsd:string">
@@ -6193,6 +6241,18 @@ NOT AVAILABLE
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported binding values.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -7223,6 +7283,18 @@ Items in the bond_annotation_list category provide information about a list of r
                         <xsd:documentation xml:lang="en">
 
 Text information that provides additional information about a bond.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -8422,6 +8494,18 @@ XPLOR
 
 Text description providing additional information about the reported CA
 and CB chemical shift constraints.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -11345,6 +11429,18 @@ Text describing the reported chemical shift anisotropy data.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -12340,6 +12436,18 @@ The units for the isotope chemical shift effect.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -12834,6 +12942,18 @@ is the saveframe where the chemical shift referencing standards are described.
 
 Text providing additional information regarding the set of molecular interaction
 data and their derivation.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -13428,6 +13548,18 @@ referencing values or methods.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -13739,6 +13871,18 @@ Enter the name (label) given to a set of sample conditions enter above
 in the 'sample conditions' section of the deposition.
 
 sample_conditions_1
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -14394,6 +14538,18 @@ Text describing the reported kinetic rates.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -14580,6 +14736,18 @@ Items in the chromatographic_column category record the characteristics of a col
                         <xsd:documentation xml:lang="en">
 
 The length of the chromatographic column listed.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -14782,6 +14950,18 @@ Serial number of the listed column compartment.
                         <xsd:documentation xml:lang="en">
 
 Text describing the chromatographic system.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -15261,6 +15441,20 @@ Volume designation used by the journal.
 
 MEDLINE uniform identification code assigned to the publication described
 in the saveframe.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+
+citation 1
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -15868,6 +16062,18 @@ Latitude
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="operating_system">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
@@ -16218,6 +16424,18 @@ ensemble and its derivation can be entered in this field.
                         <xsd:documentation xml:lang="en">
 
 Name of the file containing the atomic coordinates.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -16669,6 +16887,18 @@ Provide the number of conformers deposited.
                         <xsd:documentation xml:lang="en">
 
 Text providing additional information regarding the conformer statistics.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -18559,6 +18789,18 @@ Total number of other kinds of nucleic acid constraints
                         <xsd:documentation xml:lang="en">
 
 Total number of nucleic acid sugar pucker constraints
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -21125,6 +21367,18 @@ Text describing the reported coupling constants.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="sample_condition_list_id"
                                type="xsd:int">
                      <xsd:annotation>
@@ -22202,6 +22456,18 @@ Items in the cross_correlation_D_CSA_list category provide information about a l
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported cross correlation data.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -23291,6 +23557,18 @@ Text describing the reported cross correlation data.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -24368,6 +24646,18 @@ Text describing the reported deuterium/hydrogen fractionation factors.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -25337,6 +25627,18 @@ Text providing additional information regarding the hydrogen bonds.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -26047,6 +26349,18 @@ Items in the deduced_secd_struct_list category provide information about a list 
 
 Text providing additional information about the set of secondary structural
 elements and their derivation.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -26857,6 +27171,18 @@ Procedure used to fit the data in deriving the dipolar coupling values.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -27557,6 +27883,18 @@ Items in the dipole_dipole_relax_list category provide information about a list 
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported dipole-dipole relaxation data.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -28909,6 +29247,18 @@ constraints.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -29267,6 +29617,18 @@ Name of the company or other entity that built the EMR instrument.
                         <xsd:documentation xml:lang="en">
 
 The name or acronym used to describe the model of the EMR instrument.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -29742,7 +30104,7 @@ The author may provide a numbering scheme for a biopolymer that is different
 from that defined by the public databases.  This scheme may contain non-sequential
 numbering and the use of alphabetic characters.
 
-3,K&lt;BR&gt;3a,S&lt;BR&gt;5,A
+&lt;BR&gt;3,K&lt;BR&gt;3a,S&lt;BR&gt;5,A
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -29756,7 +30118,7 @@ numbering and the use of alphabetic characters.
 
 A text description of the sequence for this entity.
 
-Residues 1-8 represent a non-native affinity tag&lt;BR&gt;This is the cytoplasmic globular domain of a membrane protein
+Residues 1-8 represent a non-native affinity tag. This is the cytoplasmic globular domain of a membrane protein
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -33519,6 +33881,7 @@ Version of NMR-STAR in which the current entry is formatted.
                            <xsd:enumeration value="3.2.1.5"/>
                            <xsd:enumeration value="3.2.1.9"/>
                            <xsd:enumeration value="3.2.1.12"/>
+                           <xsd:enumeration value="3.2.1.15"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -33581,6 +33944,7 @@ Version of NMR-STAR in which the original entry was generated.
                            <xsd:enumeration value="3.2.1.5"/>
                            <xsd:enumeration value="3.2.1.9"/>
                            <xsd:enumeration value="3.2.1.12"/>
+                           <xsd:enumeration value="3.2.1.15"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -35182,6 +35546,18 @@ chirality data.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -35365,6 +35741,18 @@ Name of the company or other entity that built the Fluorescence instrument.
                         <xsd:documentation xml:lang="en">
 
 The name or acronym used to describe the model of the Fluorescence instrument.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -35577,6 +35965,18 @@ yes
 
 Text providing additional information regarding the force constants used
 in calculating a structure.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -37157,6 +37557,18 @@ constraints.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="potential_type"
                                nillable="true">
                      <xsd:annotation>
@@ -38006,6 +38418,18 @@ chemical shift constraints.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -38593,6 +39017,18 @@ Text describing the reported hydrogen exchange protection factors.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -39077,6 +39513,18 @@ Items in the H_exch_rate_list category provide information about a list of repor
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported hydrogen exchange rates.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -39846,6 +40294,18 @@ peak height; peak integral; contour count; relative intensities
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="noe_ref_description"
                                nillable="true"
                                type="xsd:string">
@@ -40179,6 +40639,18 @@ Text describing the reported heteronuclear T1 relaxation data.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -40507,6 +40979,18 @@ Items in the heteronucl_T1rho_list category provide information about a list of 
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported heteronuclear Trho relaxation data.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -40889,6 +41373,18 @@ Items in the heteronucl_T2_list category provide information about a list of rep
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported heteronuclear T2 relaxation data.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -41922,6 +42418,18 @@ peak height; peak integral; contour count; relative intensities
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="noe_ref_description"
                                nillable="true"
                                type="xsd:string">
@@ -42497,6 +43005,18 @@ NOT AVAILABLE
                         <xsd:documentation xml:lang="en">
 
 ?
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -44221,6 +44741,18 @@ three bond constraints.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -45075,6 +45607,20 @@ The name or acronym used to describe the model of the spectrometer.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+
+Mass spectrometer 1
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="serial_number"
                                nillable="true"
                                type="xsd:string">
@@ -45436,6 +45982,18 @@ A text description of the mass reference compound.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="sf_category"
                                nillable="true"
                                type="xsd:string">
@@ -45552,6 +46110,20 @@ Items in the mass_spectrometer_list category provide meta information regarding 
 
 A value that uniquely identifies the Mass spectrometer from other spectrometers
 listed in the entry.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+
+Mass spectrometer list
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -45901,6 +46473,18 @@ The type of derivation used in the reported method.
                         <xsd:documentation xml:lang="en">
 
 Text description providing additional information about the reported method.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -46516,6 +47100,18 @@ NOT AVAILABLE
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported MZ ratio values.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -47546,6 +48142,18 @@ Pointer to a saveframe of the category 'Mass spec ref compd set'
                         <xsd:documentation xml:lang="en">
 
 Units for the reported MZ error values.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -48874,6 +49482,18 @@ DMX
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="serial_number"
                                nillable="true"
                                type="xsd:string">
@@ -49000,6 +49620,18 @@ Items in the NMR_spectrometer_list category define a set of NMR spectrometers an
             <xsd:complexType>
                <xsd:all>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -49117,6 +49749,18 @@ Name of the company or other entity that built the NMR probe.
                         <xsd:documentation xml:lang="en">
 
 The name or acronym used to describe the model of the probe.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -50075,6 +50719,18 @@ Text describing the reported order parameter values.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="rex_field_strength"
                                nillable="true"
                                type="xsd:string">
@@ -50643,6 +51299,18 @@ The format in which the constraint data are provided.
                         <xsd:documentation xml:lang="en">
 
 Name of the file that contains the 'other' constraints.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -51438,6 +52106,18 @@ Items in the other_struct_feature_list category provide information about a list
 
 Text description providing additional information about the reported structure
 feature.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -52929,6 +53609,18 @@ category description not available
             <xsd:complexType>
                <xsd:all>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -53132,6 +53824,21 @@ residue ambiguities, etc.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="ambiguity_code_5"
+                               nillable="true"
+                               type="xsd:int">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+Ambiguity codes are used to define chemical shifts that have not been assigned
+to specific atoms in the molecule studied.  Ambiguity in chemical shifts
+may exist at several different levels, stereospecific ambiguity, intra and inter
+residue ambiguities, etc.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="ambiguity_set_id_1"
                                nillable="true"
                                type="xsd:int">
@@ -53182,6 +53889,19 @@ of 4, 5, or 6 that form a known set of related chemical shift assignments.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="ambiguity_set_id_5"
+                               nillable="true"
+                               type="xsd:int">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+The ambiguity_set_ID defines those chemical shifts with ambiguity codes
+of 4, 5, or 6 that form a known set of related chemical shift assignments.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="atom_id_1" type="xsd:string">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
@@ -53214,6 +53934,14 @@ Pointer to '_Chem_comp_atom.Atom_ID'
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="1" name="atom_id_5" type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+Pointer to '_Chem_comp_atom.Atom_ID'
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="comp_id_1" type="xsd:string">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
@@ -53239,6 +53967,14 @@ Pointer to '_Chem_comp.ID'
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="comp_id_4" type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+Pointer to '_Chem_comp.ID'
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="1" name="comp_id_5" type="xsd:string">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
 
@@ -53282,6 +54018,17 @@ Pointer to '_Entity_comp_index.ID'
                   <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="comp_index_id_4"
+                               type="xsd:int">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+Pointer to '_Entity_comp_index.ID'
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="1"
+                               name="comp_index_id_5"
                                type="xsd:int">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
@@ -53348,6 +54095,17 @@ Pointer to '_Entity_assembly.ID'
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="1"
+                               name="entity_assembly_id_5"
+                               type="xsd:int">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+Pointer to '_Entity_assembly.ID'
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="1"
                                name="entity_id_1"
                                type="xsd:int">
                      <xsd:annotation>
@@ -53382,6 +54140,17 @@ Pointer to '_Entity.ID'
                   <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="entity_id_4"
+                               type="xsd:int">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+Pointer to '_Entity.ID'
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="1"
+                               name="entity_id_5"
                                type="xsd:int">
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
@@ -53578,6 +54347,14 @@ Pointer to '_Entity_poly_seq.Num'
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="1" name="seq_id_5" type="xsd:int">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+Pointer to '_Entity_poly_seq.Num'
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
                                name="volume"
@@ -53749,6 +54526,18 @@ Items in the pH_param_list category provided meta data regarding the pH paramete
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported pH parameter values.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -54486,6 +55275,18 @@ chemical shift; peak height
                            <xsd:enumeration value="na"/>
                         </xsd:restriction>
                      </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="1"
@@ -56456,6 +57257,18 @@ is the rhombic component of the alignment tensor (1/3(Axx-Ayy)).
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="potential_type"
                                nillable="true">
                      <xsd:annotation>
@@ -57117,6 +57930,18 @@ is the axial symmetric component of the alignment tensor (1/3(Azz-(Axx+Ayy)/2).
 The residual dipolar coupling provides geometric information relative to
 a common alignment frame. The value for the item Mol_align_tensor_rhombic_mol
 is the rhombic component of the alignment tensor (1/3(Axx-Ayy)).
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -58145,6 +58970,18 @@ conformer.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="pdb_accession_code"
                                nillable="true"
                                type="xsd:string">
@@ -58536,6 +59373,18 @@ linker list saveframe.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="sf_category"
                                nillable="true"
                                type="xsd:string">
@@ -58818,6 +59667,20 @@ The added glycerol was used to raise the viscosity of the solution to 1.05 poiss
                         <xsd:documentation xml:lang="en">
 
 Chemical used to protect the sample during lyophilization.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+
+13C 15N sample
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -60032,6 +60895,18 @@ Text describing the reported SAXS data.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -60585,6 +61460,18 @@ Items in the secondary_struct_list category provide information about a list of 
             <xsd:complexType>
                <xsd:all>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="representative_conformer_id"
                                type="xsd:int">
@@ -60971,6 +61858,18 @@ A block of text that contains details regarding the applied software history.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -61037,6 +61936,18 @@ category description not available
                         <xsd:documentation xml:lang="en">
 
 A block of text that contains details regarding the applied software.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -61414,6 +62325,18 @@ category description not available
                       name="software_specific_info_list">
             <xsd:complexType>
                <xsd:all>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
@@ -61978,6 +62901,18 @@ Items in the spectral_density_list category provide information about a list of 
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported spectral density values.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -62605,6 +63540,18 @@ Pointer to a saveframe of the category 'NMR_spectrometer_expt'
                            <xsd:enumeration value="13C-NOESY-HSQC"/>
                         </xsd:restriction>
                      </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
@@ -64250,6 +65197,18 @@ Additional details about the structure annotation contained in the save frame.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="pdb_id"
                                nillable="true"
                                type="xsd:string">
@@ -64691,6 +65650,18 @@ Items in the structure_interaction_list category provide information about a lis
 
 Text description providing additional information about the reported list
 of structure interactions.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -67365,6 +68336,18 @@ The units for the matrix values.
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="rhombic_val_formula"
                                nillable="true"
                                type="xsd:string">
@@ -67823,6 +68806,18 @@ Items in the tertiary_struct_element_list category provide information about a l
                       name="tertiary_struct_element_list">
             <xsd:complexType>
                <xsd:all>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
@@ -68353,6 +69348,18 @@ The actual spectrometer frequency of the nucleus observed expressed at
 a high level of precision.
 
 60.777824
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -69059,6 +70066,18 @@ to calculate the theoretical chemical shifts are located.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sf_category"
                                type="xsd:string">
@@ -69747,6 +70766,18 @@ Items in the theoretical_coupling_constant_list category provide information abo
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported coupling constants.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -70838,6 +71869,18 @@ Text describing the reported cross correlation data.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -71629,6 +72672,18 @@ peak height; peak integral; contour count; relative intensities
                   </xsd:element>
                   <xsd:element maxOccurs="1"
                                minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
                                name="noe_ref_description"
                                nillable="true"
                                type="xsd:string">
@@ -71973,6 +73028,18 @@ Text describing the reported theoretical heteronuclear T1 relaxation data.
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
                                minOccurs="1"
                                name="sample_condition_list_id"
                                type="xsd:int">
@@ -72309,6 +73376,18 @@ Items in the theoretical_heteronucl_T2_list category provide information about a
                         <xsd:documentation xml:lang="en">
 
 Text describing the reported theoretical heteronuclear T2 relaxation data.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -74978,6 +76057,18 @@ The source of the constraints (e.g. 'noe', 'hbond', 'measured'.
 
 Text description providing additional information about the reported torsion
 angle constraints.
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1"
+                               minOccurs="0"
+                               name="name"
+                               nillable="true"
+                               type="xsd:string">
+                     <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+
+A name assigned to the save frame.
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
