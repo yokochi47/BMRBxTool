@@ -11,6 +11,7 @@ fi
 
 BMRB_URL=svn.bmrb.wisc.edu
 NMRSTAR_DIC_DIR=http://$BMRB_URL/svn/nmr-star-dictionary/bmrb_only_files/adit_input
+NMRSTAR_DIC_DIR=https://raw.githubusercontent.com/uwbmrb/nmr-star-dictionary/7061314ffb32ba56b92392d7453cea1495d48db0
 NMRSTAR_DIC_FILE=NMR-STAR.dic
 
 DIC_PREFIX=mmcif_nmr-star

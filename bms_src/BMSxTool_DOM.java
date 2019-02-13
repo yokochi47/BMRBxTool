@@ -8924,10 +8924,10 @@ public class BMSxTool_DOM {
 			buffw.write("\t\tif (val_name != null && val_name.equalsIgnoreCase(\"NMR\")) {\n\n");
 
 			buffw.write("\t\t\tif (entry_id.equals(\"16206\"))\n");
-			buffw.write("\t\t\t\treturn \"SOLUTION\";\n\n");
+			buffw.write("\t\t\t\treturn \"solution\";\n\n");
 
 			buffw.write("\t\t\tif (entry_id.equals(\"16254\"))\n");
-			buffw.write("\t\t\t\treturn \"SOLID-STATE\";\n\n");
+			buffw.write("\t\t\t\treturn \"solid-state\";\n\n");
 
 			buffw.write("\t\t}\n\n");
 

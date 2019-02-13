@@ -24,6 +24,7 @@ fi
 
 BMRB_URL=svn.bmrb.wisc.edu
 NMRSTAR_DIC_DIR=http://$BMRB_URL/svn/nmr-star-dictionary/bmrb_only_files/adit_input
+NMRSTAR_DIC_DIR=https://raw.githubusercontent.com/uwbmrb/nmr-star-dictionary/7061314ffb32ba56b92392d7453cea1495d48db0
 NMRSTAR_DIC_FILE=NMR-STAR.dic
 
 DIC_PREFIX=mmcif_nmr-star
@@ -109,6 +110,10 @@ SAXON=../extlibs/saxon9he.jar
 APPEND_XSD_XSL=append_xsd.xsl
 
 java -jar $SAXON -s:$DIC_PREFIX-v$DIC_VERSION.xsd -xsl:$APPEND_XSD_XSL -o:$DIC_PREFIX-v$DIC_VERSION.xsd~
+
+if [ `which xmllint 2> /dev/null` ] ; then
+ xmllint --format $DIC_PREFIX-v$DIC_VERSION.xsd~ > $DIC_PREFIX-v$DIC_VERSION.xsd
+fi
 
 mv -f $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
 
