@@ -38,8 +38,8 @@
 --
 
 --
--- BMRB/XML Schema v3.2.1.15
--- BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.15, which is backward compatible with the original NMR-STAR Dictionary: http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic
+-- BMRB/XML Schema v3.2.1.18
+-- BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.18, which is backward compatible with the original NMR-STAR Dictionary: http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic
 -- URI-reference = https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic
 --
 
@@ -510,13 +510,13 @@ DROP TABLE IF EXISTS entry CASCADE;
 DROP TYPE IF EXISTS ENUM_entry_experimental_method CASCADE;
 CREATE TYPE ENUM_entry_experimental_method AS ENUM ( 'NMR', 'Theoretical' );
 DROP TYPE IF EXISTS ENUM_entry_experimental_method_subtype CASCADE;
-CREATE TYPE ENUM_entry_experimental_method_subtype AS ENUM ( 'SOLUTION', 'SOLID-STATE', 'THEORETICAL' );
+CREATE TYPE ENUM_entry_experimental_method_subtype AS ENUM ( 'solution', 'solid-state', 'theoretical' );
 DROP TYPE IF EXISTS ENUM_entry_format_name CASCADE;
 CREATE TYPE ENUM_entry_format_name AS ENUM ( 'NMR-STAR' );
 DROP TYPE IF EXISTS ENUM_entry_nmr_star_version CASCADE;
-CREATE TYPE ENUM_entry_nmr_star_version AS ENUM ( '3.1', '3.1.0.29', '3.1.1.7', '3.1.1.21', '3.1.1.31', '3.1.1.61', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.93', '3.1.1.96', '3.1.1.97', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.0.16', '3.2.1.2', '3.2.1.5', '3.2.1.9', '3.2.1.12', '3.2.1.15' );
+CREATE TYPE ENUM_entry_nmr_star_version AS ENUM ( '3.1', '3.1.0.29', '3.1.1.7', '3.1.1.21', '3.1.1.31', '3.1.1.61', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.93', '3.1.1.96', '3.1.1.97', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.0.16', '3.2.1.2', '3.2.1.5', '3.2.1.9', '3.2.1.12', '3.2.1.15', '3.2.1.18' );
 DROP TYPE IF EXISTS ENUM_entry_original_nmr_star_version CASCADE;
-CREATE TYPE ENUM_entry_original_nmr_star_version AS ENUM ( '2.1', '3.0.2.8', '3.0.8.100', '3.0.8.109', '3.0.8.111', '3.0.8.112', '3.0.8.116', '3.0.8.120', '3.0.8.125', '3.0.8.34', '3.0.8.53', '3.0.8.58', '3.0.8.59', '3.0.8.78', '3.0.8.94', '3.0.8.96', '3.0.9.2', '3.0.9.13', '3.0.9.14', '3.1', '3.1.0.46', '3.1.1.7', '3.1.1.15', '3.1.1.19', '3.1.1.21', '3.1.1.31', '3.1.1.44', '3.1.1.61', '3.1.1.65', '3.1.1.75', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.0.16', '3.2.1.2', '3.2.1.5', '3.2.1.9', '3.2.1.12', '3.2.1.15' );
+CREATE TYPE ENUM_entry_original_nmr_star_version AS ENUM ( '2.1', '3.0.2.8', '3.0.8.100', '3.0.8.109', '3.0.8.111', '3.0.8.112', '3.0.8.116', '3.0.8.120', '3.0.8.125', '3.0.8.34', '3.0.8.53', '3.0.8.58', '3.0.8.59', '3.0.8.78', '3.0.8.94', '3.0.8.96', '3.0.9.2', '3.0.9.13', '3.0.9.14', '3.1', '3.1.0.46', '3.1.1.7', '3.1.1.15', '3.1.1.19', '3.1.1.21', '3.1.1.31', '3.1.1.44', '3.1.1.61', '3.1.1.65', '3.1.1.75', '3.1.1.77', '3.1.1.81', '3.1.1.92', '3.1.1.99', '3.1.2.6', '3.2.0.9', '3.2.0.10', '3.2.0.11', '3.2.0.13', '3.2.0.15', '3.2.0.16', '3.2.1.2', '3.2.1.5', '3.2.1.9', '3.2.1.12', '3.2.1.15', '3.2.1.18' );
 DROP TYPE IF EXISTS ENUM_entry_type CASCADE;
 CREATE TYPE ENUM_entry_type AS ENUM ( 'macromolecule', 'metabolite/natural product', 'small molecule', 'small molecule structure' );
 DROP TYPE IF EXISTS ENUM_entry_version_type CASCADE;
@@ -2278,7 +2278,7 @@ CREATE TABLE chem_comp_descriptor (
 DROP TYPE IF EXISTS ENUM_chem_comp_identifier_program CASCADE;
 CREATE TYPE ENUM_chem_comp_identifier_program AS ENUM ( 'OECHEM', 'DAYLIGHT', 'ACD', 'AUTONOM', 'OTHER' );
 DROP TYPE IF EXISTS ENUM_chem_comp_identifier_type CASCADE;
-CREATE TYPE ENUM_chem_comp_identifier_type AS ENUM ( 'COMMON NAME', 'SYSTEMATIC NAME', 'CAS REGISTRY NUMBER', 'PUBCHEM Identifier', 'PUBCHEM CID', 'PUBCHEM SID', 'MDL Identifier', 'PUBCHEM_IUPAC_NAME', 'PUBCHEM_IUPAC_CAS_NAME', 'PUBCHEM_IUPAC_OPENEYE_NAME', 'PUBCHEM_IUPAC_SYSTEMATIC_NAME', 'PUBCHEM_IUPAC_TRADITIONAL_NAME', 'NSC NUMBER' );
+CREATE TYPE ENUM_chem_comp_identifier_type AS ENUM ( 'common name', 'systematic name', 'CAS Registry number', 'PUBCHEM Identifier', 'PUBCHEM CID', 'PUBCHEM SID', 'MDL Identifier', 'PUBCHEM_IUPAC_NAME', 'PUBCHEM_IUPAC_CAS_NAME', 'PUBCHEM_IUPAC_OPENEYE_NAME', 'PUBCHEM_IUPAC_SYSTEMATIC_NAME', 'PUBCHEM_IUPAC_TRADITIONAL_NAME', 'NSC NUMBER' );
 CREATE TABLE chem_comp_identifier (
 -- ATTRIBUTE
 	comp_id TEXT NOT NULL ,
@@ -3747,7 +3747,7 @@ CREATE TABLE coupling_constant_experiment (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_coupling_constant_list_spectrometer_frequency_1h CASCADE;
-CREATE TYPE ENUM_coupling_constant_list_spectrometer_frequency_1h AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000' );
+CREATE TYPE ENUM_coupling_constant_list_spectrometer_frequency_1h AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000', '1100' );
 CREATE TABLE coupling_constant_list (
 	details TEXT ,
 	name TEXT ,
@@ -4247,7 +4247,7 @@ CREATE TABLE d_h_fractionation_factor_list (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_data_set_type CASCADE;
-CREATE TYPE ENUM_data_set_type AS ENUM ( 'assigned_chemical_shifts', 'theoretical_chem_shifts', 'chemical_rates', 'coupling_constants', 'theoretical_coupling_constants', 'spectral_peak_list', 'other_data_list', 'RDCs', 'order_parameters', 'dipolar_couplings', 'spectral_density_values', 'H_exch_rates', 'H_exch_protection_factors', 'pKa_value_data_set', 'pH_NMR_param_list', 'binding_constants', 'D_H_fractionation_factors', 'molecular_axis_determinations', 'deduced_secd_struct_features', 'deduced_hydrogen_bonds', 'representative_conformer', 'conformer_family_coord_set', 'general_relaxation', 'heteronucl_T1_relaxation', 'theoretical_heteronucl_T1_relaxation', 'heteronucl_T1rho_relaxation', 'heteronucl_T2_relaxation', 'theoretical_heteronucl_T2_relaxation', 'heteronucl_NOEs', 'theoretical_heteronucl_NOEs', 'homonucl_NOEs', 'dipole_dipole_relaxation', 'dipole_dipole_cross_correlations', 'theoretical_dipole_dipole_cross_correlations', 'CSA_CSA_cross_correlation_relaxation', 'dipole_CSA_cross_correlation_relaxation', 'pH_titration' );
+CREATE TYPE ENUM_data_set_type AS ENUM ( 'assigned_chemical_shifts', 'theoretical_chem_shifts', 'chem_shift_perturbation', 'chemical_rates', 'coupling_constants', 'theoretical_coupling_constants', 'spectral_peak_list', 'other_data_list', 'RDCs', 'order_parameters', 'dipolar_couplings', 'spectral_density_values', 'H_exch_rates', 'H_exch_protection_factors', 'pKa_value_data_set', 'pH_NMR_param_list', 'binding_constants', 'D_H_fractionation_factors', 'molecular_axis_determinations', 'deduced_secd_struct_features', 'deduced_hydrogen_bonds', 'representative_conformer', 'conformer_family_coord_set', 'general_relaxation', 'heteronucl_T1_relaxation', 'theoretical_heteronucl_T1_relaxation', 'heteronucl_T1rho_relaxation', 'heteronucl_T2_relaxation', 'theoretical_heteronucl_T2_relaxation', 'heteronucl_NOEs', 'theoretical_heteronucl_NOEs', 'homonucl_NOEs', 'dipole_dipole_relaxation', 'dipole_dipole_cross_correlations', 'theoretical_dipole_dipole_cross_correlations', 'CSA_CSA_cross_correlation_relaxation', 'dipole_CSA_cross_correlation_relaxation', 'pH_titration' );
 CREATE TABLE data_set (
 	count INTEGER ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
@@ -4264,7 +4264,7 @@ CREATE TABLE data_set (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_datum_type CASCADE;
-CREATE TYPE ENUM_datum_type AS ENUM ( '1H chemical shifts', '2H chemical shifts', '3H chemical shifts', '13C chemical shifts', '15N chemical shifts', '31P chemical shifts', '111Cd chemical shifts', '113Cd chemical shifts', 'theoretical 1H chemical shifts', 'theoretical 13C chemical shifts', 'theoretical 15N chemical shifts', 'chemical rates', 'coupling constants', 'theoretical coupling constants', 'chemical shift isotope effects', 'molecule interaction chemical shift values', 'T1 relaxation values', 'theoretical T1 relaxation values', 'T1rho relaxation values', 'T2 relaxation values', 'theoretical T2 relaxation values', 'dipole-dipole relaxation values', 'dipole-dipole cross correlation relaxation values', 'theoretical dipole-dipole cross-correlation values', 'chemical shift anisotropy values', 'chemical shift anisotropy tensor values', 'quadrupolar couplings', 'theoretical chemical shifts', 'chemical shift tensors', 'residual dipolar couplings', 'dipolar coupling values', 'dipolar coupling tensor values', 'heteronuclear NOE values', 'theoretical heteronuclear NOE values', 'homonuclear NOE values', 'order parameters', 'spectral density values', 'H exchange rates', 'H exchange protection factors', 'pKa values', 'pH NMR parameter values', 'binding constants', 'D/H fractionation factors', 'bond orientation values', 'deduced secondary structure values', 'deduced hydrogen bonds', 'distance constraints', 'ambiguous distance constraints', 'hydrogen bond distance constraints', 'torsion angle constraints', 'chemical shift constraints', 'symmetry constraints', '19F chemical shifts', '6Li chemical shifts', '10B chemical shifts', '11B chemical shifts', '17O chemical shifts', '23Na chemical shifts', '29Si chemical shifts', '35Cl chemical shifts', '129Xe chemical shifts', '195Pt chemical shifts', 'na' );
+CREATE TYPE ENUM_datum_type AS ENUM ( '1H chemical shifts', '2H chemical shifts', '3H chemical shifts', '13C chemical shifts', '15N chemical shifts', '31P chemical shifts', '111Cd chemical shifts', '113Cd chemical shifts', 'theoretical 1H chemical shifts', 'theoretical 13C chemical shifts', 'theoretical 15N chemical shifts', 'chemical rates', 'coupling constants', 'theoretical coupling constants', 'chemical shift isotope effects', 'chemical shift perturbation values', 'T1 relaxation values', 'theoretical T1 relaxation values', 'T1rho relaxation values', 'T2 relaxation values', 'theoretical T2 relaxation values', 'dipole-dipole relaxation values', 'dipole-dipole cross correlation relaxation values', 'theoretical dipole-dipole cross-correlation values', 'chemical shift anisotropy values', 'chemical shift anisotropy tensor values', 'quadrupolar couplings', 'theoretical chemical shifts', 'chemical shift tensors', 'residual dipolar couplings', 'dipolar coupling values', 'dipolar coupling tensor values', 'heteronuclear NOE values', 'theoretical heteronuclear NOE values', 'homonuclear NOE values', 'order parameters', 'spectral density values', 'H exchange rates', 'H exchange protection factors', 'pKa values', 'pH NMR parameter values', 'binding constants', 'D/H fractionation factors', 'bond orientation values', 'deduced secondary structure values', 'deduced hydrogen bonds', 'distance constraints', 'ambiguous distance constraints', 'hydrogen bond distance constraints', 'torsion angle constraints', 'chemical shift constraints', 'symmetry constraints', '19F chemical shifts', '6Li chemical shifts', '10B chemical shifts', '11B chemical shifts', '17O chemical shifts', '23Na chemical shifts', '29Si chemical shifts', '35Cl chemical shifts', '129Xe chemical shifts', '195Pt chemical shifts', 'na' );
 CREATE TABLE datum (
 	count INTEGER ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
@@ -8372,7 +8372,7 @@ CREATE TABLE nmr_spectral_processing (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_field_strength CASCADE;
-CREATE TYPE ENUM_nmr_spectrometer_field_strength AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000', '1200', '200', '250', '300', '350', '450', '550', '720', '590', '470', '360', '270', '140', '120', '90', 'na' );
+CREATE TYPE ENUM_nmr_spectrometer_field_strength AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000', '1100', '1200', '200', '250', '300', '350', '450', '550', '720', '590', '470', '360', '270', '140', '120', '90', 'na' );
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_manufacturer CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_manufacturer AS ENUM ( 'Bruker', 'GE', 'JEOL', 'Varian', 'Agilent', 'Cambridge', 'Oxford', 'FBML', 'Nicolet', 'Home-built', 'na' );
 CREATE TABLE nmr_spectrometer (
@@ -8479,7 +8479,7 @@ CREATE TABLE nmr_spectrometer_probe_citation (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_view_field_strength CASCADE;
-CREATE TYPE ENUM_nmr_spectrometer_view_field_strength AS ENUM ( '400', '500', '600', '700', '800', '900', '90', '120', '140', '200', '250', '270', '300', '350', '360', '450', '470', '550', '590', '720', '750', '850', '920', '950', '1000', 'na' );
+CREATE TYPE ENUM_nmr_spectrometer_view_field_strength AS ENUM ( '400', '500', '600', '700', '800', '900', '90', '120', '140', '200', '250', '270', '300', '350', '360', '450', '470', '550', '590', '720', '750', '850', '920', '950', '1000', '1100', 'na' );
 DROP TYPE IF EXISTS ENUM_nmr_spectrometer_view_manufacturer CASCADE;
 CREATE TYPE ENUM_nmr_spectrometer_view_manufacturer AS ENUM ( 'Bruker', 'GE', 'JEOL', 'Varian', 'Agilent', 'Cambridge', 'Oxford', 'FBML', 'Nicolet', 'Home-built', 'na' );
 CREATE TABLE nmr_spectrometer_view (
@@ -12014,7 +12014,7 @@ CREATE TABLE theoretical_coupling_constant_experiment (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_theoretical_coupling_constant_list_spectrometer_frequency_ CASCADE;
-CREATE TYPE ENUM_theoretical_coupling_constant_list_spectrometer_frequency_ AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000' );
+CREATE TYPE ENUM_theoretical_coupling_constant_list_spectrometer_frequency_ AS ENUM ( '400', '500', '600', '700', '750', '800', '850', '900', '920', '950', '1000', '1100' );
 CREATE TABLE theoretical_coupling_constant_list (
 	details TEXT ,
 	name TEXT ,

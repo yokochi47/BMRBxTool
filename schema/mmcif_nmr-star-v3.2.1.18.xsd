@@ -5,11 +5,11 @@
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
    <xsd:annotation>
-      <xsd:appinfo>BMRB/XML Schema v3.2.1.15</xsd:appinfo>
+      <xsd:appinfo>BMRB/XML Schema v3.2.1.18</xsd:appinfo>
       <xsd:documentation source="https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic"
                          xml:lang="en">
 
-BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.15, which is backward compatible with the original NMR-STAR Dictionary:
+BMRB/XML Schema translated from extended version of NMR-STAR Dictionary v3.2.1.18, which is backward compatible with the original NMR-STAR Dictionary:
  http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic
 
     </xsd:documentation>
@@ -11135,9 +11135,9 @@ This data item contains the identifier type.
                   </xsd:annotation>
                   <xsd:simpleType>
                      <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="COMMON NAME"/>
-                        <xsd:enumeration value="SYSTEMATIC NAME"/>
-                        <xsd:enumeration value="CAS REGISTRY NUMBER"/>
+                        <xsd:enumeration value="common name"/>
+                        <xsd:enumeration value="systematic name"/>
+                        <xsd:enumeration value="CAS Registry number"/>
                         <xsd:enumeration value="PUBCHEM Identifier"/>
                         <xsd:enumeration value="PUBCHEM CID"/>
                         <xsd:enumeration value="PUBCHEM SID"/>
@@ -21449,6 +21449,7 @@ the data.
                            <xsd:enumeration value="920"/>
                            <xsd:enumeration value="950"/>
                            <xsd:enumeration value="1000"/>
+                           <xsd:enumeration value="1100"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -24799,6 +24800,7 @@ assigned_chemical_shifts
                      <xsd:restriction base="xsd:string">
                         <xsd:enumeration value="assigned_chemical_shifts"/>
                         <xsd:enumeration value="theoretical_chem_shifts"/>
+                        <xsd:enumeration value="chem_shift_perturbation"/>
                         <xsd:enumeration value="chemical_rates"/>
                         <xsd:enumeration value="coupling_constants"/>
                         <xsd:enumeration value="theoretical_coupling_constants"/>
@@ -24900,7 +24902,7 @@ A type of quantitative data found in the entry.
                         <xsd:enumeration value="coupling constants"/>
                         <xsd:enumeration value="theoretical coupling constants"/>
                         <xsd:enumeration value="chemical shift isotope effects"/>
-                        <xsd:enumeration value="molecule interaction chemical shift values"/>
+                        <xsd:enumeration value="chemical shift perturbation values"/>
                         <xsd:enumeration value="T1 relaxation values"/>
                         <xsd:enumeration value="theoretical T1 relaxation values"/>
                         <xsd:enumeration value="T1rho relaxation values"/>
@@ -33753,9 +33755,9 @@ Solution
                      </xsd:annotation>
                      <xsd:simpleType>
                         <xsd:restriction base="xsd:string">
-                           <xsd:enumeration value="SOLUTION"/>
-                           <xsd:enumeration value="SOLID-STATE"/>
-                           <xsd:enumeration value="THEORETICAL"/>
+                           <xsd:enumeration value="solution"/>
+                           <xsd:enumeration value="solid-state"/>
+                           <xsd:enumeration value="theoretical"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -33882,6 +33884,7 @@ Version of NMR-STAR in which the current entry is formatted.
                            <xsd:enumeration value="3.2.1.9"/>
                            <xsd:enumeration value="3.2.1.12"/>
                            <xsd:enumeration value="3.2.1.15"/>
+                           <xsd:enumeration value="3.2.1.18"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -33945,6 +33948,7 @@ Version of NMR-STAR in which the original entry was generated.
                            <xsd:enumeration value="3.2.1.9"/>
                            <xsd:enumeration value="3.2.1.12"/>
                            <xsd:enumeration value="3.2.1.15"/>
+                           <xsd:enumeration value="3.2.1.18"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -34070,7 +34074,7 @@ Backbone 1H, 13C, and 15N Chemical Shift Assignments for Lysozyme
                      <xsd:annotation>
                         <xsd:documentation xml:lang="en">
 
-The type of BMRB entry.
+The BMRB entry type with respect to the type of molecular system studied.
                         </xsd:documentation>
                      </xsd:annotation>
                      <xsd:simpleType>
@@ -34700,6 +34704,8 @@ Pointer to '_NMR_spectrometer.ID'
                         <xsd:documentation xml:lang="en">
 
 Pointer to a saveframe of category 'NMR_spectrometer'.
+
+600MHz Varian
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -49426,6 +49432,7 @@ by the proton frequency of the instrument expressed in MHz.
                            <xsd:enumeration value="920"/>
                            <xsd:enumeration value="950"/>
                            <xsd:enumeration value="1000"/>
+                           <xsd:enumeration value="1100"/>
                            <xsd:enumeration value="1200"/>
                            <xsd:enumeration value="200"/>
                            <xsd:enumeration value="250"/>
@@ -50002,6 +50009,7 @@ by the proton frequency of the instrument expressed in MHz.
                            <xsd:enumeration value="920"/>
                            <xsd:enumeration value="950"/>
                            <xsd:enumeration value="1000"/>
+                           <xsd:enumeration value="1100"/>
                            <xsd:enumeration value="na"/>
                         </xsd:restriction>
                      </xsd:simpleType>
@@ -70853,6 +70861,7 @@ the data.
                            <xsd:enumeration value="920"/>
                            <xsd:enumeration value="950"/>
                            <xsd:enumeration value="1000"/>
+                           <xsd:enumeration value="1100"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>

@@ -25,8 +25,8 @@ import org.w3c.dom.Document;
 
 public class BMRxTool_Main {
 
-	public final static String version = "1.33.0";
-	public final static String bmrb_version = "3.2.1.15";
+	public final static String version = "1.34.0";
+	public final static String bmrb_version = "3.2.1.18";
 	public final static String dev_mail_addr = "yokochi@protein.osaka-u.ac.jp";
 
 	public static String your_org = "your.org"; // edit this before you run
