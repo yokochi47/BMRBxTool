@@ -5871,7 +5871,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("public class " + file_prefix + "_" + util_chemcompidentifier + " {\n\n");
 
-			buffw.write("\tstatic final Map<String, String> map = new HashMap<String, String>() {\n\n");
+			buffw.write("\tstatic final Map<String, String> map_program = new HashMap<String, String>() {\n\n");
 
 			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
 
@@ -5882,7 +5882,21 @@ public class BMRxTool_DOM {
 			buffw.write("\n\t\t}\n\t};\n\n");
 
 			buffw.write("\tpublic static String getProgram(String val_name) {\n");
-			buffw.write("\t\treturn (String) map.get(val_name);\n");
+			buffw.write("\t\treturn (String) map_program.get(val_name);\n");
+			buffw.write("\t}\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_type = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "chem_comp_identifier.type.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getType(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_type.get(val_name);\n");
 			buffw.write("\t}\n}\n");
 
 			buffw.close();
