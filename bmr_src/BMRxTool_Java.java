@@ -126,8 +126,8 @@ public class BMRxTool_Java {
 			buffw.write("import java.io.*;\n");
 			buffw.write("import java.lang.reflect.*;\n");
 
-//			if (_integer /* && !class_name.equalsIgnoreCase("Entry") */ )
-//				buffw.write("import java.math.BigInteger;\n");
+			//			if (_integer /* && !class_name.equalsIgnoreCase("Entry") */ )
+			//				buffw.write("import java.math.BigInteger;\n");
 			if (_decimal)
 				buffw.write("import java.math.BigDecimal;\n");
 			if (has_decimal(node))
@@ -3636,14 +3636,27 @@ public class BMRxTool_Java {
 
 					}
 
-					// item='program', category='BMRBx:chem_comp_identifier'
-					if (attr_name_lower.equals("program") && class_name.equalsIgnoreCase("ChemCompIdentifier")) {
+					// category='BMRBx:chem_comp_identifier'
+					if (class_name.equalsIgnoreCase("ChemCompIdentifier")) {
 
-						buffw.write("\t\tif (val_name != null)\n");
-						buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_chemcompidentifier + ".getProgram(val_name);\n\n");
+						// item='program'
+						if (attr_name_lower.equals("program")) {
 
-						buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
-						buffw.write("\t\t\tval_name = \"OTHER\";\n\n");
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_chemcompidentifier + ".getProgram(val_name);\n\n");
+
+							buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
+							buffw.write("\t\t\tval_name = \"OTHER\";\n\n");
+
+						}
+
+						// item='type'
+						if (attr_name_lower.equals("type")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_chemcompidentifier + ".getType(val_name);\n\n");
+
+						}
 
 					}
 
