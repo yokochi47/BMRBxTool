@@ -32163,6 +32163,7 @@ Escherichia coli
                            <xsd:enumeration value="Escherichia coli 'BL21-Gold(DE3)pLysS AG'"/>
                            <xsd:enumeration value="Escherichia coli B41"/>
                            <xsd:enumeration value="Escherichia coli BW25113"/>
+                           <xsd:enumeration value="Escherichia coli DH1"/>
                            <xsd:enumeration value="Escherichia coli DH5[alpha]"/>
                            <xsd:enumeration value="Escherichia coli K-12"/>
                            <xsd:enumeration value="Escherichia coli-Pichia pastoris shuttle vector pPpARG4"/>
