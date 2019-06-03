@@ -32214,6 +32214,7 @@ Escherichia coli
                            <xsd:enumeration value="Pichia"/>
                            <xsd:enumeration value="Pisum sativum"/>
                            <xsd:enumeration value="Populus fremontii"/>
+                           <xsd:enumeration value="Pseudocerastes persicus"/>
                            <xsd:enumeration value="Pseudomonas aeruginosa"/>
                            <xsd:enumeration value="Pseudomonas fluorescens"/>
                            <xsd:enumeration value="Rana cascadae"/>
