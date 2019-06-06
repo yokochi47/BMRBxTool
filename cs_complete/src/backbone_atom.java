@@ -213,6 +213,7 @@ public class backbone_atom {
 				list.add(new backbone_atom(rna_comp_id, "H4'"));
 				list.add(new backbone_atom(rna_comp_id, "H5'"));
 				list.add(new backbone_atom(rna_comp_id, "H5''"));
+				list.add(new backbone_atom(rna_comp_id, "HO2'"));
 				list.add(new backbone_atom(rna_comp_id, "P"));
 
 			}
