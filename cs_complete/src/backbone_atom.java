@@ -165,6 +165,7 @@ public class backbone_atom {
 
 			list.add(new backbone_atom("GLY", "C"));
 			list.add(new backbone_atom("GLY", "CA"));
+			list.add(new backbone_atom("GLY", "H"));
 			list.add(new backbone_atom("GLY", "HA2"));
 			list.add(new backbone_atom("GLY", "HA3"));
 			list.add(new backbone_atom("GLY", "N"));
