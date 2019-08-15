@@ -1955,7 +1955,7 @@ public class BMSxTool_DOM {
 			buffw.write("\t\treturn cal;\n");
 			buffw.write("\t}\n}\n");
 
-			buffw.close();			
+			buffw.close();
 			filew.close();
 
 		} catch (IOException e) {

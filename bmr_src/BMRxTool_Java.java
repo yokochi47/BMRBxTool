@@ -594,7 +594,7 @@ public class BMRxTool_Java {
 
 			extract_element_nodes(buffw, node, table_name, column_list, file_prefix);
 
-			// item='pdbx_name', category='BMRBx:citation_author', 'BMRBx:citation_editor', 'BMRBx:entry_author' 
+			// item='pdbx_name', category='BMRBx:citation_author', 'BMRBx:citation_editor', 'BMRBx:entry_author'
 			if (class_name.equalsIgnoreCase("CitationAuthor") || class_name.equalsIgnoreCase("CitationEditor") || class_name.equalsIgnoreCase("EntryAuthor"))
 				buffw.write("\t\t\t\t\tset_string_pdbx_name(list[0], \"setPdbxName\", \"setNilPdbxName\", false, rset.getString(\"Family_name\"), rset.getString(\"Given_name\"), rset.getString(\"Middle_initials\"), logw);\n");
 
@@ -951,6 +951,29 @@ public class BMRxTool_Java {
 				else
 					buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_entity + ".checkECNumber(val_name, entry_id);\n\n");
 
+				buffw.write("\t\tif (" + file_prefix + "_" + BMRxTool_DOM.util_main + ".remediate_xml && val_name != null && !val_name.isEmpty() && val_name.contains(\" \") && !val_name.contains(\",\")) {\n");
+				buffw.write("\t\t\tString[] val_names = val_name.split(\" \");\n");
+				buffw.write("\t\t\tval_name = null;\n");
+				buffw.write("\t\t\tfor (String val_name_ : val_names) {\n");
+				buffw.write("\t\t\t\tif (val_name_.matches(\"^\\\\d\\\\.\\\\d+\\\\.\\\\d+\\\\.\\\\d+$\")) {\n");
+				buffw.write("\t\t\t\t\tif (val_name == null)\n");
+				buffw.write("\t\t\t\t\t\tval_name = val_name_;\n");
+				buffw.write("\t\t\t\t\telse\n");
+				buffw.write("\t\t\t\t\t\tval_name += \", \" + val_name_;\n");
+				buffw.write("\t\t\t\t}\n");
+				buffw.write("\t\t\t\telse if (val_name_.matches(\"^\\\\d\\\\.\\\\d+\\\\.\\\\d+$\")) {\n");
+				buffw.write("\t\t\t\t\tif (val_name == null)\n");
+				buffw.write("\t\t\t\t\t\tval_name = val_name_ + \".-\";\n");
+				buffw.write("\t\t\t\t\telse\n");
+				buffw.write("\t\t\t\t\t\tval_name += \", \" + val_name_ + \".-\";\n");
+				buffw.write("\t\t\t\t}\n");
+				buffw.write("\t\t\t\telse if (val_name_.matches(\"^\\\\d\\\\.\\\\d+$\")) {\n");
+				buffw.write("\t\t\t\t\tif (val_name == null)\n");
+				buffw.write("\t\t\t\t\t\tval_name = val_name_ + \".-.-\";\n");
+				buffw.write("\t\t\t\t\telse\n");
+				buffw.write("\t\t\t\t\t\tval_name += \", \" + val_name_ + \".-.-\";\n");
+				buffw.write("\t\t\t\t}\n\t\t\t}\n\t\t}\n\n");
+
 				buffw.write("\t\tif (val_name != null && val_name.equals(\"na\"))\n");
 				buffw.write("\t\t\tval_name = null;\n\n");
 
@@ -979,6 +1002,18 @@ public class BMRxTool_Java {
 					buffw.write("\t\t\tdatabase_code = " + file_prefix + "_" + BMRxTool_DOM.util_assemblydblink + ".getDatabaseCode(database_code, val_name);\n\n");
 				else
 					buffw.write("\t\t\tdatabase_code = " + file_prefix + "_" + BMRxTool_DOM.util_entitydblink + ".getDatabaseCode(database_code, val_name);\n\n");
+
+				buffw.write("\t\tif (" + file_prefix + "_" + BMRxTool_DOM.util_main + ".remediate_xml && val_name != null && !val_name.isEmpty() && val_name.contains(\" \")) {\n");
+				buffw.write("\t\t\tString[] val_names = val_name.split(\" \");\n");
+				buffw.write("\t\t\tval_name = \"na\";\n");
+				buffw.write("\t\t\tfor (String val_name_ : val_names) {\n");
+				if (class_name.equalsIgnoreCase("AssemblyDbLink"))
+					buffw.write("\t\t\t\tif (" + file_prefix + "_" + BMRxTool_DOM.util_assemblydblink + ".getDatabaseCode(null, val_name_) != null) {\n");
+				else
+					buffw.write("\t\t\t\tif (" + file_prefix + "_" + BMRxTool_DOM.util_entitydblink + ".getDatabaseCode(null, val_name_) != null) {\n");
+				buffw.write("\t\t\t\t\tval_name = val_name_;\n");
+				buffw.write("\t\t\t\t\tbreak;\n");
+				buffw.write("\t\t\t\t}\n\t\t\t}\n\t\t}\n\n");
 
 				buffw.write("\t\tif (" + file_prefix + "_" + BMRxTool_DOM.util_main + ".remediate_xml && database_code != null && database_code.equals(\"PDB\"))\n");
 				buffw.write("\t\t\tval_name = ent.getEffectivePDBID(val_name);\n\n");
@@ -1395,7 +1430,7 @@ public class BMRxTool_Java {
 
 			}
 
-			// item='pdbx_name', category='BMRBx:citation_author', 'BMRBx:citation_editor', 'BMRBx:entry_author' 
+			// item='pdbx_name', category='BMRBx:citation_author', 'BMRBx:citation_editor', 'BMRBx:entry_author'
 			if (class_name.equalsIgnoreCase("CitationAuthor") || class_name.equalsIgnoreCase("CitationEditor") || class_name.equalsIgnoreCase("EntryAuthor")) {
 
 				buffw.write("\n\tprivate static boolean set_string_pdbx_name(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String family_name, String given_name, String middle_initials, FileWriter logw) {\n\n");
@@ -1560,7 +1595,7 @@ public class BMRxTool_Java {
 
 				}
 
-				// item='sunid', category='BMRBx:struct_classfication' 
+				// item='sunid', category='BMRBx:struct_classfication'
 				if (class_name.equalsIgnoreCase("StructClassification")) {
 
 					buffw.write("\n\tprivate static boolean set_integer_sunid(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String db_source_id, " + file_prefix + "_" + BMRxTool_DOM.util_structclassification + " sc, FileWriter logw) {\n\n");
@@ -3173,13 +3208,13 @@ public class BMRxTool_Java {
 						if (attr_name_lower.equals("original_release_date") && class_name.equalsIgnoreCase("Entry"))
 							buffw.write("\t\t\t\t\tif (!set_original_release_date(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\") != null && !rset.getString(\"" + column_name + "\").equals(\".\") && !rset.getString(\"" + column_name + "\").equals(\"?\") ? rset.getDate(\"" + column_name + "\") : null, conn_bmrb, entry_id, accession_date != null ? accession_date : submission_date, logw))\n\t\t\t\t\t\tcontinue;\n");
 						// item='last_release_date', category='BMRBx:entry'
-						else if (attr_name_lower.equals("last_release_date") && class_name.equalsIgnoreCase("Entry"))	
+						else if (attr_name_lower.equals("last_release_date") && class_name.equalsIgnoreCase("Entry"))
 							buffw.write("\t\t\t\t\tif (!set_last_release_date(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\") != null && !rset.getString(\"" + column_name + "\").equals(\".\") && !rset.getString(\"" + column_name + "\").equals(\"?\") ? rset.getDate(\"" + column_name + "\") : null, conn_bmrb, entry_id, accession_date != null ? accession_date : submission_date, logw))\n\t\t\t\t\t\tcontinue;\n");
 						// item='accession_date', category='BMRBx:entry'
-						else if (attr_name_lower.equals("accession_date") && class_name.equalsIgnoreCase("Entry"))	
+						else if (attr_name_lower.equals("accession_date") && class_name.equalsIgnoreCase("Entry"))
 							buffw.write("\t\t\t\t\tif (!set_date_entry(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", accession_date != null ? accession_date : submission_date, conn_bmrb, entry_id, logw))\n\t\t\t\t\t\tcontinue;\n");
 						// item='submission_date', category='BMRBx:entry'
-						else if (attr_name_lower.equals("submission_date") && class_name.equalsIgnoreCase("Entry"))	
+						else if (attr_name_lower.equals("submission_date") && class_name.equalsIgnoreCase("Entry"))
 							buffw.write("\t\t\t\t\tif (!set_date_entry(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", submission_date != null ? submission_date : accession_date, conn_bmrb, entry_id, logw))\n\t\t\t\t\t\tcontinue;\n");
 						else
 							buffw.write("\t\t\t\t\tif (!set_date(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\") != null && !rset.getString(\"" + column_name + "\").equals(\".\") && !rset.getString(\"" + column_name + "\").equals(\"?\") ? rset.getDate(\"" + column_name + "\") : null, logw))\n\t\t\t\t\t\tcontinue;\n");
