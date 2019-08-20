@@ -4306,6 +4306,15 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t}\n\n");
 
+			buffw.write("\t\tif (ec_number.toLowerCase().startsWith(\"n\") || !ec_number.contains(\".\"))\n");
+			buffw.write("\t\t\treturn \"na\";\n\n");
+
+			buffw.write("\t\tif (!ec_number.contains(\" \") && ec_number.toLowerCase().startsWith(\"ec:\"))\n");
+			buffw.write("\t\t\treturn ec_number.substring(3);\n\n");
+
+			buffw.write("\t\tif (ec_number.contains(\",\"))\n");
+			buffw.write("\t\t\treturn ec_number.replaceAll(\" \", \"\").replaceAll(\",\", \", \");\n\n");
+
 			buffw.write("\t\treturn ec_number;\n");
 			buffw.write("\t}\n}\n");
 
@@ -8040,6 +8049,15 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\treturn ecnumtbl[i][2];\n\n");
 
 			buffw.write("\t\t}\n\n");
+
+			buffw.write("\t\tif (ec_number.toLowerCase().startsWith(\"n\") || !ec_number.contains(\".\"))\n");
+			buffw.write("\t\t\treturn \"na\";\n\n");
+
+			buffw.write("\t\tif (!ec_number.contains(\" \") && ec_number.toLowerCase().startsWith(\"ec:\"))\n");
+			buffw.write("\t\t\treturn ec_number.substring(3);\n\n");
+
+			buffw.write("\t\tif (ec_number.contains(\",\"))\n");
+			buffw.write("\t\t\treturn ec_number.replaceAll(\" \", \"\").replaceAll(\",\", \", \");\n\n");
 
 			buffw.write("\t\treturn ec_number;\n");
 			buffw.write("\t}\n}\n");
