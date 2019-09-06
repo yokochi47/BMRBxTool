@@ -1,7 +1,7 @@
- Changes in BMRBxTool 1.34.0 (release 2019-09-05)
+ Changes in BMRBxTool 1.34.0 (release 2019-09-06)
 
   Updated dictionary NMR-STAR v3.2.1.15 to v3.2.1.18.
-  Updated xsd2pgschema to 3.2.0.
+  Updated xsd2pgschema to 3.2.1.
   Added remediation for '_chem_comp_identifier.type' for bmr archive.
   Updated dictionary and translation profiles for processing entries released on 2019-03-13, 2019-05-15, 2019-05-29, 2019-08-28.
   Fixed definition of backbone atoms of GLY.
