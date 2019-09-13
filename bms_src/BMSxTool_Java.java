@@ -4512,6 +4512,14 @@ public class BMSxTool_Java {
 
 						}
 
+						// item='temp_control_method'
+						if (attr_name_lower.equals("temp_control_method")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_heteronuclt1rholist + ".getTempControlMethod(val_name);\n\n");
+
+						}
+
 					}
 
 					// item='heteronuclear_noe_val_type', category='BMRBx:heteronucl_noe_list'
