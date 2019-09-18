@@ -8921,9 +8921,13 @@ CREATE TABLE pb_list (
 	pdb_id TEXT ,
 	pdbx_exptl_method TEXT ,
 	pdbx_nmr_refine_method TEXT ,
+-- xsd:restriction/xsd:minInclusive: 0.0
 	pdbx_refine_ls_d_res_high DECIMAL CHECK ( pdbx_refine_ls_d_res_high > 0.0 ) ,
+-- xsd:restriction/xsd:minInclusive: 0.0
 	pdbx_refine_ls_d_res_low DECIMAL CHECK ( pdbx_refine_ls_d_res_low > 0.0 ) ,
+-- xsd:restriction/xsd:minInclusive: 0.0
 	pdbx_refine_ls_r_factor_r_free DECIMAL CHECK ( pdbx_refine_ls_r_factor_r_free > 0.0 ) ,
+-- xsd:restriction/xsd:minInclusive: 0.0
 	pdbx_refine_ls_r_factor_r_work DECIMAL CHECK ( pdbx_refine_ls_r_factor_r_work > 0.0 ) ,
 	queried_date DATE ,
 	query_id TEXT ,
