@@ -17,6 +17,7 @@
 --  retrieve field annotation: false
 --  map integer numbers to: signed int 32 bits
 --  map decimal numbers to: big decimal
+--  map xsd date type to: sql date type
 --
 -- Statistics of schema:
 --  Generated 456 tables (5839 fields), 0 attr groups, 0 model groups in total
@@ -27,7 +28,7 @@
 --   Table types:
 --    0 root, 0 root children, 0 admin roots, 456 admin children
 --   System keys:
---    0 primary keys (0 unique constraints), 0 foreign keys, 0 nested keys (0 as attribute)
+--    0 primary keys (0 unique constraints), 0 foreign keys, 0 nested keys (0 as attribute, 0 as attribute group)
 --   User keys:
 --    0 document keys, 0 serial keys, 0 xpath keys
 --   Contents:
@@ -523,6 +524,7 @@ CREATE TYPE ENUM_entry_type AS ENUM ( 'macromolecule', 'metabolite/natural produ
 DROP TYPE IF EXISTS ENUM_entry_version_type CASCADE;
 CREATE TYPE ENUM_entry_version_type AS ENUM ( 'original', 'update', 'obsolete' );
 CREATE TABLE entry (
+-- map XSD date (xsd:date) to SQL DATE
 	accession_date DATE ,
 	assigned_pdb_deposition_code TEXT ,
 	assigned_pdb_id TEXT ,
@@ -532,14 +534,17 @@ CREATE TABLE entry (
 	experimental_method ENUM_entry_experimental_method ,
 	experimental_method_subtype ENUM_entry_experimental_method_subtype ,
 	format_name ENUM_entry_format_name ,
+-- map XSD date (xsd:date) to SQL DATE
 	generated_date DATE ,
 	generated_software_id INTEGER ,
 	generated_software_label TEXT ,
 	generated_software_name TEXT ,
 	generated_software_version TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	last_release_date DATE ,
 	nmr_star_version ENUM_entry_nmr_star_version ,
 	original_nmr_star_version ENUM_entry_original_nmr_star_version ,
+-- map XSD date (xsd:date) to SQL DATE
 	original_release_date DATE ,
 	origination TEXT ,
 	related_coordinate_file_name TEXT ,
@@ -547,6 +552,7 @@ CREATE TABLE entry (
 	sf_framecode TEXT ,
 	source_data_format TEXT ,
 	source_data_format_version TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	submission_date DATE ,
 	title TEXT ,
 	type ENUM_entry_type ,
@@ -692,7 +698,9 @@ CREATE TABLE assembly (
 	ambiguous_chem_comp_sites ENUM_assembly_ambiguous_chem_comp_sites ,
 	ambiguous_conformational_states ENUM_assembly_ambiguous_conformational_states ,
 	bmrb_code TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_query_date DATE ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_query_revised_last_date DATE ,
 	details TEXT ,
 	enzyme_commission_number TEXT ,
@@ -903,7 +911,9 @@ CREATE TABLE assembly_segment_description (
 CREATE TABLE assembly_subsystem (
 	cas_name TEXT ,
 	cas_registry_number TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_last_query_revised_last_date DATE ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_query_date DATE ,
 	details TEXT ,
 	enzyme_commission_number TEXT ,
@@ -1956,7 +1966,9 @@ CREATE TABLE chem_comp (
 	aromatic ENUM_chem_comp_aromatic ,
 	atom_nomenclature_source ENUM_chem_comp_atom_nomenclature_source ,
 	bmrb_code TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_last_query_revised_last_date DATE ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_query_date DATE ,
 	details TEXT ,
 	formal_charge ENUM_chem_comp_formal_charge ,
@@ -1971,6 +1983,7 @@ CREATE TABLE chem_comp (
 	image_file_format ENUM_chem_comp_image_file_format ,
 	image_file_name TEXT ,
 	inchi_code TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	initial_date DATE ,
 	model_coordinates_db_code TEXT ,
 	model_coordinates_details TEXT ,
@@ -1978,6 +1991,7 @@ CREATE TABLE chem_comp (
 	model_details TEXT ,
 	model_erf TEXT ,
 	model_source TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	modified_date DATE ,
 	mon_nstd_class TEXT ,
 	mon_nstd_details TEXT ,
@@ -2464,6 +2478,7 @@ CREATE TABLE chem_shift_completeness_list (
 	methyl_chem_shift_1h_fraction TEXT ,
 	methyl_chem_shift_fraction TEXT ,
 	output_file_name TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	queried_date DATE ,
 	sc_chem_shift_13c_fraction TEXT ,
 	sc_chem_shift_15n_fraction TEXT ,
@@ -2972,8 +2987,10 @@ CREATE TABLE citation (
 	class ENUM_citation_class ,
 	conference_abstract_number TEXT ,
 	conference_country TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	conference_end_date DATE ,
 	conference_site TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	conference_start_date DATE ,
 	conference_state_province TEXT ,
 	conference_title TEXT ,
@@ -5121,7 +5138,9 @@ CREATE TABLE entity (
 	ambiguous_conformational_states ENUM_entity_ambiguous_conformational_states ,
 	bmrb_code TEXT ,
 	calc_isoelectric_point DECIMAL ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_query_date DATE ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_query_revised_last_date DATE ,
 	details TEXT ,
 	ec_number TEXT ,
@@ -7481,10 +7500,12 @@ CREATE TABLE lacs_plot (
 	line_2_terminator_val_y_1 DECIMAL ,
 	line_2_terminator_val_y_2 DECIMAL ,
 	output_file_name TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	queried_date DATE ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
 	sf_id INTEGER ,
+-- map XSD date (xsd:date) to SQL DATE
 	source_release_date DATE ,
 	source_release_designation TEXT ,
 	x_coord_name TEXT ,
@@ -8929,6 +8950,7 @@ CREATE TABLE pb_list (
 	pdbx_refine_ls_r_factor_r_free DECIMAL CHECK ( pdbx_refine_ls_r_factor_r_free > 0.0 ) ,
 -- xsd:restriction/xsd:minInclusive="0.0"
 	pdbx_refine_ls_r_factor_r_work DECIMAL CHECK ( pdbx_refine_ls_r_factor_r_work > 0.0 ) ,
+-- map XSD date (xsd:date) to SQL DATE
 	queried_date DATE ,
 	query_id TEXT ,
 	sf_category TEXT ,
@@ -9812,10 +9834,12 @@ DROP TYPE IF EXISTS ENUM_release_type CASCADE;
 CREATE TYPE ENUM_release_type AS ENUM ( 'original', 'na', 'update', 'revision', 'reformat' );
 CREATE TABLE release (
 	author TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	date DATE ,
 	detail TEXT ,
 	format_type ENUM_release_format_type ,
 	format_version TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	submission_date DATE ,
 	type ENUM_release_type ,
 -- ATTRIBUTE, IN-PLACE DOCUMENT KEY
@@ -10059,7 +10083,9 @@ CREATE TABLE sample (
 	name TEXT ,
 	oriented_sample_prep_protocol TEXT ,
 	polycrystallization_protocol TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	preparation_date DATE ,
+-- map XSD date (xsd:date) to SQL DATE
 	preparation_expiration_date DATE ,
 	sf_category TEXT ,
 	sf_framecode TEXT ,
@@ -11072,8 +11098,10 @@ CREATE TABLE struct_keywords (
 --
 CREATE TABLE structure_annotation (
 	db_electronic_address TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_queried_date DATE ,
 	db_source TEXT ,
+-- map XSD date (xsd:date) to SQL DATE
 	db_source_release_date DATE ,
 	db_source_release_designation TEXT ,
 	details TEXT ,
