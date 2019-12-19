@@ -21,7 +21,7 @@
 --  map xsd date type to: sql date type
 --
 -- Statistics of schema:
---  Generated 378 tables (4758 fields), 0 views (0 fields), 0 attr groups, 0 model groups in total
+--  Generated 380 tables (4768 fields), 0 views (0 fields), 0 attr groups, 0 model groups in total
 --   Unnecessary tables by inlining simple content as a primitive data type:
 --    schema location: pdbx-v40.xsd
 --      "B", volume_three_esd, mol_wt_exp, neighbor_ligand_distance, value_esd, "aniso_B13", temperature_sublimation_esd, "F_meas_sigma_au", "S31_esd", angle_theta, density_meas_temp_esd, "U13", "S12_esd", zeta, peptide_planarity_rms_dev, min_mean_cross_sectional_radii_gyration, "U12_esd", "Cartn_y_esd", time, "A_calc_au", pdbx_phase_calc_with_solvent, "B13_esd", "F_meas_sigma", "aniso_B12", reciprocal_length_c_esd, "L13_esd", "sigmaI", "A_meas", "T13_esd", "F_calc_au", "pdbx_F_calc_with_solvent", current, value, angle_deviation, "B_iso_esd", "aniso_U22_esd", bond_angle_rms_dev_error, "S33_esd", "pdbx_model_Cartn_y_ideal", prot_cis, induction_temperature, "model_Cartn_x", diff_density_min, "L22", "aniso_B23_esd", length_a_esd, "F_meas", energy_window, "B11_esd", "aniso_B11_esd", protein_volume, electron_dose, "aniso_U13_esd", "aniso_B33_esd", "S21_esd", "P", "L33", angle_target_value, phi, scat_length_neutron, "model_Cartn_x_esd", rise_per_n_subunits, "B22", resolution, maximum_distance_constraint_violation, pdbx_phase_calc_part_solvent, "aniso_U11_esd", "S22_esd", "S32", "Luzzati_sigma_a_obs", "F_meas_au", density_meas_esd, flow_rate, sample_volume, "L12", angle_beta_esd, culture_time, "aniso_B33", maximum_torsion_angle_constraint_violation, "aniso_B12_esd", angle_phi, diff_density_rms, lower_limit, reciprocal_angle_beta_esd, "U_iso_or_equiv_esd", "B33", "Luzzati_coordinate_error_obs", "U23_esd", power, axial_rise_per_subunit, "S23_esd", buffer_volume, atom_deviation, "pdbx_res_netI_over_av_sigmaI_2", "S31", "aniso_U12_esd", "B_calc", "L23", "B_iso", accelerating_voltage, "L11", "B_iso_max", "Luzzati_d_res_low_free", "aniso_B13_esd", diff_density_max_esd, sample_concentration, average_distance_constraint_violation, "A_calc", "L11_esd", dihedral_angles_rms_dev_error, reciprocal_angle_alpha_esd, "Luzzati_coordinate_error_free", "B12", "U33_esd", average_torsion_angle_constraint_violation, max_mean_cross_sectional_radii_gyration, "B_meas_au", length_b_esd, "S22", "T11_esd", dev, nominal_defocus_min, "angle_DHA_esd", "aniso_B11", gamma, "aniso_B23", "B_meas", rotation_per_n_subunits, diffr_phi, "B11", angular_rotation_per_subunit, voltage, cleavage_temperature, "B23", "S21", mean_guiner_radius_esd, cleavage_time, concentration_range, bond_angle_rms_dev, "aniso_B22_esd", "S33", "L13", "F_squared_meas", "aniso_B22", omega, "S32_esd", "S13_esd", recording_temperature_maximum, detector_distance, bond_deviation, "Cartn_y", "aniso_U33_esd", dist_esd, diffr_psi, "F_calc", scan_time_backgd, "S12", "T33", "dist_HA_esd", "B_iso_or_equiv", "aniso_U13", improper_torsion_angle_rms_dev_error, taum, pdbx_collection_time_total, "U_tls13", "Luzzati_sigma_a_free", diff_density_rms_esd, psi, scan_rate, temp, "Cartn_z", rmsd, "B13", "I", shell_diameter, "aniso_U11", pdbx_mosaicity, "S23", diffr_chi, "S11", alpha, phase_meas, "aniso_U12", "B_equiv_geom_mean_esd", "pdbx_F_calc_part_solvent", mol_wt_theo, upper_limit, angle_psi, delta, "Cartn_x_esd", reciprocal_angle_gamma_esd, "pdbx_model_Cartn_x_ideal", "B_calc_au", "B_iso_mean", "T23", "T11", pressure_esd, "F_squared_calc", "L12_esd", "aniso_U23_esd", "S11_esd", reciprocal_length_b_esd, tau0, tau1, "U_tls11", "U_tls23", ambient_temp_esd, pdbx_mosaicity_esd, angle_alpha_esd, column_volume, "T12_esd", "B33_esd", "Luzzati_d_res_low_obs", "Cartn_x", ambient_pressure_esd, covalent_bond_rms_dev_error, tau2, tau3, tau4, pressure, diff_density_max, "S13", inducer_concentration, "T22", length_c_esd, protein_yield, tilt_angle_max, angle_value, mean_guiner_radius, improper_torsion_angle, covalent_bond_rms_dev, temperature_decomposition_esd, neighbor_macromolecule_distance, maximum_upper_distance_constraint_violation, "U13_esd", dist, "U_tls12", tilt_angle_min, distance_rms_dev_error, "U22", "U22_esd", "T13", "T22_esd", "L22_esd", "L23_esd", "model_Cartn_z", nu2, "B23_esd", nu1, nu4, nu3, "U_tls33", nu0, "model_Cartn_z_esd", mean_2d_crystal_size, nominal_cs, pdbx_solvent_ion_probe_radii, culture_volume, peptide_planarity_rms_dev_error, "A_meas_au", pdbx_dist_value, epsilon, "U33", "T12", culture_temperature, "B_iso_Wilson_estimate", "model_Cartn_y", "dist_DA_esd", maximum_lower_distance_constraint_violation, temperature, angle_kappa, diff_density_min_esd, "Ro", "U_tls22", distance_rms_dev, storage_temperature, phase_calc, reciprocal_length_a_esd, "pdbx_model_Cartn_z_ideal", max_mean_cross_sectional_radii_gyration_esd, "B12_esd", volume_three, beta, dihedral_angles_rms_dev, "model_Cartn_y_esd", "T33_esd", min_mean_cross_sectional_radii_gyration_esd, column_temperature, multiplicity_of_infection, origin_z, "U12", origin_y, "aniso_U22", origin_x, "aniso_U23", "U11_esd", volume_pooled_fractions, "F_squared_sigma", "B_iso_or_equiv_esd", angle_chi, protein_concentration, induction_timepoint, temp_esd, "T23_esd", "B_iso_min", pdbx_solvent_shrinkage_radii, angle_omega, chi1, chi2, chi3, angle_gamma_esd, nominal_defocus_max, chi4, diffr_kappa, chi5, yield_pooled_fractions, "U11", "B22_esd", "U23", "aniso_U33", "U_equiv_geom_mean_esd", "pdbx_res_netI_over_sigmaI_2", "Cartn_z_esd", "L33_esd", improper_torsion_angle_rms_dev, sampling_size, recording_temperature_minimum, pdbx_solvent_vdw_probe_radii, "dist_DH_esd", volume_esd
@@ -30,17 +30,17 @@
 --   Schema locations:
 --    pdbx-v40.xsd
 --   Table types:
---    0 root, 0 root children, 0 admin roots, 378 admin children
+--    0 root, 0 root children, 0 admin roots, 380 admin children
 --   System keys:
 --    0 primary keys (0 unique constraints), 0 foreign keys, 0 nested keys (0 as attribute, 0 as attribute group)
 --   User keys:
---    378 document keys, 0 serial keys, 0 xpath keys
+--    380 document keys, 0 serial keys, 0 xpath keys
 --   Contents:
---    734 attributes (0 in-place document keys), 3646 elements (0 in-place document keys), 0 simple contents (0 in-place document keys, 0 as attribute, 0 as conditional attribute)
+--    740 attributes (0 in-place document keys), 3648 elements (0 in-place document keys), 0 simple contents (0 in-place document keys, 0 as attribute, 0 as conditional attribute)
 --   Wild cards:
 --    0 any elements, 0 any attributes
 --   Constraints:
---    1 unique constraints from xsd:unique, 378 unique constraints from xsd:key, 269 foreign key constraints from xsd:keyref
+--    380 unique constraints from xsd:key, 1 unique constraints from xsd:unique, 269 foreign key constraints from xsd:keyref
 --
 
 DROP TABLE IF EXISTS atom_site CASCADE;
@@ -58,8 +58,10 @@ DROP TABLE IF EXISTS cell_measurement_refln CASCADE;
 DROP TABLE IF EXISTS chem_comp_angle CASCADE;
 DROP TABLE IF EXISTS chem_comp_bond CASCADE;
 DROP TABLE IF EXISTS chem_comp_chir CASCADE;
+DROP TABLE IF EXISTS chem_comp_chir_atom CASCADE;
 DROP TABLE IF EXISTS chem_comp_link CASCADE;
 DROP TABLE IF EXISTS chem_comp_plane CASCADE;
+DROP TABLE IF EXISTS chem_comp_plane_atom CASCADE;
 DROP TABLE IF EXISTS chem_comp_tor CASCADE;
 DROP TABLE IF EXISTS chem_comp_tor_value CASCADE;
 DROP TABLE IF EXISTS chem_link_angle CASCADE;
@@ -2555,6 +2557,25 @@ CREATE TABLE chem_comp_chir (
 );
 
 --
+-- (quoted from chem_comp_chir_atomType)
+-- Data items in the CHEM_COMP_CHIR_ATOM category enumerate the atoms bonded to a chiral atom within a chemical component. Example 1 - based on PDB entry 5HVP and laboratory records for the structure corresponding to PDB entry 5HVP. <PDBx:chem_comp_chir_atomCategory> <PDBx:chem_comp_chir_atom atom_id="N" chir_id="1" comp_id="phe"></PDBx:chem_comp_chir_atom> <PDBx:chem_comp_chir_atom atom_id="C" chir_id="1" comp_id="phe"></PDBx:chem_comp_chir_atom> <PDBx:chem_comp_chir_atom atom_id="CB" chir_id="1" comp_id="phe"></PDBx:chem_comp_chir_atom> <PDBx:chem_comp_chir_atom atom_id="N" chir_id="1" comp_id="val"></PDBx:chem_comp_chir_atom> <PDBx:chem_comp_chir_atom atom_id="C" chir_id="1" comp_id="val"></PDBx:chem_comp_chir_atom> <PDBx:chem_comp_chir_atom atom_id="CB" chir_id="1" comp_id="val"></PDBx:chem_comp_chir_atom> </PDBx:chem_comp_chir_atomCategory>
+-- xmlns: http://pdbml.pdb.org/schema/pdbx-v40.xsd (PDBx), schema location: pdbx-v40.xsd
+-- type: admin child, content: true, list: false, bridge: false, virtual: false
+--
+CREATE TABLE chem_comp_chir_atom (
+-- DOCUMENT KEY is pointer to data source (aka. Entry ID)
+	document_id TEXT ,
+-- omit an attribute having a fixed value: @units="angstroms"
+	dev DECIMAL ,
+-- ATTRIBUTE
+	atom_id TEXT NOT NULL ,
+-- ATTRIBUTE
+	chir_id TEXT NOT NULL ,
+-- ATTRIBUTE
+	comp_id TEXT NOT NULL
+);
+
+--
 -- (quoted from chem_comp_linkType)
 -- Data items in the CHEM_COMP_LINK category give details about the links between chemical components.
 -- xmlns: http://pdbml.pdb.org/schema/pdbx-v40.xsd (PDBx), schema location: pdbx-v40.xsd
@@ -2587,6 +2608,25 @@ CREATE TABLE chem_comp_plane (
 	comp_id TEXT NOT NULL ,
 -- ATTRIBUTE
 	id TEXT NOT NULL
+);
+
+--
+-- (quoted from chem_comp_plane_atomType)
+-- Data items in the CHEM_COMP_PLANE_ATOM category enumerate the atoms in a plane within a chemical component. Example 1 - based on PDB entry 5HVP and laboratory records for the structure corresponding to PDB entry 5HVP. <PDBx:chem_comp_plane_atomCategory> <PDBx:chem_comp_plane_atom atom_id="CB" comp_id="phe" plane_id="phe1"></PDBx:chem_comp_plane_atom> <PDBx:chem_comp_plane_atom atom_id="CG" comp_id="phe" plane_id="phe1"></PDBx:chem_comp_plane_atom> <PDBx:chem_comp_plane_atom atom_id="CD1" comp_id="phe" plane_id="phe1"></PDBx:chem_comp_plane_atom> <PDBx:chem_comp_plane_atom atom_id="CE1" comp_id="phe" plane_id="phe1"></PDBx:chem_comp_plane_atom> <PDBx:chem_comp_plane_atom atom_id="CZ" comp_id="phe" plane_id="phe1"></PDBx:chem_comp_plane_atom> <PDBx:chem_comp_plane_atom atom_id="CE2" comp_id="phe" plane_id="phe1"></PDBx:chem_comp_plane_atom> <PDBx:chem_comp_plane_atom atom_id="CD2" comp_id="phe" plane_id="phe1"></PDBx:chem_comp_plane_atom> </PDBx:chem_comp_plane_atomCategory>
+-- xmlns: http://pdbml.pdb.org/schema/pdbx-v40.xsd (PDBx), schema location: pdbx-v40.xsd
+-- type: admin child, content: true, list: false, bridge: false, virtual: false
+--
+CREATE TABLE chem_comp_plane_atom (
+-- DOCUMENT KEY is pointer to data source (aka. Entry ID)
+	document_id TEXT ,
+-- omit an attribute having a fixed value: @units="angstroms"
+	dist_esd DECIMAL ,
+-- ATTRIBUTE
+	atom_id TEXT NOT NULL ,
+-- ATTRIBUTE
+	comp_id TEXT NOT NULL ,
+-- ATTRIBUTE
+	plane_id TEXT NOT NULL
 );
 
 --
@@ -11607,9 +11647,6 @@ CREATE TABLE valence_ref (
 	id TEXT NOT NULL
 );
 
--- (derived from xsd:unique[@name='struct_asymUnique_1'])
---ALTER TABLE struct_asym ADD CONSTRAINT UNQ_struct_asym UNIQUE ( document_id, entity_id, id );
-
 -- (derived from xsd:key[@name='atom_siteKey_0'])
 --ALTER TABLE atom_site ADD CONSTRAINT UNQ_atom_site UNIQUE ( document_id, id );
 
@@ -11673,11 +11710,17 @@ CREATE TABLE valence_ref (
 -- (derived from xsd:key[@name='chem_comp_chirKey_0'])
 --ALTER TABLE chem_comp_chir ADD CONSTRAINT UNQ_chem_comp_chir UNIQUE ( document_id, comp_id, id );
 
+-- (derived from xsd:key[@name='chem_comp_chir_atomKey_0'])
+--ALTER TABLE chem_comp_chir_atom ADD CONSTRAINT UNQ_chem_comp_chir_atom UNIQUE ( document_id, atom_id, chir_id, comp_id );
+
 -- (derived from xsd:key[@name='chem_comp_linkKey_0'])
 --ALTER TABLE chem_comp_link ADD CONSTRAINT UNQ_chem_comp_link UNIQUE ( document_id, link_id );
 
 -- (derived from xsd:key[@name='chem_comp_planeKey_0'])
 --ALTER TABLE chem_comp_plane ADD CONSTRAINT UNQ_chem_comp_plane UNIQUE ( document_id, comp_id, id );
+
+-- (derived from xsd:key[@name='chem_comp_plane_atomKey_0'])
+--ALTER TABLE chem_comp_plane_atom ADD CONSTRAINT UNQ_chem_comp_plane_atom UNIQUE ( document_id, atom_id, comp_id, plane_id );
 
 -- (derived from xsd:key[@name='chem_comp_torKey_0'])
 --ALTER TABLE chem_comp_tor ADD CONSTRAINT UNQ_chem_comp_tor UNIQUE ( document_id, comp_id, id );
@@ -12743,6 +12786,9 @@ CREATE TABLE valence_ref (
 
 -- (derived from xsd:key[@name='valence_refKey_0'])
 --ALTER TABLE valence_ref ADD CONSTRAINT UNQ_valence_ref UNIQUE ( document_id, id );
+
+-- (derived from xsd:unique[@name='struct_asymUnique_1'])
+--ALTER TABLE struct_asym ADD CONSTRAINT UNQ_struct_asym UNIQUE ( document_id, entity_id, id );
 
 -- (derived from xsd:keyref[@name='atom_sites_altKeyref_0_0_0_0'])
 --ALTER TABLE atom_sites_alt_gen ADD CONSTRAINT KR_atom_sites_altKeyref_0_0_0_0 FOREIGN KEY ( alt_id ) REFERENCES atom_sites_alt ( id ) ON DELETE CASCADE NOT VALID DEFERRABLE INITIALLY DEFERRED;
