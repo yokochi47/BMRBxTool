@@ -32176,6 +32176,7 @@ Escherichia coli
                            <xsd:enumeration value="Geobacter metallireducens"/>
                            <xsd:enumeration value="Hahella chejuensis"/>
                            <xsd:enumeration value="Helicobacter pylori"/>
+                           <xsd:enumeration value="Halobacterium salinarum"/>
                            <xsd:enumeration value="Hirsutella thompsonii"/>
                            <xsd:enumeration value="Histoplasma capsulatum"/>
                            <xsd:enumeration value="Homo sapiens"/>
