@@ -1,6 +1,6 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2019 Masashi Yokochi
+    Copyright 2013-2020 Masashi Yokochi
 
     https://github.com/yokochi47/BMRBxTool
 
@@ -4125,6 +4125,14 @@ public class BMSxTool_Java {
 
 							buffw.write("\t\tif (val_name != null)\n");
 							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_entity + ".getType(val_name);\n\n");
+
+						}
+
+						// item='polymer_common_type'
+						if (attr_name_lower.equals("polymer_common_type")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMSxTool_DOM.util_entity + ".getPolymerCommonType(val_name);\n\n");
 
 						}
 
