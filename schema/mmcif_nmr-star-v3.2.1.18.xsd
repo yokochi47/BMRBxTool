@@ -49412,7 +49412,8 @@ Items in the NMR_spectrometer category describe an NMR spectrometer used to coll
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Details"
+                                           xml:lang="en">
 
 A text description of the NMR spectrometer.
                         </xsd:documentation>
@@ -49420,7 +49421,8 @@ A text description of the NMR spectrometer.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="field_strength">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Field_strength"
+                                           xml:lang="en">
 
 Approximate strength of the magnetic field for the spectrometer as defined
 by the proton frequency of the instrument expressed in MHz.
@@ -49463,7 +49465,8 @@ by the proton frequency of the instrument expressed in MHz.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="manufacturer">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Manufacturer"
+                                           xml:lang="en">
 
 Name of the company or other entity that built the NMR spectrometer.
 
@@ -49488,7 +49491,8 @@ Bruker
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="model" type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Model"
+                                           xml:lang="en">
 
 The name or acronym used to describe the model of the spectrometer.
 
@@ -49514,7 +49518,8 @@ A name assigned to the save frame.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Serial_number"
+                                           xml:lang="en">
 
 Unique code assigned to a specific spectrometer by the manufacturer.
 
@@ -49527,7 +49532,8 @@ Unique code assigned to a specific spectrometer by the manufacturer.
                                name="sf_category"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Sf_category"
+                                           xml:lang="en">
 
 Category assigned to the information in the saveframe.
                         </xsd:documentation>
@@ -49538,7 +49544,8 @@ Category assigned to the information in the saveframe.
                                name="sf_framecode"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Sf_framecode"
+                                           xml:lang="en">
 
 A label that uniquely identifies the NMR spectrometer from other spectrometers
 listed in the entry.
@@ -49548,7 +49555,8 @@ listed in the entry.
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -49556,7 +49564,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer.ID"
+                                        xml:lang="en">
 
 A value that uniquely identifies the NMR spectrometer from other spectrometers
 listed in the entry.
@@ -49587,7 +49596,8 @@ Items in the NMR_spectrometer_citation category provide links to the citations c
                                name="citation_label"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_citation.Citation_label"
+                                           xml:lang="en">
 
 Pointer to a saveframe of the category citation.
                         </xsd:documentation>
@@ -49596,7 +49606,8 @@ Pointer to a saveframe of the category citation.
                </xsd:all>
                <xsd:attribute name="citation_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_citation.Citation_ID"
+                                        xml:lang="en">
 
 Pointer to '_Citation.ID'
                      </xsd:documentation>
@@ -49604,7 +49615,8 @@ Pointer to '_Citation.ID'
                </xsd:attribute>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_citation.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -49612,7 +49624,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="nmr_spectrometer_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_citation.NMR_spectrometer_ID"
+                                        xml:lang="en">
 
 Pointer to '_NMR_spectrometer.ID'
                      </xsd:documentation>
@@ -49652,7 +49665,8 @@ A name assigned to the save frame.
                                name="sf_category"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_list.Sf_category"
+                                           xml:lang="en">
 
 Category assigned to the information in the saveframe.
                         </xsd:documentation>
@@ -49663,7 +49677,8 @@ Category assigned to the information in the saveframe.
                                name="sf_framecode"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_list.Sf_framecode"
+                                           xml:lang="en">
 
 A label that uniquely identifies the NMR spectrometer from other spectrometers
 listed in the entry.
@@ -49673,7 +49688,8 @@ listed in the entry.
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_list.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -49681,7 +49697,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_list.ID"
+                                        xml:lang="en">
 
 A value that uniquely identifies the NMR spectrometer from other spectrometers
 listed in the entry.
@@ -49711,7 +49728,8 @@ Items in the NMR_spectrometer_probe category describe an NMR spectrometer probe.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Details"
+                                           xml:lang="en">
 
 Text information describing the NMR spectrometer probe.
                         </xsd:documentation>
@@ -49723,7 +49741,8 @@ Text information describing the NMR spectrometer probe.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Diameter"
+                                           xml:lang="en">
 
 The diameter of the probe bore.
                         </xsd:documentation>
@@ -49735,7 +49754,8 @@ The diameter of the probe bore.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Internal_volume"
+                                           xml:lang="en">
 
 The internal volume of the probe.
                         </xsd:documentation>
@@ -49743,7 +49763,8 @@ The internal volume of the probe.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="manufacturer">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Manufacturer"
+                                           xml:lang="en">
 
 Name of the company or other entity that built the NMR probe.
                         </xsd:documentation>
@@ -49762,7 +49783,8 @@ Name of the company or other entity that built the NMR probe.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="model" type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Model"
+                                           xml:lang="en">
 
 The name or acronym used to describe the model of the probe.
                         </xsd:documentation>
@@ -49786,7 +49808,8 @@ A name assigned to the save frame.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Rotor_composition"
+                                           xml:lang="en">
 
 Chemical composition of the rotor used in the probe.
                         </xsd:documentation>
@@ -49798,7 +49821,8 @@ Chemical composition of the rotor used in the probe.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Rotor_length"
+                                           xml:lang="en">
 
 Length of the rotor used in the probe.
                         </xsd:documentation>
@@ -49810,7 +49834,8 @@ Length of the rotor used in the probe.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Serial_number"
+                                           xml:lang="en">
 
 Unique code assigned to a specific probe by the manufacturer.
                         </xsd:documentation>
@@ -49821,7 +49846,8 @@ Unique code assigned to a specific probe by the manufacturer.
                                name="sf_category"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Sf_category"
+                                           xml:lang="en">
 
 Category assigned to the information in the saveframe.
                         </xsd:documentation>
@@ -49832,7 +49858,8 @@ Category assigned to the information in the saveframe.
                                name="sf_framecode"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Sf_framecode"
+                                           xml:lang="en">
 
 A label that uniquely identifies the probe from other probes listed in
 the entry.
@@ -49844,7 +49871,8 @@ the entry.
                                name="spacer_present"
                                nillable="true">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Spacer_present"
+                                           xml:lang="en">
 
 A code indicating the presence of a spacer in the probe.
                         </xsd:documentation>
@@ -49859,7 +49887,8 @@ A code indicating the presence of a spacer in the probe.
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -49867,7 +49896,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe.ID"
+                                        xml:lang="en">
 
 A value that uniquely identifies the NMR probe from other probes listed
 in the entry.
@@ -49898,7 +49928,8 @@ Items in the NMR_spectrometer_probe_citation category provide pointers to the ci
                                name="citation_label"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe_citation.Citation_label"
+                                           xml:lang="en">
 
 Pointer to a saveframe of the category citation.
                         </xsd:documentation>
@@ -49907,7 +49938,8 @@ Pointer to a saveframe of the category citation.
                </xsd:all>
                <xsd:attribute name="citation_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe_citation.Citation_ID"
+                                        xml:lang="en">
 
 Pointer to '_Citation.ID'
                      </xsd:documentation>
@@ -49915,7 +49947,8 @@ Pointer to '_Citation.ID'
                </xsd:attribute>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe_citation.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -49923,7 +49956,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="nmr_spectrometer_probe_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_probe_citation.NMR_spectrometer_probe_ID"
+                                        xml:lang="en">
 
 Pointer to '_NMR_spectrometer_probe.ID'
                      </xsd:documentation>
@@ -49951,7 +49985,8 @@ Items in the NMR_spectrometer_view category provide a list of NMR spectrometers 
                                name="citation_id"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Citation_ID"
+                                           xml:lang="en">
 
 Pointer to '_Citation.ID'
                         </xsd:documentation>
@@ -49963,7 +49998,8 @@ Pointer to '_Citation.ID'
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Citation_label"
+                                           xml:lang="en">
 
 Pointer to a saveframe of the category citation.
                         </xsd:documentation>
@@ -49975,7 +50011,8 @@ Pointer to a saveframe of the category citation.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Details"
+                                           xml:lang="en">
 
 A text description of the NMR spectrometer.
                         </xsd:documentation>
@@ -49983,7 +50020,8 @@ A text description of the NMR spectrometer.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="field_strength">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Field_strength"
+                                           xml:lang="en">
 
 Approximate strength of the magnetic field for the spectrometer as defined
 by the proton frequency of the instrument expressed in MHz.
@@ -50025,7 +50063,8 @@ by the proton frequency of the instrument expressed in MHz.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="manufacturer">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Manufacturer"
+                                           xml:lang="en">
 
 Name of the company or other entity that built the NMR spectrometer.
 
@@ -50050,7 +50089,8 @@ Bruker
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="model" type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Model"
+                                           xml:lang="en">
 
 The name or acronym used to describe the model of the spectrometer.
 
@@ -50064,7 +50104,8 @@ DMX
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Serial_number"
+                                           xml:lang="en">
 
 Unique code assigned to a specific spectrometer by the manufacturer.
 
@@ -50075,7 +50116,8 @@ Unique code assigned to a specific spectrometer by the manufacturer.
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -50083,7 +50125,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.ID"
+                                        xml:lang="en">
 
 An integer value that uniquely identifies one NMR spectrometer from the
 others in the table within an entry.
@@ -50092,7 +50135,8 @@ others in the table within an entry.
                </xsd:attribute>
                <xsd:attribute name="name" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.Name"
+                                        xml:lang="en">
 
 A unique name for the NMR spectrometer needs to be entered to make it possible
 to reference the spectromer in later sections of the deposition.
@@ -50103,7 +50147,8 @@ spectrometer 1
                </xsd:attribute>
                <xsd:attribute name="nmr_spectrometer_list_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_NMR_spectrometer_view.NMR_spectrometer_list_ID"
+                                        xml:lang="en">
 
 Pointer to '_NMR_spectrometer_list.ID'
                      </xsd:documentation>
@@ -50127,7 +50172,8 @@ Items in the observed_conformer category define the individual conformer(s) wher
             <xsd:complexType>
                <xsd:attribute name="atom_site_model_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Observed_conformer.Atom_site_model_ID"
+                                        xml:lang="en">
 
 Pointer to '_Atom_site.Model_ID'
                      </xsd:documentation>
@@ -50137,7 +50183,8 @@ Pointer to '_Atom_site.Model_ID'
                               type="xsd:int"
                               use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Observed_conformer.Conformer_family_coord_set_ID"
+                                        xml:lang="en">
 
 Pointer to '_Conformer_family_coord_set.ID'
                      </xsd:documentation>
@@ -50145,7 +50192,8 @@ Pointer to '_Conformer_family_coord_set.ID'
                </xsd:attribute>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Observed_conformer.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -50153,7 +50201,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="structure_interaction_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Observed_conformer.Structure_interaction_ID"
+                                        xml:lang="en">
 
 Pointer to '_Structure_interaction.ID'
                      </xsd:documentation>
@@ -50163,7 +50212,8 @@ Pointer to '_Structure_interaction.ID'
                               type="xsd:int"
                               use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Observed_conformer.Structure_interaction_list_ID"
+                                        xml:lang="en">
 
 Pointer to '_Structure_interaction_list.ID'
                      </xsd:documentation>
@@ -50191,7 +50241,8 @@ Items in the order_param category describe the order parameter values assigned t
                                name="assembly_atom_id"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Assembly_atom_ID"
+                                           xml:lang="en">
 
 Pointer to '_Atom.Assembly_atom_ID'
                         </xsd:documentation>
@@ -50199,7 +50250,8 @@ Pointer to '_Atom.Assembly_atom_ID'
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="atom_id" type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Atom_ID"
+                                           xml:lang="en">
 
 Pointer to '_Chem_comp_atom.Atom_ID'
                         </xsd:documentation>
@@ -50211,7 +50263,8 @@ Pointer to '_Chem_comp_atom.Atom_ID'
                                nillable="true"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Atom_isotope_number"
+                                           xml:lang="en">
 
 The mass number for the chemical element defined by the tag '_Atom_type'
 or any of its related tags.
@@ -50220,7 +50273,8 @@ or any of its related tags.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="atom_type" type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Atom_type"
+                                           xml:lang="en">
 
 The value for this tag is a standard IUPAC abbreviation for an element
 (i.e., H, C, P, etc).
@@ -50233,7 +50287,8 @@ The value for this tag is a standard IUPAC abbreviation for an element
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Auth_atom_ID"
+                                           xml:lang="en">
 
 An alternative identifier for Atom_ID that may be provided by an author
 in order to match that used in the publication that describes the experimental data.
@@ -50248,7 +50303,8 @@ HB1
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Auth_comp_ID"
+                                           xml:lang="en">
 
 An alternative identifier for Comp_ID that may be provided by an author
 in order to match that used in the publication that describes the experimental data.
@@ -50263,7 +50319,8 @@ DPN
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Auth_entity_assembly_ID"
+                                           xml:lang="en">
 
 An alternative identifier for Entity_assembly_ID that may be provided by
 an author in order to match that used in the publication that describes the experimental
@@ -50278,7 +50335,8 @@ need to correspond to the value for Entity_assembly_ID.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Auth_seq_ID"
+                                           xml:lang="en">
 
 An alternative identifier for Seq_ID that may be provided by an author
 in order to match that used in the publication that describes the experimental data.
@@ -50291,7 +50349,8 @@ to the value for Seq_ID or Comp_index_ID.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="1" name="comp_id" type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Comp_ID"
+                                           xml:lang="en">
 
 Pointer to '_Chem_comp.ID'
                         </xsd:documentation>
@@ -50302,7 +50361,8 @@ Pointer to '_Chem_comp.ID'
                                name="comp_index_id"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Comp_index_ID"
+                                           xml:lang="en">
 
 Pointer to '_Entity_comp_index.ID'
                         </xsd:documentation>
@@ -50313,7 +50373,8 @@ Pointer to '_Entity_comp_index.ID'
                                name="entity_assembly_id"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Entity_assembly_ID"
+                                           xml:lang="en">
 
 Pointer to '_Entity_assembly.ID'
                         </xsd:documentation>
@@ -50321,7 +50382,8 @@ Pointer to '_Entity_assembly.ID'
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="0" name="entity_id" type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Entity_ID"
+                                           xml:lang="en">
 
 Pointer to '_Entity.ID'
                         </xsd:documentation>
@@ -50333,7 +50395,8 @@ Pointer to '_Entity.ID'
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Model_fit"
+                                           xml:lang="en">
 
 The model used to fit the experimental data.
                         </xsd:documentation>
@@ -50345,7 +50408,8 @@ The model used to fit the experimental data.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Model_free_sum_squared_errs"
+                                           xml:lang="en">
 
 The sum of the squared errors from a fit of the data using the 'Model-Free'
 software package.
@@ -50357,7 +50421,8 @@ software package.
                                name="order_param_val"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Order_param_val"
+                                           xml:lang="en">
 
 The value for the fitted order parameter.
                         </xsd:documentation>
@@ -50369,7 +50434,8 @@ The value for the fitted order parameter.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Order_param_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted order parameter value.
                         </xsd:documentation>
@@ -50380,7 +50446,8 @@ The estimated error in the fitted order parameter value.
                                name="resonance_id"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Resonance_ID"
+                                           xml:lang="en">
 
 Pointer to '_Resonance.ID'
                         </xsd:documentation>
@@ -50392,7 +50459,8 @@ Pointer to '_Resonance.ID'
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Rex_val"
+                                           xml:lang="en">
 
 The exchange broadening contribution value.
                         </xsd:documentation>
@@ -50404,7 +50472,8 @@ The exchange broadening contribution value.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Rex_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted exchange broadening contribution value.
                         </xsd:documentation>
@@ -50412,7 +50481,8 @@ The estimated error in the fitted exchange broadening contribution value.
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="0" name="seq_id" type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Seq_ID"
+                                           xml:lang="en">
 
 Pointer to '_Entity_poly_seq.Num'
                         </xsd:documentation>
@@ -50424,7 +50494,8 @@ Pointer to '_Entity_poly_seq.Num'
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Sf2_val"
+                                           xml:lang="en">
 
 The value for the fitted order parameter for the 'fast' motion in the molecule.
                         </xsd:documentation>
@@ -50436,7 +50507,8 @@ The value for the fitted order parameter for the 'fast' motion in the molecule.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Sf2_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted order parameter for the 'fast' motion
 in the molecule.
@@ -50449,7 +50521,8 @@ in the molecule.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.SH2_val"
+                                           xml:lang="en">
 
 The value for the fitted order parameter value for a hydrogen atom.
                         </xsd:documentation>
@@ -50461,7 +50534,8 @@ The value for the fitted order parameter value for a hydrogen atom.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.SH2_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted order parameter value for a hydrogen atom.
                         </xsd:documentation>
@@ -50473,7 +50547,8 @@ The estimated error in the fitted order parameter value for a hydrogen atom.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.SN2_val"
+                                           xml:lang="en">
 
 The value for the fitted order parameter value for a nitrogen atom.
                         </xsd:documentation>
@@ -50485,7 +50560,8 @@ The value for the fitted order parameter value for a nitrogen atom.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.SN2_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted order parameter value for a nitrogen atom.
                         </xsd:documentation>
@@ -50497,7 +50573,8 @@ The estimated error in the fitted order parameter value for a nitrogen atom.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Ss2_val"
+                                           xml:lang="en">
 
 The value for the fitted order parameter for the 'slow' motion in the molecule.
                         </xsd:documentation>
@@ -50509,7 +50586,8 @@ The value for the fitted order parameter for the 'slow' motion in the molecule.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Ss2_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted order parameter for the 'slow' motion
 in the molecule.
@@ -50522,7 +50600,8 @@ in the molecule.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Tau_e_val"
+                                           xml:lang="en">
 
 The value of the effective correlation time for the atom.
                         </xsd:documentation>
@@ -50534,7 +50613,8 @@ The value of the effective correlation time for the atom.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Tau_e_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted effective correlation time value.
                         </xsd:documentation>
@@ -50546,7 +50626,8 @@ The estimated error in the fitted effective correlation time value.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Tau_f_val"
+                                           xml:lang="en">
 
 ?
                         </xsd:documentation>
@@ -50558,7 +50639,8 @@ The estimated error in the fitted effective correlation time value.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Tau_f_val_fit_err"
+                                           xml:lang="en">
 
 ?
                         </xsd:documentation>
@@ -50570,7 +50652,8 @@ The estimated error in the fitted effective correlation time value.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Tau_s_val"
+                                           xml:lang="en">
 
 The value for the fitted effective correlation time value for the 'slow'
 motion in the molecule.
@@ -50583,7 +50666,8 @@ motion in the molecule.
                                nillable="true"
                                type="xsd:decimal">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Tau_s_val_fit_err"
+                                           xml:lang="en">
 
 The estimated error in the fitted effective correlation time value for
 the the 'slow' motion in the molecule.
@@ -50593,7 +50677,8 @@ the the 'slow' motion in the molecule.
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -50601,7 +50686,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.ID"
+                                        xml:lang="en">
 
 Unique identifier for the observed order parameter value.
                      </xsd:documentation>
@@ -50609,7 +50695,8 @@ Unique identifier for the observed order parameter value.
                </xsd:attribute>
                <xsd:attribute name="order_parameter_list_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_param.Order_parameter_list_ID"
+                                        xml:lang="en">
 
 Pointer to '_Order_parameter_list.ID'
                      </xsd:documentation>
@@ -50639,7 +50726,8 @@ Items in the order_parameter_experiment category provide pointers to the NMR exp
                                name="experiment_name"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_experiment.Experiment_name"
+                                           xml:lang="en">
 
 Pointer to a saveframe of the category 'NMR_spectrometer_expt'
                         </xsd:documentation>
@@ -50647,7 +50735,8 @@ Pointer to a saveframe of the category 'NMR_spectrometer_expt'
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="0" name="sample_id" type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_experiment.Sample_ID"
+                                           xml:lang="en">
 
 Pointer to '_Sample.ID'
                         </xsd:documentation>
@@ -50659,7 +50748,8 @@ Pointer to '_Sample.ID'
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_experiment.Sample_label"
+                                           xml:lang="en">
 
 Pointer to a saveframe of the category 'sample'
                         </xsd:documentation>
@@ -50667,7 +50757,8 @@ Pointer to a saveframe of the category 'sample'
                   </xsd:element>
                   <xsd:element maxOccurs="1" minOccurs="0" name="sample_state" nillable="true">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_experiment.Sample_state"
+                                           xml:lang="en">
 
 Physical state of the sample either anisotropic or isotropic.
                         </xsd:documentation>
@@ -50683,7 +50774,8 @@ Physical state of the sample either anisotropic or isotropic.
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_experiment.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -50691,7 +50783,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="experiment_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_experiment.Experiment_ID"
+                                        xml:lang="en">
 
 Pointer to '_Experiment.ID'
                      </xsd:documentation>
@@ -50699,7 +50792,8 @@ Pointer to '_Experiment.ID'
                </xsd:attribute>
                <xsd:attribute name="order_parameter_list_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_experiment.Order_parameter_list_ID"
+                                        xml:lang="en">
 
 Pointer to '_Order_parameter_list.ID'
                      </xsd:documentation>
@@ -50728,7 +50822,8 @@ Items in the order_parameter_list category provide information about a list of r
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Details"
+                                           xml:lang="en">
 
 Text describing the reported order parameter values.
                         </xsd:documentation>
@@ -50752,7 +50847,8 @@ A name assigned to the save frame.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Rex_field_strength"
+                                           xml:lang="en">
 
 1H spectrometer field strength at which Rex values have been measured.
 
@@ -50765,7 +50861,8 @@ A name assigned to the save frame.
                                name="rex_val_units"
                                nillable="true">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Rex_val_units"
+                                           xml:lang="en">
 
 The units for the reported R exchange values.
 
@@ -50785,7 +50882,8 @@ ms; us
                                name="sample_condition_list_id"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Sample_condition_list_ID"
+                                           xml:lang="en">
 
 Pointer to '_Sample_condition_list.ID'
                         </xsd:documentation>
@@ -50796,7 +50894,8 @@ Pointer to '_Sample_condition_list.ID'
                                name="sample_condition_list_label"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Sample_condition_list_label"
+                                           xml:lang="en">
 
 The label for the set of experimental sample conditions used to collect
 the data for determination of the order parameters.
@@ -50808,7 +50907,8 @@ the data for determination of the order parameters.
                                name="sf_category"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Sf_category"
+                                           xml:lang="en">
 
 Category definition for the information content of the saveframe
                         </xsd:documentation>
@@ -50819,7 +50919,8 @@ Category definition for the information content of the saveframe
                                name="sf_framecode"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Sf_framecode"
+                                           xml:lang="en">
 
 A label for the saveframe that describes in very brief terms the information
 contained in the saveframe.
@@ -50831,7 +50932,8 @@ contained in the saveframe.
                                name="tau_e_val_units"
                                nillable="true">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Tau_e_val_units"
+                                           xml:lang="en">
 
 The units for the effective correlation time of the molecule.
 
@@ -50853,7 +50955,8 @@ ps; ns
                                name="tau_f_val_units"
                                nillable="true">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Tau_f_val_units"
+                                           xml:lang="en">
 
 The units for the correlation time representing fast internal motions of
 the molecule.
@@ -50876,7 +50979,8 @@ ps; ns
                                name="tau_s_val_units"
                                nillable="true">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Tau_s_val_units"
+                                           xml:lang="en">
 
 The units for the correlation time representing slow internal motions of
 the molecule.
@@ -50900,7 +51004,8 @@ ps; ns
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Text_data"
+                                           xml:lang="en">
 
 A set of order parameter data formatted as ASCII text.
                         </xsd:documentation>
@@ -50912,7 +51017,8 @@ A set of order parameter data formatted as ASCII text.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Text_data_format"
+                                           xml:lang="en">
 
 The data format used to represent the order parameter data as ASCII text
 in the text block that is the value to the '_Order_parameter_list.Text_data' tag.
@@ -50922,7 +51028,8 @@ in the text block that is the value to the '_Order_parameter_list.Text_data' tag
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -50930,7 +51037,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_list.ID"
+                                        xml:lang="en">
 
 Unique identifier for the list of reported order parameter values.
                      </xsd:documentation>
@@ -50955,7 +51063,8 @@ Items in the order_parameter_software category provide pointers to the software 
                <xsd:all>
                   <xsd:element maxOccurs="1" minOccurs="0" name="method_id" type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_software.Method_ID"
+                                           xml:lang="en">
 
 Pointer to '_Method.ID'
                         </xsd:documentation>
@@ -50967,7 +51076,8 @@ Pointer to '_Method.ID'
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_software.Method_label"
+                                           xml:lang="en">
 
 Pointer to a saveframe of the category 'method'
                         </xsd:documentation>
@@ -50978,7 +51088,8 @@ Pointer to a saveframe of the category 'method'
                                name="software_label"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_software.Software_label"
+                                           xml:lang="en">
 
 Pointer to a saveframe of the category 'software'
                         </xsd:documentation>
@@ -50987,7 +51098,8 @@ Pointer to a saveframe of the category 'software'
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_software.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -50995,7 +51107,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="order_parameter_list_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_software.Order_parameter_list_ID"
+                                        xml:lang="en">
 
 Pointer to '_Order_parameter_list.ID'
                      </xsd:documentation>
@@ -51003,7 +51116,8 @@ Pointer to '_Order_parameter_list.ID'
                </xsd:attribute>
                <xsd:attribute name="software_id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Order_parameter_software.Software_ID"
+                                        xml:lang="en">
 
 Pointer to '_Software.ID'
                      </xsd:documentation>
@@ -51032,7 +51146,8 @@ NOT AVAILABLE
                                nillable="true"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.Block_ID"
+                                           xml:lang="en">
 
 Pointer to '_Constraint_file.Block_ID'
                         </xsd:documentation>
@@ -51044,7 +51159,8 @@ Pointer to '_Constraint_file.Block_ID'
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.Comment"
+                                           xml:lang="en">
 
 A comment extracted from an original constraint file.
                         </xsd:documentation>
@@ -51056,7 +51172,8 @@ A comment extracted from an original constraint file.
                                nillable="true"
                                type="xsd:int">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.Constraint_file_ID"
+                                           xml:lang="en">
 
 Pointer to '_Constraint_file.ID'
                         </xsd:documentation>
@@ -51068,7 +51185,8 @@ Pointer to '_Constraint_file.ID'
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.Details"
+                                           xml:lang="en">
 
 Text describing the comment or the significance of the listed comment.
                         </xsd:documentation>
@@ -51080,7 +51198,8 @@ Text describing the comment or the significance of the listed comment.
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.Sf_category"
+                                           xml:lang="en">
 
 Category definition for the information content of the saveframe
                         </xsd:documentation>
@@ -51092,7 +51211,8 @@ Category definition for the information content of the saveframe
                                nillable="true"
                                type="xsd:string">
                      <xsd:annotation>
-                        <xsd:documentation xml:lang="en">
+                        <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.Sf_framecode"
+                                           xml:lang="en">
 
 A label for the saveframe that describes in very brief terms the information
 contained in the saveframe.
@@ -51102,7 +51222,8 @@ contained in the saveframe.
                </xsd:all>
                <xsd:attribute name="entry_id" type="xsd:string" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.Entry_ID"
+                                        xml:lang="en">
 
 Pointer to '_Entry.ID'
                      </xsd:documentation>
@@ -51110,7 +51231,8 @@ Pointer to '_Entry.ID'
                </xsd:attribute>
                <xsd:attribute name="id" type="xsd:int" use="required">
                   <xsd:annotation>
-                     <xsd:documentation xml:lang="en">
+                     <xsd:documentation source="http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_Org_constr_file_comment.ID"
+                                        xml:lang="en">
 
 Local unique identifier for the listed comment.
                      </xsd:documentation>
@@ -70922,6 +71044,7 @@ caused by the long spin-lock pulse.
                            <xsd:enumeration value="temperature compensation block"/>
                            <xsd:enumeration value="single scan interleaving and temperature compensation block"/>
                            <xsd:enumeration value="no temperature control applied"/>
+                           <xsd:enumeration value="na"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
@@ -75215,6 +75338,7 @@ caused by the long spin-lock pulse.
                            <xsd:enumeration value="single scan interleaving"/>
                            <xsd:enumeration value="temperature compensation block"/>
                            <xsd:enumeration value="no temperature control applied"/>
+                           <xsd:enumeration value="na"/>
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>

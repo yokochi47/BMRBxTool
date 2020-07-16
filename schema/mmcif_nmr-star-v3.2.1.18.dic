@@ -68899,6 +68899,8 @@ caused by the long spin-lock pulse.
    'single scan interleaving'    ?
    'temperature compensation block'    ?
    'no temperature control applied'    ?
+# BMRB/XML: Added na.
+   na    ?
 
    stop_
 
@@ -71026,6 +71028,8 @@ caused by the long spin-lock pulse.
    'temperature compensation block'    ?
    'single scan interleaving and temperature compensation block'    ?
    'no temperature control applied'    ?
+# BMRB/XML: Added na.
+   na    ?
 
    stop_
 
