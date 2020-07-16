@@ -5559,7 +5559,7 @@ CREATE TABLE entity_keyword (
 DROP TYPE IF EXISTS ENUM_entity_natural_src_common CASCADE;
 CREATE TYPE ENUM_entity_natural_src_common AS ENUM ( 'yes', 'no' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_kingdom CASCADE;
-CREATE TYPE ENUM_entity_natural_src_kingdom AS ENUM ( 'Metazoa', 'Fungi', 'Viridiplantae', 'Protista', 'Not applicable' );
+CREATE TYPE ENUM_entity_natural_src_kingdom AS ENUM ( 'Metazoa', 'Fungi', 'Viridiplantae', 'Protista', 'Orthornavirae', 'Pararnavirae', 'Not applicable' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_organ CASCADE;
 CREATE TYPE ENUM_entity_natural_src_organ AS ENUM ( 'brain', 'heart', 'intestine', 'kidney', 'liver', 'lung', 'pancreas', 'skin', 'testicle', 'leaf', 'venom gland', 'oral mucosa submandibular-sublingual glands', 'salivary glands', 'oocyte', 'breast', 'stomach', 'electric organ', 'eye', 'ileum', 'small intestine', 'seed', 'blood', 'duodendum', 'jejunum', 'vulva', 'hepatopancreas', 'placenta', 'skeletal muscle', 'aorta', 'telson', 'ubiquitous', 'aciniform gland', 'endoskeleton', 'heamolymph', 'mucous epithelium', 'cardiac skeletal muscle', 'seminal vesicles', 'antennae', 'fruit', 'thymus', 'egg white', 'na' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_organelle CASCADE;
@@ -11854,7 +11854,7 @@ CREATE TYPE ENUM_theoretical_auto_relaxation_list_relaxation_val_units AS ENUM (
 DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_rex_units CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_rex_units AS ENUM ( 's-1', 'ms-1', 'us-1' );
 DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_calibration_method CASCADE;
-CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied' );
+CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied', 'na' );
 DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_control_method CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'single scan interleaving and temperature compensation block', 'no temperature control applied' );
 CREATE TABLE theoretical_auto_relaxation_list (
@@ -12446,7 +12446,7 @@ CREATE TYPE ENUM_theoretical_heteronucl_t2_list_t2_coherence_type AS ENUM ( 'I(+
 DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_t2_val_units CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_t2_val_units AS ENUM ( 's-1', 'ms-1', 's', 'ms' );
 DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_calibration_method CASCADE;
-CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied' );
+CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied', 'na' );
 DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_control_method CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'no temperature control applied' );
 CREATE TABLE theoretical_heteronucl_t2_list (
