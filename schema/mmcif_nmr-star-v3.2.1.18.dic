@@ -20478,6 +20478,8 @@ Kingdom classifications for an organism as defined by NCBI taxonomists.
    Fungi    ?
    Viridiplantae    ?
    Protista    ?
+   Orthornavirae    ?
+   Pararnavirae    ?
    'Not applicable'    ?
 
    stop_
@@ -68868,6 +68870,8 @@ to collect the experimental data.
    methanol    ?
    'monoethylene glycol'    ?
    'no calibration applied'    ?
+# BMRB/XML: Added na.
+   na    ?
 
    stop_
 
@@ -70992,6 +70996,8 @@ to collect the experimental data.
    methanol    MeOH
    'monoethylene glycol'    MEG
    'no calibration applied'    ?
+# BMRB/XML: Added na.
+   na    ?
 
    stop_
 
