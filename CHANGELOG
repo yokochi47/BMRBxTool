@@ -9,6 +9,7 @@
   Added remediation for '_heteronucl_t1rho_list.temp_control_method'.
   Added remediation for '_theoretical_heteronucl_t1_list.t1_coherence_type'.
   Added remediation for '_theoretical_heteronucl_t2_list.temp_calibration_method'.
+  Added remediation for '_theoretical_heteronucl_t2_list.temp_control_method'.
   Updated BMRB/JSON Schema.
 
  Changes in BMRBxTool 1.33.0 (release 2019-02-01)
