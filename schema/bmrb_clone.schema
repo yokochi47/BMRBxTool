@@ -11856,7 +11856,7 @@ CREATE TYPE ENUM_theoretical_auto_relaxation_list_rex_units AS ENUM ( 's-1', 'ms
 DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_calibration_method CASCADE;
 CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied', 'na' );
 DROP TYPE IF EXISTS ENUM_theoretical_auto_relaxation_list_temp_control_method CASCADE;
-CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'single scan interleaving and temperature compensation block', 'no temperature control applied' );
+CREATE TYPE ENUM_theoretical_auto_relaxation_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'single scan interleaving and temperature compensation block', 'no temperature control applied', 'na' );
 CREATE TABLE theoretical_auto_relaxation_list (
 	common_relaxation_type_name ENUM_theoretical_auto_relaxation_list_common_relaxation_type_na ,
 	details TEXT ,
@@ -12448,7 +12448,7 @@ CREATE TYPE ENUM_theoretical_heteronucl_t2_list_t2_val_units AS ENUM ( 's-1', 'm
 DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_calibration_method CASCADE;
 CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_calibration_method AS ENUM ( 'methanol', 'monoethylene glycol', 'no calibration applied', 'na' );
 DROP TYPE IF EXISTS ENUM_theoretical_heteronucl_t2_list_temp_control_method CASCADE;
-CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'no temperature control applied' );
+CREATE TYPE ENUM_theoretical_heteronucl_t2_list_temp_control_method AS ENUM ( 'single scan interleaving', 'temperature compensation block', 'no temperature control applied', 'na' );
 CREATE TABLE theoretical_heteronucl_t2_list (
 	details TEXT ,
 	name TEXT ,
