@@ -13,12 +13,13 @@ source ../scripts/db-user.sh
 BMRB_DB=bmrb
 MTBL_DB=metabolomics
 
-BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
 DUMP_PATH=ftp/pub/bmrb/relational_tables
 
 psql -U $DB_USER -l | grep $BMRB_DB > /dev/null || ( echo "database \"$BMRB_DB\" does not exist." && exit 1 )
 
 psql -U $DB_USER -l | grep $MTBL_DB > /dev/null || ( echo "database \"$MTBL_DB\" does not exist." && exit 1 )
+
+BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org") # "bmrb.cerm.unifi.it")
 
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"
@@ -61,7 +62,7 @@ do
 done
 
 echo
-echo "$BMRB_MIRROR is selected by default. OK (1/2/3/n [y]) ? "
+echo "$BMRB_MIRROR is selected by default. OK (1/2/n [y]) ? "
 
 read ans
 
@@ -71,15 +72,8 @@ case $ans in
   exit 1;;
  1) BMRB_MIRROR=${BMRB_MIRRORS[0]};;
  2) BMRB_MIRROR=${BMRB_MIRRORS[1]};;
- 3) BMRB_MIRROR=${BMRB_MIRRORS[2]};;
  *) ;;
 esac
-
-if [ -e url_mirror ] ; then
-
- BMRB_MIRROR=`cat url_mirror`
-
-fi
 
 rm -rf $DUMP_PATH
 

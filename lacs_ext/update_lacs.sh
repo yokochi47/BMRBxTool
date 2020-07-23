@@ -10,7 +10,7 @@ fi
 
 source ../scripts/db-user.sh
 
-BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
+BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org") # "bmrb.cerm.unifi.it")
 
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"
@@ -29,7 +29,7 @@ do
 
   printf "[%d] %s\t\t%6.1f\n" $i $url $time
 
-  cmp=`echo "$time > $delay" | bc`
+  cmp=`echo "$time > $delay" | bc 2> /dev/null`
 
   if [ "$cmp" = 0 ] ; then
 
