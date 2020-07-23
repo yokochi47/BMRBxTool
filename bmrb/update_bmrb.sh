@@ -40,8 +40,16 @@ do
   cmp=`echo "$time > $delay" | bc`
 
   if [ $cmp = 0 ] ; then
-   BMRB_MIRROR=$url
-   delay=$time
+
+   server_alive=`curl -I $url -m 5`
+
+   if [ $? == 0 ] ; then
+
+    BMRB_MIRROR=$url
+    delay=$time
+
+   fi
+
   fi
 
  else
@@ -66,8 +74,6 @@ case $ans in
  3) BMRB_MIRROR=${BMRB_MIRRORS[2]};;
  *) ;;
 esac
-
-echo $BMRB_MIRROR > ../lacs_ext/url_mirror
 
 if [ -e url_mirror ] ; then
 

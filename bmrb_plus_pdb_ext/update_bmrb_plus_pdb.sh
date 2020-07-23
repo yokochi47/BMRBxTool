@@ -5,17 +5,51 @@ MAXPROCS=`cat /proc/cpuinfo | grep 'cpu cores' | uniq | sed 's/\s//g' | cut -d '
 
 source ../scripts/db-user.sh
 
-url_mirror=bmrb.pdbj.org
+BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
 
-if [ -e url_mirror ] ; then
+printf "    BMRB mirror sites\t\t delay [ms]\n"
+echo "-------------------------------------------"
 
- url_mirror=`cat url_mirror`
+BMRB_MIRROR=${BMRB_MIRRORS[0]}
 
-fi
+delay=10000
+i=1
+
+for url in ${BMRB_MIRRORS[@]}
+do
+
+ time=`ping -c 1 -w 10 $url | grep 'avg' | cut -d '=' -f 2 | cut -d '/' -f 2`
+
+ if [ $? = 0 ] ; then
+
+  printf "[%d] %s\t\t%6.1f\n" $i $url $time
+
+  cmp=`echo "$time > $delay" | bc`
+
+  if [ $cmp = 0 ] ; then
+
+   server_alive=`curl -I $url -m 5`
+
+   if [ $? == 0 ] ; then
+
+    BMRB_MIRROR=$url
+    delay=$time
+
+   fi
+
+  fi
+
+ else
+  echo $url: timed out.
+ fi
+
+ let i++
+
+done
 
 DUMP_PATH=ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts
 DB_NAME=bmrb_plus_pdb
-DB_FTP=http://$url_mirror/$DUMP_PATH/$DB_NAME/
+DB_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$DB_NAME/
 
 wget -c -m -nv -np $DB_FTP -nH -A *.str
 
