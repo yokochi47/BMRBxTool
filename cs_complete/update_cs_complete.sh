@@ -64,7 +64,7 @@ psql -U $DB_USER -l | grep $BMRB_DB > /dev/null || ( echo "database \"$BMRB_DB\"
 
 psql -d $BMRB_DB -U $DB_USER -f schema.cs_complete.sql
 
-java -classpath ../cs-complete.jar:../extlibs/* CS_complete --user-bmrb $DB_USER --url-mirror $BMRB_MIRROR
+java -classpath ../cs-complete.jar:../extlibs/* CS_complete --user-bmrb $DB_USER
 
 echo
 
