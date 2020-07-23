@@ -16,6 +16,7 @@ limitations under the License.
  */
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.KeyManagementException;
@@ -87,7 +88,9 @@ public class bmr_Util_Main {
 	public static List<alternative_atom> dna_alt_atom = null;
 	public static List<alternative_atom> rna_alt_atom = null;
 
-	public static final String url_src = "https://bmrb.pdbj.org/ftp/pub/bmrb/statistics/chem_shifts/";
+	public static String url_mirror = "bmrb.pdbj.org";
+	public static String url_src = "";
+	public static final String url_src_ = "/ftp/pub/bmrb/statistics/chem_shifts/";
 	public static final String aa_filt_csv = "aa_filt.csv";
 	public static final String dna_filt_csv = "dna_filt.csv";
 	public static final String rna_filt_csv = "rna_filt.csv";
@@ -127,6 +130,9 @@ public class bmr_Util_Main {
 			else if (args[i].equals("--pass-bmrb"))
 				pass_bmrb = args[++i];
 
+			else if (args[i].equals("--url-mirror"))
+				url_mirror = args[++i];
+
 			else if (args[i].equals("--max-thrds")) {
 				max_thrds = Integer.valueOf(args[++i]);
 
@@ -143,6 +149,7 @@ public class bmr_Util_Main {
 				System.out.println(" --url-bmrb  BMRB : URL of BMRB database. (" + url_bmrb + ")");
 				System.out.println(" --user-bmrb USER : Username of BMRB database.");
 				System.out.println(" --pass-bmrb WORD : Password of BMRB database.");
+				System.out.println(" --url-mirror URL : URL of BMRB mirror site. (" + url_mirror + ")");
 				System.out.println(" --max-thrds PROC : Number of threads. (default is number of processores)");
 
 				System.exit(1);
@@ -186,6 +193,11 @@ public class bmr_Util_Main {
 			}
 
 		}
+
+		if (url_mirror.equals("bmrb.pdbj.org"))
+			url_src  = "https://" + url_mirror + url_src_;
+		else
+			url_src = "http://" + url_mirror + url_src_;
 
 		File excluded_atom_str = new File(str_dir_name + "excluded_atoms.str");
 
@@ -231,10 +243,19 @@ public class bmr_Util_Main {
 			});
 
 			URL url_aa = new URL(url_src + aa_filt_csv);
-			HttpsURLConnection conn = (HttpsURLConnection) url_aa.openConnection();
-			conn.setSSLSocketFactory(sc.getSocketFactory());
+			long last_modified;
 
-			long last_modified = conn.getLastModified();
+			if (url_src.startsWith("https")) {
+				HttpsURLConnection conn = (HttpsURLConnection) url_aa.openConnection();
+				conn.setSSLSocketFactory(sc.getSocketFactory());
+				last_modified = conn.getLastModified();
+			}
+
+			else {
+				HttpURLConnection conn = (HttpURLConnection) url_aa.openConnection();
+				last_modified = conn.getLastModified();
+			}
+
 			Date last_modified_date =  new Date(last_modified);
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + new SimpleDateFormat("yyyy-MM-dd").format(last_modified_date) + "\n");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Fraction_threshold " + aa_frac_threshold + "\n\n");
@@ -351,10 +372,19 @@ public class bmr_Util_Main {
 			});
 
 			URL url_dna = new URL(url_src + dna_filt_csv);
-			HttpsURLConnection conn = (HttpsURLConnection) url_dna.openConnection();
-			conn.setSSLSocketFactory(sc.getSocketFactory());
+			long last_modified;
 
-			long last_modified = conn.getLastModified();
+			if (url_src.startsWith("https")) {
+				HttpsURLConnection conn = (HttpsURLConnection) url_dna.openConnection();
+				conn.setSSLSocketFactory(sc.getSocketFactory());
+				last_modified = conn.getLastModified();
+			}
+
+			else {
+				HttpURLConnection conn = (HttpURLConnection) url_dna.openConnection();
+				last_modified = conn.getLastModified();
+			}
+
 			Date last_modified_date =  new Date(last_modified);
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + new SimpleDateFormat("yyyy-MM-dd").format(last_modified_date) + "\n");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Fraction_threshold " + dna_frac_threshold + "\n\n");
@@ -471,10 +501,19 @@ public class bmr_Util_Main {
 			});
 
 			URL url_rna = new URL(url_src + rna_filt_csv);
-			HttpsURLConnection conn = (HttpsURLConnection) url_rna.openConnection();
-			conn.setSSLSocketFactory(sc.getSocketFactory());
+			long last_modified;
 
-			long last_modified = conn.getLastModified();
+			if (url_src.startsWith("https")) {
+				HttpsURLConnection conn = (HttpsURLConnection) url_rna.openConnection();
+				conn.setSSLSocketFactory(sc.getSocketFactory());
+				last_modified = conn.getLastModified();
+			}
+
+			else {
+				HttpURLConnection conn = (HttpURLConnection) url_rna.openConnection();
+				last_modified = conn.getLastModified();
+			}
+
 			Date last_modified_date =  new Date(last_modified);
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + new SimpleDateFormat("yyyy-MM-dd").format(last_modified_date) + "\n");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Fraction_threshold " + rna_frac_threshold + "\n\n");
