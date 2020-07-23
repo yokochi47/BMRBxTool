@@ -39,9 +39,9 @@ do
 
   cmp=`echo "$time > $delay" | bc`
 
-  if [ $cmp = 0 ] ; then
+  if [ "$cmp" = 0 ] ; then
 
-   server_alive=`curl -I $url -m 5`
+   server_alive=`curl -I $url -m 5 2> /dev/null`
 
    if [ $? == 0 ] ; then
 
