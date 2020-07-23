@@ -48,8 +48,6 @@ java -classpath ../cs-complete.jar:../extlibs/* bmr_Util_Main --user-bmrb $DB_US
 
 rm -rf cs_complete_loc
 
-BMRB_PUB
-
 rsync -av --delete cs_complete_str/* rsync://bmrbpub.pdbj.org/cs-complete-internal
 
 if [ ! `which psql` ] ; then
