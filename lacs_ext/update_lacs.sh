@@ -10,23 +10,55 @@ fi
 
 source ../scripts/db-user.sh
 
+BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
+
+printf "    BMRB mirror sites\t\t delay [ms]\n"
+echo "-------------------------------------------"
+
+BMRB_MIRROR=${BMRB_MIRRORS[0]}
+
+delay=10000
+i=1
+
+for url in ${BMRB_MIRRORS[@]}
+do
+
+ time=`ping -c 1 -w 10 $url | grep 'avg' | cut -d '=' -f 2 | cut -d '/' -f 2`
+
+ if [ $? = 0 ] ; then
+
+  printf "[%d] %s\t\t%6.1f\n" $i $url $time
+
+  cmp=`echo "$time > $delay" | bc`
+
+  if [ $cmp = 0 ] ; then
+
+   server_alive=`curl -I $url -m 5`
+
+   if [ $? == 0 ] ; then
+
+    BMRB_MIRROR=$url
+    delay=$time
+
+   fi
+
+  fi
+
+ else
+  echo $url: timed out.
+ fi
+
+ let i++
+
+done
+
 BMRB_DB=bmrb
 
 psql -U $DB_USER -l | grep $BMRB_DB > /dev/null || ( echo "database \"$BMRB_DB\" does not exist." && exit 1 )
 
 psql -d $BMRB_DB -U $DB_USER -f schema.lacs_ext.sql
 
-URL_MIRROR=url_mirror
-
-if [ -e $URL_MIRROR ] && [ -s $URL_MIRROR ] ; then
-
- java -classpath ../lacs-ext.jar:../extlibs/* LACS_ext --user-bmrb $DB_USER --url-mirror `cat $URL_MIRROR`
-
-else
-
- java -classpath ../lacs-ext.jar:../extlibs/* LACS_ext --user-bmrb $DB_USER
-
-fi
+java -classpath ../lacs-ext.jar:../extlibs/* LACS_ext --user-bmrb $DB_USER --url-mirror $BMRB_MIRROR
 
 echo
 
