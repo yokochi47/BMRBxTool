@@ -27,7 +27,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -235,10 +234,9 @@ public class bmr_Util_Main {
 			HttpsURLConnection conn = (HttpsURLConnection) url_aa.openConnection();
 			conn.setSSLSocketFactory(sc.getSocketFactory());
 
-			String last_modified = conn.getHeaderField("Last-Modified");
-			Date last_date = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH).parse(last_modified);
-			DateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
-			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + date_format.format(last_date) + "\n");
+			long last_modified = conn.getLastModified();
+			Date last_modified_date =  new Date(last_modified);
+			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + new SimpleDateFormat("yyyy-MM-dd").format(last_modified_date) + "\n");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Fraction_threshold " + aa_frac_threshold + "\n\n");
 
 			exclw.write("    _loop\n");
@@ -356,10 +354,9 @@ public class bmr_Util_Main {
 			HttpsURLConnection conn = (HttpsURLConnection) url_dna.openConnection();
 			conn.setSSLSocketFactory(sc.getSocketFactory());
 
-			String last_modified = conn.getHeaderField("Last-Modified");
-			Date last_date = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH).parse(last_modified);
-			DateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
-			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + date_format.format(last_date) + "\n");
+			long last_modified = conn.getLastModified();
+			Date last_modified_date =  new Date(last_modified);
+			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + new SimpleDateFormat("yyyy-MM-dd").format(last_modified_date) + "\n");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Fraction_threshold " + dna_frac_threshold + "\n\n");
 
 			exclw.write("    _loop\n");
@@ -477,10 +474,9 @@ public class bmr_Util_Main {
 			HttpsURLConnection conn = (HttpsURLConnection) url_rna.openConnection();
 			conn.setSSLSocketFactory(sc.getSocketFactory());
 
-			String last_modified = conn.getHeaderField("Last-Modified");
-			Date last_date = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH).parse(last_modified);
-			DateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
-			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + date_format.format(last_date) + "\n");
+			long last_modified = conn.getLastModified();
+			Date last_modified_date =  new Date(last_modified);
+			exclw.write("    _chem_shift_completeness_excluded_atom_list.Last_modified_date " + new SimpleDateFormat("yyyy-MM-dd").format(last_modified_date) + "\n");
 			exclw.write("    _chem_shift_completeness_excluded_atom_list.Fraction_threshold " + rna_frac_threshold + "\n\n");
 
 			exclw.write("    _loop\n");
