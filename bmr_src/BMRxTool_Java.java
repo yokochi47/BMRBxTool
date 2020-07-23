@@ -2960,8 +2960,8 @@ public class BMRxTool_Java {
 						// item='common', 'organ', 'organelle', 'secretion', 'type', category='BMRBx:entity_natural_src'
 						else if ((attr_name_lower.equals("common") || attr_name_lower.equals("organ") || attr_name_lower.equals("organelle") || attr_name_lower.equals("secretion") || attr_name_lower.equals("type")) && class_name.equalsIgnoreCase("EntityNaturalSrc"))
 							buffw.write("\t\t\t\t\tif (!set_enum_" + attr_name_lower +"(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), en, logw, errw))\n\t\t\t\t\t\tcontinue;\n");
-						// item='experimental_method', 'version_type', 'nmr_star_version', 'original_nmr_star_version', category='BMRBx:entry'
-						else if ((attr_name_lower.equals("experimental_method") || attr_name_lower.equals("version_type") || attr_name_lower.equals("nmr_star_version") || attr_name_lower.equals("original_nmr_star_version")) && class_name.equalsIgnoreCase("Entry"))
+						// item='experimental_method', 'version_type', 'nmr_star_version', 'original_nmr_star_version', 'type', category='BMRBx:entry'
+						else if ((attr_name_lower.equals("experimental_method") || attr_name_lower.equals("version_type") || attr_name_lower.equals("nmr_star_version") || attr_name_lower.equals("original_nmr_star_version") || attr_name_lower.equals("type")) && class_name.equalsIgnoreCase("Entry"))
 							buffw.write("\t\t\t\t\tif (!set_enum_" + attr_name_lower +"(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), ent, logw, errw))\n\t\t\t\t\t\tcontinue;\n");
 
 						// item='naming_system', category='BMRBx:assembly_systematic_name', 'BMRBx:entity_systematic_name'
@@ -3345,8 +3345,8 @@ public class BMRxTool_Java {
 					// item='common', 'organ', 'organelle', 'secretion', 'type', category='BMRBx:entity_natural_src'
 					else if ((attr_name_lower.equals("common") || attr_name_lower.equals("organ") || attr_name_lower.equals("organelle") || attr_name_lower.equals("secretion") || attr_name_lower.equals("type")) && class_name.equalsIgnoreCase("EntityNaturalSrc"))
 						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, " + file_prefix + "_" + BMRxTool_DOM.util_entitynaturalsrc + " en, FileWriter logw, FileWriter errw) {\n\n");
-					// item='experimental_method', 'version_type', 'nmr_star_version', 'original_nmr_star_version', category='BMRBx:entry'
-					else if ((attr_name_lower.equals("experimental_method") || attr_name_lower.equals("version_type") || attr_name_lower.equals("nmr_star_version") || attr_name_lower.equals("original_nmr_star_version")) && class_name.equalsIgnoreCase("Entry"))
+					// item='experimental_method', 'version_type', 'nmr_star_version', 'original_nmr_star_version', 'type', category='BMRBx:entry'
+					else if ((attr_name_lower.equals("experimental_method") || attr_name_lower.equals("version_type") || attr_name_lower.equals("nmr_star_version") || attr_name_lower.equals("original_nmr_star_version") || attr_name_lower.equals("type")) && class_name.equalsIgnoreCase("Entry"))
 						buffw.write("\n\t\n\t@SuppressWarnings(\"static-access\")\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, " + file_prefix + "_" + BMRxTool_DOM.util_entry + " ent, FileWriter logw, FileWriter errw) {\n\n");
 					else
 						buffw.write("\n\tprivate static boolean set_enum_" + attr_name_lower +"(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw, FileWriter errw) {\n\n");
@@ -4252,6 +4252,9 @@ public class BMRxTool_Java {
 						// item='type'
 						if (attr_name_lower.equals("type")) {
 
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = ent.getType(val_name);\n\n");							
+
 							buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
 							buffw.write("\t\t\tval_name = \"macromolecule\";\n\n");
 
@@ -4712,6 +4715,43 @@ public class BMRxTool_Java {
 
 							buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
 							buffw.write("\t\t\tval_name = \"na\";\n\n");
+
+						}
+
+					}
+
+					// category='BMRBx:theoretical_heteronucl_t1_list'
+					if (class_name.equalsIgnoreCase("TheoreticalHeteronuclT1List")) {
+
+						// item='t1_coherence_type'
+						if (attr_name_lower.equals("t1_coherence_type")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_theoreticalheteronuclt1list + ".getT1CoherenceType(val_name);\n\n");
+
+							buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
+							buffw.write("\t\t\tval_name = \"na\";\n\n");
+
+						}
+
+					}
+
+					// category='BMRBx:theoretical_heteronucl_t2_list'
+					if (class_name.equalsIgnoreCase("TheoreticalHeteronuclT2List")) {
+
+						// item='temp_calibration_method'
+						if (attr_name_lower.equals("temp_calibration_method")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_theoreticalheteronuclt2list + ".getTempCalibrationMethod(val_name);\n\n");
+
+						}
+
+						// item='temp_control_method'
+						if (attr_name_lower.equals("temp_control_method")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_theoreticalheteronuclt2list + ".getTempControlMethod(val_name);\n\n");
 
 						}
 

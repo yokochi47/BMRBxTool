@@ -16,6 +16,7 @@ limitations under the License.
  */
 
 import java.io.*;
+import java.net.NoRouteToHostException;
 import java.sql.*;
 import java.util.*;
 import java.util.logging.*;
@@ -110,6 +111,8 @@ public class BMRxTool_DOM {
 	public static final String util_structclassification = "Util_StructClassification";
 	public static final String util_study = "Util_Study";
 	public static final String util_systematicchemshiftoffset = "Util_SystematicChemShiftOffset";
+	public static final String util_theoreticalheteronuclt1list = "Util_TheoreticalHeteronuclT1List";
+	public static final String util_theoreticalheteronuclt2list = "Util_TheoreticalHeteronuclT2List";
 
 	public static final String pubmed_esummary_api = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=";
 	public static final String pubmed_esearch_api = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?database=pubmed&term=";
@@ -416,6 +419,8 @@ public class BMRxTool_DOM {
 		write_util_structclassfication(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_study(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_systematicchemshiftoffset(src_dir_name, xsd_dir_name, file_prefix);
+		write_util_theoreticalheteronuclt1list(src_dir_name, xsd_dir_name, file_prefix);
+		write_util_theoreticalheteronuclt2list(src_dir_name, xsd_dir_name, file_prefix);
 
 		return 0;
 	}
@@ -8819,6 +8824,8 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\tString bmrb_pdb_coor_match_csv_file = \"https://bmrb.pdbj.org/ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts/BMRB_PDB_match.csv\";\n");
 			buffw.write("\t\tString bmrb_pdb_adit_match_csv_file = \"https://bmrb.pdbj.org/ftp/pub/bmrb/nmr_pdb_integrated_data/adit_nmr_matched_pdb_bmrb_entry_ids.csv\";\n\n");
+			buffw.write("\t\tString _bmrb_pdb_coor_match_csv_file = \"http://www.bmrb.wisc.edu/ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts/BMRB_PDB_match.csv\";\n");
+			buffw.write("\t\tString _bmrb_pdb_adit_match_csv_file = \"http://www.bmrb.wisc.edu/ftp/pub/bmrb/nmr_pdb_integrated_data/adit_nmr_matched_pdb_bmrb_entry_ids.csv\";\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
@@ -8915,16 +8922,32 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\t}\n");
 			buffw.write("\t\t\t});\n\n");
 
-			buffw.write("\t\t\tURL url = new URL(bmrb_pdb_coor_match_csv_file);\n");
-			buffw.write("\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
-			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+			buffw.write("\t\t\ttry {\n\n");
 
-			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+			buffw.write("\t\t\t\tURL url = new URL(bmrb_pdb_coor_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
 
-			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
-			buffw.write("\t\t\t\treturn;\n\n");
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
-			buffw.write("\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n");
+			buffw.write("\t\t\t\tconn.getResponseCode();\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t} catch (NoRouteToHostException e) {\n\n");
+
+			buffw.write("\t\t\t\tURL url = new URL(_bmrb_pdb_coor_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpURLConnection conn = (HttpURLConnection) url.openConnection();\n\n");
+
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+
+			buffw.write("\t\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
+			buffw.write("\t\t\t\t\treturn;\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t}\n\n");
+
 			buffw.write("\t\t\tbufferr.mark(400000);\n\n");
 
 			buffw.write("\t\t\tline = bufferr.readLine();\n\n");
@@ -8949,16 +8972,32 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\tbufferr.close();\n\n");
 
-			buffw.write("\t\t\turl = new URL(bmrb_pdb_coor_match_csv_file);\n");
-			buffw.write("\t\t\tconn = (HttpsURLConnection) url.openConnection();\n");
-			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+			buffw.write("\t\t\ttry {\n\n");
 
-			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+			buffw.write("\t\t\t\tURL url = new URL(bmrb_pdb_coor_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
 
-			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
-			buffw.write("\t\t\t\treturn;\n\n");
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
-			buffw.write("\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n");
+			buffw.write("\t\t\t\tconn.getResponseCode();\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t} catch (NoRouteToHostException e) {\n\n");
+
+			buffw.write("\t\t\t\tURL url = new URL(_bmrb_pdb_coor_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpURLConnection conn = (HttpURLConnection) url.openConnection();\n\n");
+
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+
+			buffw.write("\t\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
+			buffw.write("\t\t\t\t\treturn;\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t}\n\n");
+
 			buffw.write("\t\t\tbufferr.mark(400000);\n\n");
 
 			buffw.write("\t\t\tbmrb_pdb_coor_match = new String[i][2];\n");
@@ -8984,16 +9023,32 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\tbufferr.close();\n\n");
 
-			buffw.write("\t\t\turl = new URL(bmrb_pdb_adit_match_csv_file);\n");
-			buffw.write("\t\t\tconn = (HttpsURLConnection) url.openConnection();\n");
-			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+			buffw.write("\t\t\ttry {\n\n");
 
-			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+			buffw.write("\t\t\t\tURL url = new URL(bmrb_pdb_adit_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
 
-			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
-			buffw.write("\t\t\t\treturn;\n\n");
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
-			buffw.write("\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n");
+			buffw.write("\t\t\t\tconn.getResponseCode();\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t} catch (NoRouteToHostException e) {\n\n");
+
+			buffw.write("\t\t\t\tURL url = new URL(_bmrb_pdb_adit_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpURLConnection conn = (HttpURLConnection) url.openConnection();\n\n");
+
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+
+			buffw.write("\t\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
+			buffw.write("\t\t\t\t\treturn;\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t}\n\n");
+
 			buffw.write("\t\t\tbufferr.mark(400000);\n\n");
 
 			buffw.write("\t\t\ti = 0;\n\n");
@@ -9008,16 +9063,32 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\tbufferr.close();\n\n");
 
-			buffw.write("\t\t\turl = new URL(bmrb_pdb_adit_match_csv_file);\n");
-			buffw.write("\t\t\tconn = (HttpsURLConnection) url.openConnection();\n");
-			buffw.write("\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
+			buffw.write("\t\t\ttry {\n\n");
 
-			buffw.write("\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+			buffw.write("\t\t\t\tURL url = new URL(bmrb_pdb_adit_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpsURLConnection conn = (HttpsURLConnection) url.openConnection();\n");
+			buffw.write("\t\t\t\tconn.setSSLSocketFactory(sc.getSocketFactory());\n\n");
 
-			buffw.write("\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
-			buffw.write("\t\t\t\treturn;\n\n");
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
 
-			buffw.write("\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n");
+			buffw.write("\t\t\t\tconn.getResponseCode();\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t} catch (NoRouteToHostException e) {\n\n");
+
+			buffw.write("\t\t\t\tURL url = new URL(_bmrb_pdb_adit_match_csv_file);\n");
+			buffw.write("\t\t\t\tHttpURLConnection conn = (HttpURLConnection) url.openConnection();\n\n");
+
+			buffw.write("\t\t\t\tconn.setRequestMethod(\"GET\");\n\n");
+
+			buffw.write("\t\t\t\tif (conn.getResponseCode() != HttpURLConnection.HTTP_OK)\n");
+			buffw.write("\t\t\t\t\treturn;\n\n");
+
+			buffw.write("\t\t\t\tbufferr = new BufferedReader(new InputStreamReader(conn.getInputStream()));\n\n");
+
+			buffw.write("\t\t\t}\n\n");
+
 			buffw.write("\t\t\tbufferr.mark(400000);\n\n");
 
 			buffw.write("\t\t\tbmrb_pdb_adit_match = new String[i][2];\n");
@@ -9129,6 +9200,20 @@ public class BMRxTool_DOM {
 
 			buffw.write("\tpublic static String getOriginalNMRStarVersion(String val_name) {\n");
 			buffw.write("\t\treturn (String) map_original_nmr_star_version.get(val_name);\n");
+			buffw.write("\t}\n\n");
+
+			buffw.write("\tstatic final Map<String, String> type = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "entry.type.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getType(String val_name) {\n");
+			buffw.write("\t\treturn (String) type.get(val_name);\n");
 			buffw.write("\t}\n\n");
 
 			buffw.write("\tpublic String getAssignedPDBID(String pdb_id, Connection conn_bmrb, String entry_id) {\n\n");
@@ -11702,6 +11787,104 @@ public class BMRxTool_DOM {
 
 			buffw.write("\tpublic static String getAtomType(String val_name) {\n");
 			buffw.write("\t\treturn (String) map_atom_type.get(val_name);\n");
+			buffw.write("\t}\n}\n");
+
+			buffw.close();
+			filew.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void write_util_theoreticalheteronuclt1list(String src_dir_name, String xsd_dir_name, String file_prefix) {
+
+		final String program_name = src_dir_name + file_prefix + "_" + util_theoreticalheteronuclt1list + ".java";
+
+		File java_file = new File(program_name);
+
+		try {
+
+			FileWriter filew = new FileWriter(java_file);
+			BufferedWriter buffw = new BufferedWriter(filew);
+
+			buffw.write(license);
+
+			buffw.write("package " + package_name + ";\n\n");
+
+			buffw.write("import java.util.HashMap;\n");
+			buffw.write("import java.util.Map;\n\n");
+
+			buffw.write("public class " + file_prefix + "_" + util_theoreticalheteronuclt1list + " {\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_t1_coherence_type = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "theoretical_heteronucl_t1_list.t1_coherence_type.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getT1CoherenceType(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_t1_coherence_type.get(val_name);\n");
+			buffw.write("\t}\n}\n");
+
+			buffw.close();
+			filew.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void write_util_theoreticalheteronuclt2list(String src_dir_name, String xsd_dir_name, String file_prefix) {
+
+		final String program_name = src_dir_name + file_prefix + "_" + util_theoreticalheteronuclt2list + ".java";
+
+		File java_file = new File(program_name);
+
+		try {
+
+			FileWriter filew = new FileWriter(java_file);
+			BufferedWriter buffw = new BufferedWriter(filew);
+
+			buffw.write(license);
+
+			buffw.write("package " + package_name + ";\n\n");
+
+			buffw.write("import java.util.HashMap;\n");
+			buffw.write("import java.util.Map;\n\n");
+
+			buffw.write("public class " + file_prefix + "_" + util_theoreticalheteronuclt2list + " {\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_temp_calibration_method = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "theoretical_heteronucl_t2_list.temp_calibration_method.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getTempCalibrationMethod(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_temp_calibration_method.get(val_name);\n");
+			buffw.write("\t}\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_temp_control_method = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "theoretical_heteronucl_t2_list.temp_control_method.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getTempControlMethod(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_temp_control_method.get(val_name);\n");
 			buffw.write("\t}\n}\n");
 
 			buffw.close();
