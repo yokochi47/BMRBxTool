@@ -75,6 +75,12 @@ case $ans in
  *) ;;
 esac
 
+if [ -e url_mirror ] ; then
+
+ BMRB_MIRROR=`cat url_mirror`
+
+fi
+
 rm -rf $DUMP_PATH
 
 NMR_STAR3_1=nmr-star3.1
