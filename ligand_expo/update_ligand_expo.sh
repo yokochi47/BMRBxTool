@@ -23,7 +23,7 @@ psql -U $DB_USER -l | grep $DB_NAME > /dev/null || ( echo "database \"$DB_NAME\"
 PDB_MIRROR=ftp.pdbj.org
 XML_DIR=chem_comp/PDBML
 
-wget -c -r -nv -np http://$PDB_MIRROR/$XML_DIR/* -nH -R index.html* 2> /dev/null
+wget -c -r -nv -np http://$PDB_MIRROR/$XML_DIR/ -nH -R index.html* 2> /dev/null
 
 MD5_DIR=chk_sum_pdbml_cc
 
