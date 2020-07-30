@@ -10,6 +10,8 @@ if [ ! `which indexer` ] ; then
 
 fi
 
+XML_DIR=chem_comp/PDBML
+<<REMARK
 DB_FTP=ligand-expo.rcsb.org/dictionaries
 DB_TGZ=components-pub-xml.tar.gz
 XML_DIR=components-pub-xml
@@ -25,8 +27,8 @@ fi
 if [ ! -d $XML_DIR ] ; then
  tar xzf $DB_FTP/$DB_TGZ -C .
 fi
-
-XSD_SCHEMA=pdbx-v40.xsd
+REMARK
+XSD_SCHEMA=pdbx-v50.xsd
 PREFIX=le
 
 IDX_DIR=sphinx_index
@@ -84,11 +86,11 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
  if [ $sync_update != "true" ] ; then
 
-  java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid 2> $err_file
+  java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid 2> $err_file
 
  else
 
-  java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid --sync $MD5_DIR 2> $err_file
+  java -cp ../extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --ds-dir $WORK_DIR --ds-name $PREFIX $attrs $fields --no-valid --sync $MD5_DIR 2> $err_file
 
  fi
 
