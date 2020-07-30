@@ -2,6 +2,8 @@
 
 sync_update=true
 
+XML_DIR=chem_comp/PDBML
+<<REMARK
 DB_FTP=ligand-expo.rcsb.org/dictionaries
 DB_TGZ=components-pub-xml.tar.gz
 XML_DIR=components-pub-xml
@@ -17,8 +19,8 @@ fi
 if [ ! -d $XML_DIR ] ; then
  tar xzf $DB_FTP/$DB_TGZ -C .
 fi
-
-XSD_SCHEMA=pdbx-v40.xsd
+REMARK
+XSD_SCHEMA=pdbx-v50.xsd
 
 IDX_DIR=lucene_index
 
@@ -57,11 +59,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid 2> $err_file
+ java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --idx-dir $IDX_DIR --attr-all --no-rel --no-valid 2> $err_file
 
 else
 
- java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --sync $MD5_DIR 2> $err_file
+ java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --sync $MD5_DIR 2> $err_file
 
 fi
 
