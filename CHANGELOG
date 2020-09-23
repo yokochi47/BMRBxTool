@@ -7,6 +7,7 @@
   Fixed definition of backbone atoms of GLY.
   Added remediation for database accesion code and EC number.
   Added remediation for '_heteronucl_t1rho_list.temp_control_method'.
+  Added remediation for '_heteronucl_t1rho_list.temp_calibration_method'.
   Added remediation for '_theoretical_heteronucl_t1_list.t1_coherence_type'.
   Added remediation for '_theoretical_heteronucl_t2_list.temp_calibration_method'.
   Added remediation for '_theoretical_heteronucl_t2_list.temp_control_method'.

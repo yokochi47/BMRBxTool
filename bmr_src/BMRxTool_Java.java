@@ -4377,6 +4377,14 @@ public class BMRxTool_Java {
 
 						}
 
+						// item='temp_calibration_method'
+						if (attr_name_lower.equals("temp_calibration_method")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_heteronuclt1rholist + ".getTempCalibrationMethod(val_name);\n\n");
+
+						}
+
 						// item='temp_control_method'
 						if (attr_name_lower.equals("temp_control_method")) {
 
