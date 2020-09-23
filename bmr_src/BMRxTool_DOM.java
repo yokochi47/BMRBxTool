@@ -16,7 +16,6 @@ limitations under the License.
  */
 
 import java.io.*;
-import java.net.NoRouteToHostException;
 import java.sql.*;
 import java.util.*;
 import java.util.logging.*;
@@ -9951,7 +9950,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t{\n\n");
 
-			write_util_from_properties(buffw, xsd_dir_name + "theoretical_heteronucl_t1rho_list.temp_calibration_method.properties");
+			write_util_from_properties(buffw, xsd_dir_name + "heteronucl_t1rho_list.temp_calibration_method.properties");
 
 			buffw.write("\n\t\t}\n\t};\n\n");
 
