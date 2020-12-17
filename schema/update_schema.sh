@@ -66,7 +66,7 @@ mv -f $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
 
 source ../scripts/db-user.sh
 
-BMRB_MIRROR=("www.bmrb.wisc.edu" "bmrb.pdbj.org") # "bmrb.cerm.unifi.it")
+BMRB_MIRROR=("bmrb.io" "bmrb.pdbj.org") # ("www.bmrb.wisc.edu" "bmrb.pdbj.org" "bmrb.cerm.unifi.it")
 
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"

@@ -46,9 +46,11 @@ public class XSD_ann {
 	public final static String dictionary_url = "http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic";
 	public final static String alt_dictionary_url = "https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic";
 
-	public final static String category_api = "http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=";
+	//public final static String category_api = "http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=";
+	public final static String category_api = "https://bmrb.io/dictionary/tag.php?tagcat=";
 	public final static String alt_category_api = "http://%s/dictionary/tag.php?tagcat="; 
-	public final static String tag_api = "http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_";
+	//public final static String tag_api = "http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_";
+	public final static String tag_api = "https://bmrb.io/dictionary/tagdetail.php?tag=_";
 	public final static String alt_tag_api = "http://%s/dictionary/tagdetail.php?tag=_";
 
 	public static String dic_version = "";
