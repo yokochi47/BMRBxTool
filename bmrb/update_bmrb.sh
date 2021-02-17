@@ -19,7 +19,7 @@ psql -U $DB_USER -l | grep $BMRB_DB > /dev/null || ( echo "database \"$BMRB_DB\"
 
 psql -U $DB_USER -l | grep $MTBL_DB > /dev/null || ( echo "database \"$MTBL_DB\" does not exist." && exit 1 )
 
-BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org") # "bmrb.cerm.unifi.it")
+BMRB_MIRRORS=("bmrb.io" "bmrb.pdbj.org")
 
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"
@@ -85,8 +85,8 @@ rm -rf $DUMP_PATH
 
 NMR_STAR3_1=nmr-star3.1
 
-BMRB_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$NMR_STAR3_1/
-MTBL_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$MTBL_DB/
+BMRB_FTP=https://$BMRB_MIRROR/$DUMP_PATH/$NMR_STAR3_1/
+MTBL_FTP=https://$BMRB_MIRROR/$DUMP_PATH/$MTBL_DB/
 
 wget -c -r -nv -np $BMRB_FTP -nH -R index.html*
 wget -c -r -nv -np $MTBL_FTP -nH -R index.html*

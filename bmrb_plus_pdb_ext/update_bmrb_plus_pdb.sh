@@ -5,7 +5,7 @@ MAXPROCS=`cat /proc/cpuinfo | grep 'cpu cores' | uniq | sed 's/\s//g' | cut -d '
 
 source ../scripts/db-user.sh
 
-BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org") # "bmrb.cerm.unifi.it")
+BMRB_MIRRORS=("bmrb.io" "bmrb.pdbj.org")
 
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"
@@ -49,7 +49,7 @@ done
 
 DUMP_PATH=ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts
 DB_NAME=bmrb_plus_pdb
-DB_FTP=http://$BMRB_MIRROR/$DUMP_PATH/$DB_NAME/
+DB_FTP=https://$BMRB_MIRROR/$DUMP_PATH/$DB_NAME/
 
 wget -c -m -nv -np $DB_FTP -nH -A *.str
 

@@ -10,7 +10,7 @@ fi
 
 source ../scripts/db-user.sh
 
-BMRB_MIRRORS=("www.bmrb.wisc.edu" "bmrb.pdbj.org") # "bmrb.cerm.unifi.it")
+BMRB_MIRRORS=("bmrb.io" "bmrb.pdbj.org")
 
 printf "    BMRB mirror sites\t\t delay [ms]\n"
 echo "-------------------------------------------"
