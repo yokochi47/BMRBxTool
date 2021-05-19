@@ -52,7 +52,7 @@ else
 
 fi
 
-XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+XML_SCHEMA=schema/mmcif_nmr-star.xsd
 
 IDX_DIR=lucene_index_$PREFIX
 
@@ -91,11 +91,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST 2> $err_file
 
 else
 
- java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST --sync $MD5_DIR 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST --sync $MD5_DIR 2> $err_file
 
 fi
 

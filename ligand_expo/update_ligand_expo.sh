@@ -68,10 +68,10 @@ if [ "$update" = "0 0 0" ] ; then
 
 fi
 
-XSD_SCHEMA=pdbx-v50.xsd
+XML_SCHEMA=pdbx-v50.xsd
 DB_SCHEMA=ligand_expo.schema
 
-java -cp ../extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --doc-key --no-key --ddl $DB_SCHEMA
+java -cp ../extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XML_SCHEMA --no-rel --doc-key --no-key --ddl $DB_SCHEMA
 
 echo
 echo "Do you want to update $DB_NAME? (y [n]) "
@@ -121,11 +121,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp ../extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --doc-key --no-valid --db-name $DB_NAME --db-user $DB_USER --drop-doc-key-index 2> $err_file
+ java -cp ../extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XML_SCHEMA --xml $XML_DIR --xml-file-ext gz --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --doc-key --no-valid --db-name $DB_NAME --db-user $DB_USER --drop-doc-key-index 2> $err_file
 
 else
 
- java -cp ../extlibs/xsd2pgschema.jar xml2pgsql --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --sync $MD5_DIR --no-rel --doc-key --no-valid --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+ java -cp ../extlibs/xsd2pgschema.jar xml2pgsql --xsd $XML_SCHEMA --xml $XML_DIR --xml-file-ext gz --sync $MD5_DIR --no-rel --doc-key --no-valid --db-name $DB_NAME --db-user $DB_USER 2> $err_file
 
 fi
 

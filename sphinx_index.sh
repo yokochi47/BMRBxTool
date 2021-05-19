@@ -60,7 +60,7 @@ else
 
 fi
 
-XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+XML_SCHEMA=schema/mmcif_nmr-star.xsd
 
 IDX_DIR=sphinx_index_$PREFIX
 DIC_DIR=sphinx_dic_$PREFIX
@@ -131,11 +131,11 @@ for dic_name in ${DIC_NAMES[@]} ; do
 
  if [ $sync_update != "true" ] ; then
 
-  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields 2> $err_file
+  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XML_SCHEMA --xml $XML_DOC_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields 2> $err_file
 
  else
 
-  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields --sync $MD5_DIR 2> $err_file
+  java -cp extlibs/xsd2pgschema.jar xml2sphinxds --xsd $XML_SCHEMA --xml $XML_DOC_DIR --ds-dir $WORK_DIR --ds-name $PREFIX --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST $attrs $fields --sync $MD5_DIR 2> $err_file
 
  fi
 

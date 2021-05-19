@@ -49,15 +49,15 @@ if [ ! -d $JSON_DOC_DIR ] ; then
 
 fi
 
-XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+XML_SCHEMA=schema/mmcif_nmr-star.xsd
 
-if [ -e $BMRBO_TOOL_HOME/$XSD_SCHEMA ] ; then
- XSD_SCHEMA=$BMRBO_TOOL_HOME/$XSD_SCHEMA
+if [ -e $BMRBO_TOOL_HOME/$XML_SCHEMA ] ; then
+ XML_SCHEMA=$BMRBO_TOOL_HOME/$XML_SCHEMA
 fi
 
 JSON_SCHEMA=schema/bmrb_clone.json
 
-java -cp extlibs/xsd2pgschema.jar xsd2jsonschema --xsd $XSD_SCHEMA --col-json --discarded-doc-key-name entry_id --json $JSON_SCHEMA
+java -cp extlibs/xsd2pgschema.jar xsd2jsonschema --xsd $XML_SCHEMA --col-json --discarded-doc-key-name entry_id --json $JSON_SCHEMA
 
 #sed -i -e "3,3 s/\.xsd/\.json/" $JSON_SCHEMA
 #sed -i -e "4,5 s/BMRB\/XML/BMRB\/JSON/g" $JSON_SCHEMA

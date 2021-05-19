@@ -75,15 +75,15 @@ fi
 
 psql -U $DB_USER -l | grep $DB_NAME > /dev/null || ( echo "database \"$DB_NAME\" does not exist." && exit 1 )
 
-XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+XML_SCHEMA=schema/mmcif_nmr-star.xsd
 
-if [ -e $BMRBO_TOOL_HOME/$XSD_SCHEMA ] ; then
- XSD_SCHEMA=$BMRBO_TOOL_HOME/$XSD_SCHEMA
+if [ -e $BMRBO_TOOL_HOME/$XML_SCHEMA ] ; then
+ XML_SCHEMA=$BMRBO_TOOL_HOME/$XML_SCHEMA
 fi
 
 DB_SCHEMA=schema/bmrb_clone.schema
 
-java -cp extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XSD_SCHEMA --no-rel --hash-by SHA-1 --ddl $DB_SCHEMA --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id
+java -cp extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XML_SCHEMA --no-rel --hash-by SHA-1 --ddl $DB_SCHEMA --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id
 
 echo
 echo "Do you want to update $DB_NAME? (y [n]) "
@@ -133,11 +133,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER --drop-doc-key-index 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2pgtsv --xsd $XML_SCHEMA --xml $XML_DOC_DIR --work-dir $DATA_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER --drop-doc-key-index 2> $err_file
 
 else
 
- java -cp extlibs/xsd2pgschema.jar xml2pgsql --xsd $XSD_SCHEMA --xml $XML_DOC_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2pgsql --xsd $XML_SCHEMA --xml $XML_DOC_DIR --sync $MD5_DIR --no-rel --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id --no-valid --xml-file-ext gz --xml-file-prefix-digest bmr --xml-file-ext-digest $FILE_EXT_DIGEST --db-name $DB_NAME --db-user $DB_USER 2> $err_file
 
 fi
 

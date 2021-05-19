@@ -20,7 +20,7 @@ if [ ! -d $XML_DIR ] ; then
  tar xzf $DB_FTP/$DB_TGZ -C .
 fi
 REMARK
-XSD_SCHEMA=pdbx-v50.xsd
+XML_SCHEMA=pdbx-v50.xsd
 
 IDX_DIR=lucene_index
 
@@ -59,11 +59,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --idx-dir $IDX_DIR --attr-all --no-rel --no-valid 2> $err_file
+ java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DIR --xml-file-ext gz --idx-dir $IDX_DIR --attr-all --no-rel --no-valid 2> $err_file
 
 else
 
- java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XSD_SCHEMA --xml $XML_DIR --xml-file-ext gz --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --sync $MD5_DIR 2> $err_file
+ java -cp ../extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DIR --xml-file-ext gz --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --sync $MD5_DIR 2> $err_file
 
 fi
 

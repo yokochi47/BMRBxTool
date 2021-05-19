@@ -130,10 +130,10 @@ rm -f $xml_file_list
 
 cd ..
 
-XSD_SCHEMA=schema/mmcif_nmr-star.xsd
+XML_SCHEMA=schema/mmcif_nmr-star.xsd
 
-if [ -e $BMRBO_TOOL_HOME/$XSD_SCHEMA ] ; then
- XSD_SCHEMA=$BMRBO_TOOL_HOME/$XSD_SCHEMA
+if [ -e $BMRBO_TOOL_HOME/$XML_SCHEMA ] ; then
+ XML_SCHEMA=$BMRBO_TOOL_HOME/$XML_SCHEMA
 fi
 
 ERR_DIR=$JSON_DOC_DIR/err
@@ -142,7 +142,7 @@ mkdir -p $ERR_DIR
 
 err_file=$ERR_DIR/all_err
 
-java -cp extlibs/xsd2pgschema.jar xml2json --xsd $XSD_SCHEMA --xml $XML_UPDATE_DIR --xml-file-ext-digest $FILE_EXT_DIGEST --no-valid --col-json --discarded-doc-key-name entry_id --json-dir $JSON_DOC_DIR 2> $err_file
+java -cp extlibs/xsd2pgschema.jar xml2json --xsd $XML_SCHEMA --xml $XML_UPDATE_DIR --xml-file-ext-digest $FILE_EXT_DIGEST --no-valid --col-json --discarded-doc-key-name entry_id --json-dir $JSON_DOC_DIR 2> $err_file
 
 if [ $? = 0 ] && [ ! -s $err_file ] ; then
  rm -f $err_file
