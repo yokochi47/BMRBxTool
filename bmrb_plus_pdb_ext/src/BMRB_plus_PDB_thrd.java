@@ -171,13 +171,7 @@ public class BMRB_plus_PDB_thrd implements Runnable {
 
 					System.out.print(".");
 
-				} catch (FileNotFoundException e) {
-					System.err.print(file_name);
-					e.printStackTrace();
-				} catch (ParseException e) {
-					System.err.print(file_name);
-					e.printStackTrace();
-				} catch (IOException e) {
+				} catch (Exception e) {
 					System.err.print(file_name);
 					e.printStackTrace();
 				}
