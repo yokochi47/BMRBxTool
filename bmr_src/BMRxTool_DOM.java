@@ -8568,7 +8568,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t}\n\n");
 
-			buffw.write("\t\tif ((" + empty_check("ncbi_taxonomy_id") + ") && (" + empty_check("scientific_name") + " || scientific_name.equalsIgnoreCase(\"not applicable\") || scientific_name.equalsIgnoreCase(\"chemical synthesis\")))\n");
+			buffw.write("\t\tif ((" + empty_check("ncbi_taxonomy_id") + ") && (" + empty_check("scientific_name") + " || scientific_name.equalsIgnoreCase(\"not applicable\") || scientific_name.equalsIgnoreCase(\"chemical synthesis\") || scientific_name.equalsIgnoreCase(\"in vitro\") || scientific_name.equalsIgnoreCase(\"in-vitro\") || scientific_name.equalsIgnoreCase(\"in vitro transcription\")))\n");
 			buffw.write("\t\t\treturn \"na\";\n\n");
 
 			buffw.write("\t\treturn ncbi_taxonomy_id;\n");

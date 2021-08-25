@@ -48,10 +48,10 @@ public class XSD_ann {
 
 	//public final static String category_api = "http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=";
 	public final static String category_api = "https://bmrb.io/dictionary/tag.php?tagcat=";
-	public final static String alt_category_api = "http://%s/dictionary/tag.php?tagcat="; 
+	public final static String alt_category_api = "https://%s/dictionary/tag.php?tagcat="; 
 	//public final static String tag_api = "http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_";
 	public final static String tag_api = "https://bmrb.io/dictionary/tagdetail.php?tag=_";
-	public final static String alt_tag_api = "http://%s/dictionary/tagdetail.php?tag=_";
+	public final static String alt_tag_api = "https://%s/dictionary/tagdetail.php?tag=_";
 
 	public static String dic_version = "";
 	public static String url_mirror = "bmrb.pdbj.org";

@@ -20483,6 +20483,8 @@ Kingdom classifications for an organism as defined by NCBI taxonomists.
    Loebvirae    ?
    Orthornavirae    ?
    Pararnavirae    ?
+   Heunggongvirae    ?
+   Bamfordvirae    ?
    'Not applicable'    ?
 
    stop_
@@ -21643,143 +21645,148 @@ of the entity.
 #  _pdbx_item_enumeration_details.closed_flag   no
    _item_type.code                             'line'
 
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
+#  loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail
+#
 # BMRB/XML: Replaced enumerations based on BMRB entries.
-   'Acholeplasma laidlawii'    ?
-   'Acidiphilium cryptum'    ?
-   'Ajellomyces capsulatus'    ?
-   'Allamanda oenotherifolia'    ?
-   'Amphitrite ornata'    ?
-   'Apis mellifera'    ?
-   'Aspergillus flavus'    ?
-   'Aspergillus niger'    ?
-   'Aspergillus oryzae'    ?
-   'Aspergillus parasiticus'    ?
-   'Asteropus'    ?
-   'Bacillus licheniformis'    ?
-   'Bacillus subtilis'    ?
-   'Bacillus thuringiensis'    ?
-   'Blomia tropicalis'    ?
-   'Bombyx mori'    ?
-   'Borrelia burgdorferi'    ?
-   'Borreliella burgdorferi'    ?
-   'Brevibacillus choshinensis'    ?
-   'Bungarus candidus'    ?
-   'Carausius morosus'    ?
-   'Carnobacterium maltaromaticum'    ?
-   'Centruroides sculpturatus'    ?
-   'Centruroides suffusus suffusus'    ?
-   'Chlorobaculum tepidum'    ?
-   'Conus araneosus'    ?
-   'Conus marmoreus'    ?
-   'Conus radiatus'    ?
-   'Corynebacterium glutamicum'    ?
-   'Cricetulus griseus'    ?
-   'Cupiennius salei'    ?
-   'Dengue virus'    ?
-   'Desulfovibrio desulfuricans'    ?
-   'Dictyostelium discoideum'    ?
-   'Diploptera punctata'    ?
-   'Drosophila melanogaster'    ?
-   'Echinochloa crus-galli'    ?
-   'Eleftheria terrae'    ?
-   'Emericellopsis minima'    ?
-   'Emericellopsis salmosynnemata'    ?
-   'Enterobacteria phage T7'    ?
-   'Enterococcus faecalis'    ?
-   'Enterococcus faecium'    ?
-   'Escherichia'    ?
-   'Escherichia coli'    ?
-   'Escherichia coli 536'    ?
-   'Escherichia coli B'    ?
-   'Escherichia coli BL21'    ?
-   'Escherichia coli BL21(DE3)'    ?
-   'Escherichia coli 'BL21-Gold(DE3)pLysS AG''    ?
-   'Escherichia coli B41'    ?
-   'Escherichia coli BW25113'    ?
-   'Escherichia coli DH1'    ?
-   'Escherichia coli DH5[alpha]'    ?
-   'Escherichia coli K-12'    ?
-   'Escherichia coli O103:H2 str. 12009'    ?
-   'Escherichia coli-Pichia pastoris shuttle vector pPpARG4'    ?
-   'Euplotes nobilii'    ?
-   'Euplotes petzi'    ?
-   'Euplotes raikovi'    ?
-   'Gadus morhua'    ?
-   'Gallus gallus'    ?
-   'Geobacillus thermodenitrificans'    ?
-   'Geobacter metallireducens'    ?
-   'Hahella chejuensis'    ?
-   'Helicobacter pylori'    ?
-   'Halobacterium salinarum'    ?
-   'Hirsutella thompsonii'    ?
-   'Histoplasma capsulatum'    ?
-   'Homo sapiens'    ?
-   'Human immunodeficiency virus 1'    ?
-   'Hypsiboas albopunctatus'    ?
-   'in vitro transcription vector pT7-Fluc(deltai)'    ?
-   'Jasminum sambac'    ?
-   'Juglans hindsii'    ?
-   'Komagataella pastoris'    ?
-   'Komagataella phaffii GS115'    ?
-   'Lactobacillus acidophilus'    ?
-   'Lactobacillus plantarum'    ?
-   'Lactococcus lactis'    ?
-   'Leishmania major'    ?
-   'Lentzea kentuckyensis'    ?
-   'Leuconostoc gelidum'    ?
-   'Mesobuthus eupeus'    ?
-   'Microbispora sp. 107891'    ?
-   'Momordica charantia'    ?
-   'Momordica cochinchinensis'    ?
-   'Mus musculus'    ?
-   'Mycobacterium smegmatis'    ?
-   'Mycobacterium tuberculosis'    ?
-   'Mycolicibacterium smegmatis'    ?
-   'Naja atra'    ?
-   'Naja oxiana'    ?
-   'Nicotiana tabacum'    ?
-   'Nigella sativa'    ?
-   'Neurospora'    ?
-   'Novosphingobium subterraneum'    ?
-   'Ogataea angusta'    ?
-   'Oldenlandia affinis'    ?
-   'Panax ginseng'    ?
-   'Pelodiscus sinensis'    ?
-   'Penicillium chrysogenum'    ?
-   'Petroselinum crispum'    ?
-   'Pichia'    ?
-   'Pisum sativum'    ?
-   'Populus fremontii'    ?
-   'Pseudocerastes persicus'    ?
-   'Pseudomonas aeruginosa'    ?
-   'Pseudomonas fluorescens'    ?
-   'Rana cascadae'    ?
-   'Reptilian orthoreovirus'    ?
-   'Saccharomyces cerevisiae'    ?
-   'Shigella flexneri'    ?
-   'Spodoptera frugiperda'    ?
-   'Staphylococcus epidermidis'    ?
-   'Stellaria media'    ?
-   'Streptomonospora alba'    ?
-   'Streptomyces coelicolor'    ?
-   'Streptomyces leeuwenhoekii'    ?
-   'Streptomyces lividans'    ?
-   'Streptomyces sp. I08A-00426'    ?
-   'Styela clava'    ?
-   'Sulfolobus solfataricus'    ?
-   'Sus scrofa'    ?
-   'synthetic construct'    ?
-   'Triticum aestivum'    ?
-   'Vibrio sp. 60'    ?
-   'Vitis vinifera'    ?
-   'Wrightia religiosa'    ?
-   'unidentified'    ?
-
-   stop_
+#  'Acholeplasma laidlawii'    ?
+#  'Acidiphilium cryptum'    ?
+#  'Ajellomyces capsulatus'    ?
+#  'Allamanda oenotherifolia'    ?
+#  'Amphitrite ornata'    ?
+#  'Apis mellifera'    ?
+#  'Aspergillus flavus'    ?
+#  'Aspergillus niger'    ?
+#  'Aspergillus oryzae'    ?
+#  'Aspergillus parasiticus'    ?
+#  'Asteropus'    ?
+#  'Bacillus licheniformis'    ?
+#  'Bacillus subtilis'    ?
+#  'Bacillus thuringiensis'    ?
+#  'Blomia tropicalis'    ?
+#  'Bombyx mori'    ?
+#  'Borrelia burgdorferi'    ?
+#  'Borreliella burgdorferi'    ?
+#  'Brevibacillus choshinensis'    ?
+#  'Bungarus candidus'    ?
+#  'Carausius morosus'    ?
+#  'Carnobacterium maltaromaticum'    ?
+#  'Centruroides sculpturatus'    ?
+#  'Centruroides suffusus suffusus'    ?
+#  'Chlorobaculum tepidum'    ?
+#  'Conus araneosus'    ?
+#  'Conus marmoreus'    ?
+#  'Conus radiatus'    ?
+#  'Corynebacterium glutamicum'    ?
+#  'Cricetulus griseus'    ?
+#  'Cupiennius salei'    ?
+#  'Dengue virus'    ?
+#  'Desulfovibrio desulfuricans'    ?
+#  'Dictyostelium discoideum'    ?
+#  'Diploptera punctata'    ?
+#  'Drosophila melanogaster'    ?
+#  'Echinochloa crus-galli'    ?
+#  'Eleftheria terrae'    ?
+#  'Emericellopsis minima'    ?
+#  'Emericellopsis salmosynnemata'    ?
+#  'Enterobacteria phage T7'    ?
+#  'Enterococcus faecalis'    ?
+#  'Enterococcus faecium'    ?
+#  'Escherichia'    ?
+#  'Escherichia coli'    ?
+#  'Escherichia coli 536'    ?
+#  'Escherichia coli B'    ?
+#  'Escherichia coli BL21'    ?
+#  'Escherichia coli BL21(DE3)'    ?
+#  'Escherichia coli 'BL21-Gold(DE3)pLysS AG''    ?
+#  'Escherichia coli B41'    ?
+#  'Escherichia coli BW25113'    ?
+#  'Escherichia coli DH1'    ?
+#  'Escherichia coli DH5[alpha]'    ?
+#  'Escherichia coli K-12'    ?
+#  'Escherichia coli O103:H2 str. 12009'    ?
+#  'Escherichia coli-Pichia pastoris shuttle vector pPpARG4'    ?
+#  'Escherichia phage Ecwhy_1'    ?
+#  'Euplotes nobilii'    ?
+#  'Euplotes petzi'    ?
+#  'Euplotes raikovi'    ?
+#  'Gadus morhua'    ?
+#  'Gallus gallus'    ?
+#  'Geobacillus thermodenitrificans'    ?
+#  'Geobacter metallireducens'    ?
+#  'Hahella chejuensis'    ?
+#  'Helicobacter pylori'    ?
+#  'Halobacterium salinarum'    ?
+#  'Hirsutella thompsonii'    ?
+#  'Histoplasma capsulatum'    ?
+#  'Homo sapiens'    ?
+#  'Human immunodeficiency virus 1'    ?
+#  'Hypsiboas albopunctatus'    ?
+#  'in vitro transcription vector pT7-Fluc(deltai)'    ?
+#  'Jasminum sambac'    ?
+#  'Juglans hindsii'    ?
+#  'Komagataella pastoris'    ?
+#  'Komagataella phaffii GS115'    ?
+#  'Lactobacillus acidophilus'    ?
+#  'Lactobacillus plantarum'    ?
+#  'Lactococcus lactis'    ?
+#  'Leishmania major'    ?
+#  'Lentzea kentuckyensis'    ?
+#  'Leuconostoc gelidum'    ?
+#  'Mesobuthus eupeus'    ?
+#  'Microbispora sp. 107891'    ?
+#  'Momordica charantia'    ?
+#  'Momordica cochinchinensis'    ?
+#  'Mus musculus'    ?
+#  'Mycobacterium smegmatis'    ?
+#  'Mycobacterium tuberculosis'    ?
+#  'Mycolicibacterium smegmatis'    ?
+#  'Naja atra'    ?
+#  'Naja oxiana'    ?
+#  'Nicotiana tabacum'    ?
+#  'Nigella sativa'    ?
+#  'Neurospora'    ?
+#  'Novosphingobium subterraneum'    ?
+#  'Ogataea angusta'    ?
+#  'Oldenlandia affinis'    ?
+#  'Panax ginseng'    ?
+#  'Pelodiscus sinensis'    ?
+#  'Penicillium chrysogenum'    ?
+#  'Penicillium rubens Wisconsin 54-1255'    ?
+#  'Petroselinum crispum'    ?
+#  'Pichia'    ?
+#  'Pisum sativum'    ?
+#  'Populus fremontii'    ?
+#  'Pseudocerastes persicus'    ?
+#  'Pseudomonas aeruginosa'    ?
+#  'Pseudomonas fluorescens'    ?
+#  'Rana cascadae'    ?
+#  'Reptilian orthoreovirus'    ?
+#  'Rhodopseudomonas palustris'    ?
+#  'Saccharomyces cerevisiae'    ?
+#  'Shigella flexneri'    ?
+#  'Spodoptera frugiperda'    ?
+#  'Staphylococcus epidermidis'    ?
+#  'Stellaria media'    ?
+#  'Streptomonospora alba'    ?
+#  'Streptomyces avermitilis'    ?
+#  'Streptomyces coelicolor'    ?
+#  'Streptomyces leeuwenhoekii'    ?
+#  'Streptomyces lividans'    ?
+#  'Streptomyces sp. I08A-00426'    ?
+#  'Styela clava'    ?
+#  'Sulfolobus solfataricus'    ?
+#  'Sus scrofa'    ?
+#  'synthetic construct'    ?
+#  'Thioalkalivibrio paradoxus'    ?
+#  'Triticum aestivum'    ?
+#  'Vibrio sp. 60'    ?
+#  'Vitis vinifera'    ?
+#  'Wrightia religiosa'    ?
+#  'unidentified'    ?
+#
+#  stop_
 
    loop_
      _item_examples.case

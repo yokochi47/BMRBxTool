@@ -1190,6 +1190,28 @@ public class BMRxTool_Java {
 
 				write_invoke_string_method(buffw);
 
+				// item='host_org_scientific_name'
+				buffw.write("\n\tprivate static boolean set_string_host_org_scientific_name(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, Connection conn_tax, String ncbi_taxonomy_id, FileWriter logw) {\n\n");
+
+				buffw.write("\t\tboolean nil = false;\n\n");
+
+				buffw.write("\t\tString _val_name = val_name;\n\n");
+
+				buffw.write("\t\tif (" + file_prefix + "_" + BMRxTool_DOM.util_main + ".remediate_xml)\n");
+				buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_tax + ".getOrganismScientificName(val_name, conn_tax, ncbi_taxonomy_id);\n\n");
+
+				buffw.write("\t\tif (" + file_prefix + "_" + BMRxTool_DOM.util_main + ".remediate_xml && (" + empty_check("val_name") + "))\n");
+				buffw.write("\t\t\tval_name = \"unidentified\";\n\n");
+
+				write_remed_log_code(buffw);
+
+				buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
+				buffw.write("\t\t\tnil = true;\n\n");
+
+				write_missing_log_code(buffw);
+
+				write_invoke_string_method(buffw);
+
 			}
 
 			// category='BMRBx:entity_natural_src'
@@ -3053,8 +3075,8 @@ public class BMRxTool_Java {
 						else if (attr_name_lower.equals("organism_name_common") && class_name.equalsIgnoreCase("EntityNaturalSrc"))
 							buffw.write("\t\t\t\t\tif (!set_string_organism_name_common(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), conn_tax, ncbi_taxonomy_id, logw))\n\t\t\t\t\t\tcontinue;\n");
 						// item='organism_name_scientific', category='BMRBx:entity_natural_src'
-						else if ((attr_name_lower.equals("organism_name_scientific")) && class_name.equalsIgnoreCase("EntityNaturalSrc"))
-							buffw.write("\t\t\t\t\tif (!set_string_" + attr_name_lower +"(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), conn_tax, entry_id, ncbi_taxonomy_id, logw, errw))\n\t\t\t\t\t\tcontinue;\n");
+						else if (attr_name_lower.equals("organism_name_scientific") && class_name.equalsIgnoreCase("EntityNaturalSrc"))
+							buffw.write("\t\t\t\t\tif (!set_string_organism_name_scientific(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), conn_tax, entry_id, ncbi_taxonomy_id, logw, errw))\n\t\t\t\t\t\tcontinue;\n");
 
 						// item='host_org_genus', category='BMRBx:entity_experimental_src'
 						else if (attr_name_lower.equals("host_org_genus") && class_name.equalsIgnoreCase("EntityExperimentalSrc"))
@@ -3065,6 +3087,9 @@ public class BMRxTool_Java {
 						// item='host_org_name_common', category='BMRBx:entity_experimental_src'
 						else if (attr_name_lower.equals("host_org_name_common") && class_name.equalsIgnoreCase("EntityExperimentalSrc"))
 							buffw.write("\t\t\t\t\tif (!set_string_host_org_name_common(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), conn_tax, ncbi_taxonomy_id, logw))\n\t\t\t\t\t\tcontinue;\n");
+						// item='host_org_scientific_name', category='BMRBx:entity_experimental_src'
+						else if (attr_name_lower.equals("host_org_scientific_name") && class_name.equalsIgnoreCase("EntityExperimentalSrc"))
+							buffw.write("\t\t\t\t\tif (!set_string_host_org_scientific_name(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), conn_tax, ncbi_taxonomy_id, logw))\n\t\t\t\t\t\tcontinue;\n");
 
 						// item='database_code', category='BMRBx:natural_source_db'
 						else if (attr_name_lower.equals("database_code") && class_name.equalsIgnoreCase("NaturalSourceDb"))
@@ -3613,7 +3638,7 @@ public class BMRxTool_Java {
 							buffw.write("\t\tif (val_name != null)\n");
 							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_chemcompbond + ".getAromaticFlag(val_name);\n\n");
 
-						}						
+						}
 
 						// item='type'
 						if (attr_name_lower.equals("type")) {
@@ -4261,7 +4286,7 @@ public class BMRxTool_Java {
 						if (attr_name_lower.equals("type")) {
 
 							buffw.write("\t\tif (val_name != null)\n");
-							buffw.write("\t\t\tval_name = ent.getType(val_name);\n\n");							
+							buffw.write("\t\t\tval_name = ent.getType(val_name);\n\n");
 
 							buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
 							buffw.write("\t\t\tval_name = \"macromolecule\";\n\n");
