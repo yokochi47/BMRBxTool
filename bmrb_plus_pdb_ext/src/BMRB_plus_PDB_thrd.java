@@ -1,7 +1,7 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
     Copyright 2013-2018 Masashi Yokochi
-    
+
     https://github.com/yokochi47/BMRBxTool
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -117,57 +117,70 @@ public class BMRB_plus_PDB_thrd implements Runnable {
 				//				System.out.println("entry_id: " + entry_id);
 				//				System.out.println("pdb_id:   " + pdb_id);
 
-				FileInputStream in = new FileInputStream(file);
+				try {
 
-				if (parser == null)
-					parser = new StarParser(in);
-				else
-					parser.ReInit(in);
+					FileInputStream in = new FileInputStream(file);
 
-				parser.StarFileNodeParse(parser);
-				StarNode node = parser.popResult();
+					if (parser == null)
+						parser = new StarParser(in);
+					else
+						parser.ReInit(in);
 
-				final String sf_category = ".Sf_category";
-				String category, tag_name;
+					parser.StarFileNodeParse(parser);
+					StarNode node = parser.popResult();
 
-				category = "conformer_family_coord_set";
-				tag_name = "_" + category.substring(0, 1).toUpperCase() + category.substring(1) + sf_category;
+					final String sf_category = ".Sf_category";
+					String category, tag_name;
 
-				converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
+					category = "conformer_family_coord_set";
+					tag_name = "_" + category.substring(0, 1).toUpperCase() + category.substring(1) + sf_category;
 
-				category = "conformer_statistics";
-				tag_name = "_Conformer_stat_list"+ sf_category;
+					converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
 
-				converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
+					category = "conformer_statistics";
+					tag_name = "_Conformer_stat_list"+ sf_category;
 
-				category = "constraint_statistics";
-				tag_name = "_Constraint_stat_list" + sf_category;
+					converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
 
-				converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
+					category = "constraint_statistics";
+					tag_name = "_Constraint_stat_list" + sf_category;
 
-				category = "general_distance_constraints";
-				tag_name = "_Gen_dist_constraint_list" + sf_category;
+					converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
 
-				converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
+					category = "general_distance_constraints";
+					tag_name = "_Gen_dist_constraint_list" + sf_category;
 
-				category = "org_constr_file_comment";
-				tag_name = "_" + category.substring(0, 1).toUpperCase() + category.substring(1) + sf_category;
+					converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
 
-				converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
+					category = "org_constr_file_comment";
+					tag_name = "_" + category.substring(0, 1).toUpperCase() + category.substring(1) + sf_category;
 
-				category = "RDC_constraints";
-				tag_name = "_RDC_constraint_list" + sf_category;
+					converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
 
-				converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
+					category = "RDC_constraints";
+					tag_name = "_RDC_constraint_list" + sf_category;
 
-				category = "torsion_angle_constraints";
-				tag_name = "_Torsion_angle_constraint_list" + sf_category;
+					converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
 
-				converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
+					category = "torsion_angle_constraints";
+					tag_name = "_Torsion_angle_constraint_list" + sf_category;
 
-				in.close();
+					converter.parse_saveframe(conn_bmrb, entry_id, node, tag_name, category);
 
-				System.out.print(".");
+					in.close();
+
+					System.out.print(".");
+
+				} catch (FileNotFoundException e) {
+					System.err.print(file_name);
+					e.printStackTrace();
+				} catch (ParseException e) {
+					System.err.print(file_name);
+					e.printStackTrace();
+				} catch (IOException e) {
+					System.err.print(file_name);
+					e.printStackTrace();
+				}
 
 			}
 
@@ -176,12 +189,6 @@ public class BMRB_plus_PDB_thrd implements Runnable {
 			conn_bmrb.close();
 
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
