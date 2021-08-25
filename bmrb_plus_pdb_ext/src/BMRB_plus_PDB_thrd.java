@@ -28,7 +28,6 @@ import java.sql.SQLException;
 import org.postgresql.copy.CopyManager;
 import org.postgresql.core.BaseConnection;
 
-import EDU.bmrb.starlibj.ParseException;
 import EDU.bmrb.starlibj.StarNode;
 import EDU.bmrb.starlibj.StarParser;
 
