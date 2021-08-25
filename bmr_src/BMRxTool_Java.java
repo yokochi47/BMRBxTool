@@ -3607,6 +3607,14 @@ public class BMRxTool_Java {
 					// category='BMRBx:chem_comp_bond'
 					if (class_name.equalsIgnoreCase("ChemCompBond")) {
 
+						// item='aromatic_flag'
+						if (attr_name_lower.equals("aromatic_flag")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_chemcompbond + ".getAromaticFlag(val_name);\n\n");
+
+						}						
+
 						// item='type'
 						if (attr_name_lower.equals("type")) {
 

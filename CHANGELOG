@@ -1,4 +1,4 @@
- Changes in BMRBxTool 1.34.0 (release 2021-08-05)
+ Changes in BMRBxTool 1.34.0 (release 2021-08-25)
 
   Updated dictionary NMR-STAR v3.2.1.15 to v3.2.1.18.
   Updated xsd2pgschema to 4.2.1.
@@ -12,6 +12,7 @@
   Added remediation for '_theoretical_heteronucl_t2_list.temp_calibration_method'.
   Added remediation for '_theoretical_heteronucl_t2_list.temp_control_method'.
   Added remediation for '_entry.type'.
+  Added remediation for '_chem_comp_bond.aromatic_flag'.
   Updated BMRB/JSON Schema.
   Updated scripts for Ligand Expo.
 
