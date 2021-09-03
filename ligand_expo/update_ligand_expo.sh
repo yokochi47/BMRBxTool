@@ -20,10 +20,10 @@ psql -U $DB_USER -l | grep $DB_NAME > /dev/null || ( echo "database \"$DB_NAME\"
 #DB_TGZ=components-pub-xml.tar.gz
 #XML_DIR=components-pub-xml
 
-PDB_MIRROR=ftp.pdbj.org
-XML_DIR=chem_comp/PDBML
+PDB_MIRROR=data.pdbj.org
+XML_DIR=pdbjplus/data/cc/xml
 
-wget -c -r -nv -np http://$PDB_MIRROR/$XML_DIR/ -nH -R index.html* 2> /dev/null
+wget -c -r -nv -np https://$PDB_MIRROR/$XML_DIR/ -nH -R index.html* 2> /dev/null
 
 MD5_DIR=chk_sum_pdbml_cc
 
@@ -176,6 +176,8 @@ if [ $? = 0 ] ; then
 fi
 
 ./sphinx_index.sh
+
+./uncompress_chem_comp.sh
 
 date
 
