@@ -1,6 +1,6 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2020 Masashi Yokochi
+    Copyright 2013-2021 Masashi Yokochi
 
     https://github.com/yokochi47/BMRBxTool
 
@@ -117,16 +117,16 @@ public class BMRxTool_DOM {
 	public static final String pubmed_esearch_api = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?database=pubmed&term=";
 	public static final String crossref_doi_api = "https://search.crossref.org/dois?q=";
 	public static final String bmrb_ligand_expo_api = "http://octopus.bmrb.wisc.edu/ligand-expo?what=find&exact_id=on&compid=";
-	public static final String pdb_graph_uri = "https://rdf.wwpdb.org/pdb";
-	public static final String pdb_cc_graph_uri = "https://rdf.wwpdb.org/cc";
+	public static final String pdb_graph_uri = "http://rdf.wwpdb.org/pdb";
+	public static final String pdb_cc_graph_uri = "http://rdf.wwpdb.org/cc";
 	public static final String rdf_pdb_api = pdb_graph_uri + "/";
 	public static final String rdf_pdb_cc_api = pdb_cc_graph_uri + "/";
-	public static final String pdbo_uri = "https://rdf.wwpdb.org/schema/pdbx-v50.owl#";
+	public static final String pdbo_uri = "http://rdf.wwpdb.org/schema/pdbx-v50.owl#";
 
 	public static final int service_trials = 3;
 	public static final int service_wait = 10000; // wait for 10 sec
 
-	public static final String license = "/*\n   BMRBxTool - XML converter for NMR-STAR data\n    Copyright 2013-2020 Masashi Yokochi\n\n    https://github.com/yokochi47/BMRBxTool\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\n You may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n */\n\n";
+	public static final String license = "/*\n   BMRBxTool - XML converter for NMR-STAR data\n    Copyright 2013-2021 Masashi Yokochi\n\n    https://github.com/yokochi47/BMRBxTool\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\n You may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n */\n\n";
 
 	private static int serial_version_uid = 0;
 

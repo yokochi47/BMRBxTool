@@ -83,8 +83,6 @@ fi
 
 DB_SCHEMA=schema/bmrb_clone.schema
 
-java -cp extlibs/xsd2pgschema.jar xsd2pgschema --xsd $XML_SCHEMA --no-rel --hash-by SHA-1 --ddl $DB_SCHEMA --inplace-doc-key-name entry_id --inplace-doc-key-name entry.id
-
 echo
 echo "Do you want to update $DB_NAME? (y [n]) "
 

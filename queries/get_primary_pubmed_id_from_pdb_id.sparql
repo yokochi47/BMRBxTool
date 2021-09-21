@@ -1,10 +1,10 @@
-PREFIX PDBo: <https://rdf.wwpdb.org/schema/pdbx-v50.owl#>
+PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v50.owl#>
 
 SELECT ?pubmed_id
-FROM <https://rdf.wwpdb.org/pdb>
+FROM <http://rdf.wwpdb.org/pdb>
 WHERE {
 
-  BIND (IRI(CONCAT("https://rdf.wwpdb.org/pdb/", "2MAO", "/citation/primary")) AS ?pdb_cp)
+  BIND (IRI(CONCAT("http://rdf.wwpdb.org/pdb/", "2MAO", "/citation/primary")) AS ?pdb_cp)
 
   ?pdb_cp PDBo:citation.pdbx_database_id_PubMed ?pubmed_id .
 

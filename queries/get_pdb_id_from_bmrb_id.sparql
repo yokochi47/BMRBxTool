@@ -1,7 +1,7 @@
-PREFIX PDBo: <https://rdf.wwpdb.org/schema/pdbx-v50.owl#>
+PREFIX PDBo: <http://rdf.wwpdb.org/schema/pdbx-v50.owl#>
 
 SELECT ?pdb_id COUNT(?pdb_id) AS ?connt
-FROM <https://rdf.wwpdb.org/pdb>
+FROM <http://rdf.wwpdb.org/pdb>
 WHERE {
 
   ?pdb_s PDBo:database_2.database_id "BMRB" ;
@@ -9,7 +9,7 @@ WHERE {
 
   ?pdb_s PDBo:of_datablock ?pdb_db .
 
-  BIND (STRAFTER(STR(?pdb_db), "https://rdf.wwpdb.org/pdb/") AS ?pdb_id)
+  BIND (STRAFTER(STR(?pdb_db), "http://rdf.wwpdb.org/pdb/") AS ?pdb_id)
 
   BIND (IRI(CONCAT(?pdb_db, "/citation_authorCategory")) AS ?pdb_citation_author_category)
 

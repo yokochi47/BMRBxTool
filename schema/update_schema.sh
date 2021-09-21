@@ -127,7 +127,7 @@ fi
 
 mv -f $DIC_PREFIX-v$DIC_VERSION.xsd~ $DIC_PREFIX-v$DIC_VERSION.xsd
 
-sed -i -e "3,2h; s/http:\/\/pdbml.pdb.org/https:\/\/bmrbpub.pdbj.org/g" $DIC_PREFIX-v$DIC_VERSION.xsd
+sed -i -e "3,2h; s/http:\/\/pdbml.pdb.org/http:\/\/bmrbpub.pdbj.org/g" $DIC_PREFIX-v$DIC_VERSION.xsd
 sed -i -e "s/xsd:integer/xsd:int/g" $DIC_PREFIX-v$DIC_VERSION.xsd
 
 ln -s $DIC_PREFIX-v$DIC_VERSION.xsd $DIC_PREFIX.xsd

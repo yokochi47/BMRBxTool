@@ -1,6 +1,6 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2018 Masashi Yokochi
+    Copyright 2013-2021 Masashi Yokochi
 
     https://github.com/yokochi47/BMRBxTool
 
@@ -44,11 +44,11 @@ import org.w3c.dom.ls.LSSerializer;
 public class XSD_ann {
 
 	public final static String dictionary_url = "http://svn.bmrb.wisc.edu/svn/nmr-star-dictionary/bmrb_only_files/adit_input/NMR-STAR.dic";
-	public final static String alt_dictionary_url = "https://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic";
+	public final static String alt_dictionary_url = "http://bmrbpub.pdbj.org/schema/mmcif_nmr-star.dic";
 
 	//public final static String category_api = "http://www.bmrb.wisc.edu/dictionary/tag.php?tagcat=";
 	public final static String category_api = "https://bmrb.io/dictionary/tag.php?tagcat=";
-	public final static String alt_category_api = "https://%s/dictionary/tag.php?tagcat="; 
+	public final static String alt_category_api = "https://%s/dictionary/tag.php?tagcat=";
 	//public final static String tag_api = "http://www.bmrb.wisc.edu/dictionary/tagdetail.php?tag=_";
 	public final static String tag_api = "https://bmrb.io/dictionary/tagdetail.php?tag=_";
 	public final static String alt_tag_api = "https://%s/dictionary/tagdetail.php?tag=_";
@@ -570,7 +570,7 @@ public class XSD_ann {
 
 		for (Node anno = node.getFirstChild(); anno != null; anno = anno.getNextSibling()) {
 
-			if (!anno.getNodeName().endsWith(":annotation")) 
+			if (!anno.getNodeName().endsWith(":annotation"))
 				add_tag_zero_occurs(anno, Category, column_list);
 
 		}
