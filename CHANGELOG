@@ -1,6 +1,7 @@
- Changes in BMRBxTool 1.35.0 (release 2021-09-21)
+ Changes in BMRBxTool 1.35.0 (release 2021-09-24)
 
   Changed namespace URI to http://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd. (BMRBx)
+  Updated enumerations of _entity_natural_src.kingdom.
 
  Changes in BMRBxTool 1.34.0 (release 2021-08-25)
 

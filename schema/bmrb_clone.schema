@@ -5559,7 +5559,7 @@ CREATE TABLE entity_keyword (
 DROP TYPE IF EXISTS ENUM_entity_natural_src_common CASCADE;
 CREATE TYPE ENUM_entity_natural_src_common AS ENUM ( 'yes', 'no' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_kingdom CASCADE;
-CREATE TYPE ENUM_entity_natural_src_kingdom AS ENUM ( 'Metazoa', 'Fungi', 'Viridiplantae', 'Protista', 'Loebvirae', 'Orthornavirae', 'Pararnavirae', 'Heunggongvirae', 'Bamfordvirae', 'Not applicable' );
+CREATE TYPE ENUM_entity_natural_src_kingdom AS ENUM ( 'Metazoa', 'Fungi', 'Viridiplantae', 'Loebvirae', 'Orthornavirae', 'Pararnavirae', 'Heunggongvirae', 'Bamfordvirae', 'Helvetiavirae', 'Sangervirae', 'Shotokuvirae', 'Trapavirae', 'Zilligvirae', 'Not applicable' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_organ CASCADE;
 CREATE TYPE ENUM_entity_natural_src_organ AS ENUM ( 'brain', 'heart', 'intestine', 'kidney', 'liver', 'lung', 'pancreas', 'skin', 'testicle', 'leaf', 'venom gland', 'oral mucosa submandibular-sublingual glands', 'salivary glands', 'oocyte', 'breast', 'stomach', 'electric organ', 'eye', 'ileum', 'small intestine', 'seed', 'blood', 'duodendum', 'jejunum', 'vulva', 'hepatopancreas', 'placenta', 'skeletal muscle', 'aorta', 'telson', 'ubiquitous', 'aciniform gland', 'endoskeleton', 'heamolymph', 'mucous epithelium', 'cardiac skeletal muscle', 'seminal vesicles', 'antennae', 'fruit', 'thymus', 'egg white', 'na' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_organelle CASCADE;
