@@ -7,7 +7,7 @@
   xmlns:BMRBx="http://pdbml.pdb.org/schema/mmcif_nmr-star.xsd"
   exclude-result-prefixes="xsi">
 
-  <xsl:output method="xml" indent="yes"/>
+  <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
   <xsl:strip-space elements="*"/>
 
   <xsl:template match="/xsd:schema">
