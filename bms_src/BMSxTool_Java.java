@@ -433,6 +433,7 @@ public class BMSxTool_Java {
 			buffw.write("\t\t\t\t\tlist[0] = " + abs_class_name + ".Factory.newInstance();\n\n");
 
 			// category='BMRBx:chem_comp'
+			/*
 			if (class_name.equals("ChemComp")) {
 
 				buffw.write("\t\t\t\t\tString _bmrb_code = rset.getString(\"BMRB_code\");\n");
@@ -446,7 +447,7 @@ public class BMSxTool_Java {
 				write_remed_pdb_code(buffw, "setPdbCode");
 
 			}
-
+			*/
 			// category='BMRBx:chem_shift_ref'
 			if (class_name.equalsIgnoreCase("ChemShiftRef"))
 				buffw.write("\t\t\t\t\t" + file_prefix + "_" + BMSxTool_DOM.util_chemshiftref + " chem_shift_ref = chem_shift_ref_list.get(i++);\n\n");
@@ -3078,14 +3079,14 @@ public class BMSxTool_Java {
 							write_excld_log_code(buffw, method_name, column_name);
 							buffw.write("\t\t\t\t\t\tcontinue;\n\t\t\t\t\t}\n");
 						}
-
+						/*
 						// item='bmrb_code', category='BMRBx:chem_comp'
 						else if (attr_name_lower.equals("bmrb_code") && class_name.equalsIgnoreCase("ChemComp"))
 							buffw.write("\t\t\t\t\tif (!set_string(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", bmrb_code, logw))\n\t\t\t\t\t\tcontinue;\n");
 						// item='pdb_code', category='BMRBx:chem_comp'
 						else if (attr_name_lower.equals("pdb_code") && class_name.equalsIgnoreCase("ChemComp"))
 							buffw.write("\t\t\t\t\tif (!set_string(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", pdb_code, logw))\n\t\t\t\t\t\tcontinue;\n");
-
+						*/
 						// item='pubmed_id', category='BMRBx:citation'
 						else if (attr_name_lower.equals("pubmed_id") && class_name.equalsIgnoreCase("Citation"))
 							buffw.write("\t\t\t\t\tif (!set_string(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", pubmed_id, logw))\n\t\t\t\t\t\tcontinue;\n");
@@ -3283,9 +3284,11 @@ public class BMSxTool_Java {
 						// item='formula_weight', category='BMRBx:entity'
 						else if (attr_name_lower.equals("formula_weight") && class_name.equalsIgnoreCase("Entity"))
 							buffw.write("\t\t\t\t\tif (!set_decimal_formula_weight(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), conn_bmrb, conn_le, entry_id, rset.getString(\"ID\"), logw))\n\t\t\t\t\t\tcontinue;\n");
+						/*
 						// item='formula_weight', category='BMRBx:chem_comp'
 						else if (attr_name_lower.equals("formula_weight") && class_name.equalsIgnoreCase("ChemComp"))
 							buffw.write("\t\t\t\t\tif (!set_decimal_formula_weight(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), conn_le, pdb_code, logw))\n\t\t\t\t\t\tcontinue;\n");
+							*/
 						// item='chem_shift_val', category='BMRBx:peak_char'
 						else if (attr_name_lower.equals("chem_shift_val") && class_name.equalsIgnoreCase("PeakChar")) {
 							buffw.write("\t\t\t\t\tif (!set_decimal_chem_shift_val(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), logw)) {\n");
