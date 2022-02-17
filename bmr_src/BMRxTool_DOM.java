@@ -8837,8 +8837,8 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\tString bmrb_pdb_coor_match_csv_file = \"https://bmrb.pdbj.org/ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts/BMRB_PDB_match.csv\";\n");
 			buffw.write("\t\tString bmrb_pdb_adit_match_csv_file = \"https://bmrb.pdbj.org/ftp/pub/bmrb/nmr_pdb_integrated_data/adit_nmr_matched_pdb_bmrb_entry_ids.csv\";\n\n");
-			buffw.write("\t\tString _bmrb_pdb_coor_match_csv_file = \"http://www.bmrb.wisc.edu/ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts/BMRB_PDB_match.csv\";\n");
-			buffw.write("\t\tString _bmrb_pdb_adit_match_csv_file = \"http://www.bmrb.wisc.edu/ftp/pub/bmrb/nmr_pdb_integrated_data/adit_nmr_matched_pdb_bmrb_entry_ids.csv\";\n\n");
+			buffw.write("\t\tString _bmrb_pdb_coor_match_csv_file = \"https://bmrb.io/ftp/pub/bmrb/nmr_pdb_integrated_data/coordinates_restraints_chemshifts/BMRB_PDB_match.csv\";\n");
+			buffw.write("\t\tString _bmrb_pdb_adit_match_csv_file = \"https://bmrb.io/ftp/pub/bmrb/nmr_pdb_integrated_data/adit_nmr_matched_pdb_bmrb_entry_ids.csv\";\n\n");
 
 			buffw.write("\t\ttry {\n\n");
 
