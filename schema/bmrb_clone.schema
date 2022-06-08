@@ -5850,7 +5850,7 @@ CREATE TABLE experiment (
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
 DROP TYPE IF EXISTS ENUM_experiment_file_content CASCADE;
-CREATE TYPE ENUM_experiment_file_content AS ENUM ( 'NMR experiment directory', 'Time-domain (raw spectral data)', 'Pulse sequence image file', 'Pulse sequence', 'Pulse field gradient', 'Peak list', 'Spectral image', 'Acquisition parameters', 'Processing parameters', 'na' );
+CREATE TYPE ENUM_experiment_file_content AS ENUM ( 'NMR experiment directory', 'Time-domain (raw spectral data)', 'Pulse sequence image file', 'Pulse sequence', 'Pulse field gradient', 'Peak list', 'Spectral image', 'Acquisition parameters', 'Processing parameters', 'RNA fragment binding data', 'na' );
 CREATE TABLE experiment_file (
 	content ENUM_experiment_file_content ,
 	details TEXT ,

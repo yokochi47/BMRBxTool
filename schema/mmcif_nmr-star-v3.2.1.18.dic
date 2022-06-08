@@ -36575,6 +36575,7 @@ The kind of data contained in the file.
    'Spectral image'    ?
    'Acquisition parameters'    ?
    'Processing parameters'    ?
+   'RNA fragment binding data'    ?
    na    ?
 
    stop_
