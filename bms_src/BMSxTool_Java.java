@@ -4876,6 +4876,14 @@ public class BMSxTool_Java {
 
 					}
 
+					// item='under_sampling_type', category='BMRBx:spectral_dim'
+					if (attr_name_lower.equals("under_sampling_type") && class_name.equalsIgnoreCase("SpectralDim")) {
+
+						buffw.write("\t\tif (val_name != null && val_name.equals(\"not observable\"))\n");
+						buffw.write("\t\t\tval_name = \"not observed\";\n\n");
+
+					}
+
 					// item='edge_designation', category='BMRBx:struct_anno_char'
 					if (attr_name_lower.equals("edge_designation") && class_name.equalsIgnoreCase("StructAnnoChar")) {
 
