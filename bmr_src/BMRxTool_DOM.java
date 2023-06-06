@@ -2509,7 +2509,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\t\twhile (cont) {\n\n");
 
-			buffw.write("\t\t\t\t\tString query = new String(\"select nodes.tax_id,nodes.parent_tax_id,rank,name_txt from nodes,names where nodes.tax_id=\" + ncbi_taxonomy_id + \" and nodes.tax_id=names.tax_id and name_class='common name'\");\n\n");
+			buffw.write("\t\t\t\t\tString query = new String(\"select nodes.tax_id,nodes.parent_tax_id,rank,name_txt from nodes,names where nodes.tax_id=\" + ncbi_taxonomy_id + \" and nodes.tax_id=names.tax_id and name_class like '%common name'\");\n\n");
 
 			buffw.write("\t\t\t\t\tstate = conn_tax.createStatement();\n");
 			buffw.write("\t\t\t\t\trset = state.executeQuery(query);\n\n");
