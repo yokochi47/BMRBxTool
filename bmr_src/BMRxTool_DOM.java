@@ -7119,7 +7119,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("\t\t\t\t\t\t\t\twhile (i - j >= 0 && ai - j >= 0 && a[i - j] != ' ' && aa[ai - j] != ' ') {\n\n");
 
-			buffw.write("\t\t\t\t\t\t\t\t\tif (a[i -j] != aa[ai - j]) {\n");
+			buffw.write("\t\t\t\t\t\t\t\t\tif (a[i - j] != aa[ai - j]) {\n");
 			buffw.write("\t\t\t\t\t\t\t\t\t\tA[i - 1] = '.';\n");
 			buffw.write("\t\t\t\t\t\t\t\t\t\tbreak;\n");
 			buffw.write("\t\t\t\t\t\t\t\t\t}\n\n");
