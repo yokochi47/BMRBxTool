@@ -91,11 +91,11 @@ err_file=$ERR_DIR/all_err
 
 if [ $sync_update != "true" ] ; then
 
- java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --field-deny entity.polymer_seq_one_letter_code --field-deny entity.polymer_seq_one_letter_code_can --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST 2> $err_file
 
 else
 
- java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST --sync $MD5_DIR 2> $err_file
+ java -cp extlibs/xsd2pgschema.jar xml2luceneidx --xsd $XML_SCHEMA --xml $XML_DOC_DIR --idx-dir $IDX_DIR --attr-all --field-deny entity.polymer_seq_one_letter_code --field-deny entity.polymer_seq_one_letter_code_can --no-rel --no-valid --xml-file-ext gz --xml-file-ext-digest $FILE_EXT_DIGEST --sync $MD5_DIR 2> $err_file
 
 fi
 
