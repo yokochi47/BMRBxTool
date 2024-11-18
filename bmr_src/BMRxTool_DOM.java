@@ -79,6 +79,7 @@ public class BMRxTool_DOM {
 	public static final String util_entry = "Util_Entry";
 	public static final String util_entryauthor = "Util_EntryAuthor";
 	public static final String util_entryexperimentalmethods = "Util_EntryExperimentalMethods";
+	public static final String util_experimentfile = "Util_ExperimentFile";
 	public static final String util_heteronuclt1list = "Util_HeteronuclT1List";
 	public static final String util_heteronuclt2list = "Util_HeteronuclT2List";
 	public static final String util_heteronuclt1rholist = "Util_HeteronuclT1RhoList";
@@ -387,6 +388,7 @@ public class BMRxTool_DOM {
 		write_util_entry(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_entryauthor(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_entryexperimentalmethods(src_dir_name, xsd_dir_name, file_prefix);
+		write_util_experimentfile(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_heteronuclt1list(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_heteronuclt2list(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_heteronuclt1rholist(src_dir_name, xsd_dir_name, file_prefix);
@@ -7947,7 +7949,7 @@ public class BMRxTool_DOM {
 
 			buffw.write("\tpublic static String getPolymerCommonType(String val_name) {\n");
 			buffw.write("\t\treturn (String) map_polymer_common_type.get(val_name);\n");
-			buffw.write("\t}\n\n");		
+			buffw.write("\t}\n\n");
 
 			buffw.write("\tstatic final Map<String, String> map_polymer_type = new HashMap<String, String>() {\n\n");
 
@@ -9746,6 +9748,48 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\treturn null;\n\n");
 
 			buffw.write("\t\treturn val_name;\n");
+			buffw.write("\t}\n}\n");
+
+			buffw.close();
+			filew.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void write_util_experimentfile(String src_dir_name, String xsd_dir_name, String file_prefix) {
+
+		final String program_name = src_dir_name + file_prefix + "_" + util_experimentfile + ".java";
+
+		File java_file = new File(program_name);
+
+		try {
+
+			FileWriter filew = new FileWriter(java_file);
+			BufferedWriter buffw = new BufferedWriter(filew);
+
+			buffw.write(license);
+
+			buffw.write("package " + package_name + ";\n\n");
+
+			buffw.write("import java.util.HashMap;\n");
+			buffw.write("import java.util.Map;\n\n");
+
+			buffw.write("public class " + file_prefix + "_" + util_experimentfile + " {\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_content = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "experiment_file.content.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getContent(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_content.get(val_name);\n");
 			buffw.write("\t}\n}\n");
 
 			buffw.close();

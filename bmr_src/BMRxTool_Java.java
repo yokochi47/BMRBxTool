@@ -4319,6 +4319,19 @@ public class BMRxTool_Java {
 
 					}
 
+					// category='BMRBx:experiment_file'
+					if (class_name.equalsIgnoreCase("ExperimentFile")) {
+
+						// item='content'
+						if (attr_name_lower.equals("content")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_experimentfile + ".getMContent(val_name);\n\n");
+
+						}
+
+					}
+
 					// category='BMRBx:heteronucl_t1_list'
 					if (class_name.equalsIgnoreCase("HeteronuclT1List")) {
 
