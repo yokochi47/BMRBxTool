@@ -4326,7 +4326,7 @@ public class BMRxTool_Java {
 						if (attr_name_lower.equals("content")) {
 
 							buffw.write("\t\tif (val_name != null)\n");
-							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_experimentfile + ".getMContent(val_name);\n\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_experimentfile + ".getContent(val_name);\n\n");
 
 						}
 

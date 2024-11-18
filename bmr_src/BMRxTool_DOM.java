@@ -122,7 +122,7 @@ public class BMRxTool_DOM {
 	public static final String pdb_cc_graph_uri = "http://rdf.wwpdb.org/cc";
 	public static final String rdf_pdb_api = pdb_graph_uri + "/";
 	public static final String rdf_pdb_cc_api = pdb_cc_graph_uri + "/";
-	public static final String pdbo_uri = "http://rdf.wwpdb.org/schema/pdbx-v50.owl#";
+	public static final String pdbo_uri = "http://rdf.wwpdb.org/schema/pdbx-with-vrptx-v50#";
 
 	public static final int service_trials = 3;
 	public static final int service_wait = 10000; // wait for 10 sec
