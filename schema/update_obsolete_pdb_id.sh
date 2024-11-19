@@ -3,7 +3,7 @@
 obsolete_dat=obsolete.dat
 obsolete_prop=obsolete_pdb_id.properties
 
-wget -c https://ftp.pdbj.org/pub/pdb/data/status/$obsolete_dat
+wget -c https://files.pdbj.org/pub/pdb/data/status/$obsolete_dat
 
 rm -f $obsolete_prop
 
