@@ -1,6 +1,6 @@
 /*
    BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2021 Masashi Yokochi
+    Copyright 2013-2025 Masashi Yokochi
 
     https://github.com/yokochi47/BMRBxTool
 

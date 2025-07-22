@@ -1,6 +1,6 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2021 Masashi Yokochi
+    Copyright 2013-2025 Masashi Yokochi
 
     https://github.com/yokochi47/BMRBxTool
 
@@ -107,6 +107,8 @@ public class BMRxTool_DOM {
 	public static final String util_sampleconditionvariable = "Util_SampleConditionVariable";
 	public static final String util_seqonelettercode = "Util_SeqOneLetterCode";
 	public static final String util_sgproject = "Util_SGProject";
+	public static final String util_spectraldim = "Util_SpectralDim";
+	public static final String util_spectraldimtransfer = "Util_SpectralDimTransfer";
 	public static final String util_structannochar = "Util_StructAnnoChar";
 	public static final String util_structclassification = "Util_StructClassification";
 	public static final String util_study = "Util_Study";
@@ -127,7 +129,7 @@ public class BMRxTool_DOM {
 	public static final int service_trials = 3;
 	public static final int service_wait = 10000; // wait for 10 sec
 
-	public static final String license = "/*\n   BMRBxTool - XML converter for NMR-STAR data\n    Copyright 2013-2021 Masashi Yokochi\n\n    https://github.com/yokochi47/BMRBxTool\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\n You may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n */\n\n";
+	public static final String license = "/*\n   BMRBxTool - XML converter for NMR-STAR data\n    Copyright 2013-2025 Masashi Yokochi\n\n    https://github.com/yokochi47/BMRBxTool\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\n You may obtain a copy of the License at\n    http://www.apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n */\n\n";
 
 	private static int serial_version_uid = 0;
 
@@ -416,6 +418,8 @@ public class BMRxTool_DOM {
 		write_util_sampleconditionvariable(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_seqonelettercode(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_sgproject(src_dir_name, xsd_dir_name, file_prefix);
+		write_util_spectraldim(src_dir_name, xsd_dir_name, file_prefix);
+		write_util_spectraldimtransfer(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_structannochar(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_structclassfication(src_dir_name, xsd_dir_name, file_prefix);
 		write_util_study(src_dir_name, xsd_dir_name, file_prefix);
@@ -9316,11 +9320,17 @@ public class BMRxTool_DOM {
 			buffw.write("\t\t\t\tif (array.length < 2)\n");
 			buffw.write("\t\t\t\t\tcontinue;\n\n");
 
-			buffw.write("\t\t\t\tint count = Integer.valueOf(array[1]);\n\n");
+			buffw.write("\t\t\t\ttry {\n\n");
 
-			buffw.write("\t\t\t\tif (count >= 2 || (count == 1 && first_author_family_name.equals(last_author_family_name))) {\n");
-			buffw.write("\t\t\t\t\tpdb_id = array[0];\n");
-			buffw.write("\t\t\t\t\tbreak;\n");
+			buffw.write("\t\t\t\t\tint count = Integer.valueOf(array[1]);\n\n");
+
+			buffw.write("\t\t\t\t\tif (count >= 2 || (count == 1 && first_author_family_name.equals(last_author_family_name))) {\n");
+			buffw.write("\t\t\t\t\t\tpdb_id = array[0];\n");
+			buffw.write("\t\t\t\t\t\tbreak;\n");
+			buffw.write("\t\t\t\t\t}\n\n");
+
+			buffw.write("\t\t\t\t} catch (Exception e) {\n");
+			buffw.write("\t\t\t\t\tcontinue;\n");
 			buffw.write("\t\t\t\t}\n\n");
 
 			buffw.write("\t\t\t}\n\n");
@@ -11624,6 +11634,90 @@ public class BMRxTool_DOM {
 
 			buffw.write("\tpublic static String getProjectName(String val_name) {\n");
 			buffw.write("\t\treturn (String) map_project_name.get(val_name);\n");
+			buffw.write("\t}\n}\n");
+
+			buffw.close();
+			filew.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void write_util_spectraldim(String src_dir_name, String xsd_dir_name, String file_prefix) {
+
+		final String program_name = src_dir_name + file_prefix + "_" + util_spectraldim + ".java";
+
+		File java_file = new File(program_name);
+
+		try {
+
+			FileWriter filew = new FileWriter(java_file);
+			BufferedWriter buffw = new BufferedWriter(filew);
+
+			buffw.write(license);
+
+			buffw.write("package " + package_name + ";\n\n");
+
+			buffw.write("import java.util.HashMap;\n");
+			buffw.write("import java.util.Map;\n\n");
+
+			buffw.write("public class " + file_prefix + "_" + util_spectraldim + " {\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_under_sampling_type = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "spectral_dim.under_sampling_type.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getUnderSamplingType(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_under_sampling_type.get(val_name);\n");
+			buffw.write("\t}\n}\n");
+
+			buffw.close();
+			filew.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void write_util_spectraldimtransfer(String src_dir_name, String xsd_dir_name, String file_prefix) {
+
+		final String program_name = src_dir_name + file_prefix + "_" + util_spectraldimtransfer + ".java";
+
+		File java_file = new File(program_name);
+
+		try {
+
+			FileWriter filew = new FileWriter(java_file);
+			BufferedWriter buffw = new BufferedWriter(filew);
+
+			buffw.write(license);
+
+			buffw.write("package " + package_name + ";\n\n");
+
+			buffw.write("import java.util.HashMap;\n");
+			buffw.write("import java.util.Map;\n\n");
+
+			buffw.write("public class " + file_prefix + "_" + util_spectraldimtransfer + " {\n\n");
+
+			buffw.write("\tstatic final Map<String, String> map_type = new HashMap<String, String>() {\n\n");
+
+			buffw.write("\t\tprivate static final long serialVersionUID = " + (++serial_version_uid) + "L;\n\n");
+
+			buffw.write("\t\t{\n\n");
+
+			write_util_from_properties(buffw, xsd_dir_name + "spectral_dim_transfer.type.properties");
+
+			buffw.write("\n\t\t}\n\t};\n\n");
+
+			buffw.write("\tpublic static String getType(String val_name) {\n");
+			buffw.write("\t\treturn (String) map_type.get(val_name);\n");
 			buffw.write("\t}\n}\n");
 
 			buffw.close();

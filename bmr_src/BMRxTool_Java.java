@@ -1,6 +1,6 @@
 /*
     BMRBxTool - XML converter for NMR-STAR data
-    Copyright 2013-2021 Masashi Yokochi
+    Copyright 2013-2025 Masashi Yokochi
 
     https://github.com/yokochi47/BMRBxTool
 
@@ -4740,8 +4740,16 @@ public class BMRxTool_Java {
 					// item='under_sampling_type', category='BMRBx:spectral_dim'
 					if (attr_name_lower.equals("under_sampling_type") && class_name.equalsIgnoreCase("SpectralDim")) {
 
-						buffw.write("\t\tif (val_name != null && val_name.equals(\"not observable\"))\n");
-						buffw.write("\t\t\tval_name = \"not observed\";\n\n");
+						buffw.write("\t\tif (val_name != null)\n");
+						buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_spectraldim + ".getUnderSamplingType(val_name);\n\n");
+
+					}
+
+					// item='type', category='BMRBx:spectral_dim_transfer'
+					if (attr_name_lower.equals("type") && class_name.equalsIgnoreCase("SpectralDimTransfer")) {
+
+						buffw.write("\t\tif (val_name != null)\n");
+						buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_spectraldimtransfer + ".getType(val_name);\n\n");
 
 					}
 
