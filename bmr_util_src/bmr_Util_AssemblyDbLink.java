@@ -89,8 +89,8 @@ public class bmr_Util_AssemblyDbLink {
 			put("solid-state NMR", "solid-state NMR");
 			put("X-ray diffraction", "X-ray");
 			put("X-ray Crystal Diffraction and Analysis", "X-ray crystallography");
-			put("NMR spectroscopy", "NMR");
 			put("FTIR", "FTIR");
+			put("NMR spectroscopy", "NMR");
 
 		}
 	};
@@ -105,9 +105,9 @@ public class bmr_Util_AssemblyDbLink {
 
 		{
 
-			put("Y", "yes");
 			put("yes", "yes");
 			put("no", "no");
+			put("Y", "yes");
 
 		}
 	};

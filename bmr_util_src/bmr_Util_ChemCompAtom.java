@@ -28,10 +28,10 @@ public class bmr_Util_ChemCompAtom {
 
 		{
 
-			put("N", "no");
-			put("Y", "yes");
 			put("yes", "yes");
 			put("no", "no");
+			put("N", "no");
+			put("Y", "yes");
 
 		}
 	};
@@ -46,10 +46,10 @@ public class bmr_Util_ChemCompAtom {
 
 		{
 
-			put("N", "no");
-			put("Y", "yes");
 			put("yes", "yes");
 			put("no", "no");
+			put("N", "no");
+			put("Y", "yes");
 
 		}
 	};

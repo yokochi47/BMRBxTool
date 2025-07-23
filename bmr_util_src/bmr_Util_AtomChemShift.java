@@ -37,10 +37,10 @@ public class bmr_Util_AtomChemShift {
 			put("4", "4");
 			put("3", "3");
 			put(".3", "null");
-			put("11", "1");
 			put("2", "2");
-			put(".1", "1");
+			put("11", "1");
 			put("1", "1");
+			put(".1", "1");
 			put("0", "1");
 			put("1.", "1");
 

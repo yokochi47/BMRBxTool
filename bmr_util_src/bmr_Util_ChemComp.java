@@ -52,15 +52,15 @@ public class bmr_Util_ChemComp {
 			put("D-SACCHARIDE", "D-SACCHARIDE");
 			put("L-PEPTIDE LINKING", "L-PEPTIDE LINKING");
 			put("D-peptide linking", "D-PEPTIDE LINKING");
-			put("complete", "OTHER");
 			put("RNA linking", "RNA LINKING");
+			put("complete", "OTHER");
 			put("PEPTIDE-LIKE", "PEPTIDE-LIKE");
 			put("L-RNA LINKING", "L-RNA LINKING");
 			put("non-polymer", "NON-POLYMER");
 			put("D-SACCHARIDE 1,4 AND 1,6 LINKING", "D-SACCHARIDE 1,4 AND 1,6 LINKING");
 			put("L-PEPTIDE NH3 AMINO TERMINUS", "L-PEPTIDE NH3 AMINO TERMINUS");
-			put("D-sacchride", "D-SACCHARIDE");
 			put("D-BETA-PEPTIDE, C-GAMMA LINKING", "D-BETA-PEPTIDE, C-GAMMA LINKING");
+			put("D-sacchride", "D-SACCHARIDE");
 			put("D-saccharide", "D-SACCHARIDE");
 			put("D-SACCHARIDE 1,4 AND 1,4 LINKING", "D-SACCHARIDE 1,4 AND 1,4 LINKING");
 			put("L-SACCHARIDE 1,4 AND 1,6 LINKING", "L-SACCHARIDE 1,4 AND 1,6 LINKING");
@@ -77,14 +77,14 @@ public class bmr_Util_ChemComp {
 			put("L-peptide COOH carboxy terminus", "L-PEPTIDE COOH CARBOXY TERMINUS");
 			put("DNA OH 3 PRIME TERMINUS", "DNA OH 3 PRIME TERMINUS");
 			put("RNA OH 5 PRIME TERMINUS", "RNA OH 5 PRIME TERMINUS");
-			put("l-peptide linking", "L-PEPTIDE LINKING");
 			put("RNA LINKING", "RNA LINKING");
+			put("l-peptide linking", "L-PEPTIDE LINKING");
 			put("RNA OH 3 PRIME TERMINUS", "RNA OH 3 PRIME TERMINUS");
 			put("D-PEPTIDE NH3 AMINO TERMINUS", "D-PEPTIDE NH3 AMINO TERMINUS");
 			put("D-GAMMA-PEPTIDE, C-DELTA LINKING", "D-GAMMA-PEPTIDE, C-DELTA LINKING");
-			put("SACCHARIDE", "SACCHARIDE");
-			put("D-PEPTIDE COOH CARBOXY TERMINUS", "D-PEPTIDE COOH CARBOXY TERMINUS");
 			put("L-Peptide Linking", "L-PEPTIDE LINKING");
+			put("D-PEPTIDE COOH CARBOXY TERMINUS", "D-PEPTIDE COOH CARBOXY TERMINUS");
+			put("SACCHARIDE", "SACCHARIDE");
 			put("D-PEPTIDE LINKING", "D-PEPTIDE LINKING");
 
 		}

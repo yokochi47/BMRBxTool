@@ -38,10 +38,10 @@ public class bmr_Util_HeteronuclNOEList {
 			put("NOE/NONOE", "relative intensities");
 			put("na", "na");
 			put("relative intensities", "relative intensities");
-			put("N15", "na");
 			put("peak integral", "peak integral");
-			put("not reported", "na");
+			put("N15", "na");
 			put("NH", "na");
+			put("not reported", "na");
 			put("{1H}-15N", "na");
 
 		}

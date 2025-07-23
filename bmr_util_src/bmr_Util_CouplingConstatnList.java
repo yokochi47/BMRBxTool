@@ -29,8 +29,8 @@ public class bmr_Util_CouplingConstatnList {
 		{
 
 			put("800.13", "800");
-			put("700", "700");
 			put("500.13", "500");
+			put("700", "700");
 			put("600.21", "600");
 			put("800", "800");
 			put("750", "750");
@@ -41,8 +41,8 @@ public class bmr_Util_CouplingConstatnList {
 			put("600.153", "600");
 			put("500", "500");
 			put("950", "950");
-			put("500.1323", "500");
 			put("1000", "1000");
+			put("500.1323", "500");
 			put("920", "920");
 			put("600", "600");
 

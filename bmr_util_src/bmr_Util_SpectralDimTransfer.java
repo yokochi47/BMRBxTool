@@ -28,9 +28,9 @@ public class bmr_Util_SpectralDimTransfer {
 
 		{
 
+			put("jcoupling", "jcoupling");
 			put("relayed-alternate", "relayed-alternate");
 			put("through-space", "through-space");
-			put("jcoupling", "jcoupling");
 			put("through-space?", "through-space");
 			put("jmultibond", "jmultibond");
 			put("onebond", "onebond");

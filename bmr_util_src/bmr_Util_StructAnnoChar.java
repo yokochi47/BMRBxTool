@@ -28,10 +28,10 @@ public class bmr_Util_StructAnnoChar {
 
 		{
 
-			put("N", "no");
-			put("Y", "yes");
 			put("yes", "yes");
 			put("no", "no");
+			put("Y", "yes");
+			put("N", "no");
 
 		}
 	};

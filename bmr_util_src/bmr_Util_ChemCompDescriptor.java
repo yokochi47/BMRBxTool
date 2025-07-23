@@ -28,17 +28,17 @@ public class bmr_Util_ChemCompDescriptor {
 
 		{
 
-			put("INCHI_MAIN", "INCHI_MAIN");
 			put("INCHI_MAIN_HATOM", "INCHI_MAIN_HATOM");
+			put("INCHI_MAIN", "INCHI_MAIN");
 			put("InChI", "INCHI");
 			put("INCHI_RECONNECT", "INCHI_RECONNECT");
 			put("INCHI_MAIN_CONNECT", "INCHI_MAIN_CONNECT");
-			put("na", "na");
 			put("SMILES_CANONICAL", "SMILES_CANONICAL");
+			put("na", "na");
 			put("INCHI_FIXEDH", "INCHI_FIXEDH");
+			put("INCHI_CHARGE", "INCHI_CHARGE");
 			put("INCHI", "INCHI");
 			put("INCHI_ISOTOPE", "INCHI_ISOTOPE");
-			put("INCHI_CHARGE", "INCHI_CHARGE");
 			put("SMILES", "SMILES");
 			put("InChIKey", "INCHI");
 			put("INCHI_STEREO", "INCHI_STEREO");

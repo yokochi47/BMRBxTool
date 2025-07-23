@@ -95,12 +95,12 @@ public class bmr_Util_SampleComponent {
 			put("v/v %", "% v/v");
 			put("mN", "mM");
 			put("mM", "mM");
-			put("mL", "mL");
 			put("% v/v", "% v/v");
+			put("mL", "mL");
 			put("ug/ml", "ug/mL");
 			put("per cent", "%");
-			put("Mm", "mM");
 			put("mH", "mM");
+			put("Mm", "mM");
 			put("%w/v", "% w/v");
 
 		}

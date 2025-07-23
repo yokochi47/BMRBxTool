@@ -56,8 +56,8 @@ public class bmr_Util_ConformerStatList {
 
 		{
 
-			put("lowest_energy", "lowest energy");
 			put("na", "na");
+			put("lowest_energy", "lowest energy");
 			put("closest to the average", "closest to the average");
 			put("minimized average structure", "minimized average structure");
 			put("randomly chosen", "na");

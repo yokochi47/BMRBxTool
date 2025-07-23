@@ -31,9 +31,9 @@ public class bmr_Util_EntityDbLink {
 			put("NCBI", "NCBI");
 			put("BMRB", "BMRB");
 			put("tRNAdb", "tRNADB");
+			put("NDB", "NDB");
 			put("GB", "GB");
 			put("PIR", "PIR");
-			put("NDB", "NDB");
 			put("BMRB(withdrawn)", "BMRB(withdrawn)");
 			put("EMBL", "EMBL");
 			put("HUGO", "HUGO");
@@ -65,8 +65,8 @@ public class bmr_Util_EntityDbLink {
 		{
 
 			put("na", "na");
-			put("Enterovirus E isolate Vir 404/03 polyprotein gene, complete cds", "na");
 			put("solid-state NMR", "solid-state NMR");
+			put("Enterovirus E isolate Vir 404/03 polyprotein gene, complete cds", "na");
 			put("solution NMR", "solution NMR");
 			put("X-ray crystallography", "X-ray crystallography");
 

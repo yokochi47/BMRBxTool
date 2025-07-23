@@ -40,8 +40,8 @@ public class bmr_Util_DataSet {
 			put("deduced_secd_struct_features", "deduced_secd_struct_features");
 			put("CSA_CSA_cross_correlation_relaxation", "CSA_CSA_cross_correlation_relaxation");
 			put("H_exch_protection_factors", "H_exch_protection_factors");
-			put("dipole_dipole_cross_correlation_relaxation", "dipole_dipole_cross_correlation_relaxation");
 			put("deduced_hydrogen_bonds", "deduced_hydrogen_bonds");
+			put("dipole_dipole_cross_correlation_relaxation", "dipole_dipole_cross_correlation_relaxation");
 			put("other_data_list", "other_data_list");
 			put("peak_lists", "spectral_peak_list");
 			put("assigned_chemical_shifts", "assigned_chemical_shifts");
@@ -63,8 +63,8 @@ public class bmr_Util_DataSet {
 			put("pH_titration", "pH_titration");
 			put("dipole_dipole_relaxation", "dipole_dipole_relaxation");
 			put("heteronucl_T1_relaxation", "heteronucl_T1_relaxation");
-			put("order_parameters", "order_parameters");
 			put("general_relaxation", "general_relaxation");
+			put("order_parameters", "order_parameters");
 			put("T1rho_relaxation", "heteronucl_T1rho_relaxation");
 			put("coupling_constants", "coupling_constants");
 			put("heteronucl_NOEs", "heteronucl_NOEs");

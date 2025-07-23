@@ -112,8 +112,8 @@ public class bmr_Util_EntityNaturalSrc {
 			put("organism", "organism");
 			put("Solid phase peptide synthesis", "not applicable");
 			put("Virus", "virus");
-			put("Maize ( Zea mays) seeds", "organism");
 			put("cosmid", "cosmid");
+			put("Maize ( Zea mays) seeds", "organism");
 			put("chemical sythesis", "not applicable");
 
 		}
@@ -147,8 +147,8 @@ public class bmr_Util_EntityNaturalSrc {
 			put("heart", "heart");
 			put("jejunum", "jejunum");
 			put("blood", "blood");
-			put("skin", "skin");
 			put("aciniform gland", "aciniform gland");
+			put("skin", "skin");
 			put("venomous gland", "venom gland");
 			put("seeds", "seed");
 			put("seed", "seed");
@@ -157,8 +157,8 @@ public class bmr_Util_EntityNaturalSrc {
 			put("ileum", "ileum");
 			put("antennal hair", "antennae");
 			put("breast, stomach", "breast");
-			put("oocyte", "oocyte");
 			put("heamolymph", "heamolymph");
+			put("oocyte", "oocyte");
 			put("cardiac skeletal muscle", "cardiac skeletal muscle");
 			put("small intestine", "small intestine");
 			put("hepatopancreas", "hepatopancreas");
@@ -174,8 +174,8 @@ public class bmr_Util_EntityNaturalSrc {
 			put("fruit", "fruit");
 			put("breast", "breast");
 			put("telson", "telson");
-			put("venom duct", "venom gland");
 			put("oral mucosa submandibular-sublingual glands", "oral mucosa submandibular-sublingual glands");
+			put("venom duct", "venom gland");
 			put("mucous epithelium", "mucous epithelium");
 			put("egg white", "egg white");
 			put("leaf", "leaf");
@@ -206,10 +206,10 @@ public class bmr_Util_EntityNaturalSrc {
 			put("cytoskeleton", "cytoskeleton");
 			put("parenthesome", "parenthesome");
 			put("RIBOSOME,60S SUBUNIT", "ribosome");
-			put("na", "na");
 			put("glycosome", "glycosome");
-			put("ribosome", "ribosome");
+			put("na", "na");
 			put("proteasome", "proteasome");
+			put("ribosome", "ribosome");
 			put("vacuole", "vacuole");
 			put("hydrogenosome", "hydrogenosome");
 			put("nucleosome", "nucleosome");
@@ -234,8 +234,8 @@ public class bmr_Util_EntityNaturalSrc {
 			put("chloroplast", "chloroplast");
 			put("lung", "cytosol");
 			put("nucleus", "nucleus");
-			put("Chloroplast", "chloroplast");
 			put("cytosol", "cytosol");
+			put("Chloroplast", "chloroplast");
 			put("cell membrane", "cell membrane");
 			put("endoplasmic reticulum", "endoplasmic reticulum");
 			put("golgi apparatus", "golgi apparatus");
@@ -260,21 +260,21 @@ public class bmr_Util_EntityNaturalSrc {
 			put("extracellular", "extracellular");
 			put("CYTOPLASM", "na");
 			put("Paneth cells", "na");
-			put("Saliva", "saliva");
 			put("venom", "venom");
+			put("Saliva", "saliva");
 			put("pancreas", "na");
 			put("vaginal fluid", "vaginal fluid");
 			put("saliva", "saliva");
-			put("sensillum lymph", "sensillum lymph");
 			put("hen egg white", "hen egg white");
+			put("sensillum lymph", "sensillum lymph");
 			put("cytoplasm", "na");
 			put("semen", "semen");
 			put("na", "na");
 			put("cement", "cement");
 			put("venomous gland", "venom");
 			put("dermal", "dermal");
-			put("seminal plasma", "semen");
 			put("urine", "urine");
+			put("seminal plasma", "semen");
 			put("blood", "blood");
 			put("venom component", "venom");
 			put("salivary", "saliva");

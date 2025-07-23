@@ -131,13 +131,13 @@ public class bmr_SpectralPeakListType {
 						continue;
 					if (!set_string(list[0], "setDetails", "setNilDetails", false, rset.getString("Details"), logw))
 						continue;
-					if (!set_enum_experiment_class(list[0], "setExperimentClass", "setNilExperimentClass", false, rset.getString("Experiment_class"), logw, errw))
+					if (!set_string_experiment_class(list[0], "setExperimentClass", "setNilExperimentClass", false, rset.getString("Experiment_class"), logw))
 						continue;
 					if (!set_integer_experiment_id(list[0], "setExperimentId", "", false, rset.getString("Experiment_ID"), conn_bmrb, entry_id, rset.getString("Sample_ID"), logw))
 						continue;
 					if (!set_string(list[0], "setExperimentName", "", true, rset.getString("Experiment_name"), logw))
 						continue;
-					if (!set_enum_experiment_type(list[0], "setExperimentType", "setNilExperimentType", false, rset.getString("Experiment_type"), logw, errw))
+					if (!set_string(list[0], "setExperimentType", "setNilExperimentType", false, rset.getString("Experiment_type"), logw))
 						continue;
 					if (!set_string(list[0], "setName", "setNilName", false, rset.getString("Name"), logw))
 						continue;
@@ -283,6 +283,76 @@ public class bmr_SpectralPeakListType {
 			try {
 				if (nil)
 					;//nil_method.invoke(list);
+				else
+					method.invoke(list, val_name);
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			}
+
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+			System.exit(1);
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		}
+
+		return true;
+	}
+
+	private static boolean set_string_experiment_class(SpectralPeakList list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {
+
+		boolean nil = false;
+
+		String _val_name = val_name;
+
+		if (val_name.endsWith("?"))
+			val_name = val_name.substring(0, val_name.length() - 1);
+
+		if (!(val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?")) && (_val_name == null || _val_name.isEmpty() || _val_name.equals(".") || _val_name.equals("?") || !val_name.equals(_val_name))) {
+
+			try {
+				logw.write("item='" + method_name.substring(3) + "', category='SpectralPeakList', value='" + _val_name + "' -> '" + val_name + "'\n");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+
+		if (val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?"))
+			nil = true;
+
+		if (nil && (nil_method_name == null || nil_method_name.isEmpty())) {
+
+			if (required) {
+
+				try {
+					logw.write("item='" + method_name.substring(3) + "', category='SpectralPeakList', value='" + _val_name + "' was empty, but not nillable.\n");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				return false;
+			}
+
+			return true;
+		}
+
+		Class<?> _class = list.getClass();
+
+		try {
+			Method method = _class.getMethod(method_name, new Class[]{ String.class });
+			Method nil_method = null;
+
+			if (nil_method_name != null && !nil_method_name.isEmpty())
+				nil_method = _class.getMethod(nil_method_name);
+
+			try {
+				if (nil)
+					nil_method.invoke(list);
 				else
 					method.invoke(list, val_name);
 			} catch (IllegalAccessException e) {
@@ -565,186 +635,6 @@ public class bmr_SpectralPeakListType {
 					nil_method.invoke(list);
 				else
 					method.invoke(list, Integer.parseInt(val_name));
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				e.printStackTrace();
-			}
-
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-			System.exit(1);
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		}
-
-		return true;
-	}
-
-	private static boolean set_enum_experiment_class(SpectralPeakList list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw, FileWriter errw) {
-
-		boolean nil = false;
-
-		String _val_name = val_name;
-
-		if (bmr_Util_Main.remediate_xml) {
-
-		if (!(val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?")) && (_val_name == null || _val_name.isEmpty() || _val_name.equals(".") || _val_name.equals("?") || !val_name.equals(_val_name))) {
-
-			try {
-				logw.write("item='" + method_name.substring(3) + "', category='SpectralPeakList', value='" + _val_name + "' -> '" + val_name + "'\n");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-		}
-
-		}
-
-		if (val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?") || val_name.equals("null"))
-			nil = true;
-
-		if (nil && (nil_method_name == null || nil_method_name.isEmpty())) {
-
-			if (required) {
-
-				try {
-					logw.write("item='" + method_name.substring(3) + "', category='SpectralPeakList', value='" + _val_name + "' was empty, but not nillable.\n");
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-				return false;
-			}
-
-			return true;
-		}
-
-		Class<?> _class = list.getClass();
-
-		try {
-			Method method = _class.getMethod(method_name, new Class[]{ SpectralPeakList.ExperimentClass.Enum.class });
-			;//Method nil_method = null;
-
-			;//if (nil_method_name != null && !nil_method_name.isEmpty())
-				;//nil_method = _class.getMethod(nil_method_name);
-
-			try {
-				if (nil)
-					;//nil_method.invoke(list);
-				else {
-					SpectralPeakList.ExperimentClass.Enum _enum = SpectralPeakList.ExperimentClass.Enum.forString(val_name);
-					if (_enum != null)
-						method.invoke(list, _enum);
-					else {
-						System.err.println("class_name:SpectralPeakList method_name:" + method_name + " val_name:" + val_name);
-						for (int i = 1; i <= SpectralPeakList.ExperimentClass.Enum.table.lastInt(); i++)
-							System.err.println(" enum:" + SpectralPeakList.ExperimentClass.Enum.forInt(i));
-						try {
-							errw.write("class_name:SpectralPeakList method_name:" + method_name + " val_name:" + val_name + "\n");
-							for (int i = 1; i <= SpectralPeakList.ExperimentClass.Enum.table.lastInt(); i++)
-								errw.write(" enum:" + SpectralPeakList.ExperimentClass.Enum.forInt(i) + "\n");
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						//if (nil_method != null)
-							//nil_method.invoke(list);
-						//else
-							return false;
-					}
-				}
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				e.printStackTrace();
-			}
-
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-			System.exit(1);
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		}
-
-		return true;
-	}
-
-	private static boolean set_enum_experiment_type(SpectralPeakList list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw, FileWriter errw) {
-
-		boolean nil = false;
-
-		String _val_name = val_name;
-
-		if (bmr_Util_Main.remediate_xml) {
-
-		if (!(val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?")) && (_val_name == null || _val_name.isEmpty() || _val_name.equals(".") || _val_name.equals("?") || !val_name.equals(_val_name))) {
-
-			try {
-				logw.write("item='" + method_name.substring(3) + "', category='SpectralPeakList', value='" + _val_name + "' -> '" + val_name + "'\n");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-		}
-
-		}
-
-		if (val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?") || val_name.equals("null"))
-			nil = true;
-
-		if (nil && (nil_method_name == null || nil_method_name.isEmpty())) {
-
-			if (required) {
-
-				try {
-					logw.write("item='" + method_name.substring(3) + "', category='SpectralPeakList', value='" + _val_name + "' was empty, but not nillable.\n");
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-				return false;
-			}
-
-			return true;
-		}
-
-		Class<?> _class = list.getClass();
-
-		try {
-			Method method = _class.getMethod(method_name, new Class[]{ SpectralPeakList.ExperimentType.Enum.class });
-			;//Method nil_method = null;
-
-			;//if (nil_method_name != null && !nil_method_name.isEmpty())
-				;//nil_method = _class.getMethod(nil_method_name);
-
-			try {
-				if (nil)
-					;//nil_method.invoke(list);
-				else {
-					SpectralPeakList.ExperimentType.Enum _enum = SpectralPeakList.ExperimentType.Enum.forString(val_name);
-					if (_enum != null)
-						method.invoke(list, _enum);
-					else {
-						System.err.println("class_name:SpectralPeakList method_name:" + method_name + " val_name:" + val_name);
-						for (int i = 1; i <= SpectralPeakList.ExperimentType.Enum.table.lastInt(); i++)
-							System.err.println(" enum:" + SpectralPeakList.ExperimentType.Enum.forInt(i));
-						try {
-							errw.write("class_name:SpectralPeakList method_name:" + method_name + " val_name:" + val_name + "\n");
-							for (int i = 1; i <= SpectralPeakList.ExperimentType.Enum.table.lastInt(); i++)
-								errw.write(" enum:" + SpectralPeakList.ExperimentType.Enum.forInt(i) + "\n");
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						//if (nil_method != null)
-							//nil_method.invoke(list);
-						//else
-							return false;
-					}
-				}
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			} catch (IllegalArgumentException e) {

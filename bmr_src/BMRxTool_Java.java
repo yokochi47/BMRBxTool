@@ -1398,6 +1398,29 @@ public class BMRxTool_Java {
 
 			}
 
+			// item='experiment_class', category='BMRBx:spectral_peak_list'
+				if (class_name.equalsIgnoreCase("SpectralPeakList")) {
+
+					buffw.write("\n\tprivate static boolean set_string_experiment_class(" + abs_class_name + " list, String method_name, String nil_method_name, boolean required, String val_name, FileWriter logw) {\n\n");
+
+					buffw.write("\t\tboolean nil = false;\n\n");
+
+					buffw.write("\t\tString _val_name = val_name;\n\n");
+
+					buffw.write("\t\tif (val_name.endsWith(\"?\"))\n");
+					buffw.write("\t\t\tval_name = val_name.substring(0, val_name.length() - 1);\n\n");
+
+					write_remed_log_code(buffw);
+
+					buffw.write("\t\tif (" + empty_check("val_name") + ")\n");
+					buffw.write("\t\t\tnil = true;\n\n");
+
+					write_missing_log_code(buffw);
+
+					write_invoke_string_method(buffw);
+
+				}
+
 			// category='BMRBx:entry'
 			if (class_name.equalsIgnoreCase("Entry")) {
 
@@ -3113,6 +3136,9 @@ public class BMRxTool_Java {
 						// item='spectral_region', category='BMRBx:spectral_dim'
 						else if (attr_name_lower.equals("spectral_region") && class_name.equalsIgnoreCase("SpectralDim"))
 							buffw.write("\t\t\t\t\tif (!set_string_spectral_region(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), rset.getString(\"Atom_type\"), logw))\n\t\t\t\t\t\tcontinue;\n");
+						// item='experiment_class', category='BMRBx:spectral_peak_list'
+						else if (attr_name_lower.equals("experiment_class") && class_name.equalsIgnoreCase("SpectralPeakList"))
+							buffw.write("\t\t\t\t\tif (!set_string_experiment_class(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), logw))\n\t\t\t\t\t\tcontinue;\n");
 						// item='assigned_pdb_id', category='BMRBx:entry'
 						else if (attr_name_lower.equals("assigned_pdb_id") && class_name.equalsIgnoreCase("Entry"))
 							buffw.write("\t\t\t\t\tif (!set_string_assigned_pdb_id(list[0], \"" + method_name + "\", \"" + nil_method_name + "\", " + required + ", rset.getString(\"" + column_name + "\"), ent, conn_bmrb, entry_id, logw))\n\t\t\t\t\t\tcontinue;\n");

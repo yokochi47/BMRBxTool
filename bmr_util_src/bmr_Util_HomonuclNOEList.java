@@ -28,13 +28,13 @@ public class bmr_Util_HomonuclNOEList {
 
 		{
 
-			put("Distance", "na");
 			put("contour count", "contour count");
-			put("relative intensities", "contour count");
+			put("Distance", "na");
 			put("na", "na");
+			put("relative intensities", "contour count");
 			put("peak integral", "peak integral");
-			put("not reported", "na");
 			put("peak height", "peak height");
+			put("not reported", "na");
 
 		}
 	};

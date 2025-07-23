@@ -47,19 +47,19 @@ public class bmr_Util_HeteronuclT2List {
 
 		{
 
-			put("Dz", "I(+,-)");
 			put("single quantum", "S(+,-)");
+			put("Dz", "I(+,-)");
 			put("Dy", "I(+,-)");
-			put("Dx", "I(+,-)");
 			put("cpmg", "S(+,-)");
+			put("Dx", "I(+,-)");
 			put("Nx,y", "S(+,-)");
 			put("na", "na");
 			put("Nz", "S(+,-)");
-			put("SQ", "S(+,-)");
-			put("N15", "S(+,-)");
 			put("Ny", "S(+,-)");
-			put("I(+,-)", "I(+,-)");
+			put("N15", "S(+,-)");
+			put("SQ", "S(+,-)");
 			put("Nx", "S(+,-)");
+			put("I(+,-)", "I(+,-)");
 			put("NzHz", "S(+,-)");
 			put("15N", "S(+,-)");
 			put("S(+,-)", "S(+,-)");
@@ -102,8 +102,8 @@ public class bmr_Util_HeteronuclT2List {
 			put("unknown", "no calibration applied");
 			put("DSS", "no calibration applied");
 			put("n/a", "no calibration applied");
-			put("ethylene glycol reference sample", "monoethylene glycol");
 			put("no calibration applied", "no calibration applied");
+			put("ethylene glycol reference sample", "monoethylene glycol");
 			put("thermocouple", "no calibration applied");
 			put("monoethylene glycol", "monoethylene glycol");
 			put("ethylene glycol", "monoethylene glycol");
@@ -123,8 +123,8 @@ public class bmr_Util_HeteronuclT2List {
 
 		{
 
-			put("no temperature control applied", "no temperature control applied");
 			put("temperature compensation block", "temperature compensation block");
+			put("no temperature control applied", "no temperature control applied");
 			put("single scan interleaving", "single scan interleaving");
 			put("not reported", "no temperature control applied");
 

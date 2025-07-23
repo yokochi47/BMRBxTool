@@ -1,5 +1,5 @@
-*** NMR-STAR.dic	2025-07-22 12:26:44.303127730 +0900
---- mmcif_nmr-star-v3.2.1.18.dic	2025-07-22 12:26:39.962110328 +0900
+*** NMR-STAR.dic	2025-07-23 08:57:42.905473479 +0900
+--- mmcif_nmr-star-v3.2.1.18.dic	2025-07-23 08:57:14.731173543 +0900
 ***************
 *** 27,33 ****
          _dictionary_history.version
@@ -13587,6 +13587,64 @@
   the NMR spectrum from which the peak list originated.
   ;
   
+***************
+*** 44144,44156 ****
+  #  _pdbx_item_enumeration_details.closed_flag   no
+     _item_type.code                             'code'
+  
+!    loop_
+!      _item_enumeration.value
+!      _item_enumeration.detail
+  
+!    'H_H[C].through-space'    ?
+  
+!    stop_
+  
+  
+  save_
+--- 46110,46122 ----
+  #  _pdbx_item_enumeration_details.closed_flag   no
+     _item_type.code                             'code'
+  
+! #   loop_
+! #     _item_enumeration.value
+! #     _item_enumeration.detail
+  
+! #   'H_H[C].through-space'    ?
+  
+! #   stop_
+  
+  
+  save_
+***************
+*** 44168,44180 ****
+  #  _pdbx_item_enumeration_details.closed_flag   no
+     _item_type.code                             'code'
+  
+!    loop_
+!      _item_enumeration.value
+!      _item_enumeration.detail
+  
+!    13C-NOESY-HSQC    ?
+  
+!    stop_
+  
+  
+  save_
+--- 46134,46146 ----
+  #  _pdbx_item_enumeration_details.closed_flag   no
+     _item_type.code                             'code'
+  
+! #   loop_
+! #     _item_enumeration.value
+! #     _item_enumeration.detail
+  
+! #   13C-NOESY-HSQC    ?
+  
+! #   stop_
+  
+  
+  save_
 ***************
 *** 44258,44264 ****
   

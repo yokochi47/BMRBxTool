@@ -28,8 +28,8 @@ public class bmr_Util_AutoRelaxationList {
 
 		{
 
-			put("no temperature control applied", "no temperature control applied");
 			put("temperature compensation block", "temperature compensation block");
+			put("no temperature control applied", "no temperature control applied");
 			put("single scan interleaving", "single scan interleaving");
 			put("single fid interleaving", "single scan interleaving");
 			put("single scan interleaving and temperature compensation block", "single scan interleaving and temperature compensation block");

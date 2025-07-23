@@ -191,8 +191,8 @@ public class bmr_Util_ChemShiftRef {
 			put("external/internal", "na");
 			put("direct", "internal");
 			put("n/a", "na");
-			put("indirectly", "external");
 			put("External_in_the_sample", "external");
+			put("indirectly", "external");
 			put("internal", "internal");
 			put("na", "na");
 			put("external", "external");
@@ -234,8 +234,8 @@ public class bmr_Util_ChemShiftRef {
 
 			put("0.00", "ppm");
 			put("ppm", "ppm");
-			put("MHz", "MHz");
 			put("Hz", "Hz");
+			put("MHz", "MHz");
 
 		}
 	};
@@ -271,17 +271,17 @@ public class bmr_Util_ChemShiftRef {
 			put("spiked into experimental sample", "other");
 			put("methanol", "other");
 			put("in sample", "other");
-			put("separate solid-state NMR rotor", "separate tube (no insert) similar to the experimental sample tube");
 			put("External_in_the_sample", "other");
-			put("insert at center of experimental sample tube", "insert at center of experimental sample tube");
+			put("separate solid-state NMR rotor", "separate tube (no insert) similar to the experimental sample tube");
 			put("external in the sample", "other");
+			put("insert at center of experimental sample tube", "insert at center of experimental sample tube");
 			put("capilary in NMR tube", "insert at outer edge of experimental sample tube");
 			put("urea", "other");
 			put("e.g. separate NMR sample tube similar to the experimental one", "separate tube (no insert) similar to the experimental sample tube");
 			put("n.a.", "other");
-			put("separate NMR sample tube similar to the experimental one", "separate tube (no insert) similar to the experimental sample tube");
 			put("insert at outer edge of a separate sample tube", "insert at outer edge of a separate sample tube");
 			put("external to sample", "other");
+			put("separate NMR sample tube similar to the experimental one", "separate tube (no insert) similar to the experimental sample tube");
 			put("external_to_the_sample", "other");
 
 		}
@@ -310,8 +310,8 @@ public class bmr_Util_ChemShiftRef {
 			put("other", "na");
 			put("magic angle", "magic angle");
 			put("none", "na");
-			put("parallel_to_Bo", "parallel");
 			put("spherical", "na");
+			put("parallel_to_Bo", "parallel");
 			put("Magic Angle", "magic angle");
 
 		}
@@ -328,16 +328,16 @@ public class bmr_Util_ChemShiftRef {
 		{
 
 			put("0.101329118", "other");
-			put("0.251449530", "other");
 			put("indirect", "other");
+			put("0.251449530", "other");
 			put("Cylindrical", "cylindrical");
 			put("n/a", "other");
 			put("internal", "other");
+			put("cyclindrical", "cylindrical");
 			put("n.a.", "other");
 			put("1.0", "other");
-			put("cyclindrical", "cylindrical");
-			put("external", "other");
 			put("other", "other");
+			put("external", "other");
 			put("none", "other");
 			put("spherical", "spherical");
 			put("cylindrical", "cylindrical");
@@ -572,8 +572,8 @@ public class bmr_Util_ChemShiftRef {
 			put("1H", "H");
 			put("15N", "N");
 			put("H", "H");
-			put("111Cd", "Cd");
 			put("F", "F");
+			put("111Cd", "Cd");
 			put("13C", "C");
 
 		}

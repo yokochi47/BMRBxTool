@@ -34,8 +34,8 @@ public class bmr_Util_EntityAssembly {
 			put("not naturally occurring", "na");
 			put("microcrystalline", "native");
 			put("natively unstructured", "intrinsically disordered");
-			put("molten globule", "molten globule");
 			put("na", "na");
+			put("molten globule", "molten globule");
 			put("not applicable", "na");
 			put("folded in the model system", "native");
 			put("SLAS micelle-bound", "native");
@@ -44,8 +44,8 @@ public class bmr_Util_EntityAssembly {
 			put("metal-substituted", "native");
 			put("Other", "na");
 			put("intrinsically disordered", "intrinsically disordered");
-			put("partially unfolded", "partially disordered");
 			put("denatured", "denatured");
+			put("partially unfolded", "partially disordered");
 			put("folded", "native");
 			put("reduced", "native");
 			put("Native", "native");
@@ -53,8 +53,8 @@ public class bmr_Util_EntityAssembly {
 			put("native", "native");
 			put("de novo designed", "na");
 			put("folding intermediate", "partially disordered");
-			put("intermediate", "partially disordered");
 			put("N/A", "na");
+			put("intermediate", "partially disordered");
 			put("partially disordered", "partially disordered");
 			put("n.a.", "na");
 			put("yes", "na");

@@ -31,8 +31,8 @@ public class bmr_Util_SystematicChemShiftOffset {
 			put("TROSY offset", "TROSY offset");
 			put("others", "na");
 			put("water saturation", "na");
-			put("2H isotope effect", "2H isotope effect");
 			put("Water", "na");
+			put("2H isotope effect", "2H isotope effect");
 			put("spectrometer error", "spectrometer error");
 			put("water", "na");
 			put("na", "na");

@@ -29,8 +29,8 @@ public class bmr_Util_EntryExperimentalMethods {
 		{
 
 			put("WAXS", "WAXS");
-			put("SAXS", "SAXS");
 			put("MD", "MD");
+			put("SAXS", "SAXS");
 			put("X-ray", "X-ray");
 			put("MS", "MS");
 			put("NMR", "NMR");
@@ -58,8 +58,8 @@ public class bmr_Util_EntryExperimentalMethods {
 
 		{
 
-			put("SOLUTION NMR", "solution");
 			put("solution", "solution");
+			put("SOLUTION NMR", "solution");
 			put("SOLID-STATE NMR", "solid-state");
 			put("solid-state", "solid-state");
 

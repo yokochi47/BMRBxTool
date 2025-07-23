@@ -30,16 +30,16 @@ public class bmr_Util_CitationAuthor {
 
 			put("3rd", "III");
 			put("Dr.", "null");
-			put("V", "V");
 			put("2nd", "II");
 			put("J.", "Jr.");
+			put("V", "V");
 			put("Jr", "Jr.");
 			put("III", "III");
 			put("D.", "null");
 			put("Sr.", "Sr.");
-			put("4th", "IV");
 			put("II", "II");
 			put("Jr.", "Jr.");
+			put("4th", "IV");
 			put("Sanchez", "null");
 			put("PhLic", "null");
 			put("5th", "V");

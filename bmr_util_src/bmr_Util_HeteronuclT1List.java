@@ -47,18 +47,18 @@ public class bmr_Util_HeteronuclT1List {
 
 		{
 
-			put("Dz", "Iz");
 			put("single quantum", "Sz");
+			put("Dz", "Iz");
 			put("Iz", "Iz");
 			put("Cz", "Sz");
 			put("na", "na");
 			put("Nz", "Sz");
 			put("N15", "Sz");
 			put("Hz", "Iz");
-			put("NzHz", "Sz");
 			put("1H", "Iz");
-			put("Sz", "Sz");
+			put("NzHz", "Sz");
 			put("15N", "Sz");
+			put("Sz", "Sz");
 
 		}
 	};
