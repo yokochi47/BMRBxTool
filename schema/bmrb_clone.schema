@@ -5555,7 +5555,7 @@ CREATE TABLE entity_keyword (
 DROP TYPE IF EXISTS ENUM_entity_natural_src_common CASCADE;
 CREATE TYPE ENUM_entity_natural_src_common AS ENUM ( 'yes', 'no' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_kingdom CASCADE;
-CREATE TYPE ENUM_entity_natural_src_kingdom AS ENUM ( 'Metazoa', 'Fungi', 'Viridiplantae', 'Loebvirae', 'Orthornavirae', 'Pararnavirae', 'Heunggongvirae', 'Bamfordvirae', 'Helvetiavirae', 'Sangervirae', 'Shotokuvirae', 'Trapavirae', 'Zilligvirae', 'Bacillati', 'Pseudomonadati', 'Methanobacteriati', 'Not applicable' );
+CREATE TYPE ENUM_entity_natural_src_kingdom AS ENUM ( 'Metazoa', 'Fungi', 'Viridiplantae', 'Loebvirae', 'Orthornavirae', 'Pararnavirae', 'Heunggongvirae', 'Bamfordvirae', 'Helvetiavirae', 'Sangervirae', 'Shotokuvirae', 'Trapavirae', 'Zilligvirae', 'Bacillati', 'Pseudomonadati', 'Methanobacteriati', 'Thermotogati', 'Not applicable' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_organ CASCADE;
 CREATE TYPE ENUM_entity_natural_src_organ AS ENUM ( 'brain', 'heart', 'intestine', 'kidney', 'liver', 'lung', 'pancreas', 'skin', 'testicle', 'leaf', 'venom gland', 'oral mucosa submandibular-sublingual glands', 'salivary glands', 'oocyte', 'breast', 'stomach', 'electric organ', 'eye', 'ileum', 'small intestine', 'seed', 'blood', 'duodendum', 'jejunum', 'vulva', 'hepatopancreas', 'placenta', 'skeletal muscle', 'aorta', 'telson', 'ubiquitous', 'aciniform gland', 'endoskeleton', 'heamolymph', 'mucous epithelium', 'cardiac skeletal muscle', 'seminal vesicles', 'antennae', 'fruit', 'thymus', 'egg white', 'na' );
 DROP TYPE IF EXISTS ENUM_entity_natural_src_organelle CASCADE;
@@ -10766,19 +10766,15 @@ CREATE TABLE spectral_dim_transfer (
 -- xmlns: http://bmrbpub.pdbj.org/schema/mmcif_nmr-star.xsd (BMRBx), schema location: schema/mmcif_nmr-star.xsd
 -- type: admin child, content: true, list: false, bridge: false, virtual: false
 --
-DROP TYPE IF EXISTS ENUM_spectral_peak_list_experiment_class CASCADE;
-CREATE TYPE ENUM_spectral_peak_list_experiment_class AS ENUM ( 'H_H[C].through-space' );
-DROP TYPE IF EXISTS ENUM_spectral_peak_list_experiment_type CASCADE;
-CREATE TYPE ENUM_spectral_peak_list_experiment_type AS ENUM ( '13C-NOESY-HSQC' );
 CREATE TABLE spectral_peak_list (
 	assigned_chem_shift_list_id INTEGER ,
 	assigned_chem_shift_list_label TEXT ,
 	chemical_shift_list TEXT ,
 	details TEXT ,
-	experiment_class ENUM_spectral_peak_list_experiment_class ,
+	experiment_class TEXT ,
 	experiment_id INTEGER ,
 	experiment_name TEXT ,
-	experiment_type ENUM_spectral_peak_list_experiment_type ,
+	experiment_type TEXT ,
 	name TEXT ,
 	number_of_spectral_dimensions INTEGER ,
 	sample_condition_list_id INTEGER ,
