@@ -36,8 +36,8 @@ public class bmr_Util_ExperimentFile {
 			put("Acquisition parameters", "Acquisition parameters");
 			put("Pulse field gradient", "Pulse field gradient");
 			put("Pulse sequence image file", "Pulse sequence image file");
-			put("Peak list", "Peak list");
 			put("RNA fragment binding data", "RNA fragment binding data");
+			put("Peak list", "Peak list");
 			put("NMR experiment directory", "NMR experiment directory");
 
 		}

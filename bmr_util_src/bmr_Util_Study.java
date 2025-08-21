@@ -44,8 +44,8 @@ public class bmr_Util_Study {
 			put("Dynamics", "Dynamics analysis");
 			put("Protein-ligand interaction", "Protein-ligand interaction");
 			put("Chemical shift assignment", "NMR signal assignment");
-			put("Backbone assignment", "NMR signal assignment");
 			put("Protein-Protein Interaction", "Protein-protein interaction");
+			put("Backbone assignment", "NMR signal assignment");
 			put("NMR Resonance Assignments and Localization of the Active Site", "Chemical shift mapping");
 			put("Structural analysis", "Structure analysis");
 			put("Structure analysis", "Structure analysis");

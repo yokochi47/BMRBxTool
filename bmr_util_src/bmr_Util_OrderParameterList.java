@@ -29,8 +29,8 @@ public class bmr_Util_OrderParameterList {
 		{
 
 			put("ms", "ms");
-			put("s", "s");
 			put("ns", "ns");
+			put("s", "s");
 			put("us", "us");
 			put("E-10 s", "ns");
 			put("ps", "ps");

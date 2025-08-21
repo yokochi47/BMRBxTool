@@ -82,8 +82,8 @@ public class bmr_Util_HeteronuclT1RhoList {
 
 		{
 
-			put("temperature compensation block", "temperature compensation block");
 			put("no temperature control applied", "no temperature control applied");
+			put("temperature compensation block", "temperature compensation block");
 			put("None", "no temperature control applied");
 			put("single scan interleaving", "single scan interleaving");
 

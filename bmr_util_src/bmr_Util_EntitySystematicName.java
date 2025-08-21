@@ -28,14 +28,14 @@ public class bmr_Util_EntitySystematicName {
 
 		{
 
-			put("NCBI", "NCBI");
 			put("EC", "EC");
+			put("NCBI", "NCBI");
 			put("BMRB", "BMRB");
 			put("CAS registry number", "CAS registry number");
 			put("IUPAC", "IUPAC");
 			put("NCBI Taxonomy", "NCBI");
-			put("Three letter code", "Three letter code");
 			put("pfam", "Pfam");
+			put("Three letter code", "Three letter code");
 			put("Swissprot entry name", "Swiss-Prot");
 			put("NCBI taxonomy", "NCBI");
 			put("Swiss-Prot", "Swiss-Prot");

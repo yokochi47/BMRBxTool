@@ -44,8 +44,8 @@ public class bmr_Util_Release {
 			put("revised", "revision");
 			put("upate", "update");
 			put("oirginal", "original");
-			put("not available", "not available");
 			put("BMRB", "update");
+			put("not available", "not available");
 			put("update shift table", "update");
 
 		}

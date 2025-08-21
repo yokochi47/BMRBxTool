@@ -30,8 +30,8 @@ public class bmr_Util_SpectralDim {
 
 			put("fold", "folded");
 			put("aliased", "aliased");
-			put("folded", "folded");
 			put("not observed", "not observed");
+			put("folded", "folded");
 
 		}
 	};

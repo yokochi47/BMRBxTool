@@ -47,8 +47,8 @@ public class bmr_Util_TheoreticalHeteronuclT2List {
 
 		{
 
-			put("temperature compensation block", "temperature compensation block");
 			put("no temperature control applied", "no temperature control applied");
+			put("temperature compensation block", "temperature compensation block");
 			put("na", "na");
 			put("single scan interleaving", "single scan interleaving");
 			put("n/a", "na");

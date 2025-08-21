@@ -33,11 +33,11 @@ public class bmr_Util_GenDistConstraintList {
 			put("ROE", "ROE");
 			put("paramagnetic relaxation", "paramagnetic relaxation");
 			put("NOE", "NOE");
-			put("symmetry", "symmetry");
 			put("ROE build-up", "ROE build-up");
+			put("symmetry", "symmetry");
 			put("general distance", "general distance");
-			put("disulfide bond", "disulfide bond");
 			put("PRE", "paramagnetic relaxation");
+			put("disulfide bond", "disulfide bond");
 			put("NOE not seen", "NOE not seen");
 
 		}

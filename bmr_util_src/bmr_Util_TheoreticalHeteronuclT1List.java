@@ -28,8 +28,8 @@ public class bmr_Util_TheoreticalHeteronuclT1List {
 
 		{
 
-			put("Iz", "Iz");
 			put("na", "na");
+			put("Iz", "Iz");
 			put("NH", "Sz");
 			put("Sz", "Sz");
 

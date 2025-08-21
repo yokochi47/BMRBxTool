@@ -32,8 +32,8 @@ public class bmr_Util_SGProject {
 			put("Marseilles Structural Genomics Program @ AFMB", "Marseilles Structural Genomics Program @ AFMB");
 			put("IRB Barcelona", "IRB Barcelona");
 			put("Chaperone-Enabled Studies of Epigenetic Regulation Enzymes", "Chaperone-Enabled Studies of Epigenetic Regulation Enzymes");
-			put("Structure Dynamics and Activation Mechanisms of Chemokine Receptors", "Structure Dynamics and Activation Mechanisms of Chemokine Receptors");
 			put("Architecture and Function of Biological Macromolecules Structure Genomics", "Architecture and Function of Biological Macromolecules Structure Genomics");
+			put("Structure Dynamics and Activation Mechanisms of Chemokine Receptors", "Structure Dynamics and Activation Mechanisms of Chemokine Receptors");
 			put("Structural Genomics of Pathogenic Protozoa Consortium", "Structural Genomics of Pathogenic Protozoa Consortium");
 			put("North West Structural Genomics Centre", "North West Structural Genomics Centre");
 			put("Partnership for T-Cell Biology", "Partnership for T-Cell Biology");
@@ -66,8 +66,8 @@ public class bmr_Util_SGProject {
 			put("Atoms-to-Animals: The Immune Function Network", "Atoms-to-Animals: The Immune Function Network");
 			put("Magnetic Resonance Center (CERM)", "Magnetic Resonance Center");
 			put("Program for the Characterization of Secreted Effector Proteins", "Program for the Characterization of Secreted Effector Proteins");
-			put("Hefei National Laboratory for Physical Sciences at Microscale", "Hefei National Laboratory for Physical Sciences at Microscale");
 			put("Functional and Structural Proteomics of SARS-CoV-Related Proteins", "Functional and Structural Proteomics of the SARS Coronavirus");
+			put("Hefei National Laboratory for Physical Sciences at Microscale", "Hefei National Laboratory for Physical Sciences at Microscale");
 			put("TB Structural Genomics Consortium", "TB Structural Genomics Consortium");
 			put("RIKEN Structural Genomics/Proteomics Initiative", "RIKEN Structural Genomics/Proteomics Initiative");
 			put("Accelerated Technologies Center for Gene to 3D Structure", "Accelerated Technologies Center for Gene to 3D Structure");
@@ -86,8 +86,8 @@ public class bmr_Util_SGProject {
 			put("Paris-Sud Yeast Structural Genomics", "Paris-Sud Yeast Structural Genomics");
 			put("University of Calcutta CU", "University of Calcutta CU");
 			put("Membrane Protein Structures by Solution NMR", "Membrane Protein Structures by Solution NMR");
-			put("Midwest Center for Structural Genomics", "Midwest Center for Structural Genomics");
 			put("Montreal-Kingston Bacterial Structural Genomics Initiative", "Montreal-Kingston Bacterial Structural Genomics Initiative");
+			put("Midwest Center for Structural Genomics", "Midwest Center for Structural Genomics");
 			put("RIKEN Structural Genomics/Proteomics Initiative (RSGI)", "RIKEN Structural Genomics/Proteomics Initiative");
 			put("Functional and Structural Proteomics of the SARS coronavirus", "Functional and Structural Proteomics of the SARS Coronavirus");
 			put("Mycobacterium Tuberculosis Structural Proteomics Project", "Mycobacterium Tuberculosis Structural Proteomics Project");
@@ -98,11 +98,11 @@ public class bmr_Util_SGProject {
 			put("New York Structural GenomiX Research Consortium", "New York Structural GenomiX Research Consortium");
 			put("The University of Georgia", "University of Georgia");
 			put("Seattle Structural Genomics Center for Infectious Disease", "Seattle Structural Genomics Center for Infectious Disease");
-			put("FAPESP", "FAPESP");
-			put("Protein Research Group, RIKEN Genomic Sciences Center", "Protein Research Group, RIKEN Genomic Sciences Center");
 			put("not applicable", "not applicable");
-			put("Oxford Protein Production Facility", "Oxford Protein Production Facility");
+			put("Protein Research Group, RIKEN Genomic Sciences Center", "Protein Research Group, RIKEN Genomic Sciences Center");
+			put("FAPESP", "FAPESP");
 			put("Center for the X-ray Structure Determination of Human Transporters", "Center for the X-ray Structure Determination of Human Transporters");
+			put("Oxford Protein Production Facility", "Oxford Protein Production Facility");
 			put("Enzyme Discovery for Natural Product Biosynthesis", "Enzyme Discovery for Natural Product Biosynthesis");
 			put("Center for Eukaryotic Structural Genomics", "Center for Eukaryotic Structural Genomics");
 			put("Center for High-Throughput Structural Biology", "Center for High-Throughput Structural Biology");
@@ -114,9 +114,9 @@ public class bmr_Util_SGProject {
 			put("Northeast Strctural Genomics Consortium", "Northeast Structural Genomics Consortium");
 			put("Bijvoet Centre, Utrecht", "Bijvoet Centre, Utrecht");
 			put("Integrated Center for Structure and Function Innovation", "Integrated Center for Structure and Function Innovation");
-			put("Center for Structures of Membrane Proteins", "Center for Structures of Membrane Proteins");
-			put("New York SGX Research Center for Structural Genomics", "New York Structural Genomics Research Consortium");
 			put("Structural Genomics Consortium", "Structural Genomics Consortium");
+			put("New York SGX Research Center for Structural Genomics", "New York Structural Genomics Research Consortium");
+			put("Center for Structures of Membrane Proteins", "Center for Structures of Membrane Proteins");
 			put("SMOLBNet - Structural Molecular BIology Network of the State of Sao Paulo, Brazil", "Structural Molecular Biology Network");
 
 		}
@@ -139,12 +139,12 @@ public class bmr_Util_SGProject {
 			put("TBSGC", "TBSGC");
 			put("RIKEN GSC", "RIKEN GSC");
 			put("BSGI", "BSGI");
-			put("S2F", "S2F");
 			put("NYSGRC", "NYSGRC");
+			put("S2F", "S2F");
 			put("BSGC", "BSGC");
 			put("NESG", "NESG");
-			put("SPINE", "SPINE");
 			put("ISPC", "ISPC");
+			put("SPINE", "SPINE");
 			put("BIGS", "BIGS");
 			put("SGC", "SGC");
 			put("RSGI", "RSGI");
@@ -152,8 +152,8 @@ public class bmr_Util_SGProject {
 			put("RIKEN", "RIKEN GSC");
 			put("JCSG", "JCSG");
 			put("MSGP", "MSGP");
-			put("CESG", "CESG");
 			put("XMTB", "XMTB");
+			put("CESG", "CESG");
 			put("YSG", "YSG");
 			put("CU", "CU");
 
@@ -207,21 +207,21 @@ public class bmr_Util_SGProject {
 			put("NIAID funded Project", "NIAID");
 			put("Protein 3000", "Protein 3000");
 			put("SPINE2-complexes", "SPINE2");
-			put("FIRB International on Proteomics (RBIN04RXHS)", "not applicable");
 			put("Seattle Structural Genomics Center for Infectious Disease", "SSGCID");
+			put("FIRB International on Proteomics (RBIN04RXHS)", "not applicable");
 			put("INSTRUCT", "not applicable");
 			put("SPINE2", "SPINE2");
 			put("SMOLBnet", "SMolBNet");
-			put("PSI", "PSI, Protein Structure Initiative");
 			put("PSI2, Protein Structure Initiative", "PSI, Protein Structure Initiative");
+			put("PSI", "PSI, Protein Structure Initiative");
 			put("SCG,Structural Genomics Consortium Toronto", "not applicable");
 			put("PSI-3, Protein Structure Initiative", "PSI, Protein Structure Initiative");
 			put("TbPIN1", "not applicable");
 			put("PSI3, Protein Structure Initiative", "PSI, Protein Structure Initiative");
-			put("SSGCID", "SSGCID");
-			put("PSI:BIOLOGY", "PSI:Biology");
 			put("NMR", "not applicable");
+			put("PSI:BIOLOGY", "PSI:Biology");
 			put("CSGID", "not applicable");
+			put("SSGCID", "SSGCID");
 
 		}
 	};

@@ -53,8 +53,8 @@ public class bmr_Util_NMRSpecExpt {
 			put("7mm MAS rotor", "cylindrical microcell");
 			put("5mm MAS rotor", "cylindrical microcell");
 			put("spherical microcell", "spherical microcell");
-			put("3.2mm MAS rotor", "cylindrical microcell");
 			put("2.5mm MAS rotor", "cylindrical microcell");
+			put("3.2mm MAS rotor", "cylindrical microcell");
 
 		}
 	};

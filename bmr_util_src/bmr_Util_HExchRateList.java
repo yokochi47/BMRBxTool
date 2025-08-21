@@ -29,12 +29,12 @@ public class bmr_Util_HExchRateList {
 		{
 
 			put("min", "min");
-			put("s", "s");
-			put("min-1", "min-1");
 			put("hr", "hr");
 			put("h", "hr");
-			put("s-1", "s-1");
+			put("min-1", "min-1");
+			put("s", "s");
 			put("hr-1", "hr-1");
+			put("s-1", "s-1");
 
 		}
 	};

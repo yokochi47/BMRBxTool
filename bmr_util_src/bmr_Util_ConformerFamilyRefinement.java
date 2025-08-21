@@ -34,8 +34,8 @@ public class bmr_Util_ConformerFamilyRefinement {
 			put("TORSION ANGLE DYNAMICS", "torsion angle dynamics");
 			put("molecular dynamics", "molecular dynamics");
 			put("simulated annealing", "simulated annealing");
-			put("na", "na");
 			put("simulated_annealing", "simulated annealing");
+			put("na", "na");
 			put("distance geometry", "distance geometry");
 			put("torsion angle dynamics", "torsion angle dynamics");
 			put("refer to application for detail", "na");

@@ -28,19 +28,19 @@ public class bmr_Util_NMRProbe {
 
 		{
 
-			put("transmission line", "transmission line");
 			put("not available", "na");
+			put("transmission line", "transmission line");
 			put("triple resonance", "triple resonance");
 			put("liquid", "na");
 			put("cryoprobe", "cryogenically cooled");
 			put("Cryoprobe", "cryogenically cooled");
-			put("inverse coil", "inverse coil");
 			put("double resonance", "double resonance");
-			put("na", "na");
+			put("inverse coil", "inverse coil");
 			put("MAS", "na");
+			put("na", "na");
 			put("room temperature", "room temperature");
-			put("saddle coil", "saddle coil");
 			put("home built", "home built");
+			put("saddle coil", "saddle coil");
 			put("solenoid coil", "solenoid coil");
 			put("cryogenically cooled", "cryogenically cooled");
 

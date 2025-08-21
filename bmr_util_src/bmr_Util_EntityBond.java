@@ -28,16 +28,16 @@ public class bmr_Util_EntityBond {
 
 		{
 
+			put("sing", "sing");
 			put("doub", "doub");
 			put("poly", "poly");
-			put("sing", "sing");
 			put("trip", "trip");
 			put("arom", "arom");
 			put("directed", "directed");
-			put("pi", "pi");
 			put("delo", "delo");
-			put("quad", "quad");
+			put("pi", "pi");
 			put("single", "sing");
+			put("quad", "quad");
 
 		}
 	};

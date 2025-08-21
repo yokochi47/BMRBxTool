@@ -35,16 +35,16 @@ public class bmr_Util_Bond {
 			put("amine", "covalent");
 			put("Octahedral coordination", "metal coordination");
 			put("thioester", "thioester");
-			put("dilsulfide", "disulfide");
 			put("oxime", "oxime");
+			put("dilsulfide", "disulfide");
 			put("phosphoester", "phosphoester");
 			put("glycosidic", "covalent");
-			put("diselenide", "diselenide");
 			put("inter-chain-disulfide", "disulfide");
+			put("diselenide", "diselenide");
 			put("ligand coordination", "metal coordination");
+			put("metal coordination", "metal coordination");
 			put("thio ether", "thioether");
 			put("coordination Nitrogen-FE", "metal coordination");
-			put("metal coordination", "metal coordination");
 			put("thiol ether", "thioether");
 			put("phosphodiester", "phosphodiester");
 			put("metal coordination bonds", "metal coordination");
@@ -57,14 +57,14 @@ public class bmr_Util_Bond {
 			put("all disulfide bound", "disulfide");
 			put("directed", "directed");
 			put("peptide", "peptide");
-			put("lactam", "covalent");
 			put("Coordination", "metal coordination");
+			put("lactam", "covalent");
 			put("coordinate-covalent", "metal coordination");
 			put("desulfide", "disulfide");
 			put("coordinative", "metal coordination");
 			put("C-S", "covalent");
-			put("coordinate", "metal coordination");
 			put("disulphide", "disulfide");
+			put("coordinate", "metal coordination");
 			put("C-N", "covalent");
 			put("most likely an ester bond", "ester");
 			put("ether", "ether");
@@ -77,9 +77,9 @@ public class bmr_Util_Bond {
 			put("covalent", "covalent");
 			put("metal ligand", "metal coordination");
 			put("metal-ligand", "metal coordination");
-			put("coodination", "metal coordination");
 			put("disulfide", "disulfide");
 			put("thioesther", "thioester");
+			put("coodination", "metal coordination");
 			put("ester", "ester");
 			put("metal coordinate", "metal coordination");
 
@@ -112,8 +112,8 @@ public class bmr_Util_Bond {
 			put("coordinate", "sing");
 			put("single", "sing");
 			put("pi", "pi");
-			put("1", "sing");
 			put("double", "doub");
+			put("1", "sing");
 			put("arom", "arom");
 
 		}

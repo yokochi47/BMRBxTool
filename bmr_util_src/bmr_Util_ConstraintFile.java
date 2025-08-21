@@ -36,29 +36,29 @@ public class bmr_Util_ConstraintFile {
 			put("nucleic acid dihedral angle", "nucleic acid dihedral angle");
 			put("peak", "na");
 			put("chemical shift", "chemical shift");
-			put("na", "na");
 			put("planarity", "protein peptide planarity");
+			put("na", "na");
 			put("sequence", "na");
 			put("protein peptide planarity", "protein peptide planarity");
 			put("stereochemistry", "na");
 			put("nucleic acid base planarity", "nucleic acid base planarity");
 			put("not specified", "na");
 			put("protocol", "na");
-			put("pseudocontact shift", "pseudocontact shift");
-			put("protein other kinds of constraints", "protein other kinds of constraints");
 			put("nomenclature mapping", "na");
+			put("protein other kinds of constraints", "protein other kinds of constraints");
+			put("pseudocontact shift", "pseudocontact shift");
 			put("intervector projection angle", "intervector projection angle");
 			put("other angle", "other angle");
+			put("dihedral angle", "protein dihedral angle");
 			put("chemical shift anisotropy", "chemical shift anisotropy");
 			put("n/a", "na");
-			put("dihedral angle", "protein dihedral angle");
 			put("coordinate", "na");
 			put("dihedral combo", "na");
 			put("unknown", "na");
 			put("protein dihedral angle", "protein dihedral angle");
-			put("nucleic acid other kinds of constraints", "nucleic acid other kinds of constraints");
-			put("coupling constant", "coupling constant");
 			put("stereospecific assignment", "na");
+			put("coupling constant", "coupling constant");
+			put("nucleic acid other kinds of constraints", "nucleic acid other kinds of constraints");
 			put("rdc", "na");
 
 		}
@@ -91,8 +91,8 @@ public class bmr_Util_ConstraintFile {
 			put("symmetry", "symmetry");
 			put("alignment tensor", "alignment tensor");
 			put("ROE", "ROE");
-			put("NOE not seen", "NOE not seen");
 			put("ambi", "Not applicable");
+			put("NOE not seen", "NOE not seen");
 			put("hydrogen bond", "hydrogen bond");
 			put("NOE buildup", "NOE buildup");
 

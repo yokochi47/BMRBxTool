@@ -37,8 +37,8 @@ public class bmr_Util_Sample {
 			put("Bi-cells", "bicelle");
 			put("solution", "solution");
 			put("microcrystals", "microcrystalline");
-			put("lyophilized powder", "lyophilized powder");
 			put("polycrystalline powder", "polycrystalline powder");
+			put("lyophilized powder", "lyophilized powder");
 			put("soultion", "solution");
 			put("liquid crystal", "liquid crystal");
 			put("in living E. coli cells", "in-cell");
@@ -52,25 +52,25 @@ public class bmr_Util_Sample {
 			put("bicell", "bicelle");
 			put("filamentous phage", "filamentous virus");
 			put("bicell_solution", "bicelle");
-			put("filamentous virus", "filamentous virus");
 			put("liquid", "solution");
+			put("filamentous virus", "filamentous virus");
 			put("fibrous protein", "fibrous protein");
 			put("Bi-cell", "bicelle");
 			put("d_bicell_solution", "bicelle");
 			put("oriented membrane film", "oriented membrane film");
 			put("single crystal", "single crystal");
 			put("micelle, lipid bilayers", "micelle");
-			put("bi-cell", "bicelle");
 			put("emulsion", "emulsion");
+			put("bi-cell", "bicelle");
 			put("fiber", "fiber");
-			put("amyloid fibril", "fibrous protein");
-			put("gel solution", "gel solution");
-			put("reverse micelle", "reverse micelle");
 			put("b_micelles", "micelle");
+			put("reverse micelle", "reverse micelle");
+			put("gel solution", "gel solution");
+			put("amyloid fibril", "fibrous protein");
 			put("frozen solution", "solid");
+			put("cell suspension", "in-cell");
 			put("DMPC:CHAPS:GM1 Bicelle", "bicelle");
 			put("OG micelles", "micelle");
-			put("cell suspension", "in-cell");
 			put("membrane", "membrane");
 			put("gel solid", "gel solid");
 			put("solution/partial magnetic alignement", "solution");
@@ -80,8 +80,8 @@ public class bmr_Util_Sample {
 			put("micelles", "micelle");
 			put("solution`", "solution");
 			put("c_micelles", "micelle");
-			put("bicelle", "bicelle");
 			put("gel", "gel solution");
+			put("bicelle", "bicelle");
 
 		}
 	};

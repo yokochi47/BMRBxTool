@@ -35,12 +35,12 @@ public class bmr_Util_RelatedEntries {
 			put("RCSB", "PDB");
 			put("BMBR", "BMRB");
 			put("ArachnoServer", "ArachnoServer");
-			put("TargetDB", "TargetDB");
 			put("BMRB(withdrawn)", "BMRB(withdrawn)");
+			put("TargetDB", "TargetDB");
 			put("Taxonomy", "Taxonomy");
+			put("PIR", "PIR");
 			put("REF", "REF");
 			put("Uniprot", "SP");
-			put("PIR", "PIR");
 			put("DBJ", "DBJ");
 			put("Saccharomyces Genome Database", "SGD");
 			put("SP", "SP");
@@ -57,8 +57,8 @@ public class bmr_Util_RelatedEntries {
 			put("Swiss-Prot", "SP");
 			put("NDB", "PDB");
 			put("BMRB", "BMRB");
-			put("PDB", "PDB");
 			put("BRMB", "BMRB");
+			put("PDB", "PDB");
 
 		}
 	};

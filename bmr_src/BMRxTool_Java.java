@@ -1407,7 +1407,7 @@ public class BMRxTool_Java {
 
 					buffw.write("\t\tString _val_name = val_name;\n\n");
 
-					buffw.write("\t\tif (val_name.endsWith(\"?\"))\n");
+					buffw.write("\t\tif (val_name != null && val_name.endsWith(\"?\"))\n");
 					buffw.write("\t\t\tval_name = val_name.substring(0, val_name.length() - 1);\n\n");
 
 					write_remed_log_code(buffw);

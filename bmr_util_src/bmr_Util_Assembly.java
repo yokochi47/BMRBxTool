@@ -31,19 +31,19 @@ public class bmr_Util_Assembly {
 			put("not reported", "not reported");
 			put("free and bound", "free and disulfide bound");
 			put("disulfide bound and other bound", "disulfide and other bound");
-			put("disulfide bound and free", "free and disulfide bound");
 			put("all disuldide bound", "all disulfide bound");
+			put("disulfide bound and free", "free and disulfide bound");
 			put("free and other bound", "free and other bound");
 			put("Fully oxidized", "all disulfide bound");
 			put("other bound or free", "free and other bound");
 			put("not present", "not present");
 			put("fully reduced", "all free");
-			put("disulfide bound", "free and disulfide bound");
 			put("free, other bound", "free and other bound");
+			put("disulfide bound", "free and disulfide bound");
 			put("all disulfide bond", "all disulfide bound");
 			put("disulfide and other bound", "disulfide and other bound");
-			put("free disulfide and other bound", "free disulfide and other bound");
 			put("other bound and free", "free and other bound");
+			put("free disulfide and other bound", "free disulfide and other bound");
 			put("free and disulfide bound", "free and disulfide bound");
 			put("all bound", "all disulfide bound");
 			put("Fully reduced", "all free");
@@ -53,11 +53,11 @@ public class bmr_Util_Assembly {
 			put("all bound other", "all other bound");
 			put("all other bound", "all other bound");
 			put("other bound, and free", "free and other bound");
-			put("not available", "not available");
 			put("unknown", "unknown");
+			put("not available", "not available");
 			put("all free", "all free");
-			put("all disulfide bound", "all disulfide bound");
 			put("reduced and oxidized present", "free and disulfide bound");
+			put("all disulfide bound", "all disulfide bound");
 			put("All free", "all free");
 			put("all reduced", "all free");
 

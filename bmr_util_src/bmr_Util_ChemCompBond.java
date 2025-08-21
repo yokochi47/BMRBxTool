@@ -28,10 +28,10 @@ public class bmr_Util_ChemCompBond {
 
 		{
 
-			put("yes", "yes");
-			put("no", "no");
 			put("N", "no");
 			put("Y", "yes");
+			put("yes", "yes");
+			put("no", "no");
 
 		}
 	};
@@ -48,9 +48,9 @@ public class bmr_Util_ChemCompBond {
 
 			put("hydrogen", "hydrogen");
 			put("directed", "directed");
+			put("metal coordination", "metal coordination");
 			put("peptide", "peptide");
 			put("ester", "ester");
-			put("metal coordination", "metal coordination");
 			put("disulfide", "disulfide");
 			put("ether", "ether");
 			put("covalent", "covalent");
@@ -73,16 +73,16 @@ public class bmr_Util_ChemCompBond {
 
 			put("AROM", "AROM");
 			put("TRIP", "TRIP");
-			put("doub", "DOUB");
 			put("sing", "SING");
+			put("doub", "DOUB");
 			put("trip", "TRIP");
 			put("DIRECTED", "DIRECTED");
 			put("DELO", "DELO");
 			put("QUAD", "QUAD");
+			put("PI", "PI");
+			put("SING", "SING");
 			put("POLY", "POLY");
 			put("DOUB", "DOUB");
-			put("SING", "SING");
-			put("PI", "PI");
 
 		}
 	};

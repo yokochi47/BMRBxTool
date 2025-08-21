@@ -65,12 +65,12 @@ public class bmr_Util_ChemCompIdentifier {
 			put("PUBCHEM_IUPAC_SYSTEMATIC_NAME", "PUBCHEM_IUPAC_SYSTEMATIC_NAME");
 			put("PUBCHEM_IUPAC_NAME", "PUBCHEM_IUPAC_NAME");
 			put("CAS REGISTRY NUMBER", "CAS Registry number");
-			put("MDL Identifier", "MDL Identifier");
 			put("NSC NUMBER", "NSC NUMBER");
+			put("MDL Identifier", "MDL Identifier");
 			put("PUBCHEM SID", "PUBCHEM SID");
 			put("PUBCHEM Identifier", "PUBCHEM Identifier");
-			put("systematic name", "systematic name");
 			put("common name", "common name");
+			put("systematic name", "systematic name");
 			put("SYSTEMATIC NAME", "systematic name");
 			put("PUBCHEM CID", "PUBCHEM CID");
 

@@ -32,8 +32,8 @@ public class bmr_Util_Entity {
 			put("L-PEPTIDE LINKING", "polymer");
 			put("RNA linking", "polymer");
 			put("polymer", "polymer");
-			put("polyribonucleotide", "polymer");
 			put("water", "water");
+			put("polyribonucleotide", "polymer");
 			put("NON-POLYMER", "non-polymer");
 			put("SACCHARIDE", "polymer");
 			put("non-polymer", "non-polymer");
@@ -80,8 +80,8 @@ public class bmr_Util_Entity {
 			put("other", "other");
 			put("polydeoxyribonucleotide", "polydeoxyribonucleotide");
 			put("cyclic-pseudo-peptide", "cyclic-pseudo-peptide");
-			put("polypeptide(D)", "polypeptide(D)");
 			put("DNA/RNA hybrid", "polydeoxyribonucleotide/polyribonucleotide hybrid");
+			put("polypeptide(D)", "polypeptide(D)");
 			put("polypeptide(L)", "polypeptide(L)");
 
 		}
@@ -126,8 +126,8 @@ public class bmr_Util_Entity {
 			put("not applicable", "not present");
 			put("disulfide bound and not reported", "free and disulfide bound");
 			put("all disulfide bond", "all disulfide bound");
-			put("free disulfide and other bound", "free disulfide and other bound");
 			put("free and other bound", "free and other bound");
+			put("free disulfide and other bound", "free disulfide and other bound");
 			put("disulfide bond", "free and disulfide bound");
 			put("not presnet", "not present");
 			put("nearly all free", "all free");
@@ -136,8 +136,8 @@ public class bmr_Util_Entity {
 			put("not available", "not available");
 			put("disulfide and other bound", "disulfide and other bound");
 			put("present", "not reported");
-			put("not present", "not present");
 			put("all other bound", "all other bound");
+			put("not present", "not present");
 			put("all reduced", "all free");
 			put("no", "not present");
 			put("All free", "all free");
@@ -174,9 +174,9 @@ public class bmr_Util_Entity {
 
 		{
 
+			put("N", "no");
 			put("yes", "yes");
 			put("no", "no");
-			put("N", "no");
 
 		}
 	};
@@ -191,9 +191,9 @@ public class bmr_Util_Entity {
 
 		{
 
+			put("N", "no");
 			put("yes", "yes");
 			put("no", "no");
-			put("N", "no");
 
 		}
 	};
@@ -208,9 +208,9 @@ public class bmr_Util_Entity {
 
 		{
 
+			put("N", "no");
 			put("yes", "yes");
 			put("no", "no");
-			put("N", "no");
 
 		}
 	};

@@ -35,8 +35,8 @@ public class bmr_Util_NMRSpectrometer {
 			put("DMX", "Bruker");
 			put("na", "na");
 			put("GE", "GE");
-			put("Agilent", "Agilent");
 			put("Home built", "Home-built");
+			put("Agilent", "Agilent");
 			put("INOVA", "Varian");
 			put("JEQL", "JEOL");
 			put("FBML", "FBML");
@@ -44,21 +44,21 @@ public class bmr_Util_NMRSpectrometer {
 			put("varian", "Varian");
 			put("Varian, Inc", "Varian");
 			put("Varian Unity Plus", "Varian");
-			put("CMR", "Cambridge");
 			put("Custom-built", "Home-built");
+			put("CMR", "Cambridge");
 			put("Burker", "Bruker");
 			put("Varan", "Varian");
 			put("Brruker", "Bruker");
 			put("Home build", "Home-built");
+			put("Bruker Spectrospin", "Bruker");
 			put("Jeol", "JEOL");
 			put("Bruker", "Bruker");
-			put("Bruker Spectrospin", "Bruker");
 			put("Homemade", "Home-built");
 			put("Homebuilt", "Home-built");
 			put("BRUKER", "Bruker");
+			put("home made", "Home-built");
 			put(".Bruker", "Bruker");
 			put("DRX", "Bruker");
-			put("home made", "Home-built");
 			put("home-built", "Home-built");
 			put("Francis Bitter Magnet Laboratory", "FBML");
 			put("FMBL", "FBML");
@@ -91,8 +91,8 @@ public class bmr_Util_NMRSpectrometer {
 			put("Avance", "Bruker");
 			put("UNITY", "Varian");
 			put("homebuilt", "Home-built");
-			put("Varain", "Varian");
 			put("Home-build", "Home-built");
+			put("Varain", "Varian");
 
 		}
 	};

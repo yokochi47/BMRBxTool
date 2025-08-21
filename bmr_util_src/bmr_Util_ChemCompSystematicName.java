@@ -39,8 +39,8 @@ public class bmr_Util_ChemCompSystematicName {
 			put("PUBCHEM_IUPAC_SYSTEMATIC_NAME", "IUPAC");
 			put("Lignin abbreviation", "Lignin abbreviation");
 			put("Three letter code", "Three letter code");
-			put("PUBCHEM_IUPAC_TRADITIONAL_NAME", "IUPAC");
 			put("PUBCHEM_IUPAC_OPENEYE_NAME", "IUPAC");
+			put("PUBCHEM_IUPAC_TRADITIONAL_NAME", "IUPAC");
 			put("IUPAC_SYSTEMATIC", "IUPAC");
 			put("Beilstein", "Beilstein");
 			put("IUPAC_TRADITIONAL", "IUPAC");

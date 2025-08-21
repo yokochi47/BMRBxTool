@@ -309,7 +309,7 @@ public class bmr_SpectralPeakListType {
 
 		String _val_name = val_name;
 
-		if (val_name.endsWith("?"))
+		if (val_name != null && val_name.endsWith("?"))
 			val_name = val_name.substring(0, val_name.length() - 1);
 
 		if (!(val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?")) && (_val_name == null || _val_name.isEmpty() || _val_name.equals(".") || _val_name.equals("?") || !val_name.equals(_val_name))) {
