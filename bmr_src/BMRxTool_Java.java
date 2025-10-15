@@ -4211,6 +4211,9 @@ public class BMRxTool_Java {
 							buffw.write("\t\tif ((val_name != null && val_name.equals(\"unclassified\")) || entry_id.equals(\"18145\"))\n");
 							buffw.write("\t\t\tval_name = \"Unclassified\";\n\n");
 
+							buffw.write("\t\tif ((val_name != null && val_name.equals(\"Virus\")))\n");
+							buffw.write("\t\t\tval_name = \"Viruses\";\n\n");
+
 							buffw.write("\t\tif (val_name != null && entry_id.equals(\"5934\"))\n");
 							buffw.write("\t\t\tval_name = \"Bacteria\";\n\n");
 

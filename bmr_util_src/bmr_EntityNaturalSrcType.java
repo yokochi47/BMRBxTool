@@ -1275,6 +1275,9 @@ public class bmr_EntityNaturalSrcType {
 		if ((val_name != null && val_name.equals("unclassified")) || entry_id.equals("18145"))
 			val_name = "Unclassified";
 
+		if ((val_name != null && val_name.equals("Virus")))
+			val_name = "Viruses";
+
 		if (val_name != null && entry_id.equals("5934"))
 			val_name = "Bacteria";
 
