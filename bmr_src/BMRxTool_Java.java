@@ -4454,6 +4454,14 @@ public class BMRxTool_Java {
 							buffw.write("\t\t\tval_name = \"na\";\n\n");
 
 						}
+						
+						// item='t1rho_val_units'
+						if (attr_name_lower.equals("t1rho_val_units")) {
+
+							buffw.write("\t\tif (val_name != null)\n");
+							buffw.write("\t\t\tval_name = " + file_prefix + "_" + BMRxTool_DOM.util_heteronuclt1rholist + ".getT1RhoValUnits(val_name);\n\n");
+
+						}
 
 						// item='temp_calibration_method'
 						if (attr_name_lower.equals("temp_calibration_method")) {

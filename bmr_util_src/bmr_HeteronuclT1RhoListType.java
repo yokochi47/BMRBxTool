@@ -635,6 +635,9 @@ public class bmr_HeteronuclT1RhoListType {
 
 		if (bmr_Util_Main.remediate_xml) {
 
+		if (val_name != null)
+			val_name = bmr_Util_HeteronuclT1RhoList.getT1RhoValUnits(val_name);
+
 		if (!(val_name == null || val_name.isEmpty() || val_name.equals(".") || val_name.equals("?")) && (_val_name == null || _val_name.isEmpty() || _val_name.equals(".") || _val_name.equals("?") || !val_name.equals(_val_name))) {
 
 			try {

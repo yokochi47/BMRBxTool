@@ -24,7 +24,7 @@ public class bmr_Util_TheoreticalHeteronuclT2List {
 
 	static final Map<String, String> map_temp_calibration_method = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 127L;
+		private static final long serialVersionUID = 128L;
 
 		{
 
@@ -43,7 +43,7 @@ public class bmr_Util_TheoreticalHeteronuclT2List {
 
 	static final Map<String, String> map_temp_control_method = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 128L;
+		private static final long serialVersionUID = 129L;
 
 		{
 

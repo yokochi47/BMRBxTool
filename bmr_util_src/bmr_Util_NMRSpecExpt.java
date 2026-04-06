@@ -24,7 +24,7 @@ public class bmr_Util_NMRSpecExpt {
 
 	static final Map<String, String> map_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 105L;
+		private static final long serialVersionUID = 106L;
 
 		{
 
@@ -41,7 +41,7 @@ public class bmr_Util_NMRSpecExpt {
 
 	static final Map<String, String> map_nmr_tube_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 106L;
+		private static final long serialVersionUID = 107L;
 
 		{
 

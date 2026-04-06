@@ -24,7 +24,7 @@ public class bmr_Util_SystematicChemShiftOffset {
 
 	static final Map<String, String> map_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 124L;
+		private static final long serialVersionUID = 125L;
 
 		{
 
@@ -53,7 +53,7 @@ public class bmr_Util_SystematicChemShiftOffset {
 
 	static final Map<String, String> map_atom_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 125L;
+		private static final long serialVersionUID = 126L;
 
 		{
 

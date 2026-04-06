@@ -24,7 +24,7 @@ public class bmr_Util_HomonuclNOEList {
 
 	static final Map<String, String> map = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 95L;
+		private static final long serialVersionUID = 96L;
 
 		{
 

@@ -24,7 +24,7 @@ public class bmr_Util_GenDistConstraintList {
 
 	static final Map<String, String> map = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 97L;
+		private static final long serialVersionUID = 98L;
 
 		{
 

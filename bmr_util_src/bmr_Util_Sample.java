@@ -27,7 +27,7 @@ public class bmr_Util_Sample {
 
 	static final Map<String, String> map = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 113L;
+		private static final long serialVersionUID = 114L;
 
 		{
 

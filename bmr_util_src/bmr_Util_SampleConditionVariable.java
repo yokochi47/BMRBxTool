@@ -24,7 +24,7 @@ public class bmr_Util_SampleConditionVariable {
 
 	static final Map<String, String> map_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 115L;
+		private static final long serialVersionUID = 116L;
 
 		{
 
@@ -52,7 +52,7 @@ public class bmr_Util_SampleConditionVariable {
 
 	static final Map<String, String> map_val_units = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 116L;
+		private static final long serialVersionUID = 117L;
 
 		{
 

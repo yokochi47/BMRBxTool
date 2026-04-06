@@ -24,7 +24,7 @@ public class bmr_Util_OrderParameterList {
 
 	static final Map<String, String> map_tau_e_val_units = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 107L;
+		private static final long serialVersionUID = 108L;
 
 		{
 
@@ -44,7 +44,7 @@ public class bmr_Util_OrderParameterList {
 
 	static final Map<String, String> map_rex_val_units = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 108L;
+		private static final long serialVersionUID = 109L;
 
 		{
 

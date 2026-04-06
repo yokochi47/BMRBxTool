@@ -24,7 +24,7 @@ public class bmr_Util_SpectralDim {
 
 	static final Map<String, String> map_under_sampling_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 120L;
+		private static final long serialVersionUID = 121L;
 
 		{
 

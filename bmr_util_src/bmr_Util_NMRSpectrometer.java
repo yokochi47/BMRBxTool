@@ -24,7 +24,7 @@ public class bmr_Util_NMRSpectrometer {
 
 	static final Map<String, String> map_manufacturer = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 100L;
+		private static final long serialVersionUID = 101L;
 
 		{
 
@@ -103,7 +103,7 @@ public class bmr_Util_NMRSpectrometer {
 
 	static final Map<String, String> map_field_strength = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 101L;
+		private static final long serialVersionUID = 102L;
 
 		{
 

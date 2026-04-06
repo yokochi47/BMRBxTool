@@ -24,7 +24,7 @@ public class bmr_Util_SpectralDimTransfer {
 
 	static final Map<String, String> map_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 121L;
+		private static final long serialVersionUID = 122L;
 
 		{
 

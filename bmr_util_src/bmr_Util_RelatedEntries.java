@@ -27,7 +27,7 @@ public class bmr_Util_RelatedEntries {
 
 	static final Map<String, String> map = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 110L;
+		private static final long serialVersionUID = 111L;
 
 		{
 

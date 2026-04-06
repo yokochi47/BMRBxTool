@@ -24,7 +24,7 @@ public class bmr_Util_TheoreticalHeteronuclT1List {
 
 	static final Map<String, String> map_t1_coherence_type = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 126L;
+		private static final long serialVersionUID = 127L;
 
 		{
 

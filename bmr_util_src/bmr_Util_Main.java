@@ -75,7 +75,7 @@ public class bmr_Util_Main {
 	private static String from_mail_addr = "webmaster@bmrbpub.protein.osaka-u.ac.jp";
 	private static String smtp_host_name = "postman.protein.osaka-u.ac.jp";
 
-	private static String smtp_ip_addr = "192.168.1.52";
+	private static String smtp_ip_addr = "192.168.1.120";
 
 	private static Runtime runtime = Runtime.getRuntime();
 	private static final int cpu_num = runtime.availableProcessors();

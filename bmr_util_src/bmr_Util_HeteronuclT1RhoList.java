@@ -58,9 +58,28 @@ public class bmr_Util_HeteronuclT1RhoList {
 		return (String) map_t1rho_coherence_type.get(val_name);
 	}
 
-	static final Map<String, String> map_temp_calibration_method = new HashMap<String, String>() {
+	static final Map<String, String> map_t1rho_val_units = new HashMap<String, String>() {
 
 		private static final long serialVersionUID = 92L;
+
+		{
+
+			put("ms-1", "ms-1");
+			put("ms", "ms");
+			put("s", "s");
+			put("s/s-1", "s");
+			put("s-1", "s-1");
+
+		}
+	};
+
+	public static String getT1RhoValUnits(String val_name) {
+		return (String) map_t1rho_val_units.get(val_name);
+	}
+
+	static final Map<String, String> map_temp_calibration_method = new HashMap<String, String>() {
+
+		private static final long serialVersionUID = 93L;
 
 		{
 
@@ -78,7 +97,7 @@ public class bmr_Util_HeteronuclT1RhoList {
 
 	static final Map<String, String> map_temp_control_method = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 93L;
+		private static final long serialVersionUID = 94L;
 
 		{
 

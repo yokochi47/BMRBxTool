@@ -24,7 +24,7 @@ public class bmr_Util_StructAnnoChar {
 
 	static final Map<String, String> map = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 122L;
+		private static final long serialVersionUID = 123L;
 
 		{
 

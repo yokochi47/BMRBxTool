@@ -24,7 +24,7 @@ public class bmr_Util_SGProject {
 
 	static final Map<String, String> map_full_name_of_center = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 117L;
+		private static final long serialVersionUID = 118L;
 
 		{
 
@@ -128,7 +128,7 @@ public class bmr_Util_SGProject {
 
 	static final Map<String, String> map_initial_of_center = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 118L;
+		private static final long serialVersionUID = 119L;
 
 		{
 
@@ -166,7 +166,7 @@ public class bmr_Util_SGProject {
 
 	static final Map<String, String> map_project_name = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 119L;
+		private static final long serialVersionUID = 120L;
 
 		{
 

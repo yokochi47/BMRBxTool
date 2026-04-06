@@ -24,7 +24,7 @@ public class bmr_Util_PHTitrationList {
 
 	static final Map<String, String> map_expt_observed_param = new HashMap<String, String>() {
 
-		private static final long serialVersionUID = 109L;
+		private static final long serialVersionUID = 110L;
 
 		{
 
